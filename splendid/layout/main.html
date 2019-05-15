@@ -3,31 +3,14 @@
   <block-head />
   <body>
     <ajax-loader />
-    <div class="table">
-      <div class="left-column">
-        <div class="logo">
-          <img src="img/logo.jpg" alt="splendid logo">
-        </div>
-        <div class="badges">
-          <github-badge name="splendid" org="artdecocode" />
-          <npm-badge package="splendid">_Splendid_</npm-badge>
-        </div>
-
-        ### Pages
-
-        <Pages />
-
-        ### npm links
-
-        <ul>
-          * [splendid](https://www.npmjs.com/package/splendid)
-          * [mnp](https://www.npmjs.com/package/mnp)
-        </ul>
-      </div>
-      <div class="right-column" id="Content">
-        {{ content }}
-      </div>
+    <div className="container">
+      <add-file>js/menu.json</add-file>
+      <div id="menu"></div>
+      {{ content }}
     </div>
-    <block-footer />
+    <script src="node_modules://snapsvg/dist/snap.svg-min.js"></script>
+    <script src="js/animator.js" nocompile></script>
+    <script src="js/menu.js"></script>
+    <!-- <block-footer /> -->
   </body>
 </html>

@@ -2,7 +2,7 @@
  * @type {import('splendid').Page}
  */
 export const main = {
-  title: 'Main Page',
+  title: 'Art Deco™: Node.JS Development Company',
   url: 'index.html',
   file: 'index',
   menuUrl: '/',
