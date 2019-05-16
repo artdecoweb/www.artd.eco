@@ -1,3 +1,4 @@
+import Adonais from './Adonais'
 export { default as Pages } from './Menu'
 
 export const Figure = ({ img, alt, children }) => {
@@ -19,6 +20,7 @@ const GitHubBadge = (props) => {
 }
 
 export default {
+  'adonais': Adonais,
   'github-badge': GitHubBadge,
 }
 
