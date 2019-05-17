@@ -8,6 +8,25 @@ import Components from '../components'
     
   },
   children: [""],
+},
+{
+  key: 'parallax',
+  id: 'c74268',
+  props: {
+    'background-image': '/img/seamless.jpg',
+class: 'text-center col-lg-3 align-self-stretch mb-3 text-center',
+  },
+  children: ["\n    <div class=\"d-flex justify-content-center\" style=\"height:100%;\">\n      <img src=\"img/images2.png\" class=\"img-fluid align-self-center\">\n    </div>\n  "],
+},
+{
+  key: 'parallax',
+  id: 'c80',
+  props: {
+    style: 'height:100px;',
+'background-image': '/img/bakst1.jpg',
+class: 'container-fluid',
+  },
+  children: [""],
 }]
   .map(({ key, id, props, children }) => {
     const el = document.getElementById(id)

@@ -23,19 +23,33 @@ body {
   background-color: #ffc7ff;
   font-family: 'Courier New', Courier, monospace;
 }
-.NPM {
-  background-color: rgb(215,0,0);
-  color: white;
+.TM {
   padding-left: .2rem;
   padding-right: .2rem;
   font-weight: bolder;
 }
+.NPM {
+  background-color: rgb(215,0,0);
+  color: white;
+}
 .Node {
   background-color: rgb(17,141,55);
-  color: rgb(223, 223, 223);
-  padding-left: .2rem;
-  padding-right: .2rem;
-  font-weight: bolder;
+  color: rgb(221, 221, 221);
+}
+.Corp {
+  border-bottom: 2px dashed;
+}
+.React {
+  background-color: rgb(57,214,247);
+  color: rgb(33,33,33);
+}
+.Typescript {
+  background-color: rgb(0,13,102);
+  color: white;
+}
+.JavaScript {
+  background-color: rgb(238,223,0);
+  color: black;
 }
 #Content p {
   font-family: 'Gentium Basic', serif;
@@ -68,4 +82,42 @@ body {
   display: block;
   padding: 15px;
   background-image: url(/img/noise.png);
+}
+h1 {
+  padding-top: 1rem;
+}
+
+@keyframes filter-animation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+/* @-webkit-keyframes filter-animation {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  50% {
+    -webkit-filter: hue-rotate(100deg);
+  }
+
+  100% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+} */
+.Logo {
+  /* -webkit-animation: filter-animation 8s infinite; */
+  animation: filter-animation 36s infinite;
 }

@@ -3,8 +3,8 @@ import { Component } from 'preact'
 class Adonais extends Component {
   constructor() {
     super()
-    // this.state = { hint: null }
-    this.state = { hint: 'test', x: 10, y:10 }
+    this.state = { hint: null }
+    // this.state = { hint: 'test', x: 10, y:10 }
   }
   render({ splendid }) {
     splendid.export()
