@@ -11,7 +11,7 @@ class Parallax extends Component {
   componentDidMount() {
     this.listener = () => {
       if (!this.el) return
-      const d = this.el.getBoundingClientRect().y - window.innerHeight
+      const d = this.el.getBoundingClientRect().top - window.innerHeight
       const showing = d < 0
       if (!showing) return
       this.setState({
@@ -46,13 +46,14 @@ class Parallax extends Component {
         ...st,
       }
     }
+    const [child] = children
     return (<div
       className={className}
       style={style}
       ref={(el) => {
         this.el = el
       }}
-    dangerouslySetInnerHTML={{ __html: children }} />)
+      dangerouslySetInnerHTML={{ '__html': child }} />)
   }
 }
 

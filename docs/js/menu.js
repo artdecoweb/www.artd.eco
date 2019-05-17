@@ -1,6 +1,6 @@
 /* eslint-env browser */
 /* global SVGAnim */
-var menuContainer = document.getElementById('menu')
+const menuContainer = document.getElementById('menu')
 
 var jsonfile = 'js/menu.json',
   fps = 0,

@@ -62,11 +62,30 @@ body {
 }
 /* The animation code */
 @keyframes grow {
-  from {transform: scale(1,1,1) translateX(0); ; opacity: 1}
-  to {transform:scale3d(1.75,1.75,1.75) translateX(10px); opacity:0;}
+  from {
+    transform: scale(1) translateX(0);
+    -webkit-transform: scale(1) translateX(0);
+    opacity: 1}
+  to {
+    transform:scale(1.75) translateX(10px);
+    -webkit-transform:scale(1.75) translateX(10px);
+    opacity:0;}
+}
+@-webkit-keyframes grow {
+  from {
+    transform: scale(1) translateX(0);
+    -webkit-transform: scale(1) translateX(0);
+    opacity: 1}
+  to {
+    transform:scale(1.75) translateX(10px);
+    -webkit-transform:scale(1.75) translateX(10px);
+    opacity:0;}
 }
 
 .Adonais .A {
+  -webkit-animation-name: grow;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
   animation-name: grow;
   animation-duration: 4s;
   animation-iteration-count: infinite;
@@ -104,6 +123,23 @@ h1 {
     filter: hue-rotate(360deg);
   }
 }
+@-webkit-keyframes filter-animation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
 /* @-webkit-keyframes filter-animation {
   0% {
     -webkit-filter: hue-rotate(0deg);
@@ -120,4 +156,5 @@ h1 {
 .Logo {
   /* -webkit-animation: filter-animation 8s infinite; */
   animation: filter-animation 36s infinite;
+  -webkit-animation: filter-animation 36s infinite;
 }

@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/artdecoweb/artd.eco#readme",
   "devDependencies": {
+    "@externs/preact": "^1.1.0",
     "alamode": "^2.2.0",
     "documentary": "^1.27.2",
     "preact": "8.4.2",

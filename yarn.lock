@@ -88,6 +88,11 @@
   resolved "https://registry.yarnpkg.com/@depack/split/-/split-1.0.0.tgz#37fea28d9bc6f01e5a2da87d393f402781bb7e99"
   integrity sha512-PNJPl01VFMKtyN7qBZ2cds4N/lO2KvzLrR7JamODFiuuL2X8mGoTKp1SI8fxlT2MwLV8mScCUKn55QPwsUX7iA==
 
+"@externs/preact@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@externs/preact/-/preact-1.1.0.tgz#843ef929c150370544f210d3c866c3e203519114"
+  integrity sha512-lbqHqlykl7Y65goYSoIjZKItYfMa7vdilb2dGwGd+YzEc7HCOHaG1nOU9w8avlbeqP3UE/SQ7tQ3ktw1yfP/Xw==
+
 "@goa/koa@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@goa/koa/-/koa-1.1.0.tgz#29e548b7a9d60277dc07005fb52bb64df641050d"
