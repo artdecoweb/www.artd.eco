@@ -14,18 +14,17 @@ class Adonais extends Component {
   }
   render({ splendid }) {
     splendid.export()
-    try {
-      splendid.addStyle('styles/Adonais.css')
-    } catch(err) {/* client */}
+    const cl = splendid.addCSS('styles/Adonais.css', 'Adonais')
+
     return (<span className="Adonais" style="display:inline-block;float:left;position:relative;padding-right:1rem;">
-      <img src="img/adonais/back.jpg" style="position:relative; opacity:0;" />
-      <img src="img/adonais/back.jpg" />
-      {this.state.hint && <span className="AdonaisCopy" style={{ position: 'absolute', top: this.state.y, left: this.state.x }}>
-        <span className="AdonaisNoise">{this.state.hint}</span>
+      <img className={cl`Image`} src="img/adonais/back.jpg" style="position:relative; opacity:0;" />
+      <img className={cl`Image`} src="img/adonais/back.jpg" />
+      {this.state.hint && <span className={cl`Copy`} style={{ position: 'absolute', top: this.state.y, left: this.state.x }}>
+        <span className={cl`Noise`}>{this.state.hint}</span>
       </span>}
-      <Letter file="img/adonais/a2.png" top={112} left={219} class="A"
+      <Letter file="img/adonais/a2.png" top={112} left={219} class={cl`A Image`}
         hint={this.state.hint} setHint={this.setHint} setCoordinates={this.setCoordinates}>
-        <strong className="Letter">A</strong>rt Deco creates products for the modern web using back-end Node.JS And front-end JavaScript, taking advantages of the best available methods.
+        <strong className={cl`Letter`}>A</strong>rt Deco creates products for the modern web using back-end Node.JS And front-end JavaScript, taking advantage of the best available methods.
       </Letter>
     </span>
     )

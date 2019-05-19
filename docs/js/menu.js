@@ -1,46 +1,4 @@
-/* eslint-env browser */
-/* global SVGAnim */
-const menuContainer = document.getElementById('menu')
+(function(){var a=document.getElementById("menu"),b;b=new XMLHttpRequest;b.open("GET","js/menu.json",!0);b.setRequestHeader("Content-type","application/json");b.onreadystatechange=d;b.send();
+function d(){if(4==b.readyState&&200==b.status){var c=JSON.parse(b.responseText);c=new SVGAnim(c,1226,818,0);a.appendChild(c.s.node);setTimeout(function(){var e=a.querySelector('svg > g > g[token="3"]'),g=a.querySelector('svg > g > g[token="2"]'),h=a.querySelector('svg > g > g[token="1"]');f(a.querySelector('svg > g > g[token="4"]'),"about");f(e,"node");f(g,"packages");f(h,"contact")},100)}}function f(c,e){c.onclick=function(){window.location="#"+e}};}).call(this);
 
-var jsonfile = 'js/menu.json',
-  fps = 0,
-  width = 1226,
-  height = 818,
-  AJAX_req
-
-AJAX_JSON_Req(jsonfile)
-
-function handle_AJAX_Complete() {
-  if (AJAX_req.readyState == 4 && AJAX_req.status == 200) {
-    var json = JSON.parse(AJAX_req.responseText)
-    var comp = new SVGAnim(json, width, height, fps)
-    menuContainer.appendChild(comp.s.node)
-
-    setTimeout(function () {
-      var about = menuContainer.querySelector('svg > g > g[token="4"]')
-      var node = menuContainer.querySelector('svg > g > g[token="3"]')
-      var packages = menuContainer.querySelector('svg > g > g[token="2"]')
-      var contact = menuContainer.querySelector('svg > g > g[token="1"]')
-
-      assignLink(about, 'about')
-      assignLink(node, 'node')
-      assignLink(packages, 'packages')
-      assignLink(contact, 'contact')
-    }, 100)
-  }
-}
-
-function assignLink(target, name) {
-  target.onclick = function () {
-    window.location = '#' + name
-  }
-}
-
-function AJAX_JSON_Req(url) {
-  AJAX_req = new XMLHttpRequest()
-  AJAX_req.open('GET', url, true)
-  AJAX_req.setRequestHeader('Content-type', 'application/json')
-
-  AJAX_req.onreadystatechange = handle_AJAX_Complete
-  AJAX_req.send()
-}
+//# sourceMappingURL=menu.js.map

@@ -1,15 +1,21 @@
+const renameMaps = {
+  "styles/Adonais.css": {
+    "Letter": "a",
+    "Image": "b",
+    "A": "c",
+    "Copy": "d",
+    "Noise": "e"
+  }
+}
+import makeClassGetter from './__mcg'
 import { render } from 'preact'
 import Components from '../components'
 
 [{
   key: 'adonais',
   id: 'c9848',
-  props: {
-    
-  },
-  children: [""],
 }]
-  .map(({ key, id, props, children }) => {
+  .map(({ key, id, props = {}, children }) => {
     const el = document.getElementById(id)
     if (!el) {
       console.warn('Parent element for component %s with id %s not found', key, id)
@@ -21,6 +27,8 @@ import Components from '../components'
       console.warn('Component with key %s was not found.', key)
       return
     }
-    props.splendid = { export() {} }
+    props.splendid = { export() {}, addCSS(stylesheet) {
+      return makeClassGetter(renameMaps[stylesheet])
+    } }
     render(h(Comp, props, children), parent, el)
   })
