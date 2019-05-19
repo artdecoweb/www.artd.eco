@@ -1,0 +1,4 @@
+(function(){function d(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}var e=[].concat(function(a){if(!(a instanceof Array)){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];a=b?b.call(a):{next:d(a)};for(var c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}(document.querySelectorAll("[parallax]")));
+window.addEventListener("scroll",function(){e.forEach(function(a){var b=a.getBoundingClientRect().top-window.innerHeight;if(0>b){a.style["background-position-y"]=Math.floor(b/2)+"px";var c=a.getAttribute("x");c&&(a.style["background-position-x"]=Math.floor(b*parseFloat(c))+"px")}})});}).call(this);
+
+//# sourceMappingURL=parallax.js.map

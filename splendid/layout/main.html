@@ -8,13 +8,17 @@
     <div class="container" id="Content">
       {{ content }}
     </div>
+
     <script src="node_modules://snapsvg/dist/snap.svg-min.js"></script>
-    <script src="js/animator.js" nocompile></script>
-    <extern src="js/externs.js"></extern>
+    <script externs="js/externs.js" src="js/animator.js" nocompile></script>
+
+    <!-- todo: figure out how to handle both prod and dev -->
     <script src="js/menu.js"></script>
     <script src="js/object.assign.js"></script>
+
     <!-- <block-footer /> -->
-    <parallax style="height:100px;" background-image="/img/bakst1.jpg" class="container-fluid" />
-    <add-file>img/bakst1.jpg</add-file>
+    <container-fluid style="height:100px;padding:0">
+      <parallax style="height:100%; width:100%" background-image="/img/bakst1.jpg" />
+    </container-fluid>
   </body>
 </html>

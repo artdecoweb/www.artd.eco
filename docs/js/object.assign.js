@@ -1,29 +1,3 @@
-if (typeof Object.assign != 'function') {
-  // Must be writable: true, enumerable: false, configurable: true
-  Object.defineProperty(Object, 'assign', {
-    value: function assign(target, varArgs) { // .length of function is 2
-      'use strict'
-      if (target == null) { // TypeError if undefined or null
-        throw new TypeError('Cannot convert undefined or null to object')
-      }
+(function(){"function"!=typeof Object.assign&&Object.defineProperty(Object,"assign",{value:function(d,f){if(null==d)throw new TypeError("Cannot convert undefined or null to object");for(var e=Object(d),b=1;b<arguments.length;b++){var a=arguments[b];if(null!=a)for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&(e[c]=a[c])}return e},writable:!0,configurable:!0});}).call(this);
 
-      var to = Object(target)
-
-      for (var index = 1; index < arguments.length; index++) {
-        var nextSource = arguments[index]
-
-        if (nextSource != null) { // Skip over if undefined or null
-          for (var nextKey in nextSource) {
-            // Avoid bugs when hasOwnProperty is shadowed
-            if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-              to[nextKey] = nextSource[nextKey]
-            }
-          }
-        }
-      }
-      return to
-    },
-    writable: true,
-    configurable: true,
-  })
-}
+//# sourceMappingURL=object.assign.js.map

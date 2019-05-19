@@ -6,7 +6,10 @@ class Parallax extends Component {
     this.listener = null
     /** @type {HTMLDivElement} */
     this.el = null
-    this.state = { offset: 0 }
+    this.state = { offset: 0, offsetX: 0 }
+    this.refFn = (el) => {
+      this.el = el
+    }
   }
   componentDidMount() {
     this.listener = () => {
@@ -16,8 +19,9 @@ class Parallax extends Component {
       if (!showing) return
       this.setState({
         offset: d/2,
+        offsetX: d * (parseFloat(this.props.x) || 0),
       })
-      console.log(d)
+      // console.log(d)
     }
     window.addEventListener('scroll', this.listener)
   }
@@ -27,13 +31,13 @@ class Parallax extends Component {
   }
   render({
     splendid, style: s = {}, 'background-image': backgroundImage, class: className,
-    children,
   }) {
     splendid.export()
     let style
     const st = {
       'background-image': `url(${backgroundImage})`,
-      'background-position': `0 ${this.state.offset}px`,
+      'background-position-y': Math.floor(this.state.offset) + 'px',
+      'background-position-x': Math.floor(this.state.offsetX) + 'px',
     }
     if (typeof s == 'string') {
       style = [
@@ -46,15 +50,31 @@ class Parallax extends Component {
         ...st,
       }
     }
-    const [child] = children
     return (<div
       className={className}
       style={style}
-      ref={(el) => {
-        this.el = el
-      }}
-      dangerouslySetInnerHTML={{ '__html': child }} />)
+      ref={this.refFn} />)
   }
 }
 
-export default Parallax
+const parallax = ({ splendid, style: s = {}, 'background-image': backgroundImage, class: className, x }) => {
+  splendid.addScript('js/parallax.js')
+  splendid.addFile(backgroundImage)
+  let style
+  const st = {
+    'background-image': `url(${backgroundImage})`,
+  }
+  if (typeof s == 'string') {
+    style = [
+      ...Object.keys(st).map((k) => `${k}: ${st[k]}`),
+      s,
+    ].join(';')
+  } else {
+    style = { ...s, ...st }
+  }
+  return <div parallax className={className} style={style} x={x}/>
+}
+
+// export default Parallax
+
+export default parallax
