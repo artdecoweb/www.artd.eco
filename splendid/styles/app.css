@@ -179,3 +179,10 @@ h1 {
 .Table h3 {
   text-decoration: underline;
 }
+h2, h3, h4 {
+  font-family: 'Limelight', cursive;
+}
+.Feature h2 {
+  border-radius: 2rem;
+  hyphens: auto;
+}
