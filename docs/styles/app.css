@@ -176,3 +176,6 @@ h1 {
   background: red;
   color: white;
 }
+.Table h3 {
+  text-decoration: underline;
+}
