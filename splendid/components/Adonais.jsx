@@ -16,7 +16,7 @@ class Adonais extends Component {
     splendid.export()
     const cl = splendid.addCSS('styles/Adonais.css', 'Adonais')
 
-    return (<span className="Adonais float-left position-relative d-inline-block pr-3">
+    return (<span className="Adonais position-relative align-top">
       <img className={cl`Image`} src="img/adonais/back.jpg" style="position:relative; opacity:0;" />
       <img className={cl`Image`} src="img/adonais/back.jpg" />
       {this.state.hint && <span className={cl`Copy`} style={{ position: 'absolute', top: this.state.y, left: this.state.x }}>

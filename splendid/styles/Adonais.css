@@ -38,7 +38,6 @@
   animation-iteration-count: infinite;
 }
 .Copy {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   border: 7px solid rgb(229, 138, 117);
   background: radial-gradient(rgb(242, 238, 226), rgb(224, 209, 180));
   box-shadow: 1px -1px rgb(191,68,67);
