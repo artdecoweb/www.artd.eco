@@ -16,7 +16,7 @@ class Adonais extends Component {
     splendid.export()
     const cl = splendid.addCSS('styles/Adonais.css', 'Adonais')
 
-    return (<span className="Adonais position-relative align-top">
+    return (<span className="Adonais float-left position-relative d-inline-block pr-3">
       <img className={cl`Image`} src="img/adonais/back.jpg" style="position:relative; opacity:0;" />
       <img className={cl`Image`} src="img/adonais/back.jpg" />
       {this.state.hint && <span className={cl`Copy`} style={{ position: 'absolute', top: this.state.y, left: this.state.x }}>
@@ -25,6 +25,10 @@ class Adonais extends Component {
       <Letter file="img/adonais/a2.png" top={112} left={219} class={cl`A Image`}
         hint={this.state.hint} setHint={this.setHint} setCoordinates={this.setCoordinates}>
         <strong className={cl`Letter`}>A</strong>rt Deco creates products for the modern web using back-end Node.JS And front-end JavaScript, taking advantage of the best available methods.
+      </Letter>
+      <Letter file="img/adonais/I.png" top={208} left={175} class={cl`I Image`}
+        hint={this.state.hint} setHint={this.setHint} setCoordinates={this.setCoordinates}>
+        We <strong className={cl`Letter`}>I</strong>mplemen software products using the latest language features and spend time on writing code rather than setting up tools and installing 3rd party dependencies.
       </Letter>
     </span>
     )
