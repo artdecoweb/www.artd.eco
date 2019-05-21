@@ -1,41 +1,45 @@
 .Letter {
-  text-shadow:1px 1px 1px #8d5718;
-  font-size:larger;
-  color:gold;
+  text-shadow: 1px 1px 1px #8d5718;
+  font-size: larger;
+  color: gold;
 }
 .Image {
   position: absolute;
   top: 0;
   left: 0;
-}
-/* The animation code */
-@keyframes grow {
-  from {
-    transform: scale(1) translateX(0);
-    -webkit-transform: scale(1) translateX(0);
-    opacity: 1}
-  to {
-    transform:scale(1.75) translateX(10px);
-    -webkit-transform:scale(1.75) translateX(10px);
-    opacity:0;}
-}
-@-webkit-keyframes grow {
-  from {
-    transform: scale(1) translateX(0);
-    -webkit-transform: scale(1) translateX(0);
-    opacity: 1}
-  to {
-    transform:scale(1.75) translateX(10px);
-    -webkit-transform:scale(1.75) translateX(10px);
-    opacity:0;}
-}
-.A {
-  -webkit-animation-name: grow;
-  -webkit-animation-duration: 4s;
-  -webkit-animation-iteration-count: infinite;
-  animation-name: grow;
   animation-duration: 4s;
   animation-iteration-count: infinite;
+}
+
+/* @gen-webkit-keyframes */
+@keyframes growA {
+  from {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.75) translateX(10px);
+    opacity:0;
+  }
+}
+/* @gen-webkit-keyframes */
+@keyframes growI {
+  from {
+    transform: scale(1) translate(0, 0);
+    -webkit-transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.75) translate(6.5px, 10px);
+    -webkit-transform: scale(1.75) translate(6.5px, 10px);
+    opacity:0;
+  }
+}
+.A {
+  animation-name: growA;
+}
+.I {
+  animation-name: growI;
 }
 .Copy {
   border: 7px solid rgb(229, 138, 117);

@@ -3,8 +3,9 @@ const renameMaps = {
     "Letter": "a",
     "Image": "b",
     "A": "c",
-    "Copy": "d",
-    "Noise": "e"
+    "I": "d",
+    "Copy": "e",
+    "Noise": "f"
   }
 }
 import makeClassGetter from './__mcg'
