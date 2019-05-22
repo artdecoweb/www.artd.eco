@@ -186,3 +186,37 @@ h2, h3, h4 {
   border-radius: 2rem;
   hyphens: auto;
 }
+.Sky div {
+  left: 0;
+  z-index: -1;
+  height: 159px;
+  background-repeat: repeat-x;
+  /* animation-iteration-count: infinite;
+  animation-duration: 50s;
+  animation-timing-function: linear;
+  width: 200%; */
+}
+.Sky div:nth-child(even)  {
+  /* animation-name: skyEven; */
+}
+.Sky div:nth-child(odd)  {
+  /* animation-name: skyOdd; */
+}
+/* @gen-webkit-keyframes */
+/* @keyframes skyEven {
+  from {
+    transform: translate3d(-25%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+} */
+/* @gen-webkit-keyframes */
+/* @keyframes skyOdd {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-25%, 0, 0);
+  }
+} */

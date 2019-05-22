@@ -4,8 +4,13 @@ const renameMaps = {
     "Image": "b",
     "A": "c",
     "I": "d",
-    "Copy": "e",
-    "Noise": "f"
+    "A2": "e",
+    "D": "f",
+    "O": "g",
+    "N": "h",
+    "S": "i",
+    "Copy": "j",
+    "Noise": "k"
   }
 }
 import makeClassGetter from './__mcg'
@@ -15,6 +20,9 @@ import Components from '../components'
 [{
   key: 'adonais',
   id: 'c9848',
+  props: {
+    class: 'position-relative mb-3 align-top',
+  },
 }]
   .map(({ key, id, props = {}, children }) => {
     const el = document.getElementById(id)

@@ -1,4 +1,4 @@
-const Feature = ({ children, title, direction = 'right', src, splendid, background, color, shadow }) => {
+const Feature = ({ children, title, direction = 'right', src, splendid, background, color, shadow, id }) => {
   splendid.renderAgain()
   const f = `float-${direction}`
   const sf = `float-${direction == 'right' ? 'left' : 'right'}`
@@ -8,7 +8,7 @@ const Feature = ({ children, title, direction = 'right', src, splendid, backgrou
   }
   const p = `m${direction == 'right' ? 'l' : 'r'}-3`
   const cn = ['img-fluid img-fluid rounded', f, p].join(' ')
-  return (<row className="Feature">
+  return (<row className="Feature" id={id}>
     <div className="col">
       <h2 className="text-center" style={{ background, color, 'text-shadow': shadow }}><img style={st} className={sf} src="img/sun.png" /> {title}</h2>
       <img alt={title} className={cn} src={src}/>
