@@ -29,7 +29,7 @@ export default {
   'github-badge': GitHubBadge,
   'feature': Feature,
   'sky': Sky,
-  // 'img': Image,
+  'img': Image,
 }
 
 /**

@@ -4,15 +4,13 @@ const io = new IntersectionObserver((entries) => {
     if (isIntersecting) {
       const src = target.getAttribute('data-src')
       if (!src) return
-      // target.src = src
-      // io.unobserve(target)
+      target.src = src
+      io.unobserve(target)
     }
   })
-})
+}, { rootMargin: '0px 0px 76px 0px' })
 
-const images = [...document.querySelectorAll('img')]
+const images = [...document.querySelectorAll('img[io]')]
 images.forEach((img) => {
-  img.setAttribute('data-src', img.src)
-  delete img.src
   io.observe(img)
 })
