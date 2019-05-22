@@ -9,16 +9,20 @@
       {{ content }}
     </div>
 
-    <script src="node_modules://snapsvg/dist/snap.svg-min.js"></script>
-    <script externs="js/externs.js" src="js/animator.js" nocompile></script>
+    <script src="js/io.js" noiife></script>
+    <script src="js/images.js"></script>
 
-    <!-- todo: figure out how to handle both prod and dev -->
-    <script src="js/menu.js"></script>
-    <script src="js/object.assign.js"></script>
+    <!-- can we group those 3 together? -->
+    <!-- <script externs="js/externs.js" src="js/animator.js" nocompile></script> -->
+
+    <!-- <script src="splendid/js/menuu.js" type="module" nocompile></script> -->
+    <!-- <script src="js/object.assign.js"></script> -->
+    <script src="node_modules://snapsvg/dist/snap.svg-min.js"></script>
+    <script async src="js/menu.js"></script>
 
     <!-- <block-footer /> -->
     <container-fluid style="height:100px;padding:0">
-      <parallax style="height:100%; width:100%" background-image="/img/bakst1.jpg" />
+      <parallax style="height:100%; width:100%" background-image="/img/bakst2.jpg" />
     </container-fluid>
   </body>
 </html>

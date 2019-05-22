@@ -2,6 +2,7 @@ import Adonais from './Adonais'
 import Parallax from './Parallax'
 import Feature from './Feature'
 import Sky from './Sky'
+import Image from './Image'
 export { default as Pages } from './Menu'
 
 export const Figure = ({ img, alt, children }) => {
@@ -28,6 +29,7 @@ export default {
   'github-badge': GitHubBadge,
   'feature': Feature,
   'sky': Sky,
+  // 'img': Image,
 }
 
 /**

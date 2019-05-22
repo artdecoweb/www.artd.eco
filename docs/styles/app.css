@@ -191,6 +191,7 @@ h2, h3, h4 {
   z-index: -1;
   height: 159px;
   background-repeat: repeat-x;
+  width: 100%;
   /* animation-iteration-count: infinite;
   animation-duration: 50s;
   animation-timing-function: linear;
