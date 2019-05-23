@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="53px" height="107px" viewBox="0 0 53 107" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="68" height="129"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle-+-Rectangle-+-Rectangle-+-Rectangle-+-Rectangle-Mask" transform="translate(-15.000000, -13.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Mask"></g>
+            <rect id="Rectangle" fill="#DDAE60" mask="url(#mask-2)" transform="translate(88.121040, 66.214564) rotate(-45.000000) translate(-88.121040, -66.214564) " x="36.6210403" y="14.7145644" width="103" height="103"></rect>
+            <rect id="Rectangle" fill="#201A34" mask="url(#mask-2)" transform="translate(99.121040, 66.214564) rotate(-45.000000) translate(-99.121040, -66.214564) " x="47.6210403" y="14.7145644" width="103" height="103"></rect>
+            <rect id="Rectangle" fill="#1D827A" mask="url(#mask-2)" transform="translate(104.121040, 66.214564) rotate(-45.000000) translate(-104.121040, -66.214564) " x="52.6210403" y="14.7145644" width="103" height="103"></rect>
+            <rect id="Rectangle" fill="#201A34" mask="url(#mask-2)" transform="translate(113.121040, 66.214564) rotate(-45.000000) translate(-113.121040, -66.214564) " x="61.6210403" y="14.7145644" width="103" height="103"></rect>
+            <rect id="Rectangle" fill="#E0B25C" mask="url(#mask-2)" transform="translate(121.121040, 66.214564) rotate(-45.000000) translate(-121.121040, -66.214564) " x="69.6210403" y="14.7145644" width="103" height="103"></rect>
+        </g>
+    </g>
+</svg>

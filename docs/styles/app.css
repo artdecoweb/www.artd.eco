@@ -54,7 +54,7 @@ body {
   background-color: rgb(238,223,0);
   color: black;
 }
-#Content p {
+p {
   font-display: fallback;
   font-family: 'Gentium Basic', serif;
   font-size: larger;
@@ -144,6 +144,9 @@ h1 {
   transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
 }
+.Triangles {
+  background-size: 30px !important;
+}
 @media (min-width: 576px) {
   .RedBox {
     left: 10rem;
@@ -155,21 +158,24 @@ h1 {
   .Bird1 {
     bottom:1rem;
   }
+  .Triangles {
+    background-size: 40px !important;
+  }
 }
 @media (min-width: 768px) {
   #cup {
     width: 387px;
   }
   .CupDiv {
-    padding-left: 4rem;
+    padding-left: 7rem;
   }
   .Yellow {
     margin-bottom: 4rem;
   }
 }
-@media (min-width: 768px) {
-  .CupDiv {
-    padding-left: 7rem;
+@media (min-width: 941px) {
+  .Triangles {
+    background-size: 53px !important;
   }
 }
 .RedBox {

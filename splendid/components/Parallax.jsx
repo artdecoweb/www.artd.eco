@@ -1,6 +1,6 @@
 const Parallax = ({ splendid, style, 'background-image': backgroundImage, class: className, x }) => {
   splendid.addScript('js/parallax.js')
-  splendid.addFile(backgroundImage)
+  if (backgroundImage) splendid.addFile(backgroundImage)
 
   const st = {
     'background-image': `url(${backgroundImage})`,
