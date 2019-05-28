@@ -1,5 +1,5 @@
 /* eslint-env browser */
-const els = [...document.querySelectorAll('[parallax]')]
+const els = [...document.querySelectorAll('.Parallax')]
 
 const map = {}
 

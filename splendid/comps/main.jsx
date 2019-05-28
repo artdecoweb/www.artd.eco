@@ -1,4 +1,7 @@
 const renameMaps = {
+  "styles/Parallax.css": {
+    "Parallax": "a"
+  },
   "styles/Adonais.css": {
     "Letter": "a",
     "Image": "b",

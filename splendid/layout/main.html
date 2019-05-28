@@ -2,10 +2,13 @@
 <html lang="en" class="no-js">
   <block-head />
   <body>
-    <ajax-loader />
-    <add-file>js/menu.json</add-file>
+    <!-- <ajax-loader /> -->
+    <!-- <add-file>js/menu.json</add-file> -->
     <div id="menu"></div>
+
     <block-1-intro />
+    <block-2-services />
+
     <div class="container" id="Content">
       {{ content }}
     </div>
@@ -22,8 +25,8 @@
     <script async src="js/menu.js"></script>
 
     <!-- <block-footer /> -->
-    <container-fluid style="height:100px;padding:0">
-      <parallax class="w-100 h-100" background-image="/img/bakst2.jpg" />
+    <container-fluid position-relative style="height:100px;padding:0">
+      <parallax background-image="/img/bakst2.jpg" />
     </container-fluid>
   </body>
 </html>

@@ -26,6 +26,7 @@ import { Component } from 'preact'
 
 class Image extends Component {
   render({ src, splendid, ...props }) {
+    // if (src == 'img/logo.png') debugger
     splendid.addScript('js/io.js', false, { nocompile: true })
     splendid.addScript('js/images.js')
     return [
