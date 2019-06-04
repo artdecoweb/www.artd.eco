@@ -1,6 +1,4 @@
 /* eslint-env browser */
-const els = [...document.querySelectorAll('.Parallax')]
-
 const map = {}
 
 const io = new IntersectionObserver((entries) => {
@@ -16,30 +14,54 @@ const io = new IntersectionObserver((entries) => {
       if (map[target.pid]) {
         return
       }
+
+      let y = target.getAttribute('y')
+      if (y === null) y = 2
+      y = parseFloat(y)
+
+      let x = target.getAttribute('x')
+      if (x === null) x = 0
+      x = parseFloat(x)
+      // let X = x ? d * parseFloat(x) : 0
+
       const listener = () => {
         const d = target.getBoundingClientRect().top - window.innerHeight
-        const offset = d/2
-        const minY = target.getAttribute('min-y')
-        const minYMd = target.getAttribute('min-y-md')
-        let mo = offset
+        let Y = 0
+        let X = 0
+
+        if (y) {
+          const offset = d/y
+          const minY = target.getAttribute('min-y')
+          let mo = offset
+          if (minY) {
+            mo = Math.max(minY, offset)
+          }
+          Y = mo
+        }
+        // const minYMd = target.getAttribute('min-y-md')
         // if (windowWidth > 768 && minYMd && windowWidth < 940) {
         //   mo = Math.max(minYMd, offset)
         // } else
-        if (minY) {
-          mo = Math.max(minY, offset)
-        }
-        const o = Math.floor(mo) + 'px'
+
         // target.style['background-position-y'] = o
-        const x = target.getAttribute('x')
-        const offsetX = x ? d * parseFloat(x) + 'px' : '0'
+
         // target.style['background-position-x'] = Math.floor(offsetX) + 'px'
-        let t = `translate3d(${offsetX}, ${o}, 0)`
         if (x) {
-          target.style['width'] = '200%'
-          t += ' translateX(-50%)'
+          X = d * x
+          const w = target.parentNode.clientWidth
+          // offsetX
+          // t += `translateX(-${w}px)`
+          // console.log('shifting X by w * 2', X)
+          X = X - w * 2
+          // console.log(X)
+          // console.log('setting width')
+          target.style['width'] = target.parentNode.clientWidth * 4 + 'px'
         }
-        target.style['min-height'] = target.parentNode.clientHeight * 3 + 'px'
-        // window.innerHeight * 2.5 + 'px'
+
+        const ch = `${target.parentNode.clientHeight * 3}px`
+        target.style['min-height'] = ch
+
+        const t = `translate3d(${floatToPx(X)}, ${floatToPx(Y)}, 0)`
         target.style['transform'] = t
       }
       window.addEventListener('scroll', listener)
@@ -52,19 +74,33 @@ const io = new IntersectionObserver((entries) => {
   })
 })
 
+const floatToPx = (f) => {
+  return `${f.toFixed(0)}px`
+}
+
 let windowWidth = window.innerWidth
 window.addEventListener('resize', () => {
   windowWidth = window.innerWidth
 })
 
 let id = 0
-els.forEach((img) => {
-  img.pid = id++
-  img.setAttribute('data-src', img.style['background-image'])
-  img.style['background-image'] = null
-  io.observe(img)
-})
 
+const start = () => {
+  const els = [...document.querySelectorAll('.Parallax')]
+  els.forEach((img) => {
+    if (!img.style['background-image']) return
+
+    img.pid = id++
+    img.setAttribute('data-src', img.style['background-image'])
+    img.style['background-image'] = null
+    io.observe(img)
+  })
+}
+window['IO'] = () => {
+  start()
+}
+
+start()
 // window.addEventListener('scroll', () => {
 //   els.forEach((el) => {
 //     const d = el.getBoundingClientRect().top - window.innerHeight

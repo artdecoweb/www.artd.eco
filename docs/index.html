@@ -42,7 +42,7 @@
 
     <div id="main-services" class="container-fluid position-relative"
       style="background: url('img/letters/background.png');padding-left: 70px;padding-right: 70px;overflow: hidden">
-      <div class="Triangles Parallax" style="background: url('img/letters/triangle1.png') left top, url(img/letters/triangle.png) right top; background-repeat: repeat-y;"></div>
+      <div class="Triangles Parallax" style="background: url('img/letters/triangle1.png') left top, url(img/letters/triangle.png) right top; background-repeat: repeat-y;" y="3"></div>
       <div class="row">
         <!-- background-image="img/letters/background2.png" -->
                 <div class="col-md-6">
@@ -73,17 +73,22 @@
     </div>
     
     <!-- <section-break /> -->
-    <block-3-services-2 />
-    <!-- <div class="position-relative"> -->
+    <!-- <block-3-services-2 /> -->
+    <div class="position-relative">
     <div id="lib" class="container-fluid position-relative"
       style="z-index:-1; background:#FEF6C1; margin-bottom: -10px;overflow: hidden">
-      <div class=" Parallax" style="background-image: url(/img/services-2/sky1.svg);z-index:-1; height:300%" x="-0.5"></div>
-      <div class=" Parallax" style="background-image: url(/img/services-2/sky2.svg);z-index:-1; height:300%" x="-1.5"></div>
+      <div class=" Parallax" style="background-image: url(/img/services-2/sky-simple1.gif);z-index:-1;" x="-1.5" y="0"></div>
+      <div class=" Parallax" style="background-image: url(/img/services-2/sky-simple2.gif);z-index:-1;padding-top:266px;" x="-1" y="0"></div>
+      <div class=" Parallax" style="background-image: url(/img/services-2/sky-simple3.gif);z-index:-1;padding-top:532px;" x="-0.5" y="0"></div>
+      <!-- <parallax
+        background-image="/img/services-2/sky2.svg"
+        style="z-index:-1; filter: drop-shadow(5px 5px 10px rgb(248, 172, 128)) blur(1px)"
+        x="-1.5" /> -->
       <img class="w-100 m-0 display-block" data-src="img/services-2/sphinx.svg" io />
       <noscript><img class="w-100 m-0 display-block" src="img/services-2/sphinx.svg" /></noscript>
     </div>
-      <!-- <div class="w-100 position-relative" style="height:20px;z-index:-3; background:#e9a62d"></div> -->
-    <!-- </div> -->
+    <div class="w-100 position-relative"
+      style="height:20px;z-index:-3; background:#e9a62d"></div>
     <div id="lib-info" class="container-fluid" style="background: #e9a62d;">
       <div class="row">
         <div class="col">
@@ -107,7 +112,7 @@
         </div>
         <div style="margin-top:1.5rem; margin-bottom:1.5rem;padding:1.4rem;"
           class="position-relative order-1 order-lg-3 d-flex justify-content-center col-lg-5">
-          <div class=" Parallax" style="background-image: url(/img/code2.gif);background-repeat: repeat-y; z-index:-1;"></div>
+          <div class=" Parallax" style="background-image: url(/img/code2.gif);background-repeat: repeat-y; z-index:-1;" y="3"></div>
           <img alt="Node.JS at the epicenter of modern software development" class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" data-src="/img/Byss-und-Abyss2.gif" io />
           <noscript><img alt="Node.JS at the epicenter of modern software development" class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" src="/img/Byss-und-Abyss2.gif" /></noscript>
         </div>
@@ -207,7 +212,7 @@
         </div>
         <div
           class="mb-3 d-flex justify-content-around align-items-center flex-lg-column position-relative col-lg-3">
-          <div class=" Parallax" style="background-image: url(/img/seamless.jpg);z-index:-1;" x="-1/2"></div>
+          <div class=" Parallax" style="background-image: url(/img/seamless.jpg);z-index:-1;" x="-1/2" y="3"></div>
           <div class="d-inline-block" style="background:url(img/noise/giphy-2.gif);mix-blend-mode: difference;">
             <img class="img-fluid" style="z-index:1;mix-blend-mode:hard-light;" width="250" data-src="img/noise/yarn-add-babel2.gif" io />
             <noscript><img class="img-fluid" style="z-index:1;mix-blend-mode:hard-light;" width="250" src="img/noise/yarn-add-babel2.gif" /></noscript>
@@ -306,14 +311,14 @@
 
     <!-- <block-footer /> -->
     <div class="container-fluid position-relative" style="height:100px;padding:0;">
-      <div class=" Parallax" style="background-image: url(/img/bakst2.jpg);"></div>
+      <div class=" Parallax" style="background-image: url(/img/bakst2.jpg);" y="3"></div>
     </div>
     <script src="js/io.js"></script>
-    <script src="js/parallax.js"></script>
+    <script src="splendid/js/parallax.js"></script>
     <script src="js/images.js"></script>
     <script src="snapsvg/dist/snap.svg-min.js"></script>
     <script async src="js/menu.js"></script>
     <script src="preact/dist/preact.min.js"></script>
-    <script type="module" async  src="splendid/comps/main.jsx"></script>
+    <script async  src="comps/main.js"></script>
   </body>
 </html>
