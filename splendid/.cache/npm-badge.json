@@ -2,5 +2,9 @@
   "splendid": {
     "v": "1.6.1",
     "d": "Static Web Site Generator With JSX As HTML."
+  },
+  "@goa/koa": {
+    "v": "1.1.0",
+    "d": "The Koa2 Fork Optimized With Google Closure Compiler That Has Just 1 Dependency (mime-db)."
   }
 }

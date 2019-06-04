@@ -5,7 +5,7 @@ const map = {}
 
 const io = new IntersectionObserver((entries) => {
   entries.forEach(({ target, isIntersecting }) => {
-    console.log(target, isIntersecting)
+    // console.log(target, isIntersecting)
     if (isIntersecting) {
       const src = target.getAttribute('data-src')
       if (src) {
@@ -14,19 +14,33 @@ const io = new IntersectionObserver((entries) => {
         target.removeAttribute('data-src')
       }
       if (map[target.pid]) {
-        console.log('already in the map')
         return
       }
       const listener = () => {
         const d = target.getBoundingClientRect().top - window.innerHeight
         const offset = d/2
-        const o = Math.floor(offset) + 'px'
-        target.style['background-position-y'] = o
-        const x = target.getAttribute('x')
-        if (x) {
-          const offsetX = d * parseFloat(x)
-          target.style['background-position-x'] = Math.floor(offsetX) + 'px'
+        const minY = target.getAttribute('min-y')
+        const minYMd = target.getAttribute('min-y-md')
+        let mo = offset
+        // if (windowWidth > 768 && minYMd && windowWidth < 940) {
+        //   mo = Math.max(minYMd, offset)
+        // } else
+        if (minY) {
+          mo = Math.max(minY, offset)
         }
+        const o = Math.floor(mo) + 'px'
+        // target.style['background-position-y'] = o
+        const x = target.getAttribute('x')
+        const offsetX = x ? d * parseFloat(x) + 'px' : '0'
+        // target.style['background-position-x'] = Math.floor(offsetX) + 'px'
+        let t = `translate3d(${offsetX}, ${o}, 0)`
+        if (x) {
+          target.style['width'] = '200%'
+          t += ' translateX(-50%)'
+        }
+        target.style['min-height'] = target.parentNode.clientHeight * 3 + 'px'
+        // window.innerHeight * 2.5 + 'px'
+        target.style['transform'] = t
       }
       window.addEventListener('scroll', listener)
       map[target.pid] = listener
@@ -36,6 +50,11 @@ const io = new IntersectionObserver((entries) => {
       delete map[target.pid]
     }
   })
+})
+
+let windowWidth = window.innerWidth
+window.addEventListener('resize', () => {
+  windowWidth = window.innerWidth
 })
 
 let id = 0

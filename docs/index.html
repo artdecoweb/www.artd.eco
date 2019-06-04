@@ -15,15 +15,15 @@
     <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight" rel="stylesheet">
     <link href="css/Parallax.css" rel="stylesheet">
     <link href="css/Adonais.css" rel="stylesheet">
+    <link href="css/npm-badge.css" rel="stylesheet">
   </head>
   <body>
     <!-- <ajax-loader /> -->
     <!-- <add-file>js/menu.json</add-file> -->
-    <div id="menu"></div>
 
     <div id="about" class="container">
       <div class="row">
-        <div class="col-4 align-self-center text-center col-md-4 col-lg-3">
+        <div class="col-6 align-self-center text-center col-sm-4 col-lg-3">
           <img alt="Art Deco Logo" class="img-fluid Logo" data-src="img/logo.png" io />
           <noscript><img alt="Art Deco Logo" class="img-fluid Logo" src="img/logo.png" /></noscript>
         </div>
@@ -35,12 +35,14 @@
         </div>
         <!-- <h1 class="font-effect-anaglyph">Art Deco Code</h1> -->
       </div>
+      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/8.svg" alt="Back To Top" /></a></p>
     </div>
-    
-    <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/8.svg" alt="Back To Top" /></a></p>
-    <div class="container-fluid position-relative"
-      style="background: url('img/letters/background.png');padding-left: 70px;padding-right: 70px">
-      <div class="Triangles Parallax a" style="background: url('img/letters/triangle1.png') left top, url(img/letters/triangle.png) right top; background-repeat: repeat-y;"></div>
+
+    <div id="menu"></div>
+
+    <div id="main-services" class="container-fluid position-relative"
+      style="background: url('img/letters/background.png');padding-left: 70px;padding-right: 70px;overflow: hidden">
+      <div class="Triangles Parallax" style="background: url('img/letters/triangle1.png') left top, url(img/letters/triangle.png) right top; background-repeat: repeat-y;"></div>
       <div class="row">
         <!-- background-image="img/letters/background2.png" -->
                 <div class="col-md-6">
@@ -70,7 +72,63 @@
       </div>
     </div>
     
-    <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/9.svg" alt="Back To Top" /></a></p>
+    <!-- <section-break /> -->
+    <!-- <container-fluid background-image="img/letters/background2.png" -->
+    <!-- padding-left="70px" padding-right="70px" position-relative id="extra-services"> -->
+      <!-- <row> -->
+          <!-- background-image="img/letters/background2.png" -->
+        <!-- <col md-6> -->
+          <!-- <div class="w-100 py-2 text-center"> -->
+            <!-- padding only on medium -->
+            <!-- <img src="img/letters/pwa2.png" style="padding-right:35px" />
+          </div> -->
+          <!-- <h2 style="color:#405a8c">Binaries</h2> -->
+          <!-- <p style="background:rgba(255, 255, 255, 0.5)">
+            Bins are something that can be executed from the terminal and are likely to be liked by sys admins and devops. <a href="/cli.html" class="btn btn-sm btn-outline-secondary" tabindex="-1">CLI Development</a> -->
+    
+            <!-- Such websites pay maximum attention to the time spent on loading the page, because business owners recognise that even a second can result in a significant delta in the conversion rate.  -->
+          <!-- </p> -->
+        <!-- </col> -->
+        <!-- background-image="img/letters/background.png" -->
+        <!-- <col md-6 py-2> -->
+          <!-- <parallax style="background: url('img/services-2/sphinx.svg')" /> -->
+          <!-- <div class="w-100 py-2 text-center">
+            <img src="img/letters/api.png" style="padding-left:35px; margin-bottom:8px;"/>
+          </div> -->
+          <!-- <h2 style="color:#1d827a">Libraries</h2>
+          <p style="background:rgba(255, 255, 255, 0.5)" style="z-index:1"> -->
+    
+    
+            <!-- Such websites pay maximum attention to the time spent on loading the page, because business owners recognise that even a second can result in a significant delta in the conversion rate. In addition, they allow to engage audience with in-browser notifications and help retain users, gain their loyalty and decrease churn. -->
+          <!-- </p> -->
+        <!-- </col> -->
+      <!-- </row> -->
+      <!-- <section-break /> -->
+    <!-- </container-fluid> -->
+    
+    
+    <!-- <div class="position-relative"> -->
+    <div id="lib" class="container-fluid position-relative"
+      style="z-index:-1; background:#FEF6C1; margin-bottom: -10px;overflow: hidden">
+      <div class=" Parallax" style="background-image: url(/img/services-2/sky1.svg);z-index:-1; height:300%" x="-0.5"></div>
+      <div class=" Parallax" style="background-image: url(/img/services-2/sky2.svg);z-index:-1; height:300%" x="-1.5"></div>
+      <img class="w-100 m-0 display-block" data-src="img/services-2/sphinx.svg" io />
+      <noscript><img class="w-100 m-0 display-block" src="img/services-2/sphinx.svg" /></noscript>
+    </div>
+      <!-- <div class="w-100 position-relative" style="height:20px;z-index:-3; background:#e9a62d"></div> -->
+    <!-- </div> -->
+    <div id="lib-info" class="container-fluid" style="background: #e9a62d;">
+      <div class="row">
+        <div class="col">
+          <h2>Libraries</h2>
+          <p style="background: #fffae6; padding:1rem; border-right: 2rem solid #ebdfa0;">
+            A lib consists of a set of functions and classes to execute standard business operations, and exchange data with other data sources. When put together, the functions is the library are used by development team so that their correctness, reliability and user-friendliness take the priority when developing Node.JS libraries. Interfaces and constructors for class abstractions, and records for config object received and returned by functions are documented in an independent type api, simple XML files, from which they are exported for documentation, JSDoc and externs for the JavaScript compiler which is otherwise impossible. We have a build tool to compile libraries into the single NPM dependency with full JSDocumentation support. See the <a title="The Koa2 Fork Optimized With Google Closure Compiler That Has Just 1 Dependency (mime-db)." href="https://npmjs.com/package/@goa/koa" class="NPMBadge"><span class="name">@Goa/Koa</span><span class="version">1.1.0</span></a> project for the example where Koa is built using libraries rewritten in ES6 and where IDE API provided just JSDoc. Learn more about <a href="/api.html" class="btn btn-sm btn-outline-secondary" tabindex="-1">Node.JS Library Development.</a>
+          </p>
+        </div>
+      </div>
+      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/9.svg" alt="Back To Top" /></a></p>
+    </div>
+    
 
     <div class="container" id="Content">
       <div class="row">
@@ -82,7 +140,7 @@
         </div>
         <div style="margin-top:1.5rem; margin-bottom:1.5rem;padding:1.4rem;"
           class="position-relative order-1 order-lg-3 d-flex justify-content-center col-lg-5">
-          <div class=" Parallax a" style="background-image: url(/img/code2.gif);background-repeat: repeat-y; z-index:-1;"></div>
+          <div class=" Parallax" style="background-image: url(/img/code2.gif);background-repeat: repeat-y; z-index:-1;"></div>
           <img alt="Node.JS at the epicenter of modern software development" class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" data-src="/img/Byss-und-Abyss2.gif" io />
           <noscript><img alt="Node.JS at the epicenter of modern software development" class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" src="/img/Byss-und-Abyss2.gif" /></noscript>
         </div>
@@ -182,7 +240,7 @@
         </div>
         <div
           class="mb-3 d-flex justify-content-around align-items-center flex-lg-column position-relative col-lg-3">
-          <div class=" Parallax a" style="background-image: url(/img/seamless.jpg);z-index:-1;" x="-1/2"></div>
+          <div class=" Parallax" style="background-image: url(/img/seamless.jpg);z-index:-1;" x="-1/2"></div>
           <div class="d-inline-block" style="background:url(img/noise/giphy-2.gif);mix-blend-mode: difference;">
             <img class="img-fluid" style="z-index:1;mix-blend-mode:hard-light;" width="250" data-src="img/noise/yarn-add-babel2.gif" io />
             <noscript><img class="img-fluid" style="z-index:1;mix-blend-mode:hard-light;" width="250" src="img/noise/yarn-add-babel2.gif" /></noscript>
@@ -281,7 +339,7 @@
 
     <!-- <block-footer /> -->
     <div class="container-fluid position-relative" style="height:100px;padding:0;">
-      <div class=" Parallax a" style="background-image: url(/img/bakst2.jpg);"></div>
+      <div class=" Parallax" style="background-image: url(/img/bakst2.jpg);"></div>
     </div>
     <script src="js/io.js"></script>
     <script src="js/parallax.js"></script>

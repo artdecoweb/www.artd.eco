@@ -1,7 +1,5 @@
 const renameMaps = {
-  "styles/Parallax.css": {
-    "Parallax": "a"
-  },
+  "styles/Parallax.css": {},
   "styles/Adonais.css": {
     "Letter": "a",
     "Image": "b",
@@ -20,7 +18,22 @@ import makeClassGetter from './__mcg'
 import { render } from 'preact'
 import Components from '../components'
 
-[{
+function makeIo() {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting) {
+        if (target.render) {
+          console.warn('rendering component %s into the element %s ',
+            target.render.meta.key, target.render.meta.id)
+          target.render()
+          io.unobserve(target)
+        }
+      }
+    })
+  }, { rootMargin: '0px 0px 76px 0px' })
+  return io
+}
+const io = makeIo();[{
   key: 'adonais',
   id: 'c9848',
   props: {
@@ -34,6 +47,10 @@ import Components from '../components'
       return
     }
     const parent = el.parentElement
+    if (!parent) {
+      console.warn('Parent of element for component %s with id %s not found', key, id)
+      return
+    }
     const Comp = Components[key]
     if (!Comp) {
       console.warn('Component with key %s was not found.', key)
@@ -42,5 +59,9 @@ import Components from '../components'
     props.splendid = { export() {}, addCSS(stylesheet) {
       return makeClassGetter(renameMaps[stylesheet])
     } }
-    render(h(Comp, props, children), parent, el)
+    parent.render = () => {
+      render(h(Comp, props, children), parent, el)
+    }
+    parent.render.meta = { key, id }
+    io.observe(parent)
   })
