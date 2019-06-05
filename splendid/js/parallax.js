@@ -22,10 +22,17 @@ const io = new IntersectionObserver((entries) => {
       let x = target.getAttribute('x')
       if (x === null) x = 0
       x = parseFloat(x)
+
+      let oy = target.getAttribute('oy')
+      if (oy === null) oy = 0
+      oy = parseFloat(oy)
       // let X = x ? d * parseFloat(x) : 0
 
       const listener = () => {
-        const d = target.getBoundingClientRect().top - window.innerHeight
+        const box = target.getBoundingClientRect()
+        const { top, left } = box
+        const d = top - window.innerHeight
+
         let Y = 0
         let X = 0
 
@@ -44,22 +51,21 @@ const io = new IntersectionObserver((entries) => {
         // } else
 
         // target.style['background-position-y'] = o
-
         // target.style['background-position-x'] = Math.floor(offsetX) + 'px'
-        if (x) {
-          X = d * x
-          const w = target.parentNode.clientWidth
-          // offsetX
-          // t += `translateX(-${w}px)`
-          // console.log('shifting X by w * 2', X)
-          X = X - w * 2
-          // console.log(X)
-          // console.log('setting width')
-          target.style['width'] = target.parentNode.clientWidth * 4 + 'px'
+
+        if (x) { // should this be -x at the moment
+          const delta = d * x
+
+          // const totalWidth = window.outerWidth
+          // X = -totalWidth + delta
+          X = -delta
+          target.style['min-width'] = floatToPx(Math.abs(delta) * 10)
         }
 
         const ch = `${target.parentNode.clientHeight * 3}px`
         target.style['min-height'] = ch
+
+        Y += oy
 
         const t = `translate3d(${floatToPx(X)}, ${floatToPx(Y)}, 0)`
         target.style['transform'] = t

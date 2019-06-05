@@ -1,9 +1,9 @@
 const Parallax = ({
   splendid, style, 'background-image': backgroundImage, class: className, x,
-  'min-y': minY, 'min-y-md': minYMd, y = 3,
+  'min-y': minY, 'min-y-md': minYMd, y = 2, oy = 0, 'z-index': zIndex,
   // top = 0, left = 0, 'position-absolute': positionAbsolute = true,
 }) => {
-  if (splendid.debug) splendid.debug()
+  // if (splendid.debug) splendid.debug()
   const prefix = 'Parallax'
   splendid.addCSS('styles/Parallax.css', null, { whitelist: 'Parallax' })
   splendid.addScript('js/io.js', false, { nocompile: true })
@@ -14,6 +14,9 @@ const Parallax = ({
     ...(backgroundImage ? {
       'background-image': `url(${backgroundImage})`,
     } : {}),
+    ...(zIndex ? {
+      'z-index': zIndex,
+    } : {}),
   }
   style = [
     ...Object.keys(st).map((k) => `${k}: ${st[k]}`),
@@ -22,7 +25,7 @@ const Parallax = ({
   const cn = [className, prefix].join(' ')
   return <div className={cn} style={style} x={x}
     min-y={minY} min-y-md={minYMd}
-    y={y} />
+    y={y} oy={oy} />
 }
 
 export default Parallax

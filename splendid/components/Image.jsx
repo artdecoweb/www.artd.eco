@@ -24,7 +24,13 @@ import { Component } from 'preact'
 // let images = []
 /* eslint-disable react/jsx-key */
 
+/**
+ * @todo the picture tag, webp transformations, exif metadata.
+ */
 class Image extends Component {
+  /**
+   * @suppress {inconsistentReturn} `competent` handles JSX arrays.
+   */
   render({ src, splendid, ...props }) {
     // if (src == 'img/logo.png') debugger
     splendid.addScript('js/io.js', false, { nocompile: true })
