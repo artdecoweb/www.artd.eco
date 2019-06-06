@@ -2,6 +2,7 @@ import Adonais from './Adonais'
 import Parallax from './Parallax'
 import Feature from './Feature'
 import Sky from './Sky'
+
 export { default as Pages } from './Menu'
 
 export const Figure = ({ img, alt, children }) => {
