@@ -1,29 +1,22 @@
+import { controlStyle } from 'splendid'
+
 const Parallax = ({
   splendid, style, 'background-image': backgroundImage, class: className, x,
-  'min-y': minY, 'min-y-md': minYMd, y = 2, oy = 0, 'z-index': zIndex,
-  // top = 0, left = 0, 'position-absolute': positionAbsolute = true,
+  'min-y': minY, 'min-y-md': minYMd, y = 2, oy = 0, ...props
 }) => {
   // if (splendid.debug) splendid.debug()
   const prefix = 'Parallax'
-  splendid.addCSS('styles/Parallax.css', null, { whitelist: 'Parallax' })
-  splendid.addScript('js/io.js', false, { nocompile: true })
+  splendid.addCSS('styles/Parallax.css', null, { whitelist: prefix })
+  splendid.polyfill('intersection-observer')
   splendid.addScript('splendid/js/parallax.js')
   if (backgroundImage) splendid.addFile(backgroundImage)
 
-  const st = {
-    ...(backgroundImage ? {
-      'background-image': `url(${backgroundImage})`,
-    } : {}),
-    ...(zIndex ? {
-      'z-index': zIndex,
-    } : {}),
-  }
-  style = [
-    ...Object.keys(st).map((k) => `${k}: ${st[k]}`),
-    style,
-  ].join(';')
+  const st = controlStyle(style, {
+    ...(backgroundImage ? { 'background-image': `url(${backgroundImage})` } : {}),
+    ...props,
+  })
   const cn = [className, prefix].join(' ')
-  return <div className={cn} style={style} x={x}
+  return <div className={cn} style={st} x={x}
     min-y={minY} min-y-md={minYMd}
     y={y} oy={oy} />
 }

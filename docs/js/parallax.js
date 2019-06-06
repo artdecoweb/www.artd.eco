@@ -1,6 +1,0 @@
-(function(){function e(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}
-var k=[].concat(function(b){if(!(b instanceof Array)){var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:e(b)};for(var a=[];!(c=b.next()).done;)a.push(c.value);b=a}return b}(document.querySelectorAll(".Parallax"))),l={},m=new IntersectionObserver(function(b){b.forEach(function(c){var a=c.target;if(c.isIntersecting){if(c=a.getAttribute("data-src"))a.style["background-image"]=c,a.removeAttribute("data-src");l[a.a]||(c=function(){var f=a.getBoundingClientRect().top-
-window.innerHeight,d=f/2,g=a.getAttribute("min-y");a.getAttribute("min-y-md");var h=d;g&&(h=Math.max(g,d));g=Math.floor(h)+"px";d=a.getAttribute("x");f="translate3d("+(d?f*parseFloat(d)+"px":"0")+", "+g+", 0)";d&&(a.style.width=3*a.parentNode.clientWidth+"px",f+=" translateX(-75%)");a.style["min-height"]=3*a.parentNode.clientHeight+"px";a.style.transform=f},window.addEventListener("scroll",c),l[a.a]=c)}else a.a in l&&(window.removeEventListener("scroll",l[a.a]),delete l[a.a])})});
-window.addEventListener("resize",function(){});var n=0;k.forEach(function(b){b.a=n++;b.setAttribute("data-src",b.style["background-image"]);b.style["background-image"]=null;m.observe(b)});}).call(this);
-
-//# sourceMappingURL=parallax.js.map

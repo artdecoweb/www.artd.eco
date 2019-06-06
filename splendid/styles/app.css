@@ -148,7 +148,7 @@ h1 {
   background-size: 30px !important;
 }
 
-#lib .Parallax {
+#lib .Parallax, .SunImg {
   background-repeat: repeat-x;
   zoom: 0.4;
 }
@@ -158,7 +158,7 @@ h1 {
 
 /* START MEDIA */
 @media (min-width: 576px) {
-  #lib .Parallax {
+  #lib .Parallax, .SunImg {
     zoom: 0.6;
   }
   .RedBox {
@@ -179,7 +179,7 @@ h1 {
   }
 }
 @media (min-width: 768px) {
-  #lib .Parallax {
+  #lib .Parallax, .SunImg {
     zoom: 0.7;
   }
   #cup {
@@ -196,7 +196,7 @@ h1 {
   }
 }
 @media (min-width: 941px) {
-  #lib .Parallax {
+  #lib .Parallax, .SunImg {
     zoom: 1;
   }
   .Triangles {

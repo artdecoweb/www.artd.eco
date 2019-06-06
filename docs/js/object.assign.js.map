@@ -1,9 +1,0 @@
-{
-"version":3,
-"file":"docs/js/object.assign.js",
-"lineCount":1,
-"mappings":"A,YAA4B,UAA5B,EAAI,MAAOA,OAAAC,OAAX,EAEED,MAAAE,eAAA,CAAsBF,MAAtB,CAA8B,QAA9B,CAAwC,CACtCG,MAAOF,QAAe,CAACG,CAAD,CAASC,CAAT,CAAgB,CAEpC,GAAc,IAAd,EAAID,CAAJ,CACE,KAAM,KAAIE,SAAJ,CAAc,4CAAd,CAAN,CAKF,IAFA,IAAIC,EAAKP,MAAA,CAAOI,CAAP,CAAT,CAESI,EAAQ,CAAjB,CAAoBA,CAApB,CAA4BC,SAAAC,OAA5B,CAA8CF,CAAA,EAA9C,CAAuD,CACrD,IAAIG,EAAaF,SAAA,CAAUD,CAAV,CAEjB,IAAkB,IAAlB,EAAIG,CAAJ,CACE,IAAKC,IAAIA,CAAT,GAAoBD,EAApB,CAEMX,MAAAa,UAAAC,eAAAC,KAAA,CAAqCJ,CAArC,CAAiDC,CAAjD,CAAJ,GACEL,CAAA,CAAGK,CAAH,CADF,CACgBD,CAAA,CAAWC,CAAX,CADhB,CANiD,CAYvD,MAAOL,EApB6B,CADA,CAuBtCS,SAAU,CAAA,CAvB4B,CAwBtCC,aAAc,CAAA,CAxBwB,CAAxC;",
-"sources":["splendid/js/object.assign.js"],
-"sourcesContent":["if (typeof Object.assign != 'function') {\n  // Must be writable: true, enumerable: false, configurable: true\n  Object.defineProperty(Object, 'assign', {\n    value: function assign(target, varAr) { // .length of function is 2\n      'use strict'\n      if (target == null) { // TypeError if undefined or null\n        throw new TypeError('Cannot convert undefined or null to object')\n      }\n\n      var to = Object(target)\n\n      for (var index = 1; index < arguments.length; index++) {\n        var nextSource = arguments[index]\n\n        if (nextSource != null) { // Skip over if undefined or null\n          for (var nextKey in nextSource) {\n            // Avoid bugs when hasOwnProperty is shadowed\n            if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {\n              to[nextKey] = nextSource[nextKey]\n            }\n          }\n        }\n      }\n      return to\n    },\n    writable: true,\n    configurable: true,\n  })\n}"],
-"names":["Object","assign","defineProperty","value","target","varAr","TypeError","to","index","arguments","length","nextSource","nextKey","prototype","hasOwnProperty","call","writable","configurable"]
-}
