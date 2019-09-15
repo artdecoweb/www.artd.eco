@@ -7,6 +7,7 @@
     "test": "yarn t test/spec test/mask",
     "dev": "splendid-dev -s -e dev",
     "prod": "splendid-dev -s",
+    "svg": "depack-dev js/svg-anim.js -a -o splendid/js/svg-anim.js -i",
     "doc": "NODE_DEBUG=doc doc -o README.md"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "zoroaster": "^4.1.2"
   },
   "dependencies": {
+    "@lemuria/load-scripts": "^1.0.0",
     "snapsvg": "^0.5.1"
   }
 }

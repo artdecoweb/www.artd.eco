@@ -1,5 +1,6 @@
 import '../js/load-noise'
 import '../js/parallax'
+import '../js/object.assign'
 import __renameMap0 from './__rename-maps/styles/Adonais'
 import __renameMap1 from './__rename-maps/styles/Parallax'
 import makeClassGetter from './__mcg'

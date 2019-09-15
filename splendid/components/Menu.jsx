@@ -1,58 +1,49 @@
 /* eslint-env browser */
-import SVGAnim from '@artdeco/snapsvg-animator'
-import fetch from 'unfetch'
+import loadScripts from '@lemuria/load-scripts'
 import { Component } from 'preact'
-
-const loadSnap = async () => {
-  await new Promise((r, j) => {
-    const script = document.createElement('script')
-    script.src = 'snapsvg/dist/snap.svg-min.js'
-    document.body.appendChild(script)
-    script.onload = r
-    script.onerror = j
-  })
-}
-
-const loadMenu = async () => {
-  const res = await fetch('js/menu.json')
-  return await res.json()
-}
 
 export default class Menu extends Component {
   constructor() {
     super()
     this.state = { json: null }
   }
-  async componentWillMount() {
-    const [json] = await Promise.all([
-      loadMenu(),
-      loadSnap(),
-    ])
-    this.setState({ json })
+  componentWillMount() {
+    loadScripts([
+      'js/menu.json',
+      'snapsvg/dist/snap.svg-min.js',
+      'js/svg-anim.js',
+    ], (err, res) => {
+      if (!res) return
+      const [json] = res
+      this.setState({ json: JSON.parse(/** @type {string} */ (json)) })
+    })
   }
   serverRender({ splendid }) {
     splendid.export()
     splendid.addFile('js/menu.json')
-    splendid.addFile('node_modules://snapsvg/dist/snap.svg-min.js')
+    splendid.addFile('js/svg-anim.js.map')
     splendid.addFile('img/menu.svg')
-    return (<div id="menu" style="width:100%;"><img style="width:100%;" alt="menu" src="img/menu.svg" /></div>)
+    splendid.addExtern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
+    return (<div id="menu" style="width:100%;"><img style="max-width:100%;" alt="menu" src="img/menu.svg" /></div>)
+  }
+  cancelRender() {
+    const err = new Error('loading...')
+    err['cancelRender'] = true
+    throw err
   }
   render() {
     const menuContainer = document.getElementById('menu')
     if (!this.state.json) {
-      const err = new Error('loading...')
-      err['cancelRender'] = true
-      throw err
+      this.cancelRender()
     }
-    // return menuContainer
 
     const width = 1226
     const height = 818
 
-    const comp = new SVGAnim(this.state.json, width, height)
+    /** @type {!_snapsvgAnimator.SVGAnim} */
+    const comp = new window['SVGAnim'](this.state.json, width, height)
     const n = comp.s.node
-    n.style['width'] = '100%'
-    menuContainer.querySelector('img').replaceWith(n)
+    n.style['max-width'] = '100%'
 
     setTimeout(() => {
       const about = n.querySelector('svg > g > g[token="4"]')
@@ -64,8 +55,10 @@ export default class Menu extends Component {
       assignLink(node, 'node')
       assignLink(packages, 'packages')
       assignLink(contact, 'contact')
+
+      menuContainer.querySelector('img').replaceWith(n)
     }, 100)
-    return
+    return null
   }
 }
 
