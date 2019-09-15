@@ -1,6 +1,6 @@
 /* eslint-env browser */
+// export default function () {
 const map = {}
-
 const io = new IntersectionObserver((entries) => {
   entries.forEach(({ target, isIntersecting }) => {
     // console.log(target, isIntersecting)
@@ -102,11 +102,13 @@ const start = () => {
     io.observe(img)
   })
 }
+
 window['IO'] = () => {
   start()
 }
 
 start()
+// }
 // window.addEventListener('scroll', () => {
 //   els.forEach((el) => {
 //     const d = el.getBoundingClientRect().top - window.innerHeight

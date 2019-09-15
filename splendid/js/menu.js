@@ -1,26 +1,8 @@
 /* eslint-env browser */ /*- global SVGAnim */
-import SVGAnim from '@artdeco/snapsvg-animator'
 const json = require('./menu.json')
-
-const menuContainer = document.getElementById('menu')
-
-const width = 1226
-const height = 818
-
-const comp = new SVGAnim(json, width, height)
-menuContainer.appendChild(comp.s.node)
-
-setTimeout(() => {
-  const about = menuContainer.querySelector('svg > g > g[token="4"]')
-  const node = menuContainer.querySelector('svg > g > g[token="3"]')
-  const packages = menuContainer.querySelector('svg > g > g[token="2"]')
-  const contact = menuContainer.querySelector('svg > g > g[token="1"]')
-
-  assignLink(about, 'about')
-  assignLink(node, 'node')
-  assignLink(packages, 'packages')
-  assignLink(contact, 'contact')
-}, 100)
+/*
+import json from './menu.json'
+*/
 
 // var jsonfile = 'js/menu.json',
   // AJAX_req
@@ -46,12 +28,6 @@ setTimeout(() => {
 //     }, 100)
 //   }
 // }
-
-function assignLink(target, name) {
-  target.onclick = function () {
-    window.location = '#' + name
-  }
-}
 
 // function AJAX_JSON_Req(url) {
 //   AJAX_req = new XMLHttpRequest()

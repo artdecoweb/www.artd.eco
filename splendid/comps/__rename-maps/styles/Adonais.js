@@ -1,0 +1,1 @@
+export default {"Letter":"a","Image":"b","A":"c","I":"d","A2":"e","D":"f","O":"g","N":"h","S":"i","Copy":"j","Noise":"k"}

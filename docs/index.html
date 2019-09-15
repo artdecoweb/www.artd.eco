@@ -2,19 +2,30 @@
 <html lang="en" class="no-js">
   <head>
     <title>Art Deco: Node.JS Development Company</title>
-    <meta content="https://artd.eco/index.html" property="og:url" />
-    <meta content="Art Deco: Node.JS Development Company" property="og:title" />
-    <meta content="website" property="og:type" />
-    
+    <meta content="https://artd.eco/index.html" property="og:url">
+    <meta content="Art Deco: Node.JS Development Company" property="og:title">
+    <meta content="website" property="og:type">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Art Deco is a specialised Node.JS development company that creates back-end servers, cloud and serverless applications and front-end websites and PWAs of outstanding quality, optimised with JavaScript compiler and with complete testing and documentation coverage.">
+    <meta
+      content="Art Deco is specialised Node.JS company: back-end servers, cloud &amp; serverless apps and front-end websites and optimised PWAs of outstanding quality." name="description">
     <link href="img/favicon.png" sizes="32x32" rel="shortcut icon">
+    <link rel="preload" href="snapsvg/dist/snap.svg-min.js" as="script">
+    <link href="styles/combined.css" rel="stylesheet">
     <script>document.documentElement.classList.remove("no-js")</script>
-    
-    <link href="styles/combined.css" rel="stylesheet" />
-    
-    
     <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight" rel="stylesheet">
+    <style>
+      .no-js [data-io] { display: none!important }
+    </style>
+    <script defer src="js/polyfill/intersection-observer.js"></script>
+    <script defer src="js/images.js"></script>
+    <script crossorigin data-src="preact/dist/preact.min.js"></script>
+    <script crossorigin data-src="comps/main.js"></script>
+    <script>
+      document.documentElement.classList.remove("no-js")
+    </script>
+
+    <link rel="preload" href="preact/dist/preact.min.js" as="script" crossorigin>
+    <link rel="preload" href="comps/main.js" as="script" crossorigin>
   </head>
   <body>
     <!-- <ajax-loader /> -->
@@ -23,292 +34,413 @@
     <div id="about" class="container">
       <div class="row">
         <div class="col-6 align-self-center text-center col-sm-4 col-lg-3">
-          <img alt="Art Deco Logo" class="img-fluid Logo" io data-src="img/logo.png" />
-          <noscript><img alt="Art Deco Logo" class="img-fluid Logo" src="img/logo.png" /></noscript>
+          <img alt="Art Deco Logo" class="img-fluid Logo" data-io data-src="img/logo.png">
+          <noscript><img alt="Art Deco Logo" class="img-fluid Logo" src="img/logo.png"></noscript>
         </div>
         <div class="col">
-          <h1>Art Deco™: The <em>Node.JS</em> Development Company In London</h1>
+          <h1 id="art-deco-the-emnodejsem-development-company-in-london">Art Deco™: The <em>Node.JS</em> Development Company In London</h1>
           <p>
             Art Deco is a UK-based, professional web development company: we implement back-end servers in <em>Node.JS</em> that power websites and services for people and enterprises, utilising cloud architecture to handle variable loads and minimise costs. We also create front-end applications and progressive web apps (PWAs) that connect to back-ends using the gold standard techniques of software engineering. Finally, we make novel developer tools of exceptional quality for ourselves, and contribute them to Open Source for thousands other developers. Art Deco crafts noble software of outstanding standard and provides the best customer service to its clients.
           </p>
         </div>
         <!-- <h1 class="font-effect-anaglyph">Art Deco Code</h1> -->
       </div>
-      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/8.svg" alt="Back To Top" /></a></p>
+      <p class="SectionBreak">
+        <a title="Back To Top" href="#top">
+          <img src="section-breaks/9.svg" alt="Back To Top"></a>
+      </p>
     </div>
 
-    <div id="menu"></div>
+    <div id="menu" style="width:100%;"><img style="width:100%;" alt="menu" src="img/menu.svg"></div>
+    <!-- <div id="menu"></div> -->
 
-    <div id="main-services" class="container-fluid position-relative"
-      style="background-image: url('img/letters/background.png'); padding-left: 70px; padding-right: 70px; overflow: hidden;">
-      <div class="Triangles Parallax" style="background: url('img/letters/triangle1.png') left top, url(img/letters/triangle.png) right top; background-repeat: repeat-y;" y="2" oy="0"></div>
-      <div class="row">
-        <!-- background-image="img/letters/background2.png" -->
-                <div class="col-md-6">
-        <div class="w-100 py-2 text-center">
-          <!-- padding only on medium -->
-          <img style="padding-right:35px" io data-src="img/letters/pwa2.png" />
-          <noscript><img style="padding-right:35px" src="img/letters/pwa2.png" /></noscript>
-        </div>
-        <h2 style="color:#405a8c">Progressive Web Apps</h2>
-        <p style="background:rgba(255, 255, 255, 0.5)">
-          PWAs are the bleeding edge of web technology that can be thought of as maximally optimised, highly performant websites, that in addition to working online, can be installed as an app on smartphones and accessed offline. They also allow to engage audience with in-browser notifications and help retain users, gain their loyalty and decrease churn. <a href="/pwa.html" class="btn btn-sm btn-outline-secondary" tabindex="-1">Read More</a>
-          <!-- Such websites pay maximum attention to the time spent on loading the page, because business owners recognise that even a second can result in a significant delta in the conversion rate.  -->
-        </p>
-                </div>
-                <!-- background-image="img/letters/background.png" -->
-                <div class="col-md-6 py-2">
-        <div class="w-100 py-2 text-center">
-          <img style="padding-left:35px; margin-bottom:8px;" io data-src="img/letters/api.png" />
-          <noscript><img style="padding-left:35px; margin-bottom:8px;" src="img/letters/api.png" /></noscript>
-        </div>
-        <h2 style="color:#1d827a">Web Servers</h2>
-        <p style="background:rgba(255, 255, 255, 0.5)">
-          APIs, or Application Programming Interfaces, are the back-end implementations that front-ends like PWAs talk to to exchange data. Traditionally run on a server, today they are often deployed on serverless architecture and are used to perform such business logic as updating data in the database, processing media files and communicating with 3rd party services. <a href="/api.html" class="btn btn-sm btn-outline-secondary" tabindex="-1">Read More</a>
-          <!-- Such websites pay maximum attention to the time spent on loading the page, because business owners recognise that even a second can result in a significant delta in the conversion rate. In addition, they allow to engage audience with in-browser notifications and help retain users, gain their loyalty and decrease churn. -->
-        </p>
-                </div>
-      </div>
-    </div>
-    
-    <!-- <section-break /> -->
+    <!-- <block-2-services /> -->
     <!-- <block-3-services-2 /> -->
 
-    <div id="lib" style="overflow:hidden;z-index:-1; background:#FEF6C1; margin-bottom: -10px;"
-      class="container-fluid position-relative">
-      <img class="position-absolute m-0 display-block SunImg" style="top: 0px; left: 0px; z-index: -2; mix-blend-mode: color-burn; min-width: 1px; min-height: 1px;" io data-src="img/services-2/round-bg.png" />
-      <noscript><img class="position-absolute m-0 display-block SunImg" style="top: 0px; left: 0px; z-index: -2; mix-blend-mode: color-burn; min-width: 1px; min-height: 1px;" src="img/services-2/round-bg.png" /></noscript>
-      <div class=" Parallax" style="background-image:url(/img/services-2/sky-simple1_.png);z-index:-1;z-index:-1;" x="-0.5" y="0" oy="0"></div>
-      <div class=" Parallax" style="background-image: url(/img/services-2/sky-simple2_.png); z-index: -2;" x="-1.5" y="0" oy="150"></div>
-      <img class="position-absolute m-0 display-block SunImg" style="bottom: 0px; left: 0px; z-index: -1;" io data-src="img/services-2/crane.gif" />
-      <noscript><img class="position-absolute m-0 display-block SunImg" style="bottom: 0px; left: 0px; z-index: -1;" src="img/services-2/crane.gif" /></noscript>
-      <img class="w-100 m-0 display-block" io data-src="img/services-2/sphinx.svg" />
-      <noscript><img class="w-100 m-0 display-block" src="img/services-2/sphinx.svg" /></noscript>
-    </div>
+    <!-- <block-4-lib />
     <div class="w-100 position-relative"
       style="height:20px;z-index:-3; background:#e9a62d"></div>
 
     <div id="lib-info" style="background: #e9a62d" class="container-fluid">
       <div class="row">
         <div class="col">
-          <h2>Libraries</h2>
+          <h2 id="libraries">Libraries</h2>
           <p style="background: #fffae6; padding:1rem; border-right: 2rem solid #ebdfa0;">
-            A lib consists of a set of functions and classes to execute standard business operations, and exchange data with other data sources. When put together, the functions is the library are used by development team so that their correctness, reliability and user-friendliness take the priority when developing Node.JS libraries. Interfaces and constructors for class abstractions, and records for config object received and returned by functions are documented in an independent type api, simple XML files, from which they are exported for documentation, JSDoc and externs for the JavaScript compiler which is otherwise impossible. We have a build tool to compile libraries into the single NPM dependency with full JSDocumentation support. See the <a title="The Koa2 Fork Optimized With Google Closure Compiler That Has Just 1 Dependency (mime-db)." href="https://npmjs.com/package/@goa/koa" class="NPMBadge"><span class="name">@Goa/Koa</span><span class="version">1.1.0</span></a> project for the example where Koa is built using libraries rewritten in ES6 and where IDE API provided just JSDoc. Learn more about <a href="/api.html" class="btn btn-sm btn-outline-secondary" tabindex="-1">Node.JS Library Development.</a>
+            A lib consists of a set of functions and classes to execute standard business operations, and exchange data with other data sources. When put together, the functions is the library are used by development team so that their correctness, reliability and user-friendliness take the priority when developing Node.JS libraries. Interfaces and constructors for class abstractions, and records for config object received and returned by functions are documented in an independent type api, simple XML files, from which they are exported for documentation, JSDoc and externs for the JavaScript compiler which is otherwise impossible. We have a build tool to compile libraries into the single NPM dependency with full JSDocumentation support. See the <a
+   title="The Koa2 Fork Optimized With Google Closure Compiler That Has Just 1 Dependency (mime-db)." class="NPMBadge" href="https://npmjs.com/package/@goa/koa">
+   <span class="name">@Goa/Koa</span><span class="version">1.1.3</span></a> project for the example where Koa is built using libraries rewritten in ES6 and where IDE API provided just JSDoc. Learn more about <a tabindex="-1" class="btn btn-sm btn-outline-secondary" href="/api.html">
+   Node.JS Library Development.</a>
           </p>
         </div>
       </div>
-      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/9.svg" alt="Back To Top" /></a></p>
+      <p class="SectionBreak">
+        <a title="Back To Top" href="#top">
+          <img src="section-breaks/10.svg" alt="Back To Top"></a>
+      </p>
     </div>
-    
+     -->
 
-    <div class="container" id="Content">
-      <div class="row">
-        <div id="node" class="order-2 col">
-          <h2><em>Node.JS</em> &mdash; Your Language Of Choice</h2>
-          <p>
-            Software Engineering is an art, science and technology combined. It helps to automate processes and improve the standard of living, relieving humans of monotonous operations that can be solved using a computer program. 100 years ago, with the advent of new machinery, there was a promise for the future where people's time could be taken off of work, and put into spending their lives focusing on human tasks and communications. This has partly been achieved, but we have a long way to go still, and after reaching the required stage of progress in hardware, we are now peaking in the course of software evolution. The species that is increasingly dominating the environment and taking the central stage in this process of natural selection of the fittest is <em>Node.JS</em>. It is no surprise that in today's word, characterised by globalisation and interconnectedness, the programming language born on the web, is becoming <em>The One</em> of the web, who will redeem it and remake it in the way it's supposed to be.
-          </p>
-        </div>
-        <div style="overflow:hidden;margin-top:1.5rem; margin-bottom:1.5rem;padding:1.4rem;"
-          class="position-relative order-1 order-lg-3 d-flex justify-content-center col-lg-5">
-          <div class=" Parallax" style="background-image:url(/img/code2.gif);background-repeat: repeat-y; z-index:-1;" y="2" oy="0"></div>
-          <img alt="Node.JS at the epicenter of modern software development" class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" io data-src="/img/Byss-und-Abyss2.gif" />
-          <noscript><img alt="Node.JS at the epicenter of modern software development" class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" src="/img/Byss-und-Abyss2.gif" /></noscript>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col">
-          <div class="float-left d-inline-block pr-3">
-            <span class="Adonais position-relative mb-3 align-top" id="c9848"><img class="b" src="img/adonais/back.jpg" style="position:relative; opacity:0;" /><img class="b" src="img/adonais/back.jpg" /><a href="#art-deco"><img class="c b" src="img/adonais/a2.png" style="top: 112px; left: 219px;" /></a><a href="#implementation"><img class="d b" src="img/adonais/I.png" style="top: 208px; left: 175px;" /></a><a href="#automated-testing"><img class="e b" src="img/adonais/A3.png" style="top: 207px; left: 73px;" /></a><a href="#documentation"><img class="f b" src="img/adonais/D.png" style="top: 123px; left: 15px;" /></a><a href="#optimisation"><img class="g b" src="img/adonais/O.png" style="top: 28px; left: 67px;" /></a><a href="#npm-packages"><img class="h b" src="img/adonais/N.png" style="top: 25px; left: 169px;" /></a><a href="#software"><img class="i b" src="img/adonais/S.png" style="top: 120px; left: 125px;" /></a></span>
-            <p class="text-monospace mt-3 mb-0" style="max-width:271px; font-size:small;">
-              ^ hover over animated letters for an intro to a software engineering practice, and click to move to its description on the page below.
-            </p>
-          </div>
-          <p>
-            By bridging the gap between front-end development and back-end programming, and utilising the agility of functional paradigm together with the abstractions of OOP that help developer experience and documentation, <em>Node.JS</em> is winning hearts and souls and finding hundreds of new fans, both indie developers as well as development companies, all over the world each day. The applications of today designed to connect services, users and automatons can benefit the most when they are written in <em>Node.JS</em>, and <strong>Art Deco</strong> specialises in this field of modern web computing, applying the best practises of classical software engineering such as thorough automated testing, documentation plentiful of examples, and user-centered design together with more present-day trends of cloud and serverless deployment, single-page and progressive web apps and open source code coordination techniques like NPM scopes and GitHub orgs that help to pass the codebase between hired and future teams. Our approach is that each program is a piece of art that can be perfected to the single line of code by employing a scientific method that consists of conducting research to understand the problem at hand, coming up with a possible solution, evaluating it against business requirements while rigorously and critically documenting the findings. The outcome is technology that is unique to each client, easy and pleasant to use for her customers and stakeholders, and straightforward to understand and maintain for other teams of developers.
-          </p>
-        </div>
-      </div>
-      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/0.svg" alt="Back To Top" width="25" /></a></p>
-      
-      <div id="art-deco" class="row Feature">
-        <div class="col"><h2 style="background: #8ea6aa; color: #d1d2ca; text-shadow: 1px 1px #4e675b;" class="text-center"><img class="float-right" style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" io data-src="img/sun.png" />
-        <noscript><img class="float-right" style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" src="img/sun.png" /></noscript> Art Deco</h2><img alt="Art Deco" class="img-fluid img-fluid rounded float-left mr-3" io data-src="img/posters/vogue1.jpg" />
-        <noscript><img alt="Art Deco" class="img-fluid img-fluid rounded float-left mr-3" src="img/posters/vogue1.jpg" /></noscript><p>
-          Art Deco is a style that came into existence almost a hundred years ago and stretched for a few decades, and although the early French &quot;high&quot; Art Deco is mainly presented in the works of sculptors and textile and furniture designers, the majority would recognise it for everything modern that appeared in the 1920s: skyscrapers, ocean liners, cinemas and home technology such as radios.
-          Because tech is always logical and scientific, it is reflected in Art Deco's usage of geometrical shapes as influenced by cubism, however what makes it <em>decorative</em> is its ability to keep in touch with nature — Art Deco's themes would more often than not incorporate animal and plant life, so that people can feel more relaxed at home. It also portrays human as a powerful spiritual entity that with his mind is conquering the world and creating a better future. All of these concepts are the foundation of the philosophy of our company: we believe that the human race at the moment is going through the next coil of technological emergence and the last century has laid the foundations for the development of the web, cloud computing and AI. Despite the benefits that technology brings us, we also recognise its potential to lead people astray and consume them, rather than being consumed, so we stand by the intrinsic human values such as face-to-face communication and connectedness with nature and advocate the good use of technology that helps to maintain those morals but does not replace them. Finally, we highly appreciate aristocratic virtues such as rationality and integrity, reject mainstream opinions and work on making noble software that through its quality and modern simplicity improves the world.
-        </p></div>
-      </div>
-      <!-- The style with its bold typefaces, solid colours and gradients that became possible with the invention of the airbrush, was influenced by cubism that tried to express nature in geometrical forms.  -->
-      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/1.svg" alt="Back To Top" width="25" /></a></p>
-      <div id="implementation" class="row Feature">
-        <div class="col"><h2 style="background: #e84936; color: white; text-shadow: 1px 1px grey;" class="text-center"><img class="float-left" io data-src="img/sun.png" />
-        <noscript><img class="float-left" src="img/sun.png" /></noscript> Implementation</h2><img alt="Implementation" class="img-fluid img-fluid rounded float-right ml-3" io data-src="img/posters/implementation.jpg" />
-        <noscript><img alt="Implementation" class="img-fluid img-fluid rounded float-right ml-3" src="img/posters/implementation.jpg" /></noscript><p>
-          In our code, we use both functional and object-oriented approaches according to the problem being solved, as well as the latest standard of JavaScript programming language with EcmaScript modules and the most up-to-date syntax including object spread and rest operators, arrow and async functions and JSX components. When others choose to stick to the previous version of the standard and keep using <span class="tm">require</span> statements instead of imports just because <em>Node.JS</em> has not added the support for the later and install Babel for their <em>JSX</em>, we created our own 0-dependency transpiler <a href="/alamode.html">ÀLaMode</a>, which offers a unique solution by transpiling the source code using regular expressions, and allows to write modern code without being paused by insufficiencies of the runtime. Like the transpiler, our implementations are free of external code and are straight to the point: they focus on solving the problem at hand with the maximum help of the language itself so that no client's time is wasted on setting up and adjusting 3rd party tools. If you're looking for a <em>Node.JS</em> development company that shows it can implement its own toolchain for daily work and thus proves its expertise, rather than just takes a free solution used by everyone else, choose <em>Art Deco</em>. Then your software won't be like anyone else's.
-        </p></div>
-      </div>
-      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/2.svg" alt="Back To Top" width="25" /></a></p>
-      <div id="automated-testing" class="row Feature">
-        <div class="col"><h2 style="background: #faf7ee; color: #7f9ed2; text-shadow: 1px 1px #4e71a7;" class="text-center"><img class="float-right" style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" io data-src="img/sun.png" />
-        <noscript><img class="float-right" style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" src="img/sun.png" /></noscript> Automated Testing</h2><img alt="Automated Testing" class="img-fluid img-fluid rounded float-left mr-3" io data-src="img/posters/testing.jpg" />
-        <noscript><img alt="Automated Testing" class="img-fluid img-fluid rounded float-left mr-3" src="img/posters/testing.jpg" /></noscript><p>
-          Quality Assurance is the field where <em>Art Deco</em> is second to none. We have invented a testing framework called <a href="/zoroaster.html"><em>Zoroaster</em></a> that introduces the concept of context-testing into the JS world and helps us and other developers to keep their testing infrastructure separate from test cases' flow, document it and receive in-editor documentation hints on how to use its methods, verify its correctness to ensure double standard of quality assurance (the so-called <em>testing the tests</em> practice), and share it across packages to save valuable time that will be spent on coding and writing tests. Most of our JavaScript functions are written in pure, functional style that allows them to undergo elementary unit-testing using the mask-testing feature of <em>Zoroaster</em>, where test logic for each method is setup only once, while we concentrate on comparing mappings of inputs to outputs in the most efficient manner. Final systems are covered by integration tests on different levels, including integration between modules as well as between APIs, browsers and cloud services. Automated testing not only proves the correctness of programs and their meeting of the requirements specification, but also serves as a regression basecamp that guarantees that any future changes won't break the existing implementation.
-        </p></div>
-      </div>
-      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/3.svg" alt="Back To Top" width="25" /></a></p>
-      <div id="documentation" class="row Feature">
-        <div class="col"><h2 style="background: #cbbf8f; color: #3e4227; text-shadow: 1px 1px #957544;" class="text-center"><img class="float-left" io data-src="img/sun.png" />
-        <noscript><img class="float-left" src="img/sun.png" /></noscript> Documentation</h2><img alt="Documentation" class="img-fluid img-fluid rounded float-right ml-3" io data-src="img/posters/doc.jpg" />
-        <noscript><img alt="Documentation" class="img-fluid img-fluid rounded float-right ml-3" src="img/posters/doc.jpg" /></noscript><p>
-          Creating programs is not just about writing code and returning it to the client. Documentation is an integral part of the process that helps to keep track of work that was done by exposing it to developers and other project participants in natural language, diagrams and examples. By providing 100% documentation coverage, our <em>Node.JS</em> development company makes sure that the execution of each feature of the system can be reproduced and understood by someone who is not an advanced specialist in it. It also serves as an outer layer of quality assurance, since by embedding examples and running them to compile documentation, we can visually see that the system is working as expected, and any unanticipated changes will be picked up by the documentation writer when submitting the code to source control system (e.g., GitHub). Furthermore, when it comes to maintenance, documentation will always aid in getting organised very quickly and catching up with ideas that the initial develop put into practice. Art Deco is a big fan of pure JSDoc and does not employ <em>TypeScript</em>, but we go beyond simply annotating methods in code. Our practice involves writing type files in XML format, where each configuration option is described. The types are then embedded both in README files, as well as the source code, so that there is a single source of truth. In addition, we also programmed a <a href="/documentary.html"><em>Documentary</em></a> documentation framework, that provides maximum productivity for us by allowing to automatically embed examples and their output, and cache it which saves an extraordinary amount of time so that our clients don't have to pay for our developers copying and pasting code into the guidelines manually each time there's a change.
-        </p></div>
-      </div>
-      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/4.svg" alt="Back To Top" width="25" /></a></p>
-      
-      <!-- Charles+Demuth -->
-      <div id="optimisation" class="row Feature">
-        <div class="col"><h2 style="background: #dfdeda; color: #4e4e4c; text-shadow: 1px 1px #c8c1a4;" class="text-center"><img class="float-right" style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" io data-src="img/sun.png" />
-        <noscript><img class="float-right" style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" src="img/sun.png" /></noscript> Optimisation</h2><img alt="Optimisation" class="img-fluid img-fluid rounded float-left mr-3" io data-src="img/posters/optimisation.jpg" />
-        <noscript><img alt="Optimisation" class="img-fluid img-fluid rounded float-left mr-3" src="img/posters/optimisation.jpg" /></noscript><p>
-          Since our source code is written in ES6, and organised by NPM packages, we had to find a way to deliver the final product which is compatible with browsers, or is easy to install as a Node.JS system. To achieve that, we use <a href="https://github.com/google/closure-compiler"><em>Google Closure Compiler</em></a> that puts source files together and produces an output with advanced optimisations, such as peep-hole optimisation, variable name mangling and others. The compiled JavaScript code is smaller in size and can be transmitted to users' browsers faster, but it also allows to us to write modern JavaScript, without having to worry about older browser compatibility. On top of that, we also minify websites' CSS files (rename class names, remove whitespace, <em>etc</em>) and concatenate them into a single file for faster page load and thus greater user experience. Since the compiler had only been used for web bundles previously, we invented <a href="/depack.html">Depack</a>: the build tool that makes it possible to run the compiler against <em>Node.JS</em> programs and produce a single optimised executable binary or library file. This means that the gross package delivered as the overall system, be it a web server, CLI tool or a library to work with APIs, will not have any dependencies that take time to install and link, occupies less disk space, runs faster and can be shared with 3rd parties without worrying about revealing the source code, due to the fact that the output is obfuscated (the source maps are available to clients in separate files).
-        </p></div>
-      </div>
-      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/5.svg" alt="Back To Top" width="25" /></a></p>
-      <div id="npm-packages" class="row Feature">
-        <div class="col"><h2 style="background: #f36e2b; color: #ffeea8; text-shadow: 1px 1px #f69e49;" class="text-center"><img class="float-left" io data-src="img/sun.png" />
-        <noscript><img class="float-left" src="img/sun.png" /></noscript> NPM Packages</h2><img alt="NPM Packages" class="img-fluid img-fluid rounded float-right ml-3" io data-src="img/posters/packages.jpg" />
-        <noscript><img alt="NPM Packages" class="img-fluid img-fluid rounded float-right ml-3" src="img/posters/packages.jpg" /></noscript><p>
-          <a href="https://npmjs.org"><em>NPM</em></a> is the package manager for <em>Node.JS</em> with almost 1 million packages being published online for free use. <em>Art Deco</em> recognises the value of Open Source, but also exploits the infrastructure created by NPM that allows to solve the dependency management problem with the ease of mind: when writing software for ourselves and clients, we split designs into logical packages, and create them separately using our package bootstrapper <a href="/mnp.html">MNP</a> (<span class="tm">my-new-package</span>) that spawns packages with the most up-to-date scaffolding. Smaller packages are then imported by larger ones, and all of them are published on NPM, either in private or public scopes (e.g., our Open Source projects). This approach ensures that any future software pieces can quickly install existing ones, whereas we save time and know that there's no bugs in installed code, because each package has been tested separately. Moreover, the philosophy behind packages is Unix-like, i.e., that programs should be simple and do mostly one thing, but do it really well. We have published over 150 packages that are really good in their implementation, testing and documentation, and when they are put together, they achieve tremendous results with superb quality. NPM allows us to apply the DRY (don't repeat yourself) principle in practice of software engineering, and organise code by scopes: we can create a scope for our clients and share the access permissions with them, so that all the infrastructure can be handed over quickly, securely and responsibly.
-        </p></div>
-      </div>
-            <!-- background: #fbfaf5; color: #385170; -->
-              <!-- background: #fdf0aa; color: #2e223a; -->
-      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/6.svg" alt="Back To Top" width="25" /></a></p>
-      <div class="row">
-        <div style="border-radius:2rem; overflow:hidden" class="text-center p-0 col">
-          <div class="Sky h-100 w-100 position-absolute" style="top:-50px;"><div style="top: 0px; background-image: url(/img/sky2.png);" class="position-absolute"></div><div style="top: 45px; background-image: url(/img/sky1.png);" class="position-absolute"></div><div style="top: 90px; background-image: url(/img/sky2.png); background-position-x: -50%;" class="position-absolute"></div><div style="top: 135px; background-image: url(/img/sky1.png); background-position-x: -50%;" class="position-absolute"></div><div style="top: 180px; background-image: url(/img/sky2.png);" class="position-absolute"></div></div>
-          <img class="img-fluid my-3" io data-src="img/posters/bird2.png" />
-          <noscript><img class="img-fluid my-3" src="img/posters/bird2.png" /></noscript>
-        </div>
-      </div>
-      
-      <p class="SectionBreak"><a href="#top" title="Back To Top"><img src="section-breaks/7.svg" alt="Back To Top" /></a></p>
-      
-      
-      <div class="row">
-        <div id="packages" class="col">
-          <h2>Regenerating <em>Node.JS</em> Ecosystem</h2>
-          <p>
-            <em>Node.JS</em>, the most modern programming language of today, has risen as a reaction to traditional heavy applications that take ages to compile, an army of administrators to manage, and cost enormous amount of money to introduce and maintain. The <em>Node.JS</em> runtime, on the other hand, based on the <em>JavaScript</em> programming language, has given independent developers and smaller teams freedom to write fast, easily deployable and testable software systems that transform from a prototype to production in a matter of days, not years.
-            However, the ecosystem's direction of growth around <span class="Node TM">Node.JS</span> and its package manager <span class="NPM TM">NPM</span> has been hijacked by corporations, that want to dictate their own terms of use: <span class="Corp">Microsoft</span> would like people to use <span class="Typescript TM">TypeScript</span> instead of <span class="JavaScript TM">JavaScript</span> and is successfully advocating it by playing on the fact that students are mostly taught Java at Universities, so that they tend to choose what they know, that is, a typed object-oriented programming language; and <span class="Corp">Facebook</span> is dominating the field of web-development by maintaining the <span class="React TM">React</span> library tied up to such tools as <del>Babel and Jest</del>, which are gigantic in size and contain bugs. Moreover, there's no need to pretend that these companies are doing it for free: every developer won will result in either marketing, power or financial gains to them. The main issue is that to solve simple problems, the solutions employed are unnecessary complex, involve installing 1000s of dependencies for a product at hand, and lock developers in the mode of thinking and working prescribed by someone else. JavaScript and Node.JS were once about freedom, openness to experimentation and close friendly community, and now, like all good things that become popular, it is poisoned by ignorance, unprofessionalism and the belief system that anyone who has installed a 3rd party dependency, is an expert developer and those who don't agree with the paradigms established by corporations are weird outsiders. Art Deco aims to restore the intrinsic philosophy behind JavaScript and Node.JS as open-minded, efficient and solution-focused instruments and regenerates the development process of back-end and front-end applications with utilities that are simply sophisticated and sophisticatedly simple, for ourselves, and others, so that the work process comprises purely of writing code, tests and documentation with minimal tint of branded technology but maximum productivity. In other words, Art Deco makes tools for developers, rather than making developers its tools.
-            <!-- and contain bugs which could be noticed by anyone with a little bit experience, but are kept open for years because the field is not dominated by professionals anymore. -->
-            <!-- and sin by paying no attention to the documentation techniques used by plain JS developers. Whereas ignorance is bliss for the masses, Art Deco rejects the poor standard of implementation and does not get involved with these tools. If the word "noble" rings a bell, you've come to the right place, because Art Deco is an unpopular software house. -->
-            <!-- focuses not on establishing new paradigms, but on following the ECMAScript standard the fluency of JavaScript as a functional programming language, its native capability for asynchronous operations and the basic mechanisms of sharing Open Source code that  -->
-          </p>
-          <!-- <section-break /> -->
-        </div>
-        <div style="overflow: hidden;"
-          class="mb-3 d-flex justify-content-around align-items-center flex-lg-column position-relative col-lg-3">
-          <div class=" Parallax" style="background-image: url(/img/seamless.jpg); z-index: -1;" x="-1/2" y="2" oy="0"></div>
-          <div class="d-inline-block" style="background:url(img/noise/giphy-2.gif);mix-blend-mode: difference; z-index:-1;">
-            <img class="img-fluid" style="width:250;z-index:1;mix-blend-mode:hard-light;" io data-src="img/noise/yarn-add-babel2.gif" />
-            <noscript><img class="img-fluid" style="width:250;z-index:1;mix-blend-mode:hard-light;" src="img/noise/yarn-add-babel2.gif" /></noscript>
-          </div>
-          <div class="d-inline-block">
-            <img class="img-fluid" style="z-index:1" io data-src="img/images2.png" />
-            <noscript><img class="img-fluid" style="z-index:1" src="img/images2.png" /></noscript>
-          </div>
-          <div class="d-inline-block" style="background:url(img/noise/giphy-2.gif);mix-blend-mode:screen;z-index:-1;">
-            <img class="img-fluid" style="width:250;z-index:1;mix-blend-mode:screen;" io data-src="img/hqdefault.jpg" />
-            <noscript><img class="img-fluid" style="width:250;z-index:1;mix-blend-mode:screen;" src="img/hqdefault.jpg" /></noscript>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col">
-          <h3>Examples Of Innovative Contributions</h3>
-          <p>
-            As a <em>Node.JS</em> development company, we were not happy with the state-of-art that existed in the field. Because programming is easy and fun when you know how to do it properly, we have created all our infrastructure from scratch, that enabled us to generate numerous use-cases for ourselves, and fill in all the features required to start a very efficient <em>Node.JS</em> development house that produces software of utmost standard of quality quickly. All tools are contributed to Open Source and are constantly improved.
-          </p>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col">
-          <h4>Documentary</h4>
-        </div>
-        <div class="col">
-          <h4>Zoroaster</h4>
-        </div>
-        <div class="col">
-          <h4>Depack</h4>
-        </div>
-        <div class="col">
-          <h4>ÀLaMode</h4>
-        </div>
-        <div class="col">
-          <h4>Splendid</h4>
-        </div>
-        <div class="col">
-          <h4>Idio</h4>
-        </div>
-      </div>
-      
-      <!-- <div class="row">
-        <div class="col">
-          <h2 class="font-effect-anaglyph" id="node">Node.JS &amp; Cloud</h2>
-          <p>Node.JS is a runtime for fast application deployed in cloud.</p>
-        </div>
-      
-        <div class="col">
-          <h2 class="font-effect-anaglyph" id="packages">Open Source Packages</h2>
-          <p>We have contributed a number of packages to the community.</p>
-        </div>
-      </div> -->
-      
-      <hr>
-      
-      <div class="row">
-        <!-- <div class="col" ></div> -->
-        <div style="background:rgb(251,246,0); height:20rem;padding:1rem;" id="contact"
-          class="Yellow position-relative col-sm-8 col-md-5 col-lg-4">
-          <h2 style="color: #405a8c">Contact</h2>
-          <p>
-            Art Deco Code Limited<br/>
-            International House,<br>24 Holborn Viaduct,<br>London, EC1A 2BN
-            <span class="RedBox">
-              Please get in touch for your next <em>Node.JS</em>, cloud and front-end project.
-              <br>{/＊<strong> &nbsp;<a style="color:white" href="mailto:allora@artd.eco">allora@artd.eco</a> </strong>＊/}
-            </span>
-          </p>
-          <img style="position:absolute; right:1rem; top:1rem;" io data-src="img/bird.gif" />
-          <noscript><img style="position:absolute; right:1rem; top:1rem;" src="img/bird.gif" /></noscript>
-          <img class="Bird1" io data-src="img/bird.gif" />
-          <noscript><img class="Bird1" src="img/bird.gif" /></noscript>
-          <!-- <section-break id="-1"/> -->
-        </div>
-        <div class="CupDiv justify-content-end text-right text-md-center d-flex col-md-7 col-lg-5">
-          <img id="cup" class="img-fluid align-self-end" io data-src="/img/ART.png" />
-          <noscript><img id="cup" class="img-fluid align-self-end" src="/img/ART.png" /></noscript>
-        </div>
-      </div>
+    <div id="Content" class="container"><p class="SectionBreak">
+  <a title="Back To Top" href="#top">
+    <img src="section-breaks/0.svg" alt="Back To Top"></a>
+</p>
+<div class="row">
+  <div id="node" class="order-2 col">
+    <h2 id="emnodejsem-mdash-your-language-of-choice"><em>Node.JS</em> &mdash; Your Language Of Choice</h2>
+    <p>
+      Software Engineering is an art, science and technology combined. It helps to automate processes and improve the standard of living, relieving humans of monotonous operations that can be solved using a computer program. 100 years ago, with the advent of new machinery, there was a promise for the future where people's time could be taken off of work, and put into spending their lives focusing on human tasks and communications. This has partly been achieved, but we have a long way to go still, and after reaching the required stage of progress in hardware, we are now peaking in the course of software evolution. The species that is increasingly dominating the environment and taking the central stage in this process of natural selection of the fittest is <em>Node.JS</em>. It is no surprise that in today's word, characterised by globalisation and interconnectedness, the programming language born on the web, is becoming <em>The One</em> of the web, who will redeem it and remake it in the way it's supposed to be.
+    </p>
+    
+  </div>
+  <div style="overflow:hidden;margin-top:1.5rem; margin-bottom:1.5rem;padding:1.4rem;"
+    class="position-relative order-1 order-lg-3 d-flex justify-content-center col-lg-5">
+    <div class=" Parallax"
+      style="background-image:url(/img/code2.gif);background-repeat: repeat-y; z-index:-1;" y="2" oy="0">
     </div>
+    <img alt="Node.JS at the epicenter of modern software development"
+      class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" data-io
+      data-src="/img/Byss-und-Abyss2.gif">
+    <noscript>
+      <img alt="Node.JS at the epicenter of modern software development"
+        class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" src="/img/Byss-und-Abyss2.gif">
+    </noscript>
+  </div>
+</div>
 
-    
-    
+<div class="row">
+  <div class="col">
+    <div class="float-left d-inline-block pr-3">
+      <div class="Adonais position-relative mb-3 align-top" id="c9848">
+        <img class="b"
+          alt="Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation" src="img/adonais/back.jpg" style="position:relative;">
+      </div>
+      <p style="max-width:271px; font-size:small;" class="text-monospace mt-3 mb-0">
+        ^ hover over animated letters for an intro to a software engineering practice, and click to move to its description on the page below.
+      </p>
+    </div>
+    <p>
+      By bridging the gap between front-end development and back-end programming, and utilising the agility of functional paradigm together with the abstractions of OOP that help developer experience and documentation, <em>Node.JS</em> is winning hearts and souls and finding hundreds of new fans, both indie developers as well as development companies, all over the world each day. The applications of today designed to connect services, users and automatons can benefit the most when they are written in <em>Node.JS</em>, and <strong>Art Deco</strong> specialises in this field of modern web computing, applying the best practises of classical software engineering such as thorough automated testing, documentation plentiful of examples, and user-centered design together with more present-day trends of cloud and serverless deployment, single-page and progressive web apps and open source code coordination techniques like NPM scopes and GitHub orgs that help to pass the codebase between hired and future teams. Our approach is that each program is a piece of art that can be perfected to the single line of code by employing a scientific method that consists of conducting research to understand the problem at hand, coming up with a possible solution, evaluating it against business requirements while rigorously and critically documenting the findings. The outcome is technology that is unique to each client, easy and pleasant to use for her customers and stakeholders, and straightforward to understand and maintain for other teams of developers.
+    </p>
+  </div>
+</div>
+<p class="SectionBreak">
+  <a title="Back To Top" href="#top">
+    <img src="section-breaks/1.svg" alt="Back To Top" width="25"></a>
+</p>
+
+<div id="art-deco" class="row Feature">
+  <div class="col">
+    <h2 style="background: #8ea6aa; color: #d1d2ca; text-shadow: 1px 1px #4e675b;"
+      id="img-styletransform-scalex-1--webkit-transform-scalex-1-altart-deco-fan-classfloat-right-srcimgsunpng-art-deco" class="text-center">
+      <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
+        class="float-right" src="img/sun.png">
+       Art Deco
+    </h2>
+    <img alt="Art Deco" class="img-fluid img-fluid rounded float-left mr-3" data-io
+      data-src="img/posters/vogue1.jpg">
+    <noscript>
+      <img alt="Art Deco" class="img-fluid img-fluid rounded float-left mr-3" src="img/posters/vogue1.jpg">
+    </noscript>
+    <p>
+      Art Deco is a style that came into existence almost a hundred years ago and stretched for a few decades, and although the early French &quot;high&quot; Art Deco is mainly presented in the works of sculptors and textile and furniture designers, the majority would recognise it for everything modern that appeared in the 1920s: skyscrapers, ocean liners, cinemas and home technology such as radios.
+      Because tech is always logical and scientific, it is reflected in Art Deco's usage of geometrical shapes as influenced by cubism, however what makes it <em>decorative</em> is its ability to keep in touch with nature — Art Deco's themes would more often than not incorporate animal and plant life, so that people can feel more relaxed at home. It also portrays human as a powerful spiritual entity that with his mind is conquering the world and creating a better future. All of these concepts are the foundation of the philosophy of our company: we believe that the human race at the moment is going through the next coil of technological emergence and the last century has laid the foundations for the development of the web, cloud computing and AI. Despite the benefits that technology brings us, we also recognise its potential to lead people astray and consume them, rather than being consumed, so we stand by the intrinsic human values such as face-to-face communication and connectedness with nature and advocate the good use of technology that helps to maintain those morals but does not replace them. Finally, we highly appreciate aristocratic virtues such as rationality and integrity, reject mainstream opinions and work on making noble software that through its quality and modern simplicity improves the world.
+    </p>
+  </div>
+</div>
+<!-- The style with its bold typefaces, solid colours and gradients that became possible with the invention of the airbrush, was influenced by cubism that tried to express nature in geometrical forms.  -->
+<p class="SectionBreak">
+  <a title="Back To Top" href="#top">
+    <img src="section-breaks/2.svg" alt="Back To Top" width="25"></a>
+</p>
+<div id="implementation" class="row Feature">
+  <div class="col">
+    <h2 style="background: #e84936; color: white; text-shadow: 1px 1px grey;"
+      id="img-altart-deco-fan-classfloat-left-srcimgsunpng-implementation" class="text-center">
+      <img alt="art deco fan" class="float-left" src="img/sun.png">
+       Implementation
+    </h2>
+    <img alt="Implementation" class="img-fluid img-fluid rounded float-right ml-3" data-io
+      data-src="img/posters/implementation.jpg">
+    <noscript>
+      <img alt="Implementation" class="img-fluid img-fluid rounded float-right ml-3"
+        src="img/posters/implementation.jpg">
+    </noscript>
+    <p>
+      In our code, we use both functional and object-oriented approaches according to the problem being solved, as well as the latest standard of JavaScript programming language with EcmaScript modules and the most up-to-date syntax including object spread and rest operators, arrow and async functions and JSX components. When others choose to stick to the previous version of the standard and keep using <span class="tm">require</span> statements instead of imports just because <em>Node.JS</em> has not added the support for the later and install Babel for their <em>JSX</em>, we created our own 0-dependency transpiler <a href="/alamode.html">ÀLaMode</a>, which offers a unique solution by transpiling the source code using regular expressions, and allows to write modern code without being paused by insufficiencies of the runtime. Like the transpiler, our implementations are free of external code and are straight to the point: they focus on solving the problem at hand with the maximum help of the language itself so that no client's time is wasted on setting up and adjusting 3rd party tools. If you're looking for a <em>Node.JS</em> development company that shows it can implement its own toolchain for daily work and thus proves its expertise, rather than just takes a free solution used by everyone else, choose <em>Art Deco</em>. Then your software won't be like anyone else's.
+    </p>
+  </div>
+</div>
+<p class="SectionBreak">
+  <a title="Back To Top" href="#top">
+    <img src="section-breaks/3.svg" alt="Back To Top" width="25"></a>
+</p>
+<div id="automated-testing" class="row Feature">
+  <div class="col">
+    <h2 style="background: #faf7ee; color: #7f9ed2; text-shadow: 1px 1px #4e71a7;"
+      id="img-styletransform-scalex-1--webkit-transform-scalex-1-altart-deco-fan-classfloat-right-srcimgsunpng-automated-testing" class="text-center">
+      <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
+        class="float-right" src="img/sun.png">
+       Automated Testing
+    </h2>
+    <img alt="Automated Testing" class="img-fluid img-fluid rounded float-left mr-3" data-io
+      data-src="img/posters/testing.jpg">
+    <noscript>
+      <img alt="Automated Testing" class="img-fluid img-fluid rounded float-left mr-3"
+        src="img/posters/testing.jpg">
+    </noscript>
+    <p>
+      Quality Assurance is the field where <em>Art Deco</em> is second to none. We have invented a testing framework called <em><a href="/zoroaster.html">Zoroaster</a></em> that introduces the concept of context-testing into the JS world and helps us and other developers to keep their testing infrastructure separate from test cases' flow, document it and receive in-editor documentation hints on how to use its methods, verify its correctness to ensure double standard of quality assurance (the so-called <em>testing the tests</em> practice), and share it across packages to save valuable time that will be spent on coding and writing tests. Most of our JavaScript functions are written in pure, functional style that allows them to undergo elementary unit-testing using the mask-testing feature of <em>Zoroaster</em>, where test logic for each method is setup only once, while we concentrate on comparing mappings of inputs to outputs in the most efficient manner. Final systems are covered by integration tests on different levels, including integration between modules as well as between APIs, browsers and cloud services. Automated testing not only proves the correctness of programs and their meeting of the requirements specification, but also serves as a regression basecamp that guarantees that any future changes won't break the existing implementation.
+    </p>
+  </div>
+</div>
+<p class="SectionBreak">
+  <a title="Back To Top" href="#top">
+    <img src="section-breaks/4.svg" alt="Back To Top" width="25"></a>
+</p>
+<div id="documentation" class="row Feature">
+  <div class="col">
+    <h2 style="background: #cbbf8f; color: #3e4227; text-shadow: 1px 1px #957544;"
+      id="img-altart-deco-fan-classfloat-left-srcimgsunpng-documentation" class="text-center">
+      <img alt="art deco fan" class="float-left" src="img/sun.png">
+       Documentation
+    </h2>
+    <img alt="Documentation" class="img-fluid img-fluid rounded float-right ml-3" data-io
+      data-src="img/posters/doc.jpg">
+    <noscript>
+      <img alt="Documentation" class="img-fluid img-fluid rounded float-right ml-3"
+        src="img/posters/doc.jpg">
+    </noscript>
+    <p>
+      Creating programs is not just about writing code and returning it to the client. Documentation is an integral part of the process that helps to keep track of work that was done by exposing it to developers and other project participants in natural language, diagrams and examples. By providing 100% documentation coverage, our <em>Node.JS</em> development company makes sure that the execution of each feature of the system can be reproduced and understood by someone who is not an advanced specialist in it. It also serves as an outer layer of quality assurance, since by embedding examples and running them to compile documentation, we can visually see that the system is working as expected, and any unanticipated changes will be picked up by the documentation writer when submitting the code to source control system (e.g., GitHub). Furthermore, when it comes to maintenance, documentation will always aid in getting organised very quickly and catching up with ideas that the initial develop put into practice. Art Deco is a big fan of pure JSDoc and does not employ <em>TypeScript</em>, but we go beyond simply annotating methods in code. Our practice involves writing type files in XML format, where each configuration option is described. The types are then embedded both in README files, as well as the source code, so that there is a single source of truth. In addition, we also programmed a <em><a href="/documentary.html">Documentary</a></em> documentation framework, that provides maximum productivity for us by allowing to automatically embed examples and their output, and cache it which saves an extraordinary amount of time so that our clients don't have to pay for our developers copying and pasting code into the guidelines manually each time there's a change.
+    </p>
+  </div>
+</div>
+<p class="SectionBreak">
+  <a title="Back To Top" href="#top">
+    <img src="section-breaks/5.svg" alt="Back To Top" width="25"></a>
+</p>
+
+<!-- Charles+Demuth -->
+<div id="optimisation" class="row Feature">
+  <div class="col">
+    <h2 style="background: #dfdeda; color: #4e4e4c; text-shadow: 1px 1px #c8c1a4;"
+      id="img-styletransform-scalex-1--webkit-transform-scalex-1-altart-deco-fan-classfloat-right-srcimgsunpng-optimisation" class="text-center">
+      <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
+        class="float-right" src="img/sun.png">
+       Optimisation
+    </h2>
+    <img alt="Optimisation" class="img-fluid img-fluid rounded float-left mr-3" data-io
+      data-src="img/posters/optimisation.jpg">
+    <noscript>
+      <img alt="Optimisation" class="img-fluid img-fluid rounded float-left mr-3"
+        src="img/posters/optimisation.jpg">
+    </noscript>
+    <p>
+      Since our source code is written in ES6, and organised by NPM packages, we had to find a way to deliver the final product which is compatible with browsers, or is easy to install as a Node.JS system. To achieve that, we use <em><a href="https://github.com/google/closure-compiler">Google Closure Compiler</a></em> that puts source files together and produces an output with advanced optimisations, such as peep-hole optimisation, variable name mangling and others. The compiled JavaScript code is smaller in size and can be transmitted to users' browsers faster, but it also allows to us to write modern JavaScript, without having to worry about older browser compatibility. On top of that, we also minify websites' CSS files (rename class names, remove whitespace, <em>etc</em>) and concatenate them into a single file for faster page load and thus greater user experience. Since the compiler had only been used for web bundles previously, we invented <a href="/depack.html">Depack</a>: the build tool that makes it possible to run the compiler against <em>Node.JS</em> programs and produce a single optimised executable binary or library file. This means that the gross package delivered as the overall system, be it a web server, CLI tool or a library to work with APIs, will not have any dependencies that take time to install and link, occupies less disk space, runs faster and can be shared with 3rd parties without worrying about revealing the source code, due to the fact that the output is obfuscated (the source maps are available to clients in separate files).
+    </p>
+  </div>
+</div>
+<p class="SectionBreak">
+  <a title="Back To Top" href="#top">
+    <img src="section-breaks/6.svg" alt="Back To Top" width="25"></a>
+</p>
+<div id="npm-packages" class="row Feature">
+  <div class="col">
+    <h2 style="background: #f36e2b; color: #ffeea8; text-shadow: 1px 1px #f69e49;"
+      id="img-altart-deco-fan-classfloat-left-srcimgsunpng-npm-packages" class="text-center">
+      <img alt="art deco fan" class="float-left" src="img/sun.png">
+       NPM Packages
+    </h2>
+    <img alt="NPM Packages" class="img-fluid img-fluid rounded float-right ml-3" data-io
+      data-src="img/posters/packages.jpg">
+    <noscript>
+      <img alt="NPM Packages" class="img-fluid img-fluid rounded float-right ml-3"
+        src="img/posters/packages.jpg">
+    </noscript>
+    <p>
+      <em><a href="https://npmjs.org">NPM</a></em> is the package manager for <em>Node.JS</em> with almost 1 million packages being published online for free use. <em>Art Deco</em> recognises the value of Open Source, but also exploits the infrastructure created by NPM that allows to solve the dependency management problem with the ease of mind: when writing software for ourselves and clients, we split designs into logical packages, and create them separately using our package bootstrapper <a href="/mnp.html">MNP</a> (<span class="tm">my-new-package</span>) that spawns packages with the most up-to-date scaffolding. Smaller packages are then imported by larger ones, and all of them are published on NPM, either in private or public scopes (e.g., our Open Source projects). This approach ensures that any future software pieces can quickly install existing ones, whereas we save time and know that there's no bugs in installed code, because each package has been tested separately. Moreover, the philosophy behind packages is Unix-like, i.e., that programs should be simple and do mostly one thing, but do it really well. We have published over 150 packages that are really good in their implementation, testing and documentation, and when they are put together, they achieve tremendous results with superb quality. NPM allows us to apply the DRY (don't repeat yourself) principle in practice of software engineering, and organise code by scopes: we can create a scope for our clients and share the access permissions with them, so that all the infrastructure can be handed over quickly, securely and responsibly.
+    </p>
+  </div>
+</div>
+      <!-- background: #fbfaf5; color: #385170; -->
+        <!-- background: #fdf0aa; color: #2e223a; -->
+<p class="SectionBreak">
+  <a title="Back To Top" href="#top">
+    <img src="section-breaks/7.svg" alt="Back To Top" width="25"></a>
+</p>
+<div class="row">
+  <div style="border-radius:2rem; overflow:hidden" class="text-center p-0 col">
+    <div class="Sky h-100 w-100 position-absolute" style="top:-50px;">
+      <div style="top: 0px; background-image: url(/img/sky2.png);" class="position-absolute"></div>
+      <div style="top: 45px; background-image: url(/img/sky1.png);" class="position-absolute"></div>
+      <div style="top: 90px; background-image: url(/img/sky2.png); background-position-x: -50%;"
+        class="position-absolute">
+      </div>
+      <div style="top: 135px; background-image: url(/img/sky1.png); background-position-x: -50%;"
+        class="position-absolute">
+      </div>
+      <div style="top: 180px; background-image: url(/img/sky2.png);" class="position-absolute"></div>
+    </div>
+    <img alt="eagle over software engineering" class="img-fluid my-3" data-io
+      data-src="img/posters/bird2.png">
+    <noscript>
+      <img alt="eagle over software engineering" class="img-fluid my-3" src="img/posters/bird2.png">
+    </noscript>
+  </div>
+</div>
+
+<p class="SectionBreak">
+  <a title="Back To Top" href="#top">
+    <img src="section-breaks/8.svg" alt="Back To Top"></a>
+</p>
+
+
+<div class="row">
+  <div id="packages" class="col">
+    <h2 id="regenerating-emnodejsem-ecosystem">Regenerating <em>Node.JS</em> Ecosystem</h2>
+    <p>
+      <em>Node.JS</em>, the most modern programming language of today, has risen as a reaction to traditional heavy applications that take ages to compile, an army of administrators to manage, and cost enormous amount of money to introduce and maintain. The <em>Node.JS</em> runtime, on the other hand, based on the <em>JavaScript</em> programming language, has given independent developers and smaller teams freedom to write fast, easily deployable and testable software systems that transform from a prototype to production in a matter of days, not years.
+      However, the ecosystem's direction of growth around <span class="Node TM">Node.JS</span> and its package manager <span class="NPM TM">NPM</span> has been hijacked by corporations, that want to dictate their own terms of use: <span class="Corp">Microsoft</span> would like people to use <span class="Typescript TM">TypeScript</span> instead of <span class="JavaScript TM">JavaScript</span> and is successfully advocating it by playing on the fact that students are mostly taught Java at Universities, so that they tend to choose what they know, that is, a typed object-oriented programming language; and <span class="Corp">Facebook</span> is dominating the field of web-development by maintaining the <span class="React TM">React</span> library tied up to such tools as <del>Babel and Jest</del>, which are gigantic in size and contain bugs. Moreover, there's no need to pretend that these companies are doing it for free: every developer won will result in either marketing, power or financial gains to them. The main issue is that to solve simple problems, the solutions employed are unnecessary complex, involve installing 1000s of dependencies for a product at hand, and lock developers in the mode of thinking and working prescribed by someone else. JavaScript and Node.JS were once about freedom, openness to experimentation and close friendly community, and now, like all good things that become popular, it is poisoned by ignorance, unprofessionalism and the belief system that anyone who has installed a 3rd party dependency, is an expert developer and those who don't agree with the paradigms established by corporations are weird outsiders. Art Deco aims to restore the intrinsic philosophy behind JavaScript and Node.JS as open-minded, efficient and solution-focused instruments and regenerates the development process of back-end and front-end applications with utilities that are simply sophisticated and sophisticatedly simple, for ourselves, and others, so that the work process comprises purely of writing code, tests and documentation with minimal tint of branded technology but maximum productivity. In other words, Art Deco makes tools for developers, rather than making developers its tools.
+      <!-- and contain bugs which could be noticed by anyone with a little bit experience, but are kept open for years because the field is not dominated by professionals anymore. -->
+      <!-- and sin by paying no attention to the documentation techniques used by plain JS developers. Whereas ignorance is bliss for the masses, Art Deco rejects the poor standard of implementation and does not get involved with these tools. If the word "noble" rings a bell, you've come to the right place, because Art Deco is an unpopular software house. -->
+      <!-- focuses not on establishing new paradigms, but on following the ECMAScript standard the fluency of JavaScript as a functional programming language, its native capability for asynchronous operations and the basic mechanisms of sharing Open Source code that  -->
+    </p>
+    <!-- <section-break /> -->
+  </div>
+  <div style="overflow: hidden;"
+    class="col-lg-3 justify-content-around mb-3 position-relative d-flex align-items-center flex-lg-column">
+    <div class=" Parallax" style="background-image: url(/img/seamless.jpg); z-index: -1;" x="-1/2" y="2"
+      oy="0">
+    </div>
+    <div class="Noises d-inline-block" style="mix-blend-mode: difference; z-index:-1;">
+      <img alt="log babel install process" class="img-fluid"
+        style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" data-io data-src="img/noise/yarn-add-babel2.gif">
+      <noscript>
+        <img alt="log babel install process" class="img-fluid"
+          style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" src="img/noise/yarn-add-babel2.gif">
+      </noscript>
+    </div>
+    <div class="d-inline-block">
+      <img alt="capitalised power, systematic fear, strategic sabotage" class="img-fluid"
+        style="z-index: 1;" data-io data-src="img/images2.png">
+      <noscript>
+        <img alt="capitalised power, systematic fear, strategic sabotage" class="img-fluid"
+          style="z-index: 1;" src="img/images2.png">
+      </noscript>
+    </div>
+    <div class="Noises d-inline-block" style="mix-blend-mode:screen;z-index:-1;">
+      <img alt="timewave zero simulation" class="img-fluid"
+        style="z-index: 1; mix-blend-mode: screen; width: 250px;" data-io data-src="img/hqdefault.jpg">
+      <noscript>
+        <img alt="timewave zero simulation" class="img-fluid"
+          style="z-index: 1; mix-blend-mode: screen; width: 250px;" src="img/hqdefault.jpg">
+      </noscript>
+    </div>
+  </div>
+  
+</div>
+
+<div class="row">
+  <div class="col">
+    <h3 id="examples-of-innovative-contributions">Examples Of Innovative Contributions</h3>
+    <p>
+      As a <em>Node.JS</em> development company, we were not happy with the state-of-art that existed in the field. Because programming is easy and fun when you know how to do it properly, we have created all our infrastructure from scratch, that enabled us to generate numerous use-cases for ourselves, and fill in all the features required to start a very efficient <em>Node.JS</em> development house that produces software of utmost standard of quality quickly. All tools are contributed to Open Source and are constantly improved.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h4 id="documentary">Documentary</h4>
+    <p>
+      The <em>documentation engine</em> for organising READMEs with fast and cached embedding of examples' source code and their output, generation of tables of content and printing tables with types annotations. It is extensible with JSX components and greatly improves productivity.
+    </p>
+  </div>
+  <div class="col-md-4">
+    <h4 id="zoroaster">Zoroaster</h4>
+    <p>
+      The <em>context-testing framework</em> that separates test infrastructure logic (set-ups and tear-downs) from test cases. Enables publishing of contexts as separate packages, provides JSDoc annotations to testing APIs and allows to write masks where input are mapped to outputs via non-js files.
+    </p>
+  </div>
+  <div class="col-md-4">
+    <h4 id="depack">Depack</h4>
+    <p>
+      The <em>build tool</em> working with the Google Closure Compiler that produces optimised bundles for web browsers, as well as establishes the process of compiling Node.JS packages into single executable binaries or library files. Also supports JSX transforms and Preact integration.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <h4 id="lamode">ÀLaMode</h4>
+    <p>
+      The <em>source code transpiler</em> for simple transformation of <span class="tm">import/export</span> statements into require calls/module.exports assignments. Has 0 dependencies, keeps source code readable and supports JSX.
+    </p>
+  </div>
+  <div class="col-md-4">
+    <h4 id="splendid">Splendid</h4>
+    <p>
+      The <em>static website generator</em> that allows to define JSX components and use them in HTML. Optimises the CSS and JS output with Depack, and mounts Preact components only when parent elements become visible.
+    </p>
+  </div>
+  <div class="col-md-4">
+    <h4 id="idio">Idio</h4>
+    <p>
+      The <em>back-end server</em> based off Koa2 web-server but with Koa optimised with Closure Compiler and providing all essential middleware for the modern web dev. Can render server-side JSX, transpile client-side JSX files on-the-fly and automatically reload routes.
+    </p>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="col">
+    <h2 id="nodejs-amp-cloud" class="font-effect-anaglyph">Node.JS &amp; Cloud</h2>
+    <p>
+      Node.JS is a runtime for fast application deployed in cloud.
+    </p>
+  </div>
+
+  <div class="col">
+    <h2 id="open-source-packages" class="font-effect-anaglyph">Open Source Packages</h2>
+    <p>
+      We have contributed a number of packages to the community.
+    </p>
+  </div>
+</div> -->
+
+<hr>
+
+<div class="row">
+  <!-- <div class="col" ></div> -->
+  <div style="background:rgb(251,246,0); height:20rem;padding:1rem;" id="contact"
+    class="Yellow position-relative col-sm-8 col-md-5 col-lg-4">
+    <h2 style="color: #405a8c" id="contact-us">Contact Us</h2>
+    <p>
+      Art Deco Code Limited<br/>
+      International House,<br>24 Holborn Viaduct,<br>London, EC1A 2BN
+      <span class="RedBox">
+        Please get in touch for your next <em>Node.JS</em>, cloud and front-end project.
+        <br>{/＊<strong> &nbsp;<a style="color:white" href="mailto:allora@artd.eco">allora@artd.eco</a> </strong>＊/}
+      </span>
+    </p>
+    <img alt="bird" style="position:absolute; right:1rem; top:1rem;" data-io data-src="img/bird.gif">
+    <noscript><img alt="bird" style="position:absolute; right:1rem; top:1rem;" src="img/bird.gif"></noscript>
+    <img alt="bird" class="Bird1" data-io data-src="img/bird.gif">
+    <noscript><img alt="bird" class="Bird1" src="img/bird.gif"></noscript>
+    <!-- <section-break id="-1"/> -->
+  </div>
+  <div class="CupDiv justify-content-end text-right text-md-center d-flex col-md-7 col-lg-5">
+    <img alt="coffee cup" id="cup" class="img-fluid align-self-end" data-io data-src="/img/ART.png">
+    <noscript><img alt="coffee cup" id="cup" class="img-fluid align-self-end" src="/img/ART.png"></noscript>
+  </div>
+</div></div>
+
+    <!-- <script src="snapsvg/dist/snap.svg-min.js"></script> -->
+    <!-- <script combine src="js/menu.js"></script> -->
 
     <div class="container-fluid p-0 position-relative" style="height: 100px; overflow: hidden;">
       <div class=" Parallax" style="background-image: url(/img/bakst2.jpg);" y="2" oy="0"></div>
     </div>
-    <script src="js/polyfill/intersection-observer.js"></script>
-    <script src="splendid/js/parallax.js"></script>
-    <script src="js/images.js"></script>
-    <script src="snapsvg/dist/snap.svg-min.js"></script>
-    <script async src="js/menu.js"></script>
-    <script src="preact/dist/preact.min.js"></script>
-    <script async  src="comps/main.js"></script>
-  </body>
+    <script>
+  function d(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function e(){var a=document.querySelectorAll("script[data-src]");if(!(a instanceof Array)){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];a=b?b.call(a):{next:d(a)};for(var c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}
+  document.body.onload=function(){function a(){if(0<b.length){var c=b.shift();c.src=c.getAttribute("data-src");c.removeAttribute("data-src");c.onload=a;c.onerror=function(){return console.warn("Could not load script %s",c.src)}}}var b=e().concat();a()};
+    </script>
 </html>

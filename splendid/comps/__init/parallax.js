@@ -1,0 +1,113 @@
+(function () {
+  const map = {}
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(({ target, isIntersecting }) => {
+      // console.log(target, isIntersecting)
+      if (isIntersecting) {
+        const src = target.getAttribute('data-src')
+        if (src) {
+          // first time showing
+          target.style['background-image'] = src
+          target.removeAttribute('data-src')
+        }
+        if (map[target.pid]) {
+          return
+        }
+
+        let y = target.getAttribute('y')
+        if (y === null) y = 2
+        y = parseFloat(y)
+
+        let x = target.getAttribute('x')
+        if (x === null) x = 0
+        x = parseFloat(x)
+
+        let oy = target.getAttribute('oy')
+        if (oy === null) oy = 0
+        oy = parseFloat(oy)
+        // let X = x ? d * parseFloat(x) : 0
+
+        const listener = () => {
+          const box = target.getBoundingClientRect()
+          const { top, left } = box
+          const d = top - window.innerHeight
+
+          let Y = 0
+          let X = 0
+
+          if (y) {
+            const offset = d/y
+            const minY = target.getAttribute('min-y')
+            let mo = offset
+            if (minY) {
+              mo = Math.max(minY, offset)
+            }
+            Y = mo
+          }
+          // const minYMd = target.getAttribute('min-y-md')
+          // if (windowWidth > 768 && minYMd && windowWidth < 940) {
+          //   mo = Math.max(minYMd, offset)
+          // } else
+
+          // target.style['background-position-y'] = o
+          // target.style['background-position-x'] = Math.floor(offsetX) + 'px'
+
+          if (x) { // should this be -x at the moment
+            const delta = d * x
+
+            // const totalWidth = window.outerWidth
+            // X = -totalWidth + delta
+            X = -delta
+            target.style['min-width'] = floatToPx(Math.abs(delta) * 10)
+          }
+
+          const ch = `${target.parentNode.clientHeight * 3}px`
+          target.style['min-height'] = ch
+
+          Y += oy
+
+          const t = `translate3d(${floatToPx(X)}, ${floatToPx(Y)}, 0)`
+          target.style['transform'] = t
+        }
+        window.addEventListener('scroll', listener)
+        map[target.pid] = listener
+      } else {
+        if (!(target.pid in map)) return
+        window.removeEventListener('scroll', map[target.pid])
+        delete map[target.pid]
+      }
+    })
+  })
+
+  const floatToPx = (f) => {
+    return `${f.toFixed(0)}px`
+  }
+
+  let windowWidth = window.innerWidth
+  window.addEventListener('resize', () => {
+    windowWidth = window.innerWidth
+  })
+
+  let id = 0
+
+  const start = () => {
+    const els = [...document.querySelectorAll('.Parallax')]
+    els.forEach((img) => {
+      if (!img.style['background-image']) return
+
+      img.pid = id++
+      img.setAttribute('data-src', img.style['background-image'])
+      img.style['background-image'] = null
+      io.observe(img)
+    })
+  }
+
+  window['IO'] = () => {
+    start()
+  }
+
+  start()
+})({
+  'background-image': '/img/code2.gif',
+style: 'background-repeat: repeat-y; z-index:-1;',
+})

@@ -17,11 +17,16 @@ class Adonais extends Component {
       },
     }
   }
-  render({ splendid, class: className }) {
+  serverRender({ splendid, class: className }) {
     splendid.export()
     const cl = splendid.addCSS('styles/Adonais.css', 'Adonais')
-
-    return (<span className={`Adonais ${className}`}>
+    return (<div className={`Adonais ${className}`}>
+      <img alt="Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation" className={cl`Image`} src="img/adonais/back.jpg" style="position:relative;" />
+    </div>)
+  }
+  render({ splendid, class: className }) {
+    const cl = splendid.addCSS('styles/Adonais.css', 'Adonais')
+    return (<div className={`Adonais ${className}`}>
       <img className={cl`Image`} src="img/adonais/back.jpg" style="position:relative; opacity:0;" />
       <img className={cl`Image`} src="img/adonais/back.jpg" />
       {this.state.hint && <span className={cl`Copy`} style={{ 'z-index': 2, position: 'absolute', top: this.state.y + 15 , left: this.state.x + 15 }}>
@@ -48,7 +53,7 @@ class Adonais extends Component {
       <Letter file="img/adonais/S.png" top={120} left={125} class={cl`S Image`} href="#software">
         <strong className={cl`Letter`}>S</strong>oftware Engineering is a craft that involves implementation, testing, documentation, building and maintenance. With our holistic approach, we are able to deliver best quality software.
       </Letter>
-    </span>
+    </div>
     )
   }
 }
