@@ -1,5 +1,6 @@
 import '../js/load-noise'
 import '../js/parallax'
+import 'splendid/internal/js/polyfill/replace-with'
 import '../js/object.assign'
 import __renameMap0 from './__rename-maps/styles/Adonais'
 import __renameMap1 from './__rename-maps/styles/Parallax'
@@ -37,7 +38,12 @@ meta.forEach(({ key, id, props = {}, children = [] }) => {
     return makeClassGetter(renameMaps[stylesheet])
   }, addFile() {} }
   el.render = () => {
-    render(h(Comp, props, children), parent, el)
+    if (Comp.load) {
+      Comp.load((err, data) => {
+        if (data) Object.assign(props, data)
+        if (!err) render(h(Comp, props, children), parent, el)
+      })
+    } else render(h(Comp, props, children), parent, el)
   }
   el.render.meta = { key, id }
   io.observe(el)

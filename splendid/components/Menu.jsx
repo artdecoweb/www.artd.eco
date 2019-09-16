@@ -3,19 +3,19 @@ import loadScripts from '@lemuria/load-scripts'
 import { Component } from 'preact'
 
 export default class Menu extends Component {
-  constructor() {
-    super()
-    this.state = { json: null }
-  }
-  componentWillMount() {
+  static 'load'(callback) {
     loadScripts([
       'js/menu.json',
       'snapsvg/dist/snap.svg-min.js',
       'js/svg-anim.js',
     ], (err, res) => {
-      if (!res) return
-      const [json] = res
-      this.setState({ json: JSON.parse(/** @type {string} */ (json)) })
+      if (err) return callback(err)
+      try {
+        const [json] = res
+        callback(null, { json: JSON.parse(/** @type {string} */ (json)) })
+      } catch (er) {
+        callback(er)
+      }
     })
   }
   serverRender({ splendid }) {
@@ -23,25 +23,16 @@ export default class Menu extends Component {
     splendid.addFile('js/menu.json')
     splendid.addFile('js/svg-anim.js.map')
     splendid.addFile('img/menu.svg')
+    splendid.polyfill('replace-with', true)
     splendid.addExtern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
     return (<div id="menu" style="width:100%;"><img style="max-width:100%;" alt="menu" src="img/menu.svg" /></div>)
   }
-  cancelRender() {
-    const err = new Error('loading...')
-    err['cancelRender'] = true
-    throw err
-  }
-  render() {
-    const menuContainer = document.getElementById('menu')
-    if (!this.state.json) {
-      this.cancelRender()
-    }
-
+  render({ json }) {
     const width = 1226
     const height = 818
 
     /** @type {!_snapsvgAnimator.SVGAnim} */
-    const comp = new window['SVGAnim'](this.state.json, width, height)
+    const comp = new window['SVGAnim'](json, width, height)
     const n = comp.s.node
     n.style['max-width'] = '100%'
 
@@ -55,10 +46,10 @@ export default class Menu extends Component {
       assignLink(node, 'node')
       assignLink(packages, 'packages')
       assignLink(contact, 'contact')
-
-      menuContainer.querySelector('img').replaceWith(n)
     }, 100)
-    return null
+    return (<div id="menu" style="width:100%;" ref={(el) => {
+      el.appendChild(n)
+    }}/>)
   }
 }
 

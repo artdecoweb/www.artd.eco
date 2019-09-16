@@ -3,6 +3,18 @@
   font-size: larger;
   color: gold;
 }
+.LetterA > span {
+  display: none;
+  color: #753f1f;
+  text-shadow: #f9fafc 1px 1px;
+}
+.LetterA:hover > span {
+  display: inline;
+  z-index: 2;
+}
+.LetterA:hover > img {
+  z-index: 3;
+}
 .Image {
   position: absolute;
   top: 0;

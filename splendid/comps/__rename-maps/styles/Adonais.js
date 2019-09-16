@@ -1,1 +1,1 @@
-export default {"Letter":"a","Image":"b","A":"c","I":"d","A2":"e","D":"f","O":"g","N":"h","S":"i","Copy":"j","Noise":"k"}
+export default {"Letter":"a","LetterA":"b","Image":"c","A":"d","I":"e","A2":"f","D":"g","O":"h","N":"i","S":"j","Copy":"k","Noise":"l"}
