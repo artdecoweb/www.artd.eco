@@ -77,8 +77,8 @@ export default class Parallax extends Component {
     this.el.style.webkitTransform = t
   }
   componentDidMount() {
-    this.speedy = parseFloat(this.props['speedy'] || 0.5)
-    this.speedx = parseFloat(this.props['speedx'] || 0)
+    this.speedy = parseFloat(this.props.speedy || 0.5)
+    this.speedx = parseFloat(this.props.speedx || 0)
     this.handle = this.el.nextElementSibling
 
     this.listener = () => {
