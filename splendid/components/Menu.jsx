@@ -2,7 +2,11 @@
 import loadScripts from '@lemuria/load-scripts'
 import { Component } from 'preact'
 
+// Menu['load'] = Menu.load //eslint-disable-line
 export default class Menu extends Component {
+  /**
+   * @suppress {checkTypes}
+   */
   static 'load'(callback) {
     loadScripts([
       'js/menu.json',
@@ -11,7 +15,7 @@ export default class Menu extends Component {
     ], (err, res) => {
       if (err) return callback(err)
       try {
-        const [json] = res
+        const [json] = /** @type {!Array<string>}*/ (res)
         callback(null, { json: JSON.parse(/** @type {string} */ (json)) })
       } catch (er) {
         callback(er)

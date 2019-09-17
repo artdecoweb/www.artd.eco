@@ -6,7 +6,10 @@ export default function Parallax({
 }) {
   // if (splendid.debug) splendid.debug()
   const prefix = 'Parallax'
-  splendid.addCSS('styles/Parallax.css', null, { whitelist: prefix })
+  splendid.addCSS('styles/Parallax.css', null, {
+    whitelist: prefix,
+    exported: false,
+  })
   splendid.polyfill('intersection-observer')
   splendid.addScript('js/parallax.js', false, {}, true)
   if (backgroundImage) splendid.addFile(backgroundImage)

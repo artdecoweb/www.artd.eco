@@ -1,4 +1,5 @@
 import { Component } from 'preact'
+import { loadStyle } from '@lemuria/load-scripts'
 
 class Adonais extends Component {
   constructor() {
@@ -25,12 +26,13 @@ class Adonais extends Component {
       <img alt="Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation" className={cl`Image`} src="img/adonais/back.jpg" style="position:relative;" />
     </div>)
   }
+  /**
+   * @suppress {checkTypes}
+   */
   static 'load'(callback) {
-    const link = document.createElement('link')
-    link.rel = 'stylesheet'
-    link.href = 'css/Adonais.css' // minified CSS
-    link.onload = () => callback()
-    document.head.appendChild(link)
+    loadStyle('css/Adonais.css', () => {
+      callback()
+    })
   }
   render({ splendid, class: className }) {
     const cl = splendid.addCSS('styles/Adonais.css')

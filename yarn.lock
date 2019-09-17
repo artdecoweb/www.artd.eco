@@ -77,10 +77,10 @@
   dependencies:
     erte "1.1.6"
 
-"@lemuria/load-scripts@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@lemuria/load-scripts/-/load-scripts-1.0.0.tgz#518bb8003d635b9931a00a3350472b97bb3c21d6"
-  integrity sha512-PbuT/wd+2dksrrX9ped7PQc+uixMciPM+cMIuOF8FmldqtDxYq4OCXenO+86OZ1Kl68jYDNdzAaXG0gXzVW6fA==
+"@lemuria/load-scripts@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@lemuria/load-scripts/-/load-scripts-1.1.0.tgz#1668d9caa83303c0e88d56cbc5ed3fb162c94dd7"
+  integrity sha512-C5HOikKtq7Wf2nnr1ZP/UTXbV3cUftWhNbiwE6KgypRsMYkxodOX0aFRoCciJiv1/iSWjK1dP+OAip5xEvd+bw==
 
 "@lemuria/popup@^1.1.1":
   version "1.1.1"

@@ -15,7 +15,7 @@
     <script>document.documentElement.classList.remove("no-js")</script>
     <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight" rel="stylesheet">
     <style>
-      .no-js [data-io] { display: none!important }
+      .no-js [data-loading], .no-js [data-io] { display: none!important }
     </style>
     <script defer src="js/polyfill/intersection-observer.js"></script>
     <script defer src="js/images.js"></script>
@@ -35,8 +35,11 @@
     <div id="about" class="container">
       <div class="row">
         <div class="col-sm-4 col-lg-3 align-self-center text-center">
-          <img alt="Art Deco Logo" class="img-fluid Logo" data-io data-src="img/logo.png">
-          <noscript><img alt="Art Deco Logo" class="img-fluid Logo" src="img/logo.png"></noscript>
+          <picture id="p57253" class="Logo">
+            <source srcset="img/logo-300.webp 300w" sizes="300px" type="image/webp">
+            <source srcset="" type="image/png" sizes="300px">
+            <img alt="Art Deco Logo" src="img/logo.png" srcset="" sizes="300px" class="img-fluid">
+          </picture>
         </div>
         <div class="col">
           <h1 id="art-deco-the-emnodejsem-development-company-in-london">Art Deco™: The <em>Node.JS</em> Development Company In London</h1>
@@ -68,11 +71,15 @@
     </p>
     
   </div>
-  <div style="overflow:hidden;margin-top:1.5rem; margin-bottom:1.5rem;padding:1.4rem;"
-    class="position-relative order-1 order-lg-3 d-flex justify-content-center col-lg-5">
-    <div class=" Parallax"
-      style="background-image:url(/img/code2.gif);background-repeat: repeat-y; z-index:-1;" y="2" oy="0">
-    </div>
+  <div style="overflow: hidden;"
+    class="col-lg-5 my-3 position-relative order-1 order-lg-3 d-flex justify-content-center p-3">
+    <div class=" Parallax1" data-loading style="background-repeat: repeat-y; z-index: -1;" id="c80"></div>
+    <div class="Parallax1"></div>
+    <noscript>
+      <div class=" Parallax1"
+        style="background-image: url(/img/code2.gif); background-repeat: repeat-y; z-index: -1;">
+      </div>
+    </noscript>
     <img alt="Node.JS at the epicenter of modern software development"
       class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" data-io
       data-src="/img/Byss-und-Abyss2.gif">
@@ -285,9 +292,11 @@
   </div>
   <div style="overflow: hidden;"
     class="col-lg-3 justify-content-around mb-3 position-relative d-flex align-items-center flex-lg-column">
-    <div class=" Parallax" style="background-image: url(/img/seamless.jpg); z-index: -1;" x="-1/2" y="2"
-      oy="0">
-    </div>
+    <div class=" Parallax1" data-loading style="z-index: -1;" id="c74268"></div>
+    <div class="Parallax1"></div>
+    <noscript>
+      <div class=" Parallax1" style="background-image: url(/img/seamless.jpg); z-index: -1;"></div>
+    </noscript>
     <div class="Noises d-inline-block" style="mix-blend-mode: difference; z-index:-1;">
       <img alt="log babel install process" class="img-fluid"
         style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" data-io data-src="img/noise/yarn-add-babel2.gif">
@@ -404,8 +413,12 @@
     
     
 
+    
+      
     <div class="container-fluid p-0 position-relative" style="height: 100px; overflow: hidden;">
-      <div class=" Parallax" style="background-image: url(/img/bakst2.jpg);" y="2" oy="0"></div>
+      <div class=" Parallax1" data-loading id="c75046"></div>
+      <div class="Parallax1"></div>
+      <noscript><div class=" Parallax1" style="background-image: url(/img/bakst2.jpg);"></div></noscript>
     </div>
     <script>
   function d(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function e(){var a=document.querySelectorAll("script[data-src]");if(!(a instanceof Array)){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];a=b?b.call(a):{next:d(a)};for(var c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}
