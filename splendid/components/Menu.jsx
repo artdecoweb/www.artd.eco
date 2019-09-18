@@ -2,6 +2,11 @@
 import loadScripts from '@lemuria/load-scripts'
 import { Component } from 'preact'
 
+const makeDataSvg = (width, height) => {
+  const svg = `%3Csvg xmlns='http://www.w3.org/2000/svg' width='${width}' height='${height}'/%3E`
+  return `data:image/svg+xml,${svg}`
+}
+
 // Menu['load'] = Menu.load //eslint-disable-line
 export default class Menu extends Component {
   /**
@@ -29,7 +34,14 @@ export default class Menu extends Component {
     splendid.addFile('img/menu.svg')
     splendid.polyfill('replace-with', true)
     splendid.addExtern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
-    return (<div id="menu" style="width:100%;"><img style="max-width:100%;" alt="menu" src="img/menu.svg" /></div>)
+
+    // <img max-width="100%" opacity="0" src={makeDataSvg(1226, 818)} />
+
+    return (<div id="menu" style="width:100%;" className="position-relative">
+      <splendid-img
+        placeholder-width="1226"
+        placeholder-height="818" max-width="100%" alt="menu" src="img/menu.svg" />
+    </div>)
   }
   render({ json }) {
     const width = 1226

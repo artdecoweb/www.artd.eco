@@ -12,8 +12,10 @@
     <link rel="preload" href="snapsvg/dist/snap.svg-min.js" as="script">
     <link rel="preload" href="js/svg-anim.js" as="script">
     <link href="styles/combined.css" rel="stylesheet">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
     <script>document.documentElement.classList.remove("no-js")</script>
-    <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight&display=swap" rel="stylesheet">
     <style>
       .no-js [data-loading], .no-js [data-io] { display: none!important }
     </style>
@@ -21,9 +23,6 @@
     <script defer src="js/images.js"></script>
     <script crossorigin data-src="preact/dist/preact.min.js"></script>
     <script crossorigin data-src="comps/main.js"></script>
-    <script>
-      document.documentElement.classList.remove("no-js")
-    </script>
 
     <link rel="preload" href="preact/dist/preact.min.js" as="script" crossorigin>
     <link rel="preload" href="comps/main.js" as="script" crossorigin>
@@ -35,7 +34,7 @@
     <div id="about" class="container">
       <div class="row">
         <div class="col-sm-4 col-lg-3 align-self-center text-center">
-          <picture id="p57253" class="Logo">
+          <picture id="p75046" class="Logo">
             <source srcset="img/logo-300.webp 300w" sizes="300px" type="image/webp">
             <source srcset="" type="image/png" sizes="300px">
             <img alt="Art Deco Logo" src="img/logo.png" srcset="" sizes="300px" class="img-fluid">
@@ -56,7 +55,11 @@
     </div>
 
 
-    <div id="menu" style="width:100%;"><img style="max-width:100%;" alt="menu" src="img/menu.svg"></div>
+    <div id="menu" style="width:100%;" class="position-relative">
+      <img alt="menu"
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1226' height='818'/%3E" data-io style="max-width: 100%;" data-src="img/menu.svg">
+      <noscript><img alt="menu" style="max-width: 100%;" src="img/menu.svg"></noscript>
+    </div>
 
 
     <div id="Content" class="container"><p class="SectionBreak">
@@ -64,8 +67,8 @@
     <img src="section-breaks/0.svg" alt="Back To Top"></a>
 </p>
 <div class="row">
-  <div id="node" class="order-2 col">
-    <h2 id="emnodejsem-mdash-your-language-of-choice"><em>Node.JS</em> &mdash; Your Language Of Choice</h2>
+  <div class="order-2 col">
+    <h2 id="node"><em>Node.JS</em> &mdash; Your Language Of Choice</h2>
     <p>
       Software Engineering is an art, science and technology combined. It helps to automate processes and improve the standard of living, relieving humans of monotonous operations that can be solved using a computer program. 100 years ago, with the advent of new machinery, there was a promise for the future where people's time could be taken off of work, and put into spending their lives focusing on human tasks and communications. This has partly been achieved, but we have a long way to go still, and after reaching the required stage of progress in hardware, we are now peaking in the course of software evolution. The species that is increasingly dominating the environment and taking the central stage in this process of natural selection of the fittest is <em>Node.JS</em>. It is no surprise that in today's word, characterised by globalisation and interconnectedness, the programming language born on the web, is becoming <em>The One</em> of the web, who will redeem it and remake it in the way it's supposed to be.
     </p>
@@ -73,15 +76,15 @@
   </div>
   <div style="overflow: hidden;"
     class="col-lg-5 my-3 position-relative order-1 order-lg-3 d-flex justify-content-center p-3">
-    <div class=" Parallax1" data-loading style="background-repeat: repeat-y; z-index: -1;" id="c80"></div>
-    <div class="Parallax1"></div>
+    <div class=" Parallax" data-loading style="background-repeat: repeat-y; z-index: -1;" id="c74268"></div>
+    <div class="Parallax"></div>
     <noscript>
-      <div class=" Parallax1"
+      <div class=" Parallax"
         style="background-image: url(/img/code2.gif); background-repeat: repeat-y; z-index: -1;">
       </div>
     </noscript>
     <img alt="Node.JS at the epicenter of modern software development"
-      class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" data-io
+      class="img-fluid align-self-center" data-io style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;"
       data-src="/img/Byss-und-Abyss2.gif">
     <noscript>
       <img alt="Node.JS at the epicenter of modern software development"
@@ -93,9 +96,72 @@
 <div class="row">
   <div class="col">
     <div class="float-none float-sm-left d-sm-inline-block pr-3">
-      <div class="Adonais position-relative mb-3 align-top" id="c9848">
-        <img class="c"
-          alt="Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation" src="img/adonais/back.jpg" style="position:relative;">
+      <div class="Adonais position-relative mb-3 align-top">
+        <img
+          alt="Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation" class="c" data-io style="position:relative" data-src="img/adonais/back.jpg">
+        <noscript>
+          <img
+            alt="Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation" class="c" style="position:relative" src="img/adonais/back.jpg">
+        </noscript>
+        <a style="top: 112px; left: 219px;" class="b" href="#art-deco">
+          <span class="k" style="z-index: 2; position: absolute; top: 127px; left: 234px;">
+            <span class="l">
+              <strong class="a">A</strong>rt Deco creates products for the modern web using back-end Node.JS and front-end JavaScript, taking advantage of the best available methods.</span>
+          </span>
+          <img alt="letter A" class="d c" data-io style="top: 112px; left: 219px;"
+            data-src="img/adonais/a2.png">
+          <noscript><img alt="letter A" class="d c" style="top: 112px; left: 219px;" src="img/adonais/a2.png"></noscript></a>
+        <a style="top: 208px; left: 175px;" class="b" href="#implementation">
+          <span class="k" style="z-index: 2; position: absolute; top: 223px; left: 190px;">
+            <span class="l">
+              We 
+              <strong class="a">I</strong>mplement software products using the latest language features and spend time on writing code rather than setting up tools and installing 3rd party dependencies.</span>
+          </span>
+          <img alt="letter I" class="e c" data-io style="top: 208px; left: 175px;"
+            data-src="img/adonais/I.png">
+          <noscript><img alt="letter I" class="e c" style="top: 208px; left: 175px;" src="img/adonais/I.png"></noscript></a>
+        <a style="top: 207px; left: 73px;" class="b" href="#automated-testing">
+          <span class="k" style="z-index: 2; position: absolute; top: 222px; left: 88px;">
+            <span class="l">
+              Employed 
+              <strong class="a">A</strong>utomated Testing on unit and integration levels ensures that software is bug-free and that any future changes to the codebase won't break the existing version.</span>
+          </span>
+          <img alt="letter A" class="f c" data-io style="top: 207px; left: 73px;"
+            data-src="img/adonais/A3.png">
+          <noscript><img alt="letter A" class="f c" style="top: 207px; left: 73px;" src="img/adonais/A3.png"></noscript></a>
+        <a style="top: 123px; left: 15px;" class="b" href="#documentation">
+          <span class="k" style="z-index: 2; position: absolute; top: 138px; left: 30px;">
+            <span class="l">
+              Full-coverage 
+              <strong class="a">D</strong>ocumentation allows for long-term maintenance by us and other teams and is full of examples and their outputs that also act as a quality assurance mechanism.</span>
+          </span>
+          <img alt="letter D" class="g c" data-io style="top: 123px; left: 15px;" data-src="img/adonais/D.png">
+          <noscript><img alt="letter D" class="g c" style="top: 123px; left: 15px;" src="img/adonais/D.png"></noscript></a>
+        <a style="top: 28px; left: 67px;" class="b" href="#optimisation">
+          <span class="k" style="z-index: 2; position: absolute; top: 43px; left: 82px;">
+            <span class="l">
+              The 
+              <strong class="a">O</strong>ptimisation of CSS stylesheets and JavaScript code, both for the server and client-side, means that transmitted bundles will load faster and improve user experience.</span>
+          </span>
+          <img alt="letter O" class="h c" data-io style="top: 28px; left: 67px;" data-src="img/adonais/O.png">
+          <noscript><img alt="letter O" class="h c" style="top: 28px; left: 67px;" src="img/adonais/O.png"></noscript></a>
+        <a style="top: 25px; left: 169px;" class="b" href="#npm-packages">
+          <span class="k" style="z-index: 2; position: absolute; top: 40px; left: 184px;">
+            <span class="l">
+              Having contributed over 150 
+              <strong class="a">N</strong>PM packages, we have derived the methodology for managing dependencies that facilitate code reuse and organises workload into logical chunks.</span>
+          </span>
+          <img alt="letter N" class="i c" data-io style="top: 25px; left: 169px;" data-src="img/adonais/N.png">
+          <noscript><img alt="letter N" class="i c" style="top: 25px; left: 169px;" src="img/adonais/N.png"></noscript></a>
+        <a style="top: 120px; left: 125px;" class="b" href="#software">
+          <span class="k" style="z-index: 2; position: absolute; top: 135px; left: 140px;">
+            <span class="l">
+              <strong class="a">S</strong>oftware Engineering is a craft that involves implementation,
+              testing, documentation, building and maintenance. With our holistic approach, we are able to deliver best quality software.</span>
+          </span>
+          <img alt="letter S" class="j c" data-io style="top: 120px; left: 125px;"
+            data-src="img/adonais/S.png">
+          <noscript><img alt="letter S" class="j c" style="top: 120px; left: 125px;" src="img/adonais/S.png"></noscript></a>
       </div>
       <p class="text-monospace my-3 text-left" style="max-width: 271px; font-size: small;">
         ^ hover over animated letters for an intro to a software engineering practice, and click to move to its description on the page below.
@@ -113,8 +179,7 @@
 
 <div id="art-deco" class="row Feature">
   <div class="col">
-    <h2 style="background: #8ea6aa; color: #d1d2ca; text-shadow: 1px 1px #4e675b;"
-      id="img-styletransform-scalex-1--webkit-transform-scalex-1-altart-deco-fan-classfloat-right-srcimgsunpng-art-deco" class="text-center">
+    <h2 style="background: #8ea6aa; color: #d1d2ca; text-shadow: 1px 1px #4e675b;" class="text-center">
       <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
         class="float-right" src="img/sun.png">
        Art Deco
@@ -137,8 +202,7 @@
 </p>
 <div id="implementation" class="row Feature">
   <div class="col">
-    <h2 style="background: #e84936; color: white; text-shadow: 1px 1px grey;"
-      id="img-altart-deco-fan-classfloat-left-srcimgsunpng-implementation" class="text-center">
+    <h2 style="background: #e84936; color: white; text-shadow: 1px 1px grey;" class="text-center">
       <img alt="art deco fan" class="float-left" src="img/sun.png">
        Implementation
     </h2>
@@ -159,8 +223,7 @@
 </p>
 <div id="automated-testing" class="row Feature">
   <div class="col">
-    <h2 style="background: #faf7ee; color: #7f9ed2; text-shadow: 1px 1px #4e71a7;"
-      id="img-styletransform-scalex-1--webkit-transform-scalex-1-altart-deco-fan-classfloat-right-srcimgsunpng-automated-testing" class="text-center">
+    <h2 style="background: #faf7ee; color: #7f9ed2; text-shadow: 1px 1px #4e71a7;" class="text-center">
       <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
         class="float-right" src="img/sun.png">
        Automated Testing
@@ -182,8 +245,7 @@
 </p>
 <div id="documentation" class="row Feature">
   <div class="col">
-    <h2 style="background: #cbbf8f; color: #3e4227; text-shadow: 1px 1px #957544;"
-      id="img-altart-deco-fan-classfloat-left-srcimgsunpng-documentation" class="text-center">
+    <h2 style="background: #cbbf8f; color: #3e4227; text-shadow: 1px 1px #957544;" class="text-center">
       <img alt="art deco fan" class="float-left" src="img/sun.png">
        Documentation
     </h2>
@@ -206,8 +268,7 @@
 
 <div id="optimisation" class="row Feature">
   <div class="col">
-    <h2 style="background: #dfdeda; color: #4e4e4c; text-shadow: 1px 1px #c8c1a4;"
-      id="img-styletransform-scalex-1--webkit-transform-scalex-1-altart-deco-fan-classfloat-right-srcimgsunpng-optimisation" class="text-center">
+    <h2 style="background: #dfdeda; color: #4e4e4c; text-shadow: 1px 1px #c8c1a4;" class="text-center">
       <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
         class="float-right" src="img/sun.png">
        Optimisation
@@ -229,8 +290,7 @@
 </p>
 <div id="npm-packages" class="row Feature">
   <div class="col">
-    <h2 style="background: #f36e2b; color: #ffeea8; text-shadow: 1px 1px #f69e49;"
-      id="img-altart-deco-fan-classfloat-left-srcimgsunpng-npm-packages" class="text-center">
+    <h2 style="background: #f36e2b; color: #ffeea8; text-shadow: 1px 1px #f69e49;" class="text-center">
       <img alt="art deco fan" class="float-left" src="img/sun.png">
        NPM Packages
     </h2>
@@ -279,8 +339,8 @@
 
 
 <div class="row">
-  <div id="packages" class="col">
-    <h2 id="regenerating-emnodejsem-ecosystem">Regenerating <em>Node.JS</em> Ecosystem</h2>
+  <div class="col">
+    <h2 id="packages">Regenerating <em>Node.JS</em> Ecosystem</h2>
     <p>
       <em>Node.JS</em>, the most modern programming language of today, has risen as a reaction to traditional heavy applications that take ages to compile, an army of administrators to manage, and cost enormous amount of money to introduce and maintain. The <em>Node.JS</em> runtime, on the other hand, based on the <em>JavaScript</em> programming language, has given independent developers and smaller teams freedom to write fast, easily deployable and testable software systems that transform from a prototype to production in a matter of days, not years.
       However, the ecosystem's direction of growth around <span class="Node TM">Node.JS</span> and its package manager <span class="NPM TM">NPM</span> has been hijacked by corporations, that want to dictate their own terms of use: <span class="Corp">Microsoft</span> would like people to use <span class="Typescript TM">TypeScript</span> instead of <span class="JavaScript TM">JavaScript</span> and is successfully advocating it by playing on the fact that students are mostly taught Java at Universities, so that they tend to choose what they know, that is, a typed object-oriented programming language; and <span class="Corp">Facebook</span> is dominating the field of web-development by maintaining the <span class="React TM">React</span> library tied up to such tools as <del>Babel and Jest</del>, which are gigantic in size and contain bugs. Moreover, there's no need to pretend that these companies are doing it for free: every developer won will result in either marketing, power or financial gains to them. The main issue is that to solve simple problems, the solutions employed are unnecessary complex, involve installing 1000s of dependencies for a product at hand, and lock developers in the mode of thinking and working prescribed by someone else. JavaScript and Node.JS were once about freedom, openness to experimentation and close friendly community, and now, like all good things that become popular, it is poisoned by ignorance, unprofessionalism and the belief system that anyone who has installed a 3rd party dependency, is an expert developer and those who don't agree with the paradigms established by corporations are weird outsiders. Art Deco aims to restore the intrinsic philosophy behind JavaScript and Node.JS as open-minded, efficient and solution-focused instruments and regenerates the development process of back-end and front-end applications with utilities that are simply sophisticated and sophisticatedly simple, for ourselves, and others, so that the work process comprises purely of writing code, tests and documentation with minimal tint of branded technology but maximum productivity. In other words, Art Deco makes tools for developers, rather than making developers its tools.
@@ -292,30 +352,30 @@
   </div>
   <div style="overflow: hidden;"
     class="col-lg-3 justify-content-around mb-3 position-relative d-flex align-items-center flex-lg-column">
-    <div class=" Parallax1" data-loading style="z-index: -1;" id="c74268"></div>
-    <div class="Parallax1"></div>
+    <div class=" Parallax" data-loading style="z-index: -1;" id="c9848"></div>
+    <div class="Parallax"></div>
     <noscript>
-      <div class=" Parallax1" style="background-image: url(/img/seamless.jpg); z-index: -1;"></div>
+      <div class=" Parallax" style="background-image: url(/img/seamless.jpg); z-index: -1;"></div>
     </noscript>
     <div class="Noises d-inline-block" style="mix-blend-mode: difference; z-index:-1;">
-      <img alt="log babel install process" class="img-fluid"
-        style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" data-io data-src="img/noise/yarn-add-babel2.gif">
+      <img alt="log babel install process" class="img-fluid" data-io
+        style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" data-src="img/noise/yarn-add-babel2.gif">
       <noscript>
         <img alt="log babel install process" class="img-fluid"
           style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" src="img/noise/yarn-add-babel2.gif">
       </noscript>
     </div>
     <div class="d-inline-block">
-      <img alt="capitalised power, systematic fear, strategic sabotage" class="img-fluid"
-        style="z-index: 1;" data-io data-src="img/images2.png">
+      <img alt="capitalised power, systematic fear, strategic sabotage" class="img-fluid" data-io
+        style="z-index: 1;" data-src="img/images2.png">
       <noscript>
         <img alt="capitalised power, systematic fear, strategic sabotage" class="img-fluid"
           style="z-index: 1;" src="img/images2.png">
       </noscript>
     </div>
     <div class="Noises d-inline-block" style="mix-blend-mode:screen;z-index:-1;">
-      <img alt="timewave zero simulation" class="img-fluid"
-        style="z-index: 1; mix-blend-mode: screen; width: 250px;" data-io data-src="img/hqdefault.jpg">
+      <img alt="timewave zero simulation" class="img-fluid" data-io
+        style="z-index: 1; mix-blend-mode: screen; width: 250px;" data-src="img/hqdefault.jpg">
       <noscript>
         <img alt="timewave zero simulation" class="img-fluid"
           style="z-index: 1; mix-blend-mode: screen; width: 250px;" src="img/hqdefault.jpg">
@@ -383,7 +443,7 @@
   
   <div style="background:rgb(251,246,0); height:20rem;padding:1rem;" id="contact"
     class="Yellow position-relative col-sm-8 col-md-5 col-lg-4">
-    <h2 style="color: #405a8c" id="contact-us">Contact Us</h2>
+    <h2 style="color: #405a8c">Contact Us</h2>
     <p>
       Art Deco Code Limited<br/>
       International House,<br>24 Holborn Viaduct,<br>London, EC1A 2BN
@@ -392,8 +452,11 @@
         <br>{/＊<strong> &nbsp;<a style="color:white" href="mailto:allora@artd.eco">allora@artd.eco</a> </strong>＊/}
       </span>
     </p>
-    <img alt="bird" style="position:absolute; right:1rem; top:1rem;" data-io data-src="img/bird.gif">
-    <noscript><img alt="bird" style="position:absolute; right:1rem; top:1rem;" src="img/bird.gif"></noscript>
+    <img alt="bird" class="position-absolute" data-io style="right: 1rem; top: 1rem;"
+      data-src="img/bird.gif">
+    <noscript>
+      <img alt="bird" class="position-absolute" style="right: 1rem; top: 1rem;" src="img/bird.gif">
+    </noscript>
     <img alt="bird" class="Bird1" data-io data-src="img/bird.gif">
     <noscript><img alt="bird" class="Bird1" src="img/bird.gif"></noscript>
     
@@ -416,9 +479,9 @@
     
       
     <div class="container-fluid p-0 position-relative" style="height: 100px; overflow: hidden;">
-      <div class=" Parallax1" data-loading id="c75046"></div>
-      <div class="Parallax1"></div>
-      <noscript><div class=" Parallax1" style="background-image: url(/img/bakst2.jpg);"></div></noscript>
+      <div class=" Parallax" data-loading id="c80"></div>
+      <div class="Parallax"></div>
+      <noscript><div class=" Parallax" style="background-image: url(/img/bakst2.jpg);"></div></noscript>
     </div>
     <script>
   function d(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function e(){var a=document.querySelectorAll("script[data-src]");if(!(a instanceof Array)){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];a=b?b.call(a):{next:d(a)};for(var c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}

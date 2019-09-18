@@ -18,8 +18,8 @@ export default class Parallax extends Component {
     ...props
   }) {
     splendid.export()
-    const prefix = 'Parallax1'
-    splendid.addCSS('styles/Parallax1.css', null, {
+    const prefix = 'Parallax'
+    splendid.addCSS('styles/Parallax.css', null, {
       whitelist: prefix,
       exported: false,
       // combined: false,
@@ -39,7 +39,7 @@ export default class Parallax extends Component {
     // min-y={minY} min-y-md={minYMd} x={x} y={y} oy={oy}
     return [
       <div data-loading className={cn} style={st} />,
-      <div className="Parallax1"/>,
+      <div className={prefix}/>,
       <noscript><div className={cn} style={style2} /></noscript>,
     ]
   }
@@ -92,13 +92,24 @@ export default class Parallax extends Component {
    * @param {Element} el
    * @suppress {checkTypes}
    */
-  static 'load'(callback, el) {
-    callback(null, { class: el.className, style: el.getAttribute('style') })
+  static 'load'(callback, el, { 'background-image': backgroundImage }) {
+    const img = document.createElement('img')
+    img.src = backgroundImage
+    img.onload = () => {
+      callback(null, { class: el.className, style: el.getAttribute('style') })
+    }
+    img.onerror = () => {
+      callback(new Error('Image could not be loaded.'))
+    }
   }
   render({ class: cn, style, 'background-image': backgroundImage }) {
     return (<div className={cn} style={style} ref={(el) => {
       this.el = el
-      if (el) el.style['background-image'] = `url(${backgroundImage})`
+      if (el) {
+        el.style.animation = 'fadeIn 0.5s'
+        el.style.webkitAnimation = 'fadeIn 0.5s'
+        el.style['background-image'] = `url(${backgroundImage})`
+      }
     }}/>)
   }
 }

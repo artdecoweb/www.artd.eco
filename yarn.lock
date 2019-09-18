@@ -21,9 +21,9 @@
   integrity sha512-q5lO3vGUo0WgkSqzgzjL0HQdA9t2HzQqZISuVuQWMh9xqLuiLFP/ZTsxFc8vpMl7mNpGk7Mm0OeyFQ+Evrp0Cw==
 
 "@depack/depack@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@depack/depack/-/depack-2.0.2.tgz#c4a5fc559d778774967dd896fc0e73d3069ccdb5"
-  integrity sha512-zRN7jWErb9v+Z4qW31o8BJf9da447FwGdKjIibrI55WVz2FYXIgGhpB33dGj8O+x1APApkSdVGntPd0KV7Nkig==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@depack/depack/-/depack-2.1.0.tgz#d0e3bc30ab2fc5ad773a5d6bf4bff1d9183ec599"
+  integrity sha512-Qs63d/UhJrEORIGDlsCEdqgqNaf2Iv4MN5oeRFX+ONpqP1Hk45mfAGrJYJBhCvpxrNigj/2Jv7hXN5yoi5+l1g==
   dependencies:
     "@depack/externs" "^1.4.4"
     "@depack/nodejs" "^1.1.4"
@@ -148,10 +148,10 @@ diff@4.0.1:
   resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.1.tgz#0c667cb467ebbb5cea7f14f135cc2dba7780a8ff"
   integrity sha512-s2+XdvhPCOF01LRQBC8hf4vhbVmI2CGS5aZnxLJlT5FtdhPCDFq80q++zK2KlrVorVDdL5BOGZ/VfLrVtYNF+Q==
 
-documentary@^1.33.2:
-  version "1.33.2"
-  resolved "https://registry.yarnpkg.com/documentary/-/documentary-1.33.2.tgz#2b1f3271e345dde1da338fe163ed4cd5672ff6b3"
-  integrity sha512-yUS2zC7VYAk/Iv0/cDKMAL6zNtRW5DsuH62wzzIZkC+WcfQoyxL2QBqLP4mG5/2ec3kkN4XB5eAHx/D4e7ZVAQ==
+documentary@^1.33.3:
+  version "1.33.3"
+  resolved "https://registry.yarnpkg.com/documentary/-/documentary-1.33.3.tgz#b8e93d2a612f817e4c430e7287e5fd16871f001a"
+  integrity sha512-fUlrM9FZXuFNgyxk6ZyrIQBJI0XANw/ZZLNcihZpBDUDo42GxMEmn9R627EINM12pz0YeU+xgnD0y4LrURT0vQ==
   dependencies:
     alamode "^3.0.0"
     preact "8.5.2"

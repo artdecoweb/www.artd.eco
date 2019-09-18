@@ -9,7 +9,7 @@ export default function Feature({ children, title, direction = 'right', src, spl
   const cn = ['img-fluid img-fluid rounded', f, p].join(' ')
   return (<row className="Feature" id={id}>
     <div className="col">
-      <h2 className="text-center" style={{ background, color, 'text-shadow': shadow }}><img alt="art deco fan" style={st} className={sf} src="img/sun.png" /> {title}</h2>
+      <h2 ignore-section className="text-center" style={{ background, color, 'text-shadow': shadow }}><img alt="art deco fan" style={st} className={sf} src="img/sun.png" /> {title}</h2>
       <splendid-img alt={title} className={cn} src={src} />
       <p>
         {children}

@@ -6,13 +6,11 @@ import makeClassGetter from './__mcg'
 const renameMaps = { 'styles/Adonais.css': __renameMap0 }
 import { render, h } from 'preact'
 import { makeIo, init } from './__competent-lib'
-import Adonais from '../components/adonais.jsx'
-import Parallax1 from '../components/parallax1'
+import Parallax from '../components/parallax'
 import Menu from '../components/menu.jsx'
 
 const __components = {
-  'adonais': Adonais,
-  'parallax1': Parallax1,
+  'parallax': Parallax,
   'menu': Menu,
 }
 
@@ -20,15 +18,8 @@ const io = makeIo()
 
 /** @type {!Array<!preact.PreactProps>} */
 const meta = [{
-  key: 'adonais',
+  key: 'parallax',
   id: 'c9848',
-  props: {
-    class: 'position-relative mb-3 align-top',
-  },
-},
-{
-  key: 'parallax1',
-  id: 'c74268',
   props: {
     'background-image': '/img/seamless.jpg',
     'z-index': '-1',
@@ -37,8 +28,8 @@ const meta = [{
   },
 },
 {
-  key: 'parallax1',
-  id: 'c80',
+  key: 'parallax',
+  id: 'c74268',
   props: {
     'background-image': '/img/code2.gif',
     speedy: '0.5',
@@ -51,8 +42,8 @@ const meta = [{
   id: 'menu',
 },
 {
-  key: 'parallax1',
-  id: 'c75046',
+  key: 'parallax',
+  id: 'c80',
   props: {
     'background-image': '/img/bakst2.jpg',
   },
@@ -68,7 +59,7 @@ meta.forEach(({ key, id, props = {}, children = [] }) => {
       Comp.load((err, data) => {
         if (data) Object.assign(props, data)
         if (!err) render(h(Comp, props, children), parent, el)
-      }, el)
+      }, el, props)
     } else render(h(Comp, props, children), parent, el)
   }
   el.render.meta = { key, id }
