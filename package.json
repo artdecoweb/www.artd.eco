@@ -1,6 +1,6 @@
 {
-  "name": "@artdeco/artd.eco",
-  "version": "0.0.0",
+  "name": "www.artd.eco",
+  "version": "1.0.0",
   "description": "The Art Deco Website.",
   "scripts": {
     "t": "zoroaster -a",
@@ -14,8 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/artdecoweb/artd.eco.git"
+    "url": "git://github.com/artdecoweb/www.artd.eco.git"
   },
+  "files": [],
   "keywords": [
     "artd.eco",
     "artdeco"
@@ -23,7 +24,7 @@
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/artdecoweb/artd.eco/issues"
+    "url": "https://github.com/artdecoweb/www.artd.eco/issues"
   },
   "homepage": "https://www.artd.eco",
   "devDependencies": {
