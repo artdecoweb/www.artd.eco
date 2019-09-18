@@ -37,12 +37,14 @@ class Adonais extends Component {
   //     callback()
   //   })
   // }
+  // <img src={makeDataSvg(271, 274)} alt="layout placeholder" className="position-static" />
+
   render({ splendid, class: className }) {
     const cl = splendid.addCSS('styles/Adonais.css')
 
     // <img className={cl`Image`} src="img/adonais/back.jpg" />
     return (<div className={`Adonais ${className}`}>
-      <splendid-img alt={this.alt} className={cl`Image`} src="img/adonais/back.jpg" style="position:relative" />
+      <splendid-img placeholder-width="271" placeholder-height="274" alt={this.alt} src="img/adonais/back.jpg" />
 
       <Letter letter="A" file="img/adonais/a2.png" top={112} left={219} class={cl`A Image`} href="#art-deco" cl={cl}>
         <strong className={cl`Letter`}>A</strong>rt Deco creates products for the modern web using back-end Node.JS and front-end JavaScript, taking advantage of the best available methods.
