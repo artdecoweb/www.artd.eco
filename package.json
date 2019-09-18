@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/artdecoweb/artd.eco/issues"
   },
-  "homepage": "https://artd.eco",
+  "homepage": "https://www.artd.eco",
   "devDependencies": {
     "@externs/preact": "^1.2.6",
     "alamode": "^3.0.0",

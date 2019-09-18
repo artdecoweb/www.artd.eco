@@ -62,3 +62,4 @@ typings/
 splendid/.cache
 gimp
 depack-temp
+.npmrc
