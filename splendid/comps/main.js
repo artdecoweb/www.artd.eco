@@ -3,20 +3,20 @@ import 'splendid/internal/js/polyfill/replace-with'
 import '../js/bottom'
 import 'splendid/internal/js/polyfill/object.assign'
 import __renameMap0 from './__rename-maps/styles/Adonais'
-import __renameMap1 from './__rename-maps/styles/Logo'
 import makeClassGetter from './__mcg'
-const renameMaps = { 'styles/Adonais.css': __renameMap0,
-  'styles/Logo.css': __renameMap1 }
+const renameMaps = { 'styles/Adonais.css': __renameMap0 }
 import { render, h } from 'preact'
 import { makeIo, init } from './__competent-lib'
 import Parallax from '../components/parallax'
 import Adonais from '../components/adonais.jsx'
 import Menu from '../components/menu.jsx'
+import Logo from '../components/logo.jsx'
 
 const __components = {
   'parallax': Parallax,
   'adonais': Adonais,
   'menu': Menu,
+  'logo': Logo,
 }
 
 const io = makeIo()
@@ -54,8 +54,12 @@ const meta = [{
   id: 'menu',
 },
 {
-  key: 'parallax',
+  key: 'logo',
   id: 'c75046',
+},
+{
+  key: 'parallax',
+  id: 'c57253',
   props: {
     'background-image': '/img/bakst2.jpg',
   },
