@@ -184,3 +184,9 @@ h2, h3, h4 {
   animation: fadeIn 0.5s;
   animation-fill-mode: forwards;
 }
+.InitialTransparent {
+  opacity: 0
+}
+.no-js .InitialTransparent {
+  opacity: initial;
+}

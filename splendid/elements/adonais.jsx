@@ -14,7 +14,7 @@ class Adonais extends Component {
     splendid.addCSS('styles/Adonais.css', 'Adonais', {
       combined: false,
     })
-    splendid.hideNoJs('data-loading')
+    splendid.hideNoJs('[data-loading]')
     splendid.addFile('img/adonais/back.jpg')
 
     const src = makeDataSvg(271, 274)

@@ -17,14 +17,17 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
     <script>document.documentElement.classList.remove("no-js")</script>
-    <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight&display=swap" as="style" crossorigin onload="this.rel = 'stylesheet'">
+    <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;
+    if(!d){var f=document.head.querySelectorAll('[rel="preload"]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){a.rel="stylesheet"})};}).call(this);</script>
     <style>
-      .no-js [data-loading], .no-js [data-io], .no-js data-loading { display: none!important }
+      .no-js [data-loading], .no-js [data-io] { display: none!important }
     </style>
     <noscript>
-      <link href="css/Parallax.css" rel="stylesheet">
-      <link href="css/Adonais.css" rel="stylesheet">
-      <link href="css/Logo.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/Parallax.css">
+      <link rel="stylesheet" href="css/Adonais.css">
+      <link rel="stylesheet" href="css/Logo.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight&display=swap">
     </noscript>
     <script defer src="js/polyfill/intersection-observer.js"></script>
     <script defer src="js/images.js"></script>
@@ -52,14 +55,15 @@
             Art Deco™: The <em>Node.JS</em> Development Company In London
           </h1>
           <p>
-            Art Deco is a UK-based, professional web development company: we implement back-end servers in <em>Node.JS</em> that power websites and services for people and enterprises, utilising cloud architecture to handle variable loads and minimise costs. We also create front-end applications and progressive web apps (PWAs) that connect to back-ends using the gold standard techniques of software engineering. Finally, we make novel developer tools of exceptional quality for ourselves, and contribute them to Open Source for thousands other developers. Art Deco crafts noble software of outstanding standard and provides the best customer service to its clients.
+            Art Deco is a UK-based, professional web development company: we implement back-end servers in <em>Node.JS</em> that power websites and services for people and enterprises, utilising cloud architecture to handle variable loads and minimise costs. We also create front-end applications and progressive web apps (PWAs) that connect to back-ends using the gold standard techniques of software engineering. Finally, we make novel developer tools of exceptional quality for ourselves, and contribute them to Open Source for thousands other developers. Art Deco crafts noble software of outstanding standard and provides the best customer service to our clients.
           </p>
         </div>
         
       </div>
-      <p class="SectionBreak">
+      <p class="SectionBreak InitialTransparent">
         <a title="Back To Top" href="#top">
-          <img src="section-breaks/9.svg" alt="Back To Top"></a>
+          <img onload="this.parentElement.parentElement.className += ' RunFadeIn'" alt="section break"
+            src="section-breaks/9.svg"></a>
       </p>
     </div>
 
@@ -72,7 +76,9 @@
 
     <div id="Content" class="container"><p class="SectionBreak">
   <a title="Back To Top" href="#top">
-    <img src="section-breaks/0.svg" alt="Back To Top"></a>
+    <img alt="section break"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='15'/%3E" data-io data-src="section-breaks/0.svg">
+    <noscript><img alt="section break" src="section-breaks/0.svg"></noscript></a>
 </p>
 <div class="row">
   <div class="order-2 col">
@@ -173,7 +179,9 @@
 </div>
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
-    <img src="section-breaks/1.svg" alt="Back To Top" width="25"></a>
+    <img alt="section break"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='13'/%3E" data-io style="width: 25px;" data-src="section-breaks/1.svg">
+    <noscript><img alt="section break" style="width: 25px;" src="section-breaks/1.svg"></noscript></a>
 </p>
 
 <div id="art-deco" class="row Feature">
@@ -197,7 +205,9 @@
 
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
-    <img src="section-breaks/2.svg" alt="Back To Top" width="25"></a>
+    <img alt="section break"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='13'/%3E" data-io style="width: 25px;" data-src="section-breaks/2.svg">
+    <noscript><img alt="section break" style="width: 25px;" src="section-breaks/2.svg"></noscript></a>
 </p>
 <div id="implementation" class="row Feature">
   <div class="col">
@@ -218,7 +228,9 @@
 </div>
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
-    <img src="section-breaks/3.svg" alt="Back To Top" width="25"></a>
+    <img alt="section break"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9'/%3E" data-io style="width: 25px;" data-src="section-breaks/3.svg">
+    <noscript><img alt="section break" style="width: 25px;" src="section-breaks/3.svg"></noscript></a>
 </p>
 <div id="automated-testing" class="row Feature">
   <div class="col">
@@ -240,7 +252,9 @@
 </div>
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
-    <img src="section-breaks/4.svg" alt="Back To Top" width="25"></a>
+    <img alt="section break"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9'/%3E" data-io style="width: 25px;" data-src="section-breaks/4.svg">
+    <noscript><img alt="section break" style="width: 25px;" src="section-breaks/4.svg"></noscript></a>
 </p>
 <div id="documentation" class="row Feature">
   <div class="col">
@@ -261,7 +275,9 @@
 </div>
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
-    <img src="section-breaks/5.svg" alt="Back To Top" width="25"></a>
+    <img alt="section break"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10'/%3E" data-io style="width: 25px;" data-src="section-breaks/5.svg">
+    <noscript><img alt="section break" style="width: 25px;" src="section-breaks/5.svg"></noscript></a>
 </p>
 
 
@@ -285,7 +301,9 @@
 </div>
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
-    <img src="section-breaks/6.svg" alt="Back To Top" width="25"></a>
+    <img alt="section break"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10'/%3E" data-io style="width: 25px;" data-src="section-breaks/6.svg">
+    <noscript><img alt="section break" style="width: 25px;" src="section-breaks/6.svg"></noscript></a>
 </p>
 <div id="npm-packages" class="row Feature">
   <div class="col">
@@ -308,7 +326,9 @@
         
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
-    <img src="section-breaks/7.svg" alt="Back To Top" width="25"></a>
+    <img alt="section break"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='12'/%3E" data-io style="width: 25px;" data-src="section-breaks/7.svg">
+    <noscript><img alt="section break" style="width: 25px;" src="section-breaks/7.svg"></noscript></a>
 </p>
 <div class="row">
   <div style="border-radius:2rem; overflow:hidden" class="text-center p-0 col">
@@ -333,7 +353,9 @@
 
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
-    <img src="section-breaks/8.svg" alt="Back To Top"></a>
+    <img alt="section break"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='12'/%3E" data-io data-src="section-breaks/8.svg">
+    <noscript><img alt="section break" src="section-breaks/8.svg"></noscript></a>
 </p>
 
 

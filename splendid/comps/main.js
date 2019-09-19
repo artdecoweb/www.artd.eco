@@ -8,15 +8,15 @@ const renameMaps = { 'styles/Adonais.css': __renameMap0 }
 import { render, h } from 'preact'
 import { makeIo, init } from './__competent-lib'
 import Parallax from '../components/parallax'
+import Logo from '../components/logo.jsx'
 import Adonais from '../components/adonais.jsx'
 import Menu from '../components/menu.jsx'
-import Logo from '../components/logo.jsx'
 
 const __components = {
   'parallax': Parallax,
+  'logo': Logo,
   'adonais': Adonais,
   'menu': Menu,
-  'logo': Logo,
 }
 
 const io = makeIo()
@@ -24,12 +24,9 @@ const io = makeIo()
 /** @type {!Array<!preact.PreactProps>} */
 const meta = [{
   key: 'parallax',
-  id: 'c9848',
+  id: 'c57253',
   props: {
-    'background-image': '/img/seamless.jpg',
-    'z-index': '-1',
-    speedy: '0',
-    speedx: '-0.5',
+    'background-image': '/img/bakst2.jpg',
   },
 },
 {
@@ -43,6 +40,10 @@ const meta = [{
   },
 },
 {
+  key: 'logo',
+  id: 'c75046',
+},
+{
   key: 'adonais',
   id: 'c80',
   props: {
@@ -50,19 +51,18 @@ const meta = [{
   },
 },
 {
+  key: 'parallax',
+  id: 'c9848',
+  props: {
+    'background-image': '/img/seamless.jpg',
+    'z-index': '-1',
+    speedy: '0',
+    speedx: '-0.5',
+  },
+},
+{
   key: 'menu',
   id: 'menu',
-},
-{
-  key: 'logo',
-  id: 'c75046',
-},
-{
-  key: 'parallax',
-  id: 'c57253',
-  props: {
-    'background-image': '/img/bakst2.jpg',
-  },
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const { parent, el } = init(id, key)
