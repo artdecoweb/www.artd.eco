@@ -1,17 +1,17 @@
+body {
+  margin: 0;
+}
 #menu {
   text-align: right;
   background: #294874;
   line-height: 0;
 }
-#menu svg {
-  height: 100%;
+#menu svg, #menu img {
   max-width: 100%;
+  height: 100%;
 }
 #menu svg>g>g[token="3"], #menu svg>g>g[token="4"], #menu svg>g>g[token="2"], #menu svg>g>g[token="1"] {
   cursor: pointer;
-}
-body {
-  margin: 0;
 }
 #info {
   margin: 1rem;
@@ -55,43 +55,6 @@ p {
   font-family: 'Gentium Basic', serif;
   font-size: larger;
 }
-h1 {
-  padding-top: 1rem;
-}
-
-/* @gen-webkit-keyframes */
-@keyframes filter-animation {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  25% {
-    filter: hue-rotate(90deg);
-  }
-  50% {
-    filter: hue-rotate(180deg);
-  }
-  75% {
-    filter: hue-rotate(270deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-.Logo {
-  animation: filter-animation 36s infinite;
-}
-.align-items-center {
-  -webkit-align-items: center!important
-}
-.justify-content-around {
-  -webkit-justify-content: space-around!important;
-}
-.justify-content-end {
-  -webkit-justify-content: flex-end!important;
-}
-.d-flex {
-  display: -webkit-flex;
-}
 #cup {
   width: 300px;
 }
@@ -107,25 +70,24 @@ h1 {
   bottom: 2rem;
   left: 1rem;
   transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
 }
 .Triangles {
   background-size: 30px !important;
 }
-
+/*
 #lib .Parallax, .SunImg {
   background-repeat: repeat-x;
   zoom: 0.4;
 }
 #lib {
   background: rgb(233, 166, 45);
-}
+} */
 
 /* START MEDIA */
 @media (min-width: 576px) {
-  #lib .Parallax, .SunImg {
+  /* #lib .Parallax, .SunImg {
     zoom: 0.6;
-  }
+  } */
   .RedBox {
     left: 10rem;
     top: 12rem;
@@ -139,14 +101,14 @@ h1 {
   .Triangles {
     background-size: 40px !important;
   }
-  #lib > #lib-top {
+  /* #lib > #lib-top {
     height: 350px;
-  }
+  } */
 }
 @media (min-width: 768px) {
-  #lib .Parallax, .SunImg {
+  /* #lib .Parallax, .SunImg {
     zoom: 0.7;
-  }
+  } */
   #cup {
     width: 387px;
   }
@@ -156,20 +118,20 @@ h1 {
   .Yellow {
     margin-bottom: 4rem;
   }
-  #lib > #lib-top {
+  /* #lib > #lib-top {
     height: 350px;
-  }
+  } */
 }
 @media (min-width: 941px) {
-  #lib .Parallax, .SunImg {
+  /* #lib .Parallax, .SunImg {
     zoom: 1;
-  }
+  } */
   .Triangles {
     background-size: 53px !important;
   }
-  #lib-top {
+  /* #lib-top {
     height: 900px;
-  }
+  } */
 }
 /* END MEDIA */
 

@@ -1,0 +1,21 @@
+/* @gen-webkit-keyframes */
+@keyframes filter-animation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.Logo {
+  animation: filter-animation 36s infinite;
+}

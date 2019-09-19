@@ -7,7 +7,6 @@ const makeDataSvg = (width, height) => {
   return `data:image/svg+xml,${svg}`
 }
 
-// Menu['load'] = Menu.load //eslint-disable-line
 export default class Menu extends Component {
   /**
    * @suppress {checkTypes}
@@ -35,12 +34,10 @@ export default class Menu extends Component {
     splendid.polyfill('replace-with', true)
     splendid.addExtern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
 
-    // <img max-width="100%" opacity="0" src={makeDataSvg(1226, 818)} />
-
     return (<div id="menu" style="width:100%;" className="position-relative">
       <splendid-img
         placeholder-width="1226"
-        placeholder-height="818" max-width="100%" alt="menu" src="img/menu.svg" />
+        placeholder-height="818" alt="menu" src="img/menu.svg" />
     </div>)
   }
   render({ json }) {
@@ -50,7 +47,7 @@ export default class Menu extends Component {
     /** @type {!_snapsvgAnimator.SVGAnim} */
     const comp = new window['SVGAnim'](json, width, height)
     const n = comp.s.node
-    n.style['max-width'] = '100%'
+    // n.style['max-width'] = '100%'
 
     setTimeout(() => {
       const about = n.querySelector('svg > g > g[token="4"]')
