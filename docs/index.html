@@ -17,8 +17,11 @@
     <script>document.documentElement.classList.remove("no-js")</script>
     <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight&display=swap" rel="stylesheet">
     <style>
-      .no-js [data-loading], .no-js [data-io] { display: none!important }
+      .no-js [data-loading], .no-js [data-io], .no-js data-loading { display: none!important }
     </style>
+    <noscript>
+      <link href="css/Adonais.css" rel="stylesheet">
+    </noscript>
     <script defer src="js/polyfill/intersection-observer.js"></script>
     <script defer src="js/images.js"></script>
     <script crossorigin data-src="preact/dist/preact.min.js"></script>
@@ -27,14 +30,14 @@
     <link rel="preload" href="preact/dist/preact.min.js" as="script" crossorigin>
     <link rel="preload" href="comps/main.js" as="script" crossorigin>
   </head>
-  <body>
+  <body style="overscroll-behavior: none;">
     
     
 
     <div id="about" class="container">
       <div class="row">
         <div class="col-sm-4 col-lg-3 align-self-center text-center">
-          <picture id="p75046" class="Logo">
+          <picture id="p57253" class="Logo">
             <source srcset="img/logo-300.webp 300w" sizes="300px" type="image/webp">
             <source srcset="" type="image/png" sizes="300px">
             <img alt="Art Deco Logo" src="img/logo.png" srcset="" sizes="300px" class="img-fluid">
@@ -53,7 +56,6 @@
           <img src="section-breaks/9.svg" alt="Back To Top"></a>
       </p>
     </div>
-
 
     <div id="menu" style="width:100%;" class="position-relative">
       <img alt="menu"
@@ -96,74 +98,64 @@
 <div class="row">
   <div class="col">
     <div class="float-none float-sm-left d-sm-inline-block pr-3">
-      <div class="Adonais position-relative mb-3 align-top">
+      <div class="position-relative Adonais position-relative mb-3 align-top" data-loading id="c80">
         <img
-          alt="Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='271' height='274'/%3E"
-          data-io data-src="img/adonais/back.jpg">
-        <noscript>
-          <img
-            alt="Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation" src="img/adonais/back.jpg">
-        </noscript>
-        <a style="top: 112px; left: 219px;" class="b" href="#art-deco">
-          <span class="k" style="z-index: 2; position: absolute; top: 127px; left: 234px;">
-            <span class="l">
-              <strong class="a">A</strong>rt Deco creates products for the modern web using back-end Node.JS and front-end JavaScript, taking advantage of the best available methods.</span>
-          </span>
-          <img alt="letter A" class="d c" data-io style="top: 112px; left: 219px;"
-            data-src="img/adonais/a2.png">
-          <noscript><img alt="letter A" class="d c" style="top: 112px; left: 219px;" src="img/adonais/a2.png"></noscript></a>
-        <a style="top: 208px; left: 175px;" class="b" href="#implementation">
-          <span class="k" style="z-index: 2; position: absolute; top: 223px; left: 190px;">
-            <span class="l">
-              We 
-              <strong class="a">I</strong>mplement software products using the latest language features and spend time on writing code rather than setting up tools and installing 3rd party dependencies.</span>
-          </span>
-          <img alt="letter I" class="e c" data-io style="top: 208px; left: 175px;"
-            data-src="img/adonais/I.png">
-          <noscript><img alt="letter I" class="e c" style="top: 208px; left: 175px;" src="img/adonais/I.png"></noscript></a>
-        <a style="top: 207px; left: 73px;" class="b" href="#automated-testing">
-          <span class="k" style="z-index: 2; position: absolute; top: 222px; left: 88px;">
-            <span class="l">
-              Employed 
-              <strong class="a">A</strong>utomated Testing on unit and integration levels ensures that software is bug-free and that any future changes to the codebase won't break the existing version.</span>
-          </span>
-          <img alt="letter A" class="f c" data-io style="top: 207px; left: 73px;"
-            data-src="img/adonais/A3.png">
-          <noscript><img alt="letter A" class="f c" style="top: 207px; left: 73px;" src="img/adonais/A3.png"></noscript></a>
-        <a style="top: 123px; left: 15px;" class="b" href="#documentation">
-          <span class="k" style="z-index: 2; position: absolute; top: 138px; left: 30px;">
-            <span class="l">
-              Full-coverage 
-              <strong class="a">D</strong>ocumentation allows for long-term maintenance by us and other teams and is full of examples and their outputs that also act as a quality assurance mechanism.</span>
-          </span>
-          <img alt="letter D" class="g c" data-io style="top: 123px; left: 15px;" data-src="img/adonais/D.png">
-          <noscript><img alt="letter D" class="g c" style="top: 123px; left: 15px;" src="img/adonais/D.png"></noscript></a>
-        <a style="top: 28px; left: 67px;" class="b" href="#optimisation">
-          <span class="k" style="z-index: 2; position: absolute; top: 43px; left: 82px;">
-            <span class="l">
-              The 
-              <strong class="a">O</strong>ptimisation of CSS stylesheets and JavaScript code, both for the server and client-side, means that transmitted bundles will load faster and improve user experience.</span>
-          </span>
-          <img alt="letter O" class="h c" data-io style="top: 28px; left: 67px;" data-src="img/adonais/O.png">
-          <noscript><img alt="letter O" class="h c" style="top: 28px; left: 67px;" src="img/adonais/O.png"></noscript></a>
-        <a style="top: 25px; left: 169px;" class="b" href="#npm-packages">
-          <span class="k" style="z-index: 2; position: absolute; top: 40px; left: 184px;">
-            <span class="l">
-              Having contributed over 150 
-              <strong class="a">N</strong>PM packages, we have derived the methodology for managing dependencies that facilitate code reuse and organises workload into logical chunks.</span>
-          </span>
-          <img alt="letter N" class="i c" data-io style="top: 25px; left: 169px;" data-src="img/adonais/N.png">
-          <noscript><img alt="letter N" class="i c" style="top: 25px; left: 169px;" src="img/adonais/N.png"></noscript></a>
-        <a style="top: 120px; left: 125px;" class="b" href="#software">
-          <span class="k" style="z-index: 2; position: absolute; top: 135px; left: 140px;">
-            <span class="l">
-              <strong class="a">S</strong>oftware Engineering is a craft that involves implementation,
-              testing, documentation, building and maintenance. With our holistic approach, we are able to deliver best quality software.</span>
-          </span>
-          <img alt="letter S" class="j c" data-io style="top: 120px; left: 125px;"
-            data-src="img/adonais/S.png">
-          <noscript><img alt="letter S" class="j c" style="top: 120px; left: 125px;" src="img/adonais/S.png"></noscript></a>
+          alt="Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='271' height='274'/%3E">
       </div>
+      <noscript>
+        <div class="Adonais position-relative mb-3 align-top">
+          <img
+            alt="Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation" src="/img/adonais/back.jpg">
+          <a style="top: 112px; left: 219px;" class="b" href="#art-deco">
+            <span class="k" style="z-index: 2; position: absolute; top: 127px; left: 234px;">
+              <span class="l">
+                <strong class="a">A</strong>rt Deco creates products for the modern web using back-end Node.JS and front-end JavaScript, taking advantage of the best available methods.</span>
+            </span>
+            <img alt="letter A" class="d c" src="/img/adonais/a2.png" style="top: 112px; left: 219px;"></a>
+          <a style="top: 208px; left: 175px;" class="b" href="#implementation">
+            <span class="k" style="z-index: 2; position: absolute; top: 223px; left: 190px;">
+              <span class="l">
+                We 
+                <strong class="a">I</strong>mplement software products using the latest language features and spend time on writing code rather than setting up tools and installing 3rd party dependencies.</span>
+            </span>
+            <img alt="letter I" class="e c" src="/img/adonais/I.png" style="top: 208px; left: 175px;"></a>
+          <a style="top: 207px; left: 73px;" class="b" href="#automated-testing">
+            <span class="k" style="z-index: 2; position: absolute; top: 222px; left: 88px;">
+              <span class="l">
+                Employed 
+                <strong class="a">A</strong>utomated Testing on unit and integration levels ensures that software is bug-free and that any future changes to the codebase won't break the existing version.</span>
+            </span>
+            <img alt="letter A" class="f c" src="/img/adonais/A3.png" style="top: 207px; left: 73px;"></a>
+          <a style="top: 123px; left: 15px;" class="b" href="#documentation">
+            <span class="k" style="z-index: 2; position: absolute; top: 138px; left: 30px;">
+              <span class="l">
+                Full-coverage 
+                <strong class="a">D</strong>ocumentation allows for long-term maintenance by us and other teams and is full of examples and their outputs that also act as a quality assurance mechanism.</span>
+            </span>
+            <img alt="letter D" class="g c" src="/img/adonais/D.png" style="top: 123px; left: 15px;"></a>
+          <a style="top: 28px; left: 67px;" class="b" href="#optimisation">
+            <span class="k" style="z-index: 2; position: absolute; top: 43px; left: 82px;">
+              <span class="l">
+                The 
+                <strong class="a">O</strong>ptimisation of CSS stylesheets and JavaScript code, both for the server and client-side, means that transmitted bundles will load faster and improve user experience.</span>
+            </span>
+            <img alt="letter O" class="h c" src="/img/adonais/O.png" style="top: 28px; left: 67px;"></a>
+          <a style="top: 25px; left: 169px;" class="b" href="#npm-packages">
+            <span class="k" style="z-index: 2; position: absolute; top: 40px; left: 184px;">
+              <span class="l">
+                Having contributed over 150 
+                <strong class="a">N</strong>PM packages, we have derived the methodology for managing dependencies that facilitate code reuse and organises workload into logical chunks.</span>
+            </span>
+            <img alt="letter N" class="i c" src="/img/adonais/N.png" style="top: 25px; left: 169px;"></a>
+          <a style="top: 120px; left: 125px;" class="b" href="#software">
+            <span class="k" style="z-index: 2; position: absolute; top: 135px; left: 140px;">
+              <span class="l">
+                <strong class="a">S</strong>oftware Engineering is a craft that involves implementation,
+                testing, documentation, building and maintenance. With our holistic approach, we are able to deliver best quality software.</span>
+            </span>
+            <img alt="letter S" class="j c" src="/img/adonais/S.png" style="top: 120px; left: 125px;"></a>
+        </div>
+      </noscript>
       <p class="text-monospace my-3 text-left" style="max-width: 271px; font-size: small;">
         ^ hover over animated letters for an intro to a software engineering practice, and click to move to its description on the page below.
       </p>
@@ -479,10 +471,14 @@
 
     
       
-    <div class="container-fluid p-0 position-relative" style="height: 100px; overflow: hidden;">
-      <div class=" Parallax" data-loading id="c80"></div>
-      <div class="Parallax"></div>
-      <noscript><div class=" Parallax" style="background-image: url(/img/bakst2.jpg);"></div></noscript>
+    <div style="position:relative;">
+      <div class="container-fluid p-0 position-absolute"
+        style="top: 0px; left: 0px; height: 50px; overflow: hidden;">
+        <div class=" Parallax" data-loading id="c75046"></div>
+        <div class="Parallax"></div>
+        <noscript><div class=" Parallax" style="background-image: url(/img/bakst2.jpg);"></div></noscript>
+      </div>
+      <div id="bottom" class="position-absolute" style="top: 50px; left: 0px;"></div>
     </div>
     <script>
   function d(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function e(){var a=document.querySelectorAll("script[data-src]");if(!(a instanceof Array)){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];a=b?b.call(a):{next:d(a)};for(var c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}

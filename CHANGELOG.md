@@ -1,3 +1,10 @@
+## 19 September 2019
+
+### [1.1.0](https://github.com/artdecoweb/www.artd.eco/compare/v1.0.0...v1.1.0)
+
+- Load Adonais component as HTML, with noscript generated.
+- Control bottom overflow.
+
 ## 18 September 2019
 
 ### [1.0.0](https://github.com/artdecoweb/artd.eco/compare/v0.0.0...v1.0.0)

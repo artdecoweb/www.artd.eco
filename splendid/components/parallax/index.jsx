@@ -12,6 +12,7 @@ export default class Parallax extends Component {
 
     this.speedy = 0
     this.speedx = 0
+    this.additionalY = 0
   }
   async serverRender({
     splendid, style, 'background-image': backgroundImage, class: className,
@@ -58,7 +59,7 @@ export default class Parallax extends Component {
     // use handle to prevent against resizes.
     const box = this.handle.getBoundingClientRect()
     const { top, height, width } = box
-    const d = top - window.innerHeight
+    const d = top - window.innerHeight + this.additionalY
 
     const maxScrollY = -(-window.innerHeight - height)
     // not accounting for horizontal scrolling yet
@@ -86,6 +87,12 @@ export default class Parallax extends Component {
     }
     window.addEventListener('scroll', this.listener)
     this.compute()
+    window.addAdditionalScroll = (y) => {
+      if (y === null) this.additionalY = 0
+      this.additionalY += y
+      this.additionY = Math.max(this.additionalY, 200)
+      this.compute()
+    }
   }
   /**
    * @param {function(Error, *)} callback

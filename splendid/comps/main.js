@@ -1,16 +1,19 @@
 import '../js/load-noise'
 import 'splendid/internal/js/polyfill/replace-with'
-import '../js/object.assign'
+import '../js/bottom'
+import 'splendid/internal/js/polyfill/object.assign'
 import __renameMap0 from './__rename-maps/styles/Adonais'
 import makeClassGetter from './__mcg'
 const renameMaps = { 'styles/Adonais.css': __renameMap0 }
 import { render, h } from 'preact'
 import { makeIo, init } from './__competent-lib'
 import Parallax from '../components/parallax'
+import Adonais from '../components/adonais.jsx'
 import Menu from '../components/menu.jsx'
 
 const __components = {
   'parallax': Parallax,
+  'adonais': Adonais,
   'menu': Menu,
 }
 
@@ -38,12 +41,19 @@ const meta = [{
   },
 },
 {
+  key: 'adonais',
+  id: 'c80',
+  props: {
+    class: 'position-relative mb-3 align-top',
+  },
+},
+{
   key: 'menu',
   id: 'menu',
 },
 {
   key: 'parallax',
-  id: 'c80',
+  id: 'c75046',
   props: {
     'background-image': '/img/bakst2.jpg',
   },
@@ -55,12 +65,18 @@ meta.forEach(({ key, id, props = {}, children = [] }) => {
     return makeClassGetter(renameMaps[stylesheet])
   }, addFile() {} }
   el.render = () => {
+    const r = () => {
+      if (Comp['plain']) {
+        const comp = new Comp(el, parent)
+        comp.render({ ...props, children })
+      } else render(h(Comp, props, children), parent, el)
+    }
     if (Comp.load) {
       Comp.load((err, data) => {
         if (data) Object.assign(props, data)
-        if (!err) render(h(Comp, props, children), parent, el)
+        if (!err) r()
       }, el, props)
-    } else render(h(Comp, props, children), parent, el)
+    } else r()
   }
   el.render.meta = { key, id }
   io.observe(el)

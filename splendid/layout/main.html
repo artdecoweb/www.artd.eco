@@ -1,13 +1,11 @@
 <!doctype html>
 <html lang="en" class="no-js">
   <block-head />
-  <body>
+  <body style="overscroll-behavior: none;">
     <!-- <ajax-loader /> -->
     <!-- <add-file>js/menu.json</add-file> -->
 
     <block-1-intro />
-
-    <script combine src="js/object.assign.js"></script>
 
     <menu />
 
@@ -31,8 +29,12 @@
 
     <!-- <bootstrap-div position-absolute bottom="-100px" left="0" w-100> -->
       <!-- </bootstrap-div> -->
-    <container-fluid p-0 position-relative height="100px" overflow="hidden">
-      <parallax background-image="/img/bakst2.jpg" />
-    </container-fluid>
+    <div style="position:relative;">
+      <container-fluid p-0 position-absolute top="0" left="0" height="50px" overflow="hidden">
+        <parallax background-image="/img/bakst2.jpg" />
+      </container-fluid>
+      <bootstrap-div id="bottom" position-absolute top="50px" left="0" />
+    </div>
+    <script combine src="js/bottom.js"></script>
   </body>
 </html>
