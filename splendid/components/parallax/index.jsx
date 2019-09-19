@@ -1,18 +1,17 @@
 /* eslint-env browser */
-import { Component } from 'preact'
+// import { Component } from 'preact'
+import { loadStyle } from '@lemuria/load-scripts'
 
-export default class Parallax extends Component {
-  constructor() {
-    super()
+export default class Parallax {
+  constructor(el, parent) {
     /** @type {Element} */
-    this.el = null // the target element
+    this.el = el // the target element
     /** @type {Element} */
     this.handle = null
     this.listener = null
 
     this.speedy = 0
     this.speedx = 0
-    this.additionalY = 0
   }
   async serverRender({
     splendid, style, 'background-image': backgroundImage, class: className,
@@ -23,7 +22,8 @@ export default class Parallax extends Component {
     splendid.addCSS('styles/Parallax.css', null, {
       whitelist: prefix,
       exported: false,
-      // combined: false,
+      combined: false,
+      preload: true,
     })
     splendid.polyfill('intersection-observer')
     // splendid.addScript('js/parallax.js', false, {}, true)
@@ -59,7 +59,7 @@ export default class Parallax extends Component {
     // use handle to prevent against resizes.
     const box = this.handle.getBoundingClientRect()
     const { top, height, width } = box
-    const d = top - window.innerHeight + this.additionalY
+    const d = top - window.innerHeight
 
     const maxScrollY = -(-window.innerHeight - height)
     // not accounting for horizontal scrolling yet
@@ -77,23 +77,6 @@ export default class Parallax extends Component {
     this.el.style.transform = t
     this.el.style.webkitTransform = t
   }
-  componentDidMount() {
-    this.speedy = parseFloat(this.props.speedy || 0.5)
-    this.speedx = parseFloat(this.props.speedx || 0)
-    this.handle = this.el.nextElementSibling
-
-    this.listener = () => {
-      this.compute()
-    }
-    window.addEventListener('scroll', this.listener)
-    this.compute()
-    window.addAdditionalScroll = (y) => {
-      if (y === null) this.additionalY = 0
-      this.additionalY += y
-      this.additionY = Math.max(this.additionalY, 200)
-      this.compute()
-    }
-  }
   /**
    * @param {function(Error, *)} callback
    * @param {Element} el
@@ -108,19 +91,37 @@ export default class Parallax extends Component {
     img.onerror = () => {
       callback(new Error('Image could not be loaded.'))
     }
+    loadStyle('/css/Parallax.css', () => {})
   }
-  render({ class: cn, style, 'background-image': backgroundImage }) {
-    return (<div className={cn} style={style} ref={(el) => {
-      this.el = el
-      if (el) {
-        el.style.animation = 'fadeIn 0.5s'
-        el.style.webkitAnimation = 'fadeIn 0.5s'
-        el.style['background-image'] = `url(${backgroundImage})`
-      }
-    }}/>)
+  static get 'plain'() {
+    return true
+  }
+  render({ 'background-image': backgroundImage,
+    speedy = 0.5, speedx = 0,
+  }) {
+    this.speedy = parseFloat(speedy || 0.5)
+    this.speedx = parseFloat(speedx || 0)
+    this.handle = this.el.nextElementSibling
+
+    this.listener = () => {
+      this.compute()
+    }
+    window.addEventListener('scroll', this.listener)
+    this.el.style['background-image'] = `url(${backgroundImage})`
+    this.el.className += ' RunFadeIn'
+    this.compute()
   }
 }
+
+// export const plain = true
 
 const floatToPx = (f) => {
   return `${f.toFixed()}px`
 }
+
+// window.addAdditionalScroll = (y) => {
+//   if (y === null) this.additionalY = 0
+//   this.additionalY += y
+//   this.additionY = Math.max(this.additionalY, 200)
+//   this.compute()
+// }
