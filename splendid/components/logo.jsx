@@ -14,7 +14,9 @@ export default class Logo {
       whitelist: 'Logo',
       combined: false,
       exported: false,
+      preload: true,
     })
+
     return (<splendid-img above-fold responsive sizes="300px" webp="text" no-potrace src="img/logo.png" alt="Art Deco Logo" className="img-fluid Logo" />)
   }
   render() {}

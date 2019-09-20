@@ -9,12 +9,11 @@ const Sky = ({ count = 5, splendid }) => {
       // const img = '/img/layers.gif'
       const style = {
         top: n * 45,
-        'background-image': `url(${img})`,
         ...(i > 2 ? { 'background-position-x': '-50%' } : {}),
       }
       i++
       if (i == 5) i = 0
-      return <div key={n} className="position-absolute" style={style}/>
+      return <div data-background-img={img} key={n} className="position-absolute" style={style}/>
     })}
   </div>)
 }

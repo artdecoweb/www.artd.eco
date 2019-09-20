@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <block-head />
+  <body style="overscroll-behavior: none;">
+
+    <!-- <block-1-intro /> -->
+
+    <container-fluid p-0 max-height="20rem" overflow="hidden" mb-3>
+      <img class="img-fluid" alt="Art Deco Store Building"
+        src="img/blog.jpg" webp="photo" responsive no-potrace />
+    </container-fluid>
+
+    <container>
+      <row>
+        <col md-8 order-2 order-md-1>
+          <h1 style="font-family: 'Limelight', cursive;">Art Deco Blog</h1>
+        </col>
+        <col order-1 order-md-2>
+          <h2>Latest Articles</h2>
+          <ul>
+            * [Hello World](/hello)
+            * [Hello World 2](/hello2)
+          </ul>
+        </col>
+      </row>
+
+    </container>
+
+
+    <container id="Content">
+      {{ content }}
+    </container>
+<!-- <div id="menu"></div> -->
+    <bottom img="/img/tile.jpg" />
+  </body>
+</html>

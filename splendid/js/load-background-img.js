@@ -1,10 +1,12 @@
-const el = document.getElementsByClassName('Noises')
+const el = document.querySelectorAll('[data-background-img]')
 if (el.length) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach(({ target, isIntersecting }) => {
       if (isIntersecting) {
         io.unobserve(target)
-        target.style.background = 'url(img/noise/giphy-2.gif)'
+        const backgroundImg = target.getAttribute('data-background-img')
+        target.removeAttribute('data-background-img')
+        target.style.background = `url(${backgroundImg})`
       }
     })
   }, { rootMargin: '75px' })

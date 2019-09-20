@@ -1,21 +1,14 @@
 import '../js/load-background-img'
 import '../js/bottom'
 import 'splendid/internal/js/polyfill/object.assign'
-import __renameMap0 from './__rename-maps/styles/Adonais'
 import makeClassGetter from './__mcg'
-const renameMaps = { 'styles/Adonais.css': __renameMap0 }
+const renameMaps = {  }
 import { render, h } from 'preact'
 import { makeIo, init } from './__competent-lib'
 import Parallax from '../components/parallax.jsx'
-import Logo from '../components/logo.jsx'
-import Adonais from '../components/adonais.jsx'
-import Menu from '../components/menu.jsx'
 
 const __components = {
   'parallax': Parallax,
-  'logo': Logo,
-  'adonais': Adonais,
-  'menu': Menu,
 }
 
 const io = makeIo()
@@ -23,45 +16,10 @@ const io = makeIo()
 /** @type {!Array<!preact.PreactProps>} */
 const meta = [{
   key: 'parallax',
-  id: 'c57253',
-  props: {
-    'background-image': '/img/bakst2.jpg',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c74268',
-  props: {
-    'background-image': '/img/code2.gif',
-    speedy: '0.5',
-    'background-repeat': 'repeat-y',
-    'z-index': '-1',
-  },
-},
-{
-  key: 'logo',
-  id: 'c75046',
-},
-{
-  key: 'adonais',
-  id: 'c80',
-  props: {
-    class: 'position-relative mb-3 align-top',
-  },
-},
-{
-  key: 'parallax',
   id: 'c9848',
   props: {
-    'background-image': '/img/seamless.jpg',
-    'z-index': '-1',
-    speedy: '0',
-    speedx: '-0.5',
+    'background-image': '/img/tile.jpg',
   },
-},
-{
-  key: 'menu',
-  id: 'menu',
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const { parent, el } = init(id, key)

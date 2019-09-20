@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "file": "docs/comps/blog.js",
+  "lineCount": 2,
+  "mappings": "AAIA,IAAMA,GAAa,EAAnB,CAKMC,GAAe,CACnB,SAAYC,CADO,CALrB,CASMC,GAAKC,CAAA,EAGEC;CAAC,CACZC,IAAK,UADO,CAEZC,GAAI,OAFQ,CAGZC,MAAO,CACL,mBAAoB,eADf,CAHK,CAADH,CAObI,QAAA,CAAa,QAAA,CAAC,CAAD,CAA4C,CAAzC,IAAAH,EAAF,CAAE,IAAA,CAAKC,EAAP,CAAO,GAAL,CAASC,EAAA,IAAA,EAAA,GAAX,CAAW,MAAA,CAAQ,EAAR,CAAX,CAAW,MAAT,CAAqBE,EAAA,IAAA,EAAA,GAAvB,CAAuB,SAAA,CAAW,EAAX,CAAvB,CAAuB,SAC7B,EAAA,CAAiBC,CAAA,CAAKJ,CAAL,CAASD,CAAT,CAAf,KAAAM,EAAA,CAAA,OAAA,CAAQC,EAAA,CAAA,EAAR,CACFC,EAAOb,EAAA,CAAaK,CAAb,CACbE,EAAAO,EAAA,CAAiB,CAAE,EAAAC,QAAM,EAAG,EAAX,CAAe,EAAAC,QAAM,CAACC,CAAD,CAAa,CACjD,MAAOC,EAAA,CAAgBnB,EAAA,CAAWkB,CAAX,CAAhB,CAD0C,CAAlC,CAEd,EAAAE,QAAO,EAAG,EAFI,CAGjBP,EAAAQ,OAAA,CAAYC,QAAA,EAAM,CACNC,QAAA,EAAA,EAAM,CACVT,CAAA,MAAJ,CAEEO,CADaG,IAAIV,CAAJU,CAASX,CAATW,CAAaZ,CAAbY,CACbH,QAAA,CAAY,MAAA,OAAA,CAAA,EAAA,CAAKb,CAAL,CAAA,CAAYE,SAAAA,CAAZ,CAAA,CAAZ,CAFF,CAGOW,CAAA,CAAOI,CAAA,CAAEX,CAAF,CAAQN,CAAR,CAAeE,CAAf,CAAP,CAAiCE,CAAjC,CAAyCC,CAAzC,CAJO,CAMZC,CAAAY,KAAJ,CACEZ,CAAAY,KAAA,CAAU,QAAA,CAACC,CAAD,CAAMC,CAAN,CAAe,CACnBA,CAAJ,EAAUC,MAAAC,OAAA,CAActB,CAAd,CAAqBoB,CAArB,CACLD,EAAL,EAAUJ,CAAA,EAFa,CAAzB,CAGGV,CAHH,CAGOL,CAHP,CADF,CAKOe,CAAA,EAZS,CAclBV,EAAAQ,OAAAhB,EAAA,CAAiB,CAAEC,IAAAA,CAAF,CAAOC,GAAAA,CAAP,CACjBJ,GAAA4B,QAAA,CAAWlB,CAAX,CArBuD,CAAzD;",
+  "sources": [
+    "/splendid/comps/blog.js"
+  ],
+  "sourcesContent": [
+    "import '../js/load-background-img'\nimport '../js/bottom'\nimport 'splendid/internal/js/polyfill/object.assign'\nimport makeClassGetter from './__mcg'\nconst renameMaps = {  }\nimport { render, h } from '@externs/preact'\nimport { makeIo, init } from './__competent-lib'\nimport Parallax from '../components/parallax.jsx'\n\nconst __components = {\n  'parallax': Parallax,\n}\n\nconst io = makeIo()\n\n/** @type {!Array<!preact.PreactProps>} */\nconst meta = [{\n  key: 'parallax',\n  id: 'c9848',\n  props: {\n    'background-image': '/img/tile.jpg',\n  },\n}]\nmeta.forEach(({ key, id, props = {}, children = [] }) => {\n  const { parent, el } = init(id, key)\n  const Comp = __components[key]\n  props.splendid = { export() {}, addCSS(stylesheet) {\n    return makeClassGetter(renameMaps[stylesheet])\n  }, addFile() {} }\n  el.render = () => {\n    const r = () => {\n      if (Comp['plain']) {\n        const comp = new Comp(el, parent)\n        comp.render({ ...props, children })\n      } else render(h(Comp, props, children), parent, el)\n    }\n    if (Comp.load) {\n      Comp.load((err, data) => {\n        if (data) Object.assign(props, data)\n        if (!err) r()\n      }, el, props)\n    } else r()\n  }\n  el.render.meta = { key, id }\n  io.observe(el)\n})\n"
+  ],
+  "names": [
+    "renameMaps",
+    "__components",
+    "Parallax",
+    "io",
+    "makeIo",
+    "meta",
+    "key",
+    "id",
+    "props",
+    "forEach",
+    "children",
+    "init",
+    "parent",
+    "el",
+    "Comp",
+    "splendid",
+    "export",
+    "addCSS",
+    "stylesheet",
+    "makeClassGetter",
+    "addFile",
+    "render",
+    "el.render",
+    "r",
+    "comp",
+    "h",
+    "load",
+    "err",
+    "data",
+    "Object",
+    "assign",
+    "observe"
+  ]
+}

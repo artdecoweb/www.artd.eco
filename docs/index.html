@@ -9,19 +9,19 @@
     <meta
       content="Art Deco is specialised Node.JS company: back-end servers, cloud &amp; serverless apps and front-end websites and optimised PWAs of outstanding quality." name="description">
     <link href="img/favicon.png" sizes="32x32" rel="shortcut icon">
-    <link rel="preload" href="snapsvg/dist/snap.svg-min.js" as="script">
-    <link rel="preload" href="js/svg-anim.js" as="script">
-    <link rel="preload" href="css/Logo.css" as="style">
-    <link rel="preload" href="css/Parallax.css" as="style">
     <link href="styles/combined.css" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
     <script>document.documentElement.classList.remove("no-js")</script>
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight&display=swap" as="style" crossorigin onload="this.rel = 'stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700|Limelight&display=swap" onload="this.rel='stylesheet';this.onload=null" as="style">
+    <link rel="preload" href="css/Parallax.css" as="style">
+    <link rel="preload" href="css/Logo.css" as="style">
+    <link rel="preload" href="snapsvg/dist/snap.svg-min.js" as="script">
+    <link rel="preload" href="js/svg-anim.js" as="script">
     <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;
     if(!d){var f=document.head.querySelectorAll('[rel="preload"]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){a.rel="stylesheet"})};}).call(this);</script>
     <style>
-      .no-js [data-loading], .no-js [data-io] { display: none!important }
+      .no-js [data-io], .no-js [data-loading] { display: none!important }
     </style>
     <noscript>
       <link rel="stylesheet" href="css/Parallax.css">
@@ -32,6 +32,7 @@
     <script defer src="js/polyfill/intersection-observer.js"></script>
     <script defer src="js/images.js"></script>
     <script crossorigin data-src="preact/dist/preact.min.js"></script>
+    <script crossorigin data-src="comps/common.js"></script>
     <script crossorigin data-src="comps/main.js"></script>
 
     <link rel="preload" href="preact/dist/preact.min.js" as="script" crossorigin>
@@ -333,15 +334,15 @@
 <div class="row">
   <div style="border-radius:2rem; overflow:hidden" class="text-center p-0 col">
     <div class="Sky h-100 w-100 position-absolute" style="top:-50px;">
-      <div style="top: 0px; background-image: url(/img/sky2.png);" class="position-absolute"></div>
-      <div style="top: 45px; background-image: url(/img/sky1.png);" class="position-absolute"></div>
-      <div style="top: 90px; background-image: url(/img/sky2.png); background-position-x: -50%;"
+      <div data-background-img="/img/sky2.png" style="top: 0px;" class="position-absolute"></div>
+      <div data-background-img="/img/sky1.png" style="top: 45px;" class="position-absolute"></div>
+      <div data-background-img="/img/sky2.png" style="top: 90px; background-position-x: -50%;"
         class="position-absolute">
       </div>
-      <div style="top: 135px; background-image: url(/img/sky1.png); background-position-x: -50%;"
+      <div data-background-img="/img/sky1.png" style="top: 135px; background-position-x: -50%;"
         class="position-absolute">
       </div>
-      <div style="top: 180px; background-image: url(/img/sky2.png);" class="position-absolute"></div>
+      <div data-background-img="/img/sky2.png" style="top: 180px;" class="position-absolute"></div>
     </div>
     <img alt="eagle over software engineering" class="img-fluid my-3" data-io
       data-src="img/posters/bird2.png">
@@ -378,7 +379,7 @@
     <noscript>
       <div class=" Parallax" style="background-image: url(/img/seamless.jpg); z-index: -1;"></div>
     </noscript>
-    <div class="Noises d-inline-block" style="mix-blend-mode: difference; z-index:-1;">
+    <div data-background-img="/img/noise/giphy-2.gif" class="d-inline-block" style="mix-blend-mode: difference; z-index:-1;">
       <img alt="log babel install process" class="img-fluid" data-io
         style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" data-src="img/noise/yarn-add-babel2.gif">
       <noscript>
@@ -394,7 +395,7 @@
           style="z-index: 1;" src="img/images2.png">
       </noscript>
     </div>
-    <div class="Noises d-inline-block" style="mix-blend-mode:screen;z-index:-1;">
+    <div data-background-img="/img/noise/giphy-2.gif" class="d-inline-block" style="mix-blend-mode:screen;z-index:-1;">
       <img alt="timewave zero simulation" class="img-fluid" data-io
         style="z-index: 1; mix-blend-mode: screen; width: 250px;" data-src="img/hqdefault.jpg">
       <noscript>
@@ -501,7 +502,7 @@
       
     <div style="position:relative;">
       <div class="container-fluid p-0 position-absolute"
-        style="top: 0px; left: 0px; height: 50px; overflow: hidden;">
+        style="height: 50px; top: 0px; left: 0px; overflow: hidden;">
         <div class=" Parallax" data-loading id="c57253"></div>
         <div class="Parallax"></div>
         <noscript><div class=" Parallax" style="background-image: url(/img/bakst2.jpg);"></div></noscript>

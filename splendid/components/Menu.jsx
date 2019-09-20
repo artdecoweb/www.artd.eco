@@ -30,8 +30,8 @@ export default class Menu extends Component {
     splendid.export()
     splendid.addFile('js/menu.json')
     splendid.addFile('js/svg-anim.js.map')
-    splendid.addFile('img/menu.svg')
-    splendid.polyfill('replace-with', true)
+    splendid.preload('node_modules://snapsvg/dist/snap.svg-min.js', 'script')
+    splendid.preload('js/svg-anim.js', 'script')
     splendid.addExtern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
 
     return (<div id="menu" style="width:100%;" className="position-relative">
