@@ -1,13 +1,11 @@
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
-    <title>Blog: Art Deco</title>
-    <meta content="https://artd.eco/blog/index.html" property="og:url">
-    <meta content="Blog: Art Deco" property="og:title">
+    <title>Font Preload Experiments</title>
+    <meta content="https://artd.eco/blog/font-preload-experiments.html" property="og:url">
+    <meta content="Font Preload Experiments" property="og:title">
     <meta content="website" property="og:type">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta
-      content="Node.JS, JavaScript and frontend development articles and knowledge sharing. Web software development tips and news about new products by Art Deco." name="description">
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
     <link href="/styles/combined.css" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -28,15 +26,12 @@
     <script defer src="/js/images.js"></script>
     <script crossorigin data-src="/preact/dist/preact.min.js"></script>
     <script crossorigin data-src="/comps/common.js"></script>
-    <script crossorigin data-src="/comps/blog.js"></script>
+    <script crossorigin data-src="/comps/fonts-preloading.js"></script>
 
     <link rel="preload" href="/preact/dist/preact.min.js" as="script" crossorigin>
-    <link rel="preload" href="/comps/blog.js" as="script" crossorigin>
+    <link rel="preload" href="/comps/fonts-preloading.js" as="script" crossorigin>
   </head>
   <body style="overscroll-behavior: none;">
-
-    
-
     <div class="container-fluid p-0 mb-3" style="max-height: 20rem; overflow: hidden;">
       <img alt="Art Deco Store Building" id="sp74268"
         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2816' height='1880'/%3E" class="img-fluid ImageHolder">
@@ -52,25 +47,11 @@
       </noscript>
     </div>
 
-    <div class="container">
+    <div id="Content" class="container">
       <div class="row">
-        <div class="col-md-8 order-2 order-md-1">
-          <h1 style="font-family: 'Limelight', cursive;" id="art-deco-blog">Art Deco Blog</h1>
-        </div>
-        <div class="col order-1 order-md-2">
-          <h2 id="latest-articles">Latest Articles</h2>
-          <ul>
-            <li><a href="/blog/font-preload-experiments.html">Google Fonts Preloading</a></li>
-            <li><a href="/hello2">Hello World 2</a></li>
-          </ul>
-        </div>
+        <div class="col"><h1 id="hello-world">Hello World</h1></div>
       </div>
     </div>
-
-
-    <div id="Content" class="container"><h1 id="hello-world">Hello World</h1>
-
-</div>
 
     <div style="position:relative;">
       <div class="container-fluid p-0 position-absolute"

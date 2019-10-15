@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://artd.eco/blog/font-preload-experiments.html</loc>
+    <lastmod>2019-09-20</lastmod>
+  </url>
+  <url>
     <loc>https://artd.eco/index.html</loc>
     <lastmod>2019-09-20</lastmod>
   </url>

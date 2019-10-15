@@ -2,11 +2,6 @@
 import loadScripts from '@lemuria/load-scripts'
 import { Component } from 'preact'
 
-const makeDataSvg = (width, height) => {
-  const svg = `%3Csvg xmlns='http://www.w3.org/2000/svg' width='${width}' height='${height}'/%3E`
-  return `data:image/svg+xml,${svg}`
-}
-
 export default class Menu extends Component {
   /**
    * @suppress {checkTypes}
@@ -26,6 +21,10 @@ export default class Menu extends Component {
       }
     })
   }
+  /**
+   * @param {Object} props
+   * @param {Splendid} props.splendid
+   */
   serverRender({ splendid }) {
     splendid.export()
     splendid.addFile('js/menu.json')
@@ -76,3 +75,6 @@ function assignLink(target, name) {
 //   splendid.export()
 //   return (<div id="menu">Menu</div>)
 // }
+/**
+ * @typedef {import('splendid/src/Splendid').default} Splendid
+ */

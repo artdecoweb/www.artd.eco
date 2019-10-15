@@ -1,10 +1,5 @@
 import { loadStyle, loadJSON } from '@lemuria/load-scripts'
 
-const makeDataSvg = (width, height) => {
-  const svg = `%3Csvg xmlns='http://www.w3.org/2000/svg' width='${width}' height='${height}'/%3E`
-  return `data:image/svg+xml,${svg}`
-}
-
 class Adonais {
   constructor(el, parent) {
     /**

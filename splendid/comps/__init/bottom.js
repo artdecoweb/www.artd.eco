@@ -1,14 +1,4 @@
-export default function Bottom({ img, height = '50px' }) {
-  const top = `calc(${height} - 1px)`
-  return (<div style="position:relative;">
-    <container-fluid p-0 position-absolute top="0" left="0" height={height} overflow="hidden">
-      <parallax background-image={img} />
-    </container-fluid>
-    <bootstrap-div id="bottom" position-absolute top={top} left="0" />
-  </div>)
-}
-
-export const init = () => {
+export default () => {
   /* eslint-env browser */
   const bottom = document.getElementById('bottom')
   /** @type {Element} */

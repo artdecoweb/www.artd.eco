@@ -8,12 +8,15 @@ export default class Logo {
   static get 'plain'() {
     return true
   }
+  /**
+   * @param {Object} params
+   * @param {Splendid} params.splendid
+   */
   serverRender({ splendid }) {
     splendid.export()
     splendid.addCSS('styles/Logo.css', null, {
       whitelist: 'Logo',
-      combined: false,
-      exported: false,
+      dynamic: true,
       preload: true,
     })
 
@@ -21,3 +24,8 @@ export default class Logo {
   }
   render() {}
 }
+
+
+/**
+ * @typedef {import('splendid/src/Splendid').default} Splendid
+ */

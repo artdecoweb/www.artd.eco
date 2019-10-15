@@ -1,3 +1,5 @@
+import Blog from './blog'
+
 /**
  * @type {import('splendid').Page}
  */
@@ -19,6 +21,10 @@ export const blog = {
   file: 'blog',
   seo: 'Node.JS, JavaScript and frontend development articles and knowledge sharing. Web software development tips and news about new products by Art Deco.',
   // focus: true,
+}
+
+export default {
+  ...Blog,
 }
 
 // Art Deco is a specialised Node.JS development company that creates back-end servers, cloud and serverless applications and front-end websites and PWAs of outstanding quality, optimised with JavaScript compiler and with complete testing and documentation coverage.

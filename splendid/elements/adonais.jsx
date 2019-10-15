@@ -12,7 +12,7 @@ class Adonais extends Component {
   serverRender({ splendid, class: className }) {
     splendid.export()
     splendid.addCSS('styles/Adonais.css', 'Adonais', {
-      combined: false,
+      dynamic: true,
     })
     splendid.hideNoJs('[data-loading]')
     splendid.addFile('img/adonais/back.jpg')
@@ -32,7 +32,12 @@ class Adonais extends Component {
     await splendid.writeApp('parts/adonais.html', data)
     await splendid.addFile('parts/adonais.html')
   }
+  /**
+   * @param {Object} params
+   * @param {Splendid} params.splendid
+   */
   render({ splendid, class: className }) {
+    // access cached makeClassGetter from serverRender
     const cl = splendid.addCSS('styles/Adonais.css')
 
     // <img className={cl`Image`} src="img/adonais/back.jpg" />
@@ -96,3 +101,7 @@ const Letter = ({ file, letter, cl, top, left, children, class: className, href 
 // }}
 
 export default Adonais
+
+/**
+ * @typedef {import('splendid/src/Splendid').default} Splendid
+ */

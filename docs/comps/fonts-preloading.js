@@ -1,0 +1,3 @@
+var Q={};C();var R={parallax:M},S=J();[{key:"parallax",id:"c9848",props:{"background-image":"/img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.props?{}:a.props,e=void 0===a.children?[]:a.children;a=I(c,b);var f=a.parent,g=a.a,h=R[b];d.B={v:function(){},j:function(k){return D(Q[k])},l:function(){}};g.render=function(){K(h,g,f,d,e)};g.render.i={key:b,id:c};S.observe(g)});
+
+//# sourceMappingURL=fonts-preloading.js.map

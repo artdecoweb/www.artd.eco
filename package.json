@@ -9,7 +9,7 @@
     "prod": "splendid-dev -s",
     "splendid": "splendid -s",
     "splendid-dev": "splendid-dev -s -e splendid-dev",
-    "svg": "depack-dev js/svg-anim.js -a -o splendid/js/svg-anim.js -i",
+    "svg": "depack-dev splendid/js/svg-anim-src.js -a -o splendid/js/svg-anim.js -i",
     "doc": "NODE_DEBUG=doc doc -o README.md"
   },
   "repository": {

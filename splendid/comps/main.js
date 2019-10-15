@@ -1,12 +1,14 @@
+import __initBottom from './__init/bottom'
 import '../js/load-background-img'
-import '../js/bottom'
-import 'splendid/internal/js/polyfill/object.assign'
 import __renameMap0 from './__rename-maps/styles/Adonais'
+import __renameMap1 from './__rename-maps/styles/Logo'
 import makeClassGetter from './__mcg'
-const renameMaps = { 'styles/Adonais.css': __renameMap0 }
-import { render, h } from 'preact'
-import { makeIo, init } from './__competent-lib'
-import Parallax from '../components/parallax.jsx'
+const renameMaps = { 'styles/Adonais.css': __renameMap0,
+  'styles/Logo.css': __renameMap1 }
+__initBottom()
+import { Component, render, h } from 'preact'
+import { makeIo, init, start } from './__competent-lib'
+import Parallax from '../../node_modules/splendid/src/components/parallax.jsx'
 import Logo from '../components/logo.jsx'
 import Adonais from '../components/adonais.jsx'
 import Menu from '../components/menu.jsx'
@@ -32,10 +34,10 @@ const meta = [{
   key: 'parallax',
   id: 'c74268',
   props: {
-    'background-image': '/img/code2.gif',
-    speedy: '0.5',
-    'background-repeat': 'repeat-y',
+    'background-image': '/img/seamless.jpg',
     'z-index': '-1',
+    speedy: '0',
+    speedx: '-0.5',
   },
 },
 {
@@ -53,10 +55,10 @@ const meta = [{
   key: 'parallax',
   id: 'c9848',
   props: {
-    'background-image': '/img/seamless.jpg',
+    'background-image': '/img/code2.gif',
+    speedy: '0.5',
+    'background-repeat': 'repeat-y',
     'z-index': '-1',
-    speedy: '0',
-    speedx: '-0.5',
   },
 },
 {
@@ -70,18 +72,7 @@ meta.forEach(({ key, id, props = {}, children = [] }) => {
     return makeClassGetter(renameMaps[stylesheet])
   }, addFile() {} }
   el.render = () => {
-    const r = () => {
-      if (Comp['plain']) {
-        const comp = new Comp(el, parent)
-        comp.render({ ...props, children })
-      } else render(h(Comp, props, children), parent, el)
-    }
-    if (Comp.load) {
-      Comp.load((err, data) => {
-        if (data) Object.assign(props, data)
-        if (!err) r()
-      }, el, props)
-    } else r()
+    start(Comp, el, parent, props, children, { render, Component, h })
   }
   el.render.meta = { key, id }
   io.observe(el)

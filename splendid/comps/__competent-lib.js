@@ -17,18 +17,29 @@ export function makeIo(options = {}) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach(({ target, isIntersecting }) => {
       if (isIntersecting) {
-        if (target.render) {
-          if (log) console.warn('Rendering component %s into the element %s ',
-            target.render.meta.key, target.render.meta.id)
-          try {
-            target.render()
-          } catch (err) {
-            if (!err['cancelRender']) throw err
-          }
-          io.unobserve(target)
-        }
+        if (log) console.warn('Rendering component %s into the element %s ',
+          target.render.meta.key, target.render.meta.id)
+        io.unobserve(target)
+        target.render()
       }
     })
   }, { rootMargin, ...rest })
   return io
+}
+
+export function start(Comp, el, parent, props, children, preact) {
+  const { render, h, Component } = preact
+  const r = () => {
+    if (Comp['plain'] || (/^\\s*class\\s+/.test(Comp.toString())
+      && !Component.isPrototypeOf(Comp))) {
+      const comp = new Comp(el, parent)
+      comp.render({ ...props, children })
+    } else render(h(Comp, props, children), parent, el)
+  }
+  if (Comp.load) {
+    Comp.load((err, data) => {
+      if (data) Object.assign(props, data)
+      if (!err) r()
+    }, el, props)
+  } else r()
 }
