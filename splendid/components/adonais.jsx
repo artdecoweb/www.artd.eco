@@ -1,4 +1,5 @@
-import { loadStyle, loadJSON } from '@lemuria/load-scripts'
+/* eslint-env browser */
+import { loadStyle } from '@lemuria/load-scripts'
 
 class Adonais {
   constructor(el, parent) {
@@ -21,31 +22,35 @@ class Adonais {
    * @suppress {checkTypes}
    */
   static 'load'(callback) {
-    let style = false, div
+    let style = false, div = true
     const cb = () => {
-      if (div && style) callback(null, { div })
+      if (div && style) callback(null)
     }
     loadStyle('css/Adonais.css', () => {
       style = true
       cb()
     })
-    loadJSON('/parts/adonais.html', (err, h) => {
-      // html = h
-      const iframe = document.createElement('iframe')
-      iframe.style.opacity = 0
-      document.body.appendChild(iframe)
-      iframe.contentWindow.document.open()
-      iframe.contentWindow.document.write(h)
-      iframe.contentWindow.document.close()
-      iframe.onload = () => {
-        div = iframe.contentWindow.document.body.firstElementChild
-        cb()
-        document.body.removeChild(iframe)
-      }
-    })
+    // loadJSON('/parts/adonais.html', (err, h) => {
+    //   // html = h
+    //   const iframe = document.createElement('iframe')
+    //   iframe.style.opacity = 0
+    //   document.body.appendChild(iframe)
+    //   iframe.contentWindow.document.open()
+    //   iframe.contentWindow.document.write(h)
+    //   iframe.contentWindow.document.close()
+    //   iframe.onload = () => {
+    //     div = iframe.contentWindow.document.body.firstElementChild
+    //     cb()
+    //     document.body.removeChild(iframe)
+    //   }
+    // })
   }
-  render({ div }) {
-    const [img, ...children] = div.children
+  render() {
+    const div = document.createElement('div')
+
+    div.innerHTML = this.parent.querySelector('noscript').innerText
+
+    const [img, ...children] = div.firstElementChild.children
     const existingImg = this.el.firstElementChild
     existingImg.src = img.src
     this.el.className += ' RunFadeIn'

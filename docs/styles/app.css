@@ -1,18 +1,6 @@
 body {
   margin: 0;
 }
-#menu {
-  text-align: right;
-  background: #294874;
-  line-height: 0;
-}
-#menu svg, #menu img {
-  max-width: 100%;
-  height: 100%;
-}
-#menu svg>g>g[token="3"], #menu svg>g>g[token="4"], #menu svg>g>g[token="2"], #menu svg>g>g[token="1"] {
-  cursor: pointer;
-}
 #info {
   margin: 1rem;
 }
