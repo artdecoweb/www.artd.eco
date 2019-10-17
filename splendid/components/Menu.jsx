@@ -67,7 +67,7 @@ export default class Menu {
     const svg = /** @type {!SVGElement} */ (comp.s.node)
     svg.style.position = 'absolute'
     svg.style.top = 0
-    svg.style.left = 0
+    svg.style.right = 0
     svg.removeAttribute('height')
     this.el.appendChild(svg)
 

@@ -43,7 +43,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
     <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
     <style>
       .no-js [data-io], .no-js [data-loading] { display: none!important }
-      .Menu{text-align:right;background:#294874;line-height:0;width:100%}.Menu svg,.Menu img{max-width:100%}.Menu svg>g>g[token="3"],.Menu svg>g>g[token="4"],.Menu svg>g>g[token="2"],.Menu svg>g>g[token="1"]{cursor:pointer}
+      .Menu{text-align:right;background:#294874;line-height:0;width:100%}.Menu svg,.Menu img{max-width:100%;max-height:100%}.Menu svg>g>g[token="3"],.Menu svg>g>g[token="4"],.Menu svg>g>g[token="2"],.Menu svg>g>g[token="1"]{cursor:pointer}
     </style>
     <noscript>
       <link rel="stylesheet" href="/css/Parallax.css">
