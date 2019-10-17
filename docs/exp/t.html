@@ -1,29 +1,79 @@
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
-    <link
-      href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight" rel="preload" as="fetch" crossOrigin>
-    <script>(function (p,v={}){function w(a){const g=/url\((.+?)\).*?;\s+unicode-range: (.+?);/g;let c={};const d=[];let h;for(;h=g.exec(a);){const b=h[2];d.push({url:h[1],a:b});c[b]=1}c=Object.keys(c).reduce((b,e)=>{const f=e.split(/,\s/).map(k=>k.replace("U+","\\u").replace("-","-\\u")).join("").toLowerCase();b[e]=new RegExp(`[${f}]`);return b},{});const q=document.body?document.body.textContent:"",x=q?Object.keys(c).reduce((b,e)=>{c[e].test(q)&&(b[e]=!0);return b},{}):Object.keys(c).reduce((b,
-e)=>{e in v&&(b[e]=!0);return b},{});l=d.filter(({a:b})=>b in x).map(({url:b})=>b);if(!l.length)return r();const t=document.createDocumentFragment();l.forEach((b,e)=>{const f=document.createElement("link");f.href=b;f.rel="preload";f.as="font";const k=e+1;;f.onload=()=>r(k);f.setAttribute("crossorigin",!0);t.appendChild(f)});document.head.appendChild(t)}const m=document.createElement("link");if(function(a,g){if(!a||!a.supports)return!1;try{return a.supports(g)}catch(c){return!1}}(m.relList,
-"preload")){var y=(a,g,c="")=>{;const d=new XMLHttpRequest;d.onreadystatechange=()=>{4==d.readyState&&(200==d.status?(g(d.responseText)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};;var n;(function(a,g="link"){y(a.href,c=>{n=c;w(n)},"-"+g)})({href:p},
-"js");var l=[],u=0,r=a=>{u++;u>=l.length&&(a=document.createElement("style"),a.innerHTML=n,document.head.appendChild(a))}}else m.rel="stylesheet",m.href=p,document.head.appendChild(m)})('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight', {"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD":true})</script>
-    <script>
-      window._fontLoaded = function (linkEl) {
-  var data = linkEl.href
-  var s = document.createElement('style')
-  s.innerText = "@font-face {  font-family: 'Limelight';  font-style: normal;  font-weight: 400;  src: local('Limelight'), url('_URL') format('woff2');}h1 { font-family: 'Limelight' }".replace('_URL', data)
-  document.head.appendChild(s)
-}
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+    <!-- <link href="https://fonts.googleapis.com/css?display=swap&family=Limelight|Gentium+Basic:400,400i,700"
+      rel="preload" crossorigin as="fetch"> -->
+      <script>
+        // advanced('Limelight|Gentium+Basic:400,400i,700')
+        function advanced(family) {
+          const URL = 'https://fonts.googleapis.com/css?display=swap&family='
+          const FONT = URL + family
+
+          const prefetch = (address, cb, marker = '') => {
+            performance.mark('xhr-start'+marker)
+            const xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = function() {
+              if(xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                  cb(xhr.responseText)
+                  performance.mark('xhr-end'+marker)
+                  performance.measure('xhr'+marker, 'xhr-start'+marker, 'xhr-end'+marker)
+                } else {
+                  console.error('Server responded with code %s at %s', xhr.status, address)
+                }
+              }
+            }
+            xhr.open('GET', address)
+            try {
+              xhr.send(null)
+            } catch (err) {
+              console.error(err)
+            }
+          }
+
+          performance.mark('agf-start')
+
+          preloadDone({ href: FONT }, 'js')
+
+          function preloadDone(linkEl, marker = 'link') {
+            // performance.mark('prefetch1-start')
+            const href = linkEl.href
+            let CSS
+
+            prefetch(href, (result) => {
+              CSS = result
+              let a
+              const re = /url\((.+?)\)/g
+              const urls = []
+              while((a = re.exec(result))) {
+                const [, url] = a
+                urls.push(url)
+              }
+              urls.forEach((address) => {
+                const link = document.createElement('link')
+                link.href = address
+                link.rel = 'preload'
+                link.as = 'font'
+                link.setAttribute('crossorigin', true)
+                performance.mark('font-preload-start')
+                link.onload = () => {
+                  performance.mark('font-preload-end')
+                  performance.measure('font-preload', 'font-preload-start', 'font-preload-end')
+                }
+                document.head.appendChild(link)
+              })
+              const style = document.createElement('style')
+              style.innerText = CSS
+              document.head.appendChild(style)
+
+              performance.mark('agf-end')
+              performance.measure('advanced-google-font', 'agf-start', 'agf-end')
+            }, '-' + marker)
+          }
+        }
     </script>
-    <link
-      href="data:application/font-woff2;base64,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" rel="preload" as="font" crossOrigin onload="window._fontLoaded(this)">
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css?family=Limelight&amp;text=Art%20Deco%E2%84%A2%3A%20The%20Node.JS%20Development%20Company%20In%20London" rel="stylesheet">
-      <style>h1 { font-family: 'Limelight' }</style>
-    </noscript>
     <title>Art Deco: Node.JS Development Company</title>
     <meta content="https://artd.eco/index.html" property="og:url">
     <meta content="Art Deco: Node.JS Development Company" property="og:title">
@@ -32,46 +82,46 @@ e)=>{e in v&&(b[e]=!0);return b},{});l=d.filter(({a:b})=>b in x).map(({url:b})=>
     <meta
       content="Art Deco is specialised Node.JS company: back-end servers, cloud &amp; serverless apps and front-end websites and optimised PWAs of outstanding quality." name="description">
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
-    
-    
+
     <script>document.documentElement.classList.remove("no-js")</script>
-    <link rel="stylesheet" href="/styles/combined.css">
-    <link rel="preload" href="/css/Parallax.css" as="style">
+    <link href="/styles/combined.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Limelight|Gentium+Basic:400,400i,700"
+      rel="preload" crossorigin onload="this.rel='stylesheet'; this.onload=null" as="style"> -->
+
+    <!-- <link rel="preload" href="/css/Parallax.css" as="style">
     <link rel="preload" href="/css/Logo.css" as="style">
     <link rel="preload" href="/snapsvg/dist/snap.svg-min.js" as="script">
-    <link rel="preload" href="/js/svg-anim.js" as="script">
-    <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
+    <link rel="preload" href="/js/svg-anim.js" as="script"> -->
+    <!-- <script>(function(){function c(){var a=d,b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}var e;var f=document.createElement("link").relList;if(f&&f.supports)try{e=f.supports("preload")}catch(a){e=!1}else e=!1;
+    if(!e){var g=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(g instanceof Array)h=g;else{var k,d=g,l="undefined"!=typeof Symbol&&Symbol.iterator&&d[Symbol.iterator];k=l?l.call(d):{next:c()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){"style"==a.as&&(["as","preload","onload"].forEach(function(b){return a.removeAttribute(b)}),a.rel="stylesheet")})};}).call(this);</script> -->
     <style>
       .no-js [data-io], .no-js [data-loading] { display: none!important }
       .Menu{text-align:right;background:#294874;line-height:0;width:100%}.Menu svg,.Menu img{max-width:100%}.Menu svg>g>g[token="3"],.Menu svg>g>g[token="4"],.Menu svg>g>g[token="2"],.Menu svg>g>g[token="1"]{cursor:pointer}
     </style>
     <noscript>
-      <link rel="stylesheet" href="/css/Parallax.css">
+      <!-- <link rel="stylesheet" href="/css/Parallax.css">
       <link rel="stylesheet" href="/css/Adonais.css">
-      <link rel="stylesheet" href="/css/Logo.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight">
+      <link rel="stylesheet" href="/css/Logo.css"> -->
     </noscript>
-    <script defer src="/js/polyfill/intersection-observer.js"></script>
-    <script defer src="/js/images.js"></script>
-    <script crossorigin data-src="/preact/dist/preact.min.js"></script>
+    <!-- <script defer src="/js/polyfill/intersection-observer.js"></script>
+    <script defer src="/js/images.js"></script> -->
+    <!-- <script crossorigin data-src="/preact/dist/preact.min.js"></script>
     <script crossorigin data-src="/comps/common.js"></script>
-    <script crossorigin data-src="/comps/main.js"></script>
+    <script crossorigin data-src="/comps/main.js"></script> -->
 
-    <link rel="preload" href="/preact/dist/preact.min.js" as="script" crossorigin>
-    <link rel="preload" href="/comps/main.js" as="script" crossorigin>
+    <!-- <link rel="preload" href="/preact/dist/preact.min.js" as="script" crossorigin>
+    <link rel="preload" href="/comps/main.js" as="script" crossorigin> -->
   </head>
   <body style="overscroll-behavior: none;">
-    
-    
-    
-
     <div id="about" class="container">
       <div class="row">
         <div class="col-sm-4 col-lg-3 align-self-center text-center">
           <picture id="c75046" class="Logo">
-            <source srcset="img/logo-300.webp 300w" sizes="300px" type="image/webp">
-            <source srcset="" type="image/png" sizes="300px">
-            <img alt="Art Deco Logo" src="/img/logo.png" srcset="" sizes="300px" class="img-fluid">
+            <source srcset="/img/logo-300.webp 300w" sizes="300px" type="image/webp">
+            <img alt="Art Deco Logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'/%3E" data-io data-src="/img/logo.png" sizes="300px" class="img-fluid">
+            <noscript>
+              <img alt="Art Deco Logo" src="/img/logo.png" sizes="300px" class="img-fluid">
+            </noscript>
           </picture>
         </div>
         <div class="col">
@@ -82,12 +132,11 @@ e)=>{e in v&&(b[e]=!0);return b},{});l=d.filter(({a:b})=>b in x).map(({url:b})=>
             Art Deco is a UK-based, professional web development company: we implement back-end servers in <em>Node.JS</em> that power websites and services for people and enterprises, utilising cloud architecture to handle variable loads and minimise costs. We also create front-end applications and progressive web apps (PWAs) that connect to back-ends using the gold standard techniques of software engineering. Finally, we make novel developer tools of exceptional quality for ourselves, and contribute them to Open Source for thousands other developers. Art Deco crafts noble software of outstanding standard and provides the best customer service to our clients.
           </p>
         </div>
-        
+
       </div>
       <p class="SectionBreak InitialTransparent">
         <a title="Back To Top" href="#top">
-          <img onload="this.parentElement.parentElement.className += ' RunFadeIn'" alt="section break"
-            src="/section-breaks/9.svg"></a>
+          <img alt="section break" src="/section-breaks/9.svg"></a>
       </p>
     </div>
 
@@ -110,7 +159,7 @@ e)=>{e in v&&(b[e]=!0);return b},{});l=d.filter(({a:b})=>b in x).map(({url:b})=>
     <p>
       Software Engineering is an art, science and technology combined. It helps to automate processes and improve the standard of living, relieving humans of monotonous operations that can be solved using a computer program. 100 years ago, with the advent of new machinery, there was a promise for the future where people's time could be taken off of work, and put into spending their lives focusing on human tasks and communications. This has partly been achieved, but we have a long way to go still, and after reaching the required stage of progress in hardware, we are now peaking in the course of software evolution. The species that is increasingly dominating the environment and taking the central stage in this process of natural selection of the fittest is <em>Node.JS</em>. It is no surprise that in today's word, characterised by globalisation and interconnectedness, the programming language born on the web, is becoming <em>The One</em> of the web, who will redeem it and remake it in the way it's supposed to be.
     </p>
-    
+
   </div>
   <div style="overflow: hidden;"
     class="col-lg-5 my-3 position-relative order-1 order-lg-3 d-flex justify-content-center p-3">
@@ -151,35 +200,35 @@ e)=>{e in v&&(b[e]=!0);return b},{});l=d.filter(({a:b})=>b in x).map(({url:b})=>
           <a style="top: 208px; left: 175px;" class="b" href="#implementation">
             <span class="k" style="z-index: 2; position: absolute; top: 223px; left: 190px;">
               <span class="l">
-                We 
+                We
                 <strong class="a">I</strong>mplement software products using the latest language features and spend time on writing code rather than setting up tools and installing 3rd party dependencies.</span>
             </span>
             <img alt="letter I" class="e c" src="/img/adonais/I.png" style="top: 208px; left: 175px;"></a>
           <a style="top: 207px; left: 73px;" class="b" href="#automated-testing">
             <span class="k" style="z-index: 2; position: absolute; top: 222px; left: 88px;">
               <span class="l">
-                Employed 
+                Employed
                 <strong class="a">A</strong>utomated Testing on unit and integration levels ensures that software is bug-free and that any future changes to the codebase won't break the existing version.</span>
             </span>
             <img alt="letter A" class="f c" src="/img/adonais/A3.png" style="top: 207px; left: 73px;"></a>
           <a style="top: 123px; left: 15px;" class="b" href="#documentation">
             <span class="k" style="z-index: 2; position: absolute; top: 138px; left: 30px;">
               <span class="l">
-                Full-coverage 
+                Full-coverage
                 <strong class="a">D</strong>ocumentation allows for long-term maintenance by us and other teams and is full of examples and their outputs that also act as a quality assurance mechanism.</span>
             </span>
             <img alt="letter D" class="g c" src="/img/adonais/D.png" style="top: 123px; left: 15px;"></a>
           <a style="top: 28px; left: 67px;" class="b" href="#optimisation">
             <span class="k" style="z-index: 2; position: absolute; top: 43px; left: 82px;">
               <span class="l">
-                The 
+                The
                 <strong class="a">O</strong>ptimisation of CSS stylesheets and JavaScript code, both for the server and client-side, means that transmitted bundles will load faster and improve user experience.</span>
             </span>
             <img alt="letter O" class="h c" src="/img/adonais/O.png" style="top: 28px; left: 67px;"></a>
           <a style="top: 25px; left: 169px;" class="b" href="#npm-packages">
             <span class="k" style="z-index: 2; position: absolute; top: 40px; left: 184px;">
               <span class="l">
-                Having contributed over 150 
+                Having contributed over 150
                 <strong class="a">N</strong>PM packages, we have derived the methodology for managing dependencies that facilitate code reuse and organises workload into logical chunks.</span>
             </span>
             <img alt="letter N" class="i c" src="/img/adonais/N.png" style="top: 25px; left: 169px;"></a>
@@ -211,8 +260,8 @@ e)=>{e in v&&(b[e]=!0);return b},{});l=d.filter(({a:b})=>b in x).map(({url:b})=>
 <div id="art-deco" class="row Feature">
   <div class="col">
     <h2 style="background: #8ea6aa; color: #d1d2ca; text-shadow: 1px 1px #4e675b;" class="text-center">
-      <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
-        class="float-right" src="/img/sun.png">
+      <!-- <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
+        class="float-right" src="/img/sun.png"> -->
        Art Deco
     </h2>
     <img alt="Art Deco" class="img-fluid img-fluid rounded float-left mr-3" data-io
@@ -227,12 +276,9 @@ e)=>{e in v&&(b[e]=!0);return b},{});l=d.filter(({a:b})=>b in x).map(({url:b})=>
   </div>
 </div>
 
-<p class="SectionBreak">
-  <a title="Back To Top" href="#top">
-    <img alt="section break"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='13'/%3E" data-io style="width: 25px;" data-src="/section-breaks/2.svg">
-    <noscript><img alt="section break" style="width: 25px;" src="/section-breaks/2.svg"></noscript></a>
-</p>
+<img alt="section break" data-io style="width: 25px;" data-src="/section-breaks/2.svg">
+<!-- <img alt="art deco fan" class="float-left" src="/img/sun.png"> -->
+
 <div id="implementation" class="row Feature">
   <div class="col">
     <h2 style="background: #e84936; color: white; text-shadow: 1px 1px grey;" class="text-center">
@@ -259,8 +305,8 @@ e)=>{e in v&&(b[e]=!0);return b},{});l=d.filter(({a:b})=>b in x).map(({url:b})=>
 <div id="automated-testing" class="row Feature">
   <div class="col">
     <h2 style="background: #faf7ee; color: #7f9ed2; text-shadow: 1px 1px #4e71a7;" class="text-center">
-      <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
-        class="float-right" src="/img/sun.png">
+      <!-- <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
+        class="float-right" src="/img/sun.png"> -->
        Automated Testing
     </h2>
     <img alt="Automated Testing" class="img-fluid img-fluid rounded float-left mr-3" data-io
@@ -283,7 +329,7 @@ e)=>{e in v&&(b[e]=!0);return b},{});l=d.filter(({a:b})=>b in x).map(({url:b})=>
 <div id="documentation" class="row Feature">
   <div class="col">
     <h2 style="background: #cbbf8f; color: #3e4227; text-shadow: 1px 1px #957544;" class="text-center">
-      <img alt="art deco fan" class="float-left" src="/img/sun.png">
+      <!-- <img alt="art deco fan" class="float-left" src="/img/sun.png"> -->
        Documentation
     </h2>
     <img alt="Documentation" class="img-fluid img-fluid rounded float-right ml-3" data-io
@@ -308,233 +354,28 @@ e)=>{e in v&&(b[e]=!0);return b},{});l=d.filter(({a:b})=>b in x).map(({url:b})=>
 <div id="optimisation" class="row Feature">
   <div class="col">
     <h2 style="background: #dfdeda; color: #4e4e4c; text-shadow: 1px 1px #c8c1a4;" class="text-center">
-      <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
-        class="float-right" src="/img/sun.png">
+      <!-- <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
+        class="float-right" src="/img/sun.png"> -->
        Optimisation
     </h2>
-    <img alt="Optimisation" class="img-fluid img-fluid rounded float-left mr-3" data-io
-      data-src="/img/posters/optimisation.jpg">
-    <noscript>
-      <img alt="Optimisation" class="img-fluid img-fluid rounded float-left mr-3"
-        src="/img/posters/optimisation.jpg">
-    </noscript>
     <p>
       Since our source code is written in ES6, and organised by NPM packages, we had to find a way to deliver the final product which is compatible with browsers, or is easy to install as a Node.JS system. To achieve that, we use <em><a href="https://github.com/google/closure-compiler">Google Closure Compiler</a></em> that puts source files together and produces an output with advanced optimisations, such as peep-hole optimisation, variable name mangling and others. The compiled JavaScript code is smaller in size and can be transmitted to users' browsers faster, but it also allows to us to write modern JavaScript, without having to worry about older browser compatibility. On top of that, we also minify websites' CSS files (rename class names, remove whitespace, <em>etc</em>) and concatenate them into a single file for faster page load and thus greater user experience. Since the compiler had only been used for web bundles previously, we invented <a href="/depack.html">Depack</a>: the build tool that makes it possible to run the compiler against <em>Node.JS</em> programs and produce a single optimised executable binary or library file. This means that the gross package delivered as the overall system, be it a web server, CLI tool or a library to work with APIs, will not have any dependencies that take time to install and link, occupies less disk space, runs faster and can be shared with 3rd parties without worrying about revealing the source code, due to the fact that the output is obfuscated (the source maps are available to clients in separate files).
     </p>
   </div>
 </div>
-<p class="SectionBreak">
-  <a title="Back To Top" href="#top">
-    <img alt="section break"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10'/%3E" data-io style="width: 25px;" data-src="/section-breaks/6.svg">
-    <noscript><img alt="section break" style="width: 25px;" src="/section-breaks/6.svg"></noscript></a>
-</p>
 <div id="npm-packages" class="row Feature">
   <div class="col">
     <h2 style="background: #f36e2b; color: #ffeea8; text-shadow: 1px 1px #f69e49;" class="text-center">
-      <img alt="art deco fan" class="float-left" src="/img/sun.png">
+      <!-- <img alt="art deco fan" class="float-left" src="/img/sun.png"> -->
        NPM Packages
     </h2>
-    <img alt="NPM Packages" class="img-fluid img-fluid rounded float-right ml-3" data-io
-      data-src="/img/posters/packages.jpg">
-    <noscript>
-      <img alt="NPM Packages" class="img-fluid img-fluid rounded float-right ml-3"
-        src="/img/posters/packages.jpg">
-    </noscript>
     <p>
       <em><a href="https://npmjs.org">NPM</a></em> is the package manager for <em>Node.JS</em> with almost 1 million packages being published online for free use. <em>Art Deco</em> recognises the value of Open Source, but also exploits the infrastructure created by NPM that allows to solve the dependency management problem with the ease of mind: when writing software for ourselves and clients, we split designs into logical packages, and create them separately using our package bootstrapper <a href="/mnp.html">MNP</a> (<span class="tm">my-new-package</span>) that spawns packages with the most up-to-date scaffolding. Smaller packages are then imported by larger ones, and all of them are published on NPM, either in private or public scopes (e.g., our Open Source projects). This approach ensures that any future software pieces can quickly install existing ones, whereas we save time and know that there's no bugs in installed code, because each package has been tested separately. Moreover, the philosophy behind packages is Unix-like, i.e., that programs should be simple and do mostly one thing, but do it really well. We have published over 150 packages that are really good in their implementation, testing and documentation, and when they are put together, they achieve tremendous results with superb quality. NPM allows us to apply the DRY (don't repeat yourself) principle in practice of software engineering, and organise code by scopes: we can create a scope for our clients and share the access permissions with them, so that all the infrastructure can be handed over quickly, securely and responsibly.
     </p>
   </div>
 </div>
-      
-        
-<p class="SectionBreak">
-  <a title="Back To Top" href="#top">
-    <img alt="section break"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='12'/%3E" data-io style="width: 25px;" data-src="/section-breaks/7.svg">
-    <noscript><img alt="section break" style="width: 25px;" src="/section-breaks/7.svg"></noscript></a>
-</p>
-<div class="row">
-  <div style="border-radius:2rem; overflow:hidden" class="text-center p-0 col">
-    <div class="Sky h-100 w-100 position-absolute" style="top:-50px;">
-      <div data-background-img="/img/sky2.png" style="top: 0px;" class="position-absolute"></div>
-      <div data-background-img="/img/sky1.png" style="top: 45px;" class="position-absolute"></div>
-      <div data-background-img="/img/sky2.png" style="top: 90px; background-position-x: -50%;"
-        class="position-absolute">
-      </div>
-      <div data-background-img="/img/sky1.png" style="top: 135px; background-position-x: -50%;"
-        class="position-absolute">
-      </div>
-      <div data-background-img="/img/sky2.png" style="top: 180px;" class="position-absolute"></div>
-    </div>
-    <img alt="eagle over software engineering" class="img-fluid my-3" data-io
-      data-src="/img/posters/bird2.png">
-    <noscript>
-      <img alt="eagle over software engineering" class="img-fluid my-3" src="/img/posters/bird2.png">
-    </noscript>
-  </div>
+
+
 </div>
-
-<p class="SectionBreak">
-  <a title="Back To Top" href="#top">
-    <img alt="section break"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='12'/%3E" data-io data-src="/section-breaks/8.svg">
-    <noscript><img alt="section break" src="/section-breaks/8.svg"></noscript></a>
-</p>
-
-
-<div class="row">
-  <div class="col">
-    <h2 id="packages">Regenerating <em>Node.JS</em> Ecosystem</h2>
-    <p>
-      <em>Node.JS</em>, the most modern programming language of today, has risen as a reaction to traditional heavy applications that take ages to compile, an army of administrators to manage, and cost enormous amount of money to introduce and maintain. The <em>Node.JS</em> runtime, on the other hand, based on the <em>JavaScript</em> programming language, has given independent developers and smaller teams freedom to write fast, easily deployable and testable software systems that transform from a prototype to production in a matter of days, not years.
-      However, the ecosystem's direction of growth around <span class="Node TM">Node.JS</span> and its package manager <span class="NPM TM">NPM</span> has been hijacked by corporations, that want to dictate their own terms of use: <span class="Corp">Microsoft</span> would like people to use <span class="Typescript TM">TypeScript</span> instead of <span class="JavaScript TM">JavaScript</span> and is successfully advocating it by playing on the fact that students are mostly taught Java at Universities, so that they tend to choose what they know, that is, a typed object-oriented programming language; and <span class="Corp">Facebook</span> is dominating the field of web-development by maintaining the <span class="React TM">React</span> library tied up to such tools as <del>Babel and Jest</del>, which are gigantic in size and contain bugs. Moreover, there's no need to pretend that these companies are doing it for free: every developer won will result in either marketing, power or financial gains to them. The main issue is that to solve simple problems, the solutions employed are unnecessary complex, involve installing 1000s of dependencies for a product at hand, and lock developers in the mode of thinking and working prescribed by someone else. JavaScript and Node.JS were once about freedom, openness to experimentation and close friendly community, and now, like all good things that become popular, it is poisoned by ignorance, unprofessionalism and the belief system that anyone who has installed a 3rd party dependency, is an expert developer and those who don't agree with the paradigms established by corporations are weird outsiders. Art Deco aims to restore the intrinsic philosophy behind JavaScript and Node.JS as open-minded, efficient and solution-focused instruments and regenerates the development process of back-end and front-end applications with utilities that are simply sophisticated and sophisticatedly simple, for ourselves, and others, so that the work process comprises purely of writing code, tests and documentation with minimal tint of branded technology but maximum productivity. In other words, Art Deco makes tools for developers, rather than making developers its tools.
-      
-      
-      
-    </p>
-    
-  </div>
-  <div style="overflow: hidden;"
-    class="col-lg-3 justify-content-around mb-3 position-relative d-flex align-items-center flex-lg-column">
-    <div class=" Parallax" data-loading style="z-index: -1;" id="c80"></div>
-    <div class="Parallax"></div>
-    <noscript>
-      <div class=" Parallax" style="background-image: url(/img/seamless.jpg); z-index: -1;"></div>
-    </noscript>
-    <div data-background-img="/img/noise/giphy-2.gif" class="d-inline-block" style="mix-blend-mode: difference; z-index:-1;">
-      <img alt="log babel install process" class="img-fluid" data-io
-        style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" data-src="/img/noise/yarn-add-babel2.gif">
-      <noscript>
-        <img alt="log babel install process" class="img-fluid"
-          style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" src="/img/noise/yarn-add-babel2.gif">
-      </noscript>
-    </div>
-    <div class="d-inline-block">
-      <img alt="capitalised power, systematic fear, strategic sabotage" class="img-fluid" data-io
-        style="z-index: 1;" data-src="/img/images2.png">
-      <noscript>
-        <img alt="capitalised power, systematic fear, strategic sabotage" class="img-fluid"
-          style="z-index: 1;" src="/img/images2.png">
-      </noscript>
-    </div>
-    <div data-background-img="/img/noise/giphy-2.gif" class="d-inline-block" style="mix-blend-mode:screen;z-index:-1;">
-      <img alt="timewave zero simulation" class="img-fluid" data-io
-        style="z-index: 1; mix-blend-mode: screen; width: 250px;" data-src="/img/hqdefault.jpg">
-      <noscript>
-        <img alt="timewave zero simulation" class="img-fluid"
-          style="z-index: 1; mix-blend-mode: screen; width: 250px;" src="/img/hqdefault.jpg">
-      </noscript>
-    </div>
-  </div>
-  
-</div>
-
-<div class="row">
-  <div class="col">
-    <h3 id="examples-of-innovative-contributions">Examples Of Innovative Contributions</h3>
-    <p>
-      As a <em>Node.JS</em> development company, we were not happy with the state-of-art that existed in the field. Because programming is easy and fun when you know how to do it properly, we have created all our infrastructure from scratch, that enabled us to generate numerous use-cases for ourselves, and fill in all the features required to start a very efficient <em>Node.JS</em> development house that produces software of utmost standard of quality quickly. All tools are contributed to Open Source and are constantly improved.
-    </p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-4">
-    <h4 id="documentary">Documentary</h4>
-    <p>
-      The <em>documentation engine</em> for organising READMEs with fast and cached embedding of examples' source code and their output, generation of tables of content and printing tables with types annotations. It is extensible with JSX components and greatly improves productivity.
-    </p>
-  </div>
-  <div class="col-md-4">
-    <h4 id="zoroaster">Zoroaster</h4>
-    <p>
-      The <em>context-testing framework</em> that separates test infrastructure logic (set-ups and tear-downs) from test cases. Enables publishing of contexts as separate packages, provides JSDoc annotations to testing APIs and allows to write masks where input are mapped to outputs via non-js files.
-    </p>
-  </div>
-  <div class="col-md-4">
-    <h4 id="depack">Depack</h4>
-    <p>
-      The <em>build tool</em> working with the Google Closure Compiler that produces optimised bundles for web browsers, as well as establishes the process of compiling Node.JS packages into single executable binaries or library files. Also supports JSX transforms and Preact integration.
-    </p>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-4">
-    <h4 id="lamode">ÀLaMode</h4>
-    <p>
-      The <em>source code transpiler</em> for simple transformation of <span class="tm">import/export</span> statements into require calls/module.exports assignments. Has 0 dependencies, keeps source code readable and supports JSX.
-    </p>
-  </div>
-  <div class="col-md-4">
-    <h4 id="splendid">Splendid</h4>
-    <p>
-      The <em>static website generator</em> that allows to define JSX components and use them in HTML. Optimises the CSS and JS output with Depack, and mounts Preact components only when parent elements become visible.
-    </p>
-  </div>
-  <div class="col-md-4">
-    <h4 id="idio">Idio</h4>
-    <p>
-      The <em>back-end server</em> based off Koa2 web-server but with Koa optimised with Closure Compiler and providing all essential middleware for the modern web dev. Can render server-side JSX, transpile client-side JSX files on-the-fly and automatically reload routes.
-    </p>
-  </div>
-</div>
-
-
-
-<hr>
-
-<div class="row">
-  
-  <div style="background:rgb(251,246,0); height:20rem;padding:1rem;" id="contact"
-    class="Yellow position-relative col-sm-8 col-md-5 col-lg-4">
-    <h2 style="color: #405a8c">Contact Us</h2>
-    <p>
-      Art Deco Code Limited<br/>
-      International House,<br>24 Holborn Viaduct,<br>London, EC1A 2BN
-      <span class="RedBox">
-        Please get in touch for your next <em>Node.JS</em>, cloud and front-end project.
-        <br>{/＊<strong> &nbsp;<a style="color:white" href="mailto:allora@artd.eco">allora@artd.eco</a> </strong>＊/}
-      </span>
-    </p>
-    <img alt="bird" class="position-absolute" data-io style="right: 1rem; top: 1rem;"
-      data-src="/img/bird.gif">
-    <noscript>
-      <img alt="bird" class="position-absolute" style="right: 1rem; top: 1rem;" src="/img/bird.gif">
-    </noscript>
-    <img alt="bird" class="Bird1" data-io data-src="/img/bird.gif">
-    <noscript><img alt="bird" class="Bird1" src="/img/bird.gif"></noscript>
-    
-  </div>
-  <div class="CupDiv justify-content-end text-right text-md-center d-flex col-md-7 col-lg-5">
-    <img alt="coffee cup" id="cup" class="img-fluid align-self-end" data-io data-src="/img/ART.png">
-    <noscript><img alt="coffee cup" id="cup" class="img-fluid align-self-end" src="/img/ART.png"></noscript>
-  </div>
-</div></div>
-
-
-    
-    
-
-    
-
-    
-    
-
-    
-      
-    <div style="position:relative;">
-      <div class="container-fluid p-0 position-absolute"
-        style="height: 50px; top: 0px; left: 0px; overflow: hidden;">
-        <div class=" Parallax" data-loading id="c45018"></div>
-        <div class="Parallax"></div>
-        <noscript><div class=" Parallax" style="background-image: url(/img/bakst2.jpg);"></div></noscript>
-      </div>
-      <div id="bottom" class="position-absolute" style="top: calc(50px - 1px); left: 0px;"></div>
-    </div>
-    <script>
-  (function(){function d(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function e(){var a=document.querySelectorAll("script[data-src]");if(!(a instanceof Array)){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];a=b?b.call(a):{next:d(a)};for(var c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}
-  window.addEventListener("DOMContentLoaded",function(){function a(){if(0<b.length){var c=b.shift();c.src=c.getAttribute("data-src");c.removeAttribute("data-src");c.onload=a;c.onerror=function(){console.warn("Could not load script %s",c.src)}}}var b=e().concat();a()});}).call(this);
-    </script>
   </body>
 </html>
