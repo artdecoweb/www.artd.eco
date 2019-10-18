@@ -16,6 +16,6 @@
     filter: hue-rotate(360deg);
   }
 }
-.Logo {
+#Logo {
   animation: filter-animation 36s infinite;
 }

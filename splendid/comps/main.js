@@ -8,15 +8,15 @@ const renameMaps = { 'styles/Adonais.css': __renameMap0,
 __initBottom()
 import { Component, render, h } from 'preact'
 import { makeIo, init, start } from './__competent-lib'
+import Logo from '../components/logo.jsx'
 import Parallax from '../../node_modules/splendid/src/components/parallax.jsx'
 import Menu from '../components/menu.jsx'
-import Logo from '../components/logo.jsx'
 import Adonais from '../components/adonais.jsx'
 
 const __components = {
+  'logo': Logo,
   'parallax': Parallax,
   'menu': Menu,
-  'logo': Logo,
   'adonais': Adonais,
 }
 
@@ -24,15 +24,15 @@ const io = makeIo()
 
 /** @type {!Array<!preact.PreactProps>} */
 const meta = [{
+  key: 'logo',
+  id: 'Logo',
+},
+{
   key: 'parallax',
-  id: 'c45018',
+  id: 'c57253',
   props: {
     'background-image': '/img/bakst2.jpg',
   },
-},
-{
-  key: 'menu',
-  id: 'c57253',
 },
 {
   key: 'parallax',
@@ -45,7 +45,7 @@ const meta = [{
   },
 },
 {
-  key: 'logo',
+  key: 'menu',
   id: 'c75046',
 },
 {
