@@ -20,6 +20,11 @@
   resolved "https://registry.yarnpkg.com/@artdeco/clean-stack/-/clean-stack-1.1.1.tgz#0a68b9a061b5076ebaf948c150ea26d09c1e753f"
   integrity sha512-q5lO3vGUo0WgkSqzgzjL0HQdA9t2HzQqZISuVuQWMh9xqLuiLFP/ZTsxFc8vpMl7mNpGk7Mm0OeyFQ+Evrp0Cw==
 
+"@artdeco/snapsvg-animator@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@artdeco/snapsvg-animator/-/snapsvg-animator-0.1.0.tgz#92b61220569e968c61aba23b8f7b9b345529cff4"
+  integrity sha512-XxHcIu1WNVjCSViLLGLBM3n3kAY3Sd5nXcpf5H48aKtdgHzJzJ5tDmV2n28valodCOooHJ0+zfCBLG2AfHw7Kw==
+
 "@depack/depack@^2.0.2":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@depack/depack/-/depack-2.1.0.tgz#d0e3bc30ab2fc5ad773a5d6bf4bff1d9183ec599"

@@ -37,6 +37,7 @@
     "zoroaster": "^4.1.2"
   },
   "dependencies": {
+    "@artdeco/snapsvg-animator": "^0.1.0",
     "@lemuria/load-scripts": "^1.1.0",
     "snapsvg": "^0.5.1"
   }
