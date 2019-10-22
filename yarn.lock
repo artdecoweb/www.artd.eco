@@ -273,10 +273,10 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.10.2:
-  version "1.10.2"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.10.2.tgz#afac6dd800c786ad3758c408083c0f3b4f8b608a"
-  integrity sha512-VGZ+6tu9jZMafvS+4Bfdiwgc+EUUww9JxlQzVdUGWnm8A8u3tN2EjLWl8Z8LNEadrOlImLfR6VXxNquq5u1D0g==
+splendid@^1.10.3:
+  version "1.10.3"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.10.3.tgz#c937e2f8519f36e262139eec45be897975c47cea"
+  integrity sha512-yn8AB8zjyqX+69hxf8YnPZEBQ3J/pgSs4+vgZ5llSHOnHeTn37SzVPuFxr+QwHAixqrWffgDPu2VoZf63BosWA==
   dependencies:
     "@depack/depack" "^2.1.0"
     "@externs/preact" "^1.2.6"
@@ -287,7 +287,7 @@ splendid@^1.10.2:
     "@lemuria/font" "^1.0.4"
     "@lemuria/load-scripts" "^1.1.0"
     "@lemuria/popup" "^1.1.1"
-    alamode "^3.0.0"
+    alamode "^3.0.1"
     bootstrap "^4.3.1"
     dropcss "^1.0.15"
     highlight.js "9.15.10"
