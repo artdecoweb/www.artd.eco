@@ -14,7 +14,7 @@ export default class Logo {
    */
   serverRender({ splendid }) {
     splendid.export()
-    splendid.addCSS('styles/Logo.css', null, {
+    splendid.css('styles/Logo.css', null, {
       dynamic: true,
       preload: true,
     })

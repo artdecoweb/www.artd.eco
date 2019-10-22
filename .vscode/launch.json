@@ -15,7 +15,8 @@
       "sourceMaps": false,
       "skipFiles": [
         "<node_internals>/**/*.js"
-      ]
+      ],
+      "console": "integratedTerminal"
     }
   ]
 }

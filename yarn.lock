@@ -25,7 +25,7 @@
   resolved "https://registry.yarnpkg.com/@artdeco/snapsvg-animator/-/snapsvg-animator-0.1.0.tgz#92b61220569e968c61aba23b8f7b9b345529cff4"
   integrity sha512-XxHcIu1WNVjCSViLLGLBM3n3kAY3Sd5nXcpf5H48aKtdgHzJzJ5tDmV2n28valodCOooHJ0+zfCBLG2AfHw7Kw==
 
-"@depack/depack@^2.0.2":
+"@depack/depack@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@depack/depack/-/depack-2.1.0.tgz#d0e3bc30ab2fc5ad773a5d6bf4bff1d9183ec599"
   integrity sha512-Qs63d/UhJrEORIGDlsCEdqgqNaf2Iv4MN5oeRFX+ONpqP1Hk45mfAGrJYJBhCvpxrNigj/2Jv7hXN5yoi5+l1g==
@@ -82,6 +82,16 @@
   dependencies:
     erte "1.1.6"
 
+"@lemuria/control-style@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@lemuria/control-style/-/control-style-1.0.0.tgz#33adb273df0b0151bef4603943ad53cd1b77194c"
+  integrity sha512-S0TOt0gdHKy1OXMtOShp4C3ElZupvEiySpPRBES40JjHMGCl/tORBLqh5Fli81u6elfulhUxjPwuPl35ax2tEg==
+
+"@lemuria/font@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@lemuria/font/-/font-1.0.4.tgz#03b3c1e90b1f7beb4e981220b28fd2848a090150"
+  integrity sha512-jVNgVlEdoIt30vnSOh3Oh9ye3W/WDT5gACRJ8vN03ewQOEsHD25N09UQTiZuVl02+ZW6XDNCiTUni4WlvyIZug==
+
 "@lemuria/load-scripts@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@lemuria/load-scripts/-/load-scripts-1.1.0.tgz#1668d9caa83303c0e88d56cbc5ed3fb162c94dd7"
@@ -121,6 +131,11 @@ alamode@^3.0.0:
   resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.0.0.tgz#d83b1939cdb823665b850f4ee1d2255be854d058"
   integrity sha512-rKxzjI4FG2dDrL13xGdvEUmLsaz3TUwm5/JwRzJ+5AhXs5pI/tGbsvmvJ9rHtkPTpMXfj4sf1RFZGmgbFIhBFg==
 
+alamode@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.0.1.tgz#a51113deb629e0ac177b072c0b3d58475e343f57"
+  integrity sha512-BXOkrmmR1Q8/Fa8z5PE7jUKQJQJ6JPGzvhkMvyeHQ28kG5jCGUjTVgR8WsIqyczEjH5iWy3v4utwDfWwXr44sg==
+
 bootstrap@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
@@ -153,10 +168,10 @@ diff@4.0.1:
   resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.1.tgz#0c667cb467ebbb5cea7f14f135cc2dba7780a8ff"
   integrity sha512-s2+XdvhPCOF01LRQBC8hf4vhbVmI2CGS5aZnxLJlT5FtdhPCDFq80q++zK2KlrVorVDdL5BOGZ/VfLrVtYNF+Q==
 
-documentary@^1.33.3:
-  version "1.33.3"
-  resolved "https://registry.yarnpkg.com/documentary/-/documentary-1.33.3.tgz#b8e93d2a612f817e4c430e7287e5fd16871f001a"
-  integrity sha512-fUlrM9FZXuFNgyxk6ZyrIQBJI0XANw/ZZLNcihZpBDUDo42GxMEmn9R627EINM12pz0YeU+xgnD0y4LrURT0vQ==
+documentary@^1.34.1:
+  version "1.34.1"
+  resolved "https://registry.yarnpkg.com/documentary/-/documentary-1.34.1.tgz#0b556051b9d1c28dcd52527332fab5bcffa117b9"
+  integrity sha512-Gi7XJ9KQYOxObCEFq0rjmP0c7CVhlo1KTz1aw17qq4P7LGkS7YRN/5PWxPOM1a/87kWIOV/zekn5ZaoWdH9sMQ==
   dependencies:
     alamode "^3.0.0"
     preact "8.5.2"
@@ -219,7 +234,7 @@ mime-db@^1.40.0:
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.41.0.tgz#9110408e1f6aa1b34aef51f2c9df3caddf46b6a0"
   integrity sha512-B5gxBI+2K431XW8C2rcc/lhppbuji67nf9v39eH8pkWoZDxnAL0PxdpH32KYRScniF8qDHBDlI+ipgg5WrCUYw==
 
-preact@8.5.2, preact@^8.5.2:
+preact@8.5.2:
   version "8.5.2"
   resolved "https://registry.yarnpkg.com/preact/-/preact-8.5.2.tgz#2f532da485287c07369e08150cf4d23921a09789"
   integrity sha512-37tlDJGq5IQKqGUbqPZ7qPtsTOWFyxe+ojAOFfzKo0dEPreenqrqgJuS83zGpeGAqD9h9L9Yr7QuxH2W4ZrKxg==
@@ -258,16 +273,19 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.9.5:
-  version "1.9.5"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.9.5.tgz#4b60f50228f30af8de5d0a8581b96b9accd9cb8a"
-  integrity sha512-G7hP47Yyg2V/Qc0TwzE777WF8t27FpmIvU0Du8CcWOn1dbCWt9jXOiUT9MvuhKEwTyrHgO0imlBK42mOUNcdwg==
+splendid@^1.10.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.10.2.tgz#afac6dd800c786ad3758c408083c0f3b4f8b608a"
+  integrity sha512-VGZ+6tu9jZMafvS+4Bfdiwgc+EUUww9JxlQzVdUGWnm8A8u3tN2EjLWl8Z8LNEadrOlImLfR6VXxNquq5u1D0g==
   dependencies:
-    "@depack/depack" "^2.0.2"
+    "@depack/depack" "^2.1.0"
     "@externs/preact" "^1.2.6"
     "@idio/frontend" "^1.6.0"
     "@idio/idio" "^0.1.0"
     "@idio/websocket" "^1.0.0"
+    "@lemuria/control-style" "^1.0.0"
+    "@lemuria/font" "^1.0.4"
+    "@lemuria/load-scripts" "^1.1.0"
     "@lemuria/popup" "^1.1.1"
     alamode "^3.0.0"
     bootstrap "^4.3.1"
@@ -285,11 +303,6 @@ typal@^1.22.6:
   version "1.22.6"
   resolved "https://registry.yarnpkg.com/typal/-/typal-1.22.6.tgz#c3162f5f19e91ad6d830375220e6552fcb4a0936"
   integrity sha512-N6tkgC/r7OXwH0/hEFNRH6S/7zPfMXJU45w78KGgy8JLbt3lAbWPd4NWUZjQt6o2id23P34KeHSmNR4ddI/zZQ==
-
-unfetch@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/unfetch/-/unfetch-4.1.0.tgz#6ec2dd0de887e58a4dee83a050ded80ffc4137db"
-  integrity sha512-crP/n3eAPUJxZXM9T80/yv0YhkTEx2K1D3h7D1AJM6fzsWZrxdyRuLN0JH/dkZh1LNH8LxCnBzoPFCPbb2iGpg==
 
 zoroaster@^4.1.2:
   version "4.1.2"

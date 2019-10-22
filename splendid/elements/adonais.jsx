@@ -11,7 +11,7 @@ class Adonais extends Component {
   }
   serverRender({ splendid, class: className }) {
     splendid.export()
-    splendid.addCSS('styles/Adonais.css', 'Adonais', {
+    splendid.css('styles/Adonais.css', '.Adonais', {
       dynamic: true,
     })
     splendid.hideNoJs('[data-loading]')
@@ -38,7 +38,7 @@ class Adonais extends Component {
    */
   render({ splendid, class: className }) {
     // access cached makeClassGetter from serverRender
-    const cl = splendid.addCSS('styles/Adonais.css')
+    const cl = splendid.css('styles/Adonais.css')
     const { $Letter } = cl
 
     // <img className={cl`Image`} src="img/adonais/back.jpg" />

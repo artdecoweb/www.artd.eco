@@ -4,10 +4,10 @@
   line-height: 0;
   width: 100%;
 }
-.Menu svg, .Menu img {
+svg, img {
   max-width: 100%;
   max-height: 100%;
 }
-.Menu svg>g>g[token="3"], .Menu svg>g>g[token="4"], .Menu svg>g>g[token="2"], .Menu svg>g>g[token="1"] {
+svg>g>g[token="3"], svg>g>g[token="4"], svg>g>g[token="2"], svg>g>g[token="1"] {
   cursor: pointer;
 }
