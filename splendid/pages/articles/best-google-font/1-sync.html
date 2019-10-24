@@ -129,7 +129,7 @@ _Google Fonts Stylesheet_
   I'm going to experiment on the front page of my website, [artd.eco](https://www.artd.eco). The traditional sync inclusion of the _Google Fonts_ results in the following loading process that for the user appears to be consisting of 3 steps:
 </p>
 
-<fig src="./font1.gif" alt="Loading Google Font synchronously." />
+<fig src="./graphics/font1.gif" alt="Loading Google Font synchronously." />
 
 <ol>
   * No fonts are downloaded yet, and because of `font-display: swap`, we see the fallback fonts. Without the swap property, there would be no text.
@@ -140,7 +140,7 @@ _Google Fonts Stylesheet_
   The 3rd step, with GentiumBasic loading, actually consists of 2 steps, the italic version being loaded, and the normal one, but that happens _almost_ at the same time, so I couldn't capture that on GIF. However, what is important is that each arrival of a new font results in page re-rendering and a change of text's styles as well. Rendering happens on the main thread, therefore the browser is blocked and slowed down by each font. The method that I will show, will wait for all fonts to arrive, before applying the stylesheet to the document, which will help to circumvent this aspect of imperfect standard _Google Font_ loading. So what happens under the hood? The performance snapshot below will help to understand how the page is loaded in more details.
 </p>
 
-<fig src="./dev1.png" alt="Performance measurement of sync Google Font loading." />
+<fig src="./graphics/dev1.png" alt="Performance measurement of sync Google Font loading." />
 
 <ol>
   * The font's stylesheet is the first thing to be loaded by the browser, however parsing of HTML does not start before all styles completed their download (you can check that by enabling very slow network throttling &mdash; the parsing does not begin until all external CSS files are loaded). This is definitely an issue since we want to start rending the page immediately if we want it to be _performant_. This is why google.com does not have any external stylesheets, and their styles are embedded onto the page. There's also a delay before the fonts start to download indicated by the semi-opaque purple rectangle. I think this is because once the stylesheet is received, the browser starts parsing HTML and the thread is blocked, preventing any downloads from kicking in.
@@ -152,7 +152,7 @@ _Google Fonts Stylesheet_
   The conclusion is that we want to avoid synchronous loading of _Google Fonts_ altogether. We cannot rely on Google to serve web font stylesheets immediately, and on slow network the UI will be completely blocked until the CSS is received. This is true not only for fonts, but for any CSS, therefore _Lighthouse_ will always give this suggestions:
 </p>
 
-<fig src="./lighthouse1.png" border="danger" alt="Lighthouse 'Eliminate render-blocking resources' suggestion" />
+<fig src="./graphics/lighthouse1.png" border="danger" alt="Lighthouse 'Eliminate render-blocking resources' suggestion" />
 
 <p>
   Because Google audits pages it craws for performance, and uses the page speed as a ranking factor, we want to follow the suggestion to eliminate render-blocking resources and implement asynchronous _Google Fonts_ loading.
