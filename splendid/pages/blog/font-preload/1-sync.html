@@ -1,0 +1,163 @@
+
+## Standard Sync Loading
+
+<p>Let's start with the basics. We want a Google Font on our website. This means going to [fonts.google.com](https://fonts.google.com) and picking up specimens that we want our pages to display with, for example, the fonts that I use here are an Art Deco font *Limelight* for headings and *Gentium Basic* (with variations) for paragraphs:</p>
+
+```html
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Limelight|Gentium+Basic:400,400i,700&display=swap">
+```
+
+<p>The advantage of this cloud service is that _Google Fonts_ will load a dynamic stylesheet depending on a user's browser, and provide optimised fonts, which are constantly improved in newer versions. We also don't have to host the fonts ourselves, and work on creating such stylesheets manually. E.g., below is the stylesheet that was returned for my Chrome on MacOS. It also has 2 `unicode-ranges`, `latin` and `latin-ext` so that the browser will check if there are any characters from the extended set, to decide whether this extra font is needed. Tables with such ranges could be looked up [here](https://jrgraphix.net/r/Unicode/0100-017F).</p>
+
+<style>
+  details[open] summary pre {
+    display: none;
+  }
+</style>
+<details>
+<summary>
+_Google Fonts Stylesheet_
+```css
+/* latin-ext */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoNOlHjHUmTUFt.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoOulHjHUmTQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* CLICK TO SHOW FULL STYLESHEET */
+```
+</summary>
+
+```css
+/* latin-ext */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoNOlHjHUmTUFt.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoOulHjHUmTQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* CLICK TO SHOW FULL STYLESHEET */
+
+/* latin-ext */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5hBo7QoCBZCxP.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5iho7QoCBZA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gentium Basic'), local('GentiumBasic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/Wnz9HAw9aB_JD2VGQVR80We3LAOJiBA8YIKxZQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gentium Basic'), local('GentiumBasic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/Wnz9HAw9aB_JD2VGQVR80We3LA2JiBA8YII.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Gentium Basic Bold'), local('GentiumBasic-Bold'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzgHAw9aB_JD2VGQVR80We3JLasnTMebaiLbBR2kw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Gentium Basic Bold'), local('GentiumBasic-Bold'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzgHAw9aB_JD2VGQVR80We3JLasnT0ebaiLbBQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+```
+</details>
+
+<p>
+  The `font-display: swap` property is quite important as it allows to show the initial text without having to wait for fonts to load. It's a [new feature](https://caniuse.com/#search=font-display) and is not supported on Edge. In spite the fact that people assume that Google's infrastructure is resilient and can serve requests immediately, it's not always the case, and especially on 3G connections, at peak times, when moving in a car, people will open a website, and will be presented with a blank screen without text, until fonts are loaded. The `font-display: swap` solves this problem. My method of loading _Google Fonts_ asynchronously, also implicitly provides a solution to the swap problem, and can be considered as a polyfill for this CSS property for _IE_ and _Edge_.
+</p>
+
+<p>
+  I'm going to experiment on the front page of my website, [artd.eco](https://www.artd.eco). The traditional sync inclusion of the _Google Fonts_ results in the following loading process that for the user appears to be consisting of 3 steps:
+</p>
+
+<fig src="./font1.gif" alt="Loading Google Font synchronously." />
+
+<ol>
+  * No fonts are downloaded yet, and because of `font-display: swap`, we see the fallback fonts. Without the swap property, there would be no text.
+  * The Limelight font is loaded for the heading, and the page is redrawn.
+  * The GentiumBasic font is loaded for the paragraph, and the page is redrawn again.
+</ol>
+<p>
+  The 3rd step, with GentiumBasic loading, actually consists of 2 steps, the italic version being loaded, and the normal one, but that happens _almost_ at the same time, so I couldn't capture that on GIF. However, what is important is that each arrival of a new font results in page re-rendering and a change of text's styles as well. Rendering happens on the main thread, therefore the browser is blocked and slowed down by each font. The method that I will show, will wait for all fonts to arrive, before applying the stylesheet to the document, which will help to circumvent this aspect of imperfect standard _Google Font_ loading. So what happens under the hood? The performance snapshot below will help to understand how the page is loaded in more details.
+</p>
+
+<fig src="./dev1.png" alt="Performance measurement of sync Google Font loading." />
+
+<ol>
+  * The font's stylesheet is the first thing to be loaded by the browser, however parsing of HTML does not start before all styles completed their download (you can check that by enabling very slow network throttling &mdash; the parsing does not begin until all external CSS files are loaded). This is definitely an issue since we want to start rending the page immediately if we want it to be _performant_. This is why google.com does not have any external stylesheets, and their styles are embedded onto the page. There's also a delay before the fonts start to download indicated by the semi-opaque purple rectangle. I think this is because once the stylesheet is received, the browser starts parsing HTML and the thread is blocked, preventing any downloads from kicking in.
+  * The first font, LimeLight arrives and triggers recalculate styles, layout, update layer tree, paint and composite layers jobs. The longest is layout and it takes 46ms for 450 nodes, but that would take longer for larger pages. Altogether, the page's is blocked during that time (for about 80ms), preventing the spinning loading indicator from going away.
+  * The second font and its variations GentiumBasic, are loaded and applied to text on the page, triggering another 46ms layout, and another thread block. Because fonts arrived at almost the same time, there's only one layout job, but if italic version arrived later, there would have been another block.
+</ol>
+
+<p>
+  The conclusion is that we want to avoid synchronous loading of _Google Fonts_ altogether. We cannot rely on Google to serve web font stylesheets immediately, and on slow network the UI will be completely blocked until the CSS is received. This is true not only for fonts, but for any CSS, therefore _Lighthouse_ will always give this suggestions:
+</p>
+
+<fig src="./lighthouse1.png" border="danger" alt="Lighthouse 'Eliminate render-blocking resources' suggestion" />
+
+<p>
+  Because Google audits pages it craws for performance, and uses the page speed as a ranking factor, we want to follow the suggestion to eliminate render-blocking resources and implement asynchronous _Google Fonts_ loading.
+</p>
+
+<section-break />
+
+<!-- <link href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight" rel="stylesheet"> -->
