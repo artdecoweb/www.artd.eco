@@ -49,7 +49,7 @@
 ```
 
 <p>
-  OK now we've got it! We had to add a `crossOrigin` attribute to the link since the style comes from another domain and preload links have to respect that.
+  OK now we've got it! We had to add a `crossOrigin` attribute to both links (in markup and in JS) since the style comes from another domain and preload links have to respect that, and the style link has to match preload link's _crossorigin_.
 </p>
 
 <fig src="./graphics/dev3.png" alt="Loading Google Font asynchronously with a script and preload tag." />
@@ -60,7 +60,11 @@
 </ol>
 
 <p>
-  That's good, and we've achieved the result we wanted, that is to load _Google Fonts_ asynchronously. However, from the graph above we can see a gap between fonts starting to download, and the stylesheet arriving. Another thing we need to do is to add a polyfill for users who disabled JavaScript execution.
+  That's good, and we've achieved the result we wanted, that is to load _Google Fonts_ asynchronously. However, from the graph above we can see a gap between fonts starting to download, and the stylesheet arriving, i.e., fonts will begin do download only prior to layout despite the stylesheet referencing them being available for quite some time already, and we'll look into this issue below, but that's how the browser works, and nothing to do with our setup.
+</p>
+
+<p>
+  Another thing we need to do is to add a polyfill for users who disabled _JavaScript_ execution.
 </p>
 
 ```html
@@ -79,7 +83,7 @@
 ```
 
 <p>
-  Despite the working version of async web font stylesheet loading (thus achieving the goal), we assume that the connection is good, and that the stylesheet will be able to download prior to initial page render. Moreover, I've been testing the webpage with another external stylesheet, which loads very fast on localhost, but in reality it would actually take some time. If the styles were embedded onto the page, so that there are no render-blocking resources, the browser would not have enough time to download the _Google Font_ stylesheet prior to first render. Therefore, I've simulated a situation when:
+  Despite the working version of async web font stylesheet loading (thus achieving the goal), we assume that the connection is good, and that the stylesheet will be able to download prior to initial page render. Moreover, I've been testing the webpage with another external stylesheet, which loads very fast on localhost, but in reality it would actually take some time and block the browser. If the styles were embedded onto the page, so that there are no render-blocking resources, the browser would not have enough time to download the _Google Font_ stylesheet prior to first render. Therefore, I've simulated a situation when:
 </p>
 
 <ul>
@@ -96,7 +100,7 @@
 </ol>
 
 <p>
-  So the next step is to make sure that there's only one reflow for the style and fonts. As a side note, there's a technique outlined on [Alligator blog](https://alligator.io/html/preload-prefetch/) that contracts the JS into a one-liner:
+  So the next step is to make sure that there's only one reflow for the style and fonts. As a side note, there's a technique outlined on the <a href="https://alligator.io/html/preload-prefetch/" target="_blank" color="#7b913c !important;" text-decoration="underline"><img alt="alligator" src="./graphics/croc.png" />Alligator blog: Preload and Prefetch</a> that contracts the JS into a one-liner:
 </p>
 
 ```html
@@ -185,7 +189,7 @@
 </p>
 
 <tip>
-  Don't use the `onload` attribute on a web font stylesheet. If the preload finishes when the main thread is blocked by the first layout, the `onload` event will only fire after it, causing a reflow. It's better to add a stylesheet dynamically with JavaScript in a script tag just underneath the preload element, so that it's injected into DOM during the parsing of HTML and will not impose the cost of a reflow that actually has no effect since no fonts are available yet.
+  Don't use the `onload` attribute on a link element with a web font stylesheet to swap its _rel_ from *preload* to *stylesheet*. If the preload finishes at the point of time when the main thread is blocked by the first layout, the `onload` event will only fire after it, causing a reflow due to new styles. It's better to add a stylesheet dynamically with JavaScript in a script tag just underneath the preload element, so that it's immediately injected into DOM during the initial parsing of HTML and will not impose a cost of a reflow that has no effect due to fonts not being available yet.
 </tip>
 
 <p>

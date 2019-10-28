@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"splendid/js/_inline-scripts/article-scroll-top.js",
+"lineCount":1,
+"mappings":"A,YAwBAA,MAAA,UAAA,CAnBAC,QAAkB,CAACC,CAAD,CAAQ,CAKZC,QAAA,EAAA,EAAM,CACbC,CAAA,CAAWF,CAAAG,sBAAA,EAAX,OACSC,EAAR,CAAyBC,CAAAF,sBAAA,EAAzB,OACJG,EAAA,CAAYJ,CAAZ,CAAqBE,CAHL,CAJlB,IAAMC,EAASL,CAAAO,cAAAA,cAAf,CACIL,CADJ,CAEIE,CAFJ,CAGIE,CAMJR,OAAAU,iBAAA,CAAwB,QAAxB,CAAkCP,CAAlC,CACAA,EAAA,EAEAH,OAAAU,iBAAA,CAAwB,QAAxB,CAAkC,QAAA,EAAM,CACtC,IAAMC,EAAI,oBAAJA,CAA0BC,IAAAC,IAAA,CAASL,CAAT,CAAoBR,MAAAc,QAApB,CAA1BH,CAAgE,UACtET,EAAAa,MAAAC,UAAA,CAAwBL,CACxBT,EAAAa,MAAAE,gBAAA,CAA8BN,CAHQ,CAAxC,CAbwB;",
+"sources":["splendid/js/article-scroll-top.js"],
+"sourcesContent":["/* eslint-env browser */\n\n/**\n * @param {Element} Photo\n */\nfunction initPhoto(Photo) {\n  const parent = Photo.parentElement.parentElement\n  let height\n  let parentHeight\n  let maxScroll\n  const get = () => {\n    ({ height } = Photo.getBoundingClientRect())\n    ;({ height: parentHeight } = parent.getBoundingClientRect())\n    maxScroll = height - parentHeight\n  }\n  window.addEventListener('resize', get)\n  get()\n\n  window.addEventListener('scroll', () => {\n    const t = 'translate3d(0px, -' +Math.min(maxScroll, window.scrollY) + 'px, 0px)'\n    Photo.style.transform = t\n    Photo.style.webkitTransform = t\n  })\n}\nwindow['initPhoto'] = initPhoto"],
+"names":["window","initPhoto","Photo","get","height","getBoundingClientRect","parentHeight","parent","maxScroll","parentElement","addEventListener","t","Math","min","scrollY","style","transform","webkitTransform"]
+}

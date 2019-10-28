@@ -1,0 +1,137 @@
+
+## Critical Path Fonts
+
+<p>
+  When marking up a page with strong branded fonts, we don't want users to perceive any font swap, at least not for the first thing they see on a page. The resources required for this first thing are said to lay within the critical path. To achieve instant display of a font, it needs to be added to the page in form of a `data:application/font`-encoded base64 string. _Google Fonts_ are not capable of that, therefore it's a completely separate solution, but Google will help us a bit. For example, I want to display the heading "<span class="TM">Art Deco™: The <em>Node.JS</em> Development Company In London</span>" with the *Limelight* font, therefore I only need these letters to be present. So I call Google to get the font:
+</p>
+
+```console
+chrome:~$ https://fonts.googleapis.com/css?family=Limelight&text= \
+>  Art Deco™: The Node.JS Development Company In London
+```
+
+```css
+/* the response */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Limelight'),
+       url(https://fonts.gstatic.com/l/font?kit=XLYkIZL7aopJVbZJHDuYOONArnccUFlCcINMXTbYP4QQRwNnyh7l5gk0xNGO3Z9C2lt3&skey=5080ff57360a6ef&v=v10)
+       format('woff2');
+}
+```
+
+<p>
+  I grab the link and download it with Node.JS. It will target only `woff2` version because of my user-agent, however I'm not bothered to increase the page size by embedding a `woff` font also (for IE).
+</p>
+
+```js
+const format = 'woff2'
+const body = await aqt(link, {
+  binary: true,
+})
+const base = body.toString('base64')
+const data = `data:application/font-${format};base64,${base}`
+```
+
+<p>
+  After the data string is constructed, I can upgrade the stylesheet to include this string instead of the url.
+</p>
+
+```html
+<head>
+  <style>
+    @font-face {
+      font-family: 'Limelight';
+      font-style: normal;
+      font-weight: 400;
+      font-display: 'block';
+      src: local('Limelight'),
+           url('data:application/font-woff2;base64,d09GMgABAAAAAAmYAAwAAAAAEAAAAAlKAAEA...=')
+           format('woff2');
+    }
+    h1 {
+      font-family: 'Limelight';
+    }
+  </style>
+</head>
+```
+
+<p>
+  If I refresh the page, depending on the `font-display`, I will either witness a FOUT, or a <abbr title="Flash of Invisible Text">FOIT</abbr>. But if I've injected the font into the .html document, shouldn't this not be the case? The problem is that even though the font was embedded with a `data` url, it too has to load via the network, as seen in the performance graph below.
+</p>
+
+<fig id="data-url" src="./graphics/dev13.gif">
+  Data-url embedded font also takes time to download.
+</fig>
+
+<p>
+  This result is consistent with the previous experiment, where I've shown that fonts, even declared in a `style` tag and not in an external stylesheet, begin to download only when it comes to first <span style="background:#a66eeb;">Recalculate styles</span> job (misleading called _RE_calculate, it's actually calculate). Here, after the font's download is finished, it forces a reflow and blocks the page for 100ms. It's really not good enough for an advanced optimisation. I'll apply the preload link on the font encoded with into `data:` string to solve this problem. I'll use the `onload` attribute to get reference to the base64-encoded data so that I don't have to declare it twice (first in the preload link, and second time in the style).
+</p>
+
+```html
+<head>
+  <link
+    href="data:application/font-woff2;base64,d09GMgABAAAAAAmYAAwAAAAAEAAAAAlKAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA..."
+    rel="preload" as="font"
+    onload="performance.mark('a');window._fontLoaded(this);
+      setTimeout(() => performance.measure('data font', 'a'), 100)">
+
+  <script>
+    window._fontLoaded = function(linkEl) {
+      var data = linkEl.href
+      var s = document.createElement('style')
+      s.innerText = "@font-face {  font-family: 'Limelight';  font-style: normal;  font-weight: 400;  src: local('Limelight'), url('_URL') format('woff2');}h1 { font-family: 'Limelight' }".replace('_URL', data)
+      document.head.appendChild(s)
+    }
+  </script>
+  <!-- a polyfill for when JS is disabled -->
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css?family=Limelight&amp;text=Art%20Deco%E2%84%A2%3A%20The%20Node.JS%20Development%20Company%20In%20London" rel="stylesheet">
+    <style>h1 { font-family: 'Limelight' }</style>
+  </noscript>
+</head>
+```
+
+<p>
+  We *must not* set the `crossorigin` attribute on the link, as _Safari_ will error on it, saying the host didn't provide a CORS header. In case the *preload* _rel_ is not supported, the polyfill can be used, which just calls the `onload` method. The `Symbol.iterator` polyfill inserted by Closure Compiler (because I did `[...document.head.querySelectorAll('[rel="preload"][onload]')]`) is a bit long but I can't be bothered to do something like `[].forEach.call` or whatever other way there is.
+</p>
+
+```html
+<script>
+  (function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;
+  if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);
+</script>
+```
+
+<fig src="./graphics/dev14.gif">
+  Achieving critical path font without FOUT/FOIT.
+</fig>
+
+<p>
+  And that's how I got my page opening with the font already present. Unlike in the usual `＜style＞` approach with a base64-encoded font in it, here the text is drawn immediately using the font face that I specified, as it was loaded before the initial render. Compare how [previously](#fig-data-url), the font started do download (grey bar) only during the recalculate styles stage, whereas now, it loads as soon as HTML starts parsing. However, it's still not as great as a style preload, which begins even before parsing. There's no way to set a different attribute on the link, like `fetch`, load it with XHR and then embed onto the page, because that would lead to another download. But to be honest, I cheated a little bit in this last case, did you notice how? I included an external stylesheet, my `combined.css` which slowed down the first render, giving the `data:` url a chance to load.
+</p>
+
+<p>
+  [i] _The performance timing shows that the preload event fired before the layout, but although it's duration is set to 100ms in code, it took 276ms to complete, which proves that the thread was blocked._
+</p>
+
+<p>
+  If I embed the `combined.css` stylesheet and eliminate this render-blocking resource, I'll loose the gained advantage:
+</p>
+
+<fig src="./graphics/dev15.gif">
+  Waiting for onload event to fire on preload link.
+</fig>
+
+<p>
+  On a fast page, the font in the preload link completes its loading process only when the layout began, and the main thread is blocked. We have to wait for the thread to clear after which the `onload` event will fire. This cancels out the benefit of preloading the font. So what do we do? I thought of splitting the font into 3 preload links, and loading them in parallel, however that seems too complicated, and also too relies on the `onload` attribute which is inefficient since there's always a risk of running into the main thread block. What worked was not using the `onload` at all, and repeating font's data-url string both in the stylesheet and in the preload link. If the font is only 2kb, I don't mind making it 4kb for superb user experience that could land me a client.
+</p>
+
+<fig src="./graphics/dev16.gif">
+  Preloading data-url font used in stylesheet leads to the best optimisation.
+</fig>
+
+<section-break />

@@ -1,0 +1,3 @@
+(function(){window.initPhoto=function(a){function b(){c=a.getBoundingClientRect().height;d=g.getBoundingClientRect().height;e=c-d}var g=a.parentElement.parentElement,c,d,e;window.addEventListener("resize",b);b();window.addEventListener("scroll",function(){var f="translate3d(0px, -"+Math.min(e,window.scrollY)+"px, 0px)";a.style.transform=f;a.style.webkitTransform=f})};}).call(this);
+
+//# sourceMappingURL=article-scroll-top.js.map

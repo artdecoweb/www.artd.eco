@@ -7,6 +7,7 @@
     "test": "yarn t test/spec test/mask",
     "dev": "splendid-dev -s -e dev",
     "prod": "splendid-dev -s",
+    "docs": "https-server docs -p 3000 -s",
     "splendid": "splendid -s",
     "splendid-dev": "splendid -s -e dev",
     "svg": "depack-dev splendid/js/svg-anim-src.js -a -o splendid/js/svg-anim.js -i",

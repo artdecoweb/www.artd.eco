@@ -1,0 +1,101 @@
+
+## Conclusions
+
+<p>
+  Google Fonts are great because it's really easy to embed them and the service provides a variety of good-looking web fonts. The standard sync loading with a simple link tag, however, will lock the main thread and not prevent the page (even HTML won't start parsing) which we would like to avoid. Moreover, fonts will load independently, and each time they will cause a reflow of the page, which slows down the <span class="px-2" style="background:red; color:white"><abbr title="Load">L</abbr></span> event delivery and frustrates the user. In summary, we've gone through the following stages for optimisation from the sync loading:
+</p>
+
+<h4 text-center>1) Async Loading</h4>
+<hr>
+
+<animation-server class="float-md-right pl-3 pb-3"
+  src="./graphics/async-google-font.png" alt="async google font animation" width="505" height="299"
+  path="./animate/async-google-font.json" noscript="./animate/async-google-font.gif" align="right" />
+
+<p>
+  Instead of adding a link tag in the markup, we add a simple script to create the link dynamically. This technique allows to transform sync render-blocking loading of resources into async non-blocking loading, and eliminates the Lighthouse warning. We also add a preload link so that the resource begins to download immediately rather than waiting for the script to execute.
+</p>
+<p>
+  We've also looked at another method when instead of a script tag, the `onload` attribute on the preload link is used to upgrade the _rel_ from *preload* to *stylesheet*, however as I've shown, this has a disadvantage that if the stylesheet arrives after the initial render, it will cause an expensive reflow, despite the fact that fonts are not even loaded. Therefore I suggest it's better to use the traditional script element right under the preload link.
+</p>
+
+<h4 text-center>2) Advanced Loading</h4>
+
+<hr>
+
+<p>
+  Although async loading better than sync one, it's still not perfect, because we still have multiple reflows due to independent font loading. I propose a solution where an Ajax request is made to fetch the stylesheet, extract urls to fonts, preload them, and once they are all ready, embed the stylesheet into DOM.
+</p>
+
+<animation-server class="float-md-left pr-3 pb-3"
+  src="./graphics/advanced-google-font.png" alt="advanced google font animation" width="505" height="299"
+  path="./animate/advanced-google-font.json" noscript="./animate/advanced-google-font.gif" />
+
+<p>
+  Any external CSS will postpone the parsing of HTML until it's received, but not only for the length of its download time, but for the duration of its loading time, which might be much longer than the download one. <span style="background:green; color: white">Therefore when we're talking about maximum optimisation, such as for a landing page of a product, we might want to embed the full stylesheet onto the page so that we don't have to wait for it.</span> The browser treats this case differently and the loading pattern is continuous, i.e., start of parsing leads to layout without any gaps. However, if we have a web portal with multiple pages that share same styles, like a forum, it might not be feasible to embed CSS onto each page. Here, we're not that concerned with making an impression on the user with lightning-fast pages, but just want to deliver content. These are 2 broad cases that each deserving its own treatment.
+</p>
+<p>
+  When there are no external CSS, our script will begin to download XHR, but will probably have to wait until the initial rendering is done to parse it and begin to download fonts. When there are external CSS that blocked the page, the script might get a chance to parse the stylesheet, but it won't have information about the `body`'s content to correctly apply `unicode-range`, therefore we can supply that info manually to prevent unused fonts from extended ranges from downloading. In the latter case, we will be able to download fonts in parallel to the main thread doing the layout job, and apply the style right after the thread is freed, that is after the <span style="background:blue; color:white" class="px-2"><abbr title="Dom Content Loaded">DCL</abbr></span> event. This scenario is when the loading is the fastest.
+</p>
+
+<p>
+  There might be some disadvantages to the method:
+</p>
+
+<ol>
+  * The script might take up some time to evaluate and if it can create preload links before parsing of HTML, it will also take additional time to insert them into DOM (takes 5-20ms) on my computer. We might have saved some time because all fonts were injected at once, but that time was after first paint, whereas now we might blocking the browser for about 30-40ms before the first paint (not so bad if XHR finishes after the initial render).
+  * If there is a really large number of fonts, we will have to wait for each one of them to download, which might not be desirable. However in that case, we can break up the fonts into multiple batches by calling the `@lemuria/font` function multiple times.
+</ol>
+
+<p>
+  On the other hand, the `@lemuria/font` script works as a polyfill for `display:swap` which is not available for Edge. However, because it embeds fonts with _preload_ links, it will not work on the IE/Edge12-16/Firefox. I thought about downloading fonts with XHR to prime the network cache, however after I downloaded them this way, and then injected the web font stylesheet referencing them, they were re-downloaded. A solution to this would be to embed fonts into the webpage with `data:application/font` url, however that would trigger `data:` string parsing and slow down the page.
+</p>
+
+<p>
+  <npm-badge package="@lemuria/font">@Lemuria/font</npm-badge> package is available from NPM, and exports functions that could be added to a server-side rendered webpage. The source code of the function for manual injection can be copied from [Github](https://github.com/kumarikandam/font). The check for `preload` support is done the following way, <a target="_blank" href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/" color="#e33a2c !important" text-decoration="underline"><img style="max-height:1em; margin-right:-0.2em;vertical-align: top;
+  margin-top: .2em;" src="./graphics/smashing.png" alt="S"/>uggested by preload</a> contributor to Chrome:
+</p>
+
+```js
+function DOMTokenListSupports(tokenList, token) {
+  if (!tokenList || !tokenList.supports) {
+    return false
+  } try { return tokenList.supports(token) } catch (e) {
+    return false }
+}
+const link = document.createElement('link')
+const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')
+```
+
+<p>
+  Finally, the best possible course of action is to preload fonts with a preload link without any scripting. However, that's a different context entirely since this article focuses specifically on _Google Fonts_ optimisation. Their servers will return different urls for different browsers, therefore we can't just copy and paste them in the preload link, additionally their fonts evolve and change versions. The advanced google font loading solution is the simplest scripting solution to kicking off font preload as soon as possible, and eliminate render blocks. Moreover, I was asking myself, does the browser know internally the unicode range of the page even before body is available to JS? The last experiment was to embed the stylesheet manually with a `<style>/* contents of google font stylesheet */</style>` onto the page and see its performance. There are no external resources and the page load should proceed seamlessly from parsing to layout.
+</p>
+
+```html
+<head>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    /* latin-ext */
+    @font-face {
+      font-family: 'Gentium Basic';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5hBo7QoCBZCxP.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* etc */
+</style>
+```
+
+<fig src="./graphics/dev11.gif">
+  Embedding contents of a web fonts styles manually.
+</fig>
+
+<p>
+  The performance graph clearly shows that although urls to fonts are there on the page, they don't begin to download prior to the first style calculation. Therefore, the advanced google font method is even better that what browser can offer natively, because it's able to begin to download fonts even before parsing starts by extracting urls from the stylesheet, if it arrives quickly enough ([case A](#2-scenarios)).
+</p>
+
+<section-break />

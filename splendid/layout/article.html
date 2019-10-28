@@ -1,58 +1,28 @@
 <!doctype html>
 <html lang="en" class="no-js">
-  <block-blog-head />
+  <block-articles-head />
   <body style="overscroll-behavior: none;">
     <container-fluid position-relative p-0 max-height="20rem" overflow="hidden" mb-3>
       <img id="Photo" img-fluid alt="Art Deco Store Building"
         src="/img/blog.jpg" webp="photo" responsive no-potrace onload="initPhoto(this)" />
       <div id="Holder">
-        <a href="/" title="Art Deco Home Page">
+        <a href="main" title="Art Deco Home Page">
           <picture id="Logo">
             <source srcset="/img/logo-300.webp 300w" sizes="100px" type="image/webp">
             <img alt="Art Deco Logo" src="/img/logo.png" sizes="100px" class="img-fluid">
           </picture>
           <!-- <logo skip-css sizes="100px" /> -->
         </a>
-        <a class="d-block lead text-info" style="color:#1067de!important" href="articles">All Articles</a>
+        <a d-block text-info lead color="#1067de!important" href="articles">All Articles</a>
       </div>
-      <style>
-        #Holder {
-          position: absolute;
-          top: 2rem;
-          right: 2rem;
-        }
-      </style>
-      <script keep inline combine>
-        /**
-         * @param {Element} Photo
-         */
-        function initPhoto(Photo) {
-          const parent = Photo.parentElement.parentElement
-          let height
-          let parentHeight
-          let maxScroll
-          const get = () => {
-            ;({ height } = Photo.getBoundingClientRect())
-            ;({ height: parentHeight } = parent.getBoundingClientRect())
-            maxScroll = height - parentHeight
-          }
-          window.addEventListener('resize', get)
-          get()
-
-          window.addEventListener('scroll', () => {
-            const t = 'translate3d(0px, -' +Math.min(maxScroll, window.scrollY) + 'px, 0px)'
-            Photo.style.transform = t
-            Photo.style.webkitTransform = t
-          })
-        }
-      </script>
+      <script inline src="../js/article-scroll-top.js"></script>
     </container-fluid>
 
-    <div id="Content">
+    <ajax-content>
       <container><row><col>
         {{ content }}
       </col></row></container>
-    </div>
+    </ajax-content>
 
     <bottom img="/img/tile.jpg" />
   </body>

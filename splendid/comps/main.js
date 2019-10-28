@@ -9,7 +9,7 @@ __initBottom()
 import { Component, render, h } from 'preact'
 import { makeIo, init, start } from './__competent-lib'
 import Logo from '../components/logo.jsx'
-import Parallax from '../../node_modules/splendid/build/components/parallax.jsx'
+import Parallax from '../../node_modules/splendid/src/components/parallax.jsx'
 import Menu from '../components/menu.jsx'
 import Adonais from '../components/adonais.jsx'
 

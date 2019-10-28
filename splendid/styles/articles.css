@@ -1,7 +1,6 @@
 h1, h2, h3, h4 {
   font-family: 'Limelight', cursive;
 }
-
 p {
   font-family: 'Gentium Basic', serif;
   font-size: larger;
@@ -13,4 +12,10 @@ p {
   background-color: #e1d6c4;
   font-size: initial;
   font-family: 'Courier New', Courier, monospace;
+  word-break: break-all;
+}
+#Holder {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
 }
