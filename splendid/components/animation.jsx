@@ -80,7 +80,6 @@ export default class Animation {
 Animation['animation-server'] = async (props) => {
   let { splendid, path, src, ...Props } = props
   if (!path.endsWith('.json')) throw splendid.newError('Expected path to end with .json')
-  src = splendid.resolveRelative(src) // prevent async spillover
   const Path = splendid.resolveRelative(path)
   await splendid.addFile(Path)
 

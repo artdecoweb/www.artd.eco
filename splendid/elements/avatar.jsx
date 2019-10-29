@@ -2,7 +2,7 @@ export default function Avatar({ date, splendid }) {
   return (<row mb-3>
     <column className="col-2" sm-2 lg-1>
       <splendid-img placeholder-auto
-        rounded img-fluid src="pages/articles/avatar/anton.JPG" alt="anton photo"/>
+        rounded img-fluid src="~/articles/avatar/anton.JPG" alt="anton photo"/>
     </column>
     <column className="col-10" sm-6 border-bottom="1px solid grey">
       <p text-right color="grey">
