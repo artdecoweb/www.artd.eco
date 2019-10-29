@@ -36,20 +36,18 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
     
     <script>document.documentElement.classList.remove("no-js")</script>
     <link rel="stylesheet" href="/styles/combined.css">
-    <link rel="preload" href="/css/Parallax.css" as="style">
-    <link rel="preload" href="/css/Logo.css" as="style">
     <link rel="preload" href="/snapsvg/dist/snap.svg-min.js" as="script">
     <link rel="preload" href="/js/svg-anim.js" as="script">
+    <link rel="preload" href="/css/Logo.css" as="style">
     <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
     <style>
       .no-js [data-io], .no-js [data-loading] { display: none!important }
       .Menu{text-align:right;background:#294874;line-height:0;width:100%}.Menu svg,.Menu img{max-width:100%;max-height:100%}.Menu svg>g>g[token="3"],.Menu svg>g>g[token="4"],.Menu svg>g>g[token="2"],.Menu svg>g>g[token="1"]{cursor:pointer}
     </style>
     <noscript>
-      <link rel="stylesheet" href="/css/Parallax.css">
       <link rel="stylesheet" href="/css/Adonais.css">
-      <link rel="stylesheet" href="/css/Logo.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight">
+      <link rel="stylesheet" href="/css/Logo.css">
     </noscript>
     <script defer src="/js/polyfill/intersection-observer.js"></script>
     <script defer src="/js/images.js"></script>
@@ -69,7 +67,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
       <div class="row">
         <div class="col-sm-4 col-lg-3 align-self-center text-center">
           <picture id="Logo">
-            <source srcset="img/logo-300.webp 300w" sizes="300px" type="image/webp">
+            <source srcset="/img/logo-300.webp 300w" sizes="300px" type="image/webp">
             <source srcset="" type="image/png" sizes="300px">
             <img alt="Art Deco Logo" src="/img/logo.png" srcset="" sizes="300px" class="img-fluid">
           </picture>
@@ -110,28 +108,24 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
     <p>
       Software Engineering is an art, science and technology combined. It helps to automate processes and improve the standard of living, relieving humans of monotonous operations that can be solved using a computer program. 100 years ago, with the advent of new machinery, there was a promise for the future where people's time could be taken off of work, and put into spending their lives focusing on human tasks and communications. This has partly been achieved, but we have a long way to go still, and after reaching the required stage of progress in hardware, we are now peaking in the course of software evolution. The species that is increasingly dominating the environment and taking the central stage in this process of natural selection of the fittest is <em>Node.JS</em>. It is no surprise that in today's word, characterised by globalisation and interconnectedness, the programming language born on the web, is becoming <em>The One</em> of the web, who will redeem it and remake it in the way it's supposed to be.
     </p>
-    
   </div>
   <div style="overflow: hidden;"
     class="col-lg-5 my-3 position-relative order-1 order-lg-3 d-flex justify-content-center p-3">
     <div class=" Parallax" data-loading style="background-repeat: repeat-y; z-index: -1;" id="c74268"></div>
-    <div class="Parallax"></div>
+    <div style="background-repeat: repeat-y; z-index: -1;" class="Parallax"></div>
     <noscript>
       <div class=" Parallax"
         style="background-image: url(/img/code2.gif); background-repeat: repeat-y; z-index: -1;">
       </div>
     </noscript>
     <img alt="Node.JS at the epicenter of modern software development"
-      class="img-fluid align-self-center" data-io style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;"
-      data-src="/img/Byss-und-Abyss2.gif">
+      style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" data-io class="img-fluid align-self-center" data-src="/img/Byss-und-Abyss2.gif">
     <noscript>
       <img alt="Node.JS at the epicenter of modern software development"
-        class="img-fluid align-self-center" style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" src="/img/Byss-und-Abyss2.gif">
+        style="filter:drop-shadow(0 0 30px #00000047); z-index: 1;" class="img-fluid align-self-center" src="/img/Byss-und-Abyss2.gif">
     </noscript>
   </div>
-</div>
-
-<div class="row">
+</div><div class="row">
   <div class="col">
     <div class="float-none float-sm-left d-sm-inline-block pr-3">
       <div class="position-relative Adonais position-relative mb-3 align-top" data-loading id="c9848">
@@ -206,16 +200,14 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
     <img alt="section break"
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='13'/%3E" data-io style="width: 25px;" data-src="/section-breaks/1.svg">
     <noscript><img alt="section break" style="width: 25px;" src="/section-breaks/1.svg"></noscript></a>
-</p>
-
-<div id="art-deco" class="row Feature">
+</p><div id="art-deco" class="row Feature">
   <div class="col">
     <h2 style="background: #8ea6aa; color: #d1d2ca; text-shadow: 1px 1px #4e675b;" class="text-center">
       <img style="transform: scaleX(-1); -webkit-transform: scaleX(-1);" alt="art deco fan"
         class="float-right" src="/img/sun.png">
        Art Deco
     </h2>
-    <img alt="Art Deco" class="img-fluid img-fluid rounded float-left mr-3" data-io
+    <img alt="Art Deco" data-io class="img-fluid img-fluid rounded float-left mr-3"
       data-src="/img/posters/vogue1.jpg">
     <noscript>
       <img alt="Art Deco" class="img-fluid img-fluid rounded float-left mr-3" src="/img/posters/vogue1.jpg">
@@ -239,7 +231,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
       <img alt="art deco fan" class="float-left" src="/img/sun.png">
        Implementation
     </h2>
-    <img alt="Implementation" class="img-fluid img-fluid rounded float-right ml-3" data-io
+    <img alt="Implementation" data-io class="img-fluid img-fluid rounded float-right ml-3"
       data-src="/img/posters/implementation.jpg">
     <noscript>
       <img alt="Implementation" class="img-fluid img-fluid rounded float-right ml-3"
@@ -263,7 +255,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
         class="float-right" src="/img/sun.png">
        Automated Testing
     </h2>
-    <img alt="Automated Testing" class="img-fluid img-fluid rounded float-left mr-3" data-io
+    <img alt="Automated Testing" data-io class="img-fluid img-fluid rounded float-left mr-3"
       data-src="/img/posters/testing.jpg">
     <noscript>
       <img alt="Automated Testing" class="img-fluid img-fluid rounded float-left mr-3"
@@ -286,7 +278,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
       <img alt="art deco fan" class="float-left" src="/img/sun.png">
        Documentation
     </h2>
-    <img alt="Documentation" class="img-fluid img-fluid rounded float-right ml-3" data-io
+    <img alt="Documentation" data-io class="img-fluid img-fluid rounded float-right ml-3"
       data-src="/img/posters/doc.jpg">
     <noscript>
       <img alt="Documentation" class="img-fluid img-fluid rounded float-right ml-3"
@@ -312,7 +304,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
         class="float-right" src="/img/sun.png">
        Optimisation
     </h2>
-    <img alt="Optimisation" class="img-fluid img-fluid rounded float-left mr-3" data-io
+    <img alt="Optimisation" data-io class="img-fluid img-fluid rounded float-left mr-3"
       data-src="/img/posters/optimisation.jpg">
     <noscript>
       <img alt="Optimisation" class="img-fluid img-fluid rounded float-left mr-3"
@@ -335,7 +327,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
       <img alt="art deco fan" class="float-left" src="/img/sun.png">
        NPM Packages
     </h2>
-    <img alt="NPM Packages" class="img-fluid img-fluid rounded float-right ml-3" data-io
+    <img alt="NPM Packages" data-io class="img-fluid img-fluid rounded float-right ml-3"
       data-src="/img/posters/packages.jpg">
     <noscript>
       <img alt="NPM Packages" class="img-fluid img-fluid rounded float-right ml-3"
@@ -367,22 +359,19 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
       </div>
       <div data-background-img="/img/sky2.png" style="top: 180px;" class="position-absolute"></div>
     </div>
-    <img alt="eagle over software engineering" class="img-fluid my-3" data-io
+    <img alt="eagle over software engineering" data-io class="img-fluid my-3"
       data-src="/img/posters/bird2.png">
     <noscript>
       <img alt="eagle over software engineering" class="img-fluid my-3" src="/img/posters/bird2.png">
     </noscript>
   </div>
 </div>
-
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
     <img alt="section break"
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='12'/%3E" data-io data-src="/section-breaks/8.svg">
     <noscript><img alt="section break" src="/section-breaks/8.svg"></noscript></a>
 </p>
-
-
 <div class="row">
   <div class="col">
     <h2 id="packages">Regenerating <em>Node.JS</em> Ecosystem</h2>
@@ -398,36 +387,35 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   <div style="overflow: hidden;"
     class="col-lg-3 justify-content-around mb-3 position-relative d-flex align-items-center flex-lg-column">
     <div class=" Parallax" data-loading style="z-index: -1;" id="c80"></div>
-    <div class="Parallax"></div>
+    <div style="z-index: -1;" class="Parallax"></div>
     <noscript>
       <div class=" Parallax" style="background-image: url(/img/seamless.jpg); z-index: -1;"></div>
     </noscript>
     <div data-background-img="/img/noise/giphy-2.gif" class="d-inline-block" style="mix-blend-mode: difference; z-index:-1;">
-      <img alt="log babel install process" class="img-fluid" data-io
-        style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" data-src="/img/noise/yarn-add-babel2.gif">
+      <img alt="log babel install process" data-io
+        style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" class="img-fluid" data-src="/img/noise/yarn-add-babel2.gif">
       <noscript>
-        <img alt="log babel install process" class="img-fluid"
-          style="z-index: 1; mix-blend-mode: hard-light; width: 250px;" src="/img/noise/yarn-add-babel2.gif">
+        <img alt="log babel install process" style="z-index: 1; mix-blend-mode: hard-light; width: 250px;"
+          class="img-fluid" src="/img/noise/yarn-add-babel2.gif">
       </noscript>
     </div>
     <div class="d-inline-block">
-      <img alt="capitalised power, systematic fear, strategic sabotage" class="img-fluid" data-io
-        style="z-index: 1;" data-src="/img/images2.png">
+      <img alt="capitalised power, systematic fear, strategic sabotage" data-io style="z-index: 1;"
+        class="img-fluid" data-src="/img/images2.png">
       <noscript>
-        <img alt="capitalised power, systematic fear, strategic sabotage" class="img-fluid"
-          style="z-index: 1;" src="/img/images2.png">
+        <img alt="capitalised power, systematic fear, strategic sabotage" style="z-index: 1;"
+          class="img-fluid" src="/img/images2.png">
       </noscript>
     </div>
     <div data-background-img="/img/noise/giphy-2.gif" class="d-inline-block" style="mix-blend-mode:screen;z-index:-1;">
-      <img alt="timewave zero simulation" class="img-fluid" data-io
-        style="z-index: 1; mix-blend-mode: screen; width: 250px;" data-src="/img/hqdefault.jpg">
+      <img alt="timewave zero simulation" data-io
+        style="z-index: 1; mix-blend-mode: screen; width: 250px;" class="img-fluid" data-src="/img/hqdefault.jpg">
       <noscript>
-        <img alt="timewave zero simulation" class="img-fluid"
-          style="z-index: 1; mix-blend-mode: screen; width: 250px;" src="/img/hqdefault.jpg">
+        <img alt="timewave zero simulation" style="z-index: 1; mix-blend-mode: screen; width: 250px;"
+          class="img-fluid" src="/img/hqdefault.jpg">
       </noscript>
     </div>
   </div>
-  
 </div>
 
 <div class="row">
@@ -480,8 +468,6 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   </div>
 </div>
 
-
-
 <hr>
 
 <div class="row">
@@ -497,17 +483,17 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
         <br>{/＊<strong> &nbsp;<a style="color:white" href="mailto:allora@artd.eco">allora@artd.eco</a> </strong>＊/}
       </span>
     </p>
-    <img alt="bird" class="position-absolute" data-io style="right: 1rem; top: 1rem;"
+    <img alt="bird" data-io style="right: 1rem; top: 1rem;" class="position-absolute"
       data-src="/img/bird.gif">
     <noscript>
-      <img alt="bird" class="position-absolute" style="right: 1rem; top: 1rem;" src="/img/bird.gif">
+      <img alt="bird" style="right: 1rem; top: 1rem;" class="position-absolute" src="/img/bird.gif">
     </noscript>
-    <img alt="bird" class="Bird1" data-io data-src="/img/bird.gif">
+    <img alt="bird" data-io class="Bird1" data-src="/img/bird.gif">
     <noscript><img alt="bird" class="Bird1" src="/img/bird.gif"></noscript>
     
   </div>
   <div class="CupDiv justify-content-end text-right text-md-center d-flex col-md-7 col-lg-5">
-    <img alt="coffee cup" id="cup" class="img-fluid align-self-end" data-io data-src="/img/ART.png">
+    <img alt="coffee cup" id="cup" data-io class="img-fluid align-self-end" data-src="/img/ART.png">
     <noscript><img alt="coffee cup" id="cup" class="img-fluid align-self-end" src="/img/ART.png"></noscript>
   </div>
 </div></div>

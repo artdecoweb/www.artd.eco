@@ -1,5 +1,4 @@
 import __initBottom from './__init/bottom'
-import '../js/svg-anim-src'
 import '../js/load-background-img'
 import makeClassGetter from './__mcg'
 const renameMaps = {  }
@@ -21,7 +20,7 @@ const io = makeIo()
 /** @type {!Array<!preact.PreactProps>} */
 const meta = [{
   key: 'parallax',
-  id: 'c70819',
+  id: 'c70368',
   props: {
     speedy: '-0.5',
     'z-index': '-1',
@@ -30,28 +29,20 @@ const meta = [{
 },
 {
   key: 'parallax',
-  id: 'c95958',
+  id: 'c74268',
   props: {
-    'background-image': '/img/tile.jpg',
+    speedy: '-0.5',
+    'z-index': '-1',
+    'background-image': '/img/letters/background.png',
   },
 },
 {
   key: 'animation',
-  id: 'c80',
+  id: 'c52507',
   props: {
     width: '505',
     height: '299',
-    align: 'right',
-    path: '/pages/articles/best-google-font/animate/async-google-font.json',
-  },
-},
-{
-  key: 'animation',
-  id: 'c75046',
-  props: {
-    width: '505',
-    height: '299',
-    path: '/pages/articles/best-google-font/animate/advanced-google-font.json',
+    path: '/../articles/best-google-font/animate/advanced-google-font.json',
   },
 },
 {
@@ -82,6 +73,97 @@ const meta = [{
   },
 },
 {
+  key: 'animation',
+  id: 'c72096',
+  props: {
+    width: '505',
+    height: '299',
+    align: 'right',
+    path: '/../articles/best-google-font/animate/async-google-font.json',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c56385',
+  props: {
+    speedy: '-0.5',
+    'z-index': '-1',
+    'background-image': '/img/letters/background.png',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c27532',
+  props: {
+    speedy: '-0.5',
+    'z-index': '-1',
+    'background-image': '/img/letters/background.png',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c25081',
+  props: {
+    speedy: '-0.5',
+    'z-index': '-1',
+    'background-image': '/img/letters/background.png',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c70819',
+  props: {
+    speedy: '-0.5',
+    'z-index': '-1',
+    'background-image': '/img/letters/background.png',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c66833',
+  props: {
+    speedy: '-0.5',
+    'z-index': '-1',
+    'background-image': '/img/letters/background.png',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c73556',
+  props: {
+    speedy: '-0.5',
+    'z-index': '-1',
+    'background-image': '/img/letters/background.png',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c75046',
+  props: {
+    speedy: '-0.5',
+    'z-index': '-1',
+    'background-image': '/img/letters/background.png',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c78401',
+  props: {
+    speedy: '-0.5',
+    'z-index': '-1',
+    'background-image': '/img/letters/background.png',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c80',
+  props: {
+    speedy: '-0.5',
+    'z-index': '-1',
+    'background-image': '/img/letters/background.png',
+  },
+},
+{
   key: 'parallax',
   id: 'c82466',
   props: {
@@ -100,6 +182,16 @@ const meta = [{
   },
 },
 {
+  key: 'animation',
+  id: 'c86907',
+  props: {
+    width: '550',
+    height: '400',
+    align: 'center',
+    path: '/../articles/best-google-font/animate/agf.json',
+  },
+},
+{
   key: 'parallax',
   id: 'c88891',
   props: {
@@ -110,102 +202,9 @@ const meta = [{
 },
 {
   key: 'parallax',
-  id: 'c86907',
+  id: 'c95958',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
-    'background-image': '/img/letters/background.png',
-  },
-},
-{
-  key: 'animation',
-  id: 'c74268',
-  props: {
-    width: '550',
-    height: '400',
-    align: 'center',
-    path: '/pages/articles/best-google-font/animate/agf.json',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c70368',
-  props: {
-    speedy: '-0.5',
-    'z-index': '-1',
-    'background-image': '/img/letters/background.png',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c73556',
-  props: {
-    speedy: '-0.5',
-    'z-index': '-1',
-    'background-image': '/img/letters/background.png',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c78401',
-  props: {
-    speedy: '-0.5',
-    'z-index': '-1',
-    'background-image': '/img/letters/background.png',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c66833',
-  props: {
-    speedy: '-0.5',
-    'z-index': '-1',
-    'background-image': '/img/letters/background.png',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c25081',
-  props: {
-    speedy: '-0.5',
-    'z-index': '-1',
-    'background-image': '/img/letters/background.png',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c27532',
-  props: {
-    speedy: '-0.5',
-    'z-index': '-1',
-    'background-image': '/img/letters/background.png',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c72096',
-  props: {
-    speedy: '-0.5',
-    'z-index': '-1',
-    'background-image': '/img/letters/background.png',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c52507',
-  props: {
-    speedy: '-0.5',
-    'z-index': '-1',
-    'background-image': '/img/letters/background.png',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c56385',
-  props: {
-    speedy: '-0.5',
-    'z-index': '-1',
-    'background-image': '/img/letters/background.png',
+    'background-image': '/img/tile.jpg',
   },
 },
 {

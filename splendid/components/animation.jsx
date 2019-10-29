@@ -83,11 +83,11 @@ Animation['animation-server'] = async (props) => {
   const Path = splendid.resolveRelative(path)
   await splendid.addFile(Path)
 
-  if (!props.debug) {
+  if (!props.dev) {
     // svg-anim
     splendid.preload('/js/svg-anim.js', 'script')
     await splendid.addFile('/js/svg-anim.js.map')
-    // snap
+    // snap min
     splendid.preload('node_modules://snapsvg/dist/snap.svg-min.js', 'script')
     splendid.addExtern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
   } else {
