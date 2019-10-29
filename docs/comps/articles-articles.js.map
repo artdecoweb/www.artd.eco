@@ -1,13 +1,13 @@
 {
   "version": 3,
-  "file": "docs/comps/articles.js",
+  "file": "docs/comps/articles-articles.js",
   "lineCount": 1,
   "mappings": "AAGA,IAAMA,GAAa,EACnBC,EAAA,EAKA,KAAMC,GAAe,CACnB,SAAYC,CADO,CAArB,CAIMC,GAAKC,CAAA,EAGEC,EAAC,CACZC,IAAK,UADO,CAEZC,GAAI,OAFQ,CAGZC,MAAO,CACL,mBAAoB,eADf,CAHK,CAADH,CAObI,QAAA,CAAa,QAAA,CAAC,CAAD,CAA4C,CAAzC,IAAAH,EAAF,CAAE,IAAA,CAAKC,EAAP,CAAO,GAAL,CAASC,EAAA,IAAA,EAAA,GAAX,CAAW,MAAA,CAAQ,EAAR,CAAX,CAAW,MAAT,CAAqBE,EAAA,IAAA,EAAA,GAAvB,CAAuB,SAAA,CAAW,EAAX,CAAvB,CAAuB,SAC7B,EAAA,CAAiBC,CAAA,CAAKJ,CAAL,CAASD,CAAT,CAAf,KAAAM,EAAA,CAAA,OAAA,CAAQC,EAAA,CAAA,EAAR,CACFC,EAAOb,EAAA,CAAaK,CAAb,CACbE,EAAAO,EAAA,CAAiB,CAAE,EAAAC,QAAM,EAAG,EAAX,CAAe,EAAAC,QAAM,CAACC,CAAD,CAAa,CACjD,MAAOC,EAAA,CAAgBpB,EAAA,CAAWmB,CAAX,CAAhB,CAD0C,CAAlC,CAEd,EAAAE,QAAO,EAAG,EAFI,CAGjBP,EAAAQ,OAAA,CAAYC,QAAA,EAAM,CAChBC,CAAA,CAAMT,CAAN,CAAYD,CAAZ,CAAgBD,CAAhB,CAAwBJ,CAAxB,CAA+BE,CAA/B,CADgB,CAGlBG,EAAAQ,OAAAhB,EAAA,CAAiB,CAAEC,IAAAA,CAAF,CAAOC,GAAAA,CAAP,CACjBJ,GAAAqB,QAAA,CAAWX,CAAX,CAVuD,CAAzD;",
   "sources": [
-    "/splendid/comps/articles.js"
+    "/splendid/comps/articles/articles.js"
   ],
   "sourcesContent": [
-    "import __initBottom from './__init/bottom'\nimport '../js/load-background-img'\nimport makeClassGetter from './__mcg'\nconst renameMaps = {  }\n__initBottom()\nimport { Component, render, h } from '@externs/preact'\nimport { makeIo, init, start } from './__competent-lib'\nimport Parallax from '../../node_modules/splendid/src/components/parallax.jsx'\n\nconst __components = {\n  'parallax': Parallax,\n}\n\nconst io = makeIo()\n\n/** @type {!Array<!preact.PreactProps>} */\nconst meta = [{\n  key: 'parallax',\n  id: 'c9848',\n  props: {\n    'background-image': '/img/tile.jpg',\n  },\n}]\nmeta.forEach(({ key, id, props = {}, children = [] }) => {\n  const { parent, el } = init(id, key)\n  const Comp = __components[key]\n  props.splendid = { export() {}, addCSS(stylesheet) {\n    return makeClassGetter(renameMaps[stylesheet])\n  }, addFile() {} }\n  el.render = () => {\n    start(Comp, el, parent, props, children, { render, Component, h })\n  }\n  el.render.meta = { key, id }\n  io.observe(el)\n})\n"
+    "import __initBottom from '../__init/bottom'\nimport '../../js/load-background-img'\nimport makeClassGetter from '../__mcg'\nconst renameMaps = {  }\n__initBottom()\nimport { Component, render, h } from '@externs/preact'\nimport { makeIo, init, start } from '../__competent-lib'\nimport Parallax from '../../../node_modules/splendid/src/components/parallax.jsx'\n\nconst __components = {\n  'parallax': Parallax,\n}\n\nconst io = makeIo()\n\n/** @type {!Array<!preact.PreactProps>} */\nconst meta = [{\n  key: 'parallax',\n  id: 'c9848',\n  props: {\n    'background-image': '/img/tile.jpg',\n  },\n}]\nmeta.forEach(({ key, id, props = {}, children = [] }) => {\n  const { parent, el } = init(id, key)\n  const Comp = __components[key]\n  props.splendid = { export() {}, addCSS(stylesheet) {\n    return makeClassGetter(renameMaps[stylesheet])\n  }, addFile() {} }\n  el.render = () => {\n    start(Comp, el, parent, props, children, { render, Component, h })\n  }\n  el.render.meta = { key, id }\n  io.observe(el)\n})\n"
   ],
   "names": [
     "renameMaps",

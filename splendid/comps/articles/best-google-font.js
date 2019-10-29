@@ -1,13 +1,13 @@
-import __initBottom from './__init/bottom'
-import '../js/load-background-img'
-import makeClassGetter from './__mcg'
+import __initBottom from '../__init/bottom'
+import '../../js/load-background-img'
+import makeClassGetter from '../__mcg'
 const renameMaps = {  }
 __initBottom()
 import { Component, render, h } from 'preact'
-import { makeIo, init, start } from './__competent-lib'
-import Parallax from '../../node_modules/splendid/src/components/parallax.jsx'
-import Animation from '../components/animation.jsx'
-import Tip from '../components/tip.jsx'
+import { makeIo, init, start } from '../__competent-lib'
+import Parallax from '../../../node_modules/splendid/src/components/parallax.jsx'
+import Animation from '../../components/animation.jsx'
+import Tip from '../../components/tip.jsx'
 
 const __components = {
   'parallax': Parallax,
