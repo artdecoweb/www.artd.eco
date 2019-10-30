@@ -25,10 +25,10 @@
   resolved "https://registry.yarnpkg.com/@artdeco/snapsvg-animator/-/snapsvg-animator-0.1.0.tgz#92b61220569e968c61aba23b8f7b9b345529cff4"
   integrity sha512-XxHcIu1WNVjCSViLLGLBM3n3kAY3Sd5nXcpf5H48aKtdgHzJzJ5tDmV2n28valodCOooHJ0+zfCBLG2AfHw7Kw==
 
-"@depack/depack@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@depack/depack/-/depack-2.1.0.tgz#d0e3bc30ab2fc5ad773a5d6bf4bff1d9183ec599"
-  integrity sha512-Qs63d/UhJrEORIGDlsCEdqgqNaf2Iv4MN5oeRFX+ONpqP1Hk45mfAGrJYJBhCvpxrNigj/2Jv7hXN5yoi5+l1g==
+"@depack/depack@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@depack/depack/-/depack-2.1.1.tgz#a32854b3b7680ec60ab7c1b0e4ff40457f77fb04"
+  integrity sha512-ZP2NSqxxcISLHHt3DusNfQrAkDb04WTzxDbkB3n1ozHrzgo+NCPvWELU8yIpQZ6OiVYoqlVD9z56qUFx0lpXYQ==
   dependencies:
     "@depack/externs" "^1.4.4"
     "@depack/nodejs" "^1.1.4"
@@ -92,10 +92,10 @@
   resolved "https://registry.yarnpkg.com/@lemuria/font/-/font-1.0.4.tgz#03b3c1e90b1f7beb4e981220b28fd2848a090150"
   integrity sha512-jVNgVlEdoIt30vnSOh3Oh9ye3W/WDT5gACRJ8vN03ewQOEsHD25N09UQTiZuVl02+ZW6XDNCiTUni4WlvyIZug==
 
-"@lemuria/load-scripts@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@lemuria/load-scripts/-/load-scripts-1.1.0.tgz#1668d9caa83303c0e88d56cbc5ed3fb162c94dd7"
-  integrity sha512-C5HOikKtq7Wf2nnr1ZP/UTXbV3cUftWhNbiwE6KgypRsMYkxodOX0aFRoCciJiv1/iSWjK1dP+OAip5xEvd+bw==
+"@lemuria/load-scripts@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@lemuria/load-scripts/-/load-scripts-1.2.0.tgz#3e9cc72ce00beca90c10882fe379a7a18f13a544"
+  integrity sha512-DW2UrTgcBPMutFm4Tkr/OeN8iaLse17A+o/tnet72pxTRVe32esjwnpbW3Xe5mUJcRG3PmVZT9J1B3Fdj4RcFg==
 
 "@lemuria/popup@^1.1.1":
   version "1.1.1"
@@ -126,12 +126,7 @@
   resolved "https://registry.yarnpkg.com/@zoroaster/mask/-/mask-2.3.0.tgz#57d169417e09e481efafccbffdd93cef919ec5e6"
   integrity sha512-fufal06pS/SYhOKHCmoFQ+PjhQwsCwMr2h0D2xeiVaXstaWHJVEiLg4+BU/KCmOOzLXLKikf81ca4zFXip7ScQ==
 
-alamode@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.0.0.tgz#d83b1939cdb823665b850f4ee1d2255be854d058"
-  integrity sha512-rKxzjI4FG2dDrL13xGdvEUmLsaz3TUwm5/JwRzJ+5AhXs5pI/tGbsvmvJ9rHtkPTpMXfj4sf1RFZGmgbFIhBFg==
-
-alamode@^3.0.1:
+alamode@^3.0.0, alamode@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.0.1.tgz#a51113deb629e0ac177b072c0b3d58475e343f57"
   integrity sha512-BXOkrmmR1Q8/Fa8z5PE7jUKQJQJ6JPGzvhkMvyeHQ28kG5jCGUjTVgR8WsIqyczEjH5iWy3v4utwDfWwXr44sg==
@@ -230,9 +225,9 @@ makepromise@^3.1.0:
     erotic "^2.1.0"
 
 mime-db@^1.40.0:
-  version "1.41.0"
-  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.41.0.tgz#9110408e1f6aa1b34aef51f2c9df3caddf46b6a0"
-  integrity sha512-B5gxBI+2K431XW8C2rcc/lhppbuji67nf9v39eH8pkWoZDxnAL0PxdpH32KYRScniF8qDHBDlI+ipgg5WrCUYw==
+  version "1.42.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.42.0.tgz#3e252907b4c7adb906597b4b65636272cf9e7bac"
+  integrity sha512-UbfJCR4UAVRNgMpfImz05smAXK7+c+ZntjaA26ANtkXLlOe947Aag5zdIcKQULAiF9Cq4WxBi9jUs5zkA84bYQ==
 
 preact@8.5.2:
   version "8.5.2"
@@ -273,19 +268,19 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.10.3:
-  version "1.10.3"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.10.3.tgz#c937e2f8519f36e262139eec45be897975c47cea"
-  integrity sha512-yn8AB8zjyqX+69hxf8YnPZEBQ3J/pgSs4+vgZ5llSHOnHeTn37SzVPuFxr+QwHAixqrWffgDPu2VoZf63BosWA==
+splendid@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.11.0.tgz#85e3efc13a8f3fd5de3bbcdfe9cbf74d2e4a7acb"
+  integrity sha512-F6WDYHssKnv1lyJpLqBV5/J115tumhTaab8KpQ3N5YnQDSffCsxk3qjLid/9OYR6BvTbrZ53ZYUeDlvhK8adxQ==
   dependencies:
-    "@depack/depack" "^2.1.0"
+    "@depack/depack" "^2.1.1"
     "@externs/preact" "^1.2.6"
     "@idio/frontend" "^1.6.0"
     "@idio/idio" "^0.1.0"
     "@idio/websocket" "^1.0.0"
     "@lemuria/control-style" "^1.0.0"
     "@lemuria/font" "^1.0.4"
-    "@lemuria/load-scripts" "^1.1.0"
+    "@lemuria/load-scripts" "^1.2.0"
     "@lemuria/popup" "^1.1.1"
     alamode "^3.0.1"
     bootstrap "^4.3.1"

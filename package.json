@@ -31,12 +31,11 @@
   "devDependencies": {
     "alamode": "^3.0.1",
     "documentary": "^1.34.1",
-    "splendid": "^1.10.3",
+    "splendid": "^1.11.0",
     "zoroaster": "^4.1.2"
   },
   "dependencies": {
     "@artdeco/snapsvg-animator": "^0.1.0",
-    "@lemuria/load-scripts": "^1.1.0",
     "snapsvg": "^0.5.1"
   }
 }
