@@ -11,22 +11,20 @@
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
-    <link href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700"
-      rel="preload" as="fetch" crossOrigin>
+    <link
+      href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight" rel="preload" as="fetch" crossOrigin>
     <script>(function(q,k){function x(a){for(var f=/url\((.+?)\).*?;\s+unicode-range: (.+?);/g,b={},d=[],h;h=f.exec(a);){var r=h[2];d.push({url:h[1],a:r});b[r]=1}b=Object.keys(b).reduce(function(c,e){var g=e.split(/,\s/).map(function(l){return l.replace("U+","\\u").replace("-","-\\u")}).join("").toLowerCase();c[e]=new RegExp("["+g+"]");return c},{});var t=document.body?document.body.textContent:"",y=t?Object.keys(b).reduce(function(c,e){b[e].test(t)&&(c[e]=!0);return c},{}):Object.keys(b).reduce(function(c,
-e){e in k&&(c[e]=!0);return c},{});m=d.filter(function(c){return c.a in y}).map(function(c){return c.url});if(!m.length)return u();var v=document.createDocumentFragment();m.forEach(function(c,e){var g=document.createElement("link");g.href=c;g.rel="preload";g.as="font";var l=e+1;;g.onload=function(){return u(l)};g.setAttribute("crossorigin",!0);v.appendChild(g)});document.head.appendChild(v)}k=void 0===k?{}:k;var n=document.createElement("link");if(function(a,
-f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.relList,"preload")){var z=function(a,f,b){b=void 0===b?"":b;;var d=new XMLHttpRequest;d.onreadystatechange=function(){4==d.readyState&&(200==d.status?(f(d.responseText)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};
-;var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700', {})</script>
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
+e){e in k&&(c[e]=!0);return c},{});m=d.filter(function(c){return c.a in y}).map(function(c){return c.url});if(!m.length)return u();var v=document.createDocumentFragment();m.forEach(function(c,e){var g=document.createElement("link");g.href=c;g.rel="preload";g.as="font";var l=e+1;performance.mark("link-preload-start"+l);g.onload=function(){return u(l)};g.setAttribute("crossorigin",!0);v.appendChild(g)});document.head.appendChild(v)}k=void 0===k?{}:k;var n=document.createElement("link");if(function(a,
+f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.relList,"preload")){var z=function(a,f,b){b=void 0===b?"":b;performance.mark("xhr-start"+b);var d=new XMLHttpRequest;d.onreadystatechange=function(){4==d.readyState&&(200==d.status?(f(d.responseText),performance.mark("xhr-end"+b),performance.measure("xhr"+b,"xhr-start"+b,"xhr-end"+b)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};
+performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&&(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight', {"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD":true})</script>
+    
     <script>document.documentElement.classList.remove("no-js")</script>
     <link rel="stylesheet" href="/styles/combined.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight&display=block">
     <style>
       .no-js [data-loading], .no-js .ImageHolder { display: none!important }
     </style>
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight">
     </noscript>
     <script defer src="/js/polyfill/intersection-observer.js"></script>
     <script defer src="/js/images.js"></script>

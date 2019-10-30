@@ -2,14 +2,21 @@
 <html lang="en" class="no-js">
   <block-articles-head />
   <body style="overscroll-behavior: none;">
-    <container-fluid position-relative p-0 max-height="20rem" overflow="hidden" mb-3>
-      <img id="Photo" img-fluid alt="Art Deco Store Building"
-        src="/img/blog.jpg" webp="photo" responsive no-potrace onload="initPhoto(this)" />
+    <style>
+    @media (max-width: 430px) {
+      a.lead {
+        background: aliceblue;
+      }
+    }
+    </style>
+    <container-fluid position-relative p-0 height="20rem" overflow="hidden" mb-3>
+      <img id="Photo" alt="Art Deco Store Building"
+        src="/img/blog.jpg" img-fluid position-absolute webp="photo" responsive no-potrace onload="initPhoto(this)" />
       <div id="Holder">
         <a href="main" title="Art Deco Home Page">
           <picture id="Logo">
             <source srcset="/img/logo-300.webp 300w" sizes="100px" type="image/webp">
-            <img alt="Art Deco Logo" src="/img/logo.png" sizes="100px" class="img-fluid">
+            <img alt="Art Deco Logo" src="/img/logo.png" sizes="100px" style="width:100px;">
           </picture>
           <!-- <logo skip-css sizes="100px" /> -->
         </a>

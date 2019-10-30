@@ -1,3 +1,3 @@
-var oa={};z();var pa={parallax:N},qa=H();[{key:"parallax",id:"c9848",props:{"background-image":"/img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.props?{}:a.props,g=void 0===a.children?[]:a.children;a=G(c,b);var k=a.parent,e=a.b,f=pa[b];d.F={J:function(){},G:function(h){return A(oa[h])},H:function(){}};e.render=function(){I(f,e,k,d,g)};e.render.C={key:b,id:c};qa.observe(e)});
+var V={};x();var W={parallax:J},aa=E();[{key:"parallax",id:"c9848",props:{"background-image":"/img/tile.jpg"}}].forEach(function(a){var c=a.key,b=a.id,d=void 0===a.props?{}:a.props,e=void 0===a.children?[]:a.children;a=D(b,c);var g=a.parent,f=a.a,h=W[c];d.v={u:function(){},l:function(k){return y(V[k])},m:function(){}};f.render=function(){F(h,f,g,d,e)};f.render.i={key:c,id:b};aa.observe(f)});
 
 //# sourceMappingURL=articles-articles.js.map

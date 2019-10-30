@@ -8,7 +8,7 @@
 <h4 text-center>1) Async Loading</h4>
 <hr>
 
-<animation-server class="float-md-right pl-3 pb-3"
+<animation class="float-md-right pl-3 pb-3"
   src="./graphics/async-google-font.png" alt="async google font animation" width="505" height="299"
   path="./animate/async-google-font.json" noscript="./animate/async-google-font.gif" align="right" />
 
@@ -27,7 +27,7 @@
   Although async loading better than sync one, it's still not perfect, because we still have multiple reflows due to independent font loading. I propose a solution where an Ajax request is made to fetch the stylesheet, extract urls to fonts, preload them, and once they are all ready, embed the stylesheet into DOM.
 </p>
 
-<animation-server class="float-md-left pr-3 pb-3"
+<animation class="float-md-left pr-3 pb-3"
   src="./graphics/advanced-google-font.png" alt="advanced google font animation" width="505" height="299"
   path="./animate/advanced-google-font.json" noscript="./animate/advanced-google-font.gif" />
 

@@ -1,0 +1,25 @@
+.TM {
+  font-family: 'Limelight',cursive;
+  background: -webkit-linear-gradient(#e4bd4d, #c78259);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* default hl theme */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #F0F0F0;
+  color: #444;
+}
+
+#Advantages { padding:20% }
+@media (min-width: 576px) {
+  #Advantages { padding:20% }
+}
+@media (min-width: 768px) {
+  #Advantages { padding:10% 20%; }
+}
+@media (min-width: 1200px) {
+  #Advantages { padding:5% 20%; }
+}

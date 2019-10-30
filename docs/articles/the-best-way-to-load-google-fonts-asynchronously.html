@@ -11,44 +11,42 @@
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
-    <link href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700"
-      rel="preload" as="fetch" crossOrigin>
+    <link
+      href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight" rel="preload" as="fetch" crossOrigin>
     <script>(function(q,k){function x(a){for(var f=/url\((.+?)\).*?;\s+unicode-range: (.+?);/g,b={},d=[],h;h=f.exec(a);){var r=h[2];d.push({url:h[1],a:r});b[r]=1}b=Object.keys(b).reduce(function(c,e){var g=e.split(/,\s/).map(function(l){return l.replace("U+","\\u").replace("-","-\\u")}).join("").toLowerCase();c[e]=new RegExp("["+g+"]");return c},{});var t=document.body?document.body.textContent:"",y=t?Object.keys(b).reduce(function(c,e){b[e].test(t)&&(c[e]=!0);return c},{}):Object.keys(b).reduce(function(c,
-e){e in k&&(c[e]=!0);return c},{});m=d.filter(function(c){return c.a in y}).map(function(c){return c.url});if(!m.length)return u();var v=document.createDocumentFragment();m.forEach(function(c,e){var g=document.createElement("link");g.href=c;g.rel="preload";g.as="font";var l=e+1;;g.onload=function(){return u(l)};g.setAttribute("crossorigin",!0);v.appendChild(g)});document.head.appendChild(v)}k=void 0===k?{}:k;var n=document.createElement("link");if(function(a,
-f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.relList,"preload")){var z=function(a,f,b){b=void 0===b?"":b;;var d=new XMLHttpRequest;d.onreadystatechange=function(){4==d.readyState&&(200==d.status?(f(d.responseText)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};
-;var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700', {})</script>
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
+e){e in k&&(c[e]=!0);return c},{});m=d.filter(function(c){return c.a in y}).map(function(c){return c.url});if(!m.length)return u();var v=document.createDocumentFragment();m.forEach(function(c,e){var g=document.createElement("link");g.href=c;g.rel="preload";g.as="font";var l=e+1;performance.mark("link-preload-start"+l);g.onload=function(){return u(l)};g.setAttribute("crossorigin",!0);v.appendChild(g)});document.head.appendChild(v)}k=void 0===k?{}:k;var n=document.createElement("link");if(function(a,
+f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.relList,"preload")){var z=function(a,f,b){b=void 0===b?"":b;performance.mark("xhr-start"+b);var d=new XMLHttpRequest;d.onreadystatechange=function(){4==d.readyState&&(200==d.status?(f(d.responseText),performance.mark("xhr-end"+b),performance.measure("xhr"+b,"xhr-start"+b,"xhr-end"+b)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};
+performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&&(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight', {"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD":true})</script>
+    
     <script>document.documentElement.classList.remove("no-js")</script>
     <link rel="stylesheet" href="/styles/combined.css">
+    <link rel="preload" href="data:application/font-woff2;base64,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" as="font">
+    <link rel="preload" href="/highlight.js/styles/default.css" as="style">
     <link rel="preload" href="/js/svg-anim.js" as="script">
     <link rel="preload" href="/snapsvg/dist/snap.svg-min.js" as="script">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight&display=block">
     <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
     <style>
       .no-js [data-io], .no-js [data-loading], .no-js .ImageHolder { display: none!important }
-      .TM {
-          font-family: 'Limelight',cursive;
-          background: -webkit-linear-gradient(#e4bd4d, #c78259);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      #Advantages { padding:20% }
-        @media (min-width: 576px) {
-          #Advantages { padding:20% }
-        }
-        @media (min-width: 768px) {
-          #Advantages { padding:10% 20%; }
-        }
-        @media (min-width: 1200px) {
-          #Advantages { padding:5% 20%; }
-        }
+      .TM{font-family:'Limelight',cursive;background:-webkit-linear-gradient(#e4bd4d,#c78259);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hljs{display:block;overflow-x:auto;padding:.5em;background:#f0f0f0;color:#444}#Advantages{padding:20%}@media (min-width:576px){#Advantages{padding:20%}}@media (min-width:768px){#Advantages{padding:10% 20%}}@media (min-width:1200px){#Advantages{padding:5% 20%}}
+      h1 { font-family: 'Limelight',cursive; }
+      
+      @font-face {
+        font-family: 'Limelight';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Limelight'), url('data:application/font-woff2;base64,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') format('woff2');
+      }
       details[open] summary pre {
           display: none;
         }
+      @media (max-width: 430px) {
+            a.lead {
+              background: aliceblue;
+            }
+          }
     </style>
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight">
     </noscript>
     <script defer src="/js/polyfill/intersection-observer.js"></script>
     <script defer src="/js/images.js"></script>
@@ -60,11 +58,11 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
     <link rel="preload" href="/comps/articles-best-google-font.js" as="script">
   </head>
   <body style="overscroll-behavior: none;">
-    <div class="container-fluid position-relative p-0 mb-3" style="max-height: 20rem; overflow: hidden;">
+    <div class="container-fluid position-relative p-0 mb-3" style="height: 20rem; overflow: hidden;">
       <img alt="Art Deco Store Building" id="sPhoto"
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2816' height='1880'/%3E" class="img-fluid ImageHolder">
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2816' height='1880'/%3E" class="img-fluid position-absolute ImageHolder">
       <noscript>
-        <picture id="Photo">
+        <picture id="Photo" class="position-absolute">
           <source
             srcset="/img/blog-1920.webp 1920w,/img/blog-1600.webp 1600w,/img/blog-1366.webp 1366w,/img/blog-1024.webp 1024w,/img/blog-768.webp 768w,/img/blog-641.webp 641w,/img/blog-319.webp 319w,/img/blog-2816.webp 2816w" type="image/webp">
           <source
@@ -77,12 +75,13 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
         <a title="Art Deco Home Page" href="/">
           <picture id="Logo">
             <source srcset="/img/logo-300.webp 300w" sizes="100px" type="image/webp">
-            <img alt="Art Deco Logo" src="/img/logo.png" sizes="100px" class="img-fluid">
+            <img alt="Art Deco Logo" src="/img/logo.png" sizes="100px" style="width:100px;">
           </picture>
           </a>
         <a text-info class="d-block lead" style="color: #1067de!important;" href="/articles">All Articles</a>
       </div>
-      <script>(function(){window.initPhoto=function(a){function b(){c=a.getBoundingClientRect().height;d=g.getBoundingClientRect().height;e=c-d}var g=a.parentElement.parentElement,c,d,e;window.addEventListener("resize",b);b();window.addEventListener("scroll",function(){var f="translate3d(0px, -"+Math.min(e,window.scrollY)+"px, 0px)";a.style.transform=f;a.style.webkitTransform=f})};}).call(this);
+      <script>(function(){window.initPhoto=function(a){function e(){b&&(a.style.height=null,a.style["max-width"]=null);c=a.getBoundingClientRect().height;d=parseInt(f.style.height,10)*parseFloat(getComputedStyle(document.documentElement).fontSize);c<d?(a.style.height=f.style.height,a.style["max-width"]="initial",b=!0):b=!1;g=c-d}var f=a.parentElement.parentElement,c,d,g,b;window.addEventListener("resize",e);e();window.addEventListener("scroll",function(){var h="translate3d(0px, -"+Math.min(g,window.scrollY)+"px, 0px)";a.style.transform=
+h;a.style.webkitTransform=h})};}).call(this);
 
 //# sourceMappingURL=article-scroll-top.js.map</script>
     </div>
@@ -90,9 +89,9 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
     <div id="Content">
       <div class="container">
         <div class="row">
-          <div class="col"><h1 id="the-best-way-to-load-google-fonts-asynchronously">
-  The Best Way To Load Google Fonts Asynchronously
-</h1>
+          <div class="col">
+
+<h1 id="the-best-way-to-load-google-fonts-asynchronously">The Best Way To Load Google Fonts Asynchronously</h1>
 
 <div class="row mb-3">
   <div class="col-2 col-sm-2 col-lg-1">
@@ -113,12 +112,11 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   </div>
 </div>
 
-
 <p>
   Traditionally my job as a developer was to build libraries in form of NPM packages and other software infrastructure for my <a href="/">Node.JS Development Company</a>, <em class="TM">Art Deco™</em>. However the most fun part of programming always was to make products for the Web, such as websites and integrate them with 3rd party APIs. Today, I focus on another aspect of web development, that is making web pages, that could even be static, but optimised for the modern day requirement of a web site: it must load extremely fast, and put performance in the first place.
 </p>
 
-<div class="position-relative mb-3 text-center" id="c86907">
+<div class="position-relative mb-3 text-center" id="c53386">
   <img alt="Advanced Google Font banner"
     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='550' height='400'/%3E" data-io class="img-fluid" data-src="best-google-font/graphics/agf.png">
   <noscript>
@@ -133,7 +131,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 
 
 
-<ul id="Advantages" class="position-relative">
+<div id="Advantages" class="position-relative">
   <img alt="papyrus background"
     style="top:0;left:0;right:0;bottom:0;z-index:-1;width:100%; height:100%;" data-io class="position-absolute"
     data-src="best-google-font/graphics/parchment-svg.svg">
@@ -141,10 +139,12 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
     <img alt="papyrus background"
       style="top:0;left:0;right:0;bottom:0;z-index:-1;width:100%; height:100%;" class="position-absolute" src="best-google-font/graphics/parchment-svg.svg">
   </noscript>
-  <li>Reduces the delay before the font is loaded and can be applied to text, by discovering the most efficient way to <strong>preload</strong> the stylesheet. Have you ever set <span class="tm" style="background-color:#ffd386">＜link rel="preload" onload="this.rel = 'stylesheet'"＞</span>? Read on to find out if that's optimal.</li>
-  <li>Eliminates extraneous reflows of the page that happen a) after the stylesheet is applied, and b) after each font and its variations are downloaded (think 3+ reflows for 2 fonts you're loading), thus <strong>unblocking</strong> the main thread and improving the overall page load time.</li>
-  <li>Shows all variations of a font <strong>at the same time</strong>, without parts of text jumping on the page, which might be annoying to the user. The Flash of Unstyled Text (<em>FOUT</em>) is one thing, which is somewhat bearable by the user, but when many parts of the text (italic, bold) jump and flash it kind of looks unprofessional because it interferes with users' attention span.</li>
-</ul>
+  <ul>
+    <li>Reduces the delay before the font is loaded and can be applied to text, by discovering the most efficient way to <strong>preload</strong> the stylesheet. Have you ever set <span class="tm" style="background-color:#ffd386">＜link rel="preload" onload="this.rel = 'stylesheet'"＞</span>? Read on to find out if that's optimal.</li>
+    <li>Eliminates extraneous reflows of the page that happen a) after the stylesheet is applied, and b) after each font and its variations are downloaded (think 3+ reflows for 2 fonts you're loading), thus <strong>unblocking</strong> the main thread and improving the overall page load time.</li>
+    <li>Shows all variations of a font <strong>at the same time</strong>, without parts of text jumping on the page, which might be annoying to the user. The Flash of Unstyled Text (<em>FOUT</em>) is one thing, which is somewhat bearable by the user, but when many parts of the text (italic, bold) jump and flash it kind of looks unprofessional because it interferes with users' attention span.</li>
+  </ul>
+</div>
 
 <p>
   As a bonus at the end, I will show you a hack how to embed a font on a webpage for the critical path view, that is more advanced than just embedding a CSS with <span class="tm">data:application/font</span>-encoded base64 string with it, which might still result in a <em>FOUT</em>, but my bonus workaround eliminates the <em>FOUT</em> completely.
@@ -164,8 +164,8 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   Let's start with the basics. We want a Google Font on our website. This means going to <a href="https://fonts.google.com">fonts.google.com</a> and picking up specimens that we want our pages to display with, for example, the fonts that I use here are an Art Deco font <strong>Limelight</strong> for headings and <strong>Gentium Basic</strong> (with variations) for paragraphs:
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
-  <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/css?family=Limelight|Gentium+Basic:400,400i,700&amp;display=swap"</span>&gt;</span></code></pre>
+<pre id="c74268"><code class="xml hljs">&lt;link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Limelight|Gentium+Basic:400,400i,700&amp;display=swap"&gt;</code></pre>
 
 <p>
   The advantage of this cloud service is that <em>Google Fonts</em> will load a dynamic stylesheet depending on a user's browser, and provide optimised fonts, which are constantly improved in newer versions. We also don't have to host the fonts ourselves, and work on creating such stylesheets manually. E.g., below is the stylesheet that was returned for my Chrome on MacOS. It also has 2 <span class="tm">unicode-ranges</span>, <span class="tm">latin</span> and <span class="tm">latin-ext</span> so that the browser will check if there are any characters from the extended set, to decide whether this extra font is needed. Tables with such ranges could be looked up <a href="https://jrgraphix.net/r/Unicode/0100-017F">here</a>.
@@ -174,102 +174,102 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 <details>
 <summary>
 <em>Google Fonts Stylesheet</em>
-<pre><code class="css hljs"><span class="hljs-comment">/* latin-ext */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Limelight'</span>;
-  <span class="hljs-attribute">font-style</span>: normal;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-  <span class="hljs-attribute">font-display</span>: swap;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Limelight'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoNOlHjHUmTUFt.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-  <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0100</span>-<span class="hljs-number">024</span>F, U+<span class="hljs-number">0259</span>, U+<span class="hljs-number">1</span>E00-<span class="hljs-number">1</span>EFF, U+<span class="hljs-number">2020</span>, U+<span class="hljs-number">20</span>A0-<span class="hljs-number">20</span>AB, U+<span class="hljs-number">20</span>AD-<span class="hljs-number">20</span>CF, U+<span class="hljs-number">2113</span>, U+<span class="hljs-number">2</span>C60-<span class="hljs-number">2</span>C7F, U+A720-A7FF;
+<pre id="c80"><code class="css hljs">/* latin-ext */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoNOlHjHUmTUFt.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-<span class="hljs-comment">/* latin */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Limelight'</span>;
-  <span class="hljs-attribute">font-style</span>: normal;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-  <span class="hljs-attribute">font-display</span>: swap;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Limelight'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoOulHjHUmTQ.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-  <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0000</span>-<span class="hljs-number">00</span>FF, U+<span class="hljs-number">0131</span>, U+<span class="hljs-number">0152</span>-<span class="hljs-number">0153</span>, U+<span class="hljs-number">02</span>BB-<span class="hljs-number">02</span>BC, U+<span class="hljs-number">02</span>C6, U+<span class="hljs-number">02</span>DA, U+<span class="hljs-number">02</span>DC, U+<span class="hljs-number">2000</span>-<span class="hljs-number">206</span>F, U+<span class="hljs-number">2074</span>, U+<span class="hljs-number">20</span>AC, U+<span class="hljs-number">2122</span>, U+<span class="hljs-number">2191</span>, U+<span class="hljs-number">2193</span>, U+<span class="hljs-number">2212</span>, U+<span class="hljs-number">2215</span>, U+FEFF, U+FFFD;
+/* latin */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoOulHjHUmTQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-<span class="hljs-comment">/* CLICK TO SHOW FULL STYLESHEET */</span></code></pre>
+/* CLICK TO SHOW FULL STYLESHEET */</code></pre>
 </summary>
 
-<pre><code class="css hljs"><span class="hljs-comment">/* latin-ext */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Limelight'</span>;
-  <span class="hljs-attribute">font-style</span>: normal;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-  <span class="hljs-attribute">font-display</span>: swap;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Limelight'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoNOlHjHUmTUFt.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-  <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0100</span>-<span class="hljs-number">024</span>F, U+<span class="hljs-number">0259</span>, U+<span class="hljs-number">1</span>E00-<span class="hljs-number">1</span>EFF, U+<span class="hljs-number">2020</span>, U+<span class="hljs-number">20</span>A0-<span class="hljs-number">20</span>AB, U+<span class="hljs-number">20</span>AD-<span class="hljs-number">20</span>CF, U+<span class="hljs-number">2113</span>, U+<span class="hljs-number">2</span>C60-<span class="hljs-number">2</span>C7F, U+A720-A7FF;
+<pre id="c75046"><code class="css hljs">/* latin-ext */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoNOlHjHUmTUFt.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-<span class="hljs-comment">/* latin */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Limelight'</span>;
-  <span class="hljs-attribute">font-style</span>: normal;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-  <span class="hljs-attribute">font-display</span>: swap;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Limelight'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoOulHjHUmTQ.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-  <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0000</span>-<span class="hljs-number">00</span>FF, U+<span class="hljs-number">0131</span>, U+<span class="hljs-number">0152</span>-<span class="hljs-number">0153</span>, U+<span class="hljs-number">02</span>BB-<span class="hljs-number">02</span>BC, U+<span class="hljs-number">02</span>C6, U+<span class="hljs-number">02</span>DA, U+<span class="hljs-number">02</span>DC, U+<span class="hljs-number">2000</span>-<span class="hljs-number">206</span>F, U+<span class="hljs-number">2074</span>, U+<span class="hljs-number">20</span>AC, U+<span class="hljs-number">2122</span>, U+<span class="hljs-number">2191</span>, U+<span class="hljs-number">2193</span>, U+<span class="hljs-number">2212</span>, U+<span class="hljs-number">2215</span>, U+FEFF, U+FFFD;
+/* latin */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoOulHjHUmTQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-<span class="hljs-comment">/* CLICK TO SHOW FULL STYLESHEET */</span>
+/* CLICK TO SHOW FULL STYLESHEET */
 
-<span class="hljs-comment">/* latin-ext */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Gentium Basic'</span>;
-  <span class="hljs-attribute">font-style</span>: italic;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-  <span class="hljs-attribute">font-display</span>: swap;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Gentium Basic Italic'</span>), <span class="hljs-built_in">local</span>(<span class="hljs-string">'GentiumBasic-Italic'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5hBo7QoCBZCxP.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-  <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0100</span>-<span class="hljs-number">024</span>F, U+<span class="hljs-number">0259</span>, U+<span class="hljs-number">1</span>E00-<span class="hljs-number">1</span>EFF, U+<span class="hljs-number">2020</span>, U+<span class="hljs-number">20</span>A0-<span class="hljs-number">20</span>AB, U+<span class="hljs-number">20</span>AD-<span class="hljs-number">20</span>CF, U+<span class="hljs-number">2113</span>, U+<span class="hljs-number">2</span>C60-<span class="hljs-number">2</span>C7F, U+A720-A7FF;
+/* latin-ext */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5hBo7QoCBZCxP.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-<span class="hljs-comment">/* latin */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Gentium Basic'</span>;
-  <span class="hljs-attribute">font-style</span>: italic;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-  <span class="hljs-attribute">font-display</span>: swap;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Gentium Basic Italic'</span>), <span class="hljs-built_in">local</span>(<span class="hljs-string">'GentiumBasic-Italic'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5iho7QoCBZA.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-  <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0000</span>-<span class="hljs-number">00</span>FF, U+<span class="hljs-number">0131</span>, U+<span class="hljs-number">0152</span>-<span class="hljs-number">0153</span>, U+<span class="hljs-number">02</span>BB-<span class="hljs-number">02</span>BC, U+<span class="hljs-number">02</span>C6, U+<span class="hljs-number">02</span>DA, U+<span class="hljs-number">02</span>DC, U+<span class="hljs-number">2000</span>-<span class="hljs-number">206</span>F, U+<span class="hljs-number">2074</span>, U+<span class="hljs-number">20</span>AC, U+<span class="hljs-number">2122</span>, U+<span class="hljs-number">2191</span>, U+<span class="hljs-number">2193</span>, U+<span class="hljs-number">2212</span>, U+<span class="hljs-number">2215</span>, U+FEFF, U+FFFD;
+/* latin */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5iho7QoCBZA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-<span class="hljs-comment">/* latin-ext */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Gentium Basic'</span>;
-  <span class="hljs-attribute">font-style</span>: normal;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-  <span class="hljs-attribute">font-display</span>: swap;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Gentium Basic'</span>), <span class="hljs-built_in">local</span>(<span class="hljs-string">'GentiumBasic'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/gentiumbasic/v11/Wnz9HAw9aB_JD2VGQVR80We3LAOJiBA8YIKxZQ.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-  <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0100</span>-<span class="hljs-number">024</span>F, U+<span class="hljs-number">0259</span>, U+<span class="hljs-number">1</span>E00-<span class="hljs-number">1</span>EFF, U+<span class="hljs-number">2020</span>, U+<span class="hljs-number">20</span>A0-<span class="hljs-number">20</span>AB, U+<span class="hljs-number">20</span>AD-<span class="hljs-number">20</span>CF, U+<span class="hljs-number">2113</span>, U+<span class="hljs-number">2</span>C60-<span class="hljs-number">2</span>C7F, U+A720-A7FF;
+/* latin-ext */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gentium Basic'), local('GentiumBasic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/Wnz9HAw9aB_JD2VGQVR80We3LAOJiBA8YIKxZQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-<span class="hljs-comment">/* latin */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Gentium Basic'</span>;
-  <span class="hljs-attribute">font-style</span>: normal;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-  <span class="hljs-attribute">font-display</span>: swap;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Gentium Basic'</span>), <span class="hljs-built_in">local</span>(<span class="hljs-string">'GentiumBasic'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/gentiumbasic/v11/Wnz9HAw9aB_JD2VGQVR80We3LA2JiBA8YII.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-  <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0000</span>-<span class="hljs-number">00</span>FF, U+<span class="hljs-number">0131</span>, U+<span class="hljs-number">0152</span>-<span class="hljs-number">0153</span>, U+<span class="hljs-number">02</span>BB-<span class="hljs-number">02</span>BC, U+<span class="hljs-number">02</span>C6, U+<span class="hljs-number">02</span>DA, U+<span class="hljs-number">02</span>DC, U+<span class="hljs-number">2000</span>-<span class="hljs-number">206</span>F, U+<span class="hljs-number">2074</span>, U+<span class="hljs-number">20</span>AC, U+<span class="hljs-number">2122</span>, U+<span class="hljs-number">2191</span>, U+<span class="hljs-number">2193</span>, U+<span class="hljs-number">2212</span>, U+<span class="hljs-number">2215</span>, U+FEFF, U+FFFD;
+/* latin */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Gentium Basic'), local('GentiumBasic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/Wnz9HAw9aB_JD2VGQVR80We3LA2JiBA8YII.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-<span class="hljs-comment">/* latin-ext */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Gentium Basic'</span>;
-  <span class="hljs-attribute">font-style</span>: normal;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
-  <span class="hljs-attribute">font-display</span>: swap;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Gentium Basic Bold'</span>), <span class="hljs-built_in">local</span>(<span class="hljs-string">'GentiumBasic-Bold'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzgHAw9aB_JD2VGQVR80We3JLasnTMebaiLbBR2kw.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-  <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0100</span>-<span class="hljs-number">024</span>F, U+<span class="hljs-number">0259</span>, U+<span class="hljs-number">1</span>E00-<span class="hljs-number">1</span>EFF, U+<span class="hljs-number">2020</span>, U+<span class="hljs-number">20</span>A0-<span class="hljs-number">20</span>AB, U+<span class="hljs-number">20</span>AD-<span class="hljs-number">20</span>CF, U+<span class="hljs-number">2113</span>, U+<span class="hljs-number">2</span>C60-<span class="hljs-number">2</span>C7F, U+A720-A7FF;
+/* latin-ext */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Gentium Basic Bold'), local('GentiumBasic-Bold'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzgHAw9aB_JD2VGQVR80We3JLasnTMebaiLbBR2kw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-<span class="hljs-comment">/* latin */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Gentium Basic'</span>;
-  <span class="hljs-attribute">font-style</span>: normal;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">700</span>;
-  <span class="hljs-attribute">font-display</span>: swap;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Gentium Basic Bold'</span>), <span class="hljs-built_in">local</span>(<span class="hljs-string">'GentiumBasic-Bold'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzgHAw9aB_JD2VGQVR80We3JLasnT0ebaiLbBQ.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-  <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0000</span>-<span class="hljs-number">00</span>FF, U+<span class="hljs-number">0131</span>, U+<span class="hljs-number">0152</span>-<span class="hljs-number">0153</span>, U+<span class="hljs-number">02</span>BB-<span class="hljs-number">02</span>BC, U+<span class="hljs-number">02</span>C6, U+<span class="hljs-number">02</span>DA, U+<span class="hljs-number">02</span>DC, U+<span class="hljs-number">2000</span>-<span class="hljs-number">206</span>F, U+<span class="hljs-number">2074</span>, U+<span class="hljs-number">20</span>AC, U+<span class="hljs-number">2122</span>, U+<span class="hljs-number">2191</span>, U+<span class="hljs-number">2193</span>, U+<span class="hljs-number">2212</span>, U+<span class="hljs-number">2215</span>, U+FEFF, U+FFFD;
+/* latin */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Gentium Basic Bold'), local('GentiumBasic-Bold'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzgHAw9aB_JD2VGQVR80We3JLasnT0ebaiLbBQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }</code></pre>
 </details>
 
@@ -283,7 +283,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c56385"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c31227"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -315,7 +315,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c74268"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c57883"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -348,7 +348,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c80"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c61157"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -387,16 +387,16 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   The browser will always give CSS the highest priority when opening the page, and begin downloading stylesheets immediately. This is nice, however how do we step up from sync loading to the async one, which does not prevent rendering from happening until the stylesheet is loaded? Let's try to do it with JavaScript. Instead of adding a <span class="tm">link</span> tag, we'll add a script which will create such tag dynamically. This script will be the first thing in our document:
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-keyword">const</span> link = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'link'</span>)
-    link.href = <span class="hljs-string">'https://fonts.googleapis.com/css?'</span> +
-                <span class="hljs-string">'display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'</span>
-    link.rel = <span class="hljs-string">'stylesheet'</span>
-    <span class="hljs-built_in">document</span>.head.appendChild(link)
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- other elements --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+<pre id="c57253"><code class="xml hljs">&lt;head&gt;
+  &lt;script&gt;
+    const link = document.createElement('link')
+    link.href = 'https://fonts.googleapis.com/css?' +
+                'display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'
+    link.rel = 'stylesheet'
+    document.head.appendChild(link)
+  &lt;/script&gt;
+  &lt;!-- other elements --&gt;
+&lt;/head&gt;</code></pre>
 
 <p>
   Now because the browser does not know that the stylesheet will be embedded, it will not start downloading it straight away like in the previous case. Instead, it will wait until the  script is evaluated to begin the download. What is more, it will continue parsing HTML, and block the main thread so that if the stylesheet is not downloaded quickly, it will have to wait to be inserted until the end of the initial page render.
@@ -404,7 +404,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c75046"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c83759"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -435,21 +435,21 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   This strategy allows to actually load <em>Google Fonts</em> asynchronously and solves the <em>Lighthouse</em> warning. However, it introduced an extra reflow due to the stylesheet insertion that happens after the initial render. There are additional improvements that we could make to the page. We can use the preload hint to make the browser download the stylesheet immediately, in hope that dynamically inserted element will be able to pick up that style:
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//fonts.googleapis.com"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preconnect"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.gstatic.com"</span> <span class="hljs-attr">crossorigin</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"style"</span> <span class="hljs-attr">crossorigin</span>
-    <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-keyword">const</span> link = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'link'</span>)
-    link.href = <span class="hljs-string">'https://fonts.googleapis.com/css?'</span> +
-                <span class="hljs-string">'display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'</span>
-    link.rel = <span class="hljs-string">'stylesheet'</span>
-    link.crossOrigin = <span class="hljs-string">'crossorigin'</span> <span class="hljs-comment">// add crossorigin</span>
-    <span class="hljs-built_in">document</span>.head.appendChild(link)
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- other elements --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+<pre id="c45018"><code class="xml hljs">&lt;head&gt;
+  &lt;link rel="dns-prefetch" href="//fonts.googleapis.com"&gt;
+  &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+  &lt;link rel="preload" as="style" crossorigin
+    href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"&gt;
+  &lt;script&gt;
+    const link = document.createElement('link')
+    link.href = 'https://fonts.googleapis.com/css?' +
+                'display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'
+    link.rel = 'stylesheet'
+    link.crossOrigin = 'crossorigin' // add crossorigin
+    document.head.appendChild(link)
+  &lt;/script&gt;
+  &lt;!-- other elements --&gt;
+&lt;/head&gt;</code></pre>
 
 <p>
   OK now we've got it! We had to add a <span class="tm">crossOrigin</span> attribute to both links (in markup and in JS) since the style comes from another domain and preload links have to respect that, and the style link has to match preload link's <em>crossorigin</em>.
@@ -457,7 +457,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c57253"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c23546"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -491,18 +491,18 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   Another thing we need to do is to add a polyfill for users who disabled <em>JavaScript</em> execution.
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span> <span class="hljs-attr">...</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-      <span class="hljs-keyword">const</span> link = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'link'</span>)
-      <span class="hljs-comment">// ...</span>
-    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-comment">&lt;!-- async font loading polyfill --&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">crossorigin</span>
-        <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+<pre id="c65987"><code class="xml hljs">&lt;head&gt;
+    &lt;link rel="preload" ...&gt;
+    &lt;script&gt;
+      const link = document.createElement('link')
+      // ...
+    &lt;/script&gt;
+    &lt;!-- async font loading polyfill --&gt;
+    &lt;noscript&gt;
+      &lt;link rel="stylesheet" crossorigin
+        href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"&gt;
+    &lt;/noscript&gt;
+  &lt;/head&gt;</code></pre>
 
 <p>
   Despite the working version of async web font stylesheet loading (thus achieving the goal), we assume that the connection is good, and that the stylesheet will be able to download prior to initial page render. Moreover, I've been testing the webpage with another external stylesheet, which loads very fast on localhost, but in reality it would actually take some time and block the browser. If the styles were embedded onto the page, so that there are no render-blocking resources, the browser would not have enough time to download the <em>Google Font</em> stylesheet prior to first render. Therefore, I've simulated a situation when:
@@ -515,7 +515,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c45018"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c66812"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -543,17 +543,18 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 </ol>
 
 <p>
-  So the next step is to make sure that there's only one reflow for the style and fonts. As a side note, there's a technique outlined on the <a target="_blank" style="color: #7b913c !important;; text-decoration: underline;"
+  So the next step is to make sure that there's only one reflow for the style and fonts. As a side note, there's a technique outlined on the <a target="_blank" rel="noopener" style="color: #7b913c !important;; text-decoration: underline;"
    href="https://alligator.io/html/preload-prefetch/">
-   <img alt="alligator" data-io data-src="best-google-font/graphics/croc.png">
+   <img alt="alligator"
+     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='74' height='36'/%3E" data-io data-src="best-google-font/graphics/croc.png">
    <noscript><img alt="alligator" src="best-google-font/graphics/croc.png"></noscript>Alligator blog: Preload and Prefetch</a> that contracts the JS into a one-liner:
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">link</span>
-  <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span>
-  <span class="hljs-attr">as</span>=<span class="hljs-string">"style"</span>
-  <span class="hljs-attr">onload</span>=<span class="hljs-string">"this.rel = 'stylesheet'"</span>
-  <span class="hljs-attr">href</span>=<span class="hljs-string">'https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'</span>&gt;</span></code></pre>
+<pre id="c82466"><code class="xml hljs">&lt;link
+  rel="preload"
+  as="style"
+  onload="this.rel = 'stylesheet'"
+  href='https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'&gt;</code></pre>
 
 <p>
   I think the <span class="tm">onload</span> attribute must be <span class="tm">onload=&quot;this.rel = 'stylesheet'; this.onload = null&quot;</span>, otherwise once the preload link is changed into a stylesheet link, the onload will be triggered again. Although theoretically, setting the rel attribute to <span class="tm">stylesheet</span> when it's already a <span class="tm">stylesheet</span> shouldn't cause problems, I used to get the stylesheet downloaded twice:
@@ -561,7 +562,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c65987"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c18601"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -585,15 +586,15 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   However now I struggle to reproduce this. I think it's rather to do with internal browser logic. Never mind still, it doesn't hurt to remove the <span class="tm">onload</span> attribute really. Additionally, this <span class="tm">onload</span> attribute solution also requires a polyfill for browsers that don't support preload, but what I'm really concerned here is WHEN the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the <span class="tm">onload</span> method.
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"style"</span> <span class="hljs-attr">crossorigin</span>
-  <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"</span>
-  <span class="hljs-attr">onload</span>=<span class="hljs-string">"
+<pre id="c84852"><code class="xml hljs">&lt;link rel="preload" as="style" crossorigin
+  href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"
+  onload="
   performance.mark('apply-stylesheet');
   this.rel = 'stylesheet'
   this.onload = () =&gt; {
     performance.measure('stylesheet-onload', 'apply-stylesheet');
   };
-"</span>&gt;</span></code></pre>
+"&gt;</code></pre>
 
 <p>
   The <span class="tm">performance.measure</span> function is a very handy util to add markers to the timeline to visualise the break-down. We're going to measure WHEN the <span class="tm">onload</span> event fired, and compare it to when the preload actually finished. One might assume that these points should follow one another (onload after download), however don't forget to account for the blockage of the main thread during the initial render (I've said this phrase so many times now, it just shows that it's an important takeaway point).
@@ -601,7 +602,7 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c82466"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c26861"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -631,35 +632,35 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   Let's compare that to the implementation using a standalone script tag rather than the <span class="tm">onload</span> attribute. I'm going to add 100ms timeout so that the preload event is visible on the timeline. Remember, we added the stylesheet only after the <span class="tm">onload</span> event fired previously. Now, using the script tag, we're adding the stylesheet right away.
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- preconnect, dns-prefetch --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"style"</span> <span class="hljs-attr">crossorigin</span>
-    <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"</span>
-    <span class="hljs-attr">onload</span>=<span class="hljs-string">"
+<pre id="c88891"><code class="xml hljs">&lt;head&gt;
+  &lt;!-- preconnect, dns-prefetch --&gt;
+  &lt;link rel="preload" as="style" crossorigin
+    href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"
+    onload="
     performance.mark('preload-stylesheet');
     setTimeout(() =&gt; {
       performance.measure('preload-onload', 'preload-stylesheet');
     }, 100)
-  "</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-keyword">const</span> link = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'link'</span>)
-    link.href = <span class="hljs-string">'https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'</span>
-    link.rel = <span class="hljs-string">'stylesheet'</span>
-    link.crossOrigin = <span class="hljs-string">'crossorigin'</span>
-    performance.mark(<span class="hljs-string">'add-stylesheet'</span>)
-    <span class="hljs-built_in">document</span>.head.appendChild(link)
-    link.onload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-      performance.measure(<span class="hljs-string">'stylesheet-onload'</span>, <span class="hljs-string">'add-stylesheet'</span>);
+  "&gt;
+  &lt;script&gt;
+    const link = document.createElement('link')
+    link.href = 'https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'
+    link.rel = 'stylesheet'
+    link.crossOrigin = 'crossorigin'
+    performance.mark('add-stylesheet')
+    document.head.appendChild(link)
+    link.onload = () =&gt; {
+      performance.measure('stylesheet-onload', 'add-stylesheet');
     }
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- etc --&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+  &lt;/script&gt;
+&lt;!-- etc --&gt;
+&lt;/head&gt;</code></pre>
 
 
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c84852"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c73305"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -732,31 +733,31 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   Here's a simple to fetch stylesheet, while measuring performance:
 </p>
 
-<pre><code class="js hljs"><span class="hljs-comment">/**
+<pre id="c97934"><code class="javascript hljs">/**
 * @param {string} address The address to load.
 * @param {function(string)} cb The callback to call on complete.
 * @param {string} [marker] Performance annotation.
-*/</span>
-<span class="hljs-keyword">const</span> fetchStylesheet = <span class="hljs-function">(<span class="hljs-params">address, cb, marker = <span class="hljs-string">''</span></span>) =&gt;</span> {
- performance.mark(<span class="hljs-string">'xhr-start'</span>+marker)
- <span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> XMLHttpRequest()
- xhr.onreadystatechange = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-   <span class="hljs-keyword">if</span>(xhr.readyState == <span class="hljs-number">4</span>) {
-     <span class="hljs-keyword">if</span> (xhr.status == <span class="hljs-number">200</span>) {
+*/
+const fetchStylesheet = (address, cb, marker = '') =&gt; {
+ performance.mark('xhr-start'+marker)
+ const xhr = new XMLHttpRequest()
+ xhr.onreadystatechange = () =&gt; {
+   if(xhr.readyState == 4) {
+     if (xhr.status == 200) {
        cb(xhr.responseText)
-       performance.mark(<span class="hljs-string">'xhr-end'</span>+marker)
-       performance.measure(<span class="hljs-string">'xhr'</span>+marker, <span class="hljs-string">'xhr-start'</span>+marker, <span class="hljs-string">'xhr-end'</span>+marker)
-     } <span class="hljs-keyword">else</span> {
-       <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Error loading webfont: server responded with code %s at %s'</span>,
+       performance.mark('xhr-end'+marker)
+       performance.measure('xhr'+marker, 'xhr-start'+marker, 'xhr-end'+marker)
+     } else {
+       console.error('Error loading webfont: server responded with code %s at %s',
         xhr.status, address)
      }
    }
  }
- xhr.open(<span class="hljs-string">'GET'</span>, address)
- <span class="hljs-keyword">try</span> {
-   xhr.send(<span class="hljs-literal">null</span>)
- } <span class="hljs-keyword">catch</span> (err) {
-   <span class="hljs-built_in">console</span>.error(err)
+ xhr.open('GET', address)
+ try {
+   xhr.send(null)
+ } catch (err) {
+   console.error(err)
  }
 }</code></pre>
 
@@ -764,133 +765,133 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
   Our stylesheet parsing function uses a regex to extract URLs with unicode ranges of fonts, and creates an array like <span class="tm">[{ font: 'url', range: /[regex]/ }]</span> for each font it found in the stylesheet.
 </p>
 
-<pre><code class="js hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseBody</span>(<span class="hljs-params">result</span>) </span>{
-  <span class="hljs-keyword">const</span> re = <span class="hljs-regexp">/url\((.+?)\).*?;\s+unicode-range: (.+?);/g</span>
-  <span class="hljs-keyword">let</span> ranges = {}
-  <span class="hljs-keyword">const</span> fonts = []
-  <span class="hljs-keyword">let</span> a
-  <span class="hljs-keyword">while</span>((a = re.exec(result))) {
-    <span class="hljs-keyword">const</span> u = a[<span class="hljs-number">1</span>]
-    <span class="hljs-keyword">const</span> range = a[<span class="hljs-number">2</span>]
-    fonts.push({ <span class="hljs-attr">url</span>: u, range })
-    ranges[range] = <span class="hljs-number">1</span>
+<pre id="c70819"><code class="javascript hljs">function parseBody(result) {
+  const re = /url\((.+?)\).*?;\s+unicode-range: (.+?);/g
+  let ranges = {}
+  const fonts = []
+  let a
+  while((a = re.exec(result))) {
+    const u = a[1]
+    const range = a[2]
+    fonts.push({ url: u, range })
+    ranges[range] = 1
   }
-  ranges = <span class="hljs-built_in">Object</span>.keys(ranges).reduce(<span class="hljs-function">(<span class="hljs-params">acc, range</span>) =&gt;</span> {
-    <span class="hljs-keyword">const</span> reg = range
-      .split(<span class="hljs-regexp">/,\s/</span>)
-      .map(<span class="hljs-function">(<span class="hljs-params">r</span>) =&gt;</span> r.replace(<span class="hljs-string">'U+'</span>, <span class="hljs-string">'\\u'</span>).replace(<span class="hljs-string">'-'</span>, <span class="hljs-string">'-\\u'</span>))
-      .join(<span class="hljs-string">''</span>).toLowerCase()
-    acc[range] = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">`[<span class="hljs-subst">${reg}</span>]`</span>)
-    <span class="hljs-keyword">return</span> acc
+  ranges = Object.keys(ranges).reduce((acc, range) =&gt; {
+    const reg = range
+      .split(/,\s/)
+      .map((r) =&gt; r.replace('U+', '\\u').replace('-', '-\\u'))
+      .join('').toLowerCase()
+    acc[range] = new RegExp(`[${reg}]`)
+    return acc
   }, {})
-  <span class="hljs-comment">// ...</span></code></pre>
+  // ...</code></pre>
 
 <p id="2-scenarios">
   There are 2 scenarios when we'll get the stylesheet ready: A) prior to HTML parsing, which can be because there's another stylesheet blocking the render, and because the connection is very fast; and B) after HTML parsing, when <span class="tm">body</span> is available. In the first instance, we wouldn't know the unicode ranges that are present on the page, therefore they have to be supplied as additional information. If we know that we don't use <strong>latin-ext</strong> on the page, we'll just pass the unicode range for <strong>latin</strong> characters. This way, we don't have to download each single font in the stylesheet, wasting data.
 </p>
 
-<pre><code class="js hljs">  <span class="hljs-comment">// ..</span>
-  <span class="hljs-keyword">const</span> body = <span class="hljs-built_in">document</span>.body ? <span class="hljs-built_in">document</span>.body.textContent : <span class="hljs-string">''</span>
-  <span class="hljs-keyword">const</span> validRanges = body ? <span class="hljs-built_in">Object</span>.keys(ranges).reduce(<span class="hljs-function">(<span class="hljs-params">acc, range</span>) =&gt;</span> {
+<pre id="c70368"><code class="javascript hljs">  // ..
+  const body = document.body ? document.body.textContent : ''
+  const validRanges = body ? Object.keys(ranges).reduce((acc, range) =&gt; {
 
-    <span class="hljs-comment">// case B) body is loaded, text it against the regex.</span>
-    <span class="hljs-keyword">const</span> reg = ranges[range]
-    <span class="hljs-keyword">const</span> valid = reg.test(body)
-    <span class="hljs-keyword">if</span> (valid) acc[range] = <span class="hljs-literal">true</span>
-    <span class="hljs-keyword">return</span> acc
-  }, {}) : <span class="hljs-built_in">Object</span>.keys(ranges).reduce(<span class="hljs-function">(<span class="hljs-params">acc, range</span>) =&gt;</span> {
+    // case B) body is loaded, text it against the regex.
+    const reg = ranges[range]
+    const valid = reg.test(body)
+    if (valid) acc[range] = true
+    return acc
+  }, {}) : Object.keys(ranges).reduce((acc, range) =&gt; {
 
-    <span class="hljs-comment">// case A) body is not available, fallback to supplied ranges.</span>
-    <span class="hljs-keyword">const</span> valid = range <span class="hljs-keyword">in</span> defaultRanges
-    <span class="hljs-keyword">if</span> (valid) acc[range] = <span class="hljs-literal">true</span>
-    <span class="hljs-keyword">return</span> acc
+    // case A) body is not available, fallback to supplied ranges.
+    const valid = range in defaultRanges
+    if (valid) acc[range] = true
+    return acc
   }, {})
 
-  <span class="hljs-comment">// filter only fonts we need</span>
-  urls = fonts.filter(<span class="hljs-function">(<span class="hljs-params">{ range }</span>) =&gt;</span> {
-    <span class="hljs-keyword">return</span> range <span class="hljs-keyword">in</span> validRanges
-  }).map(<span class="hljs-function">(<span class="hljs-params">{ url: u }</span>) =&gt;</span> u)
+  // filter only fonts we need
+  urls = fonts.filter(({ range }) =&gt; {
+    return range in validRanges
+  }).map(({ url: u }) =&gt; u)
 
-  <span class="hljs-comment">// if ranges are not supplied, and we're in case A, just add the stylesheet.</span>
-  <span class="hljs-comment">// we loose the advantage of eliminating continuous reflows due to fonts</span>
-  <span class="hljs-comment">// arriving independently at different times.</span>
-  <span class="hljs-keyword">if</span> (!urls.length) <span class="hljs-keyword">return</span> loadedCb()
+  // if ranges are not supplied, and we're in case A, just add the stylesheet.
+  // we loose the advantage of eliminating continuous reflows due to fonts
+  // arriving independently at different times.
+  if (!urls.length) return loadedCb()
 
-  <span class="hljs-comment">// preload fonts via link elements</span>
-  <span class="hljs-comment">// each appendChild has a cost, so bundle them into a fragment.</span>
-  <span class="hljs-keyword">const</span> fragment = <span class="hljs-built_in">document</span>.createDocumentFragment()
-  urls.forEach(<span class="hljs-function">(<span class="hljs-params">address, i</span>) =&gt;</span> {
-    <span class="hljs-keyword">const</span> link = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'link'</span>)
+  // preload fonts via link elements
+  // each appendChild has a cost, so bundle them into a fragment.
+  const fragment = document.createDocumentFragment()
+  urls.forEach((address, i) =&gt; {
+    const link = document.createElement('link')
     link.href = address
-    link.rel = <span class="hljs-string">'preload'</span>
-    link.as = <span class="hljs-string">'font'</span>
-    <span class="hljs-keyword">const</span> j = i + <span class="hljs-number">1</span>
-    performance.mark(<span class="hljs-string">'link-preload-start'</span>+j)
-    link.onload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> loadedCb(j)
-    link.setAttribute(<span class="hljs-string">'crossorigin'</span>, <span class="hljs-literal">true</span>)
+    link.rel = 'preload'
+    link.as = 'font'
+    const j = i + 1
+    performance.mark('link-preload-start'+j)
+    link.onload = () =&gt; loadedCb(j)
+    link.setAttribute('crossorigin', true)
     fragment.appendChild(link)
   })
-  <span class="hljs-built_in">document</span>.head.appendChild(fragment)
+  document.head.appendChild(fragment)
 }</code></pre>
 
 <p>
   Add some logic to keep track of parallel preloads, and embed the stylesheet when they all arrive.
 </p>
 
-<pre><code class="js hljs"><span class="hljs-keyword">let</span> FONT_CSS
-<span class="hljs-keyword">let</span> urls = []
-<span class="hljs-keyword">let</span> loaded = <span class="hljs-number">0</span>
+<pre id="c73556"><code class="javascript hljs">let FONT_CSS
+let urls = []
+let loaded = 0
 
-<span class="hljs-comment">// the entry main: fetch CSS and call parseBody,</span>
-<span class="hljs-comment">// which will call loadedCb for each font.</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startPreload</span>(<span class="hljs-params">linkEl, marker = <span class="hljs-string">'link'</span></span>) </span>{
-  <span class="hljs-keyword">const</span> href = linkEl.href
+// the entry main: fetch CSS and call parseBody,
+// which will call loadedCb for each font.
+function startPreload(linkEl, marker = 'link') {
+  const href = linkEl.href
   fetchStylesheet(href, (res) =&gt; {
     FONT_CSS = res
     parseBody(FONT_CSS)
-  }, <span class="hljs-string">'-'</span> + marker)
+  }, '-' + marker)
 }
 
-<span class="hljs-comment">/**
+/**
  * @param {number} [i] The index of the link
- */</span>
-<span class="hljs-keyword">const</span> loadedCb = <span class="hljs-function">(<span class="hljs-params">i</span>) =&gt;</span> {
-  <span class="hljs-keyword">if</span> (i) {
-    performance.mark(<span class="hljs-string">'link-preload-end'</span>+i)
-    performance.measure(<span class="hljs-string">'link-preload'</span>, <span class="hljs-string">'link-preload-start'</span>+i, <span class="hljs-string">'link-preload-end'</span>+i)
+ */
+const loadedCb = (i) =&gt; {
+  if (i) {
+    performance.mark('link-preload-end'+i)
+    performance.measure('link-preload', 'link-preload-start'+i, 'link-preload-end'+i)
   }
   loaded++
-  <span class="hljs-keyword">if</span> (loaded &gt;= urls.length) {
-    <span class="hljs-keyword">const</span> style = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'style'</span>)
+  if (loaded &gt;= urls.length) {
+    const style = document.createElement('style')
     style.innerHTML = FONT_CSS
-    <span class="hljs-built_in">document</span>.head.appendChild(style)
+    document.head.appendChild(style)
 
-    performance.mark(<span class="hljs-string">'agf-end'</span>)
-    performance.measure(<span class="hljs-string">'@lemuria/font'</span>, <span class="hljs-string">'agf-start'</span>, <span class="hljs-string">'agf-end'</span>)
+    performance.mark('agf-end')
+    performance.measure('@lemuria/font', 'agf-start', 'agf-end')
   }
 }
 
-<span class="hljs-comment">// kick in advanced google font preloading!</span>
-startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-string">'js'</span>)</code></pre>
+// kick in advanced google font preloading!
+startPreload({ href: FONT }, 'js')</code></pre>
 
 <p>
   I could have used the <span class="tm">fetch</span> instead of XHR since its 2019, however I would need to add a polyfill and transpile async code. There's no performance difference between <span class="tm">fetch</span> and <span class="tm">XMLHttpRequest</span> APIs. One observation, is that with <span class="tm">fetch</span>, data could be streamed, so if the response arrived in chunks, I could extract fonts as they come, but because the stylesheet is so small (&lt; 1kb), streaming is unnecessary. I've made a package called <span class="tm">@lemuria/font</span> with this code which I run through <em>Google Closure Compiler</em>, so let's update our page:
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//fonts.googleapis.com"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preconnect"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.gstatic.com"</span> <span class="hljs-attr">crossorigin</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"fetch"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-built_in">window</span>[<span class="hljs-string">"@lemuria/font"</span>]=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">q,k</span>)</span>{<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">x</span>(<span class="hljs-params">a</span>)</span>{<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> f=<span class="hljs-regexp">/url\((.+?)\).*?;\s+unicode-range: (.+?);/g</span>,b={},d=[],h;h=f.exec(a);){<span class="hljs-keyword">var</span> r=h[<span class="hljs-number">2</span>];d.push({<span class="hljs-attr">url</span>:h[<span class="hljs-number">1</span>],<span class="hljs-attr">a</span>:r});b[r]=<span class="hljs-number">1</span>}b=<span class="hljs-built_in">Object</span>.keys(b).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">c,e</span>)</span>{<span class="hljs-keyword">var</span> g=e.split(<span class="hljs-regexp">/,\s/</span>).map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">l</span>)</span>{<span class="hljs-keyword">return</span> l.replace(<span class="hljs-string">"U+"</span>,<span class="hljs-string">"\\u"</span>).replace(<span class="hljs-string">"-"</span>,<span class="hljs-string">"-\\u"</span>)}).join(<span class="hljs-string">""</span>).toLowerCase();c[e]=<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">"["</span>+g+<span class="hljs-string">"]"</span>);<span class="hljs-keyword">return</span> c},{});<span class="hljs-keyword">var</span> t=<span class="hljs-built_in">document</span>.body?<span class="hljs-built_in">document</span>.body.textContent:<span class="hljs-string">""</span>,y=t?<span class="hljs-built_in">Object</span>.keys(b).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">c,e</span>)</span>{b[e].test(t)&amp;&amp;(c[e]=!<span class="hljs-number">0</span>);<span class="hljs-keyword">return</span> c},{}):<span class="hljs-built_in">Object</span>.keys(b).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">c,
-    e</span>)</span>{e <span class="hljs-keyword">in</span> k&amp;&amp;(c[e]=!<span class="hljs-number">0</span>);<span class="hljs-keyword">return</span> c},{});m=d.filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">c</span>)</span>{<span class="hljs-keyword">return</span> c.a <span class="hljs-keyword">in</span> y}).map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">c</span>)</span>{<span class="hljs-keyword">return</span> c.url});<span class="hljs-keyword">if</span>(!m.length)<span class="hljs-keyword">return</span> u();<span class="hljs-keyword">var</span> v=<span class="hljs-built_in">document</span>.createDocumentFragment();m.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">c,e</span>)</span>{<span class="hljs-keyword">var</span> g=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"link"</span>);g.href=c;g.rel=<span class="hljs-string">"preload"</span>;g.as=<span class="hljs-string">"font"</span>;<span class="hljs-keyword">var</span> l=e+<span class="hljs-number">1</span>;performance.mark(<span class="hljs-string">"link-preload-start"</span>+l);g.onload=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-keyword">return</span> u(l)};g.setAttribute(<span class="hljs-string">"crossorigin"</span>,!<span class="hljs-number">0</span>);v.appendChild(g)});<span class="hljs-built_in">document</span>.head.appendChild(v)}k=<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>===k?{}:k;<span class="hljs-keyword">var</span> n=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"link"</span>);<span class="hljs-keyword">if</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a,
-    f</span>)</span>{<span class="hljs-keyword">if</span>(!a||!a.supports)<span class="hljs-keyword">return</span>!<span class="hljs-number">1</span>;<span class="hljs-keyword">try</span>{<span class="hljs-keyword">return</span> a.supports(f)}<span class="hljs-keyword">catch</span>(b){<span class="hljs-keyword">return</span>!<span class="hljs-number">1</span>}}(n.relList,<span class="hljs-string">"preload"</span>)){<span class="hljs-keyword">var</span> z=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a,f,b</span>)</span>{b=<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>===b?<span class="hljs-string">""</span>:b;performance.mark(<span class="hljs-string">"xhr-start"</span>+b);<span class="hljs-keyword">var</span> d=<span class="hljs-keyword">new</span> XMLHttpRequest;d.onreadystatechange=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-number">4</span>==d.readyState&amp;&amp;(<span class="hljs-number">200</span>==d.status?(f(d.responseText),performance.mark(<span class="hljs-string">"xhr-end"</span>+b),performance.measure(<span class="hljs-string">"xhr"</span>+b,<span class="hljs-string">"xhr-start"</span>+b,<span class="hljs-string">"xhr-end"</span>+b)):<span class="hljs-built_in">console</span>.error(<span class="hljs-string">"Error loading webfont: server responded with code %s at %s"</span>,d.status,a))};d.open(<span class="hljs-string">"GET"</span>,a);<span class="hljs-keyword">try</span>{d.send(<span class="hljs-literal">null</span>)}<span class="hljs-keyword">catch</span>(h){<span class="hljs-built_in">console</span>.error(h)}};
-    performance.mark(<span class="hljs-string">"agf-start"</span>);<span class="hljs-keyword">var</span> p;(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a,f</span>)</span>{z(a.href,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">b</span>)</span>{p=b;x(p)},<span class="hljs-string">"-"</span>+(<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>===f?<span class="hljs-string">"link"</span>:f))})({<span class="hljs-attr">href</span>:q},<span class="hljs-string">"js"</span>);<span class="hljs-keyword">var</span> m=[],w=<span class="hljs-number">0</span>,u=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a</span>)</span>{a&amp;&amp;(performance.mark(<span class="hljs-string">"link-preload-end"</span>+a),performance.measure(<span class="hljs-string">"link-preload"</span>,<span class="hljs-string">"link-preload-start"</span>+a,<span class="hljs-string">"link-preload-end"</span>+a));w++;w&gt;=m.length&amp;&amp;(a=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"style"</span>),a.innerHTML=p,<span class="hljs-built_in">document</span>.head.appendChild(a),performance.mark(<span class="hljs-string">"agf-end"</span>),performance.measure(<span class="hljs-string">"@lemuria/font"</span>,<span class="hljs-string">"agf-start"</span>,<span class="hljs-string">"agf-end"</span>))}}<span class="hljs-keyword">else</span> n.rel=<span class="hljs-string">"stylesheet"</span>,n.href=q,<span class="hljs-built_in">document</span>.head.appendChild(n)};}).call(<span class="hljs-keyword">this</span>);
+<pre id="c78401"><code class="xml hljs">&lt;head&gt;
+  &lt;link rel="dns-prefetch" href="//fonts.googleapis.com"&gt;
+  &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+  &lt;link rel="preload" href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight" as="fetch"&gt;
+  &lt;script&gt;
+    (function(){window["@lemuria/font"]=function(q,k){function x(a){for(var f=/url\((.+?)\).*?;\s+unicode-range: (.+?);/g,b={},d=[],h;h=f.exec(a);){var r=h[2];d.push({url:h[1],a:r});b[r]=1}b=Object.keys(b).reduce(function(c,e){var g=e.split(/,\s/).map(function(l){return l.replace("U+","\\u").replace("-","-\\u")}).join("").toLowerCase();c[e]=new RegExp("["+g+"]");return c},{});var t=document.body?document.body.textContent:"",y=t?Object.keys(b).reduce(function(c,e){b[e].test(t)&amp;&amp;(c[e]=!0);return c},{}):Object.keys(b).reduce(function(c,
+    e){e in k&amp;&amp;(c[e]=!0);return c},{});m=d.filter(function(c){return c.a in y}).map(function(c){return c.url});if(!m.length)return u();var v=document.createDocumentFragment();m.forEach(function(c,e){var g=document.createElement("link");g.href=c;g.rel="preload";g.as="font";var l=e+1;performance.mark("link-preload-start"+l);g.onload=function(){return u(l)};g.setAttribute("crossorigin",!0);v.appendChild(g)});document.head.appendChild(v)}k=void 0===k?{}:k;var n=document.createElement("link");if(function(a,
+    f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.relList,"preload")){var z=function(a,f,b){b=void 0===b?"":b;performance.mark("xhr-start"+b);var d=new XMLHttpRequest;d.onreadystatechange=function(){4==d.readyState&amp;&amp;(200==d.status?(f(d.responseText),performance.mark("xhr-end"+b),performance.measure("xhr"+b,"xhr-start"+b,"xhr-end"+b)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};
+    performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&amp;&amp;(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w&gt;=m.length&amp;&amp;(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)};}).call(this);
 
-    <span class="hljs-built_in">window</span>[<span class="hljs-string">'@lemuria/font'</span>]
-      (<span class="hljs-string">'https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'</span>)
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+    window['@lemuria/font']
+      ('https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight')
+  &lt;/script&gt;
+&lt;/head&gt;</code></pre>
 
 <p>
   I've left plenty of performance markers, but there's a version that doesn't have them. What does the resulting timeline look like? Have we solved the problem of throttling fonts' reflows?
@@ -898,7 +899,7 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
   </div></div></div>
   <div id="fig-advanced-loading" class="container-fluid position-relative mb-3 p-3 rounded"
     style="overflow: hidden;">
-    <div class=" Parallax" data-loading style="z-index: -1;" id="c27532"></div>
+    <div class=" Parallax" data-loading style="z-index: -1;" id="c19251"></div>
     <div style="z-index: -1;" class="Parallax"></div>
     <noscript>
       <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -929,7 +930,7 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c88891"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c11465"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -966,7 +967,7 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c97934"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c18666"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -990,50 +991,50 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
   Essentially all I've done is added an external stylesheet dynamically, but throttled it server-side with a middleware function. Because the page continued to render, it's safe to say that adding a link with JS in the head will not block the main thread.
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/throttle.css"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"style"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-keyword">const</span> link = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'link'</span>)
-    link.href = <span class="hljs-string">'/throttle.css'</span>
-    link.rel = <span class="hljs-string">'stylesheet'</span>
-    performance.mark(<span class="hljs-string">'add-stylesheet'</span>)
-    <span class="hljs-built_in">document</span>.head.appendChild(link)
-    link.onload = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-      performance.measure(<span class="hljs-string">'stylesheet-onload'</span>, <span class="hljs-string">'add-stylesheet'</span>);
+<pre id="c66833"><code class="xml hljs">&lt;head&gt;
+&lt;link rel="preload" href="/throttle.css" as="style"&gt;
+  &lt;script&gt;
+    const link = document.createElement('link')
+    link.href = '/throttle.css'
+    link.rel = 'stylesheet'
+    performance.mark('add-stylesheet')
+    document.head.appendChild(link)
+    link.onload = () =&gt; {
+      performance.measure('stylesheet-onload', 'add-stylesheet');
     }
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+  &lt;/script&gt;
+&lt;/head&gt;</code></pre>
 
-<pre><code class="js hljs"><span class="hljs-comment">// Koa middleware</span>
-<span class="hljs-keyword">async</span> throttle(ctx, next) {
-  <span class="hljs-keyword">if</span> (ctx.path == <span class="hljs-string">'/throttle.css'</span>) {
-    <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">r</span> =&gt;</span> setTimeout(r, <span class="hljs-number">500</span>))
-    ctx.type = <span class="hljs-string">'text/css'</span>
-    ctx.body = <span class="hljs-string">''</span>
+<pre id="c25081"><code class="javascript hljs">// Koa middleware
+async throttle(ctx, next) {
+  if (ctx.path == '/throttle.css') {
+    await new Promise(r =&gt; setTimeout(r, 500))
+    ctx.type = 'text/css'
+    ctx.body = ''
   }
-  <span class="hljs-keyword">await</span> next()
+  await next()
 }</code></pre>
 
 <p>
   So finally, let me show a case with an external stylesheet, and with unicode-range. The unicode-range can be looked up in the Google's servers response, but I'm quite sure they are pretty static so you wouldn't have to do it often (but keep an eye out for them).
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span> <span class="hljs-attr">crossorigin</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"fetch"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-comment">// @lemuria/font source</span>
-    <span class="hljs-keyword">var</span> range = <span class="hljs-string">'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, '</span> +
-                <span class="hljs-string">'U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD'</span>
-    <span class="hljs-built_in">window</span>[<span class="hljs-string">'@lemuria/font'</span>]
-      (<span class="hljs-string">'https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'</span>, {
-        [range]: <span class="hljs-literal">true</span>, <span class="hljs-comment">// latin range</span>
+<pre id="c27532"><code class="xml hljs">&lt;head&gt;
+  &lt;link rel="preload" crossorigin href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight" as="fetch"&gt;
+  &lt;script&gt;
+    // @lemuria/font source
+    var range = 'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, ' +
+                'U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD'
+    window['@lemuria/font']
+      ('https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight', {
+        [range]: true, // latin range
       })
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+  &lt;/script&gt;
+&lt;/head&gt;</code></pre>
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c70819"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c85787"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1064,10 +1065,10 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
   Cool, I think we've optimised as much as possible out of <em>Google Fonts</em>. The final version enables to insert the stylesheet before the initial layout, and also downloads fonts in parallel to the main thread which is busy rendering. This is only possible if there are render blocking resources which will postpone the parsing for some time long enough for the web font stylesheet preload to complete. In case there are none, I've tried the following trick:
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"data:text/css;charset=utf-8,"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+<pre id="c72096"><code class="xml hljs">&lt;head&gt;
+  &lt;!-- ... --&gt;
+  &lt;link href="data:text/css;charset=utf-8," rel="stylesheet"&gt;
+&lt;/head&gt;</code></pre>
 
 <p>
   In words, I added a data-url link in hope that the browser will pause to download it which will give the XHR callback a chance to fire (it <a
@@ -1090,7 +1091,7 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
 <h4 id="1-async-loading" class="text-center">1) Async Loading</h4>
 <hr>
 
-<div class="position-relative float-md-right pl-3 pb-3" id="c72096">
+<div class="position-relative float-md-right pl-3 pb-3" id="c35245">
   <img alt="async google font animation"
     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io class="img-fluid" data-src="best-google-font/graphics/async-google-font.png">
   <noscript>
@@ -1114,7 +1115,7 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
   Although async loading better than sync one, it's still not perfect, because we still have multiple reflows due to independent font loading. I propose a solution where an Ajax request is made to fetch the stylesheet, extract urls to fonts, preload them, and once they are all ready, embed the stylesheet into DOM.
 </p>
 
-<div class="position-relative float-md-left pr-3 pb-3" id="c52507">
+<div class="position-relative float-md-left pr-3 pb-3" id="c83476">
   <img alt="advanced google font animation"
     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io class="img-fluid"
     data-src="best-google-font/graphics/advanced-google-font.png">
@@ -1147,7 +1148,7 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
 <p>
   <a
     title="Loads A Web Font Stylesheet (e.g., Google Fonts) Without Render Blocking And Multiple Layout Updates." class="NPMBadge" href="https://npmjs.com/package/@lemuria/font">
-    <span class="a">@Lemuria/font</span><span class="b">1.0.4</span></a> package is available from NPM, and exports functions that could be added to a server-side rendered webpage. The source code of the function for manual injection can be copied from <a href="https://github.com/kumarikandam/font">Github</a>. The check for <span class="tm">preload</span> support is done the following way, <a target="_blank" style="color: #e33a2c !important; text-decoration: underline;"
+    <span class="a">@Lemuria/font</span><span class="b">1.0.4</span></a> package is available from NPM, and exports functions that could be added to a server-side rendered webpage. The source code of the function for manual injection can be copied from <a href="https://github.com/kumarikandam/font">Github</a>. The check for <span class="tm">preload</span> support is done the following way, <a target="_blank" rel="noopener" style="color: #e33a2c !important; text-decoration: underline;"
    href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/">
    <img style="max-height:1em; margin-right:-0.2em;vertical-align: top;
         margin-top: .2em;" alt="S"
@@ -1159,39 +1160,39 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
    </noscript>uggested by preload</a> contributor to Chrome:
 </p>
 
-<pre><code class="js hljs"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">DOMTokenListSupports</span>(<span class="hljs-params">tokenList, token</span>) </span>{
-  <span class="hljs-keyword">if</span> (!tokenList || !tokenList.supports) {
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
-  } <span class="hljs-keyword">try</span> { <span class="hljs-keyword">return</span> tokenList.supports(token) } <span class="hljs-keyword">catch</span> (e) {
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> }
+<pre id="c52507"><code class="javascript hljs">function DOMTokenListSupports(tokenList, token) {
+  if (!tokenList || !tokenList.supports) {
+    return false
+  } try { return tokenList.supports(token) } catch (e) {
+    return false }
 }
-<span class="hljs-keyword">const</span> link = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'link'</span>)
-<span class="hljs-keyword">const</span> linkSupportsPreload = DOMTokenListSupports(link.relList, <span class="hljs-string">'preload'</span>)</code></pre>
+const link = document.createElement('link')
+const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code></pre>
 
 <p>
   Finally, the best possible course of action is to preload fonts with a preload link without any scripting. However, that's a different context entirely since this article focuses specifically on <em>Google Fonts</em> optimisation. Their servers will return different urls for different browsers, therefore we can't just copy and paste them in the preload link, additionally their fonts evolve and change versions. The advanced google font loading solution is the simplest scripting solution to kicking off font preload as soon as possible, and eliminate render blocks. Moreover, I was asking myself, does the browser know internally the unicode range of the page even before body is available to JS? The last experiment was to embed the stylesheet manually with a <span class="tm">&lt;style&gt;/* contents of google font stylesheet */&lt;/style&gt;</span> onto the page and see its performance. There are no external resources and the page load should proceed seamlessly from parsing to layout.
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"dns-prefetch"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//fonts.googleapis.com"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preconnect"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.gstatic.com"</span> <span class="hljs-attr">crossorigin</span>&gt;</span>
+<pre id="c56385"><code class="xml hljs">&lt;head&gt;
+  &lt;link rel="dns-prefetch" href="//fonts.googleapis.com"&gt;
+  &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
-    <span class="hljs-comment">/* latin-ext */</span>
-    @<span class="hljs-keyword">font-face</span> {
-      <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Gentium Basic'</span>;
-      <span class="hljs-attribute">font-style</span>: italic;
-      <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-      <span class="hljs-attribute">font-display</span>: swap;
-      <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Gentium Basic Italic'</span>), <span class="hljs-built_in">local</span>(<span class="hljs-string">'GentiumBasic-Italic'</span>), <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5hBo7QoCBZCxP.woff2) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
-      <span class="hljs-attribute">unicode-range</span>: U+<span class="hljs-number">0100</span>-<span class="hljs-number">024</span>F, U+<span class="hljs-number">0259</span>, U+<span class="hljs-number">1</span>E00-<span class="hljs-number">1</span>EFF, U+<span class="hljs-number">2020</span>, U+<span class="hljs-number">20</span>A0-<span class="hljs-number">20</span>AB, U+<span class="hljs-number">20</span>AD-<span class="hljs-number">20</span>CF, U+<span class="hljs-number">2113</span>, U+<span class="hljs-number">2</span>C60-<span class="hljs-number">2</span>C7F, U+A720-A7FF;
+  &lt;style&gt;
+    /* latin-ext */
+    @font-face {
+      font-family: 'Gentium Basic';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5hBo7QoCBZCxP.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
     }
-    <span class="hljs-comment">/* etc */</span>
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+    /* etc */
+&lt;/style&gt;</code></pre>
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c70368"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c53862"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1228,50 +1229,50 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
   When marking up a page with strong branded fonts, we don't want users to perceive any font swap, at least not for the first thing they see on a page. The resources required for this first thing are said to lay within the critical path. To achieve instant display of a font, it needs to be added to the page in form of a <span class="tm">data:application/font</span>-encoded base64 string. <em>Google Fonts</em> are not capable of that, therefore it's a completely separate solution, but Google will help us a bit. For example, I want to display the heading "<span class="TM">Art Deco™: The <em>Node.JS</em> Development Company In London</span>" with the <strong>Limelight</strong> font, therefore I only need these letters to be present. So I call Google to get the font:
 </p>
 
-<pre><code class="console hljs">chrome:~$ https://fonts.googleapis.com/css?family=Limelight&amp;text= \
-<span class="hljs-meta">&gt;</span><span class="bash">  Art Deco™: The Node.JS Development Company In London</span></code></pre>
+<pre id="c86907"><code class="shell hljs">chrome:~$ https://fonts.googleapis.com/css?family=Limelight&amp;text= \
+&gt;  Art Deco™: The Node.JS Development Company In London</code></pre>
 
-<pre><code class="css hljs"><span class="hljs-comment">/* the response */</span>
-@<span class="hljs-keyword">font-face</span> {
-  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Limelight'</span>;
-  <span class="hljs-attribute">font-style</span>: normal;
-  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-  <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Limelight'</span>),
-       <span class="hljs-built_in">url</span>(https://fonts.gstatic.com/l/font?kit=XLYkIZL7aopJVbZJHDuYOONArnccUFlCcINMXTbYP4QQRwNnyh7l5gk0xNGO3Z9C2lt3&amp;skey=5080ff57360a6ef&amp;v=v10)
-       <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
+<pre id="c95958"><code class="css hljs">/* the response */
+@font-face {
+  font-family: 'Limelight';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Limelight'),
+       url(https://fonts.gstatic.com/l/font?kit=XLYkIZL7aopJVbZJHDuYOONArnccUFlCcINMXTbYP4QQRwNnyh7l5gk0xNGO3Z9C2lt3&amp;skey=5080ff57360a6ef&amp;v=v10)
+       format('woff2');
 }</code></pre>
 
 <p>
   I grab the link and download it with Node.JS. It will target only <span class="tm">woff2</span> version because of my user-agent, however I'm not bothered to increase the page size by embedding a <span class="tm">woff</span> font also (for IE).
 </p>
 
-<pre><code class="js hljs"><span class="hljs-keyword">const</span> format = <span class="hljs-string">'woff2'</span>
-<span class="hljs-keyword">const</span> body = <span class="hljs-keyword">await</span> aqt(link, {
-  <span class="hljs-attr">binary</span>: <span class="hljs-literal">true</span>,
+<pre id="c16379"><code class="javascript hljs">const format = 'woff2'
+const body = await aqt(link, {
+  binary: true,
 })
-<span class="hljs-keyword">const</span> base = body.toString(<span class="hljs-string">'base64'</span>)
-<span class="hljs-keyword">const</span> data = <span class="hljs-string">`data:application/font-<span class="hljs-subst">${format}</span>;base64,<span class="hljs-subst">${base}</span>`</span></code></pre>
+const base = body.toString('base64')
+const data = `data:application/font-${format};base64,${base}`</code></pre>
 
 <p>
   After the data string is constructed, I can upgrade the stylesheet to include this string instead of the url.
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
-    @<span class="hljs-keyword">font-face</span> {
-      <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Limelight'</span>;
-      <span class="hljs-attribute">font-style</span>: normal;
-      <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">400</span>;
-      <span class="hljs-attribute">font-display</span>: <span class="hljs-string">'block'</span>;
-      <span class="hljs-attribute">src</span>: <span class="hljs-built_in">local</span>(<span class="hljs-string">'Limelight'</span>),
-           <span class="hljs-built_in">url</span>(<span class="hljs-string">'data:application/font-woff2;base64,d09GMgABAAAAAAmYAAwAAAAAEAAAAAlKAAEA...='</span>)
-           <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
+<pre id="c82499"><code class="xml hljs">&lt;head&gt;
+  &lt;style&gt;
+    @font-face {
+      font-family: 'Limelight';
+      font-style: normal;
+      font-weight: 400;
+      font-display: 'block';
+      src: local('Limelight'),
+           url('data:application/font-woff2;base64,d09GMgABAAAAAAmYAAwAAAAAEAAAAAlKAAEA...=')
+           format('woff2');
     }
-    <span class="hljs-selector-tag">h1</span> {
-      <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Limelight'</span>;
+    h1 {
+      font-family: 'Limelight';
     }
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
 
 <p>
   If I refresh the page, depending on the <span class="tm">font-display</span>, I will either witness a FOUT, or a <abbr title="Flash of Invisible Text">FOIT</abbr>. But if I've injected the font into the .html document, shouldn't this not be the case? The problem is that even though the font was embedded with a <span class="tm">data</span> url, it too has to load via the network, as seen in the performance graph below.
@@ -1280,7 +1281,7 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
 </div></div></div>
 <div id="fig-data-url" class="container-fluid position-relative mb-3 p-3 rounded"
   style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c73556"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c31604"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1305,41 +1306,41 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
   This result is consistent with the previous experiment, where I've shown that fonts, even declared in a <span class="tm">style</span> tag and not in an external stylesheet, begin to download only when it comes to first <span style="background:#a66eeb;">Recalculate styles</span> job (misleading called <em>RE</em>calculate, it's actually calculate). Here, after the font's download is finished, it forces a reflow and blocks the page for 100ms. It's really not good enough for an advanced optimisation. I'll apply the preload link on the font encoded with into <span class="tm">data:</span> string to solve this problem. I'll use the <span class="tm">onload</span> attribute to get reference to the base64-encoded data so that I don't have to declare it twice (first in the preload link, and second time in the style).
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span>
-    <span class="hljs-attr">href</span>=<span class="hljs-string">"data:application/font-woff2;base64,d09GMgABAAAAAAmYAAwAAAAAEAAAAAlKAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA..."</span>
-    <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"font"</span>
-    <span class="hljs-attr">onload</span>=<span class="hljs-string">"performance.mark('a');window._fontLoaded(this);
-      setTimeout(() =&gt; performance.measure('data font', 'a'), 100)"</span>&gt;</span>
+<pre id="c84504"><code class="xml hljs">&lt;head&gt;
+  &lt;link
+    href="data:application/font-woff2;base64,d09GMgABAAAAAAmYAAwAAAAAEAAAAAlKAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA..."
+    rel="preload" as="font"
+    onload="performance.mark('a');window._fontLoaded(this);
+      setTimeout(() =&gt; performance.measure('data font', 'a'), 100)"&gt;
 
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-    <span class="hljs-built_in">window</span>._fontLoaded = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">linkEl</span>) </span>{
-      <span class="hljs-keyword">var</span> data = linkEl.href
-      <span class="hljs-keyword">var</span> s = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'style'</span>)
-      s.innerText = <span class="hljs-string">"@font-face {  font-family: 'Limelight';  font-style: normal;  font-weight: 400;  src: local('Limelight'), url('_URL') format('woff2');}h1 { font-family: 'Limelight' }"</span>.replace(<span class="hljs-string">'_URL'</span>, data)
-      <span class="hljs-built_in">document</span>.head.appendChild(s)
+  &lt;script&gt;
+    window._fontLoaded = function(linkEl) {
+      var data = linkEl.href
+      var s = document.createElement('style')
+      s.innerText = "@font-face {  font-family: 'Limelight';  font-style: normal;  font-weight: 400;  src: local('Limelight'), url('_URL') format('woff2');}h1 { font-family: 'Limelight' }".replace('_URL', data)
+      document.head.appendChild(s)
     }
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- a polyfill for when JS is disabled --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span>
-      <span class="hljs-attr">href</span>=<span class="hljs-string">"https://fonts.googleapis.com/css?family=Limelight&amp;amp;text=Art%20Deco%E2%84%A2%3A%20The%20Node.JS%20Development%20Company%20In%20London"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"><span class="hljs-selector-tag">h1</span> { <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'Limelight'</span> }</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+  &lt;/script&gt;
+  &lt;!-- a polyfill for when JS is disabled --&gt;
+  &lt;noscript&gt;
+    &lt;link
+      href="https://fonts.googleapis.com/css?family=Limelight&amp;amp;text=Art%20Deco%E2%84%A2%3A%20The%20Node.JS%20Development%20Company%20In%20London" rel="stylesheet"&gt;
+    &lt;style&gt;h1 { font-family: 'Limelight' }&lt;/style&gt;
+  &lt;/noscript&gt;
+&lt;/head&gt;</code></pre>
 
 <p>
   We <strong>must not</strong> set the <span class="tm">crossorigin</span> attribute on the link, as <em>Safari</em> will error on it, saying the host didn't provide a CORS header. In case the <strong>preload</strong> <em>rel</em> is not supported, the polyfill can be used, which just calls the <span class="tm">onload</span> method. The <span class="tm">Symbol.iterator</span> polyfill inserted by Closure Compiler (because I did <span class="tm">[...document.head.querySelectorAll('[rel=&quot;preload&quot;][onload]')]</span>) is a bit long but I can't be bothered to do something like <span class="tm">[].forEach.call</span> or whatever other way there is.
 </p>
 
-<pre><code class="html hljs"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-  (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-keyword">var</span> a=c,g=<span class="hljs-number">0</span>;<span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-keyword">return</span> g&lt;a.length?{<span class="hljs-attr">done</span>:!<span class="hljs-number">1</span>,<span class="hljs-attr">value</span>:a[g++]}:{<span class="hljs-attr">done</span>:!<span class="hljs-number">0</span>}}}<span class="hljs-keyword">var</span> d;<span class="hljs-keyword">var</span> e=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"link"</span>).relList;<span class="hljs-keyword">if</span>(e&amp;&amp;e.supports)<span class="hljs-keyword">try</span>{d=e.supports(<span class="hljs-string">"preload"</span>)}<span class="hljs-keyword">catch</span>(a){d=!<span class="hljs-number">1</span>}<span class="hljs-keyword">else</span> d=!<span class="hljs-number">1</span>;<span class="hljs-keyword">if</span>(!d){<span class="hljs-keyword">var</span> f=<span class="hljs-built_in">document</span>.head.querySelectorAll(<span class="hljs-string">'[rel="preload"][onload]'</span>),h;
-  <span class="hljs-keyword">if</span>(f <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Array</span>)h=f;<span class="hljs-keyword">else</span>{<span class="hljs-keyword">var</span> k,c=f,l=<span class="hljs-string">"undefined"</span>!=<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Symbol</span>&amp;&amp;<span class="hljs-built_in">Symbol</span>.iterator&amp;&amp;c[<span class="hljs-built_in">Symbol</span>.iterator];k=l?l.call(c):{<span class="hljs-attr">next</span>:b()};<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a</span>)</span>{<span class="hljs-keyword">if</span>(a.onload)a.onload(a)})};}).call(<span class="hljs-keyword">this</span>);
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre id="c59284"><code class="xml hljs">&lt;script&gt;
+  (function(){function b(){var a=c,g=0;return function(){return g&lt;a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&amp;&amp;e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;
+  if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&amp;&amp;Symbol.iterator&amp;&amp;c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);
+&lt;/script&gt;</code></pre>
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c78401"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c73311"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1374,7 +1375,7 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c66833"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c84520"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1401,7 +1402,7 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c25081"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c52573"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1456,7 +1457,7 @@ startPreload({ <span class="hljs-attr">href</span>: FONT }, <span class="hljs-st
     <div style="position:relative;">
       <div class="container-fluid p-0 position-absolute"
         style="height: 50px; top: 0px; left: 0px; overflow: hidden;">
-        <div class=" Parallax" data-loading id="c95958"></div>
+        <div class=" Parallax" data-loading id="c73472"></div>
         <div class="Parallax"></div>
         <noscript><div class=" Parallax" style="background-image: url(/img/tile.jpg);"></div></noscript>
       </div>
