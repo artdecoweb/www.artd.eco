@@ -6,10 +6,9 @@ import makeClassGetter from './__mcg'
 const renameMaps = { 'styles/Adonais.css': __renameMap0,
   'styles/Logo.css': __renameMap1 }
 __initBottom()
-import { Component, render, h } from 'preact'
-import { makeIo, init, start } from './__competent-lib'
+import { makeIo, init, startPlain } from './__competent-lib'
 import Logo from '../components/logo.jsx'
-import Parallax from '../../node_modules/splendid/src/components/parallax.jsx'
+import Parallax from 'splendid/build/components/parallax'
 import Menu from '../components/menu.jsx'
 import Adonais from '../components/adonais.jsx'
 
@@ -40,8 +39,6 @@ const meta = [{
   props: {
     'background-image': '/img/code2.gif',
     speedy: '0.5',
-    'background-repeat': 'repeat-y',
-    'z-index': '-1',
   },
 },
 {
@@ -53,7 +50,6 @@ const meta = [{
   id: 'c80',
   props: {
     'background-image': '/img/seamless.jpg',
-    'z-index': '-1',
     speedy: '0',
     speedx: '-0.5',
   },
@@ -72,7 +68,7 @@ meta.forEach(({ key, id, props = {}, children = [] }) => {
     return makeClassGetter(renameMaps[stylesheet])
   }, addFile() {} }
   el.render = () => {
-    start(Comp, el, parent, props, children, { render, Component, h })
+    startPlain(Comp, el, parent, props, children)
   }
   el.render.meta = { key, id }
   io.observe(el)

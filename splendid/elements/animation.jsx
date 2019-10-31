@@ -19,7 +19,7 @@ export default async function Animation({ splendid, path, src, alt, class: cl,
     await splendid.addFile('/js/svg-anim.js.map')
     // snap min
     splendid.preload('node_modules://snapsvg/dist/snap.svg-min.js', 'script')
-    splendid.addExtern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
+    splendid.extern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
   } else {
     // svg-anim
     splendid.addScript('js/svg-anim-src.js', true, {}, true)

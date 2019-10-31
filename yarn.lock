@@ -126,10 +126,10 @@
   resolved "https://registry.yarnpkg.com/@zoroaster/mask/-/mask-2.3.0.tgz#57d169417e09e481efafccbffdd93cef919ec5e6"
   integrity sha512-fufal06pS/SYhOKHCmoFQ+PjhQwsCwMr2h0D2xeiVaXstaWHJVEiLg4+BU/KCmOOzLXLKikf81ca4zFXip7ScQ==
 
-alamode@^3.0.0, alamode@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.0.1.tgz#a51113deb629e0ac177b072c0b3d58475e343f57"
-  integrity sha512-BXOkrmmR1Q8/Fa8z5PE7jUKQJQJ6JPGzvhkMvyeHQ28kG5jCGUjTVgR8WsIqyczEjH5iWy3v4utwDfWwXr44sg==
+alamode@^3.0.0, alamode@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.1.0.tgz#d1e9a4bc2b7d9ccd7fd8d5aaa57e9b10153faa52"
+  integrity sha512-fHqA846xzRHRBX/Zq4weoGR6Jd1mPgSGrOiWPvOvcCfjFf8+VIK6lsIQbbUe1Jl/eX2zFyRimkg7ed84OAuvcw==
 
 bootstrap@^4.3.1:
   version "4.3.1"
@@ -268,10 +268,10 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.11.0.tgz#85e3efc13a8f3fd5de3bbcdfe9cbf74d2e4a7acb"
-  integrity sha512-F6WDYHssKnv1lyJpLqBV5/J115tumhTaab8KpQ3N5YnQDSffCsxk3qjLid/9OYR6BvTbrZ53ZYUeDlvhK8adxQ==
+splendid@^1.11.6:
+  version "1.11.6"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.11.6.tgz#b3505ef175502babd9dd9bd8f9299eb380109144"
+  integrity sha512-CVDV8IRI+ggjBx0qW+04Wy3qQYcX1PVzGPnPHfi24szJE3xEcY9z9OqwTb8VCh7jI+tb18+ESmFLx4qqlK5oMA==
   dependencies:
     "@depack/depack" "^2.1.1"
     "@externs/preact" "^1.2.6"
@@ -282,7 +282,7 @@ splendid@^1.11.0:
     "@lemuria/font" "^1.0.4"
     "@lemuria/load-scripts" "^1.2.0"
     "@lemuria/popup" "^1.1.1"
-    alamode "^3.0.1"
+    alamode "^3.1.0"
     bootstrap "^4.3.1"
     dropcss "^1.0.15"
     highlight.js "9.15.10"

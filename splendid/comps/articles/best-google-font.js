@@ -3,10 +3,9 @@ import '../../js/load-background-img'
 import makeClassGetter from '../__mcg'
 const renameMaps = {  }
 __initBottom()
-import { Component, render, h } from 'preact'
-import { makeIo, init, start } from '../__competent-lib'
-import Highlightjs from '../../../node_modules/splendid/src/components/highlightjs.jsx'
-import Parallax from '../../../node_modules/splendid/src/components/parallax.jsx'
+import { makeIo, init, startPlain } from '../__competent-lib'
+import Highlightjs from 'splendid/build/components/highlightjs'
+import Parallax from 'splendid/build/components/parallax'
 import Animation from '../../components/animation.jsx'
 import Tip from '../../components/tip.jsx'
 
@@ -79,27 +78,24 @@ const meta = [{
   key: 'parallax',
   id: 'c31227',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c19251',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c52573',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
@@ -120,18 +116,16 @@ const meta = [{
   key: 'parallax',
   id: 'c73311',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c31604',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
@@ -180,18 +174,16 @@ const meta = [{
   key: 'parallax',
   id: 'c53862',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c18666',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
@@ -205,18 +197,16 @@ const meta = [{
   key: 'parallax',
   id: 'c11465',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c73305',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
@@ -230,63 +220,56 @@ const meta = [{
   key: 'parallax',
   id: 'c57883',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c61157',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c26861',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c23546',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c66812',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c18601',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
   key: 'parallax',
   id: 'c84520',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
@@ -314,9 +297,8 @@ const meta = [{
   key: 'parallax',
   id: 'c83759',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
@@ -374,9 +356,8 @@ const meta = [{
   key: 'parallax',
   id: 'c85787',
   props: {
-    speedy: '-0.5',
-    'z-index': '-1',
     'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
@@ -411,7 +392,7 @@ meta.forEach(({ key, id, props = {}, children = [] }) => {
     return makeClassGetter(renameMaps[stylesheet])
   }, addFile() {} }
   el.render = () => {
-    start(Comp, el, parent, props, children, { render, Component, h })
+    startPlain(Comp, el, parent, props, children)
   }
   el.render.meta = { key, id }
   io.observe(el)

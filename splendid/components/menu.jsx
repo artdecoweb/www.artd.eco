@@ -43,7 +43,7 @@ export default class Menu {
     splendid.addFile('js/svg-anim.js.map')
     splendid.preload('node_modules://snapsvg/dist/snap.svg-min.js', 'script')
     splendid.preload('js/svg-anim.js', 'script')
-    splendid.addExtern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
+    splendid.extern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
     splendid.css('styles/Menu.css', '.Menu', {
       inline: true,
     })

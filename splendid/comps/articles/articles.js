@@ -3,9 +3,8 @@ import '../../js/load-background-img'
 import makeClassGetter from '../__mcg'
 const renameMaps = {  }
 __initBottom()
-import { Component, render, h } from 'preact'
-import { makeIo, init, start } from '../__competent-lib'
-import Parallax from '../../../node_modules/splendid/src/components/parallax.jsx'
+import { makeIo, init, startPlain } from '../__competent-lib'
+import Parallax from 'splendid/build/components/parallax'
 
 const __components = {
   'parallax': Parallax,
@@ -28,7 +27,7 @@ meta.forEach(({ key, id, props = {}, children = [] }) => {
     return makeClassGetter(renameMaps[stylesheet])
   }, addFile() {} }
   el.render = () => {
-    start(Comp, el, parent, props, children, { render, Component, h })
+    startPlain(Comp, el, parent, props, children)
   }
   el.render.meta = { key, id }
   io.observe(el)
