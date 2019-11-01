@@ -2,14 +2,12 @@
 import { loadStyle } from '@lemuria/load-scripts'
 
 class Adonais {
+  /**
+   * @param {Element} el
+   * @param {Element} parent
+   */
   constructor(el, parent) {
-    /**
-     * @type {Element}
-     */
     this.el = el
-    /**
-     * @type {Element}
-     */
     this.parent = parent
   }
   /**

@@ -1,0 +1,1 @@
+console.log('We\'re not hiring. Please close the console.')

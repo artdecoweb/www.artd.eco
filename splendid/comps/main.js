@@ -7,31 +7,27 @@ const renameMaps = { 'styles/Adonais.css': __renameMap0,
   'styles/Logo.css': __renameMap1 }
 __initBottom()
 import { makeIo, init, startPlain } from './__competent-lib'
-import Logo from '../components/logo.jsx'
+import Logo from '../components/logo.js'
+import Menu from '../components/menu.js'
 import Parallax from 'splendid/build/components/parallax'
-import Menu from '../components/menu.jsx'
-import Adonais from '../components/adonais.jsx'
+import Adonais from '../components/adonais.js'
 
 const __components = {
   'logo': Logo,
-  'parallax': Parallax,
   'menu': Menu,
+  'parallax': Parallax,
   'adonais': Adonais,
 }
 
 const io = makeIo()
 
-/** @type {!Array<!preact.PreactProps>} */
 const meta = [{
   key: 'logo',
   id: 'Logo',
 },
 {
-  key: 'parallax',
+  key: 'menu',
   id: 'c57253',
-  props: {
-    'background-image': '/img/bakst2.jpg',
-  },
 },
 {
   key: 'parallax',
@@ -42,8 +38,11 @@ const meta = [{
   },
 },
 {
-  key: 'menu',
+  key: 'parallax',
   id: 'c75046',
+  props: {
+    'background-image': '/img/bakst2.jpg',
+  },
 },
 {
   key: 'parallax',
@@ -57,19 +56,20 @@ const meta = [{
 {
   key: 'adonais',
   id: 'c9848',
-  props: {
-    class: 'position-relative mb-3 align-top',
-  },
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const { parent, el } = init(id, key)
   const Comp = __components[key]
+  const plain = true
+  const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id, plain })
+  let comp
   props.splendid = { export() {}, addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
   }, addFile() {} }
   el.render = () => {
-    startPlain(Comp, el, parent, props, children)
+    comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
+    return comp
   }
-  el.render.meta = { key, id }
+  el.render.meta = renderMeta
   io.observe(el)
 })

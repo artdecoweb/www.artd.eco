@@ -7,6 +7,8 @@ export default class Animation {
    */
   constructor(el) {
     this.el = el
+    /** @type {_snapsvgAnimator.SVGAnim} */
+    this.comp = null
   }
   /**
    * Non-preact component.
@@ -22,7 +24,7 @@ export default class Animation {
     const scripts = [
       path,
       dev ? '/snapsvg/dist/snap.svg.js' : '/snapsvg/dist/snap.svg-min.js',
-      ...(dev ? [] : ['/js/svg-anim.js']),
+      ...(dev ? [] : ['/@artdeco/snapsvg-animator/svg-anim.min.js']),
     ]
     loadScripts(scripts, (err, res) => {
       if (err) return callback(err)
@@ -34,13 +36,19 @@ export default class Animation {
       }
     })
   }
+  unrender() {
+    this.comp.stop()
+  }
   render({ json, width, height, align }) {
+    if (this.comp) {
+      this.comp.play()
+      return
+    }
     // this.el.removeChild(this.el.querySelector('noscript'))
     const img = this.el.querySelector('img')
 
-    /** @type {!_snapsvgAnimator.SVGAnim} */
-    const comp = new window['SVGAnim'](json, width, height)
-    const svg = /** @type {!SVGElement} */ (comp.s.node)
+    this.comp = new window['SVGAnim'](json, width, height)
+    const svg = /** @type {!SVGElement} */ (this.comp.s.node)
     svg.style.position = 'absolute'
     svg.style.top = 0
     if (align == 'right') svg.style.right = 0
@@ -63,4 +71,7 @@ export default class Animation {
 
 /**
  * @typedef {import('splendid/src/Splendid').default} Splendid
+ */
+/**
+ * @typedef {import('@artdeco/snapsvg-animator').SVGAnim} _snapsvgAnimator.SVGAnim
  */

@@ -1,3 +1,3 @@
-var aa={};w();var ba={parallax:B},ca=z();[{key:"parallax",id:"c9848",props:{"background-image":"/img/tile.jpg"}}].forEach(function(a){var c=a.key,b=a.id,d=void 0===a.props?{}:a.props,e=void 0===a.children?[]:a.children;a=y(b,c);var g=a.parent,f=a.a,h=ba[c];d.B={v:function(){},m:function(k){return x(aa[k])},o:function(){}};f.render=function(){A(h,f,g,d,e)};f.render.l={key:c,id:b};ca.observe(f)});
+var da={};x();var ea={parallax:C},fa=A();[{key:"parallax",id:"c9848",a:{"background-image":"/img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.a?{}:a.a,e=void 0===a.children?[]:a.children;a=z(c,b);var g=a.parent,f=a.i,h=ea[b],k={key:b,id:c,plain:!0},l;d.F={C:function(){},v:function(m){return y(da[m])},B:function(){}};f.j=function(){return l=B(k,h,l,f,g,d,e)};f.j.u=k;fa.observe(f)});
 
 //# sourceMappingURL=articles-articles.js.map

@@ -1,6 +1,5 @@
 /* eslint-env browser */
 import loadScripts from '@lemuria/load-scripts'
-// import { Component } from 'preact'
 
 export default class Menu {
   /**
@@ -8,9 +7,11 @@ export default class Menu {
    */
   constructor(el) {
     this.el = el
+    /** @type {_snapsvgAnimator.SVGAnim} */
+    this.comp = null
   }
   /**
-   *
+   * @suppress {checkTypes}
    */
   static get 'plain'() {
     return true
@@ -22,7 +23,7 @@ export default class Menu {
     loadScripts([
       'js/menu.json',
       'snapsvg/dist/snap.svg-min.js',
-      'js/svg-anim.js',
+      '@artdeco/snapsvg-animator/svg-anim.min.js',
     ], (err, res) => {
       if (err) return callback(err)
       try {
@@ -33,28 +34,12 @@ export default class Menu {
       }
     })
   }
-  /**
-   * @param {Object} props
-   * @param {Splendid} props.splendid
-   */
-  serverRender({ splendid }) {
-    splendid.export()
-    splendid.addFile('js/menu.json')
-    splendid.addFile('js/svg-anim.js.map')
-    splendid.preload('node_modules://snapsvg/dist/snap.svg-min.js', 'script')
-    splendid.preload('js/svg-anim.js', 'script')
-    splendid.extern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
-    splendid.css('styles/Menu.css', '.Menu', {
-      inline: true,
-    })
-
-    return (<div className="Menu position-relative">
-      <splendid-img
-        placeholder-width="1226"
-        placeholder-height="818" alt="menu" src="img/menu.svg" />
-    </div>)
+  unrender() {
+    this.comp.stop()
   }
+
   render({ json }) {
+    if (this.comp) return this.comp.play()
     const width = 1226
     const height = 818
 
@@ -62,8 +47,8 @@ export default class Menu {
     const img = this.el.querySelector('img')
 
     /** @type {!_snapsvgAnimator.SVGAnim} */
-    const comp = new window['SVGAnim'](json, width, height)
-    const svg = /** @type {!SVGElement} */ (comp.s.node)
+    this.comp = new window['SVGAnim'](json, width, height)
+    const svg = /** @type {!SVGElement} */ (this.comp.s.node)
     svg.style.position = 'absolute'
     svg.style.top = 0
     svg.style.right = 0
@@ -92,10 +77,10 @@ function assignLink(parent, selector, name, i = 0) {
   }
 }
 
-// export default function menu({ splendid }) {
-//   splendid.export()
-//   return (<div id="menu">Menu</div>)
-// }
 /**
  * @typedef {import('splendid/src/Splendid').default} Splendid
+ */
+
+/**
+ * @typedef {import('@artdeco/snapsvg-animator').SVGAnim} _snapsvgAnimator.SVGAnim
  */

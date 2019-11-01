@@ -20,10 +20,10 @@
   resolved "https://registry.yarnpkg.com/@artdeco/clean-stack/-/clean-stack-1.1.1.tgz#0a68b9a061b5076ebaf948c150ea26d09c1e753f"
   integrity sha512-q5lO3vGUo0WgkSqzgzjL0HQdA9t2HzQqZISuVuQWMh9xqLuiLFP/ZTsxFc8vpMl7mNpGk7Mm0OeyFQ+Evrp0Cw==
 
-"@artdeco/snapsvg-animator@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@artdeco/snapsvg-animator/-/snapsvg-animator-0.1.0.tgz#92b61220569e968c61aba23b8f7b9b345529cff4"
-  integrity sha512-XxHcIu1WNVjCSViLLGLBM3n3kAY3Sd5nXcpf5H48aKtdgHzJzJ5tDmV2n28valodCOooHJ0+zfCBLG2AfHw7Kw==
+"@artdeco/snapsvg-animator@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@artdeco/snapsvg-animator/-/snapsvg-animator-0.3.0.tgz#4217f0546ace3d60000c8f8f6cc5313af1cef95a"
+  integrity sha512-n9+4jrr0pUAmlPz6Vb3a9px9AtiIOV1YzjFYmJOEJfKXHa2IZ4efHz5vIgiIUwUHn/22sAD42oVL1NupySoDTg==
 
 "@depack/depack@^2.1.1":
   version "2.1.1"
@@ -212,10 +212,10 @@ good-listener@^1.2.2:
   dependencies:
     delegate "^3.1.2"
 
-highlight.js@9.15.10:
-  version "9.15.10"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.15.10.tgz#7b18ed75c90348c045eef9ed08ca1319a2219ad2"
-  integrity sha512-RoV7OkQm0T3os3Dd2VHLNMoaoDVx77Wygln3n9l5YV172XonWG6rgQD3XnF/BuFFZw9A0TJgmMSO8FEWQgvcXw==
+highlight.js@9.16.1:
+  version "9.16.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.16.1.tgz#827f49ca96eae006d8a2a0d5e3acd56041c26fc5"
+  integrity sha512-pyyiU56NR1XSm8M/l1QDKGGCA2n2GrcTxFahBo4v/2dH3gy4IiALczwhC9YJicyjoRh6JQWM+h3PvY1ZZ+D0+g==
 
 makepromise@^3.1.0:
   version "3.1.0"
@@ -268,10 +268,10 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.11.6:
-  version "1.11.6"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.11.6.tgz#b3505ef175502babd9dd9bd8f9299eb380109144"
-  integrity sha512-CVDV8IRI+ggjBx0qW+04Wy3qQYcX1PVzGPnPHfi24szJE3xEcY9z9OqwTb8VCh7jI+tb18+ESmFLx4qqlK5oMA==
+splendid@^1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.12.1.tgz#1ffa1db81d4485ca8eb4329391a5992deac81f42"
+  integrity sha512-DoWAqbbON4zt30+3E/67+Qh+iuH32/iSuy9KaXsh4TFnqIoWSbFslMj3QQmpdc1HG9FbfuS7mn74huN2vwWx+A==
   dependencies:
     "@depack/depack" "^2.1.1"
     "@externs/preact" "^1.2.6"
@@ -285,7 +285,7 @@ splendid@^1.11.6:
     alamode "^3.1.0"
     bootstrap "^4.3.1"
     dropcss "^1.0.15"
-    highlight.js "9.15.10"
+    highlight.js "9.16.1"
     preact "8.5.2"
     prismjs "1.17.1"
 

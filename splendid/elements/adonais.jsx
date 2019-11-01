@@ -88,6 +88,7 @@ const Letter = ({ file, letter, cl, top, left, children, class: className, href 
   </a>)
 }
 
+export const allowedProps = []
 
 // onMouseOver={() => {
 //   setHint(children)

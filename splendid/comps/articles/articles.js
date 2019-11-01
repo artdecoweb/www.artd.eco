@@ -12,7 +12,6 @@ const __components = {
 
 const io = makeIo()
 
-/** @type {!Array<!preact.PreactProps>} */
 const meta = [{
   key: 'parallax',
   id: 'c9848',
@@ -23,12 +22,16 @@ const meta = [{
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const { parent, el } = init(id, key)
   const Comp = __components[key]
+  const plain = true
+  const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id, plain })
+  let comp
   props.splendid = { export() {}, addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
   }, addFile() {} }
   el.render = () => {
-    startPlain(Comp, el, parent, props, children)
+    comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
+    return comp
   }
-  el.render.meta = { key, id }
+  el.render.meta = renderMeta
   io.observe(el)
 })

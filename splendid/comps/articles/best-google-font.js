@@ -6,8 +6,8 @@ __initBottom()
 import { makeIo, init, startPlain } from '../__competent-lib'
 import Highlightjs from 'splendid/build/components/highlightjs'
 import Parallax from 'splendid/build/components/parallax'
-import Animation from '../../components/animation.jsx'
-import Tip from '../../components/tip.jsx'
+import Animation from '../../components/animation.js'
+import Tip from '../../components/tip.js'
 
 const __components = {
   'highlightjs': Highlightjs,
@@ -18,7 +18,6 @@ const __components = {
 
 const io = makeIo()
 
-/** @type {!Array<!preact.PreactProps>} */
 const meta = [{
   key: 'highlightjs',
   id: 'c84504',
@@ -35,12 +34,11 @@ const meta = [{
 },
 {
   key: 'animation',
-  id: 'c53386',
+  id: 'c31227',
   props: {
-    path: 'best-google-font/animate/agf.json',
-    width: '550',
-    height: '400',
-    align: 'center',
+    path: 'best-google-font/animate/advanced-google-font.json',
+    width: '505',
+    height: '299',
   },
 },
 {
@@ -68,15 +66,15 @@ const meta = [{
   key: 'animation',
   id: 'c35245',
   props: {
-    path: 'best-google-font/animate/async-google-font.json',
-    width: '505',
-    height: '299',
-    align: 'right',
+    path: 'best-google-font/animate/agf.json',
+    width: '550',
+    height: '400',
+    align: 'center',
   },
 },
 {
   key: 'parallax',
-  id: 'c31227',
+  id: 'c53386',
   props: {
     'background-image': '/img/letters/background.png',
     speedy: '-0.5',
@@ -333,9 +331,10 @@ const meta = [{
   key: 'animation',
   id: 'c83476',
   props: {
-    path: 'best-google-font/animate/advanced-google-font.json',
+    path: 'best-google-font/animate/async-google-font.json',
     width: '505',
     height: '299',
+    align: 'right',
   },
 },
 {
@@ -388,12 +387,16 @@ const meta = [{
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const { parent, el } = init(id, key)
   const Comp = __components[key]
+  const plain = true
+  const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id, plain })
+  let comp
   props.splendid = { export() {}, addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
   }, addFile() {} }
   el.render = () => {
-    startPlain(Comp, el, parent, props, children)
+    comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
+    return comp
   }
-  el.render.meta = { key, id }
+  el.render.meta = renderMeta
   io.observe(el)
 })

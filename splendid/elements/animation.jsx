@@ -15,16 +15,16 @@ export default async function Animation({ splendid, path, src, alt, class: cl,
 
   if (!dev) {
     // svg-anim
-    splendid.preload('/js/svg-anim.js', 'script')
-    await splendid.addFile('/js/svg-anim.js.map')
+    splendid.preload('node_modules://@artdeco/snapsvg-animator/svg-anim.min.js')
+    await splendid.addFile('node_modules://@artdeco/snapsvg-animator/svg-anim.min.js.map')
     // snap min
-    splendid.preload('node_modules://snapsvg/dist/snap.svg-min.js', 'script')
+    splendid.preload('node_modules://snapsvg/dist/snap.svg-min.js')
     splendid.extern('node_modules://@artdeco/snapsvg-animator/types/externs.js')
   } else {
     // svg-anim
     splendid.addScript('js/svg-anim-src.js', true, {}, true)
     // snap
-    splendid.preload('node_modules://snapsvg/dist/snap.svg.js', 'script')
+    splendid.preload('node_modules://snapsvg/dist/snap.svg.js')
   }
 
   const p = relative(
