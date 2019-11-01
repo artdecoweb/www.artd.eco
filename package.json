@@ -10,7 +10,6 @@
     "docs": "https-server docs -p 3000 -s",
     "splendid": "splendid -s",
     "splendid-dev": "splendid -s -e dev",
-    "svg": "depack-dev splendid/js/svg-anim-src.js -a -o splendid/js/svg-anim.js -i",
     "doc": "NODE_DEBUG=doc doc -o README.md"
   },
   "repository": {
