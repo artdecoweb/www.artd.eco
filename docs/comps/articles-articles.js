@@ -1,3 +1,3 @@
-var da={};x();var ea={parallax:C},fa=A();[{key:"parallax",id:"c9848",a:{"background-image":"/img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.a?{}:a.a,e=void 0===a.children?[]:a.children;a=z(c,b);var g=a.parent,f=a.i,h=ea[b],k={key:b,id:c,plain:!0},l;d.F={C:function(){},v:function(m){return y(da[m])},B:function(){}};f.j=function(){return l=B(k,h,l,f,g,d,e)};f.j.u=k;fa.observe(f)});
+var da={};x();var ea={parallax:C},fa=A();[{key:"parallax",id:"c9848",a:{"background-image":"/img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.a?{}:a.a,e=void 0===a.children?[]:a.children;a=z(c,b);var g=a.parent,f=a.i,h=ea[b],k={key:b,id:c,plain:!0},l;d.B={v:function(m){return y(da[m])}};f.j=function(){return l=B(k,h,l,f,g,d,e)};f.j.u=k;fa.observe(f)});
 
 //# sourceMappingURL=articles-articles.js.map

@@ -1,4 +1,5 @@
 import __initBottom from '../__init/bottom'
+import '../../../articles/best-google-font/script'
 import '../../js/load-background-img'
 import makeClassGetter from '../__mcg'
 const renameMaps = {  }
@@ -390,9 +391,9 @@ meta.forEach(({ key, id, props = {}, children = [] }) => {
   const plain = true
   const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id, plain })
   let comp
-  props.splendid = { export() {}, addCSS(stylesheet) {
+  props.splendid = { addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
-  }, addFile() {} }
+  } }
   el.render = () => {
     comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
     return comp

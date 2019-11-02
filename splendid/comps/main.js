@@ -63,9 +63,9 @@ meta.forEach(({ key, id, props = {}, children = [] }) => {
   const plain = true
   const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id, plain })
   let comp
-  props.splendid = { export() {}, addCSS(stylesheet) {
+  props.splendid = { addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
-  }, addFile() {} }
+  } }
   el.render = () => {
     comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
     return comp
