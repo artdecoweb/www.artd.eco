@@ -220,7 +220,7 @@ startPreload({ href: FONT }, 'js')
   <p>For a scary moment though, I thought that I might be giving wrong advice when saying to append a `link` tag dynamically into the head, and it will actually block the page from rendering. For example, on the graph above, there are some gaps in the timeline after the web font stylesheet is inserted, but before the external CSS is parsed, that could indicate that the page was render-blocked. However, it's not the case as shown below, and the reason for these gaps is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., here, XHR is completed quicker compared to the [previous case](#fig-advanced-loading), where it had to wait for the main thread to unlock since there were no gaps). Below is the proof.
 </p>
 
-<fig src="./dev-check.gif">
+<fig src="./graphics/dev-check.gif">
   Dynamic insertion of a link with JS does not block page render.
 </fig>
 

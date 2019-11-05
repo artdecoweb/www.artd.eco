@@ -1,90 +1,48 @@
 import __initBottom from '../__init/bottom'
-import '../../../articles/best-google-font/script'
 import '../../js/load-background-img'
 import makeClassGetter from '../__mcg'
 const renameMaps = {  }
 __initBottom()
 import { makeIo, init, startPlain } from '../__competent-lib'
+import Highlightjs from 'splendid/build/components/highlightjs'
 import Parallax from 'splendid/build/components/parallax'
 import Animation from '../../components/animation.js'
-import Highlightjs from 'splendid/build/components/highlightjs'
-import Tip from '../../components/tip.js'
 
 const __components = {
+  'highlightjs': Highlightjs,
   'parallax': Parallax,
   'animation': Animation,
-  'highlightjs': Highlightjs,
-  'tip': Tip,
 }
 
 const io = makeIo()
 
 const meta = [{
-  key: 'parallax',
-  id: 'c70819',
+  key: 'highlightjs',
+  id: 'c78401',
   props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
+    lang: 'xml,javascript,css',
   },
 },
 {
   key: 'parallax',
-  id: 'c56385',
+  id: 'c61157',
   props: {
     'background-image': '/img/tile.jpg',
   },
 },
 {
   key: 'animation',
-  id: 'c52507',
+  id: 'c57883',
   props: {
-    path: 'best-google-font/animate/agf.json',
-    width: '550',
-    height: '400',
-    align: 'center',
+    path: 'best-google-font-2/animate/async-google-font.json',
+    width: '505',
+    height: '299',
+    align: 'right',
   },
 },
 {
   key: 'parallax',
-  id: 'c27532',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c45018',
-  props: {
-    lang: 'xml,javascript',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c25081',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c78401',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c74268',
-  props: {
-    lang: 'xml',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c72096',
+  id: 'c59284',
   props: {
     'background-image': '/img/letters/background.png',
     speedy: '-0.5',
@@ -99,14 +57,14 @@ const meta = [{
 },
 {
   key: 'highlightjs',
-  id: 'c65987',
+  id: 'c45018',
   props: {
-    lang: 'xml,javascript',
+    lang: 'javascript',
   },
 },
 {
   key: 'parallax',
-  id: 'c70368',
+  id: 'c16379',
   props: {
     'background-image': '/img/letters/background.png',
     speedy: '-0.5',
@@ -114,7 +72,7 @@ const meta = [{
 },
 {
   key: 'parallax',
-  id: 'c73556',
+  id: 'c56385',
   props: {
     'background-image': '/img/letters/background.png',
     speedy: '-0.5',
@@ -122,24 +80,26 @@ const meta = [{
 },
 {
   key: 'parallax',
-  id: 'c66833',
+  id: 'c52507',
   props: {
     'background-image': '/img/letters/background.png',
     speedy: '-0.5',
   },
 },
 {
-  key: 'highlightjs',
-  id: 'c75046',
+  key: 'parallax',
+  id: 'c27532',
   props: {
-    lang: 'css',
+    'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
-  key: 'highlightjs',
-  id: 'c80',
+  key: 'parallax',
+  id: 'c25081',
   props: {
-    lang: 'css',
+    'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
@@ -151,29 +111,127 @@ const meta = [{
 },
 {
   key: 'highlightjs',
-  id: 'c84852',
+  id: 'c70819',
   props: {
-    lang: 'xml',
+    lang: 'css',
   },
 },
 {
   key: 'highlightjs',
-  id: 'c88891',
+  id: 'c65987',
+  props: {
+    lang: 'xml,javascript',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c70368',
+  props: {
+    lang: 'javascript',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c66833',
   props: {
     lang: 'xml,javascript',
   },
 },
 {
   key: 'parallax',
-  id: 'c97934',
+  id: 'c95958',
   props: {
     'background-image': '/img/letters/background.png',
     speedy: '-0.5',
   },
 },
 {
-  key: 'tip',
+  key: 'highlightjs',
+  id: 'c97934',
+  props: {
+    lang: 'shell',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c72096',
+  props: {
+    'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c84852',
+  props: {
+    lang: 'javascript',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c74268',
+  props: {
+    lang: 'javascript',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c86907',
+  props: {
+    'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c88891',
+  props: {
+    lang: 'xml,css',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c73556',
+  props: {
+    lang: 'xml,css',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c82499',
+  props: {
+    lang: 'javascript',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c75046',
+  props: {
+    lang: 'xml,javascript',
+  },
+},
+{
+  key: 'animation',
+  id: 'c84504',
+  props: {
+    path: 'best-google-font-2/animate/advanced-google-font.json',
+    width: '505',
+    height: '299',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c80',
+  props: {
+    lang: 'javascript',
+  },
+},
+{
+  key: 'highlightjs',
   id: 'c9848',
+  props: {
+    lang: 'javascript',
+  },
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const { parent, el } = init(id, key)

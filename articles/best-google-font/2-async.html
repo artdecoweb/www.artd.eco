@@ -55,7 +55,10 @@
 <fig src="./graphics/dev3.png" alt="Loading Google Font asynchronously with a script and preload tag." />
 
 <revision>
-  * The stylesheet is downloaded straight away and inserted before the initial render. There's no reflow due to stylesheet being inserted after first pain like previously, because the preload link allowed us to download the stylesheet much faster than just using JavaScript.
+  <li>
+    <img float="right" src="./gif/render.gif" alt="stylesheet before render animation" />
+    The stylesheet is downloaded straight away and inserted before the initial render. There's no reflow due to stylesheet being inserted after first pain like previously, because the preload link allowed us to download the stylesheet much faster than just using JavaScript.
+  </li>
   * The fonts arrive at the same time, and cause a single reflow only.
 </revision>
 
@@ -94,7 +97,10 @@
 <fig src="./graphics/dev4.png" alt="Loading google font asynchronously on slow connection causes reflow." />
 
 <revision style="transform: rotate3d(1,1,1,2deg);">
-  * The page starts rendering as soon as all HTML arrives, but the stylesheet starts to download even before that. Because the connection is slow, the stylesheet arrives during the time when the main thread is blocked by rendering (semi-opaque orange rectangle, light-purple line), so it has to wait for rendering to complete (purple line). When that happens, it's inserted into DOM and triggers a reflow.
+  <li>
+    <img pr-2 float="left" src="./gif/stylesheet.gif" alt="stylesheet is blocked by render" />
+    The page starts rendering as soon as all HTML arrives, but the stylesheet starts to download even before that. Because the connection is slow, the stylesheet arrives during the time when the main thread is blocked by rendering (semi-opaque orange rectangle, light-purple line), so it has to wait for rendering to complete (purple line). When that happens, it's inserted into DOM and triggers a reflow.
+  </li>
   * The first font arrives, triggers reflow.
   * The all other font arrive and trigger reflow and repaint.
 </revision>

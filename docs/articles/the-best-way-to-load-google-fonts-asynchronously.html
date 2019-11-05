@@ -5,9 +5,10 @@
     <meta content="https://artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html" property="og:url">
     <meta content="The Best Way To Load Google Fonts Asynchronously." property="og:title">
     <meta content="website" property="og:type">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta
-      content="This method will load Google Fonts in the most efficient manner asynchronously without blocking the main thread and minimising the number of reflows." name="description">
+      content="An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows." name="description">
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
@@ -19,28 +20,18 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&&(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight', {"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD":true})</script>
     
     <script>document.documentElement.classList.remove("no-js")</script>
-    <link rel="stylesheet" href="/styles/combined.css">
-    <link rel="preload" href="data:application/font-woff2;base64,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" as="font">
+    <link rel="stylesheet" href="/css/npm-badge.css">
+    <link rel="stylesheet" href="/css/Parallax.css">
+    <link rel="stylesheet" href="/css/img.css">
+    <link rel="stylesheet" href="/styles/articles.css">
     <link rel="preload" href="/highlight.js/styles/default.css" as="style">
     <link rel="preload" href="/@artdeco/snapsvg-animator/svg-anim.min.js" as="script">
     <link rel="preload" href="/snapsvg/dist/snap.svg-min.js" as="script">
-    <link rel="preload" href="/comps/articles-best-google-font.js" crossorigin as="script">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="preload" href="/splendid/comps/articles/best-google-font-2.js" crossorigin as="script">
     <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
     <style>
-      .no-js [data-io], .no-js [data-loading], .no-js .ImageHolder { display: none!important }
-      .hljs{display:block;overflow-x:auto;padding:.5em;background:#f0f0f0;color:#444}#Advantages{padding:20%}@media (min-width:576px){#Advantages{padding:20%}}@media (min-width:768px){#Advantages{padding:10% 20%}}@media (min-width:1200px){#Advantages{padding:5% 20%}}.TM2{background:-webkit-linear-gradient(#4d97e4,#5971c7)!important;-webkit-background-clip:text!important}.TM3{border-bottom:1px solid #5971c7;text-decoration:none!important}
-      h1 { font-family: 'Limelight',cursive; }
-      
-      @font-face {
-        font-family: 'Limelight';
-        font-style: normal;
-        font-weight: 400;
-        src: local('Limelight'), url('data:application/font-woff2;base64,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') format('woff2');
-      }
-      details[open] summary pre {
-          display: none;
-        }
-      .Revision{background:#faf5ce;padding-top:1rem;padding-bottom:.5rem;position:relative;-webkit-transform:rotate3d(1,1,1,-2deg);-ms-transform:rotate3d(1,1,1,-2deg);-o-transform:rotate3d(1,1,1,-2deg);transform:rotate3d(1,1,1,-2deg);-webkit-transition:all 100ms;-o-transition:all 100ms;transition:all 100ms}.Revision:hover{-webkit-transform:none!important;-ms-transform:none!important;-o-transform:none!important;transform:none!important}.Revision ol{list-style:none;counter-reset:my-awesome-counter;padding-right:2.3rem;padding-left:1.5rem;-webkit-background-size:100% 1.5rem;-o-background-size:100% 1.5rem;background-size:100% 1.5rem;margin-bottom:0;padding-bottom:1px}.Revision ol li{counter-increment:my-awesome-counter}.Revision ol li::before{content:"0" counter(my-awesome-counter);font-weight:bold;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;padding:.2rem;margin-right:.2rem;color:#dc3545;font-family:cursive}
+      .no-js [data-loading], .no-js [data-io], .no-js .ImageHolder { display: none!important }
       .TM1{font-family:'Limelight',cursive;background:-webkit-linear-gradient(#e4bd4d,#c78259);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
       @media (max-width: 430px) {
             a.lead {
@@ -53,8 +44,7 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
     </noscript>
     <script defer src="/js/polyfill/intersection-observer.js"></script>
     <script defer src="/js/images.js"></script>
-    <script crossorigin data-src="/comps/common.js"></script>
-    <script crossorigin data-src="/comps/articles-best-google-font.js"></script>
+    <script type="module" crossorigin data-src="/splendid/comps/articles/best-google-font-2.js"></script>
 
   </head>
   <body style="overscroll-behavior: none;">
@@ -80,698 +70,59 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
           </a>
         <a text-info class="d-block lead" style="color: #1067de!important;" href="/articles">All Articles</a>
       </div>
-      <script>(function(){window.initPhoto=function(a){function e(){b&&(a.style.height=null,a.style["max-width"]=null);c=a.getBoundingClientRect().height;d=parseInt(f.style.height,10)*parseFloat(getComputedStyle(document.documentElement).fontSize);c<d?(a.style.height=f.style.height,a.style["max-width"]="initial",b=!0):b=!1;g=c-d}var f=a.parentElement.parentElement,c,d,g,b;window.addEventListener("resize",e);e();window.addEventListener("scroll",function(){var h="translate3d(0px, -"+Math.min(g,window.scrollY)+"px, 0px)";a.style.transform=
-h;a.style.webkitTransform=h})};}).call(this);
+      <script>/* eslint-env browser */
 
-//# sourceMappingURL=article-scroll-top.js.map</script>
+function convertRemToPixels(rem) {
+  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+}
+
+/**
+ * @param {Element} Photo
+ */
+function initPhoto(Photo) {
+  const parent = Photo.parentElement.parentElement
+  let height
+  let parentHeight
+  let maxScroll
+  let heightAdjusted
+  const get = () => {
+    if (heightAdjusted) {
+      Photo.style.height = null
+      Photo.style['max-width'] = null
+    }
+    ({ height } = Photo.getBoundingClientRect())
+    parentHeight = convertRemToPixels(parseInt(parent.style.height, 10))
+    const needsAdjustement = height < parentHeight
+    if (needsAdjustement) { // mobile
+      Photo.style.height = parent.style.height
+      Photo.style['max-width'] = 'initial'
+      heightAdjusted = true
+    } else {
+      heightAdjusted = false
+    }
+    // heightAdjusted = true
+    // } else if (!needsAdjustement && heightAdjusted) {
+    // heightAdjusted = false
+    // }
+    // ;({ height: parentHeight } = parent.getBoundingClientRect())
+    maxScroll = height - parentHeight
+  }
+  window.addEventListener('resize', get)
+  get()
+
+  window.addEventListener('scroll', () => {
+    const t = 'translate3d(0px, -' +Math.min(maxScroll, window.scrollY) + 'px, 0px)'
+    Photo.style.transform = t
+    Photo.style.webkitTransform = t
+  })
+}
+window['initPhoto'] = initPhoto</script>
     </div>
 
     <div id="Content">
       <div class="container">
         <div class="row">
-          <div class="col">
-
-<h1 id="the-best-way-to-load-google-fonts-asynchronously">The Best Way To Load Google Fonts Asynchronously</h1>
-
-<div class="row mb-3">
-  <div class="col-2 col-sm-2 col-lg-1">
-    <img alt="anton photo"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'/%3E" data-io class="rounded img-fluid" data-src="avatar/anton.JPG">
-    <noscript><img alt="anton photo" class="rounded img-fluid" src="avatar/anton.JPG"></noscript>
-  </div>
-  <div style="border-bottom: 1px solid grey;" class="col-10 col-sm-6">
-    <p class="text-right" style="color: grey;">
-      <span>Anton Dmukhovskiy, Senior Software Developer</span><br><span>23 October 2019</span>
-    </p>
-  </div>
-  <div class="col-sm-4 col-lg-5">
-    Topics:
-    <a class="d-block" href="/topics/page speed optimisation">page speed optimisation</a>
-    <a class="d-block" href="/topics/performance measurement">performance measurement</a>
-    <a class="d-block" href="/topics/web fonts">web fonts</a>
-  </div>
-</div>
-
-<p>
-  Traditionally my job as a developer was to build libraries in form of NPM packages and other software infrastructure for my <a href="/">Node.JS Development Company</a>, <span class="TM1">Art </span>
- <span class="TM1">Deco™</span>. However the most fun part of programming always was to make products for the Web, such as websites and integrate them with 3rd party APIs. Today, I focus on another aspect of web development, that is making web pages, that could even be static, but optimised for the modern day requirement of a web site: it must load extremely fast, and put performance in the first place.
-</p>
-
-<div class="position-relative mb-3 text-center" id="c19251">
-  <img alt="Advanced Google Font banner"
-    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='550' height='400'/%3E" data-io class="img-fluid" data-src="best-google-font/graphics/agf.png">
-  <noscript>
-    <img alt="Advanced Google Font banner" class="img-fluid"
-      src="best-google-font/graphics/agf.png">
-  </noscript>
-</div>
-
-<p>
-  Because fast pages please users, the conversion rates are increased and SEO rankings receive a boost, therefore each no matter how small piece of optimisation can lead to an additional sale. So I was pondering of what actually the best way to load <em>Google Fonts</em> is? In this article, I'll walk you through considerations of each steps on the ladder of progressively perfect optimisation of <em>Google Fonts</em> loading, and show the best way to load <em>Google Fonts</em> asynchronously that I've come up with. The method that I call
-  <a class="TM3" href="/articles/the-best-way-to-load-google-fonts-asynchronously.html">
-    <span class="TM1 TM2">Advanced </span>
-    <span class="TM1 TM2">Google </span>
-    <span class="TM1 TM2">Font</span></a>
-  not only allows to load the web font stylesheet asynchronously but also:
-</p>
-
-
-
-<div class="position-relative" id="Advantages">
-  <img alt="papyrus background"
-    style="top:0;left:0;right:0;bottom:0;z-index:-1;width:100%; height:100%;" data-io class="position-absolute"
-    data-src="best-google-font/graphics/parchment-svg.svg">
-  <noscript>
-    <img alt="papyrus background"
-      style="top:0;left:0;right:0;bottom:0;z-index:-1;width:100%; height:100%;" class="position-absolute" src="best-google-font/graphics/parchment-svg.svg">
-  </noscript>
-  <ul>
-    <li>Reduces the delay before the font is loaded and can be applied to text, by discovering the most efficient way to <strong>preload</strong> the stylesheet. Have you ever set <span class="tm" style="background-color:#ffd386">＜link rel="preload" onload="this.rel = 'stylesheet'"＞</span>? Read on to find out if that's optimal.</li>
-    <li>Eliminates extraneous reflows of the page that happen a) after the stylesheet is applied, and b) after each font and its variations are downloaded (think 3+ reflows for 2 fonts you're loading), thus <strong>unblocking</strong> the main thread and improving the overall page load time.</li>
-    <li>Shows all variations of a font <strong>at the same time</strong>, without parts of text jumping on the page, which might be annoying to the user. The Flash of Unstyled Text (<em>FOUT</em>) is one thing, which is somewhat bearable by the user, but when many parts of the text (italic, bold) jump and flash it kind of looks unprofessional because it interferes with users' attention span.</li>
-  </ul>
-</div>
-
-<p>
-  As a bonus at the end, I will show you a hack how to embed a font on a webpage for the critical path view, that is more advanced than just embedding a CSS with <span class="tm">data:application/font</span>-encoded base64 string with it, which might still result in a <em>FOUT</em>, but my bonus workaround eliminates the <em>FOUT</em> completely.
-</p>
-
-<p class="SectionBreak">
-  <a title="Back To Top" href="#top">
-    <img alt="section break"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='15'/%3E" data-io data-src="/section-breaks/0.svg">
-    <noscript><img alt="section break" src="/section-breaks/0.svg"></noscript></a>
-</p>
-
-
-
-<h2 id="standard-sync-loading">Standard Sync Loading</h2>
-
-<p>
-  Let's start with the basics. We want a Google Font on our website. This means going to <a href="https://fonts.google.com">fonts.google.com</a> and picking up specimens that we want our pages to display with, for example, the fonts that I use here are an Art Deco font <strong>Limelight</strong> for headings and <strong>Gentium Basic</strong> (with variations) for paragraphs:
-</p>
-
-<pre id="c35245"><code class="xml hljs">&lt;link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Limelight|Gentium+Basic:400,400i,700&amp;display=swap"&gt;</code></pre>
-
-<p>
-  The advantage of this cloud service is that <em>Google Fonts</em> will load a dynamic stylesheet depending on a user's browser, and provide optimised fonts, which are constantly improved in newer versions. We also don't have to host the fonts ourselves, and work on creating such stylesheets manually. E.g., below is the stylesheet that was returned for my Chrome on MacOS. It also has 2 <span class="tm">unicode-ranges</span>, <span class="tm">latin</span> and <span class="tm">latin-ext</span> so that the browser will check if there are any characters from the extended set, to decide whether this extra font is needed. Tables with such ranges could be looked up <a href="https://jrgraphix.net/r/Unicode/0100-017F">here</a>.
-</p>
-
-<details>
-<summary>
-<em>Google Fonts Stylesheet</em>
-<pre id="c74268"><code class="css hljs">/* latin-ext */
-@font-face {
-  font-family: 'Limelight';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoNOlHjHUmTUFt.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Limelight';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoOulHjHUmTQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* CLICK TO SHOW FULL STYLESHEET */</code></pre>
-</summary>
-
-<pre id="c80"><code class="css hljs">/* latin-ext */
-@font-face {
-  font-family: 'Limelight';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoNOlHjHUmTUFt.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Limelight';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Limelight'), url(https://fonts.gstatic.com/s/limelight/v10/XLYkIZL7aopJVbZJHDuoOulHjHUmTQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* CLICK TO SHOW FULL STYLESHEET */
-
-/* latin-ext */
-@font-face {
-  font-family: 'Gentium Basic';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5hBo7QoCBZCxP.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Gentium Basic';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5iho7QoCBZA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Gentium Basic';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Gentium Basic'), local('GentiumBasic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/Wnz9HAw9aB_JD2VGQVR80We3LAOJiBA8YIKxZQ.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Gentium Basic';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Gentium Basic'), local('GentiumBasic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/Wnz9HAw9aB_JD2VGQVR80We3LA2JiBA8YII.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Gentium Basic';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local('Gentium Basic Bold'), local('GentiumBasic-Bold'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzgHAw9aB_JD2VGQVR80We3JLasnTMebaiLbBR2kw.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Gentium Basic';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local('Gentium Basic Bold'), local('GentiumBasic-Bold'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzgHAw9aB_JD2VGQVR80We3JLasnT0ebaiLbBQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}</code></pre>
-</details>
-
-<p>
-  The <span class="tm">font-display: swap</span> property is quite important as it allows to show the initial text without having to wait for fonts to load. It's a <a href="https://caniuse.com/#search=font-display">new feature</a> and is not supported on Edge. In spite the fact that people assume that Google's infrastructure is resilient and can serve requests immediately, it's not always the case, and especially on 3G connections, at peak times, when moving in a car, people will open a website, and will be presented with a blank screen without text, until fonts are loaded. The <span class="tm">font-display: swap</span> solves this problem. My method of loading <em>Google Fonts</em> asynchronously, also implicitly provides a solution to the swap problem, and can be considered as a polyfill for this CSS property for <em>IE</em> and <em>Edge</em>.
-</p>
-
-<p>
-  I'm going to experiment on the front page of my website, <a href="https://www.artd.eco">artd.eco</a>. The traditional sync inclusion of the <em>Google Fonts</em> results in the following loading process that for the user appears to be consisting of 3 steps:
-</p>
-
-</div></div></div>
-<div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c53386"></div>
-  <div style="z-index: -1;" class="Parallax"></div>
-  <noscript>
-    <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-  </noscript>
-  <p class="text-center">
-    <img alt="Loading Google Font synchronously."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='812' height='461'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/font1.gif">
-    <noscript>
-      <img alt="Loading Google Font synchronously." class="border rounded img-fluid"
-        src="best-google-font/graphics/font1.gif">
-    </noscript>
-  </p>
-  <h5 id="figure-1-loading-google-font-synchronously" class="m-0 d-inline-block"
-    style="background: white;">
-    Figure 1: Loading Google Font synchronously.
-  </h5>
-</div>
-<div class="container"><div class="row"><div class="col">
-
-
-
-<div class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
-    <li>No fonts are downloaded yet, and because of <span class="tm">font-display: swap</span>, we see the fallback fonts. Without the swap property, there would be no text.</li>
-    <li>The <strong>Limelight</strong> font is loaded for the heading, and the page is redrawn.</li>
-    <li>The <strong>GentiumBasic</strong> font is loaded for the paragraph, and the page is redrawn again.</li>
-  </ol>
-  <div class="position-absolute"
-    style="width: 1rem; bottom: 0px; top: 0px; right: 1rem; border-left: 1px solid #ec6a9d;">
-    <img src="/img/arrows.svg">
-  </div>
-</div>
-
-<p>
-  The 3rd step, with GentiumBasic loading, actually consists of 2 steps, the italic version being loaded, and the normal one, but that happens <em>almost</em> at the same time, so I couldn't capture that on GIF. However, what is important is that each arrival of a new font results in page re-rendering and a change of text's styles as well. Rendering happens on the main thread, therefore the browser is blocked and slowed down by each font. The method that I will show, will wait for all fonts to arrive, before applying the stylesheet to the document, which will help to circumvent this aspect of imperfect standard <em>Google Font</em> loading. So what happens under the hood? The performance snapshot below will help to understand how the page is loaded in more details.
-</p>
-
-</div></div></div>
-<div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c59284"></div>
-  <div style="z-index: -1;" class="Parallax"></div>
-  <noscript>
-    <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-  </noscript>
-  <p class="text-center">
-    <img alt="Performance measurement of sync Google Font loading."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='694' height='673'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev1.png">
-    <noscript>
-      <img alt="Performance measurement of sync Google Font loading." class="border rounded img-fluid"
-        src="best-google-font/graphics/dev1.png">
-    </noscript>
-  </p>
-  <h5 id="figure-2-performance-measurement-of-sync-google-font-loading" class="m-0 d-inline-block"
-    style="background: white;">
-    Figure 2: Performance measurement of sync Google Font loading.
-  </h5>
-</div>
-<div class="container"><div class="row"><div class="col">
-
-<div class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
-    <li>
-      <img alt="css unblocking thread animation" data-io class="float-right pl-2"
-        data-src="best-google-font/gif/thread.gif">
-      <noscript>
-        <img alt="css unblocking thread animation" class="float-right pl-2"
-          src="best-google-font/gif/thread.gif">
-      </noscript>
-      The font's stylesheet is the first thing to be loaded by the browser, however parsing of HTML does not start before all styles completed their download (you can check that by enabling very slow network throttling &mdash; the parsing does not begin until all external CSS files are loaded). This is definitely an issue since we want to start rending the page immediately if we want it to be <em>performant</em>. This is why <em>google.com</em> does not have any external stylesheets, and their styles are embedded onto the page. There's also a delay before the fonts start to download indicated by the semi-opaque purple rectangle. This is because even the stylesheet is received, the browser doesn't load the fonts until the layout (purple bar).<br><br>
-    </li>
-    <li>The first font, <strong>LimeLight</strong> arrives and triggers recalculate styles, layout, update layer tree, paint and composite layers jobs. The longest is layout and it takes 46ms for 450 nodes, but that would take longer for larger pages. Altogether, the page's is blocked during that time (for about 80ms), preventing the spinning loading indicator from going away.<br><br></li>
-    <li>The second font and its variations <strong>GentiumBasic</strong>, are loaded and applied to text on the page, triggering another 46ms layout, and another thread block. Because fonts arrived at almost the same time, there's only one layout job, but if italic version arrived later, there would have been another block.</li>
-  </ol>
-  <div class="position-absolute"
-    style="width: 1rem; bottom: 0px; top: 0px; right: 1rem; border-left: 1px solid #ec6a9d;">
-    <img src="/img/arrows.svg">
-  </div>
-</div>
-
-<p>
-  The conclusion is that we want to avoid synchronous loading of <em>Google Fonts</em> altogether. We cannot rely on Google to serve web font stylesheets immediately, and on slow network the UI will be completely blocked until the CSS is received. This is true not only for fonts, but for any CSS, therefore <em>Lighthouse</em> will always give this suggestions:
-</p>
-
-</div></div></div>
-<div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c57883"></div>
-  <div style="z-index: -1;" class="Parallax"></div>
-  <noscript>
-    <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-  </noscript>
-  <p class="text-center">
-    <img alt="Lighthouse 'Eliminate render-blocking resources' suggestion"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='685' height='339'/%3E" data-io class="border-danger border rounded img-fluid"
-      data-src="best-google-font/graphics/lighthouse1.png">
-    <noscript>
-      <img alt="Lighthouse 'Eliminate render-blocking resources' suggestion"
-        class="border-danger border rounded img-fluid" src="best-google-font/graphics/lighthouse1.png">
-    </noscript>
-  </p>
-  <h5 id="figure-3-lighthouse-eliminate-render-blocking-resources-suggestion"
-    class="m-0 d-inline-block" style="background: white;">
-    Figure 3: Lighthouse 'Eliminate render-blocking resources' suggestion
-  </h5>
-</div>
-<div class="container"><div class="row"><div class="col">
-
-<p>
-  Because Google audits pages it craws for performance, and uses the page speed as a ranking factor, we want to follow the suggestion to eliminate render-blocking resources and implement asynchronous <em>Google Fonts</em> loading.
-</p>
-
-<p class="SectionBreak">
-  <a title="Back To Top" href="#top">
-    <img alt="section break"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='13'/%3E" data-io data-src="/section-breaks/1.svg">
-    <noscript><img alt="section break" src="/section-breaks/1.svg"></noscript></a>
-</p>
-
-
-
-<h2 id="async-google-font-loading">Async Google Font Loading</h2>
-
-<p>
-  The browser will always give CSS the highest priority when opening the page, and begin downloading stylesheets immediately. This is nice, however how do we step up from sync loading to the async one, which does not prevent rendering from happening until the stylesheet is loaded? Let's try to do it with JavaScript. Instead of adding a <span class="tm">link</span> tag, we'll add a script which will create such tag dynamically. This script will be the first thing in our document:
-</p>
-
-<pre id="c75046"><code class="xml hljs">&lt;head&gt;
-  &lt;script&gt;
-    const link = document.createElement('link')
-    link.href = 'https://fonts.googleapis.com/css?' +
-                'display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'
-    link.rel = 'stylesheet'
-    document.head.appendChild(link)
-  &lt;/script&gt;
-  &lt;!-- other elements --&gt;
-&lt;/head&gt;</code></pre>
-
-<p>
-  Now because the browser does not know that the stylesheet will be embedded, it will not start downloading it straight away like in the previous case. Instead, it will wait until the  script is evaluated to begin the download. What is more, it will continue parsing HTML, and block the main thread so that if the stylesheet is not downloaded quickly, it will have to wait to be inserted until the end of the initial page render.
-</p>
-
-</div></div></div>
-<div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c61157"></div>
-  <div style="z-index: -1;" class="Parallax"></div>
-  <noscript>
-    <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-  </noscript>
-  <p class="text-center">
-    <img alt="Loading Google Font asynchronously with JavaScript script tag."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='731' height='673'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev2.png">
-    <noscript>
-      <img alt="Loading Google Font asynchronously with JavaScript script tag."
-        class="border rounded img-fluid" src="best-google-font/graphics/dev2.png">
-    </noscript>
-  </p>
-  <h5 id="figure-4-loading-google-font-asynchronously-with-javascript-script-tag"
-    class="m-0 d-inline-block" style="background: white;">
-    Figure 4: Loading Google Font asynchronously with JavaScript script tag.
-  </h5>
-</div>
-<div class="container"><div class="row"><div class="col">
-
-<div class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
-    <img alt="reflow animation" data-io style="float: left;" class="pr-2"
-      data-src="best-google-font/gif/reflow.gif">
-    <noscript>
-      <img alt="reflow animation" style="float: left;" class="pr-2"
-        src="best-google-font/gif/reflow.gif">
-    </noscript>
-    <li>The stylesheet doesn't gets downloaded immediately like it would with a <span class="tm">link</span> tag, and is loaded only after the browser already parsed HTML and began its job of first page render (Run Microtasks + Layout). During this time, the thread is blocked (semi-opaque orange rectangle), so the stylesheet has to wait before being inserted.<br><br></li>
-    <li>The stylesheet is finally applied which leads to quite expensive layout reflow taking <span style="color:green">84ms</span>. Despite the fact that the fonts are not loaded at all, and there will be no visual change to the page, the browser still recalculates styles and does a reflow. It's an unnecessary work and a waste of valuable ms (the yellow "evaluate scripts" job just before the layout is scripts evaluated at the bottom of the page that also block main thread thus delaying this layout).<br><br></li>
-    <li>Finally, like in the previous experiment, fonts arrive one by one, and cause 2 new layout reflows.</li>
-  </ol>
-  <div class="position-absolute"
-    style="width: 1rem; bottom: 0px; top: 0px; right: 1rem; border-left: 1px solid #ec6a9d;">
-    <img src="/img/arrows.svg">
-  </div>
-</div>
-
-<p>
-  This strategy allows to actually load <em>Google Fonts</em> asynchronously and solves the <em>Lighthouse</em> warning. However, it introduced an extra reflow due to the stylesheet insertion that happens after the initial render. There are additional improvements that we could make to the page. We can use the preload hint to make the browser download the stylesheet immediately, in hope that dynamically inserted element will be able to pick up that style:
-</p>
-
-<pre id="c57253"><code class="xml hljs">&lt;head&gt;
-  &lt;link rel="dns-prefetch" href="//fonts.googleapis.com"&gt;
-  &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
-  &lt;link rel="preload" as="style" crossorigin
-    href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"&gt;
-  &lt;script&gt;
-    const link = document.createElement('link')
-    link.href = 'https://fonts.googleapis.com/css?' +
-                'display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'
-    link.rel = 'stylesheet'
-    link.crossOrigin = 'crossorigin' // add crossorigin
-    document.head.appendChild(link)
-  &lt;/script&gt;
-  &lt;!-- other elements --&gt;
-&lt;/head&gt;</code></pre>
-
-<p>
-  OK now we've got it! We had to add a <span class="tm">crossOrigin</span> attribute to both links (in markup and in JS) since the style comes from another domain and preload links have to respect that, and the style link has to match preload link's <em>crossorigin</em>.
-</p>
-
-</div></div></div>
-<div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c83759"></div>
-  <div style="z-index: -1;" class="Parallax"></div>
-  <noscript>
-    <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-  </noscript>
-  <p class="text-center">
-    <img alt="Loading Google Font asynchronously with a script and preload tag."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='731' height='673'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev3.png">
-    <noscript>
-      <img alt="Loading Google Font asynchronously with a script and preload tag."
-        class="border rounded img-fluid" src="best-google-font/graphics/dev3.png">
-    </noscript>
-  </p>
-  <h5 id="figure-5-loading-google-font-asynchronously-with-a-script-and-preload-tag"
-    class="m-0 d-inline-block" style="background: white;">
-    Figure 5: Loading Google Font asynchronously with a script and preload tag.
-  </h5>
-</div>
-<div class="container"><div class="row"><div class="col">
-
-<div class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
-    <li>The stylesheet is downloaded straight away and inserted before the initial render. There's no reflow due to stylesheet being inserted after first pain like previously, because the preload link allowed us to download the stylesheet much faster than just using JavaScript.</li>
-    <li>The fonts arrive at the same time, and cause a single reflow only.</li>
-  </ol>
-  <div class="position-absolute"
-    style="width: 1rem; bottom: 0px; top: 0px; right: 1rem; border-left: 1px solid #ec6a9d;">
-    <img src="/img/arrows.svg">
-  </div>
-</div>
-
-<p>
-  That's good, and we've achieved the result we wanted, that is to load <em>Google Fonts</em> asynchronously. However, from the graph above we can see a gap between fonts starting to download, and the stylesheet arriving, i.e., fonts will begin do download only prior to layout despite the stylesheet referencing them being available for quite some time already, and we'll look into this issue below, but that's how the browser works, and nothing to do with our setup.
-</p>
-
-<p>
-  Another thing we need to do is to add a polyfill for users who disabled <em>JavaScript</em> execution.
-</p>
-
-<pre id="c45018"><code class="xml hljs">&lt;head&gt;
-    &lt;link rel="preload" ...&gt;
-    &lt;script&gt;
-      const link = document.createElement('link')
-      // ...
-    &lt;/script&gt;
-    &lt;!-- async font loading polyfill --&gt;
-    &lt;noscript&gt;
-      &lt;link rel="stylesheet" crossorigin
-        href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"&gt;
-    &lt;/noscript&gt;
-  &lt;/head&gt;</code></pre>
-
-<p>
-  Despite the working version of async web font stylesheet loading (thus achieving the goal), we assume that the connection is good, and that the stylesheet will be able to download prior to initial page render. Moreover, I've been testing the webpage with another external stylesheet, which loads very fast on localhost, but in reality it would actually take some time and block the browser. If the styles were embedded onto the page, so that there are no render-blocking resources, the browser would not have enough time to download the <em>Google Font</em> stylesheet prior to first render. Therefore, I've simulated a situation when:
-</p>
-
-<ul>
-  <li>The connection is slower than standard DSL/cable internet (fast 3G preset).</li>
-  <li>There are no blocking resources such as external CSS that prevent direct page rendering.</li>
-</ul>
-
-</div></div></div>
-<div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c23546"></div>
-  <div style="z-index: -1;" class="Parallax"></div>
-  <noscript>
-    <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-  </noscript>
-  <p class="text-center">
-    <img alt="Loading google font asynchronously on slow connection causes reflow."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='731' height='579'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev4.png">
-    <noscript>
-      <img alt="Loading google font asynchronously on slow connection causes reflow."
-        class="border rounded img-fluid" src="best-google-font/graphics/dev4.png">
-    </noscript>
-  </p>
-  <h5 id="figure-6-loading-google-font-asynchronously-on-slow-connection-causes-reflow"
-    class="m-0 d-inline-block" style="background: white;">
-    Figure 6: Loading google font asynchronously on slow connection causes reflow.
-  </h5>
-</div>
-<div class="container"><div class="row"><div class="col">
-
-<div style="transform: rotate3d(1,1,1,2deg);" class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
-    <li>The page starts rendering as soon as all HTML arrives, but the stylesheet starts to download even before that. Because the connection is slow, the stylesheet arrives during the time when the main thread is blocked by rendering (semi-opaque orange rectangle, light-purple line), so it has to wait for rendering to complete (purple line). When that happens, it's inserted into DOM and triggers a reflow.</li>
-    <li>The first font arrives, triggers reflow.</li>
-    <li>The all other font arrive and trigger reflow and repaint.</li>
-  </ol>
-  <div class="position-absolute"
-    style="width: 1rem; bottom: 0px; top: 0px; right: 1rem; border-left: 1px solid #ec6a9d;">
-    <img src="/img/arrows.svg">
-  </div>
-</div>
-
-<p>
-  So the next step is to make sure that there's only one reflow for the style and fonts. As a side note, there's a technique outlined on the <a target="_blank" rel="noopener" style="color: #7b913c !important;; text-decoration: underline;"
-   href="https://alligator.io/html/preload-prefetch/">
-   <img alt="alligator"
-     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='74' height='36'/%3E" data-io data-src="best-google-font/graphics/croc.png">
-   <noscript><img alt="alligator" src="best-google-font/graphics/croc.png"></noscript>Alligator blog: Preload and Prefetch</a> that contracts the JS into a one-liner:
-</p>
-
-<pre id="c65987"><code class="xml hljs">&lt;link
-  rel="preload"
-  as="style"
-  onload="this.rel = 'stylesheet'"
-  href='https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'&gt;</code></pre>
-
-<p>
-  I think the <span class="tm">onload</span> attribute must be <span class="tm">onload=&quot;this.rel = 'stylesheet'; this.onload = null&quot;</span>, otherwise once the preload link is changed into a stylesheet link, the onload will be triggered again. Although theoretically, setting the rel attribute to <span class="tm">stylesheet</span> when it's already a <span class="tm">stylesheet</span> shouldn't cause problems, I used to get the stylesheet downloaded twice:
-</p>
-
-</div></div></div>
-<div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c66812"></div>
-  <div style="z-index: -1;" class="Parallax"></div>
-  <noscript>
-    <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-  </noscript>
-  <p class="text-center">
-    <img alt="Stylesheet downloaded twice."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='727' height='512'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev5.png">
-    <noscript>
-      <img alt="Stylesheet downloaded twice." class="border rounded img-fluid"
-        src="best-google-font/graphics/dev5.png">
-    </noscript>
-  </p>
-  <h5 id="figure-7-stylesheet-downloaded-twice" class="m-0 d-inline-block" style="background: white;">
-    Figure 7: Stylesheet downloaded twice.
-  </h5>
-</div>
-<div class="container"><div class="row"><div class="col">
-
-<p>
-  However now I struggle to reproduce this. I think it's rather to do with internal browser logic. Never mind still, it doesn't hurt to remove the <span class="tm">onload</span> attribute really. Additionally, this <span class="tm">onload</span> attribute solution also requires a polyfill for browsers that don't support preload, but what I'm really concerned here is WHEN the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the <span class="tm">onload</span> method.
-</p>
-
-<pre id="c82466"><code class="xml hljs">&lt;link rel="preload" as="style" crossorigin
-  href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"
-  onload="
-  performance.mark('apply-stylesheet');
-  this.rel = 'stylesheet'
-  this.onload = () =&gt; {
-    performance.measure('stylesheet-onload', 'apply-stylesheet');
-  };
-"&gt;</code></pre>
-
-<p>
-  The <span class="tm">performance.measure</span> function is a very handy util to add markers to the timeline to visualise the break-down. We're going to measure WHEN the <span class="tm">onload</span> event fired, and compare it to when the preload actually finished. One might assume that these points should follow one another (onload after download), however don't forget to account for the blockage of the main thread during the initial render (I've said this phrase so many times now, it just shows that it's an important takeaway point).
-</p>
-
-</div></div></div>
-<div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c18601"></div>
-  <div style="z-index: -1;" class="Parallax"></div>
-  <noscript>
-    <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-  </noscript>
-  <p class="text-center">
-    <img alt="Performance measurements with onload attribute."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='761' height='659'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev6.png">
-    <noscript>
-      <img alt="Performance measurements with onload attribute." class="border rounded img-fluid"
-        src="best-google-font/graphics/dev6.png">
-    </noscript>
-  </p>
-  <h5 id="figure-8-performance-measurements-with-onload-attribute" class="m-0 d-inline-block"
-    style="background: white;">
-    Figure 8: Performance measurements with onload attribute.
-  </h5>
-</div>
-<div class="container"><div class="row"><div class="col">
-
-<ol>
-  <li>The stylesheet is preloaded, however it's ready only when the browser is doing the first render and layout, therefore it has to wait until the thread is unblocked.</li>
-  <li>We finally get the <span class="tm">onload</span> even on the preload link, and change the <span class="tm">preload</span> rel to <span class="tm">stylesheet</span>. This happens in 20ms, and after that the stylesheet is applied, causing a Recalculate Style + Layout, and fonts begin to download.</li>
-</ol>
-
-<p>
-  Let's compare that to the implementation using a standalone script tag rather than the <span class="tm">onload</span> attribute. I'm going to add 100ms timeout so that the preload event is visible on the timeline. Remember, we added the stylesheet only after the <span class="tm">onload</span> event fired previously. Now, using the script tag, we're adding the stylesheet right away.
-</p>
-
-<pre id="c84852"><code class="xml hljs">&lt;head&gt;
-  &lt;!-- preconnect, dns-prefetch --&gt;
-  &lt;link rel="preload" as="style" crossorigin
-    href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"
-    onload="
-    performance.mark('preload-stylesheet');
-    setTimeout(() =&gt; {
-      performance.measure('preload-onload', 'preload-stylesheet');
-    }, 100)
-  "&gt;
-  &lt;script&gt;
-    const link = document.createElement('link')
-    link.href = 'https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'
-    link.rel = 'stylesheet'
-    link.crossOrigin = 'crossorigin'
-    performance.mark('add-stylesheet')
-    document.head.appendChild(link)
-    link.onload = () =&gt; {
-      performance.measure('stylesheet-onload', 'add-stylesheet');
-    }
-  &lt;/script&gt;
-&lt;!-- etc --&gt;
-&lt;/head&gt;</code></pre>
-
-
-
-</div></div></div>
-<div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c26861"></div>
-  <div style="z-index: -1;" class="Parallax"></div>
-  <noscript>
-    <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-  </noscript>
-  <p class="text-center">
-    <img alt="Async stylesheet loading with a script tag instead of onload attribute."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='761' height='659'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev7.png">
-    <noscript>
-      <img alt="Async stylesheet loading with a script tag instead of onload attribute."
-        class="border rounded img-fluid" src="best-google-font/graphics/dev7.png">
-    </noscript>
-  </p>
-  <h5 id="figure-9-async-stylesheet-loading-with-a-script-tag-instead-of-onload-attribute"
-    class="m-0 d-inline-block" style="background: white;">
-    Figure 9: Async stylesheet loading with a script tag instead of onload attribute.
-  </h5>
-</div>
-<div class="container"><div class="row"><div class="col">
-
-<ol>
-  <li>The stylesheet link is added to the DOM immediately after starting to parse HTML using the script tag. This is pretty much exactly the same as the sync version, but without blocking the page!</li>
-  <li>The stylesheet is downloaded using preload link, and the fonts start to download.</li>
-  <li>The initial paint is done, main thread is freed and the preload event fires on our <span class="tm">link rel=&quot;preload&quot;</span> element. Compared to the previous case, where we inserted the stylesheet only at this point, causing a reflow, here we avoided the reflow and are already halfway through font-downloading having saved a few hundred milliseconds.</li>
-</ol>
-
-<p>
-  This is much better, isn't? We've managed to insert the link tag with the stylesheet into DOM without the cost of reflow, that happens with the <span class="tm">onload</span> event. And the fonts begin to download quicker, right before the first layout, not after it! I think it's an interesting observation to make.
-</p>
-
-<div class="position-relative" id="c9848">
-  <p class="p-2 rounded"
-    style="border: 1px dashed #decdb9; margin-left: 2rem; margin-right: 2rem; background: linear-gradient(45deg, transparent, #e3d6ce);">
-    <img alt="finger pointer" style="float:left;width:120px"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='42'/%3E" data-io class="mt-3 mr-3" data-src="avatar/pointer.svg">
-    <noscript>
-      <img alt="finger pointer" style="float:left;width:120px" class="mt-3 mr-3"
-        src="avatar/pointer.svg">
-    </noscript>
-      Don't use the <span class="tm">onload</span> attribute on a link element with a web font stylesheet to swap its <em>rel</em> from <strong>preload</strong> to <strong>stylesheet</strong>. If the preload finishes at the point of time when the main thread is blocked by the first layout, the <span class="tm">onload</span> event will only fire after it, causing a reflow due to new styles. It's better to add a stylesheet dynamically with JavaScript in a script tag just underneath the preload element, so that it's immediately injected into DOM during the initial parsing of HTML and will not impose a cost of a reflow that has no effect due to fonts not being available yet.
-  </p>
-  <div class="position-absolute" style="z-index:-1;top:0;left:0;bottom:0;right:0"></div>
-</div>
-
-<p>
-  OK we're done with figuring out how to load the web fonts asynchronously. It's time for another improvement, that is to collapse all fonts loading into the single reflow.
-</p>
-
-<p class="SectionBreak">
-  <a title="Back To Top" href="#top">
-    <img alt="section break"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='13'/%3E" data-io data-src="/section-breaks/2.svg">
-    <noscript><img alt="section break" src="/section-breaks/2.svg"></noscript></a>
-</p>
-
-<h2 id="advanced-loading-lemuriafont">Advanced Loading: @lemuria/font</h2>
+          <div class="col"><h2 id="advanced-loading-lemuriafont">Advanced Loading: @lemuria/font</h2>
 
 <p>
   As can be seen from the performance graphs above, there is one drawback to preloading web fonts stylesheets dynamically even with the preload link: fonts won't begin to download immediately after the stylesheet is downloaded, and will generally wait for after the initial render is finished. I've repeated the previous experiment multiple times, and I always see the same result. Plus, we're still to conglomerate all reflows. The proposed solution is JavaScript-based:
@@ -789,7 +140,7 @@ h;a.style.webkitTransform=h})};}).call(this);
   Here's a simple to fetch stylesheet, while measuring performance:
 </p>
 
-<pre id="c88891"><code class="javascript hljs">/**
+<pre id="c82499"><code class="javascript hljs">/**
 * @param {string} address The address to load.
 * @param {function(string)} cb The callback to call on complete.
 * @param {string} [marker] Performance annotation.
@@ -821,7 +172,7 @@ const fetchStylesheet = (address, cb, marker = '') =&gt; {
   Our stylesheet parsing function uses a regex to extract URLs with unicode ranges of fonts, and creates an array like <span class="tm">[{ font: 'url', range: /[regex]/ }]</span> for each font it found in the stylesheet.
 </p>
 
-<pre id="c97934"><code class="javascript hljs">function parseBody(result) {
+<pre id="c9848"><code class="javascript hljs">function parseBody(result) {
   const re = /url\((.+?)\).*?;\s+unicode-range: (.+?);/g
   let ranges = {}
   const fonts = []
@@ -846,7 +197,7 @@ const fetchStylesheet = (address, cb, marker = '') =&gt; {
   There are 2 scenarios when we'll get the stylesheet ready: A) prior to HTML parsing, which can be because there's another stylesheet blocking the render, and because the connection is very fast; and B) after HTML parsing, when <span class="tm">body</span> is available. In the first instance, we wouldn't know the unicode ranges that are present on the page, therefore they have to be supplied as additional information. If we know that we don't use <strong>latin-ext</strong> on the page, we'll just pass the unicode range for <strong>latin</strong> characters. This way, we don't have to download each single font in the stylesheet, wasting data.
 </p>
 
-<pre id="c70819"><code class="javascript hljs">  // ..
+<pre id="c74268"><code class="javascript hljs">  // ..
   const body = document.body ? document.body.textContent : ''
   const validRanges = body ? Object.keys(ranges).reduce((acc, range) =&gt; {
 
@@ -894,7 +245,7 @@ const fetchStylesheet = (address, cb, marker = '') =&gt; {
   Add some logic to keep track of parallel preloads, and embed the stylesheet when they all arrive.
 </p>
 
-<pre id="c70368"><code class="javascript hljs">let FONT_CSS
+<pre id="c80"><code class="javascript hljs">let FONT_CSS
 let urls = []
 let loaded = 0
 
@@ -934,7 +285,7 @@ startPreload({ href: FONT }, 'js')</code></pre>
   I could have used the <span class="tm">fetch</span> instead of XHR since its 2019, however I would need to add a polyfill and transpile async code. There's no performance difference between <span class="tm">fetch</span> and <span class="tm">XMLHttpRequest</span> APIs. One observation, is that with <span class="tm">fetch</span>, data could be streamed, so if the response arrived in chunks, I could extract fonts as they come, but because the stylesheet is so small (&lt; 1kb), streaming is unnecessary. I've made a package called <span class="tm">@lemuria/font</span> with this code which I run through <em>Google Closure Compiler</em>, so let's update our page:
 </p>
 
-<pre id="c73556"><code class="xml hljs">&lt;head&gt;
+<pre id="c75046"><code class="xml hljs">&lt;head&gt;
   &lt;link rel="dns-prefetch" href="//fonts.googleapis.com"&gt;
   &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
   &lt;link rel="preload" href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight" as="fetch"&gt;
@@ -955,7 +306,7 @@ startPreload({ href: FONT }, 'js')</code></pre>
   </div></div></div>
   <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;"
     id="fig-advanced-loading">
-    <div class=" Parallax" data-loading style="z-index: -1;" id="c52573"></div>
+    <div class=" Parallax" data-loading style="z-index: -1;" id="c16379"></div>
     <div style="z-index: -1;" class="Parallax"></div>
     <noscript>
       <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -963,15 +314,15 @@ startPreload({ href: FONT }, 'js')</code></pre>
     <p class="text-center">
       <img alt="Advanced asynchronous Google Font performance: achieving single reflow."
         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='761' height='659'/%3E" data-io class="border rounded img-fluid"
-        data-src="best-google-font/graphics/dev8.png">
+        data-src="best-google-font-2/graphics/dev8.png">
       <noscript>
         <img alt="Advanced asynchronous Google Font performance: achieving single reflow."
-          class="border rounded img-fluid" src="best-google-font/graphics/dev8.png">
+          class="border rounded img-fluid" src="best-google-font-2/graphics/dev8.png">
       </noscript>
     </p>
-    <h5 id="figure-18-advanced-asynchronous-google-font-performance-achieving-single-reflow"
+    <h5 id="figure-9-advanced-asynchronous-google-font-performance-achieving-single-reflow"
       class="m-0 d-inline-block" style="background: white;">
-      Figure 18: Advanced asynchronous Google Font performance: achieving single reflow.
+      Figure 9: Advanced asynchronous Google Font performance: achieving single reflow.
     </h5>
   </div>
   <div class="container"><div class="row"><div class="col">
@@ -986,7 +337,7 @@ startPreload({ href: FONT }, 'js')</code></pre>
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c73305"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c59284"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -994,15 +345,15 @@ startPreload({ href: FONT }, 'js')</code></pre>
   <p class="text-center">
     <img alt="@Lemuria/font parsing starting before body is available without default unicode-ranges."
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='761' height='659'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev9.png">
+      data-src="best-google-font-2/graphics/dev9.png">
     <noscript>
       <img alt="@Lemuria/font parsing starting before body is available without default unicode-ranges."
-        class="border rounded img-fluid" src="best-google-font/graphics/dev9.png">
+        class="border rounded img-fluid" src="best-google-font-2/graphics/dev9.png">
     </noscript>
   </p>
   <h5
-    id="figure-10-lemuriafont-parsing-starting-before-body-is-available-without-default-unicode-ranges" class="m-0 d-inline-block" style="background: white;">
-    Figure 10: @Lemuria/font parsing starting before body is available without default unicode-ranges.
+    id="figure-1-lemuriafont-parsing-starting-before-body-is-available-without-default-unicode-ranges" class="m-0 d-inline-block" style="background: white;">
+    Figure 1: @Lemuria/font parsing starting before body is available without default unicode-ranges.
   </h5>
 </div>
 <div class="container"><div class="row"><div class="col">
@@ -1023,22 +374,23 @@ startPreload({ href: FONT }, 'js')</code></pre>
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c11465"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c25081"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
   </noscript>
   <p class="text-center">
     <img alt="Dynamic insertion of a link with JS does not block page render."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='639' height='486'/%3E" data-io class="border rounded img-fluid" data-src="best-google-font/dev-check.gif">
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='639' height='486'/%3E" data-io class="border rounded img-fluid"
+      data-src="best-google-font-2/graphics/dev-check.gif">
     <noscript>
       <img alt="Dynamic insertion of a link with JS does not block page render."
-        class="border rounded img-fluid" src="best-google-font/dev-check.gif">
+        class="border rounded img-fluid" src="best-google-font-2/graphics/dev-check.gif">
     </noscript>
   </p>
-  <h5 id="figure-11-dynamic-insertion-of-a-link-with-js-does-not-block-page-render"
+  <h5 id="figure-2-dynamic-insertion-of-a-link-with-js-does-not-block-page-render"
     class="m-0 d-inline-block" style="background: white;">
-    Figure 11: Dynamic insertion of a link with JS does not block page render.
+    Figure 2: Dynamic insertion of a link with JS does not block page render.
   </h5>
 </div>
 <div class="container"><div class="row"><div class="col">
@@ -1047,7 +399,7 @@ startPreload({ href: FONT }, 'js')</code></pre>
   Essentially all I've done is added an external stylesheet dynamically, but throttled it server-side with a middleware function. Because the page continued to render, it's safe to say that adding a link with JS in the head will not block the main thread.
 </p>
 
-<pre id="c78401"><code class="xml hljs">&lt;head&gt;
+<pre id="c57253"><code class="xml hljs">&lt;head&gt;
 &lt;link rel="preload" href="/throttle.css" as="style"&gt;
   &lt;script&gt;
     const link = document.createElement('link')
@@ -1061,7 +413,7 @@ startPreload({ href: FONT }, 'js')</code></pre>
   &lt;/script&gt;
 &lt;/head&gt;</code></pre>
 
-<pre id="c66833"><code class="javascript hljs">// Koa middleware
+<pre id="c45018"><code class="javascript hljs">// Koa middleware
 async throttle(ctx, next) {
   if (ctx.path == '/throttle.css') {
     await new Promise(r =&gt; setTimeout(r, 500))
@@ -1075,7 +427,7 @@ async throttle(ctx, next) {
   So finally, let me show a case with an external stylesheet, and with unicode-range. The unicode-range can be looked up in the Google's servers response, but I'm quite sure they are pretty static so you wouldn't have to do it often (but keep an eye out for them).
 </p>
 
-<pre id="c25081"><code class="xml hljs">&lt;head&gt;
+<pre id="c65987"><code class="xml hljs">&lt;head&gt;
   &lt;link rel="preload" crossorigin href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight" as="fetch"&gt;
   &lt;script&gt;
     // @lemuria/font source
@@ -1090,7 +442,7 @@ async throttle(ctx, next) {
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c18666"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c27532"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1098,15 +450,15 @@ async throttle(ctx, next) {
   <p class="text-center">
     <img
       alt="@Lemuria/font with unicode-range info allows to download fonts in parallel to the main thread." src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='817' height='597'/%3E"
-      data-io class="border rounded img-fluid" data-src="best-google-font/graphics/dev10.png">
+      data-io class="border rounded img-fluid" data-src="best-google-font-2/graphics/dev10.png">
     <noscript>
       <img
-        alt="@Lemuria/font with unicode-range info allows to download fonts in parallel to the main thread." class="border rounded img-fluid" src="best-google-font/graphics/dev10.png">
+        alt="@Lemuria/font with unicode-range info allows to download fonts in parallel to the main thread." class="border rounded img-fluid" src="best-google-font-2/graphics/dev10.png">
     </noscript>
   </p>
   <h5
-    id="figure-12-lemuriafont-with-unicode-range-info-allows-to-download-fonts-in-parallel-to-the-main-thread" class="m-0 d-inline-block" style="background: white;">
-    Figure 12: @Lemuria/font with unicode-range info allows to download fonts in parallel to the main thread.
+    id="figure-3-lemuriafont-with-unicode-range-info-allows-to-download-fonts-in-parallel-to-the-main-thread" class="m-0 d-inline-block" style="background: white;">
+    Figure 3: @Lemuria/font with unicode-range info allows to download fonts in parallel to the main thread.
   </h5>
 </div>
 <div class="container"><div class="row"><div class="col">
@@ -1121,7 +473,7 @@ async throttle(ctx, next) {
   Cool, I think we've optimised as much as possible out of <em>Google Fonts</em>. The final version enables to insert the stylesheet before the initial layout, and also downloads fonts in parallel to the main thread which is busy rendering. This is only possible if there are render blocking resources which will postpone the parsing for some time long enough for the web font stylesheet preload to complete. In case there are none, I've tried the following trick:
 </p>
 
-<pre id="c27532"><code class="xml hljs">&lt;head&gt;
+<pre id="c82466"><code class="xml hljs">&lt;head&gt;
   &lt;!-- ... --&gt;
   &lt;link href="data:text/css;charset=utf-8," rel="stylesheet"&gt;
 &lt;/head&gt;</code></pre>
@@ -1135,8 +487,8 @@ async throttle(ctx, next) {
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
     <img alt="section break"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9'/%3E" data-io data-src="/section-breaks/3.svg">
-    <noscript><img alt="section break" src="/section-breaks/3.svg"></noscript></a>
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='15'/%3E" data-io data-src="/section-breaks/0.svg">
+    <noscript><img alt="section break" src="/section-breaks/0.svg"></noscript></a>
 </p>
 
 <h2 id="conclusions">Conclusions</h2>
@@ -1148,12 +500,13 @@ async throttle(ctx, next) {
 <h4 id="1-async-loading" class="text-center">1) Async Loading</h4>
 <hr>
 
-<div class="position-relative float-md-right pl-3 pb-3" id="c83476">
+<div class="position-relative float-md-right pl-3 pb-3" id="c57883">
   <img alt="async google font animation"
-    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io class="img-fluid" data-src="best-google-font/graphics/async-google-font.png">
+    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io class="img-fluid"
+    data-src="best-google-font-2/graphics/async-google-font.png">
   <noscript>
     <img alt="async google font animation" class="img-fluid"
-      src="best-google-font/graphics/async-google-font.png">
+      src="best-google-font-2/graphics/async-google-font.png">
   </noscript>
 </div>
 
@@ -1172,13 +525,13 @@ async throttle(ctx, next) {
   Although async loading better than sync one, it's still not perfect, because we still have multiple reflows due to independent font loading. I propose a solution where an Ajax request is made to fetch the stylesheet, extract urls to fonts, preload them, and once they are all ready, embed the stylesheet into DOM.
 </p>
 
-<div class="position-relative float-md-left pr-3 pb-3" id="c31227">
+<div class="position-relative float-md-left pr-3 pb-3" id="c84504">
   <img alt="advanced google font animation"
     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io class="img-fluid"
-    data-src="best-google-font/graphics/advanced-google-font.png">
+    data-src="best-google-font-2/graphics/advanced-google-font.png">
   <noscript>
     <img alt="advanced google font animation" class="img-fluid"
-      src="best-google-font/graphics/advanced-google-font.png">
+      src="best-google-font-2/graphics/advanced-google-font.png">
   </noscript>
 </div>
 
@@ -1209,15 +562,15 @@ async throttle(ctx, next) {
    href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/">
    <img style="max-height:1em; margin-right:-0.2em;vertical-align: top;
         margin-top: .2em;" alt="S"
-     data-io data-src="best-google-font/graphics/smashing.png">
+     data-io data-src="best-google-font-2/graphics/smashing.png">
    <noscript>
      <img style="max-height:1em; margin-right:-0.2em;vertical-align: top;
           margin-top: .2em;" alt="S"
-       src="best-google-font/graphics/smashing.png">
+       src="best-google-font-2/graphics/smashing.png">
    </noscript>uggested by preload</a> contributor to Chrome:
 </p>
 
-<pre id="c72096"><code class="javascript hljs">function DOMTokenListSupports(tokenList, token) {
+<pre id="c84852"><code class="javascript hljs">function DOMTokenListSupports(tokenList, token) {
   if (!tokenList || !tokenList.supports) {
     return false
   } try { return tokenList.supports(token) } catch (e) {
@@ -1230,7 +583,7 @@ const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code>
   Finally, the best possible course of action is to preload fonts with a preload link without any scripting. However, that's a different context entirely since this article focuses specifically on <em>Google Fonts</em> optimisation. Their servers will return different urls for different browsers, therefore we can't just copy and paste them in the preload link, additionally their fonts evolve and change versions. The advanced google font loading solution is the simplest scripting solution to kicking off font preload as soon as possible, and eliminate render blocks. Moreover, I was asking myself, does the browser know internally the unicode range of the page even before body is available to JS? The last experiment was to embed the stylesheet manually with a <span class="tm">&lt;style&gt;/* contents of google font stylesheet */&lt;/style&gt;</span> onto the page and see its performance. There are no external resources and the page load should proceed seamlessly from parsing to layout.
 </p>
 
-<pre id="c52507"><code class="xml hljs">&lt;head&gt;
+<pre id="c88891"><code class="xml hljs">&lt;head&gt;
   &lt;link rel="dns-prefetch" href="//fonts.googleapis.com"&gt;
   &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
 
@@ -1249,7 +602,7 @@ const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code>
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c85787"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c72096"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1257,15 +610,15 @@ const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code>
   <p class="text-center">
     <img alt="Embedding contents of a web fonts styles manually."
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev11.gif">
+      data-src="best-google-font-2/graphics/dev11.gif">
     <noscript>
       <img alt="Embedding contents of a web fonts styles manually." class="border rounded img-fluid"
-        src="best-google-font/graphics/dev11.gif">
+        src="best-google-font-2/graphics/dev11.gif">
     </noscript>
   </p>
-  <h5 id="figure-13-embedding-contents-of-a-web-fonts-styles-manually" class="m-0 d-inline-block"
+  <h5 id="figure-4-embedding-contents-of-a-web-fonts-styles-manually" class="m-0 d-inline-block"
     style="background: white;">
-    Figure 13: Embedding contents of a web fonts styles manually.
+    Figure 4: Embedding contents of a web fonts styles manually.
   </h5>
 </div>
 <div class="container"><div class="row"><div class="col">
@@ -1277,8 +630,8 @@ const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code>
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
     <img alt="section break"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9'/%3E" data-io data-src="/section-breaks/4.svg">
-    <noscript><img alt="section break" src="/section-breaks/4.svg"></noscript></a>
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='13'/%3E" data-io data-src="/section-breaks/1.svg">
+    <noscript><img alt="section break" src="/section-breaks/1.svg"></noscript></a>
 </p>
 
 <h2 id="critical-path-fonts">Critical Path Fonts</h2>
@@ -1294,10 +647,10 @@ const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code>
 <span class="TM1">London</span>" with the <strong>Limelight</strong> font, therefore I only need these letters to be present. So I call Google to get the font:
 </p>
 
-<pre id="c56385"><code class="shell hljs">chrome:~$ https://fonts.googleapis.com/css?family=Limelight&amp;text= \
+<pre id="c97934"><code class="shell hljs">chrome:~$ https://fonts.googleapis.com/css?family=Limelight&amp;text= \
 &gt;  Art Deco™: The Node.JS Development Company In London</code></pre>
 
-<pre id="c86907"><code class="css hljs">/* the response */
+<pre id="c70819"><code class="css hljs">/* the response */
 @font-face {
   font-family: 'Limelight';
   font-style: normal;
@@ -1311,7 +664,7 @@ const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code>
   I grab the link and download it with Node.JS. It will target only <span class="tm">woff2</span> version because of my user-agent, however I'm not bothered to increase the page size by embedding a <span class="tm">woff</span> font also (for IE).
 </p>
 
-<pre id="c95958"><code class="javascript hljs">const format = 'woff2'
+<pre id="c70368"><code class="javascript hljs">const format = 'woff2'
 const body = await aqt(link, {
   binary: true,
 })
@@ -1322,7 +675,7 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
   After the data string is constructed, I can upgrade the stylesheet to include this string instead of the url.
 </p>
 
-<pre id="c16379"><code class="xml hljs">&lt;head&gt;
+<pre id="c73556"><code class="xml hljs">&lt;head&gt;
   &lt;style&gt;
     @font-face {
       font-family: 'Limelight';
@@ -1346,7 +699,7 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;"
   id="fig-data-url">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c53862"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c52507"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1354,15 +707,15 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
   <p class="text-center">
     <img alt="Data-url embedded font also takes time to download."
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev13.gif">
+      data-src="best-google-font-2/graphics/dev13.gif">
     <noscript>
       <img alt="Data-url embedded font also takes time to download." class="border rounded img-fluid"
-        src="best-google-font/graphics/dev13.gif">
+        src="best-google-font-2/graphics/dev13.gif">
     </noscript>
   </p>
-  <h5 id="figure-14-data-url-embedded-font-also-takes-time-to-download" class="m-0 d-inline-block"
+  <h5 id="figure-5-data-url-embedded-font-also-takes-time-to-download" class="m-0 d-inline-block"
     style="background: white;">
-    Figure 14: Data-url embedded font also takes time to download.
+    Figure 5: Data-url embedded font also takes time to download.
   </h5>
 </div>
 <div class="container"><div class="row"><div class="col">
@@ -1371,7 +724,7 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
   This result is consistent with the previous experiment, where I've shown that fonts, even declared in a <span class="tm">style</span> tag and not in an external stylesheet, begin to download only when it comes to first <span style="background:#a66eeb;">Recalculate styles</span> job (misleading called <em>RE</em>calculate, it's actually calculate). Here, after the font's download is finished, it forces a reflow and blocks the page for 100ms. It's really not good enough for an advanced optimisation. I'll apply the preload link on the font encoded with into <span class="tm">data:</span> string to solve this problem. I'll use the <span class="tm">onload</span> attribute to get reference to the base64-encoded data so that I don't have to declare it twice (first in the preload link, and second time in the style).
 </p>
 
-<pre id="c82499"><code class="xml hljs">&lt;head&gt;
+<pre id="c78401"><code class="xml hljs">&lt;head&gt;
   &lt;link
     href="data:application/font-woff2;base64,d09GMgABAAAAAAmYAAwAAAAAEAAAAAlKAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA..."
     rel="preload" as="font"
@@ -1398,14 +751,14 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
   We <strong>must not</strong> set the <span class="tm">crossorigin</span> attribute on the link, as <em>Safari</em> will error on it, saying the host didn't provide a CORS header. In case the <strong>preload</strong> <em>rel</em> is not supported, the polyfill can be used, which just calls the <span class="tm">onload</span> method. The <span class="tm">Symbol.iterator</span> polyfill inserted by Closure Compiler (because I did <span class="tm">[...document.head.querySelectorAll('[rel=&quot;preload&quot;][onload]')]</span>) is a bit long but I can't be bothered to do something like <span class="tm">[].forEach.call</span> or whatever other way there is.
 </p>
 
-<pre id="c84504"><code class="xml hljs">&lt;script&gt;
+<pre id="c66833"><code class="xml hljs">&lt;script&gt;
   (function(){function b(){var a=c,g=0;return function(){return g&lt;a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&amp;&amp;e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;
   if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&amp;&amp;Symbol.iterator&amp;&amp;c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);
 &lt;/script&gt;</code></pre>
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c31604"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c56385"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1413,15 +766,15 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
   <p class="text-center">
     <img alt="Achieving critical path font without FOUT/FOIT."
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev14.gif">
+      data-src="best-google-font-2/graphics/dev14.gif">
     <noscript>
       <img alt="Achieving critical path font without FOUT/FOIT." class="border rounded img-fluid"
-        src="best-google-font/graphics/dev14.gif">
+        src="best-google-font-2/graphics/dev14.gif">
     </noscript>
   </p>
-  <h5 id="figure-15-achieving-critical-path-font-without-foutfoit" class="m-0 d-inline-block"
+  <h5 id="figure-6-achieving-critical-path-font-without-foutfoit" class="m-0 d-inline-block"
     style="background: white;">
-    Figure 15: Achieving critical path font without FOUT/FOIT.
+    Figure 6: Achieving critical path font without FOUT/FOIT.
   </h5>
 </div>
 <div class="container"><div class="row"><div class="col">
@@ -1440,7 +793,7 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c73311"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c86907"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1448,15 +801,15 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
   <p class="text-center">
     <img alt="Waiting for onload event to fire on preload link."
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev15.gif">
+      data-src="best-google-font-2/graphics/dev15.gif">
     <noscript>
       <img alt="Waiting for onload event to fire on preload link." class="border rounded img-fluid"
-        src="best-google-font/graphics/dev15.gif">
+        src="best-google-font-2/graphics/dev15.gif">
     </noscript>
   </p>
-  <h5 id="figure-16-waiting-for-onload-event-to-fire-on-preload-link" class="m-0 d-inline-block"
+  <h5 id="figure-7-waiting-for-onload-event-to-fire-on-preload-link" class="m-0 d-inline-block"
     style="background: white;">
-    Figure 16: Waiting for onload event to fire on preload link.
+    Figure 7: Waiting for onload event to fire on preload link.
   </h5>
 </div>
 <div class="container"><div class="row"><div class="col">
@@ -1467,7 +820,7 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c84520"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c95958"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -1475,15 +828,15 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
   <p class="text-center">
     <img alt="Preloading data-url font used in stylesheet leads to the best optimisation."
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev16.gif">
+      data-src="best-google-font-2/graphics/dev16.gif">
     <noscript>
       <img alt="Preloading data-url font used in stylesheet leads to the best optimisation."
-        class="border rounded img-fluid" src="best-google-font/graphics/dev16.gif">
+        class="border rounded img-fluid" src="best-google-font-2/graphics/dev16.gif">
     </noscript>
   </p>
-  <h5 id="figure-17-preloading-data-url-font-used-in-stylesheet-leads-to-the-best-optimisation"
+  <h5 id="figure-8-preloading-data-url-font-used-in-stylesheet-leads-to-the-best-optimisation"
     class="m-0 d-inline-block" style="background: white;">
-    Figure 17: Preloading data-url font used in stylesheet leads to the best optimisation.
+    Figure 8: Preloading data-url font used in stylesheet leads to the best optimisation.
   </h5>
 </div>
 <div class="container"><div class="row"><div class="col">
@@ -1491,8 +844,8 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
     <img alt="section break"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10'/%3E" data-io data-src="/section-breaks/5.svg">
-    <noscript><img alt="section break" src="/section-breaks/5.svg"></noscript></a>
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='13'/%3E" data-io data-src="/section-breaks/2.svg">
+    <noscript><img alt="section break" src="/section-breaks/2.svg"></noscript></a>
 </p>
 
 <h2 id="learning-outcomes">Learning Outcomes</h2>
@@ -1523,7 +876,7 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
     <div style="position:relative;">
       <div class="container-fluid p-0 position-absolute"
         style="height: 50px; top: 0px; left: 0px; overflow: hidden;">
-        <div class=" Parallax" data-loading id="c73472"></div>
+        <div class=" Parallax" data-loading id="c61157"></div>
         <div class="Parallax"></div>
         <noscript><div class=" Parallax" style="background-image: url(/img/tile.jpg);"></div></noscript>
       </div>

@@ -29,7 +29,7 @@
   <ul>
     * Reduces the delay before the font is loaded and can be applied to text, by discovering the most efficient way to <strong>preload</strong> the stylesheet. Have you ever set <span class="tm" style="background-color:#ffd386">＜link rel="preload" onload="this.rel = 'stylesheet'"＞</span>? Read on to find out if that's optimal.
     * Eliminates extraneous reflows of the page that happen a) after the stylesheet is applied, and b) after each font and its variations are downloaded (think 3+ reflows for 2 fonts you're loading), thus <strong>unblocking</strong> the main thread and improving the overall page load time.
-    * Shows all variations of a font <strong>at the same time</strong>, without parts of text jumping on the page, which might be annoying to the user. The Flash of Unstyled Text (_FOUT_) is one thing, which is somewhat bearable by the user, but when many parts of the text (italic, bold) jump and flash it kind of looks unprofessional because it interferes with users' attention span.
+    - Shows all variations of a font *at the same time*, without parts of text jumping on the page, which might be annoying to the user. The Flash of Unstyled Text (_FOUT_) is one thing, which is somewhat bearable by the user, but when many parts of the text (italic, bold) jump and flash it kind of looks unprofessional because it interferes with users' attention span.
   </ul>
 </bootstrap-div>
 

@@ -9,19 +9,31 @@ const T = {
     file: './index',
     seo: 'Node.JS backend and JavaScript frontend development articles and knowledge sharing. Web software development tips and research on performance and productivity.',
   },
-
   'best-google-font': {
-    title: 'The Best Way To Load Google Fonts Asynchronously.',
-    seo: 'This method will load Google Fonts in the most efficient manner asynchronously without blocking the main thread and minimising the number of reflows.',
+    title: 'How To Load Google Fonts Asynchronously.',
+    seo: 'Loading Google Font in standard manner will block rendering and reduce page speed. Part I shows how to embed web font stylesheet asynchronously.',
     file: './best-google-font',
     // focus: true,
     topics: [
       'page speed optimisation',
-      'performance measurement',
+      // 'performance measurement',
       'web fonts',
     ],
     links: {
       'alligator/preload-prefetch': 'https://alligator.io/html/preload-prefetch/',
+    },
+  },
+  'best-google-font-2': {
+    title: 'The Best Way To Load Google Fonts Asynchronously.',
+    seo: 'An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows.',
+    file: './best-google-font-2',
+    // focus: true,
+    topics: [
+      'page speed optimisation',
+      // 'performance measurement',
+      'web fonts',
+    ],
+    links: {
       'smashing/preload': 'https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/',
     },
   },
