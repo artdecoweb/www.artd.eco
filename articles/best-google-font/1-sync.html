@@ -130,22 +130,28 @@ _Google Fonts Stylesheet_
 
 <fig src="./graphics/font1.gif" alt="Loading Google Font synchronously." />
 
-<ol>
-  * No fonts are downloaded yet, and because of `font-display: swap`, we see the fallback fonts. Without the swap property, there would be no text.
-  * The Limelight font is loaded for the heading, and the page is redrawn.
-  * The GentiumBasic font is loaded for the paragraph, and the page is redrawn again.
-</ol>
+<!-- <add-file></add-file> -->
+
+<revision>
+  - No fonts are downloaded yet, and because of `font-display: swap`, we see the fallback fonts. Without the swap property, there would be no text.
+  - The *Limelight* font is loaded for the heading, and the page is redrawn.
+  - The *GentiumBasic* font is loaded for the paragraph, and the page is redrawn again.
+</revision>
+
 <p>
   The 3rd step, with GentiumBasic loading, actually consists of 2 steps, the italic version being loaded, and the normal one, but that happens _almost_ at the same time, so I couldn't capture that on GIF. However, what is important is that each arrival of a new font results in page re-rendering and a change of text's styles as well. Rendering happens on the main thread, therefore the browser is blocked and slowed down by each font. The method that I will show, will wait for all fonts to arrive, before applying the stylesheet to the document, which will help to circumvent this aspect of imperfect standard _Google Font_ loading. So what happens under the hood? The performance snapshot below will help to understand how the page is loaded in more details.
 </p>
 
 <fig src="./graphics/dev1.png" alt="Performance measurement of sync Google Font loading." />
 
-<ol>
-  * The font's stylesheet is the first thing to be loaded by the browser, however parsing of HTML does not start before all styles completed their download (you can check that by enabling very slow network throttling &mdash; the parsing does not begin until all external CSS files are loaded). This is definitely an issue since we want to start rending the page immediately if we want it to be _performant_. This is why google.com does not have any external stylesheets, and their styles are embedded onto the page. There's also a delay before the fonts start to download indicated by the semi-opaque purple rectangle. I think this is because once the stylesheet is received, the browser starts parsing HTML and the thread is blocked, preventing any downloads from kicking in.
-  * The first font, LimeLight arrives and triggers recalculate styles, layout, update layer tree, paint and composite layers jobs. The longest is layout and it takes 46ms for 450 nodes, but that would take longer for larger pages. Altogether, the page's is blocked during that time (for about 80ms), preventing the spinning loading indicator from going away.
-  * The second font and its variations GentiumBasic, are loaded and applied to text on the page, triggering another 46ms layout, and another thread block. Because fonts arrived at almost the same time, there's only one layout job, but if italic version arrived later, there would have been another block.
-</ol>
+<revision>
+  <li>
+    <img float-right pl-2 src="./gif/thread.gif" alt="css unblocking thread animation"/>
+    The font's stylesheet is the first thing to be loaded by the browser, however parsing of HTML does not start before all styles completed their download (you can check that by enabling very slow network throttling &mdash; the parsing does not begin until all external CSS files are loaded). This is definitely an issue since we want to start rending the page immediately if we want it to be _performant_. This is why _google.com_ does not have any external stylesheets, and their styles are embedded onto the page. There's also a delay before the fonts start to download indicated by the semi-opaque purple rectangle. This is because even the stylesheet is received, the browser doesn't load the fonts until the layout (purple bar).<br><br>
+  </li>
+  - The first font, *LimeLight* arrives and triggers recalculate styles, layout, update layer tree, paint and composite layers jobs. The longest is layout and it takes 46ms for 450 nodes, but that would take longer for larger pages. Altogether, the page's is blocked during that time (for about 80ms), preventing the spinning loading indicator from going away.<br><br>
+  - The second font and its variations *GentiumBasic*, are loaded and applied to text on the page, triggering another 46ms layout, and another thread block. Because fonts arrived at almost the same time, there's only one layout job, but if italic version arrived later, there would have been another block.
+</revision>
 
 <p>
   The conclusion is that we want to avoid synchronous loading of _Google Fonts_ altogether. We cannot rely on Google to serve web font stylesheets immediately, and on slow network the UI will be completely blocked until the CSS is received. This is true not only for fonts, but for any CSS, therefore _Lighthouse_ will always give this suggestions:

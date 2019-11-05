@@ -23,7 +23,7 @@ const meta = [{
   key: 'highlightjs',
   id: 'c84504',
   props: {
-    lang: 'xml,javascript,css',
+    lang: 'xml,javascript',
   },
 },
 {
@@ -60,12 +60,12 @@ const meta = [{
   key: 'highlightjs',
   id: 'c65987',
   props: {
-    lang: 'xml,javascript',
+    lang: 'xml',
   },
 },
 {
   key: 'animation',
-  id: 'c35245',
+  id: 'c19251',
   props: {
     path: 'best-google-font/animate/agf.json',
     width: '550',
@@ -82,11 +82,10 @@ const meta = [{
   },
 },
 {
-  key: 'parallax',
-  id: 'c19251',
+  key: 'highlightjs',
+  id: 'c35245',
   props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
+    lang: 'xml',
   },
 },
 {
@@ -131,42 +130,42 @@ const meta = [{
   key: 'highlightjs',
   id: 'c66833',
   props: {
-    lang: 'xml,javascript',
+    lang: 'javascript',
   },
 },
 {
   key: 'highlightjs',
   id: 'c25081',
   props: {
-    lang: 'javascript',
+    lang: 'xml,javascript',
   },
 },
 {
   key: 'highlightjs',
   id: 'c27532',
   props: {
-    lang: 'xml,javascript',
+    lang: 'xml',
   },
 },
 {
   key: 'highlightjs',
   id: 'c72096',
   props: {
-    lang: 'xml',
+    lang: 'javascript',
   },
 },
 {
   key: 'highlightjs',
   id: 'c52507',
   props: {
-    lang: 'javascript',
+    lang: 'xml,css',
   },
 },
 {
   key: 'highlightjs',
   id: 'c56385',
   props: {
-    lang: 'xml,css',
+    lang: 'shell',
   },
 },
 {
@@ -189,7 +188,7 @@ const meta = [{
   key: 'highlightjs',
   id: 'c16379',
   props: {
-    lang: 'javascript',
+    lang: 'xml,css',
   },
 },
 {
@@ -209,10 +208,11 @@ const meta = [{
   },
 },
 {
-  key: 'highlightjs',
+  key: 'parallax',
   id: 'c59284',
   props: {
-    lang: 'xml,javascript',
+    'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 },
 {
@@ -275,22 +275,19 @@ const meta = [{
   key: 'highlightjs',
   id: 'c74268',
   props: {
-    lang: 'xml',
+    lang: 'css',
   },
 },
 {
   key: 'highlightjs',
   id: 'c73556',
   props: {
-    lang: 'javascript',
+    lang: 'xml,javascript',
   },
 },
 {
-  key: 'highlightjs',
-  id: 'c88891',
-  props: {
-    lang: 'xml,javascript',
-  },
+  key: 'tip',
+  id: 'c9848',
 },
 {
   key: 'parallax',
@@ -304,7 +301,7 @@ const meta = [{
   key: 'highlightjs',
   id: 'c75046',
   props: {
-    lang: 'css',
+    lang: 'xml,javascript',
   },
 },
 {
@@ -318,7 +315,7 @@ const meta = [{
   key: 'highlightjs',
   id: 'c82499',
   props: {
-    lang: 'xml,css',
+    lang: 'xml,javascript,css',
   },
 },
 {
@@ -349,7 +346,7 @@ const meta = [{
   key: 'highlightjs',
   id: 'c84852',
   props: {
-    lang: 'xml',
+    lang: 'xml,javascript',
   },
 },
 {
@@ -364,14 +361,21 @@ const meta = [{
   key: 'highlightjs',
   id: 'c86907',
   props: {
-    lang: 'shell',
+    lang: 'css',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c88891',
+  props: {
+    lang: 'javascript',
   },
 },
 {
   key: 'highlightjs',
   id: 'c95958',
   props: {
-    lang: 'css',
+    lang: 'javascript',
   },
 },
 {
@@ -380,10 +384,6 @@ const meta = [{
   props: {
     lang: 'javascript',
   },
-},
-{
-  key: 'tip',
-  id: 'c9848',
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const { parent, el } = init(id, key)

@@ -20,6 +20,8 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
     
     <script>document.documentElement.classList.remove("no-js")</script>
     <link rel="stylesheet" href="/styles/combined.css">
+    <link rel="preload" href="/comps/articles-articles.js" crossorigin as="script">
+    <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
     <style>
       .no-js [data-loading], .no-js .ImageHolder { display: none!important }
     </style>
@@ -31,7 +33,6 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
     <script crossorigin data-src="/comps/common.js"></script>
     <script crossorigin data-src="/comps/articles-articles.js"></script>
 
-    <link rel="preload" href="/comps/articles-articles.js" as="script" crossorigin>
   </head>
   <body style="overscroll-behavior: none;">
 
@@ -68,7 +69,7 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
     </div>
 
 
-    <div id="Content" class="container"><div>
+    <div class="container" id="Content"><div>
   <a href="/articles/the-best-way-to-load-google-fonts-asynchronously.html">
     The Best Way To Load Google Fonts Asynchronously.</a>
 </div></div>
@@ -80,7 +81,7 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
         <div class="Parallax"></div>
         <noscript><div class=" Parallax" style="background-image: url(/img/tile.jpg);"></div></noscript>
       </div>
-      <div id="bottom" class="position-absolute" style="top: calc(50px - 1px); left: 0px;"></div>
+      <div class="position-absolute" style="top: calc(50px - 1px); left: 0px;" id="bottom"></div>
     </div>
     <script>
   (function(){function d(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function e(){var a=document.querySelectorAll("script[data-src]");if(!(a instanceof Array)){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];a=b?b.call(a):{next:d(a)};for(var c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}

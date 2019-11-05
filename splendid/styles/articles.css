@@ -10,9 +10,10 @@ p {
 }
 .tm {
   background-color: #e1d6c4;
-  font-size: initial;
+  /* font-size: initial; */
   font-family: 'Courier New', Courier, monospace;
-  word-break: break-all;
+  word-break: break-word;
+  line-height: 1.4rem;
 }
 #Holder {
   position: absolute;

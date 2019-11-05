@@ -14,6 +14,8 @@ const config = {
     },
   ],
   output: BUILD_DIR,
+  // components: ['components', '../articles/components'],
+  elements: ['elements', '../articles/elements'],
   // to generate sitemaps:
   url: 'https://artd.eco',
 }

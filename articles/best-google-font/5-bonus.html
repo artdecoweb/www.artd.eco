@@ -1,7 +1,7 @@
 ## Critical Path Fonts
 
 <p>
-  When marking up a page with strong branded fonts, we don't want users to perceive any font swap, at least not for the first thing they see on a page. The resources required for this first thing are said to lay within the critical path. To achieve instant display of a font, it needs to be added to the page in form of a `data:application/font`-encoded base64 string. _Google Fonts_ are not capable of that, therefore it's a completely separate solution, but Google will help us a bit. For example, I want to display the heading "<span class="TM">Art Deco™: The <em>Node.JS</em> Development Company In London</span>" with the *Limelight* font, therefore I only need these letters to be present. So I call Google to get the font:
+  When marking up a page with strong branded fonts, we don't want users to perceive any font swap, at least not for the first thing they see on a page. The resources required for this first thing are said to lay within the critical path. To achieve instant display of a font, it needs to be added to the page in form of a `data:application/font`-encoded base64 string. _Google Fonts_ are not capable of that, therefore it's a completely separate solution, but Google will help us a bit. For example, I want to display the heading "<tm>Art Deco™: The <em>Node.JS</em> Development Company In London</tm>" with the *Limelight* font, therefore I only need these letters to be present. So I call Google to get the font:
 </p>
 
 ```console
