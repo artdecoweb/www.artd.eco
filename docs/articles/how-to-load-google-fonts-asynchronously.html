@@ -233,9 +233,12 @@ h;a.style.webkitTransform=h})};}).call(this);
   <li><a href="#summary-to-part-i">Summary To Part I</a></li>
 </ul>
 <ul>
-  <li><a href="/best-google-font-2#advanced-loading-lemuriafont">Advanced Loading: @lemuria/font</a></li>
-  <li><a href="#conclusions">Conclusions</a></li>
-  <li><a href="#critical-path-fonts">Critical Path Fonts</a></li>
+  <li><a
+   href="/articles/the-best-way-to-load-google-fonts-asynchronously.html#advanced-loading-lemuriafont">
+   Advanced Loading: @lemuria/font</a></li>
+  <li><a href="/articles/the-best-way-to-load-google-fonts-asynchronously.html#conclusions">Conclusions</a></li>
+  <li><a href="/articles/the-best-way-to-load-google-fonts-asynchronously.html#critical-path-fonts">
+   Critical Path Fonts</a></li>
 </ul>
 
 <p class="SectionBreak">
@@ -254,7 +257,7 @@ h;a.style.webkitTransform=h})};}).call(this);
   Let's start with the basics. We want a Google Font on our website. This means going to <a href="https://fonts.google.com">fonts.google.com</a> and picking up specimens that we want our pages to display with, for example, the fonts that I use here are an Art Deco font <strong>Limelight</strong> for headings and <strong>Gentium Basic</strong> (with variations) for paragraphs:
 </p>
 
-<pre id="c16f72"><code class="xml hljs">&lt;link rel="stylesheet"
+<pre id="c16f7"><code class="xml hljs">&lt;link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Limelight|Gentium+Basic:400,400i,700&amp;display=swap"&gt;</code></pre>
 
 <p>
@@ -373,7 +376,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f7"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -414,7 +417,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -461,7 +464,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -518,7 +521,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f3"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -583,7 +586,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f3"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f4"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -655,7 +658,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f4"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f5"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -700,12 +703,16 @@ h;a.style.webkitTransform=h})};}).call(this);
 <p>
   So the next step is to make sure that there's only one reflow for the style and fonts. As a side note, there's a technique outlined on the <a target="_blank" rel="noopener" style="color: #7b913c !important;; text-decoration: underline;"
    href="https://alligator.io/html/preload-prefetch/">
-   <img alt="alligator"
-     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='74' height='36'/%3E" data-io data-src="best-google-font/graphics/croc.png">
-   <noscript><img alt="alligator" src="best-google-font/graphics/croc.png"></noscript>Alligator blog: Preload and Prefetch</a> that contracts the JS into a one-liner:
+   <span style="display:inline-block" class="position-relative" id="cde7b">
+     <img alt="alligator"
+       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='74' height='36'/%3E" data-io class="img-fluid" data-src="best-google-font/graphics/croc.png">
+     <noscript>
+       <img alt="alligator" class="img-fluid" src="best-google-font/graphics/croc.png">
+     </noscript>
+   </span>Alligator blog: Preload and Prefetch</a> that contracts the JS into a one-liner:
 </p>
 
-<pre id="c16f7"><code class="xml hljs">&lt;link
+<pre id="c16f71"><code class="xml hljs">&lt;link
   rel="preload"
   as="style"
   onload="this.rel = 'stylesheet'"
@@ -721,7 +728,7 @@ h;a.style.webkitTransform=h})};}).call(this);
   Never mind still, it doesn't hurt to remove the <span class="tm">onload</span> attribute really. Additionally, this <span class="tm">onload</span> attribute solution also requires a polyfill for browsers that don't support preload which I'll show in the second part, but what I'm really concerned here is <strong>WHEN</strong> the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the <span class="tm">onload</span> method.
 </p>
 
-<pre id="c16f71"><code class="xml hljs">&lt;link rel="preload" as="style" crossorigin
+<pre id="c16f72"><code class="xml hljs">&lt;link rel="preload" as="style" crossorigin
   href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"
   onload="
   performance.mark('apply-stylesheet');
@@ -737,7 +744,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f5"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f6"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -810,7 +817,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 </div></div></div>
 <div class="container-fluid position-relative mb-3 p-3 rounded" style="overflow: hidden;">
-  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f6"></div>
+  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f7"></div>
   <div style="z-index: -1;" class="Parallax"></div>
   <noscript>
     <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -955,6 +962,10 @@ h;a.style.webkitTransform=h})};}).call(this);
 <p>
   Now that we're equiped with this knowledge, we can move on to Part II: <a class="btn btn-large btn-light" href="/best-google-font-2">
    The Best Way To Load Google Font Asynchronously</a>
+</p>
+
+<p>
+  <span id="ce6be"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
 </p>
 
 </div>

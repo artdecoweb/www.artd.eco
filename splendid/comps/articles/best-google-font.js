@@ -49,6 +49,15 @@ const meta = [{
   },
 },
 {
+  key: 'social-buttons',
+  id: 'ce6be',
+  props: {
+    url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
+    subject: 'How To Load Google Fonts Asynchronously.',
+    title: 'Loading Google Font in standard manner will block rendering and reduce page speed. Part I shows how to embed web font stylesheet asynchronously.',
+  },
+},
+{
   key: 'animation',
   id: 'c65b9',
   props: {
@@ -56,6 +65,15 @@ const meta = [{
     width: '550',
     height: '400',
     align: 'center',
+  },
+},
+{
+  key: 'animation',
+  id: 'cde7b',
+  props: {
+    path: 'best-google-font/animate/aligator.json',
+    width: '74',
+    height: '36',
   },
 },
 {

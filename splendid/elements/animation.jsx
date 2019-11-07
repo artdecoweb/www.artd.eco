@@ -6,8 +6,8 @@ import { relative, dirname } from 'path'
  * @param {string} props.path The path to the JSON.
  * @param {string} props.src The placeholder image.
  */
-export default async function Animation({ splendid, path, src, alt, class: cl,
-  dev, width, height, align }) {
+export default async function Animation({ splendid, style, path, src, alt, class: cl,
+  dev, width, height, align, span }) {
   if (!path.endsWith('.json'))
     throw splendid.newError('Expected path to end with .json')
   const Path = splendid.resolveRelative(path)
@@ -36,7 +36,7 @@ export default async function Animation({ splendid, path, src, alt, class: cl,
     width, height, align, dev,
   })
   const c = cl ? `position-relative ${cl}` : 'position-relative'
-  return (<div className={c}>
-    <splendid-img img-fluid placeholder-auto alt={alt} src={src} />
-  </div>)
+  const img = (<splendid-img img-fluid placeholder-auto alt={alt} src={src} />)
+  if (span) return (<span style={style} className={c}>{img}</span>)
+  return (<div style={style} className={c}>{img}</div>)
 }
