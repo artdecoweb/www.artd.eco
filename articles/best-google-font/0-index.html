@@ -24,17 +24,75 @@
 
 <!-- <add-file>./graphics/parchment-svg.svg</add-file> -->
 
-<bootstrap-div id="Advantages" position-relative>
-  <img alt="papyrus background" src="./graphics/parchment-svg.svg" position-absolute top="0" left="0" right="0" bottom="0" style="width:100%; height:100%;" z-index="-1"/>
-  <ul>
-    * Reduces the delay before the font is loaded and can be applied to text, by discovering the most efficient way to <strong>preload</strong> the stylesheet. Have you ever set <span class="tm" style="background-color:#ffd386">＜link rel="preload" onload="this.rel = 'stylesheet'"＞</span>? Read on to find out if that's optimal.
-    * Eliminates extraneous reflows of the page that happen a) after the stylesheet is applied, and b) after each font and its variations are downloaded (think 3+ reflows for 2 fonts you're loading), thus <strong>unblocking</strong> the main thread and improving the overall page load time.
-    - Shows all variations of a font *at the same time*, without parts of text jumping on the page, which might be annoying to the user. The Flash of Unstyled Text (_FOUT_) is one thing, which is somewhat bearable by the user, but when many parts of the text (italic, bold) jump and flash it kind of looks unprofessional because it interferes with users' attention span.
-  </ul>
-</bootstrap-div>
+<style>
+  .PA {
+    display: none!important;
+  }
+@media (min-width: 576px) {
+  .PB { display: none!important; }
+  .PA { display:block!important; }
+}
+.PC {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width:100%;
+  height:100%;
+  position: absolute;
+}
+</style>
 
-<p>As a bonus at the end, I will show you a hack how to embed a font on a webpage for the critical path view, that is more advanced than just embedding a CSS with `data:application/font`-encoded base64 string with it, which might still result in a _FOUT_, but my bonus workaround eliminates the _FOUT_ completely.</p>
+<Div>
+  <img class="PB" alt="papyrus background" src="./svg/parchment-top.svg" style="width:100%; height:auto" d-block/>
+  <bootstrap-div id="Advantages" position-relative>
+    <img class="PA PC" alt="papyrus background" src="./graphics/parchment-svg.svg" />
+
+    <!-- the vertical -->
+    <img class="PB PC" alt="papyrus background" src="./svg/parchment-middle.svg"  />
+    <ul>
+      * Reduces the delay before the font is loaded and can be applied to text, by discovering the most efficient way to <strong>preload</strong> the stylesheet. Have you ever set <span class="tm" style="background-color:#ffd386">＜link rel="preload" onload="this.rel = 'stylesheet'"＞</span>? Read on to find out if that's optimal.
+      * Eliminates extraneous reflows of the page that happen a) after the stylesheet is applied, and b) after each font and its variations are downloaded (think 3+ reflows for 2 fonts you're loading), thus <strong>unblocking</strong> the main thread and improving the overall page load time.
+      - Shows all variations of a font *at the same time*, without parts of text jumping on the page, which might be annoying to the user. The Flash of Unstyled Text (_FOUT_) is one thing, which is somewhat bearable by the user, but when many parts of the text (italic, bold) jump and flash it kind of looks unprofessional because it interferes with users' attention span.
+    </ul>
+  </bootstrap-div>
+  <img class="PB" alt="papyrus background" src="./svg/parchment-bottom.svg" style="width:100%; height:auto" d-block/>
+</Div>
+
+
+<p>As a bonus at the end, I will show you a hack how to embed a font on a webpage for the critical path view, that is more advanced than just embedding a CSS with `data:application/font`-encoded base64 string with it, which might still result in a _FOUT_, but my bonus workaround removes the _FOUT_ completely.</p>
+
+<p>
+  This article is not just about fonts loading, it's generally good to understand the processes underlying the page load process. In fact, some of the reflows that I'm going to talk about will take 20-60ms on a fast computer, and some will say that it's too pedantic to even bother with that. However, I was conducting my experiments on a late-2008 Macbook (which I actually use on daily basis), and there they took 120ms. Although we live in an age of constantly faster technology, there are also older and mobile devices which are generally slower. On a newer iMac, I had to switch on CPU throttling to 6x to achieve the same result.
+  </p>
+
+  <p>
+  <img src="./gif/100.gif" alt="Lighthouse 100 performance score" float="right" />
+
+    But I don't think it's irrelevant to slow down sometimes: seeing things in "slo-mo" will help to develop understanding of steps in which a page loads such as, when fonts referenced in the stylesheet start downloading, differences between sync and async stylesheets, and why we might want to embed all styles on the page. The font method itself will increase the _Lighthouse_ rating, and fix its "_eliminate render-blocking resources_" warning, and whereas at night fonts can load in 100ms so that the benefit is slight, at noon time of a work day that could easily be 300-500ms and become the bottleneck of the website rendering.
+</p>
 
 <section-break />
+
+### Table Of Contents
+
+<p>
+  There are 2 parts: this first one, with the description of how to achieve asynchronous web font loading, and the second one, introducing some JS to load the Google Font in the most efficient manner possible.
+</p>
+
+<ul>
+  - [Standard Sync Loading](#standard-sync-loading)
+  - [Async Google Font Loading](#async-google-font-loading)
+  - [Summary To Part I](#summary-to-part-i)
+</ul>
+<ul>
+  - [Advanced Loading: @lemuria/font](best-google-font-2#advanced-loading-lemuriafont)
+  - [Conclusions](#conclusions)
+  - [Critical Path Fonts](#critical-path-fonts)
+</ul>
+
+<section-break />
+
 
 <!-- <img alt="Advanced Font Loading" img-fluid src="./advanced.jpg" placeholder-auto /> -->

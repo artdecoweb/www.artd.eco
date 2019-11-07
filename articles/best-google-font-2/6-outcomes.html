@@ -1,18 +1,3 @@
-## Learning Outcomes
-
-<p>
-  In the beginning I only knew how to load up Lighthouse, and it showed me the "eliminate render-blocking resources" warning. I had a vague idea of what it meant, but using the performance tool really helped to visualise the process of how a web page loads. It's a sort of debugger for web pages performance. I then tried to find out how to load _Google Font_ asynchronously, but there was literally just one method, as outlined on the Alligator website I gave a link to above. I then went on to explore, what does adding the font really adds in terms of performance, and how to optimise it. All the experimenting that I've done helped me to build up the knowledge base of essentials of how web pages load, and I hope this article will be useful to others.
-</p>
-
-<ul>
-  * Adding a stylesheet with a link will block the page from rendering, and parsing of HTML will only begin when all CSS are loaded. Same applies for JS, unless the `defer/async` attributes are set on them.
-  * It's not only the actual downloading of CSS files that slows down the page, but also gaps that are introduced to the "parse html" step.
-  * For landing pages on a website it would make sense to embed the CSS onto the page to achieve maximum performance, whereas for informational webpages it's still OK to share external CSS files.
-  * After the page is loaded, scripts defined in the head have some time to evaluate and download resources, before initial parsing and layout begin. For pages without external resources, this time is short, for pages with resources, it's longer.
-  * Once the initial calculate styles/layout process begins, the main thread is blocked, and scripts that for example started to download resources with XHR, will have to wait until it's done.
-  * Embedding styles after the initial layout will impose a cost of recalculating layout and reflow. In case of web fonts, even if the fonts are not loaded, the reflow will still happen, and block the page, so that the load event is unnecessary delayed. If the style is injected before the initial render, there's no reflow.
-  * To step up from sync loading to async loading of CSS, it's best to create a preload link, and define a script right under it that adds the style, instead of updating the _rel_ of the preload link to <strong>stylesheet</strong> to avoid a reflow (see previous point).
-</ul>
 
 <p>
   Say, someone is looking to develop a web page, they click a link to my website, and instantly they see a page that is branded with a font and opens in a split second. Would they be impressed? I think so. In other industries the value of extremely fast loading is probably more subtle and rests on the subconscious appreciation of an aesthetically pleasing fast website. But then again, optimisations like this are only the final polishing steps in producing an amazing website, that above all has impressive design and meaningful and engaging content. Still, here I'm describing it in such details because it helps to understand how browsers work so that we can apply this knowledge (rather than a specific method) in all of our work.

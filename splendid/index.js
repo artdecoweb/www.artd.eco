@@ -1,23 +1,20 @@
 import { join } from 'path'
 
 const APP_DIR = 'splendid'
-const BUILD_DIR = 'docs'
 
 /** @type {import('splendid').Config} */
 const config = {
-  appDir: APP_DIR,
   layout: join(APP_DIR, 'layout/main.html'),
   replacements: [
     {
       re: /{{ company }}/g,
-      replacement: '[Art Deco](https://artd.eco)',
+      replacement: '[Art Deco&trade;](https://www.artd.eco)',
     },
   ],
-  output: BUILD_DIR,
   // components: ['components', '../articles/components'],
   elements: ['elements', '../articles/elements'],
   // to generate sitemaps:
-  url: 'https://artd.eco',
+  url: 'https://www.artd.eco',
 }
 
 export default config

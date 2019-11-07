@@ -12,6 +12,10 @@ const T = {
   'best-google-font': {
     title: 'How To Load Google Fonts Asynchronously.',
     seo: 'Loading Google Font in standard manner will block rendering and reduce page speed. Part I shows how to embed web font stylesheet asynchronously.',
+    og: {
+      image: '/articles/best-google-font-2/graphics/async-google-font.png',
+      type: 'article',
+    },
     file: './best-google-font',
     // focus: true,
     topics: [
@@ -27,6 +31,10 @@ const T = {
     title: 'The Best Way To Load Google Fonts Asynchronously.',
     seo: 'An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows.',
     file: './best-google-font-2',
+    og: {
+      image: '/articles/best-google-font-2/graphics/advanced-google-font.png',
+      type: 'article',
+    },
     // focus: true,
     topics: [
       'page speed optimisation',

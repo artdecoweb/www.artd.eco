@@ -4,39 +4,53 @@ import '../../js/load-background-img'
 import makeClassGetter from '../__mcg'
 const renameMaps = {  }
 __initBottom()
-import { makeIo, init, startPlain } from '../__competent-lib'
+import { Component, render, h } from '@externs/preact'
+import { makeIo, init, start } from '../__competent-lib'
 import Parallax from 'splendid/build/components/parallax'
-import Animation from '../../components/animation.js'
 import Highlightjs from 'splendid/build/components/highlightjs'
+import Animation from '../../components/animation.js'
 import Tip from '../../components/tip.js'
+import SocialButtons from 'splendid/build/components/social-buttons'
 
 const __components = {
   'parallax': Parallax,
-  'animation': Animation,
   'highlightjs': Highlightjs,
+  'animation': Animation,
   'tip': Tip,
+  'social-buttons': SocialButtons,
 }
 
 const io = makeIo()
 
+/** @type {!Array<!preact.PreactProps>} */
 const meta = [{
-  key: 'parallax',
-  id: 'c70819',
+  key: 'highlightjs',
+  id: 'c6ce5,c6ce51,c6ce52,c6ce53',
   props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
+    lang: 'xml,javascript',
   },
 },
 {
+  key: 'highlightjs',
+  id: 'c16f7,c16f71,c16f72',
+  props: {
+    lang: 'xml',
+  },
+},
+{
+  key: 'tip',
+  id: 'c716e',
+},
+{
   key: 'parallax',
-  id: 'c56385',
+  id: 'c5471',
   props: {
     'background-image': '/img/tile.jpg',
   },
 },
 {
   key: 'animation',
-  id: 'c52507',
+  id: 'c65b9',
   props: {
     path: 'best-google-font/animate/agf.json',
     width: '550',
@@ -45,149 +59,47 @@ const meta = [{
   },
 },
 {
-  key: 'parallax',
-  id: 'c27532',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
   key: 'highlightjs',
-  id: 'c45018',
-  props: {
-    lang: 'xml,javascript',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c25081',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c78401',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c74268',
-  props: {
-    lang: 'xml',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c72096',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c57253',
-  props: {
-    lang: 'xml,javascript',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c65987',
-  props: {
-    lang: 'xml,javascript',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c70368',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c73556',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c66833',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c75046',
+  id: 'c1d47,c1d471',
   props: {
     lang: 'css',
   },
 },
 {
-  key: 'highlightjs',
-  id: 'c80',
+  key: 'social-buttons',
+  id: 'ce856',
   props: {
-    lang: 'css',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c82466',
-  props: {
-    lang: 'xml',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c84852',
-  props: {
-    lang: 'xml',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c88891',
-  props: {
-    lang: 'xml,javascript',
+    url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
+    subject: 'How To Load Google Fonts Asynchronously.',
+    size: '24',
+    title: 'Loading Google Font in standard manner will block rendering and reduce page speed. Part I shows how to embed web font stylesheet asynchronously.',
   },
 },
 {
   key: 'parallax',
-  id: 'c97934',
+  id: 'c709f,c709f1,c709f2,c709f3,c709f4,c709f5,c709f6,c709f7',
   props: {
     'background-image': '/img/letters/background.png',
     speedy: '-0.5',
   },
-},
-{
-  key: 'tip',
-  id: 'c9848',
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
-  const { parent, el } = init(id, key)
   const Comp = __components[key]
-  const plain = true
-  const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id, plain })
-  let comp
+  const plain = Comp.plain || (/^\s*class\s+/.test(Comp.toString()) && !Component.isPrototypeOf(Comp))
   props.splendid = { addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
   } }
-  el.render = () => {
-    comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
-    return comp
-  }
-  el.render.meta = renderMeta
-  io.observe(el)
+
+  const ids = id.split(',')
+  ids.forEach((Id) => {
+    const { parent, el } = init(Id, key)
+    const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })
+    let comp
+    el.render = () => {
+      comp = start(renderMeta, Comp, comp, el, parent, props, children, { render, Component, h })
+      return comp
+    }
+    el.render.meta = renderMeta
+    io.observe(el)
+  })
 })

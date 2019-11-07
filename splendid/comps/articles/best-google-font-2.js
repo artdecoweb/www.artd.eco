@@ -18,21 +18,49 @@ const io = makeIo()
 
 const meta = [{
   key: 'highlightjs',
-  id: 'c78401',
+  id: 'c6ce5,c6ce51,c6ce52,c6ce53',
   props: {
-    lang: 'xml,javascript,css',
+    lang: 'xml,javascript',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c724c',
+  props: {
+    lang: 'shell',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c1602,c16021',
+  props: {
+    lang: 'xml,css',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c16f7',
+  props: {
+    lang: 'xml',
   },
 },
 {
   key: 'parallax',
-  id: 'c61157',
+  id: 'c5471',
   props: {
     'background-image': '/img/tile.jpg',
   },
 },
 {
+  key: 'highlightjs',
+  id: 'ccdbf,ccdbf1,ccdbf2,ccdbf3,ccdbf4,ccdbf5,ccdbf6',
+  props: {
+    lang: 'javascript',
+  },
+},
+{
   key: 'animation',
-  id: 'c57883',
+  id: 'c5f46',
   props: {
     path: 'best-google-font-2/animate/async-google-font.json',
     width: '505',
@@ -41,178 +69,22 @@ const meta = [{
   },
 },
 {
-  key: 'parallax',
-  id: 'c59284',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
   key: 'highlightjs',
-  id: 'c57253',
-  props: {
-    lang: 'xml,javascript',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c45018',
-  props: {
-    lang: 'javascript',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c16379',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c56385',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c52507',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c27532',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c25081',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c82466',
-  props: {
-    lang: 'xml',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c70819',
+  id: 'c1d47',
   props: {
     lang: 'css',
   },
 },
 {
   key: 'highlightjs',
-  id: 'c65987',
+  id: 'cbdf7',
   props: {
-    lang: 'xml,javascript',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c70368',
-  props: {
-    lang: 'javascript',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c66833',
-  props: {
-    lang: 'xml,javascript',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c95958',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c97934',
-  props: {
-    lang: 'shell',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c72096',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c84852',
-  props: {
-    lang: 'javascript',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c74268',
-  props: {
-    lang: 'javascript',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c86907',
-  props: {
-    'background-image': '/img/letters/background.png',
-    speedy: '-0.5',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c88891',
-  props: {
-    lang: 'xml,css',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c73556',
-  props: {
-    lang: 'xml,css',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c82499',
-  props: {
-    lang: 'javascript',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c75046',
-  props: {
-    lang: 'xml,javascript',
+    lang: 'xml,javascript,css',
   },
 },
 {
   key: 'animation',
-  id: 'c84504',
+  id: 'c228f',
   props: {
     path: 'best-google-font-2/animate/advanced-google-font.json',
     width: '505',
@@ -220,32 +92,30 @@ const meta = [{
   },
 },
 {
-  key: 'highlightjs',
-  id: 'c80',
+  key: 'parallax',
+  id: 'c709f,c709f1,c709f2,c709f3,c709f4,c709f5,c709f6,c709f7,c709f8',
   props: {
-    lang: 'javascript',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c9848',
-  props: {
-    lang: 'javascript',
+    'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
   },
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
-  const { parent, el } = init(id, key)
   const Comp = __components[key]
   const plain = true
-  const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id, plain })
-  let comp
   props.splendid = { addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
   } }
-  el.render = () => {
-    comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
-    return comp
-  }
-  el.render.meta = renderMeta
-  io.observe(el)
+
+  const ids = id.split(',')
+  ids.forEach((Id) => {
+    const { parent, el } = init(Id, key)
+    const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })
+    let comp
+    el.render = () => {
+      comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
+      return comp
+    }
+    el.render.meta = renderMeta
+    io.observe(el)
+  })
 })
