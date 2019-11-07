@@ -48,10 +48,10 @@
   resolved "https://registry.yarnpkg.com/@depack/split/-/split-1.0.0.tgz#37fea28d9bc6f01e5a2da87d393f402781bb7e99"
   integrity sha512-PNJPl01VFMKtyN7qBZ2cds4N/lO2KvzLrR7JamODFiuuL2X8mGoTKp1SI8fxlT2MwLV8mScCUKn55QPwsUX7iA==
 
-"@externs/preact@^1.2.6":
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/@externs/preact/-/preact-1.2.6.tgz#8b7e5383e5bf6e65926ea77db0b0b4ed70ed7007"
-  integrity sha512-JpMPffLav+1ATP2PKe+B0eeqK2s8JcrjzBlDmqt1IstdJxyl72A3QgJdu2MjNlRISj3NioduYg9BbRv+2pPQvw==
+"@externs/preact@^1.2.7":
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/@externs/preact/-/preact-1.2.7.tgz#1003b6ce246dc9dba6681d37ddc0d32793311feb"
+  integrity sha512-0TPZOBoEdLoS0QBu9NOYB41huYxV6YEMRZbKBtCy05nEXCJiAHDw/jam+biUNuGM2+/eGMn/4VH6BeeXxFnf4Q==
 
 "@idio/frontend@^1.6.0":
   version "1.6.0"
@@ -126,10 +126,10 @@
   resolved "https://registry.yarnpkg.com/@zoroaster/mask/-/mask-2.3.0.tgz#57d169417e09e481efafccbffdd93cef919ec5e6"
   integrity sha512-fufal06pS/SYhOKHCmoFQ+PjhQwsCwMr2h0D2xeiVaXstaWHJVEiLg4+BU/KCmOOzLXLKikf81ca4zFXip7ScQ==
 
-alamode@^3.0.0, alamode@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.1.0.tgz#d1e9a4bc2b7d9ccd7fd8d5aaa57e9b10153faa52"
-  integrity sha512-fHqA846xzRHRBX/Zq4weoGR6Jd1mPgSGrOiWPvOvcCfjFf8+VIK6lsIQbbUe1Jl/eX2zFyRimkg7ed84OAuvcw==
+alamode@^3.0.0, alamode@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.2.0.tgz#ee79dcf2483b5e28e9aac8cd0dfdc692aa333ca5"
+  integrity sha512-jDV6kYpIf9jHJUre1OOotW8EM2Qy58S/eOks2MWhjNz2xJQdEfyzFKbcdaZowC8sk5DKxsnapf/mZNE53B3haQ==
 
 bootstrap@^4.3.1:
   version "4.3.1"
@@ -172,10 +172,10 @@ documentary@^1.34.1:
     preact "8.5.2"
     typal "^1.22.6"
 
-dropcss@^1.0.15:
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/dropcss/-/dropcss-1.0.15.tgz#f7988a86b104d7b7722b2d558642572f554565f7"
-  integrity sha512-YRIGbyOQKhZc8BEJv4PbzI0FSsfHdTFiFuik/zNE22ZP4SriUmVkNYQJ+FMM0LqSTvEpqng0PUFZaYKem44VgQ==
+dropcss@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/dropcss/-/dropcss-1.0.16.tgz#d538dbc278832f17cc1e8a8dcb0090cac8509525"
+  integrity sha512-QgA6BUh2SoBYE/dSuMmeGhNdoGtGewt3Rn66xKyXoGNyjrKRXf163wuM+xeQ83p87l/3ALoB6Il1dgKyGS5pEw==
 
 erotic@^2.1.0:
   version "2.1.1"
@@ -212,10 +212,10 @@ good-listener@^1.2.2:
   dependencies:
     delegate "^3.1.2"
 
-highlight.js@9.16.1:
-  version "9.16.1"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.16.1.tgz#827f49ca96eae006d8a2a0d5e3acd56041c26fc5"
-  integrity sha512-pyyiU56NR1XSm8M/l1QDKGGCA2n2GrcTxFahBo4v/2dH3gy4IiALczwhC9YJicyjoRh6JQWM+h3PvY1ZZ+D0+g==
+highlight.js@9.16.2:
+  version "9.16.2"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.16.2.tgz#68368d039ffe1c6211bcc07e483daf95de3e403e"
+  integrity sha512-feMUrVLZvjy0oC7FVJQcSQRqbBq9kwqnYE4+Kj9ZjbHh3g+BisiPgF49NyQbVLNdrL/qqZr3Ca9yOKwgn2i/tw==
 
 makepromise@^3.1.0:
   version "3.1.0"
@@ -268,13 +268,13 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.12.1:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.12.1.tgz#1ffa1db81d4485ca8eb4329391a5992deac81f42"
-  integrity sha512-DoWAqbbON4zt30+3E/67+Qh+iuH32/iSuy9KaXsh4TFnqIoWSbFslMj3QQmpdc1HG9FbfuS7mn74huN2vwWx+A==
+splendid@^1.12.6:
+  version "1.12.6"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.12.6.tgz#0754b26ec7ea7a399d9c0843bd5d68d5cf87b095"
+  integrity sha512-2zr2LvRh4mD7pKUK8hUX+BUN7UNxeq5TFrGj2jCp5piWU//a9tcYKryW4Okt/gzx52XJirFHQSPwH49GJvyYdw==
   dependencies:
     "@depack/depack" "^2.1.1"
-    "@externs/preact" "^1.2.6"
+    "@externs/preact" "^1.2.7"
     "@idio/frontend" "^1.6.0"
     "@idio/idio" "^0.1.0"
     "@idio/websocket" "^1.0.0"
@@ -282,10 +282,10 @@ splendid@^1.12.1:
     "@lemuria/font" "^1.0.4"
     "@lemuria/load-scripts" "^1.2.0"
     "@lemuria/popup" "^1.1.1"
-    alamode "^3.1.0"
+    alamode "^3.2.0"
     bootstrap "^4.3.1"
-    dropcss "^1.0.15"
-    highlight.js "9.16.1"
+    dropcss "^1.0.16"
+    highlight.js "9.16.2"
     preact "8.5.2"
     prismjs "1.17.1"
 

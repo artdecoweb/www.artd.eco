@@ -14,24 +14,28 @@ const io = makeIo()
 
 const meta = [{
   key: 'parallax',
-  id: 'c9848',
+  id: 'c5471',
   props: {
     'background-image': '/img/tile.jpg',
   },
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
-  const { parent, el } = init(id, key)
   const Comp = __components[key]
   const plain = true
-  const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id, plain })
-  let comp
-  props.splendid = { export() {}, addCSS(stylesheet) {
+  props.splendid = { addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
-  }, addFile() {} }
-  el.render = () => {
-    comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
-    return comp
-  }
-  el.render.meta = renderMeta
-  io.observe(el)
+  } }
+
+  const ids = id.split(',')
+  ids.forEach((Id) => {
+    const { parent, el } = init(Id, key)
+    const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })
+    let comp
+    el.render = () => {
+      comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
+      return comp
+    }
+    el.render.meta = renderMeta
+    io.observe(el)
+  })
 })

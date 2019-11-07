@@ -1,0 +1,32 @@
+.Revision {
+  background:#faf5ce;
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+  position: relative;
+  transform: rotate3d(1, 1, 1, -2deg);
+  transition: all 100ms;
+}
+.Revision:hover {
+  transform: none !important;
+}
+ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  padding-right: 2.3rem;
+  padding-left: 1.5rem;
+  background-size: 100% 1.5rem;
+  margin-bottom: 0;
+  padding-bottom: 1px;
+}
+ol li {
+  counter-increment: my-awesome-counter;
+}
+ol li::before {
+  content: "0" counter(my-awesome-counter);
+  font-weight: bold;
+  border-radius: 50%;
+  padding: .2rem;
+  margin-right: .2rem;
+  color: #dc3545;
+  font-family: cursive;
+}

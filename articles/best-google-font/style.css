@@ -1,9 +1,3 @@
-.TM {
-  font-family: 'Limelight',cursive;
-  background: -webkit-linear-gradient(#e4bd4d, #c78259);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 /* default hl theme */
 .hljs {
   display: block;
@@ -13,7 +7,7 @@
   color: #444;
 }
 
-#Advantages { padding:20% }
+#Advantages { padding:0% 20%; }
 @media (min-width: 576px) {
   #Advantages { padding:20% }
 }
@@ -22,4 +16,20 @@
 }
 @media (min-width: 1200px) {
   #Advantages { padding:5% 20%; }
+}
+#Advantages ul {
+  margin: 0;
+}
+
+.TM2 {
+  background: -webkit-linear-gradient(#4d97e4, #5971c7) !important;
+  -webkit-background-clip: text !important;
+}
+.TM3 {
+  border-bottom:1px solid #5971c7;
+  text-decoration: none !important;
+}
+.SummaryDetails {
+  padding-left: .5rem;
+  padding-right: .5rem;
 }

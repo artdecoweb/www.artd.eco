@@ -19,11 +19,12 @@
 
 <fig src="./graphics/dev2.png" alt="Loading Google Font asynchronously with JavaScript script tag." />
 
-<ol>
-  * The stylesheet doesn't gets downloaded immediately like it would with a `link` tag, and is loaded only after the browser already parsed HTML and began its job of first page render (Run Microtasks + Layout). During this time, the thread is blocked (semi-opaque orange rectangle), so the stylesheet has to wait before being inserted.
-  * The stylesheet is finally applied which leads to quite expensive layout reflow taking 84ms. Despite the fact that the fonts are not loaded at all, and there will be no visual change to the page, the browser still recalculates styles and does a reflow. It's an unnecessary work and a waste of valuable ms (the yellow "evaluate scripts" job just before the layout is scripts evaluated at the bottom of the page that also block main thread thus delaying this layout).
+<revision>
+  <img placeholder-auto pr-2 src="./gif/reflow.gif" alt="reflow animation" float-left />
+  * The stylesheet doesn't gets downloaded immediately like it would with a `link` tag, and is loaded only after the browser already parsed HTML and began its job of first page render (Run Microtasks + Layout). During this time, the thread is blocked (semi-opaque orange rectangle), so the stylesheet has to wait before being inserted.<br><br>
+  * The stylesheet is finally applied which leads to quite expensive layout reflow taking <span style="color:green">84ms</span>. Despite the fact that the fonts are not loaded at all, and there will be no visual change to the page, the browser still recalculates styles and does a reflow. It's an unnecessary work and a waste of valuable ms (the yellow "evaluate scripts" job just before the layout is scripts evaluated at the bottom of the page that also block main thread thus delaying this layout).<br><br>
   * Finally, like in the previous experiment, fonts arrive one by one, and cause 2 new layout reflows.
-</ol>
+</revision>
 
 <p>
   This strategy allows to actually load _Google Fonts_ asynchronously and solves the _Lighthouse_ warning. However, it introduced an extra reflow due to the stylesheet insertion that happens after the initial render. There are additional improvements that we could make to the page. We can use the preload hint to make the browser download the stylesheet immediately, in hope that dynamically inserted element will be able to pick up that style:
@@ -53,10 +54,18 @@
 
 <fig src="./graphics/dev3.png" alt="Loading Google Font asynchronously with a script and preload tag." />
 
-<ol>
-  * The stylesheet is downloaded straight away and inserted before the initial render. There's no reflow due to stylesheet being inserted after first pain like previously, because the preload link allowed us to download the stylesheet much faster than just using JavaScript.
+<style>
+  @media (min-width: 1200px) {
+  #Ball { margin-top: -2rem }
+}
+</style>
+<revision>
+  <li>
+    <img  placeholder-auto id="Ball" float="right" src="./gif/render.gif" alt="stylesheet before render animation" />
+    The stylesheet is downloaded straight away and inserted before the initial render. There's no reflow due to stylesheet being inserted after first pain like previously, because the preload link allowed us to download the stylesheet much faster than just using JavaScript.
+  </li>
   * The fonts arrive at the same time, and cause a single reflow only.
-</ol>
+</revision>
 
 <p>
   That's good, and we've achieved the result we wanted, that is to load _Google Fonts_ asynchronously. However, from the graph above we can see a gap between fonts starting to download, and the stylesheet arriving, i.e., fonts will begin do download only prior to layout despite the stylesheet referencing them being available for quite some time already, and we'll look into this issue below, but that's how the browser works, and nothing to do with our setup.
@@ -92,14 +101,17 @@
 
 <fig src="./graphics/dev4.png" alt="Loading google font asynchronously on slow connection causes reflow." />
 
-<ol>
-  * The page starts rendering as soon as all HTML arrives, but the stylesheet starts to download even before that. Because the connection is slow, the stylesheet arrives during the time when the main thread is blocked by rendering (semi-opaque orange rectangle, light-purple line), so it has to wait for rendering to complete (purple line). When that happens, it's inserted into DOM and triggers a reflow.
+<revision style="transform: rotate3d(1,1,1,2deg);">
+  <li>
+    <img placeholder-auto pr-2 float="left" src="./gif/stylesheet.gif" alt="stylesheet is blocked by render" />
+    The page starts rendering as soon as all HTML arrives, but the stylesheet starts to download even before that. Because the connection is slow, the stylesheet arrives during the time when the main thread is blocked by rendering (semi-opaque orange rectangle, light-purple line), so it has to wait for rendering to complete (purple line). When that happens, it's inserted into DOM and triggers a reflow.
+  </li>
   * The first font arrives, triggers reflow.
   * The all other font arrive and trigger reflow and repaint.
-</ol>
+</revision>
 
 <p>
-  So the next step is to make sure that there's only one reflow for the style and fonts. As a side note, there's a technique outlined on the <a href="alligator/preload-prefetch" target="_blank" color="#7b913c !important;" text-decoration="underline"><img placeholder-auto alt="alligator" src="./graphics/croc.png" />Alligator blog: Preload and Prefetch</a> that contracts the JS into a one-liner:
+  So the next step is to make sure that there's only one reflow for the style and fonts. As a side note, there's a technique outlined on the <a href="alligator/preload-prefetch" target="_blank" color="#7b913c !important;" text-decoration="underline"><animation width="74" height="36" style="display:inline-block" span path="./animate/aligator.json" src="./graphics/croc.png" alt="alligator"/>Alligator blog: Preload and Prefetch</a> that contracts the JS into a one-liner:
 </p>
 
 ```html
@@ -111,13 +123,13 @@
 ```
 
 <p>
-  I think the `onload` attribute must be `onload="this.rel = 'stylesheet'; this.onload = null"`, otherwise once the preload link is changed into a stylesheet link, the onload will be triggered again. Although theoretically, setting the rel attribute to `stylesheet` when it's already a `stylesheet` shouldn't cause problems, I used to get the stylesheet downloaded twice:
+  I think the `onload` attribute must be `onload="this.rel = 'stylesheet'; this.onload = null"`, otherwise once the preload link is changed into a stylesheet link, the onload will be triggered again. Although theoretically, setting the rel attribute to `stylesheet` when it's already a `stylesheet` shouldn't cause problems, I used to get the stylesheet downloaded twice. However now I struggle to reproduce this and I think it's rather to do with internal browser logic, or maybe the browser got updated.
 </p>
 
-<fig src="./graphics/dev5.png" alt="Stylesheet downloaded twice." />
+<!-- <fig src="./graphics/dev5.png" alt="Stylesheet downloaded twice." /> -->
 
 <p>
-  However now I struggle to reproduce this. I think it's rather to do with internal browser logic. Never mind still, it doesn't hurt to remove the `onload` attribute really. Additionally, this `onload` attribute solution also requires a polyfill for browsers that don't support preload, but what I'm really concerned here is WHEN the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the `onload` method.
+   Never mind still, it doesn't hurt to remove the `onload` attribute really. Additionally, this `onload` attribute solution also requires a polyfill for browsers that don't support preload which I'll show in the second part, but what I'm really concerned here is *WHEN* the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the `onload` method.
 </p>
 
 ```html
@@ -138,10 +150,14 @@
 
 <fig src="./graphics/dev6.png" alt="Performance measurements with onload attribute." />
 
-<ol>
-  * The stylesheet is preloaded, however it's ready only when the browser is doing the first render and layout, therefore it has to wait until the thread is unblocked.
+<revision style="transform: rotate3d(1,1,1,2deg);">
+  <li>
+    <img placeholder-auto pl-2 src="./gif/tortoise.gif" alt="slow tortoise with onload animation" float-right />
+    The stylesheet is preloaded, however it's ready only when the browser is doing the first render and layout, therefore it has to wait until the thread is unblocked.
+    <!-- The stylesheet is preloaded quite quickly, even before "Run microtasks" however it's not applied until the first render and layout which is indicated by its continuos "error" bar ---| that ends at the layout. -->
+  </li>
   * We finally get the `onload` even on the preload link, and change the `preload` rel to `stylesheet`. This happens in 20ms, and after that the stylesheet is applied, causing a Recalculate Style + Layout, and fonts begin to download.
-</ol>
+</revision>
 
 <p>
   Let's compare that to the implementation using a standalone script tag rather than the `onload` attribute. I'm going to add 100ms timeout so that the preload event is visible on the timeline. Remember, we added the stylesheet only after the `onload` event fired previously. Now, using the script tag, we're adding the stylesheet right away.
@@ -177,11 +193,13 @@
 
 <fig src="./graphics/dev7.png" alt="Async stylesheet loading with a script tag instead of onload attribute." />
 
-<ol>
-  * The stylesheet link is added to the DOM immediately after starting to parse HTML using the script tag. This is pretty much exactly the same as the sync version, but without blocking the page!
+<revision>
+  <li>
+    <img placeholder-auto pr-2 src="./gif/hare1.gif" alt="fast hire running with script animation" float-left />
+    The stylesheet link is added to the DOM immediately after starting to parse HTML using the script tag. This is pretty much exactly the same as the sync version, but without blocking the page!</li>
   * The stylesheet is downloaded using preload link, and the fonts start to download.
-  * The initial paint is done, main thread is freed and the preload event fires on our `link rel="preload"` element. Compared to the previous case, where we inserted the stylesheet only at this point, causing a reflow, here we avoided the reflow and are already halfway through font-downloading having saved a few hundred milliseconds.
-</ol>
+  * The initial paint is done, main thread is freed and the preload event fires on our `link rel="preload"` element (_preload-onload_ yellow bar). Compared to the previous case, where we inserted the stylesheet only at this point, causing a reflow, here we avoided the reflow and are already halfway through font-downloading having saved a few hundred milliseconds.
+</revision>
 
 <p>
   This is much better, isn't? We've managed to insert the link tag with the stylesheet into DOM without the cost of reflow, that happens with the `onload` event. And the fonts begin to download quicker, right before the first layout, not after it! I think it's an interesting observation to make.

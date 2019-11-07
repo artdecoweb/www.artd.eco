@@ -1,0 +1,6 @@
+.TM1 {
+  font-family: 'Limelight',cursive;
+  background: -webkit-linear-gradient(#e4bd4d, #c78259);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

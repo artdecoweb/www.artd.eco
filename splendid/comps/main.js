@@ -8,15 +8,15 @@ const renameMaps = { 'styles/Adonais.css': __renameMap0,
 __initBottom()
 import { makeIo, init, startPlain } from './__competent-lib'
 import Logo from '../components/logo.js'
-import Menu from '../components/menu.js'
-import Parallax from 'splendid/build/components/parallax'
 import Adonais from '../components/adonais.js'
+import Parallax from 'splendid/build/components/parallax'
+import Menu from '../components/menu.js'
 
 const __components = {
   'logo': Logo,
-  'menu': Menu,
-  'parallax': Parallax,
   'adonais': Adonais,
+  'parallax': Parallax,
+  'menu': Menu,
 }
 
 const io = makeIo()
@@ -26,27 +26,8 @@ const meta = [{
   id: 'Logo',
 },
 {
-  key: 'menu',
-  id: 'c57253',
-},
-{
   key: 'parallax',
-  id: 'c74268',
-  props: {
-    'background-image': '/img/code2.gif',
-    speedy: '0.5',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c75046',
-  props: {
-    'background-image': '/img/bakst2.jpg',
-  },
-},
-{
-  key: 'parallax',
-  id: 'c80',
+  id: 'c2a3f',
   props: {
     'background-image': '/img/seamless.jpg',
     speedy: '0',
@@ -54,22 +35,45 @@ const meta = [{
   },
 },
 {
+  key: 'menu',
+  id: 'ce4db',
+},
+{
+  key: 'parallax',
+  id: 'c7aed',
+  props: {
+    'background-image': '/img/code2.gif',
+    speedy: '0.5',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c6b51',
+  props: {
+    'background-image': '/img/bakst2.jpg',
+  },
+},
+{
   key: 'adonais',
-  id: 'c9848',
+  id: 'c1f04',
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
-  const { parent, el } = init(id, key)
   const Comp = __components[key]
   const plain = true
-  const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id, plain })
-  let comp
-  props.splendid = { export() {}, addCSS(stylesheet) {
+  props.splendid = { addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
-  }, addFile() {} }
-  el.render = () => {
-    comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
-    return comp
-  }
-  el.render.meta = renderMeta
-  io.observe(el)
+  } }
+
+  const ids = id.split(',')
+  ids.forEach((Id) => {
+    const { parent, el } = init(Id, key)
+    const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })
+    let comp
+    el.render = () => {
+      comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
+      return comp
+    }
+    el.render.meta = renderMeta
+    io.observe(el)
+  })
 })
