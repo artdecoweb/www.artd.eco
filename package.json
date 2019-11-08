@@ -4,6 +4,7 @@
   "description": "The Art Deco Website.",
   "scripts": {
     "t": "zoroaster -a",
+    "s": "splendid -s",
     "test": "yarn t test/spec test/mask",
     "dev": "splendid-dev -s -e dev",
     "prod": "splendid-dev -s",
@@ -30,7 +31,7 @@
   "devDependencies": {
     "alamode": "^3.2.0",
     "documentary": "^1.34.1",
-    "splendid": "^1.12.7",
+    "splendid": "^1.12.8",
     "zoroaster": "^4.1.2"
   },
   "dependencies": {
