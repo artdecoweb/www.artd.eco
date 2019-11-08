@@ -13,8 +13,8 @@ const config = {
   ],
   // components: ['components', '../articles/components'],
   elements: ['elements', '../articles/elements'],
-  // to generate sitemaps:
   url: 'https://www.artd.eco',
+  blocks: ['blocks', '../articles/blocks'],
 }
 
 export default config

@@ -11,7 +11,7 @@
     </style>
     <container-fluid position-relative p-0 height="20rem" overflow="hidden" mb-3>
       <img id="Photo" alt="Art Deco Store Building"
-        src="/img/blog.jpg" img-fluid position-absolute webp="photo" responsive no-potrace onload="initPhoto(this)" />
+        src="../img/blog.jpg" img-fluid position-absolute webp="photo" responsive no-potrace onload="initPhoto(this)" />
       <div id="Holder">
         <a href="main" title="Art Deco Home Page">
           <picture id="Logo">
@@ -20,7 +20,7 @@
           </picture>
           <!-- <logo skip-css sizes="100px" /> -->
         </a>
-        <a d-block text-info lead color="#1067de!important" href="articles">All Articles</a>
+        <a d-block text-info lead color="#1067de!important" href="articles/index">All Articles</a>
       </div>
       <script inline src="../js/article-scroll-top.js"></script>
     </container-fluid>
@@ -35,7 +35,7 @@
     <container-fluid>
       <row font-size="small">
         <col sm-4>
-          *Art Deco&trade;*<br>[Node.JS Development Company](main)<br>
+          *{{ company }}*<br>[Node.JS Development Company](main)<br>
           Art Deco Code Limited<br>
           24 Holborn Viaduct,<br>
           London, UK<br><br>
@@ -55,6 +55,6 @@
         </col>
       </row>
     </container-fluid>
-    <bottom img="/img/tile.jpg" />
+    <bottom img="./img/tile.jpg" />
   </body>
 </html>

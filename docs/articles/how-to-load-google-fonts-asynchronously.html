@@ -5,10 +5,10 @@
     <meta content="https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html" property="og:url">
     <meta content="How To Load Google Fonts Asynchronously." property="og:title">
     <meta content="article" property="og:type">
-    <meta content="https://www.artd.eco/articles/best-google-font-2/graphics/async-google-font.png" property="og:image">
+    <meta content="./best-google-font-2/graphics/async-google-font.png" property="og:image">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta
-      content="Using performance measurement, we analyse how a web page is loaded and show how to embed web font stylesheet asynchronously to avoid blocks and reflows." name="description">
+      content="Using performance measurements, we look at break down of page loading process and show how to embed web font stylesheet asynchronously to avoid blocks." name="description">
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
@@ -21,24 +21,16 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
     
     <script>document.documentElement.classList.remove("no-js")</script>
     <link rel="stylesheet" href="/styles/articles/combined.css">
-    <link rel="preload" href="data:application/font-woff2;base64,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" as="font">
     <link rel="preload" href="/highlight.js/styles/default.css" as="style">
     <link rel="preload" href="/@artdeco/snapsvg-animator/svg-anim.min.js" as="script">
     <link rel="preload" href="/snapsvg/dist/snap.svg-min.js" as="script">
+    <link rel="preload" href="data:application/font-woff2;base64,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" as="font">
     <link rel="preload" href="/preact/dist/preact.min.js" crossorigin as="script">
     <link rel="preload" href="/comps/articles/best-google-font.js" crossorigin as="script">
     <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
     <style>
       .no-js [data-io], .no-js [data-loading], .no-js .ImageHolder { display: none!important }
-      .hljs{display:block;overflow-x:auto;padding:.5em;background:#f0f0f0;color:#444}#Advantages{padding:0% 20%}@media (min-width:576px){#Advantages{padding:20%}}@media (min-width:768px){#Advantages{padding:10% 20%}}@media (min-width:1200px){#Advantages{padding:5% 20%}}#Advantages ul{margin:0}.TM2{background:-webkit-linear-gradient(#4d97e4,#5971c7)!important;-webkit-background-clip:text!important}.TM3{border-bottom:1px solid #5971c7;text-decoration:none!important}.SummaryDetails{padding-left:.5rem;padding-right:.5rem}
-      h1 { font-family: 'Limelight',cursive; }
-      
-      @font-face {
-        font-family: 'Limelight';
-        font-style: normal;
-        font-weight: 400;
-        src: local('Limelight'), url('data:application/font-woff2;base64,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') format('woff2');
-      }
+      #Advantages{padding:0% 20%}@media (min-width:576px){#Advantages{padding:20%}}@media (min-width:768px){#Advantages{padding:10% 20%}}@media (min-width:1200px){#Advantages{padding:5% 20%}}#Advantages ul{margin:0}.TM2{background:-webkit-linear-gradient(#4d97e4,#5971c7)!important;-webkit-background-clip:text!important}.TM3{border-bottom:1px solid #5971c7;text-decoration:none!important}.SummaryDetails{padding-left:.5rem;padding-right:.5rem}h1{margin-bottom:0}
       .PA {
           display: none!important;
         }
@@ -64,6 +56,13 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
       }
       .Revision{background:#faf5ce;padding-top:1rem;padding-bottom:.5rem;position:relative;-webkit-transform:rotate3d(1,1,1,-2deg);-ms-transform:rotate3d(1,1,1,-2deg);-o-transform:rotate3d(1,1,1,-2deg);transform:rotate3d(1,1,1,-2deg);-webkit-transition:all 100ms;-o-transition:all 100ms;transition:all 100ms}.Revision:hover{-webkit-transform:none!important;-ms-transform:none!important;-o-transform:none!important;transform:none!important}.Revision ol{list-style:none;counter-reset:my-awesome-counter;padding-right:2.3rem;padding-left:1.5rem;-webkit-background-size:100% 1.5rem;-o-background-size:100% 1.5rem;background-size:100% 1.5rem;margin-bottom:0;padding-bottom:1px}.Revision ol li{counter-increment:my-awesome-counter}.Revision ol li::before{content:"0" counter(my-awesome-counter);font-weight:bold;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;padding:.2rem;margin-right:.2rem;color:#dc3545;font-family:cursive}
       .TM1{font-family:'Limelight',cursive;background:-webkit-linear-gradient(#e4bd4d,#c78259);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+      h1 { font-family: 'Limelight',cursive; }
+      @font-face {
+        font-family: 'Limelight';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Limelight'), url('data:application/font-woff2;base64,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') format('woff2');
+      }
       @media (max-width: 430px) {
             a.lead {
               background: aliceblue;
@@ -87,21 +86,22 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
       <noscript>
         <picture id="Photo" class="position-absolute">
           <source
-            srcset="/img/blog-1920.webp 1920w,/img/blog-1600.webp 1600w,/img/blog-1366.webp 1366w,/img/blog-1024.webp 1024w,/img/blog-768.webp 768w,/img/blog-641.webp 641w,/img/blog-319.webp 319w,/img/blog-2816.webp 2816w" type="image/webp">
+            srcset="img/blog-1920.webp 1920w,img/blog-1600.webp 1600w,img/blog-1366.webp 1366w,img/blog-1024.webp 1024w,img/blog-768.webp 768w,img/blog-641.webp 641w,img/blog-319.webp 319w,img/blog-2816.webp 2816w" type="image/webp">
           <source
-            srcset="/img/blog-1920.jpg 1920w,/img/blog-1600.jpg 1600w,/img/blog-1366.jpg 1366w,/img/blog-1024.jpg 1024w,/img/blog-768.jpg 768w,/img/blog-641.jpg 641w,/img/blog-319.jpg 319w" type="image/jpeg">
-          <img onLoad="webploaded(this);initPhoto(this)" alt="Art Deco Store Building" src="/img/blog.jpg"
-            srcset="/img/blog-1920.jpg 1920w,/img/blog-1600.jpg 1600w,/img/blog-1366.jpg 1366w,/img/blog-1024.jpg 1024w,/img/blog-768.jpg 768w,/img/blog-641.jpg 641w,/img/blog-319.jpg 319w" class="img-fluid">
+            srcset="img/blog-1920.jpg 1920w,img/blog-1600.jpg 1600w,img/blog-1366.jpg 1366w,img/blog-1024.jpg 1024w,img/blog-768.jpg 768w,img/blog-641.jpg 641w,img/blog-319.jpg 319w" type="image/jpeg">
+          <img onLoad="webploaded(this);initPhoto(this)" alt="Art Deco Store Building"
+            src="img/blog.jpg"
+            srcset="img/blog-1920.jpg 1920w,img/blog-1600.jpg 1600w,img/blog-1366.jpg 1366w,img/blog-1024.jpg 1024w,img/blog-768.jpg 768w,img/blog-641.jpg 641w,img/blog-319.jpg 319w" class="img-fluid">
         </picture>
       </noscript>
       <div id="Holder">
-        <a title="Art Deco Home Page" href="/">
+        <a title="Art Deco Home Page" href="//">
           <picture id="Logo">
             <source srcset="/img/logo-300.webp 300w" sizes="100px" type="image/webp">
             <img alt="Art Deco Logo" src="/img/logo.png" sizes="100px" style="width:100px;">
           </picture>
           </a>
-        <a text-info class="d-block lead" style="color: #1067de!important;" href="/articles">All Articles</a>
+        <a text-info class="d-block lead" style="color: #1067de!important;" href="/articles//">All Articles</a>
       </div>
       <script>(function(){window.initPhoto=function(a){function e(){b&&(a.style.height=null,a.style["max-width"]=null);c=a.getBoundingClientRect().height;d=parseInt(f.style.height,10)*parseFloat(getComputedStyle(document.documentElement).fontSize);c<d?(a.style.height=f.style.height,a.style["max-width"]="initial",b=!0):b=!1;g=c-d}var f=a.parentElement.parentElement,c,d,g,b;window.addEventListener("resize",e);e();window.addEventListener("scroll",function(){var h="translate3d(0px, -"+Math.min(g,window.scrollY)+"px, 0px)";a.style.transform=
 h;a.style.webkitTransform=h})};}).call(this);
@@ -129,7 +129,7 @@ h;a.style.webkitTransform=h})};}).call(this);
   </div>
   <div style="border-bottom: 1px solid grey;" class="col-10 col-sm-7">
     <p class="text-right" style="color: grey;">
-      <span>Anton Dmukhovskiy, Senior Software Developer</span><br><span>23 October 2019</span> <span id="c23c7"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
+      <span>Anton Dmukhovskiy, Senior Software Developer</span><br><span>23 October 2019</span> <span id="c4588"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
     </p>
   </div>
   <div class="col-sm-3 col-lg-4">
@@ -140,7 +140,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 </div>
 
 <p>
-  Traditionally my job as a developer was to build libraries in form of NPM packages and other software infrastructure for my <a href="/">Node.JS Development Company</a>, <span class="TM1">Art </span>
+  Traditionally my job as a developer was to build libraries in form of NPM packages and other software infrastructure for my <a href="//">Node.JS Development Company</a>, <span class="TM1">Art </span>
  <span class="TM1">Deco™</span>. However the most fun part of programming always was to make products for the Web, such as websites and integrate them with 3rd party APIs. Today, I focus on another aspect of web development, that is making web pages, that could even be static, but optimised for the modern day requirement of a web site: it must load extremely fast, and put performance in the first place.
 </p>
 
@@ -1009,7 +1009,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 </p>
 
 <p>
-  <span id="c1c0c"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
+  <span id="cc1d0"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
 </p>
 
 </div>
@@ -1022,7 +1022,7 @@ h;a.style.webkitTransform=h})};}).call(this);
     <div class="container-fluid">
       <div class="row" style="font-size: small;">
         <div class="col-sm-4">
-          <strong>Art Deco&trade;</strong><br><a href="/">Node.JS Development Company</a><br>
+          <strong><a href="https://www.artd.eco">Art Deco&trade;</a></strong><br><a href="//">Node.JS Development Company</a><br>
           Art Deco Code Limited<br>
           24 Holborn Viaduct,<br>
           London, UK<br><br>
@@ -1055,9 +1055,9 @@ h;a.style.webkitTransform=h})};}).call(this);
     <div style="position:relative;">
       <div class="container-fluid p-0 position-absolute"
         style="height: 50px; top: 0px; left: 0px; overflow: hidden;">
-        <div class=" Parallax" data-loading id="c5471"></div>
+        <div class=" Parallax" data-loading id="c0c34"></div>
         <div class="Parallax"></div>
-        <noscript><div class=" Parallax" style="background-image: url(/img/tile.jpg);"></div></noscript>
+        <noscript><div class=" Parallax" style="background-image: url(./img/tile.jpg);"></div></noscript>
       </div>
       <div class="position-absolute" style="top: calc(50px - 1px); left: 0px;" id="bottom"></div>
     </div>

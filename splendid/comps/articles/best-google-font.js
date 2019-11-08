@@ -43,19 +43,21 @@ const meta = [{
 },
 {
   key: 'social-buttons',
-  id: 'c23c7',
+  id: 'c4588',
   props: {
     url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
     subject: 'How To Load Google Fonts Asynchronously.',
     size: '24',
-    title: 'Using performance measurement, we analyse how a web page is loaded and show how to embed web font stylesheet asynchronously to avoid blocks and reflows.',
+    title: 'Using performance measurements, we look at break down of page loading process and show how to embed web font stylesheet asynchronously to avoid blocks.',
   },
 },
 {
-  key: 'parallax',
-  id: 'c5471',
+  key: 'social-buttons',
+  id: 'cc1d0',
   props: {
-    'background-image': '/img/tile.jpg',
+    url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
+    subject: 'How To Load Google Fonts Asynchronously.',
+    title: 'Using performance measurements, we look at break down of page loading process and show how to embed web font stylesheet asynchronously to avoid blocks.',
   },
 },
 {
@@ -69,21 +71,19 @@ const meta = [{
   },
 },
 {
-  key: 'social-buttons',
-  id: 'c1c0c',
-  props: {
-    url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
-    subject: 'How To Load Google Fonts Asynchronously.',
-    title: 'Using performance measurement, we analyse how a web page is loaded and show how to embed web font stylesheet asynchronously to avoid blocks and reflows.',
-  },
-},
-{
   key: 'animation',
   id: 'cde7b',
   props: {
     path: 'best-google-font/animate/aligator.json',
     width: '74',
     height: '36',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c0c34',
+  props: {
+    'background-image': './img/tile.jpg',
   },
 },
 {

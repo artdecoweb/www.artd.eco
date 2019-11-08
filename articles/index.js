@@ -2,18 +2,15 @@
  * @type {Object<string, Page>}
  */
 const T = {
-  articles: {
+  index: {
     title: 'Articles: Art Deco',
-    index: true,
-    layout: 'layout/blog.html',
-    file: './index',
     seo: 'Node.JS backend and JavaScript frontend development articles and knowledge sharing. Web software development tips and research on performance and productivity.',
   },
   'best-google-font': {
     title: 'How To Load Google Fonts Asynchronously.',
-    seo: 'Using performance measurement, we analyse how a web page is loaded and show how to embed web font stylesheet asynchronously to avoid blocks and reflows.',
+    seo: 'Using performance measurements, we look at break down of page loading process and show how to embed web font stylesheet asynchronously to avoid blocks.',
     og: {
-      image: '/articles/best-google-font-2/graphics/async-google-font.png',
+      image: './best-google-font-2/graphics/async-google-font.png',
       type: 'article',
     },
     file: './best-google-font',
@@ -32,7 +29,7 @@ const T = {
     seo: 'An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows.',
     file: './best-google-font-2',
     og: {
-      image: '/articles/best-google-font-2/graphics/advanced-google-font.png',
+      image: './best-google-font-2/graphics/advanced-google-font.png',
       type: 'article',
     },
     // focus: true,
@@ -47,9 +44,9 @@ const T = {
   },
 }
 
-Object.entries(T).forEach(([, page]) => {
-  if (!page.index) page.article = true
-  if (!page.layout) page.layout = 'layout/article.html'
+Object.entries(T).forEach(([key, page]) => {
+  if (key != 'index') page.article = true
+  if (!page.layout) page.layout = './layout/index.html'
 })
 
 /**

@@ -49,13 +49,6 @@ const meta = [{
   },
 },
 {
-  key: 'parallax',
-  id: 'c5471',
-  props: {
-    'background-image': '/img/tile.jpg',
-  },
-},
-{
   key: 'social-buttons',
   id: 'c6d6c',
   props: {
@@ -80,6 +73,13 @@ const meta = [{
     width: '505',
     height: '299',
     align: 'right',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c0c34',
+  props: {
+    'background-image': './img/tile.jpg',
   },
 },
 {

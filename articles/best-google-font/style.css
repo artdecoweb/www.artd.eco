@@ -1,12 +1,4 @@
 /* default hl theme */
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #F0F0F0;
-  color: #444;
-}
-
 #Advantages { padding:0% 20%; }
 @media (min-width: 576px) {
   #Advantages { padding:20% }
@@ -32,4 +24,7 @@
 .SummaryDetails {
   padding-left: .5rem;
   padding-right: .5rem;
+}
+h1 {
+  margin-bottom: 0;
 }

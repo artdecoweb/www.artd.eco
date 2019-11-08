@@ -20,10 +20,15 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
     
     <script>document.documentElement.classList.remove("no-js")</script>
     <link rel="stylesheet" href="/styles/articles/combined.css">
-    <link rel="preload" href="/comps/articles/articles.js" crossorigin as="script">
+    <link rel="preload" href="/comps/articles/index.js" crossorigin as="script">
     <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
     <style>
-      .no-js [data-loading], .no-js .ImageHolder { display: none!important }
+      .no-js [data-io], .no-js [data-loading], .no-js .ImageHolder { display: none!important }
+      @media (max-width: 430px) {
+            a.lead {
+              background: aliceblue;
+            }
+          }
     </style>
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight">
@@ -31,57 +36,123 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
     <script defer src="/js/polyfill/intersection-observer.js"></script>
     <script defer src="/js/images.js"></script>
     <script crossorigin data-src="/comps/articles/common.js"></script>
-    <script crossorigin data-src="/comps/articles/articles.js"></script>
+    <script crossorigin data-src="/comps/articles/index.js"></script>
 
   </head>
   <body style="overscroll-behavior: none;">
-
-    
-
-    <div class="container-fluid p-0 mb-3" style="max-height: 20rem; overflow: hidden;">
-      <img alt="Art Deco Store Building" id="sp9848"
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2816' height='1880'/%3E" class="img-fluid ImageHolder">
+    <div class="container-fluid position-relative p-0 mb-3" style="height: 20rem; overflow: hidden;">
+      <img alt="Art Deco Store Building" id="sPhoto"
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2816' height='1880'/%3E" class="img-fluid position-absolute ImageHolder">
       <noscript>
-        <picture id="p9848">
+        <picture id="Photo" class="position-absolute">
           <source
-            srcset="/img/blog-1920.webp 1920w,/img/blog-1600.webp 1600w,/img/blog-1366.webp 1366w,/img/blog-1024.webp 1024w,/img/blog-768.webp 768w,/img/blog-641.webp 641w,/img/blog-319.webp 319w,/img/blog-2816.webp 2816w" type="image/webp">
+            srcset="img/blog-1920.webp 1920w,img/blog-1600.webp 1600w,img/blog-1366.webp 1366w,img/blog-1024.webp 1024w,img/blog-768.webp 768w,img/blog-641.webp 641w,img/blog-319.webp 319w,img/blog-2816.webp 2816w" type="image/webp">
           <source
-            srcset="/img/blog-1920.jpg 1920w,/img/blog-1600.jpg 1600w,/img/blog-1366.jpg 1366w,/img/blog-1024.jpg 1024w,/img/blog-768.jpg 768w,/img/blog-641.jpg 641w,/img/blog-319.jpg 319w" type="image/jpeg">
-          <img onLoad="webploaded(this)" alt="Art Deco Store Building" src="/img/blog.jpg"
-            srcset="/img/blog-1920.jpg 1920w,/img/blog-1600.jpg 1600w,/img/blog-1366.jpg 1366w,/img/blog-1024.jpg 1024w,/img/blog-768.jpg 768w,/img/blog-641.jpg 641w,/img/blog-319.jpg 319w" class="img-fluid">
+            srcset="img/blog-1920.jpg 1920w,img/blog-1600.jpg 1600w,img/blog-1366.jpg 1366w,img/blog-1024.jpg 1024w,img/blog-768.jpg 768w,img/blog-641.jpg 641w,img/blog-319.jpg 319w" type="image/jpeg">
+          <img onLoad="webploaded(this);initPhoto(this)" alt="Art Deco Store Building"
+            src="img/blog.jpg"
+            srcset="img/blog-1920.jpg 1920w,img/blog-1600.jpg 1600w,img/blog-1366.jpg 1366w,img/blog-1024.jpg 1024w,img/blog-768.jpg 768w,img/blog-641.jpg 641w,img/blog-319.jpg 319w" class="img-fluid">
         </picture>
       </noscript>
+      <div id="Holder">
+        <a title="Art Deco Home Page" href="//">
+          <picture id="Logo">
+            <source srcset="/img/logo-300.webp 300w" sizes="100px" type="image/webp">
+            <img alt="Art Deco Logo" src="/img/logo.png" sizes="100px" style="width:100px;">
+          </picture>
+          </a>
+        <a text-info class="d-block lead" style="color: #1067de!important;" href="/articles//">All Articles</a>
+      </div>
+      <script>(function(){window.initPhoto=function(a){function e(){b&&(a.style.height=null,a.style["max-width"]=null);c=a.getBoundingClientRect().height;d=parseInt(f.style.height,10)*parseFloat(getComputedStyle(document.documentElement).fontSize);c<d?(a.style.height=f.style.height,a.style["max-width"]="initial",b=!0):b=!1;g=c-d}var f=a.parentElement.parentElement,c,d,g,b;window.addEventListener("resize",e);e();window.addEventListener("scroll",function(){var h="translate3d(0px, -"+Math.min(g,window.scrollY)+"px, 0px)";a.style.transform=
+h;a.style.webkitTransform=h})};}).call(this);
+
+//# sourceMappingURL=article-scroll-top.js.map
+//# sourceMappingURL=article-scroll-top.js.map</script>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 order-2 order-md-1">
-          <h1 style="font-family: 'Limelight', cursive;" id="art-deco-articles">Art Deco Articles</h1>
+    <div id="Content">
+      <div class="container">
+        <div class="row">
+          <div class="col"><h1 id="art-deco-articles">Art Deco Articles</h1>
+
+<p>
+  As a <a href="/">Node.JS development company</a>, we constantly learn and improve our practices and share our experience with other developers. Our articles explore development processes and practices, and cover both technical, theoretical and abstract areas of Software Engineering. We hope to present our discoveries and analytical experiments to a broad audience who will be interested in learning more about JavaScript, Node.JS and web computing.
+</p>
+
+<div>
+  <div>
+    <h2 id="a-hrefarticlesbest-google-font-how-to-load-google-fonts-asynchronouslya">
+      <a href="/articles/how-to-load-google-fonts-asynchronously.html">
+        How To Load Google Fonts Asynchronously.</a>
+    </h2>
+    <img alt="How To Load Google Fonts Asynchronously."
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io class="d-block" data-src="best-google-font-2/graphics/async-google-font.png">
+    <noscript>
+      <img alt="How To Load Google Fonts Asynchronously." class="d-block"
+        src="best-google-font-2/graphics/async-google-font.png">
+    </noscript>
+    Using performance measurements, we look at break down of page loading process and show how to embed web font stylesheet asynchronously to avoid blocks.
+  </div>
+  <div>
+    <h2 id="a-hrefarticlesbest-google-font-2-the-best-way-to-load-google-fonts-asynchronouslya">
+      <a href="/articles/the-best-way-to-load-google-fonts-asynchronously.html">
+        The Best Way To Load Google Fonts Asynchronously.</a>
+    </h2>
+    <img alt="The Best Way To Load Google Fonts Asynchronously."
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io class="d-block"
+      data-src="best-google-font-2/graphics/advanced-google-font.png">
+    <noscript>
+      <img alt="The Best Way To Load Google Fonts Asynchronously." class="d-block"
+        src="best-google-font-2/graphics/advanced-google-font.png">
+    </noscript>
+    An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows.
+  </div>
+</div></div>
         </div>
-        <div class="col order-1 order-md-2">
-          <h2 id="latest-articles">Latest Articles</h2>
-          <ul>
-            <li><a href="/blog/font-preload">Google Fonts Preloading</a></li>
-            <li><a href="/hello2">Hello World 2</a></li>
-          </ul>
+      </div>
+      
+    </div>
+
+    <hr>
+    <div class="container-fluid">
+      <div class="row" style="font-size: small;">
+        <div class="col-sm-4">
+          <strong><a href="https://www.artd.eco">Art Deco&trade;</a></strong><br><a href="//">Node.JS Development Company</a><br>
+          Art Deco Code Limited<br>
+          24 Holborn Viaduct,<br>
+          London, UK<br><br>
+        </div>
+        <div class="col-sm-6">
+          <a style="font-size: initial;" href="/articles">Articles</a><br><br>
+          <strong>Open Source</strong>:<br>
+          <a
+            title="Documentation Compiler To Generate The Table Of Contents, Embed Examples With Their Output, Make Markdown Tables, Maintain Typedefs For JavaScript And README, Watch Changes To Push, Use Macros And Prettify API Titles." class="NPMBadge" href="https://npmjs.com/package/documentary">
+            <span class="a"><em>Documentary</em></span><span class="b">1.34.1</span></a>
+          <a
+            title="The 2019 Most Modern Testing Framework For Node.JS With Test Contexts (Reusable BeforeEach / AfterEach Via Separate Files); Masks (Inputs/Outputs In Non-Js Files) And Fork Testing; Interactive Snapshots." class="NPMBadge" href="https://npmjs.com/package/zoroaster">
+            <span class="a"><em>Zoroaster</em></span><span class="b">4.1.2</span></a>
+          <a
+            title="Unpackager Of Dependencies To Create &amp;quot;Zero-Dependency Build&amp;quot; With Closure." class="NPMBadge" href="https://npmjs.com/package/depack">
+            <span class="a"><em>Depack</em></span><span class="b">0.0.1</span></a>
+          <a
+            title="A Regex-Based Transpiler Of Source Code To Allow Writing Import And Export Statements And JSX With 0 Dependencies." class="NPMBadge" href="https://npmjs.com/package/alamode">
+            <span class="a"><em>ÀLaMode</em></span><span class="b">3.2.0</span></a>
+          <a
+            title="Static Web Site Compiler That Uses Closure Compiler For JS Bundling And Closure Stylesheets For CSS optimisations. Supports JSX Syntax To Write Static Elements And Dynamic Preact Components." class="NPMBadge" href="https://npmjs.com/package/splendid">
+            <span class="a"><em>Splendid</em></span><span class="b">1.12.6</span></a>
+        </div>
+        <div class="col-sm-2">
+          <a href="https://twitter.com/artdecocode">twitter</a><br>
+          <a href="https://linkedin.com/company/artdecocode">linkedin</a>
         </div>
       </div>
     </div>
-
-
-    <div class="container" id="Content"><div>
-  <a href="/articles/how-to-load-google-fonts-asynchronously.html">
-    How To Load Google Fonts Asynchronously.</a>
-  <a href="/articles/the-best-way-to-load-google-fonts-asynchronously.html">
-    The Best Way To Load Google Fonts Asynchronously.</a>
-</div></div>
-
     <div style="position:relative;">
       <div class="container-fluid p-0 position-absolute"
         style="height: 50px; top: 0px; left: 0px; overflow: hidden;">
-        <div class=" Parallax" data-loading id="c5471"></div>
+        <div class=" Parallax" data-loading id="c0c34"></div>
         <div class="Parallax"></div>
-        <noscript><div class=" Parallax" style="background-image: url(/img/tile.jpg);"></div></noscript>
+        <noscript><div class=" Parallax" style="background-image: url(./img/tile.jpg);"></div></noscript>
       </div>
       <div class="position-absolute" style="top: calc(50px - 1px); left: 0px;" id="bottom"></div>
     </div>
