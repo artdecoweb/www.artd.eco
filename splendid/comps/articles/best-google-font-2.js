@@ -6,9 +6,9 @@ __initBottom()
 import { Component, render, h } from '@externs/preact'
 import { makeIo, init, start } from '../__competent-lib'
 import Animation from '../../components/animation.js'
-import Highlightjs from '../../../node_modules/splendid/src/components/highlightjs.js'
-import Parallax from '../../../node_modules/splendid/src/components/parallax.js'
-import SocialButtons from '../../../node_modules/splendid/src/components/social-buttons.jsx'
+import Highlightjs from 'splendid/build/components/highlightjs'
+import Parallax from 'splendid/build/components/parallax'
+import SocialButtons from 'splendid/build/components/social-buttons'
 
 const __components = {
   'animation': Animation,
@@ -42,20 +42,19 @@ const meta = [{
   },
 },
 {
+  key: 'social-buttons',
+  id: 'ce5ba',
+  props: {
+    url: 'https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html',
+    size: '24',
+    meta: 'true',
+  },
+},
+{
   key: 'highlightjs',
   id: 'c16f7',
   props: {
     lang: 'xml',
-  },
-},
-{
-  key: 'social-buttons',
-  id: 'c6d6c',
-  props: {
-    url: 'https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html',
-    subject: 'The Best Way To Load Google Fonts Asynchronously.',
-    size: '24',
-    title: 'An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows.',
   },
 },
 {

@@ -10,7 +10,7 @@ import { makeIo, init, startPlain } from './__competent-lib'
 import Adonais from '../components/adonais.js'
 import Logo from '../components/logo.js'
 import Menu from '../components/menu.js'
-import Parallax from '../../node_modules/splendid/src/components/parallax.js'
+import Parallax from 'splendid/build/components/parallax'
 
 const __components = {
   'adonais': Adonais,

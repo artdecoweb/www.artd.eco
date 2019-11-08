@@ -4,7 +4,7 @@ import makeClassGetter from '../__mcg'
 const renameMaps = {  }
 __initBottom()
 import { makeIo, init, startPlain } from '../__competent-lib'
-import Parallax from '../../../node_modules/splendid/src/components/parallax.js'
+import Parallax from 'splendid/build/components/parallax'
 
 const __components = {
   'parallax': Parallax,

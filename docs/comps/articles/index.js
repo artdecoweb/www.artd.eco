@@ -1,4 +1,4 @@
 function ea(a,b,c,d,e,f,k){function g(){c.render(Object.assign({},f,{children:k}));a.instance=c}c||(c=new b(d,e));b.load?b.load(function(h,l){l&&Object.assign(f,l);h?console.warn(h):g()},d,f):g();return c}var fa={};y();var ha={parallax:F},ia=B();
-[{key:"parallax",id:"c0c34",props:{"background-image":"./img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.props?{}:a.props,e=void 0===a.children?[]:a.children,f=ha[b];d.A={v:function(k){return z(fa[k])}};c.split(",").forEach(function(k){var g=A(k,b),h=g.parent,l=g.b,m={key:b,id:k,plain:!0},n;l.render=function(){return n=ea(m,f,n,l,h,d,e)};l.render.o=m;ia.observe(l)})});
+[{key:"parallax",id:"c0c34",props:{"background-image":"./img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.props?{}:a.props,e=void 0===a.children?[]:a.children,f=ha[b];d.v={o:function(k){return z(fa[k])}};c.split(",").forEach(function(k){var g=A(k,b),h=g.parent,l=g.b,m={key:b,id:k,plain:!0},n;l.render=function(){return n=ea(m,f,n,l,h,d,e)};l.render.j=m;ia.observe(l)})});
 
 //# sourceMappingURL=index.js.map

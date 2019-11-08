@@ -7,9 +7,9 @@ __initBottom()
 import { Component, render, h } from '@externs/preact'
 import { makeIo, init, start } from '../__competent-lib'
 import Animation from '../../components/animation.js'
-import Highlightjs from '../../../node_modules/splendid/src/components/highlightjs.js'
-import Parallax from '../../../node_modules/splendid/src/components/parallax.js'
-import SocialButtons from '../../../node_modules/splendid/src/components/social-buttons.jsx'
+import Highlightjs from 'splendid/build/components/highlightjs'
+import Parallax from 'splendid/build/components/parallax'
+import SocialButtons from 'splendid/build/components/social-buttons'
 import Tip from '../../components/tip.js'
 
 const __components = {
@@ -43,21 +43,19 @@ const meta = [{
 },
 {
   key: 'social-buttons',
-  id: 'c4588',
+  id: 'c4845',
   props: {
     url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
-    subject: 'How To Load Google Fonts Asynchronously.',
-    size: '24',
-    title: 'Using performance measurements, we look at break down of page loading process and show how to embed web font stylesheet asynchronously to avoid blocks.',
+    meta: 'true',
   },
 },
 {
   key: 'social-buttons',
-  id: 'cc1d0',
+  id: 'cd871',
   props: {
     url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
-    subject: 'How To Load Google Fonts Asynchronously.',
-    title: 'Using performance measurements, we look at break down of page loading process and show how to embed web font stylesheet asynchronously to avoid blocks.',
+    size: '24',
+    meta: 'true',
   },
 },
 {

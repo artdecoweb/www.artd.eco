@@ -30,10 +30,10 @@ h1 {
   background: #f9f0e0;
 }
 a {
-  color: #843637 !important;
+  color: #843637;
 }
 a:hover {
-  color: #7d2424 !important;
+  color: #7d2424;
 }
 .SplendidSharingButtons a:nth-child(1) img {
   background: rgb(134, 54, 55)!important;

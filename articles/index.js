@@ -8,7 +8,7 @@ const T = {
   },
   'best-google-font': {
     title: 'How To Load Google Fonts Asynchronously.',
-    seo: 'Using performance measurements, we look at break down of page loading process and show how to embed web font stylesheet asynchronously to avoid blocks.',
+    seo: 'Using performance measurements, we examine page loading process in detail to find out how to embed web font stylesheet asynchronously to avoid blocks.',
     og: {
       image: './best-google-font-2/graphics/async-google-font.png',
       type: 'article',
