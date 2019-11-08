@@ -7,16 +7,16 @@ const renameMaps = { 'styles/Adonais.css': __renameMap0,
   'styles/Logo.css': __renameMap1 }
 __initBottom()
 import { makeIo, init, startPlain } from './__competent-lib'
-import Logo from '../components/logo.js'
 import Adonais from '../components/adonais.js'
-import Parallax from 'splendid/build/components/parallax'
+import Logo from '../components/logo.js'
 import Menu from '../components/menu.js'
+import Parallax from '../../node_modules/splendid/src/components/parallax.js'
 
 const __components = {
-  'logo': Logo,
   'adonais': Adonais,
-  'parallax': Parallax,
+  'logo': Logo,
   'menu': Menu,
+  'parallax': Parallax,
 }
 
 const io = makeIo()

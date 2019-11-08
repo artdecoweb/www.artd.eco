@@ -8,7 +8,7 @@
     <meta content="https://www.artd.eco/articles/best-google-font-2/graphics/async-google-font.png" property="og:image">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta
-      content="Loading Google Font in standard manner will block rendering and reduce page speed. Part I shows how to embed web font stylesheet asynchronously." name="description">
+      content="Using performance measurement, we analyse how a web page is loaded and show how to embed web font stylesheet asynchronously to avoid blocks and reflows." name="description">
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
@@ -20,13 +20,13 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&&(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight', {"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD":true})</script>
     
     <script>document.documentElement.classList.remove("no-js")</script>
-    <link rel="stylesheet" href="/styles/combined.css">
-    <link rel="preload" href="data:application/font-woff2;base64,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" as="font">
+    <link rel="stylesheet" href="/styles/articles/combined.css">
+    <link rel="preload" href="data:application/font-woff2;base64,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" as="font">
     <link rel="preload" href="/highlight.js/styles/default.css" as="style">
     <link rel="preload" href="/@artdeco/snapsvg-animator/svg-anim.min.js" as="script">
     <link rel="preload" href="/snapsvg/dist/snap.svg-min.js" as="script">
     <link rel="preload" href="/preact/dist/preact.min.js" crossorigin as="script">
-    <link rel="preload" href="/comps/articles-best-google-font.js" crossorigin as="script">
+    <link rel="preload" href="/comps/articles/best-google-font.js" crossorigin as="script">
     <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
     <style>
       .no-js [data-io], .no-js [data-loading], .no-js .ImageHolder { display: none!important }
@@ -37,7 +37,7 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
         font-family: 'Limelight';
         font-style: normal;
         font-weight: 400;
-        src: local('Limelight'), url('data:application/font-woff2;base64,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') format('woff2');
+        src: local('Limelight'), url('data:application/font-woff2;base64,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') format('woff2');
       }
       .PA {
           display: none!important;
@@ -76,8 +76,8 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
     <script defer src="/js/polyfill/intersection-observer.js"></script>
     <script defer src="/js/images.js"></script>
     <script crossorigin data-src="/preact/dist/preact.min.js"></script>
-    <script crossorigin data-src="/comps/common.js"></script>
-    <script crossorigin data-src="/comps/articles-best-google-font.js"></script>
+    <script crossorigin data-src="/comps/articles/common.js"></script>
+    <script crossorigin data-src="/comps/articles/best-google-font.js"></script>
 
   </head>
   <body style="overscroll-behavior: none;">
@@ -114,7 +114,12 @@ h;a.style.webkitTransform=h})};}).call(this);
         <div class="row">
           <div class="col">
 
-<h1 id="the-best-way-to-load-google-fonts-asynchronously">The Best Way To Load Google Fonts Asynchronously</h1>
+<h1 id="how-to-load-google-fonts-asynchronously">How To Load Google Fonts Asynchronously</h1>
+
+<p class="H1Lead lead">
+  &gt; Part I of <em>Advanced Google Font</em>. Go to Part II: <a href="/articles/the-best-way-to-load-google-fonts-asynchronously.html">
+   The Best Way To Load Google Font Asynchronously</a>.
+</p>
 
 <div class="row mb-3">
   <div class="col-2 col-sm-2 col-lg-1">
@@ -124,7 +129,7 @@ h;a.style.webkitTransform=h})};}).call(this);
   </div>
   <div style="border-bottom: 1px solid grey;" class="col-10 col-sm-7">
     <p class="text-right" style="color: grey;">
-      <span>Anton Dmukhovskiy, Senior Software Developer</span><br><span>23 October 2019</span> <span id="ce856"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
+      <span>Anton Dmukhovskiy, Senior Software Developer</span><br><span>23 October 2019</span> <span id="c23c7"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
     </p>
   </div>
   <div class="col-sm-3 col-lg-4">
@@ -400,7 +405,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 
 <div class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
+  <ol style="background-image: url('/img/sketch.svg');">
     <li>No fonts are downloaded yet, and because of <span class="tm">font-display: swap</span>, we see the fallback fonts. Without the swap property, there would be no text.</li>
     <li>The <strong>Limelight</strong> font is loaded for the heading, and the page is redrawn.</li>
     <li>The <strong>GentiumBasic</strong> font is loaded for the paragraph, and the page is redrawn again.</li>
@@ -439,7 +444,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 <div class="container"><div class="row"><div class="col">
 
 <div class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
+  <ol style="background-image: url('/img/sketch.svg');">
     <li>
       <img alt="css unblocking thread animation" data-io class="float-right pl-2"
         data-src="best-google-font/gif/thread.gif">
@@ -543,7 +548,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 <div class="container"><div class="row"><div class="col">
 
 <div class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
+  <ol style="background-image: url('/img/sketch.svg');">
     <img alt="reflow animation"
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='270' height='170'/%3E" data-io class="pr-2 float-left" data-src="best-google-font/gif/reflow.gif">
     <noscript>
@@ -608,7 +613,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 <div class="container"><div class="row"><div class="col">
 
 <div class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
+  <ol style="background-image: url('/img/sketch.svg');">
     <li>
       <img id="Ball" alt="stylesheet before render animation"
         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='131'/%3E" data-io style="float: right;" data-src="best-google-font/gif/render.gif">
@@ -627,7 +632,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 </div>
 
 <p>
-  That's good, and we've achieved the result we wanted, that is to load <em>Google Fonts</em> asynchronously. However, from the graph above we can see a gap between fonts starting to download, and the stylesheet arriving, i.e., fonts will begin do download only prior to layout despite the stylesheet referencing them being available for quite some time already, and we'll look into this issue below, but that's how the browser works, and nothing to do with our setup.
+  That's good, and we've achieved the result we wanted, that is to load <em>Google Fonts</em> asynchronously. However, from the graph above we can see a gap between fonts starting to download, and the stylesheet arriving, i.e., fonts will begin do download only just prior to the layout task despite the stylesheet referencing them being available for quite some time already, and we'll look into this issue below, but that's how the browser works, and nothing to do with our setup.
 </p>
 
 <p>
@@ -680,7 +685,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 <div class="container"><div class="row"><div class="col">
 
 <div style="transform: rotate3d(1,1,1,2deg);" class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
+  <ol style="background-image: url('/img/sketch.svg');">
     <li>
       <img alt="stylesheet is blocked by render"
         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='105'/%3E" data-io style="float: left;" class="pr-2"
@@ -725,21 +730,51 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 
 <p>
-  Never mind still, it doesn't hurt to remove the <span class="tm">onload</span> attribute really. Additionally, this <span class="tm">onload</span> attribute solution also requires a polyfill for browsers that don't support preload which I'll show in the second part, but what I'm really concerned here is <strong>WHEN</strong> the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the <span class="tm">onload</span> method.
+  Never mind still, it doesn't hurt to remove the <span class="tm">onload</span> attribute by setting it to <span class="tm">null</span>. Additionally, this <span class="tm">onload</span> attribute solution requires a polyfill for browsers that don't support preload which I'll show in the second part, but what I'm really concerned here is <strong>WHEN</strong> the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the <span class="tm">onload</span> method.
 </p>
 
-<pre id="c16f72"><code class="xml hljs">&lt;link rel="preload" as="style" crossorigin
-  href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"
-  onload="
-  performance.mark('apply-stylesheet');
-  this.rel = 'stylesheet'
-  this.onload = () =&gt; {
-    performance.measure('stylesheet-onload', 'apply-stylesheet');
-  };
-"&gt;</code></pre>
+<pre id="c6ce53"><code class="xml hljs">&lt;head&gt;
+  &lt;script&gt;
+    performance.mark('start-stylesheet');
+  &lt;/script&gt;
+
+  &lt;link rel="preload" as="style" crossorigin
+    href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"
+    onload="
+    performance.measure('link-onload', 'start-stylesheet');
+    performance.mark('apply-stylesheet');
+    this.onload = () =&gt; {
+      performance.measure('stylesheet-onload', 'apply-stylesheet');
+    };
+    this.rel = 'stylesheet'
+  "&gt;
+  &lt;!-- rest of head --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script&gt;
+    performance.mark('start-body')
+    performance.mark('start-body2')
+
+    // poll performance every 10ms
+    const i = setInterval(() =&gt; {
+      performance.measure('layout block proof', 'start-body2')
+      performance.mark('start-body2')
+    }, 10)
+
+    window.addEventListener('DOMContentLoaded', () =&gt; {
+      clearInterval(i)
+      performance.measure('layout block', 'start-body')
+    })
+  &lt;/script&gt;
+  &lt;!-- rest of body --&gt;
+&lt;/body&gt;</code></pre>
 
 <p>
-  The <span class="tm">performance.measure</span> function is a very handy util to add markers to the timeline to visualise the break-down. We're going to measure WHEN the <span class="tm">onload</span> event fired, and compare it to when the preload actually finished. One might assume that these points should follow one another (onload after download), however don't forget to account for the blockage of the main thread during the initial render (I've said this phrase so many times now, it just shows that it's an important takeaway point).
+  The <span class="tm">performance.measure</span> function is a very handy util to add markers to the timeline to visualise the break-down. We're going to measure WHEN the <span class="tm">onload</span> event fired, and compare it to when the preload actually finished. One might assume that these points should follow one another (onload after download), however don't forget to account for the lock on the main thread during the initial render (I've said this phrase so many times now, it just shows that it's an important takeaway point).
+</p>
+
+<p>
+  Just at the start of the body, I added an interval to fire every 10ms to draw a bar (<span class="tm">layout block proof</span>) on the performance graph. If the thread is locked, this time will not be 10ms, as the interval will have to wait until it can fire. The second bar <span class="tm">layout block</span> will stretch from when parsing of HTML began until it finished. Finally, as the very first thing I'm going to measure when the preload began and finished as <span class="tm">link-onload</span> bar, after which the preload will be converted into a stylesheet. <a target="_blank" class="btn btn-sm btn-warning" href="/exp/google-font/exp.html">Experiment Link</a>
 </p>
 
 </div></div></div>
@@ -751,11 +786,11 @@ h;a.style.webkitTransform=h})};}).call(this);
   </noscript>
   <p class="text-center">
     <img alt="Performance measurements with onload attribute."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='761' height='659'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev6.png">
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='835' height='503'/%3E" data-io class="border rounded img-fluid"
+      data-src="best-google-font/graphics/dev20.png">
     <noscript>
       <img alt="Performance measurements with onload attribute." class="border rounded img-fluid"
-        src="best-google-font/graphics/dev6.png">
+        src="best-google-font/graphics/dev20.png">
     </noscript>
   </p>
   <h5 id="figure-7-performance-measurements-with-onload-attribute" class="m-0 d-inline-block"
@@ -766,7 +801,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 <div class="container"><div class="row"><div class="col">
 
 <div style="transform: rotate3d(1,1,1,2deg);" class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
+  <ol style="background-image: url('/img/sketch.svg');">
     <li>
       <img alt="slow tortoise with onload animation"
         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='125' height='106'/%3E" data-io class="pl-2 float-right" data-src="best-google-font/gif/tortoise.gif">
@@ -774,10 +809,11 @@ h;a.style.webkitTransform=h})};}).call(this);
         <img alt="slow tortoise with onload animation" class="pl-2 float-right"
           src="best-google-font/gif/tortoise.gif">
       </noscript>
-      The stylesheet is preloaded, however it's ready only when the browser is doing the first render and layout, therefore it has to wait until the thread is unblocked.
+      The stylesheet is preloaded quickly, however the thread has already been locked as seen by the <span class="tm">layout-block-proof</span> yellow bar, which spawns 462ms instead of 10ms interval I'd set. The preload is finished, however we can't convert it into a stylesheet, because the thread is blocked, and have to wait until it's freed.<br><br>
       
     </li>
-    <li>We finally get the <span class="tm">onload</span> even on the preload link, and change the <span class="tm">preload</span> rel to <span class="tm">stylesheet</span>. This happens in 20ms, and after that the stylesheet is applied, causing a Recalculate Style + Layout, and fonts begin to download.</li>
+    <li>The thread is freed, and the preload link becomes a stylesheet in 50ms. This triggers fonts download and a reflow. Again, the reflow is unnecessary as no fonts are yet downloaded. Maybe <em>Chrome</em> developers can potentially address this internally.<br><br></li>
+    <li>Fonts arrive and trigger 2 reflows.</li>
   </ol>
   <div class="position-absolute"
     style="width: 1rem; bottom: 0px; top: 0px; right: 1rem; border-left: 1px solid #ec6a9d;">
@@ -786,19 +822,18 @@ h;a.style.webkitTransform=h})};}).call(this);
 </div>
 
 <p>
-  Let's compare that to the implementation using a standalone script tag rather than the <span class="tm">onload</span> attribute. I'm going to add 100ms timeout so that the preload event is visible on the timeline. Remember, we added the stylesheet only after the <span class="tm">onload</span> event fired previously. Now, using the script tag, we're adding the stylesheet right away.
+  Let's compare that to the implementation using a standalone script tag rather than the <span class="tm">onload</span> attribute. I'm going to add 100ms timeout so that the preload event is visible on the timeline. Remember, we added the stylesheet only after the <span class="tm">onload</span> event fired previously. Now, using the script tag, we're adding the stylesheet right away. <a target="_blank" class="btn btn-sm btn-warning" href="/exp/google-font/exp2.html">Experiment Link</a> (might need x6 CPU throttling to reproduce).
 </p>
 
-<pre id="c6ce53"><code class="xml hljs">&lt;head&gt;
-  &lt;!-- preconnect, dns-prefetch --&gt;
+<pre id="c6ce54"><code class="xml hljs">&lt;head&gt;
+  &lt;script&gt;
+    performance.mark('start-preload');
+  &lt;/script&gt;
+
   &lt;link rel="preload" as="style" crossorigin
     href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight"
-    onload="
-    performance.mark('preload-stylesheet');
-    setTimeout(() =&gt; {
-      performance.measure('preload-onload', 'preload-stylesheet');
-    }, 100)
-  "&gt;
+    onload="performance.measure('preload-onload', 'start-preload')"
+  &gt;
   &lt;script&gt;
     const link = document.createElement('link')
     link.href = 'https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight'
@@ -810,8 +845,15 @@ h;a.style.webkitTransform=h})};}).call(this);
       performance.measure('stylesheet-onload', 'add-stylesheet');
     }
   &lt;/script&gt;
-&lt;!-- etc --&gt;
-&lt;/head&gt;</code></pre>
+  &lt;!-- rest of head --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script&gt;
+    performance.mark('start-body')
+    performance.mark('start-body2')
+    // layout measurements as before
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre>
 
 
 
@@ -824,11 +866,11 @@ h;a.style.webkitTransform=h})};}).call(this);
   </noscript>
   <p class="text-center">
     <img alt="Async stylesheet loading with a script tag instead of onload attribute."
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='761' height='659'/%3E" data-io class="border rounded img-fluid"
-      data-src="best-google-font/graphics/dev7.png">
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='848' height='503'/%3E" data-io class="border rounded img-fluid"
+      data-src="best-google-font/graphics/dev21.png">
     <noscript>
       <img alt="Async stylesheet loading with a script tag instead of onload attribute."
-        class="border rounded img-fluid" src="best-google-font/graphics/dev7.png">
+        class="border rounded img-fluid" src="best-google-font/graphics/dev21.png">
     </noscript>
   </p>
   <h5 id="figure-8-async-stylesheet-loading-with-a-script-tag-instead-of-onload-attribute"
@@ -839,7 +881,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 <div class="container"><div class="row"><div class="col">
 
 <div class="mb-3 Revision">
-  <ol style="background-image: url('../articles/best-google-font/graphics/sketch.svg');">
+  <ol style="background-image: url('/img/sketch.svg');">
     <li>
       <img alt="fast hire running with script animation"
         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='118'/%3E" data-io class="pr-2 float-left" data-src="best-google-font/gif/hare1.gif">
@@ -847,9 +889,11 @@ h;a.style.webkitTransform=h})};}).call(this);
         <img alt="fast hire running with script animation" class="pr-2 float-left"
           src="best-google-font/gif/hare1.gif">
       </noscript>
-      The stylesheet link is added to the DOM immediately after starting to parse HTML using the script tag. This is pretty much exactly the same as the sync version, but without blocking the page!</li>
-    <li>The stylesheet is downloaded using preload link, and the fonts start to download.</li>
-    <li>The initial paint is done, main thread is freed and the preload event fires on our <span class="tm">link rel=&quot;preload&quot;</span> element (<em>preload-onload</em> yellow bar). Compared to the previous case, where we inserted the stylesheet only at this point, causing a reflow, here we avoided the reflow and are already halfway through font-downloading having saved a few hundred milliseconds.</li>
+      The stylesheet link is added to the DOM immediately after starting to parse HTML using the script tag. This is pretty much exactly the same as the sync version, but without blocking the page!
+      It arrives before the browser applied the lock, and can be used in the first layout, despite the <span class="tm">onload</span> event not having fired on either the stylesheet or preload links.<br><br>
+    </li>
+    <li>The stylesheet is applied during the first render, and fonts begin download.<br><br></li>
+    <li>The initial paint is done, main thread is freed and the preload event fires on our <span class="tm">link rel=&quot;preload&quot;</span> element (<em>preload-onload</em> yellow bar). Compared to the previous case, where we'd inserted the stylesheet only at this point, causing a reflow, here we avoided the reflow and are already halfway through font-downloading.</li>
   </ol>
   <div class="position-absolute"
     style="width: 1rem; bottom: 0px; top: 0px; right: 1rem; border-left: 1px solid #ec6a9d;">
@@ -858,7 +902,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 </div>
 
 <p>
-  This is much better, isn't? We've managed to insert the link tag with the stylesheet into DOM without the cost of reflow, that happens with the <span class="tm">onload</span> event. And the fonts begin to download quicker, right before the first layout, not after it! I think it's an interesting observation to make.
+  <strike>Hare</strike> Here, we've managed to insert the link tag with the stylesheet into DOM without the cost of reflow and without having to wait for <span class="tm">onload</span> event which most certainly happens only after the layout: on the graph above it can be seen that even though the preload finished before the lock, the <span class="tm">onload</span> event didn't fire. The Run Microtasks and first Layout time increased so that the lock now takes 100ms longer, but I'm not sure if that's to do with styles, or just a fluke. Also if the stylesheet arrived when the lock was already set, it would not have been applied, so this use case is for when the web font styles are downloaded quickly, in say 100ms, but initial parsing takes longer, e.g., 150ms. On modern machines rendering should be really fast, but for older ones and devices this is still applicable, therefore think it's worth targeting this scenario and writing the proper script instead of <span class="tm">onload</span> <em>rel</em> substitution.
 </p>
 
 <div class="position-relative" id="c716e">
@@ -870,14 +914,14 @@ h;a.style.webkitTransform=h})};}).call(this);
       <img alt="finger pointer" style="float:left;width:120px" class="mt-3 mr-3"
         src="avatar/pointer.svg">
     </noscript>
-      Don't use the <span class="tm">onload</span> attribute on a link element with a web font stylesheet to swap its <em>rel</em> from <strong>preload</strong> to <strong>stylesheet</strong>. If the preload finishes at the point of time when the main thread is blocked by the first layout, the <span class="tm">onload</span> event will only fire after it, causing a reflow due to new styles. It's better to add a stylesheet dynamically with JavaScript in a script tag just underneath the preload element, so that it's immediately injected into DOM during the initial parsing of HTML and will not impose a cost of a reflow that has no effect due to fonts not being available yet.
+      Don't use the <span class="tm">onload</span> attribute on a link element with a web font stylesheet to swap its <em>rel</em> from <strong>preload</strong> to <strong>stylesheet</strong>. Even if the stylesheet was ready before the initial layout started, the <span class="tm">onload</span> event will only fire after it, causing a reflow due to new styles. It's better to add a stylesheet dynamically with <em>JavaScript</em> in a script tag just underneath the preload element, so that it's immediately injected into DOM during the initial parsing of HTML and will not impose a cost of a reflow that has no effect due to fonts not being available yet.
   </p>
   <div class="position-absolute" style="z-index:-1;top:0;left:0;bottom:0;right:0"></div>
 </div>
 
-<p>
-  OK we're done with figuring out how to load the web fonts asynchronously. It's time for another improvement, that is to collapse all fonts loading into the single reflow.
-</p>
+
+
+
 
 <p class="SectionBreak">
   <a title="Back To Top" href="#top">
@@ -965,7 +1009,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 </p>
 
 <p>
-  <span id="ce6be"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
+  <span id="c1c0c"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
 </p>
 
 </div>

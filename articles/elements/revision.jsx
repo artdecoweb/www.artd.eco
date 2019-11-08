@@ -10,7 +10,7 @@ export default async function Revision({ children, splendid, style }) {
     inline: true,
   })
   return (<div style={style} className="mb-3 Revision">
-    <ol background-image="./graphics/sketch.svg" dangerouslySetInnerHTML={{ __html: children[0] }}/>
+    <ol background-image="/img/sketch.svg" dangerouslySetInnerHTML={{ __html: children[0] }}/>
     <bootstrap-div position-absolute width="1rem" bottom="0" top="0" right="1rem"
       border-left="1px solid #ec6a9d">
       <img src="img/arrows.svg" />

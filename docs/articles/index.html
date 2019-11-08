@@ -19,8 +19,8 @@ f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.re
 performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&&(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight', {"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD":true})</script>
     
     <script>document.documentElement.classList.remove("no-js")</script>
-    <link rel="stylesheet" href="/styles/combined.css">
-    <link rel="preload" href="/comps/articles-articles.js" crossorigin as="script">
+    <link rel="stylesheet" href="/styles/articles/combined.css">
+    <link rel="preload" href="/comps/articles/articles.js" crossorigin as="script">
     <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
     <style>
       .no-js [data-loading], .no-js .ImageHolder { display: none!important }
@@ -30,8 +30,8 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
     </noscript>
     <script defer src="/js/polyfill/intersection-observer.js"></script>
     <script defer src="/js/images.js"></script>
-    <script crossorigin data-src="/comps/common.js"></script>
-    <script crossorigin data-src="/comps/articles-articles.js"></script>
+    <script crossorigin data-src="/comps/articles/common.js"></script>
+    <script crossorigin data-src="/comps/articles/articles.js"></script>
 
   </head>
   <body style="overscroll-behavior: none;">

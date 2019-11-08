@@ -68,7 +68,7 @@
 </revision>
 
 <p>
-  That's good, and we've achieved the result we wanted, that is to load _Google Fonts_ asynchronously. However, from the graph above we can see a gap between fonts starting to download, and the stylesheet arriving, i.e., fonts will begin do download only prior to layout despite the stylesheet referencing them being available for quite some time already, and we'll look into this issue below, but that's how the browser works, and nothing to do with our setup.
+  That's good, and we've achieved the result we wanted, that is to load _Google Fonts_ asynchronously. However, from the graph above we can see a gap between fonts starting to download, and the stylesheet arriving, i.e., fonts will begin do download only just prior to the layout task despite the stylesheet referencing them being available for quite some time already, and we'll look into this issue below, but that's how the browser works, and nothing to do with our setup.
 </p>
 
 <p>
@@ -129,51 +129,81 @@
 <!-- <fig src="./graphics/dev5.png" alt="Stylesheet downloaded twice." /> -->
 
 <p>
-   Never mind still, it doesn't hurt to remove the `onload` attribute really. Additionally, this `onload` attribute solution also requires a polyfill for browsers that don't support preload which I'll show in the second part, but what I'm really concerned here is *WHEN* the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the `onload` method.
-</p>
-
-```html
-<link rel="preload" as="style" crossorigin
-  href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight"
-  onload="
-  performance.mark('apply-stylesheet');
-  this.rel = 'stylesheet'
-  this.onload = () => {
-    performance.measure('stylesheet-onload', 'apply-stylesheet');
-  };
-">
-```
-
-<p>
-  The `performance.measure` function is a very handy util to add markers to the timeline to visualise the break-down. We're going to measure WHEN the `onload` event fired, and compare it to when the preload actually finished. One might assume that these points should follow one another (onload after download), however don't forget to account for the blockage of the main thread during the initial render (I've said this phrase so many times now, it just shows that it's an important takeaway point).
-</p>
-
-<fig src="./graphics/dev6.png" alt="Performance measurements with onload attribute." />
-
-<revision style="transform: rotate3d(1,1,1,2deg);">
-  <li>
-    <img placeholder-auto pl-2 src="./gif/tortoise.gif" alt="slow tortoise with onload animation" float-right />
-    The stylesheet is preloaded, however it's ready only when the browser is doing the first render and layout, therefore it has to wait until the thread is unblocked.
-    <!-- The stylesheet is preloaded quite quickly, even before "Run microtasks" however it's not applied until the first render and layout which is indicated by its continuos "error" bar ---| that ends at the layout. -->
-  </li>
-  * We finally get the `onload` even on the preload link, and change the `preload` rel to `stylesheet`. This happens in 20ms, and after that the stylesheet is applied, causing a Recalculate Style + Layout, and fonts begin to download.
-</revision>
-
-<p>
-  Let's compare that to the implementation using a standalone script tag rather than the `onload` attribute. I'm going to add 100ms timeout so that the preload event is visible on the timeline. Remember, we added the stylesheet only after the `onload` event fired previously. Now, using the script tag, we're adding the stylesheet right away.
+   Never mind still, it doesn't hurt to remove the `onload` attribute by setting it to `null`. Additionally, this `onload` attribute solution requires a polyfill for browsers that don't support preload which I'll show in the second part, but what I'm really concerned here is *WHEN* the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the `onload` method.
 </p>
 
 ```html
 <head>
-  <!-- preconnect, dns-prefetch -->
+  <script>
+    performance.mark('start-stylesheet');
+  </script>
+
   <link rel="preload" as="style" crossorigin
     href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight"
     onload="
-    performance.mark('preload-stylesheet');
-    setTimeout(() => {
-      performance.measure('preload-onload', 'preload-stylesheet');
-    }, 100)
+    performance.measure('link-onload', 'start-stylesheet');
+    performance.mark('apply-stylesheet');
+    this.onload = () => {
+      performance.measure('stylesheet-onload', 'apply-stylesheet');
+    };
+    this.rel = 'stylesheet'
   ">
+  <!-- rest of head -->
+</head>
+<body>
+  <script>
+    performance.mark('start-body')
+    performance.mark('start-body2')
+
+    // poll performance every 10ms
+    const i = setInterval(() => {
+      performance.measure('layout block proof', 'start-body2')
+      performance.mark('start-body2')
+    }, 10)
+
+    window.addEventListener('DOMContentLoaded', () => {
+      clearInterval(i)
+      performance.measure('layout block', 'start-body')
+    })
+  </script>
+  <!-- rest of body -->
+</body>
+```
+
+<p>
+  The `performance.measure` function is a very handy util to add markers to the timeline to visualise the break-down. We're going to measure WHEN the `onload` event fired, and compare it to when the preload actually finished. One might assume that these points should follow one another (onload after download), however don't forget to account for the lock on the main thread during the initial render (I've said this phrase so many times now, it just shows that it's an important takeaway point).
+</p>
+
+<p>
+  Just at the start of the body, I added an interval to fire every 10ms to draw a bar (`layout block proof`) on the performance graph. If the thread is locked, this time will not be 10ms, as the interval will have to wait until it can fire. The second bar `layout block` will stretch from when parsing of HTML began until it finished. Finally, as the very first thing I'm going to measure when the preload began and finished as `link-onload` bar, after which the preload will be converted into a stylesheet. <a btn btn-sm btn-warning href="/exp/google-font/exp.html" target="_blank">Experiment Link</a>
+</p>
+
+<fig src="./graphics/dev20.png" alt="Performance measurements with onload attribute." />
+
+<revision style="transform: rotate3d(1,1,1,2deg);">
+  <li>
+    <img placeholder-auto pl-2 src="./gif/tortoise.gif" alt="slow tortoise with onload animation" float-right />
+    The stylesheet is preloaded quickly, however the thread has already been locked as seen by the `layout-block-proof` yellow bar, which spawns 462ms instead of 10ms interval I'd set. The preload is finished, however we can't convert it into a stylesheet, because the thread is blocked, and have to wait until it's freed.<br><br>
+    <!-- The stylesheet is preloaded quite quickly, even before "Run microtasks" howev<br><br>er it's not applied until the first render and layout which is indicated by its continuos "error" bar ---| that ends at the layout. -->
+  </li>
+  * The thread is freed, and the preload link becomes a stylesheet in 50ms. This triggers fonts download and a reflow. Again, the reflow is unnecessary as no fonts are yet downloaded. Maybe _Chrome_ developers can potentially address this internally.<br><br>
+  * Fonts arrive and trigger 2 reflows.
+</revision>
+
+<p>
+  Let's compare that to the implementation using a standalone script tag rather than the `onload` attribute. I'm going to add 100ms timeout so that the preload event is visible on the timeline. Remember, we added the stylesheet only after the `onload` event fired previously. Now, using the script tag, we're adding the stylesheet right away. <a btn btn-sm btn-warning href="/exp/google-font/exp2.html" target="_blank">Experiment Link</a> (might need x6 CPU throttling to reproduce).
+</p>
+
+```html
+<head>
+  <script>
+    performance.mark('start-preload');
+  </script>
+
+  <link rel="preload" as="style" crossorigin
+    href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight"
+    onload="performance.measure('preload-onload', 'start-preload')"
+  >
   <script>
     const link = document.createElement('link')
     link.href = 'https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight'
@@ -185,32 +215,45 @@
       performance.measure('stylesheet-onload', 'add-stylesheet');
     }
   </script>
-<!-- etc -->
+  <!-- rest of head -->
 </head>
+<body>
+  <script>
+    performance.mark('start-body')
+    performance.mark('start-body2')
+    // layout measurements as before
+  </script>
+</body>
 ```
 
 <!-- <add-file>img/letters/background.png</add-file> -->
 
-<fig src="./graphics/dev7.png" alt="Async stylesheet loading with a script tag instead of onload attribute." />
+<fig src="./graphics/dev21.png" alt="Async stylesheet loading with a script tag instead of onload attribute." />
 
 <revision>
   <li>
     <img placeholder-auto pr-2 src="./gif/hare1.gif" alt="fast hire running with script animation" float-left />
-    The stylesheet link is added to the DOM immediately after starting to parse HTML using the script tag. This is pretty much exactly the same as the sync version, but without blocking the page!</li>
-  * The stylesheet is downloaded using preload link, and the fonts start to download.
-  * The initial paint is done, main thread is freed and the preload event fires on our `link rel="preload"` element (_preload-onload_ yellow bar). Compared to the previous case, where we inserted the stylesheet only at this point, causing a reflow, here we avoided the reflow and are already halfway through font-downloading having saved a few hundred milliseconds.
+    The stylesheet link is added to the DOM immediately after starting to parse HTML using the script tag. This is pretty much exactly the same as the sync version, but without blocking the page!
+    It arrives before the browser applied the lock, and can be used in the first layout, despite the `onload` event not having fired on either the stylesheet or preload links.<br><br>
+  </li>
+  * The stylesheet is applied during the first render, and fonts begin download.<br><br>
+  * The initial paint is done, main thread is freed and the preload event fires on our `link rel="preload"` element (_preload-onload_ yellow bar). Compared to the previous case, where we'd inserted the stylesheet only at this point, causing a reflow, here we avoided the reflow and are already halfway through font-downloading.
 </revision>
 
 <p>
-  This is much better, isn't? We've managed to insert the link tag with the stylesheet into DOM without the cost of reflow, that happens with the `onload` event. And the fonts begin to download quicker, right before the first layout, not after it! I think it's an interesting observation to make.
+  <strike>Hare</strike> Here, we've managed to insert the link tag with the stylesheet into DOM without the cost of reflow and without having to wait for `onload` event which most certainly happens only after the layout: on the graph above it can be seen that even though the preload finished before the lock, the `onload` event didn't fire. The Run Microtasks and first Layout time increased so that the lock now takes 100ms longer, but I'm not sure if that's to do with styles, or just a fluke. Also if the stylesheet arrived when the lock was already set, it would not have been applied, so this use case is for when the web font styles are downloaded quickly, in say 100ms, but initial parsing takes longer, e.g., 150ms. On modern machines rendering should be really fast, but for older ones and devices this is still applicable, therefore think it's worth targeting this scenario and writing the proper script instead of `onload` _rel_ substitution.
 </p>
 
 <tip>
-  Don't use the `onload` attribute on a link element with a web font stylesheet to swap its _rel_ from *preload* to *stylesheet*. If the preload finishes at the point of time when the main thread is blocked by the first layout, the `onload` event will only fire after it, causing a reflow due to new styles. It's better to add a stylesheet dynamically with JavaScript in a script tag just underneath the preload element, so that it's immediately injected into DOM during the initial parsing of HTML and will not impose a cost of a reflow that has no effect due to fonts not being available yet.
+  Don't use the `onload` attribute on a link element with a web font stylesheet to swap its _rel_ from *preload* to *stylesheet*. Even if the stylesheet was ready before the initial layout started, the `onload` event will only fire after it, causing a reflow due to new styles. It's better to add a stylesheet dynamically with _JavaScript_ in a script tag just underneath the preload element, so that it's immediately injected into DOM during the initial parsing of HTML and will not impose a cost of a reflow that has no effect due to fonts not being available yet.
 </tip>
 
-<p>
+<!-- <p>
+  Finally, I kept saying "fonts arrive at different times" and cause separate reflows, however notice how on the above graph ALL fonts are actually downloaded by ~700ms (the green rectangles), but the first one is flushed first separately from other ones &mdash; that's a question to the browser why this happens.
+</p> -->
+
+<!-- <p>
   OK we're done with figuring out how to load the web fonts asynchronously. It's time for another improvement, that is to collapse all fonts loading into the single reflow.
-</p>
+</p> -->
 
 <section-break />

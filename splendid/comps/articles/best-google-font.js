@@ -6,18 +6,18 @@ const renameMaps = {  }
 __initBottom()
 import { Component, render, h } from '@externs/preact'
 import { makeIo, init, start } from '../__competent-lib'
-import Parallax from 'splendid/build/components/parallax'
-import Highlightjs from 'splendid/build/components/highlightjs'
 import Animation from '../../components/animation.js'
+import Highlightjs from '../../../node_modules/splendid/src/components/highlightjs.js'
+import Parallax from '../../../node_modules/splendid/src/components/parallax.js'
+import SocialButtons from '../../../node_modules/splendid/src/components/social-buttons.jsx'
 import Tip from '../../components/tip.js'
-import SocialButtons from 'splendid/build/components/social-buttons'
 
 const __components = {
-  'parallax': Parallax,
-  'highlightjs': Highlightjs,
   'animation': Animation,
-  'tip': Tip,
+  'highlightjs': Highlightjs,
+  'parallax': Parallax,
   'social-buttons': SocialButtons,
+  'tip': Tip,
 }
 
 const io = makeIo()
@@ -25,14 +25,14 @@ const io = makeIo()
 /** @type {!Array<!preact.PreactProps>} */
 const meta = [{
   key: 'highlightjs',
-  id: 'c6ce5,c6ce51,c6ce52,c6ce53',
+  id: 'c6ce5,c6ce51,c6ce52,c6ce53,c6ce54',
   props: {
     lang: 'xml,javascript',
   },
 },
 {
   key: 'highlightjs',
-  id: 'c16f7,c16f71,c16f72',
+  id: 'c16f7,c16f71',
   props: {
     lang: 'xml',
   },
@@ -42,19 +42,20 @@ const meta = [{
   id: 'c716e',
 },
 {
+  key: 'social-buttons',
+  id: 'c23c7',
+  props: {
+    url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
+    subject: 'How To Load Google Fonts Asynchronously.',
+    size: '24',
+    title: 'Using performance measurement, we analyse how a web page is loaded and show how to embed web font stylesheet asynchronously to avoid blocks and reflows.',
+  },
+},
+{
   key: 'parallax',
   id: 'c5471',
   props: {
     'background-image': '/img/tile.jpg',
-  },
-},
-{
-  key: 'social-buttons',
-  id: 'ce6be',
-  props: {
-    url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
-    subject: 'How To Load Google Fonts Asynchronously.',
-    title: 'Loading Google Font in standard manner will block rendering and reduce page speed. Part I shows how to embed web font stylesheet asynchronously.',
   },
 },
 {
@@ -65,6 +66,15 @@ const meta = [{
     width: '550',
     height: '400',
     align: 'center',
+  },
+},
+{
+  key: 'social-buttons',
+  id: 'c1c0c',
+  props: {
+    url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
+    subject: 'How To Load Google Fonts Asynchronously.',
+    title: 'Using performance measurement, we analyse how a web page is loaded and show how to embed web font stylesheet asynchronously to avoid blocks and reflows.',
   },
 },
 {
@@ -81,16 +91,6 @@ const meta = [{
   id: 'c1d47,c1d471',
   props: {
     lang: 'css',
-  },
-},
-{
-  key: 'social-buttons',
-  id: 'ce856',
-  props: {
-    url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
-    subject: 'How To Load Google Fonts Asynchronously.',
-    size: '24',
-    title: 'Loading Google Font in standard manner will block rendering and reduce page speed. Part I shows how to embed web font stylesheet asynchronously.',
   },
 },
 {

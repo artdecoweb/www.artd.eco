@@ -21,3 +21,36 @@ p {
   top: 2rem;
   right: 2rem;
 }
+h1 {
+  background: #7d2424;
+  border-bottom: .1rem dashed;
+  color: wheat;
+  margin-bottom: 0;
+}
+.H1Lead {
+  background: #f9f0e0;
+}
+a {
+  color: #843637 !important;
+}
+a:hover {
+  color: #7d2424 !important;
+}
+.SplendidSharingButtons a:nth-child(1) img {
+  background: rgb(134, 54, 55)!important;
+}
+.SplendidSharingButtons a:nth-child(2) img {
+  background: #803f40!important
+}
+.SplendidSharingButtons a:nth-child(3) img {
+  background: #444!important;
+}
+.SplendidSharingButtons a:nth-child(4) img {
+  background: #397300!important;
+}
+.SplendidSharingButtons a:nth-child(5) img {
+  background: #1f7199!important;
+}
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  color: #191b62!important;
+}

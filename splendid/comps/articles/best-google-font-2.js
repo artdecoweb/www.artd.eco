@@ -3,19 +3,23 @@ import '../../js/load-background-img'
 import makeClassGetter from '../__mcg'
 const renameMaps = {  }
 __initBottom()
-import { makeIo, init, startPlain } from '../__competent-lib'
-import Highlightjs from 'splendid/build/components/highlightjs'
-import Parallax from 'splendid/build/components/parallax'
+import { Component, render, h } from '@externs/preact'
+import { makeIo, init, start } from '../__competent-lib'
 import Animation from '../../components/animation.js'
+import Highlightjs from '../../../node_modules/splendid/src/components/highlightjs.js'
+import Parallax from '../../../node_modules/splendid/src/components/parallax.js'
+import SocialButtons from '../../../node_modules/splendid/src/components/social-buttons.jsx'
 
 const __components = {
+  'animation': Animation,
   'highlightjs': Highlightjs,
   'parallax': Parallax,
-  'animation': Animation,
+  'social-buttons': SocialButtons,
 }
 
 const io = makeIo()
 
+/** @type {!Array<!preact.PreactProps>} */
 const meta = [{
   key: 'highlightjs',
   id: 'c6ce5,c6ce51,c6ce52,c6ce53',
@@ -49,6 +53,16 @@ const meta = [{
   id: 'c5471',
   props: {
     'background-image': '/img/tile.jpg',
+  },
+},
+{
+  key: 'social-buttons',
+  id: 'c6d6c',
+  props: {
+    url: 'https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html',
+    subject: 'The Best Way To Load Google Fonts Asynchronously.',
+    size: '24',
+    title: 'An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows.',
   },
 },
 {
@@ -101,7 +115,7 @@ const meta = [{
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const Comp = __components[key]
-  const plain = true
+  const plain = Comp.plain || (/^\s*class\s+/.test(Comp.toString()) && !Component.isPrototypeOf(Comp))
   props.splendid = { addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
   } }
@@ -112,7 +126,7 @@ meta.forEach(({ key, id, props = {}, children = [] }) => {
     const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })
     let comp
     el.render = () => {
-      comp = startPlain(renderMeta, Comp, comp, el, parent, props, children)
+      comp = start(renderMeta, Comp, comp, el, parent, props, children, { render, Component, h })
       return comp
     }
     el.render.meta = renderMeta
