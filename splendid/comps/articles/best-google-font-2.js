@@ -21,22 +21,23 @@ const io = makeIo()
 
 /** @type {!Array<!preact.PreactProps>} */
 const meta = [{
+  key: 'social-buttons',
+  id: 'c704d',
+  props: {
+    url: 'https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html',
+    meta: 'true',
+  },
+},
+{
   key: 'highlightjs',
-  id: 'c6ce5,c6ce51,c6ce52,c6ce53',
+  id: 'c6ce5,c6ce51,c6ce52',
   props: {
     lang: 'xml,javascript',
   },
 },
 {
   key: 'highlightjs',
-  id: 'c724c',
-  props: {
-    lang: 'shell',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'c1602,c16021',
+  id: 'c1602',
   props: {
     lang: 'xml,css',
   },
@@ -52,14 +53,7 @@ const meta = [{
 },
 {
   key: 'highlightjs',
-  id: 'c16f7',
-  props: {
-    lang: 'xml',
-  },
-},
-{
-  key: 'highlightjs',
-  id: 'ccdbf,ccdbf1,ccdbf2,ccdbf3,ccdbf4,ccdbf5,ccdbf6',
+  id: 'ccdbf,ccdbf1,ccdbf2,ccdbf3,ccdbf4,ccdbf5',
   props: {
     lang: 'javascript',
   },
@@ -89,13 +83,6 @@ const meta = [{
   },
 },
 {
-  key: 'highlightjs',
-  id: 'cbdf7',
-  props: {
-    lang: 'xml,javascript,css',
-  },
-},
-{
   key: 'animation',
   id: 'c228f',
   props: {
@@ -106,7 +93,7 @@ const meta = [{
 },
 {
   key: 'parallax',
-  id: 'c709f,c709f1,c709f2,c709f3,c709f4,c709f5,c709f6,c709f7,c709f8',
+  id: 'c709f,c709f1,c709f2,c709f3,c709f4',
   props: {
     'background-image': '/img/letters/background.png',
     speedy: '-0.5',

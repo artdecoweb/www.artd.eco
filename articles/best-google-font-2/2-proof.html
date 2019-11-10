@@ -1,0 +1,59 @@
+
+<style>
+  #OnLeft { display: none; }
+@media (min-width: 768px) {
+  #Above { display: none;}
+  #OnLeft { display: inline; }
+}
+</style>
+
+<h3 d-md-none alt="non-blocking">Non-Blocking Proof</h3>
+
+<fig src="./graphics/dev-check.gif" no-fluid alt="Dynamic insertion of a link with JS does not block page render.">
+  <h3 d-none d-md-block id="NonBlockingIn">Non-Blocking Proof</h3>
+  <p>
+    For a scary moment though, I thought that I might be giving wrong advice when saying to append a `link` tag dynamically into the head, and it will actually block the page from rendering. For example, on the previous Fig 1, there are some gaps in the timeline after the web font stylesheet is inserted, but before the external CSS is parsed, that could indicate that the page was render-blocked.
+  </p>
+  <p>
+    However, it's not the case as shown <span id="Above">above</span><span id="OnLeft">on the left</span>, and the reason for these gaps is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., here, XHR is completed quicker compared to the [previous case](#fig-advanced-loading), where it had to wait for the main thread to unlock since there were no gaps).
+  </p>
+</fig>
+
+<p>
+  Essentially all I've done is added an external stylesheet dynamically, but throttled it server-side with a middleware function. Because the page continued to render, it's safe to say that adding a link with JS in the head will not block the main thread.
+</p>
+
+<row>
+  <column md-6>
+```html
+<head>
+<link rel="preload" href="/throttle.css" as="style">
+  <script>
+    const link = document.createElement('link')
+    link.href = '/throttle.css'
+    link.rel = 'stylesheet'
+    performance.mark('add-stylesheet')
+    document.head.appendChild(link)
+    link.onload = () => {
+      performance.measure('stylesheet-onload', 'add-stylesheet');
+    }
+  </script>
+</head>
+```
+  </column>
+  <column md-6>
+```js
+// Koa middleware
+async throttle(ctx, next) {
+  if (ctx.path == '/throttle.css') {
+    await new Promise(r => setTimeout(r, 500))
+    ctx.type = 'text/css'
+    ctx.body = ''
+  }
+  await next()
+}
+```
+  </column>
+</row>
+
+<section-break />

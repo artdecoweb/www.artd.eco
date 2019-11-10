@@ -1,0 +1,114 @@
+import __initBottom from '../__init/bottom'
+import '../../js/load-background-img'
+import makeClassGetter from '../__mcg'
+const renameMaps = {  }
+__initBottom()
+import { Component, render, h } from '@externs/preact'
+import { makeIo, init, start } from '../__competent-lib'
+import Highlightjs from 'splendid/build/components/highlightjs'
+import Parallax from 'splendid/build/components/parallax'
+import SocialButtons from 'splendid/build/components/social-buttons'
+
+const __components = {
+  'highlightjs': Highlightjs,
+  'parallax': Parallax,
+  'social-buttons': SocialButtons,
+}
+
+const io = makeIo()
+
+/** @type {!Array<!preact.PreactProps>} */
+const meta = [{
+  key: 'highlightjs',
+  id: 'c6ce5',
+  props: {
+    lang: 'xml,javascript',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c724c',
+  props: {
+    lang: 'shell',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c1602',
+  props: {
+    lang: 'xml,css',
+  },
+},
+{
+  key: 'social-buttons',
+  id: 'c6a73',
+  props: {
+    url: 'https://www.artd.eco/articles/embedding-critical-path-fonts.html',
+    meta: 'true',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'ccdbf',
+  props: {
+    lang: 'javascript',
+  },
+},
+{
+  key: 'social-buttons',
+  id: 'c9f74',
+  props: {
+    url: 'https://www.artd.eco/articles/embedding-critical-path-fonts.html',
+    size: '24',
+    meta: 'true',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c0c34',
+  props: {
+    'background-image': './img/tile.jpg',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'c1d47',
+  props: {
+    lang: 'css',
+  },
+},
+{
+  key: 'highlightjs',
+  id: 'cbdf7',
+  props: {
+    lang: 'xml,javascript,css',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c709f,c709f1,c709f2,c709f3',
+  props: {
+    'background-image': '/img/letters/background.png',
+    speedy: '-0.5',
+  },
+}]
+meta.forEach(({ key, id, props = {}, children = [] }) => {
+  const Comp = __components[key]
+  const plain = Comp.plain || (/^\s*class\s+/.test(Comp.toString()) && !Component.isPrototypeOf(Comp))
+  props.splendid = { addCSS(stylesheet) {
+    return makeClassGetter(renameMaps[stylesheet])
+  } }
+
+  const ids = id.split(',')
+  ids.forEach((Id) => {
+    const { parent, el } = init(Id, key)
+    const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })
+    let comp
+    el.render = () => {
+      comp = start(renderMeta, Comp, comp, el, parent, props, children, { render, Component, h })
+      return comp
+    }
+    el.render.meta = renderMeta
+    io.observe(el)
+  })
+})

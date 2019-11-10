@@ -1,4 +1,4 @@
-## Conclusions
+## Comparison
 
 <p>
   Google Fonts are great because it's really easy to embed them and the service provides a variety of good-looking web fonts. The standard sync loading with a simple link tag, however, will lock the main thread and not prevent the page (even HTML won't start parsing) which we would like to avoid. Moreover, fonts will load independently, and each time they will cause a reflow of the page, which slows down the <span class="px-2" style="background:red; color:white"><abbr title="Load">L</abbr></span> event delivery and frustrates the user. In summary, we've gone through the following stages for optimisation from the sync loading:
@@ -51,10 +51,11 @@
 </p>
 
 <p>
-  <npm-badge package="@lemuria/font">@Lemuria/font</npm-badge> package is available from NPM, and exports functions that could be added to a server-side rendered webpage. The source code of the function for manual injection can be copied from [Github](https://github.com/kumarikandam/font). The check for `preload` support is done the following way, <a target="_blank" href="smashing/preload" color="#e33a2c !important" text-decoration="underline"><img style="max-height:1em; margin-right:-0.2em;vertical-align: top;
-  margin-top: .2em;" src="./graphics/smashing.png" alt="S"/>uggested by preload</a> contributor to Chrome:
+  <npm-badge package="@lemuria/font">@Lemuria/font</npm-badge> package is available from NPM, and exports functions that could be added to a server-side rendered webpage. The source code of the function for manual injection can be copied from [Github](https://github.com/kumarikandam/font). The check for `preload` support is done the following way, <a target="_blank" href="smashing/preload" color="#e33a2c !important" text-decoration="underline"><nobr><img style="max-height:1em; margin-right:-0.2em;vertical-align: top;
+    margin-top: .2em;" src="./graphics/smashing.png" alt="S"/>uggested by preload</nobr></a> contributor to Chrome:
 </p>
 
+<js>
 ```js
 function DOMTokenListSupports(tokenList, token) {
   if (!tokenList || !tokenList.supports) {
@@ -65,9 +66,13 @@ function DOMTokenListSupports(tokenList, token) {
 const link = document.createElement('link')
 const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')
 ```
+</js>
+
 
 <p>
-  Finally, the best possible course of action is to preload fonts with a preload link without any scripting. However, that's a different context entirely since this article focuses specifically on _Google Fonts_ optimisation. Their servers will return different urls for different browsers, therefore we can't just copy and paste them in the preload link, additionally their fonts evolve and change versions. The advanced google font loading solution is the simplest scripting solution to kicking off font preload as soon as possible, and eliminate render blocks. Moreover, I was asking myself, does the browser know internally the unicode range of the page even before body is available to JS? The last experiment was to embed the stylesheet manually with a `<style>/* contents of google font stylesheet */</style>` onto the page and see its performance. There are no external resources and the page load should proceed seamlessly from parsing to layout.
+  Finally, the best possible course of action is to preload fonts with a preload link without any scripting. However, that's a different context entirely since this article focuses specifically on _Google Fonts_ optimisation. Their servers will return different urls for different browsers, therefore we can't just copy and paste them in the preload link, additionally their fonts evolve and change versions. The advanced google font loading solution is the simplest scripting solution to kicking off font preload as soon as possible, and eliminate render blocks.
+</p>
+<p>Moreover, I was asking myself, does the browser know internally the unicode range of the page even before body is available to JS? The last experiment was to embed the stylesheet manually with a `<style>/* contents of google font stylesheet */</style>` onto the page and see its performance. There are no external resources and the page load should proceed seamlessly from parsing to layout.
 </p>
 
 ```html
@@ -94,7 +99,9 @@ const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')
 </fig>
 
 <p>
-  The performance graph clearly shows that although urls to fonts are there on the page, they don't begin to download prior to the first style calculation. Therefore, the advanced google font method is even better that what browser can offer natively, because it's able to begin to download fonts even before parsing starts by extracting urls from the stylesheet, if it arrives quickly enough ([case A](#2-scenarios)).
+  The performance graph clearly shows that although urls to fonts are there on the page, they don't begin to download prior to the first style calculation. Therefore, the advanced google font method is even better that what browser can offer natively, because it's able to begin to download fonts even before parsing starts by extracting urls from the stylesheet, if it arrives quickly enough ([case B](#2-scenarios)).
 </p>
 
-<section-break />
+<p>
+  <social-buttons meta />
+</p>

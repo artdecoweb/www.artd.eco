@@ -28,6 +28,7 @@ h1 {
 }
 .H1Lead {
   background: #f9f0e0;
+  padding: 0 1rem;
 }
 a {
   color: #843637;
@@ -57,6 +58,15 @@ a:hover {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #F0F0F0;
+  background: #f0f0f08a !important;
   color: #444;
+}
+.hljs:hover {
+  background: #f0f0f0e3 !important;
+}
+pre {
+  background: url('/articles/img/code-bg.png');
+  display: inline-block;
+  border-radius: 1rem;
+  white-space: pre-wrap;
 }

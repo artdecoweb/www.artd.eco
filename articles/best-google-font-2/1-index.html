@@ -1,0 +1,258 @@
+<critical-path-font family="Limelight" text="The Best Way To Load Google Fonts Asynchronously">
+  h1 { font-family: 'Limelight',cursive; }
+</critical-path-font>
+
+# The Best Way To Load Google Fonts Asynchronously
+
+<p class="H1Lead" lead> &gt; Part II of _Advanced Google Font_. Go to Part I: <a href="articles/best-google-font"/> and Part III: <a href="articles/embed-web-fonts"/>.</p>
+
+<avatar date="8 November 2019" />
+
+<p>
+  In the previous part, I've show the theory behind asynchronous web font stylesheet loading and illustrated the process of page loading with experiments around performance measurements. Based on this data, I'll show my technique loading fonts in the most efficient manner. At the end, I'll show how to make embed a font on a web page so that it's immediately used when rendering the page, without a FOUT.
+</p>
+
+## Advanced Loading: @lemuria/font
+
+<p>
+  In part I, a number of times we've seen one drawback to preloading web fonts stylesheets dynamically even with the preload link: fonts won't begin to download immediately after the stylesheet is downloaded, but only only at the initial *render stage* <span style="background:rgb(166,144,232)">Recalculate styles | Layout</span>, or after it if the stylesheet didn't have time to load before the first render. I've repeated the previous experiment multiple times, and I always see the same result, that the font download happens only at the purple render bar and never before it, even if the stylesheet is ready. Wouldn't it be nice to be able to start downloading fonts as soon as we have the fonts' urls? Plus, we're still to consolidate all reflows. The proposed solution is JavaScript-based:
+</p>
+
+<ul>
+  * Preload the stylesheet as `fetch` resource.
+  * Instead of adding the link with the stylesheet to DOM, download it using XHR.
+  * Parse the stylesheet with JS to extract `url()` links to fonts, add them do DOM as `link` with _rel_=<strong>preload</strong> _as_=<strong>font</strong>. This will kick in downloading the fonts.
+  * Wait for all fonts to load, then embed the stylesheet as inline style. This will result in a single reflow.
+  * If the browser doesn't support preload, just fallback to standard font loading.
+</ul>
+
+<add-file>../img/code-bg.png</add-file>
+
+<p>
+  Let's get to code right away. Here's a simple script to fetch stylesheet, while measuring performance:
+</p>
+
+<js>
+```js
+/**
+ * Download a resource with XHR.
+ * @param {string} address The address to load.
+ * @param {function(string)} cb The callback to call on complete.
+ * @param {string} [marker] Performance annotation.
+ */
+function fetchStylesheet(address, cb, marker = '') {
+  performance.mark('xhr-start'+marker)
+  const xhr = new XMLHttpRequest()
+  xhr.onreadystatechange = () => {
+    if(xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        cb(xhr.responseText)
+        performance.mark('xhr-end'+marker)
+        performance.measure('xhr'+marker, 'xhr-start'+marker, 'xhr-end'+marker)
+      } else {
+        console.error('Error loading webfont: server responded with code %s at %s',
+          xhr.status, address)
+      }
+    }
+  }
+  xhr.open('GET', address)
+  try {
+    xhr.send(null)
+  } catch (err) {
+    console.error(err)
+  }
+}
+```
+</js>
+<js reverse alt="The standard google fonts stylesheet contains a number of `@font-face` records with CSS properties. The `unicode-range` property allows to download fonts only if the page contains characters from that range, and it's annotated just above the record." src="./animate/fontface.gif" img="latin font face animation">
+```css
+/* latin-ext */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src:  local('GentiumBasic-Italic'), url(woff2) format('https://woff2');
+  unicode-range: U+0100-024F, U+0259, ...etc;
+}
+/* latin */
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('GentiumBasic-Italic'), url(woff2) format('https://woff2');
+  unicode-range: U+0000-00FF, U+0131, ...etc;
+}
+```
+</js>
+
+<js alt="Our stylesheet parsing function uses a regex to extract URLs with unicode ranges of fonts, and creates an array like `[{ font: 'https://woff2', range: /[regex]/ }]` for each font it found in the stylesheet.
+The `U+0000-00FF,U+0131,...` range will become `[\u0000-\u00FF\\u0131...]` JS regex.">
+```js
+function parseBody(result) {
+  const re = /url\((.+?)\).*?;\s+unicode-range: (.+?);/g
+  let ranges = {}
+  const fonts = []
+  let a
+  while((a = re.exec(result))) {
+    const u = a[1]
+    const range = a[2]
+    fonts.push({ url: u, range })
+    ranges[range] = 1
+  }
+  ranges = Object.keys(ranges).reduce((acc, range) => {
+    const reg = range
+      .split(/,\s/)
+      .map((r) => r.replace('U+', '\\u').replace('-', '-\\u'))
+      .join('').toLowerCase()
+    acc[range] = new RegExp(`[${reg}]`)
+    return acc
+  }, {})
+  // ...
+```
+</js>
+
+<js id="2-scenarios" alt="There are 2 scenarios when we'll get the stylesheet ready:
+ A) _after_ HTML parsing, when `body` is available. By running the regex against body's text content, we can figure out if we don't use *latin-ext* on the page, and just pass the unicode range for *latin* characters. This way, we don't have to download each single font in the stylesheet, wasting data; _and_
+ B) _prior_ to HTML parsing, which can happen because there's another stylesheet blocking the render, and/or because the connection is very fast. Here, we wouldn't know the unicode ranges that are present on the page, therefore they have to be supplied as additional information. " src="./animate/head2.gif" img="body not ready animation">
+```js
+  // ..
+  const body = document.body ? document.body.textContent : ''
+  const validRanges = body ? Object.keys(ranges).reduce((acc, range) => {
+
+    // case A) body is loaded, test it against the regex.
+    const reg = ranges[range]
+    const valid = reg.test(body)
+    if (valid) acc[range] = true
+    return acc
+  }, {}) : Object.keys(ranges).reduce((acc, range) => {
+
+    // case B) body is not available, fallback to supplied ranges.
+    const valid = range in defaultRanges
+    if (valid) acc[range] = true
+    return acc
+  }, {})
+
+  // filter only fonts we need
+  urls = fonts.filter(({ range }) => {
+    return range in validRanges
+  }).map(({ url: u }) => u)
+
+  // if ranges are not supplied, and we're in case A, just add the stylesheet.
+  // we loose the advantage of eliminating continuous reflows due to fonts
+  // arriving independently at different times.
+  if (!urls.length) return loadedCb()
+
+  // preload fonts via link elements
+  // each appendChild has a cost, so bundle them into a fragment.
+  const fragment = document.createDocumentFragment()
+  urls.forEach((address, i) => {
+    const link = document.createElement('link')
+    link.href = address
+    link.rel = 'preload'
+    link.as = 'font'
+    const j = i + 1
+    performance.mark('link-preload-start'+j)
+    link.onload = () => loadedCb(j)
+    link.setAttribute('crossorigin', true)
+    fragment.appendChild(link)
+  })
+  document.head.appendChild(fragment)
+}
+```
+</js>
+
+<js reverse alt="Finally I add some logic to keep track of parallel preloads and to embed the stylesheet when they all arrive and write the `startPreload` function to wire all functions up together.">
+```js
+let FONT_CSS
+let urls = []
+let loaded = 0
+
+/**
+ * @param {number} [i] The index of the link
+ */
+function loadedCb(i) {
+  if (i) {
+    performance.mark('link-preload-end'+i)
+    performance.measure('link-preload', 'link-preload-start'+i, 'link-preload-end'+i)
+  }
+  loaded++
+  if (loaded >= urls.length) {
+    const style = document.createElement('style')
+    style.innerHTML = FONT_CSS
+    document.head.appendChild(style)
+
+    performance.mark('agf-end')
+    performance.measure('@lemuria/font', 'agf-start', 'agf-end')
+  }
+}
+
+// the entry main: fetch CSS and call parseBody,
+// which will call loadedCb for each font.
+function startPreload(linkEl, marker = 'link') {
+  const href = linkEl.href
+  fetchStylesheet(href, (res) => {
+    FONT_CSS = res
+    parseBody(FONT_CSS)
+  }, '-' + marker)
+}
+
+// kick in advanced google font preloading!
+startPreload({ href: FONT }, 'js')
+```
+</js>
+
+<p>
+  I could have used the `fetch` instead of XHR since it's 2019, however I would need to add a polyfill and transpile async code. There's no performance difference between `fetch` and `XMLHttpRequest` APIs. One observation, is that with `fetch`, data could be streamed, so if the response arrived in chunks, I could extract fonts as they come, but because the stylesheet is so small (&lt; 1kb), streaming is unnecessary. I've made a package called <npm-badge package="@lemuria/font">@lemuria/font</npm-badge> with this code which I ran through _Google Closure Compiler_, so let's update our page:
+</p>
+
+```html
+<head>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight" as="fetch">
+  <script>
+    (function(){window["@lemuria/font"]=function(q,k){function x(a){for(var f=/url\((.+?)\).*?;\s+unicode-range: (.+?);/g,b={},d=[],h;h=f.exec(a);){var r=h[2];d.push({url:h[1],a:r});b[r]=1}b=Object.keys(b).reduce(function(c,e){var g=e.split(/,\s/).map(function(l){return l.replace("U+","\\u").replace("-","-\\u")}).join("").toLowerCase();c[e]=new RegExp("["+g+"]");return c},{});var t=document.body?document.body.textContent:"",y=t?Object.keys(b).reduce(function(c,e){b[e].test(t)&&(c[e]=!0);return c},{}):Object.keys(b).reduce(function(c,
+    e){e in k&&(c[e]=!0);return c},{});m=d.filter(function(c){return c.a in y}).map(function(c){return c.url});if(!m.length)return u();var v=document.createDocumentFragment();m.forEach(function(c,e){var g=document.createElement("link");g.href=c;g.rel="preload";g.as="font";var l=e+1;performance.mark("link-preload-start"+l);g.onload=function(){return u(l)};g.setAttribute("crossorigin",!0);v.appendChild(g)});document.head.appendChild(v)}k=void 0===k?{}:k;var n=document.createElement("link");if(function(a,
+    f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.relList,"preload")){var z=function(a,f,b){b=void 0===b?"":b;performance.mark("xhr-start"+b);var d=new XMLHttpRequest;d.onreadystatechange=function(){4==d.readyState&&(200==d.status?(f(d.responseText),performance.mark("xhr-end"+b),performance.measure("xhr"+b,"xhr-start"+b,"xhr-end"+b)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};
+    performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&&(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)};}).call(this);
+
+    window['@lemuria/font']
+      ('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight')
+  </script>
+</head>
+```
+
+<p>
+  I've left plenty of performance markers, but there's a version that doesn't have them. What does the resulting timeline look like? Have we solved the problem of throttling fonts' reflows?
+</p>
+
+<fig id="advanced-loading" src="./graphics/dev8.png">
+  Advanced asynchronous Google Font performance: achieving single reflow.
+</fig>
+
+<revision blue>
+  * As soon as the page starts parsing, we begin the XHR request, but the XHR resource has already started downloading. The script evaluation takes _10ms_.
+  * The download completes (purple line), but the thread is blocked. The XHR waits until it's freed to call the callback. Fonts don't begin to download but we can't do anything about it. Once the thread is available, we inject 4 links and assign an `onload` listener to each them.
+  * When all `onload` events have fired, we add the stylesheet to DOM as a style. Despite the fact that fonts arrived at different times, we only see one reflow which takes 100ms. The page's `onload` event is thus delivered quicker and the users and Google are happy.
+</revision>
+
+<p>
+  Bingo bongo (_sic_, _lame_), we've achieved the maximum optimisation of a Google Font. Let's just see what if there's a render blocking resource, such as an external CSS that would give us some additional time to fetch the web font stylesheet:
+</p>
+
+<fig src="./graphics/dev9.png">
+  @Lemuria/font parsing starting before body is available without default unicode-ranges.
+</fig>
+
+<revision blue style="transform: rotate3d(1,1,1,2deg);">
+  * The advanced font loading script is executed, and taps into the preload download, but by the time the XHR is finished, the script cannot find `body` and there are no default unicode ranges. It falls back to essentially just appending a link tag with the style to the head.
+  * The additional external stylesheet for our page begins to parse only now.
+  * Fonts arrive one by one in 3 different waves.
+</revision>
+
+<p>
+  In this experiment, instead of inlining the page style, I added a link to it, so that the browser has to download it. Although such download happens really quickly, the page nevertheless is slowed down by much more than just the download time. Unlike in the previous case, now when the `@lemuria/font` function is executed, the body is still not available because the parsing has not started. This just shows that it's not just the download speed that increases the start up time for external stylesheets, but their loading time also _total: 84.12 ms (15.12 ms network transfer + 69.01 ms resource loading)_. Again, this is my 2008 MacBook but the idea is that when executing a script in the head, the body might not be available, even if an external resource has downloaded, because browsers take responsibility to spin off such downloads as soon as they can, because it's *critical* resource paths.</p>
+
+<section-break />
