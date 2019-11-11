@@ -1,3 +1,15 @@
+## 11 Novembet 2019
+
+### [1.2.0](https://github.com/artdecoweb/www.artd.eco/compare/v1.1.0...v1.2.0)
+
+**ARTICLES**
+
+Add 3 [Web Computing Articles](https://www.artd.eco/articles/) around *Advanced Google Font*:
+
+- [How To Load Google Fonts Asynchronously](https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html)
+- [The Best Way To Load Google Fonts Asynchronously](https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html)
+- [Embedding Critical Path Fonts](https://www.artd.eco/articles/embedding-critical-path-fonts.html)
+
 ## 19 September 2019
 
 ### [1.1.0](https://github.com/artdecoweb/www.artd.eco/compare/v1.0.0...v1.1.0)
