@@ -1,4 +1,3 @@
-function na(a,b,c,d,e,f,h){function g(){c.render(Object.assign({},f,{children:h}));a.instance=c}c||(c=new b(d,e));b.load?b.load(function(k,l){l&&Object.assign(f,l);k?console.warn(k):g()},d,f):g();return c}var oa={};y();var pa={parallax:F},qa=B();
-[{key:"parallax",id:"c0c34",props:{"background-image":"./img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.props?{}:a.props,e=void 0===a.children?[]:a.children,f=pa[b];d.v={o:function(h){return z(oa[h])}};c.split(",").forEach(function(h){var g=A(h,b),k=g.parent,l=g.b,m={key:b,id:h,plain:!0},n;l.render=function(){return n=na(m,f,n,l,k,d,e)};l.render.c=m;qa.observe(l)})});
+var qa={};y();var ra={parallax:G},sa=B();[{key:"parallax",id:"c0c34",props:{"background-image":"./img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.props?{}:a.props,e=void 0===a.children?[]:a.children,f=ra[b];d.v={o:function(h){return z(qa[h])}};c.split(",").forEach(function(h){var g=A(h,b),l=g.parent,k=g.b,m={key:b,id:h,plain:!0},n;k.render=function(){return n=C(m,f,n,k,l,d,e)};k.render.i=m;sa.observe(k)})});
 
 //# sourceMappingURL=index.js.map

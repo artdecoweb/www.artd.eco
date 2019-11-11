@@ -1,12 +1,15 @@
 .Revision.Blue {
   background:#e1f7ff;
 }
+.Revision.Reverse {
+  transform: rotate3d(0, 0, 1, 1deg);
+}
 .Revision {
   background:#faf5ce;
   padding-top: 1rem;
   padding-bottom: .5rem;
   position: relative;
-  transform: rotate3d(1, 1, 1, -2deg);
+  transform: rotate3d(0, 0, 1, -1deg);
   transition: all 100ms;
 }
 .Revision:hover {

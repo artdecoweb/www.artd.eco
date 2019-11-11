@@ -28,6 +28,7 @@ h1 {
 }
 .H1Lead {
   background: #f9f0e0;
+  padding: 0 1rem;
 }
 a {
   color: #843637;
@@ -68,4 +69,8 @@ pre {
   display: inline-block;
   border-radius: 1rem;
   white-space: pre-wrap;
+}
+pre code {
+  word-break: break-word;
+
 }

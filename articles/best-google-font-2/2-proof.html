@@ -12,15 +12,15 @@
 <fig src="./graphics/dev-check.gif" no-fluid alt="Dynamic insertion of a link with JS does not block page render.">
   <h3 d-none d-md-block id="NonBlockingIn">Non-Blocking Proof</h3>
   <p>
-    For a scary moment though, I thought that I might be giving wrong advice when saying to append a `link` tag dynamically into the head, and it will actually block the page from rendering. For example, on the previous Fig 1, there are some gaps in the timeline after the web font stylesheet is inserted, but before the external CSS is parsed, that could indicate that the page was render-blocked.
+    From looking at the previous graph, for a scary moment I thought that I might be giving wrong advice when saying to append a `link` tag dynamically into the head, and it will actually block the page from rendering. This is because on the previous <a href="#fig-before-body" smooth-scroll>Fig 2</a> (don't be afraid to click, we have a user-friendly scroll with a back button), there are some gaps in the timeline after the web font stylesheet is inserted, but before the external CSS is parsed, that could indicate that the page was render-blocked.
   </p>
   <p>
-    However, it's not the case as shown <span id="Above">above</span><span id="OnLeft">on the left</span>, and the reason for these gaps is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., here, XHR is completed quicker compared to the [previous case](#fig-advanced-loading), where it had to wait for the main thread to unlock since there were no gaps).
+    However, it's not the case as shown <span id="Above">above</span><span id="OnLeft">on the left</span>: the parse HTML goes in parallel with stylesheet loading. My interpretation of those gaps in past is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., on <a href="#fig-before-body" smooth-scroll>Fig 2</a>, XHR is completed quicker compared to the <a href="#fig-advanced-loading" smooth-scroll>Fig 1</a>, where it had to wait for the main thread to unblock since there were no gaps).
   </p>
 </fig>
 
 <p>
-  Essentially all I've done is added an external stylesheet dynamically, but throttled it server-side with a middleware function. Because the page continued to render, it's safe to say that adding a link with JS in the head will not block the main thread.
+    I mean, my explanation around "pauses" is probably not 100% accurate to what's going internally, but I think it gives a picture that WITHOUT external resources the parsing proceeds to rendering in one continuous "stroke", whereas WITH external styles, there will be gaps. Codewise, essentially all I've done is added an external stylesheet dynamically, but throttled it server-side with a middleware function. Because the page continued to render, it's safe to say that adding a link with JS in the head will not block the main thread.
 </p>
 
 <row>
@@ -53,6 +53,8 @@ async throttle(ctx, next) {
   await next()
 }
 ```
+
+<p font-size="small">If you're a fan of Koa like I am, have a look at our _Koa_ Fork, <npm-badge package="@goa/koa">@Goa/koa</npm-badge> which is 100% Koa compiled and optimised with _Google Closure Compiler_ to just one dependency (which is `mime-db`). Want to find our more about revolutionary way of compiling _Node.JS_ package from _Art Deco_? Be sure to subscribe to receive info about new age methods of modern web development.</p>
   </column>
 </row>
 

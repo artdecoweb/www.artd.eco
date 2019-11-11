@@ -114,7 +114,7 @@ const data = `data:application/font-${format};base64,${base}`
 ```
 
 <p>
-  We *must not* set the `crossorigin` attribute on the link, as _Safari_ will error on it, saying the host didn't provide a CORS header. In case the *preload* _rel_ is not supported, the polyfill can be used, which just calls the `onload` method. The `Symbol.iterator` polyfill inserted by Closure Compiler (because I did `[...document.head.querySelectorAll('[rel="preload"][onload]')]`) is a bit long but I can't be bothered to do something like `[].forEach.call` or whatever other way there is.
+  We *must not* set the `crossorigin` attribute on the link, as _Safari_ will error on it, saying the host didn't provide a CORS header (Safari is actually a pretty annoying browser &mdash; it will not clear network cache if there's a preload link for the resource duh 🤦🏼‍♀️). In case the *preload* _rel_ is not supported, the polyfill can be used, which just calls the `onload` method. The `Symbol.iterator` polyfill inserted by Closure Compiler (because I did `[...document.head.querySelectorAll('[rel="preload"][onload]')]`) is a bit long but I can't be bothered to do something like `[].forEach.call` or whatever other way there is.
 </p>
 
 ```html

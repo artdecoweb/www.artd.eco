@@ -3,14 +3,17 @@
  * @param {Object} param0
  * @param {Splendid} param0.splendid
  */
-export default async function Revision({ children, splendid, style, blue }) {
-  await splendid.addFile('img/sketch.svg')
+export default function Revision({ children, class: className, splendid, style, blue, reverse }) {
+  // await splendid.addFile('img/sketch.svg')
   splendid.css('../articles/styles/revision.css', '.Revision', {
     exported: false,
     inline: true,
   })
-  const img = blue ? '~/articles/img/sketch.svg' : 'img/sketch.svg'
-  const cl = ['mb-3', 'Revision']
+  const img = blue ? '~/articles/img/sketch.svg' : '~/articles/img/sketch-yellow.svg'
+  const cl = ['mb-3', 'Revision',
+    ...(className ? [className] : []),
+    ...(reverse ? ['Reverse'] : []),
+  ]
   if (blue) cl.push('Blue')
   return (<div style={style} className={cl.join(' ')}>
     <ol background-image={img} dangerouslySetInnerHTML={{ __html: children[0] }}/>

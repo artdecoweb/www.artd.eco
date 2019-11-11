@@ -7,6 +7,7 @@ __initBottom()
 import { Component, render, h } from '@externs/preact'
 import { makeIo, init, start } from '../__competent-lib'
 import Animation from '../../components/animation.js'
+import BackTo from '../../../articles/components/back-to.js'
 import Highlightjs from 'splendid/build/components/highlightjs'
 import Parallax from 'splendid/build/components/parallax'
 import SocialButtons from 'splendid/build/components/social-buttons'
@@ -14,6 +15,7 @@ import Tip from '../../components/tip.js'
 
 const __components = {
   'animation': Animation,
+  'back-to': BackTo,
   'highlightjs': Highlightjs,
   'parallax': Parallax,
   'social-buttons': SocialButtons,
@@ -24,10 +26,31 @@ const io = makeIo()
 
 /** @type {!Array<!preact.PreactProps>} */
 const meta = [{
+  key: 'back-to',
+  id: 'cccdc',
+  props: {
+    name: 'fig-75046',
+  },
+},
+{
   key: 'highlightjs',
   id: 'c6ce5,c6ce51,c6ce52,c6ce53,c6ce54',
   props: {
     lang: 'xml,javascript',
+  },
+},
+{
+  key: 'back-to',
+  id: 'c6965',
+  props: {
+    name: 'fig-74268',
+  },
+},
+{
+  key: 'back-to',
+  id: 'ce513',
+  props: {
+    name: 'fig-9848',
   },
 },
 {
@@ -38,16 +61,15 @@ const meta = [{
   },
 },
 {
-  key: 'tip',
-  id: 'c716e',
+  key: 'back-to',
+  id: 'c632c',
+  props: {
+    name: 'fig-57253',
+  },
 },
 {
-  key: 'social-buttons',
-  id: 'c4845',
-  props: {
-    url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
-    meta: 'true',
-  },
+  key: 'tip',
+  id: 'c716e',
 },
 {
   key: 'social-buttons',
@@ -69,6 +91,13 @@ const meta = [{
   },
 },
 {
+  key: 'back-to',
+  id: 'c5040',
+  props: {
+    name: 'fig-82466',
+  },
+},
+{
   key: 'animation',
   id: 'cde7b',
   props: {
@@ -85,10 +114,40 @@ const meta = [{
   },
 },
 {
+  key: 'back-to',
+  id: 'c8e80',
+  props: {
+    name: 'fig-80',
+  },
+},
+{
+  key: 'back-to',
+  id: 'c7de0',
+  props: {
+    name: 'fig-65987',
+  },
+},
+{
+  key: 'social-buttons',
+  id: 'cfc84',
+  props: {
+    url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
+    size: '36',
+    meta: 'true',
+  },
+},
+{
   key: 'highlightjs',
   id: 'c1d47,c1d471',
   props: {
     lang: 'css',
+  },
+},
+{
+  key: 'back-to',
+  id: 'c458c',
+  props: {
+    name: 'fig-45018',
   },
 },
 {

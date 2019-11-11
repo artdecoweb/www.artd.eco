@@ -2,14 +2,15 @@
 ### Unicode Range Application
 
 <p>
-  So finally, let me show a case with an external stylesheet, and with unicode-range. The unicode-range can be looked up in the Google's servers response, but I'm quite sure they are pretty static so you wouldn't have to do it often (but keep an eye out for them).
+  So finally, let me show a case with an external stylesheet, and with a unicode-range. The unicode-range can be looked up in the Google's servers response, but I'm quite sure they are pretty static so you wouldn't have to do it often (but keep an eye out for them). The range must be set as a string key without the last `;`. Multiple ranges can be specified for fonts targeting different language sets, but I'm just using the `latin` one here, because there are no special characters on the page that would require the extended version.
 </p>
 
 ```html
 <head>
-  <link rel="preload" crossorigin href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight" as="fetch">
+  <link rel="preload" crossorigin as="fetch"
+    href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight">
   <script>
-    // @lemuria/font source
+    /* @lemuria/font source code goes here ... */
     var range = 'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, ' +
                 'U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD'
     window['@lemuria/font']
@@ -20,18 +21,18 @@
 </head>
 ```
 
-<fig src="./graphics/dev10.png">
+<fig id="lemuria-font" src="./graphics/dev10.png">
   @Lemuria/font with unicode-range info allows to download fonts in parallel to the main thread.
 </fig>
 
 <revision blue>
   * The font script begins the XHR request as soon as HTML starts to parse. It might look like the thread is blocked because the browser is not doing anything during the XHR, however it's not so otherwise there would be a long solid orange line saying "Evaluating JS", but there's just a gap. The browser is doing something, but there's no info to it. The XHR is async so it's not blocking the thread.<br><br>
-  * The XHR is finished but the body is not present. Because we've passed the desired `unicode-range`, the script inserts the font preload links, and they begin to download. This allows to parallelise their download with the initial render.<br><br>
-  * Once the thread is freed (the <span style="background:blue; color:white" class="px-2"><abbr title="Dom Content Loaded">DCL</abbr></span> event), there's a bit of work to do for other JS scripts on the page, after which the web font stylesheet is applied. Notice there's only _150ms_ delay between the <span style="background:green; color:white" class="px-2"><abbr title="First Paint">FP</abbr></span> and fonts being added which gives us the fastest FOUT so far.
+  * The XHR is finished but the body is not present. Because we've passed the desired `unicode-range`, the script filters out fonts based on it and inserts 4 preload links, after which they begin to download immediately. This allows to parallelise their download with the initial render.<br><br>
+  * Once the thread is freed (the <span style="background:blue; color:white" class="px-2"><abbr title="Dom Content Loaded">DCL</abbr></span> event), there's a bit of work to do for other JS scripts on the page, after which the web font stylesheet is applied. Notice there's only _150ms_ delay between the <span style="background:green; color:white" class="px-2"><abbr title="First Paint">FP</abbr></span> and fonts being applied (but not painted) which gives us the fastest FOUT so far, compared to all previous situations when we were only started to download fonts at this point because it was when the thread became free.
 </revision>
 
 <p>
-  Cool, I think we've optimised as much as possible out of _Google Fonts_. The final version enables to insert the stylesheet before the initial layout, and also downloads fonts in parallel to the main thread which is busy rendering. Practically, this is only possible if the device is pretty slow and/or there are render blocking resources that will postpone the parsing for some time long enough for the web font stylesheet preload to complete.
+  Cool, I think we've optimised as much as possible out of _Google Fonts_. The final version enables to insert the stylesheet before the initial layout, and also downloads fonts in parallel to the main thread which is busy rendering. Practically, this is only possible if the device is pretty slow and/or there are render blocking resources that will postpone the parsing for some time long enough for the web font stylesheet preload to complete, but nonetheless this technique is still applicable, in particular to heavier pages that require more time for parsing and initial / following layouts (whereas before, there could be 4 reflows - 1 for stylesheet injection and 3 for each of the fonts arriving independently, now it's only one).
   <!-- In case there are none, I've tried the following trick: -->
 </p>
 

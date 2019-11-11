@@ -101,7 +101,7 @@
 
 <fig src="./graphics/dev4.png" alt="Loading google font asynchronously on slow connection causes reflow." />
 
-<revision style="transform: rotate3d(1,1,1,2deg);">
+<revision reverse>
   <li>
     <img placeholder-auto pr-2 float="left" src="./gif/stylesheet.gif" alt="stylesheet is blocked by render" />
     The page starts rendering as soon as all HTML arrives, but the stylesheet starts to download even before that. Because the connection is slow, the stylesheet arrives during the time when the main thread is blocked by rendering (semi-opaque orange rectangle, light-purple line), so it has to wait for rendering to complete (purple line). When that happens, it's inserted into DOM and triggers a reflow.
@@ -180,7 +180,7 @@
 
 <fig src="./graphics/dev20.png" alt="Performance measurements with onload attribute." />
 
-<revision style="transform: rotate3d(1,1,1,2deg);">
+<revision reverse>
   <li>
     <img placeholder-auto pl-2 src="./gif/tortoise.gif" alt="slow tortoise with onload animation" float-right />
     The stylesheet is preloaded quickly, however the thread has already been locked as seen by the `layout-block-proof` yellow bar, which spawns 462ms instead of 10ms interval I'd set. The preload is finished, however we can't convert it into a stylesheet, because the thread is blocked, and have to wait until it's freed.<br><br>

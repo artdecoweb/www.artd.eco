@@ -75,7 +75,7 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
             <img alt="Art Deco Logo" src="/img/logo.png" sizes="100px" style="width:100px;">
           </picture>
           </a>
-        <a text-info class="d-block lead" style="color: #1067de!important;" href>All Articles</a>
+        <a text-info class="d-block lead" style="color: #1067de!important;" href=".">All Articles</a>
       </div>
       <script>(function(){window.initPhoto=function(a){function e(){b&&(a.style.height=null,a.style["max-width"]=null);c=a.getBoundingClientRect().height;d=parseInt(f.style.height,10)*parseFloat(getComputedStyle(document.documentElement).fontSize);c<d?(a.style.height=f.style.height,a.style["max-width"]="initial",b=!0):b=!1;g=c-d}var f=a.parentElement.parentElement,c,d,g,b;window.addEventListener("resize",e);e();window.addEventListener("scroll",function(){var h="translate3d(0px, -"+Math.min(g,window.scrollY)+"px, 0px)";a.style.transform=
 h;a.style.webkitTransform=h})};}).call(this);
@@ -98,8 +98,8 @@ h;a.style.webkitTransform=h})};}).call(this);
 <div class="row mb-3">
   <div class="col-2 col-sm-2 col-lg-1">
     <img alt="anton photo"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'/%3E" data-io class="rounded img-fluid" data-src="avatar/anton.JPG">
-    <noscript><img alt="anton photo" class="rounded img-fluid" src="avatar/anton.JPG"></noscript>
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'/%3E" data-io class="rounded img-fluid" data-src="avatar/anton3.jpg">
+    <noscript><img alt="anton photo" class="rounded img-fluid" src="avatar/anton3.jpg"></noscript>
   </div>
   <div style="border-bottom: 1px solid grey;" class="col-10 col-sm-7">
     <p class="text-right" style="color: grey;">
@@ -108,8 +108,8 @@ h;a.style.webkitTransform=h})};}).call(this);
   </div>
   <div class="col-sm-3 col-lg-4">
     Topics:
-    <a class="d-block" href="/topics/page speed optimisation">page speed optimisation</a>
-    <a class="d-block" href="/topics/web fonts">web fonts</a>
+    <a class="d-block" href="topics.html#page-speed-optimisation">page speed optimisation</a>
+    <a class="d-block" href="topics.html#web-fonts">web fonts</a>
   </div>
 </div>
 
@@ -175,9 +175,9 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 
 
 </div></div></div>
-<div class="container-fluid">
+<div class="container-fluid position-relative">
   <div class="row">
-    <div id="data-url" style="overflow: hidden;"
+    <div id="fig-data-url" style="overflow: hidden;"
       class="col d-flex align-items-center justify-content-center flex-column mb-3 p-3 rounded position-relative">
       <div class=" Parallax" data-loading style="z-index: -1;" id="c709f3"></div>
       <div style="z-index: -1;" class="Parallax"></div>
@@ -198,6 +198,9 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
         Figure 1: Data-url embedded font also takes time to download.
       </h5>
     </div>
+  </div>
+  <div class="position-absolute" style="opacity: 0; top: 1rem; right: 1rem;" id="c9412">
+    <a class="btn btn-danger" href>Go Back</a>
   </div>
 </div>
 <div class="container"><div class="row"><div class="col">
@@ -234,7 +237,7 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 &lt;/head&gt;</code></pre>
 
 <p>
-  We <strong>must not</strong> set the <span class="tm">crossorigin</span> attribute on the link, as <em>Safari</em> will error on it, saying the host didn't provide a CORS header. In case the <strong>preload</strong> <em>rel</em> is not supported, the polyfill can be used, which just calls the <span class="tm">onload</span> method. The <span class="tm">Symbol.iterator</span> polyfill inserted by Closure Compiler (because I did <span class="tm">[...document.head.querySelectorAll('[rel=&quot;preload&quot;][onload]')]</span>) is a bit long but I can't be bothered to do something like <span class="tm">[].forEach.call</span> or whatever other way there is.
+  We <strong>must not</strong> set the <span class="tm">crossorigin</span> attribute on the link, as <em>Safari</em> will error on it, saying the host didn't provide a CORS header (Safari is actually a pretty annoying browser &mdash; it will not clear network cache if there's a preload link for the resource duh 🤦🏼‍♀️). In case the <strong>preload</strong> <em>rel</em> is not supported, the polyfill can be used, which just calls the <span class="tm">onload</span> method. The <span class="tm">Symbol.iterator</span> polyfill inserted by Closure Compiler (because I did <span class="tm">[...document.head.querySelectorAll('[rel=&quot;preload&quot;][onload]')]</span>) is a bit long but I can't be bothered to do something like <span class="tm">[].forEach.call</span> or whatever other way there is.
 </p>
 
 <pre id="c6ce5"><code class="xml hljs">&lt;script&gt;
@@ -243,14 +246,14 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 &lt;/script&gt;</code></pre>
 
 </div></div></div>
-<div class="container">
+<div class="container position-relative">
   <div class="row">
     <div class="col-lg-6 d-flex align-items-center justify-content-center flex-column">
       <p>
         And that's how I got my page opening with the font already present. Unlike in the usual <span class="tm">＜style＞</span> approach with a base64-encoded font in it, here the text is drawn immediately using the font face that I specified, as it was loaded before the initial render. Compare how <a href="#fig-data-url">previously</a>, the font started do download (grey bar) only during the recalculate styles stage, whereas now, it loads as soon as HTML starts parsing. However, it's still not as great as a style preload, which begins even before parsing. There's no way to set a different attribute on the link, like <span class="tm">fetch</span>, load it with XHR and then embed onto the page, because that would lead to another download. But to be honest, I cheated a little bit in this last case, did you notice how? I included an external stylesheet, my <span class="tm">combined.css</span> which slowed down the first render, giving the <span class="tm">data:</span> url a chance to load.
       </p>
     </div>
-    <div style="overflow: hidden;"
+    <div id="fig-9848" style="overflow: hidden;"
       class="lg-6 col d-flex align-items-center justify-content-center flex-column mb-3 p-3 rounded position-relative">
       <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
       <div style="z-index: -1;" class="Parallax"></div>
@@ -272,6 +275,9 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
       </h5>
     </div>
   </div>
+  <div class="position-absolute" style="opacity: 0; top: 1rem; right: 1rem;" id="ce513">
+    <a class="btn btn-danger" href>Go Back</a>
+  </div>
 </div>
 <div class="container"><div class="row"><div class="col">
 
@@ -281,9 +287,9 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 
 
 </div></div></div>
-<div class="container">
+<div class="container position-relative">
   <div class="row">
-    <div style="overflow: hidden;"
+    <div id="fig-74268" style="overflow: hidden;"
       class="lg-6 col d-flex align-items-center justify-content-center flex-column mb-3 p-3 rounded position-relative">
       <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
       <div style="z-index: -1;" class="Parallax"></div>
@@ -310,6 +316,9 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
       </p>
     </div>
   </div>
+  <div class="position-absolute" style="opacity: 0; top: 1rem; right: 1rem;" id="c6965">
+    <a class="btn btn-danger" href>Go Back</a>
+  </div>
 </div>
 <div class="container"><div class="row"><div class="col">
 
@@ -318,9 +327,9 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 </p>
 
 </div></div></div>
-<div class="container">
+<div class="container position-relative">
   <div class="row">
-    <div style="overflow: hidden;"
+    <div id="fig-80" style="overflow: hidden;"
       class="lg-6 col d-flex align-items-center justify-content-center flex-column mb-3 p-3 rounded position-relative">
       <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
       <div style="z-index: -1;" class="Parallax"></div>
@@ -347,6 +356,9 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
       </p>
     </div>
   </div>
+  <div class="position-absolute" style="opacity: 0; top: 1rem; right: 1rem;" id="c8e80">
+    <a class="btn btn-danger" href>Go Back</a>
+  </div>
 </div>
 <div class="container"><div class="row"><div class="col">
 
@@ -367,15 +379,15 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 
     <hr>
     <div class="container-fluid">
-      <div class="row" style="font-size: small;">
+      <div class="row mb-3 d-flex align-items-stretch" style="font-size: small;">
         <div class="col-sm-4">
           <strong><a href="https://www.artd.eco">Art Deco&trade;</a></strong><br><a href="/">Node.JS Development Company</a><br>
           Art Deco Code Limited<br>
           24 Holborn Viaduct,<br>
-          London, UK<br><br>
+          London, UK
         </div>
         <div class="col-sm-6">
-          <a style="font-size: initial;" href>Articles</a><br><br>
+          <a style="font-size: initial;" href=".">Articles</a><br><br>
           <strong>Open Source</strong>:<br>
           <a
             title="Documentation Compiler To Generate The Table Of Contents, Embed Examples With Their Output, Make Markdown Tables, Maintain Typedefs For JavaScript And README, Watch Changes To Push, Use Macros And Prettify API Titles." class="NPMBadge" href="https://npmjs.com/package/documentary">
@@ -391,7 +403,7 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
             <span class="a"><em>ÀLaMode</em></span><span class="b">3.2.0</span></a>
           <a
             title="Static Web Site Compiler That Uses Closure Compiler For JS Bundling And Closure Stylesheets For CSS optimisations. Supports JSX Syntax To Write Static Elements And Dynamic Preact Components." class="NPMBadge" href="https://npmjs.com/package/splendid">
-            <span class="a"><em>Splendid</em></span><span class="b">1.12.9</span></a>
+            <span class="a"><em>Splendid</em></span><span class="b">1.12.11</span></a>
         </div>
         <div class="col-sm-2">
           <a href="https://twitter.com/artdecocode">twitter</a><br>

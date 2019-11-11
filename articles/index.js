@@ -3,8 +3,13 @@
  */
 const T = {
   index: {
-    title: 'Articles: Art Deco',
+    title: 'Art Deco Web Computing Articles',
     seo: 'Node.JS backend and JavaScript frontend development articles and knowledge sharing. Web software development tips and research on performance and productivity.',
+  },
+  topics: {
+    title: 'Articles By Topics',
+    url: 'articles/topics.html',
+    file: './topics',
   },
   'best-google-font': {
     title: 'How To Load Google Fonts Asynchronously',
@@ -59,7 +64,7 @@ const T = {
 }
 
 Object.entries(T).forEach(([key, page]) => {
-  if (key != 'index') page.article = true
+  if (!['index', 'topics'].includes(key)) page.article = true
   if (!page.layout) page.layout = './layout/index.html'
 })
 

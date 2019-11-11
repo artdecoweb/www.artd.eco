@@ -113,7 +113,7 @@ function parseBody(result) {
 ```
 </js>
 
-<js id="2-scenarios" alt="There are 2 scenarios when we'll get the stylesheet ready:
+<js id="two-scenarios" alt="There are 2 scenarios when we'll get the stylesheet ready:
  A) _after_ HTML parsing, when `body` is available. By running the regex against body's text content, we can figure out if we don't use *latin-ext* on the page, and just pass the unicode range for *latin* characters. This way, we don't have to download each single font in the stylesheet, wasting data; _and_
  B) _prior_ to HTML parsing, which can happen because there's another stylesheet blocking the render, and/or because the connection is very fast. Here, we wouldn't know the unicode ranges that are present on the page, therefore they have to be supplied as additional information. " src="./animate/head2.gif" img="body not ready animation">
 ```js
@@ -163,7 +163,8 @@ function parseBody(result) {
 ```
 </js>
 
-<js reverse alt="Finally I add some logic to keep track of parallel preloads and to embed the stylesheet when they all arrive and write the `startPreload` function to wire all functions up together.">
+<js reverse alt="Finally I add some logic to keep track of parallel preloads and to embed the stylesheet when they all arrive, and write the `startPreload` function to wire all functions up together.
+The argument `i` would not be set if there were no valid URLs to load, e.g., in case B when no unicode ranges were passed, therefore I skip performance measurement there. The measure function will throw runtime error instead of warning, so one should be careful with it." src="./animate/lever.gif" img="3 Fonts shishi-odoshi animation.">
 ```js
 let FONT_CSS
 let urls = []
@@ -233,26 +234,35 @@ startPreload({ href: FONT }, 'js')
 </fig>
 
 <revision blue>
-  * As soon as the page starts parsing, we begin the XHR request, but the XHR resource has already started downloading. The script evaluation takes _10ms_.
-  * The download completes (purple line), but the thread is blocked. The XHR waits until it's freed to call the callback. Fonts don't begin to download but we can't do anything about it. Once the thread is available, we inject 4 links and assign an `onload` listener to each them.
-  * When all `onload` events have fired, we add the stylesheet to DOM as a style. Despite the fact that fonts arrived at different times, we only see one reflow which takes 100ms. The page's `onload` event is thus delivered quicker and the users and Google are happy.
+  * As soon as the page starts parsing, we begin the XHR request, but the CSS as fetch preload resource has already started downloading. The script evaluation takes _10ms_.
+  - The download completes (purple line), but the thread is blocked so that the XHR has to wait until the main thread is free to execute the callback. Fonts don't begin to download but we can't do anything about it. Once the thread is available, the _@lemuria/font_ script inject 4 preload links and assign an `onload` listener to each them.
+  * When all `onload` events have fired, the function adds the stylesheet to DOM as a style. Despite the fact that fonts arrived at different times, we only see one reflow which takes 100ms. The page's `onload` event is thus delivered quicker and the users and Google are happy.
 </revision>
 
 <p>
-  Bingo bongo (_sic_, _lame_), we've achieved the maximum optimisation of a Google Font. Let's just see what if there's a render blocking resource, such as an external CSS that would give us some additional time to fetch the web font stylesheet:
+  Bingo bongo (<abbr title="These words don't mean anything, they indicate that the author is using weird language to express satisfaction with his code working as expected.">_sic_, _lame_</abbr>), we've achieved the maximum optimisation of a Google Font consisting of gathering all fonts to flush them at once together with the stylesheet to have only a single reflow. Let's just see what if there's a render blocking resource, such as an external CSS that would give us some additional time to fetch the web font stylesheet:
 </p>
 
-<fig src="./graphics/dev9.png">
+<fig src="./graphics/dev9.png" id="before-body">
   @Lemuria/font parsing starting before body is available without default unicode-ranges.
 </fig>
 
-<revision blue style="transform: rotate3d(1,1,1,2deg);">
+<revision blue reverse>
   * The advanced font loading script is executed, and taps into the preload download, but by the time the XHR is finished, the script cannot find `body` and there are no default unicode ranges. It falls back to essentially just appending a link tag with the style to the head.
   * The additional external stylesheet for our page begins to parse only now.
   * Fonts arrive one by one in 3 different waves.
 </revision>
 
 <p>
-  In this experiment, instead of inlining the page style, I added a link to it, so that the browser has to download it. Although such download happens really quickly, the page nevertheless is slowed down by much more than just the download time. Unlike in the previous case, now when the `@lemuria/font` function is executed, the body is still not available because the parsing has not started. This just shows that it's not just the download speed that increases the start up time for external stylesheets, but their loading time also _total: 84.12 ms (15.12 ms network transfer + 69.01 ms resource loading)_. Again, this is my 2008 MacBook but the idea is that when executing a script in the head, the body might not be available, even if an external resource has downloaded, because browsers take responsibility to spin off such downloads as soon as they can, because it's *critical* resource paths.</p>
+  In this experiment, instead of inlining the page's style, I added a link to it, so that the browser had to download it. Although such download happens really quickly, the page nevertheless is slowed down by much more than just the download time. Unlike in the previous case, now when the `@lemuria/font` function is executed, the body is NOT yet available because the parsing has not started. This shows that it's not just the download speed that increases the start up time for external stylesheets, but their loading time also: _total: 84.12 ms (15.12 ms network transfer + 69.01 ms resource loading)_ which would have been _0ms_ had the stylesheet been embedded and present for parsing immediately.</p>
+
+<p>
+  Again, this is my 2008 slow CPU MacBook but the idea is that when executing a script in the head, the body is not yet available since no parsing has begun. But the experiment above clearly shows that even though the body is not ready, we still could have had downloaded an external resource, for example a style, as browsers are really serious about such *critical* path assets due to the fact that they are REQUIRED to paint ANY content on a page. In the case of advanced google font technique, even though the preload is defined as *"fetch"*, it's still considered to be a CSS and has the highest download priority. In fact, it downloads so fast, the browser hasn't even begun properly parsing the page! In spite that it's an old laptop I was testing it on, _Lighthouse_ does apply CPU throttling when producing reports, and so probably does _Google_ for its page speed ranking measurements, so such experiments are worthwhile investments of time into improving the web development skill and understanding page speed optimisation principles. If your *performance* tab in the dev console is covered with cobweb, I'd suggest it's time to acknowledge its importance in today's competitive world of front-end development requiring high competence.
+   <!-- because browsers take responsibility to spin off this external downloads as soon as they can, as it's *critical* resource paths, yet  -->
+</p>
+
+<p>
+  What the experiment showed was that because there were no default `unicode-ranges` to apply, the stylesheet was just embedded into the DOM as a fallback, so that the font flushing method didn't work. I'll show how to use unicode ranges in a sec, let's just take a short break.
+</p>
 
 <section-break />

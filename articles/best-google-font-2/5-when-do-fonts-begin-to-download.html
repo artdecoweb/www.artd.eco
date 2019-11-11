@@ -1,0 +1,49 @@
+## When Do Fonts Begin To Download?
+
+<p>
+  I should mention that the best possible course of action would of course be to preload fonts using a preload link without any scripting. However, that's a different context entirely since this article focuses specifically on _Google Fonts_ optimisation. Their servers will return different urls for different browsers, therefore we can't just copy and paste them in the preload link, additionally their fonts evolve and change versions. The advanced google font loading solution is the simplest scripting solution to kicking off font preload as soon as possible, and eliminating multiple render blocks.
+</p>
+<p>Moreover, in the previous article as well as here I've seen results like in <a href="#fig-before-body" smooth-scroll>Fig 2</a> which showed that fonts didn't begin to download before the first <span style="background:#A66EEF">Recalculate Styles</span> even if the stylesheet was downloaded alright. The last experiment was to embed the stylesheet manually with a `<style>/* contents of google font stylesheet */</style>` tag onto the page and see its performance. There are no external resources and the page load should proceed seamlessly from parsing to layout.
+</p>
+
+```html
+<head>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    /* latin-ext */
+    @font-face {
+      font-family: 'Gentium Basic';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5hBo7QoCBZCxP.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* etc */
+</style>
+```
+
+<fig src="./graphics/dev11.gif">
+  Embedding web fonts stylesheet manually shows when fonts begin to download.
+</fig>
+
+<p>
+  The performance graph clearly shows that although urls to fonts are there on the page, they don't begin to download prior to the first style calculation. If people were coming for a job interview at {{ company }}, I would potentially ask them this question to find out if they read my article ;) Apart from this interesting observation, the conclusion is that the Advanced Google Font method I've introduced here is even better than what the browser can offer natively, because it's able to begin to download fonts even before parsing starts. It does it by extracting urls from the stylesheet, if it arrives quickly enough (see <a href="#two-scenarios" smooth-scroll>case B</a>), as proven on <a href="#fig-lemuria-font" smooth-scroll>Fig 4</a>.
+</p>
+
+<section-break />
+
+## List Of Figures
+
+<revision class="d-inline-block">
+  <list-of-figures />
+</revision>
+
+<!-- ## Sharing Is Caring -->
+
+<p>
+  <!-- {{ page.seo }} <br> -->
+  <social-buttons meta size="36" />
+</p>

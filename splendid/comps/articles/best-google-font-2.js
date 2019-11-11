@@ -1,4 +1,5 @@
 import __initBottom from '../__init/bottom'
+import 'splendid/internal/js/smooth-scroll'
 import '../../js/load-background-img'
 import makeClassGetter from '../__mcg'
 const renameMaps = {  }
@@ -6,12 +7,14 @@ __initBottom()
 import { Component, render, h } from '@externs/preact'
 import { makeIo, init, start } from '../__competent-lib'
 import Animation from '../../components/animation.js'
+import BackTo from '../../../articles/components/back-to.js'
 import Highlightjs from 'splendid/build/components/highlightjs'
 import Parallax from 'splendid/build/components/parallax'
 import SocialButtons from 'splendid/build/components/social-buttons'
 
 const __components = {
   'animation': Animation,
+  'back-to': BackTo,
   'highlightjs': Highlightjs,
   'parallax': Parallax,
   'social-buttons': SocialButtons,
@@ -21,14 +24,6 @@ const io = makeIo()
 
 /** @type {!Array<!preact.PreactProps>} */
 const meta = [{
-  key: 'social-buttons',
-  id: 'c704d',
-  props: {
-    url: 'https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html',
-    meta: 'true',
-  },
-},
-{
   key: 'highlightjs',
   id: 'c6ce5,c6ce51,c6ce52',
   props: {
@@ -43,12 +38,40 @@ const meta = [{
   },
 },
 {
+  key: 'back-to',
+  id: 'c6965',
+  props: {
+    name: 'fig-74268',
+  },
+},
+{
+  key: 'back-to',
+  id: 'ce513',
+  props: {
+    name: 'fig-9848',
+  },
+},
+{
   key: 'social-buttons',
   id: 'ce5ba',
   props: {
     url: 'https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html',
     size: '24',
     meta: 'true',
+  },
+},
+{
+  key: 'back-to',
+  id: 'ceba0',
+  props: {
+    name: 'fig-lemuria-font',
+  },
+},
+{
+  key: 'back-to',
+  id: 'c0208',
+  props: {
+    name: 'fig-advanced-loading',
   },
 },
 {
@@ -83,12 +106,28 @@ const meta = [{
   },
 },
 {
+  key: 'back-to',
+  id: 'ccb6d',
+  props: {
+    name: 'fig-before-body',
+  },
+},
+{
   key: 'animation',
   id: 'c228f',
   props: {
     path: 'best-google-font-2/animate/advanced-google-font.json',
     width: '505',
     height: '299',
+  },
+},
+{
+  key: 'social-buttons',
+  id: 'cc4dd',
+  props: {
+    url: 'https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html',
+    size: '36',
+    meta: 'true',
   },
 },
 {

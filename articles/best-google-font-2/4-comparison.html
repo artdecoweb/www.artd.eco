@@ -50,12 +50,14 @@
   On the other hand, the `@lemuria/font` script works as a polyfill for `display:swap` which is not available for Edge. However, because it embeds fonts with _preload_ links, it will not work on the IE/Edge12-16/Firefox. I thought about downloading fonts with XHR to prime the network cache, however after I downloaded them this way, and then injected the web font stylesheet referencing them, they were re-downloaded. A solution to this would be to embed fonts into the webpage with `data:application/font` url, however that would trigger `data:` string parsing and slow down the page.
 </p>
 
-<p>
-  <npm-badge package="@lemuria/font">@Lemuria/font</npm-badge> package is available from NPM, and exports functions that could be added to a server-side rendered webpage. The source code of the function for manual injection can be copied from [Github](https://github.com/kumarikandam/font). The check for `preload` support is done the following way, <a target="_blank" href="smashing/preload" color="#e33a2c !important" text-decoration="underline"><nobr><img style="max-height:1em; margin-right:-0.2em;vertical-align: top;
-    margin-top: .2em;" src="./graphics/smashing.png" alt="S"/>uggested by preload</nobr></a> contributor to Chrome:
-</p>
-
-<js>
+<row>
+  <column md-6 order-1 order-md-2>
+    <p>
+      <npm-badge package="@lemuria/font">@Lemuria/font</npm-badge> package is available from NPM, and exports functions that could be added to a server-side rendered webpage. The source code of the function for manual injection can be copied from [Github](https://github.com/kumarikandam/font). The check for `preload` support is done the following way, <a target="_blank" href="smashing/preload" color="#e33a2c !important" text-decoration="underline"><nobr><img style="max-height:1em; margin-right:-0.2em;vertical-align: top;
+        margin-top: .2em;" src="./graphics/smashing.png" alt="S"/>uggested by preload</nobr></a> contributor to Chrome.
+    </p>
+  </column>
+  <column md-6 order-2 order-md-1>
 ```js
 function DOMTokenListSupports(tokenList, token) {
   if (!tokenList || !tokenList.supports) {
@@ -66,42 +68,7 @@ function DOMTokenListSupports(tokenList, token) {
 const link = document.createElement('link')
 const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')
 ```
-</js>
+  </column>
+</row>
 
-
-<p>
-  Finally, the best possible course of action is to preload fonts with a preload link without any scripting. However, that's a different context entirely since this article focuses specifically on _Google Fonts_ optimisation. Their servers will return different urls for different browsers, therefore we can't just copy and paste them in the preload link, additionally their fonts evolve and change versions. The advanced google font loading solution is the simplest scripting solution to kicking off font preload as soon as possible, and eliminate render blocks.
-</p>
-<p>Moreover, I was asking myself, does the browser know internally the unicode range of the page even before body is available to JS? The last experiment was to embed the stylesheet manually with a `<style>/* contents of google font stylesheet */</style>` onto the page and see its performance. There are no external resources and the page load should proceed seamlessly from parsing to layout.
-</p>
-
-```html
-<head>
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <style>
-    /* latin-ext */
-    @font-face {
-      font-family: 'Gentium Basic';
-      font-style: italic;
-      font-weight: 400;
-      font-display: swap;
-      src: local('Gentium Basic Italic'), local('GentiumBasic-Italic'), url(https://fonts.gstatic.com/s/gentiumbasic/v11/WnzjHAw9aB_JD2VGQVR80We3LAi5hBo7QoCBZCxP.woff2) format('woff2');
-      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-    }
-    /* etc */
-</style>
-```
-
-<fig src="./graphics/dev11.gif">
-  Embedding contents of a web fonts styles manually.
-</fig>
-
-<p>
-  The performance graph clearly shows that although urls to fonts are there on the page, they don't begin to download prior to the first style calculation. Therefore, the advanced google font method is even better that what browser can offer natively, because it's able to begin to download fonts even before parsing starts by extracting urls from the stylesheet, if it arrives quickly enough ([case B](#2-scenarios)).
-</p>
-
-<p>
-  <social-buttons meta />
-</p>
+<section-break />

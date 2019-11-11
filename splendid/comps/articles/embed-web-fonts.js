@@ -5,11 +5,13 @@ const renameMaps = {  }
 __initBottom()
 import { Component, render, h } from '@externs/preact'
 import { makeIo, init, start } from '../__competent-lib'
+import BackTo from '../../../articles/components/back-to.js'
 import Highlightjs from 'splendid/build/components/highlightjs'
 import Parallax from 'splendid/build/components/parallax'
 import SocialButtons from 'splendid/build/components/social-buttons'
 
 const __components = {
+  'back-to': BackTo,
   'highlightjs': Highlightjs,
   'parallax': Parallax,
   'social-buttons': SocialButtons,
@@ -40,6 +42,20 @@ const meta = [{
   },
 },
 {
+  key: 'back-to',
+  id: 'c6965',
+  props: {
+    name: 'fig-74268',
+  },
+},
+{
+  key: 'back-to',
+  id: 'ce513',
+  props: {
+    name: 'fig-9848',
+  },
+},
+{
   key: 'social-buttons',
   id: 'c6a73',
   props: {
@@ -52,6 +68,13 @@ const meta = [{
   id: 'ccdbf',
   props: {
     lang: 'javascript',
+  },
+},
+{
+  key: 'back-to',
+  id: 'c9412',
+  props: {
+    name: 'fig-data-url',
   },
 },
 {
@@ -68,6 +91,13 @@ const meta = [{
   id: 'c0c34',
   props: {
     'background-image': './img/tile.jpg',
+  },
+},
+{
+  key: 'back-to',
+  id: 'c8e80',
+  props: {
+    name: 'fig-80',
   },
 },
 {

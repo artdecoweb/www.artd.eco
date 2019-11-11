@@ -70,3 +70,7 @@ pre {
   border-radius: 1rem;
   white-space: pre-wrap;
 }
+pre code {
+  word-break: break-word;
+
+}
