@@ -3,13 +3,12 @@
  */
 const T = {
   index: {
-    title: 'Art Deco Web Computing Articles',
+    title: 'Web Computing Articles',
     seo: 'Node.JS backend and JavaScript frontend development articles and knowledge sharing. Web software development tips and research on performance and productivity.',
   },
   topics: {
     title: 'Articles By Topics',
     url: 'articles/topics.html',
-    file: './topics',
   },
   'best-google-font': {
     title: 'How To Load Google Fonts Asynchronously',
@@ -18,7 +17,6 @@ const T = {
       image: './best-google-font-2/graphics/async-google-font.png',
       type: 'article',
     },
-    file: './best-google-font',
     // focus: true,
     topics: [
       'page speed optimisation',
@@ -32,7 +30,6 @@ const T = {
   'best-google-font-2': {
     title: 'The Best Way To Load Google Fonts Asynchronously',
     seo: 'An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows.',
-    file: './best-google-font-2',
     og: {
       image: './best-google-font-2/graphics/advanced-google-font.png',
       type: 'article',
@@ -54,7 +51,6 @@ const T = {
       // image: './best-google-font-2/graphics/async-google-font.png',
       type: 'article',
     },
-    file: './embed-web-fonts',
     // focus: true,
     topics: [
       'page speed optimisation',
