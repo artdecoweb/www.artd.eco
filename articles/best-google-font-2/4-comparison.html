@@ -58,16 +58,7 @@
     </p>
   </column>
   <column md-6 order-2 order-md-1>
-```js
-function DOMTokenListSupports(tokenList, token) {
-  if (!tokenList || !tokenList.supports) {
-    return false
-  } try { return tokenList.supports(token) } catch (e) {
-    return false }
-}
-const link = document.createElement('link')
-const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')
-```
+    <highlightjs src="./examples/polyfill.mjs"></highlightjs>
   </column>
 </row>
 

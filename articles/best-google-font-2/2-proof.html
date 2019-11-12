@@ -15,7 +15,7 @@
     From looking at the previous graph, for a scary moment I thought that I might be giving wrong advice when saying to append a `link` tag dynamically into the head, and it will actually block the page from rendering. This is because on the previous <a href="#fig-before-body" smooth-scroll>Fig 2</a> (don't be afraid to click, we have a user-friendly scroll with a back button), there are some gaps in the timeline after the web font stylesheet is inserted, but before the external CSS is parsed, that could indicate that the page was render-blocked.
   </p>
   <p>
-    However, it's not the case as shown <span id="Above">above</span><span id="OnLeft">on the left</span>: the parse HTML goes in parallel with stylesheet loading. My interpretation of those gaps in past is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., on <a href="#fig-before-body" smooth-scroll>Fig 2</a>, XHR is completed quicker compared to the <a href="#fig-advanced-loading" smooth-scroll>Fig 1</a>, where it had to wait for the main thread to unblock since there were no gaps).
+    However, it's not the case as shown <span id="Above">below</span><span id="OnLeft">on the left</span>: the parse HTML goes in parallel with stylesheet loading. My interpretation of those gaps in past is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., on <a href="#fig-before-body" smooth-scroll>Fig 2</a>, XHR is completed quicker compared to the <a href="#fig-advanced-loading" smooth-scroll>Fig 1</a>, where it had to wait for the main thread to unblock since there were no gaps).
   </p>
 </fig>
 

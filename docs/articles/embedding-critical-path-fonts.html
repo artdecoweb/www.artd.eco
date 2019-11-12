@@ -248,13 +248,14 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 </div></div></div>
 <div class="container position-relative">
   <div class="row">
-    <div class="col-lg-6 d-flex align-items-center justify-content-center flex-column">
+    <div
+      class="col-lg-6 order-1 order-lg-2 d-flex align-items-center justify-content-center flex-column">
       <p>
         And that's how I got my page opening with the font already present. Unlike in the usual <span class="tm">＜style＞</span> approach with a base64-encoded font in it, here the text is drawn immediately using the font face that I specified, as it was loaded before the initial render. Compare how <a href="#fig-data-url">previously</a>, the font started do download (grey bar) only during the recalculate styles stage, whereas now, it loads as soon as HTML starts parsing. However, it's still not as great as a style preload, which begins even before parsing. There's no way to set a different attribute on the link, like <span class="tm">fetch</span>, load it with XHR and then embed onto the page, because that would lead to another download. But to be honest, I cheated a little bit in this last case, did you notice how? I included an external stylesheet, my <span class="tm">combined.css</span> which slowed down the first render, giving the <span class="tm">data:</span> url a chance to load.
       </p>
     </div>
     <div id="fig-9848" style="overflow: hidden;"
-      class="lg-6 col d-flex align-items-center justify-content-center flex-column mb-3 p-3 rounded position-relative">
+      class="lg-6 col order-2 order-lg-1 d-flex align-items-center justify-content-center flex-column mb-3 p-3 rounded position-relative">
       <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
       <div style="z-index: -1;" class="Parallax"></div>
       <noscript>
@@ -289,6 +290,11 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 </div></div></div>
 <div class="container position-relative">
   <div class="row">
+    <div class="col-lg-6 d-flex align-items-center justify-content-center flex-column">
+      <p>
+        If I embed the <span class="tm">combined.css</span> stylesheet and eliminate this render-blocking resource, I'll loose the gained advantage. On a fast page, the font in the preload link completes its loading process only when the layout began, and the main thread is blocked. We have to wait for the thread to clear after which the <span class="tm">onload</span> event will fire.
+      </p>
+    </div>
     <div id="fig-74268" style="overflow: hidden;"
       class="lg-6 col d-flex align-items-center justify-content-center flex-column mb-3 p-3 rounded position-relative">
       <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
@@ -310,11 +316,6 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
         Figure 3: Waiting for onload event to fire on preload link.
       </h5>
     </div>
-    <div class="col-lg-6 d-flex align-items-center justify-content-center flex-column">
-      <p>
-        If I embed the <span class="tm">combined.css</span> stylesheet and eliminate this render-blocking resource, I'll loose the gained advantage. On a fast page, the font in the preload link completes its loading process only when the layout began, and the main thread is blocked. We have to wait for the thread to clear after which the <span class="tm">onload</span> event will fire.
-      </p>
-    </div>
   </div>
   <div class="position-absolute" style="opacity: 0; top: 1rem; right: 1rem;" id="c6965">
     <a class="btn btn-danger" href="#">Go Back</a>
@@ -329,6 +330,11 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
 </div></div></div>
 <div class="container position-relative">
   <div class="row">
+    <div class="col-lg-6 d-flex align-items-center justify-content-center flex-column">
+      <p>
+        Chrome will actually complain in the console that the preloaded font was not used, but don't trust him, because it's clearly seen from this graph that the data:application download kicked in much faster than when there was no preload link.
+      </p>
+    </div>
     <div id="fig-80" style="overflow: hidden;"
       class="lg-6 col d-flex align-items-center justify-content-center flex-column mb-3 p-3 rounded position-relative">
       <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
@@ -349,11 +355,6 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
         class="m-0 d-inline-block" style="background: white;">
         Figure 4: Preloading data-url font used in stylesheet leads to the most robust optimisation.
       </h5>
-    </div>
-    <div class="col-lg-6 d-flex align-items-center justify-content-center flex-column">
-      <p>
-        Chrome will actually complain in the console that the preloaded font was not used, but don't trust him, because it's clearly seen from this graph that the data:application download kicked in much faster than when there was no preload link.
-      </p>
     </div>
   </div>
   <div class="position-absolute" style="opacity: 0; top: 1rem; right: 1rem;" id="c8e80">

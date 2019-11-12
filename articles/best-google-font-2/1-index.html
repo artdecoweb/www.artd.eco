@@ -19,7 +19,7 @@
 </p>
 
 <ul>
-  * Preload the stylesheet as `fetch` resource.
+  * Preload the stylesheet as a `fetch` resource.
   * Instead of adding the link with the stylesheet to DOM, download it using XHR.
   * Parse the stylesheet with JS to extract `url()` links to fonts, add them do DOM as `link` with _rel_=<strong>preload</strong> _as_=<strong>font</strong>. This will kick in downloading the fonts.
   * Wait for all fonts to load, then embed the stylesheet as inline style. This will result in a single reflow.
@@ -32,7 +32,8 @@
   Let's get to code right away. Here's a simple script to fetch stylesheet, while measuring performance:
 </p>
 
-<js>
+<js alt="The main idea behind the _Advanced Google Font_ strategy is to handle loading of fonts programmatically. By taking control over assets loading process, we'll be able to inject all fonts at once in a so-called _fonts flush_, thus reducing the number of reflows to just one.
+To find out the URLs of fonts, we fetch the stylesheet with a simple XHR request." src="./animate/css.gif" img="css fetch by lasso animation">
 ```js
 /**
  * Download a resource with XHR.
@@ -226,7 +227,7 @@ startPreload({ href: FONT }, 'js')
 ```
 
 <p>
-  I've left plenty of performance markers, but there's a version that doesn't have them. What does the resulting timeline look like? Have we solved the problem of throttling fonts' reflows?
+  I've left plenty of performance markers, but there's a version that doesn't have them for smaller size. What does the resulting timeline look like? Have we solved the problem of throttling fonts' reflows?
 </p>
 
 <fig id="advanced-loading" src="./graphics/dev8.png">
@@ -240,7 +241,7 @@ startPreload({ href: FONT }, 'js')
 </revision>
 
 <p>
-  Bingo bongo (<abbr title="These words don't mean anything, they indicate that the author is using weird language to express satisfaction with his code working as expected.">_sic_, _lame_</abbr>), we've achieved the maximum optimisation of a Google Font consisting of gathering all fonts to flush them at once together with the stylesheet to have only a single reflow. Let's just see what if there's a render blocking resource, such as an external CSS that would give us some additional time to fetch the web font stylesheet:
+  Bingo bongo (<abbr title="These words don't mean anything, they indicate that the author is using weird language to express satisfaction with his code working as expected.">_sic, lame, wat_</abbr>), we've achieved the maximum optimisation of a Google Font consisting of gathering all fonts to flush them at once together with the stylesheet to have only a single reflow. Let's just see what if there's a render blocking resource, such as an external CSS that would give us some additional time to fetch the web font stylesheet:
 </p>
 
 <fig src="./graphics/dev9.png" id="before-body">
@@ -254,7 +255,7 @@ startPreload({ href: FONT }, 'js')
 </revision>
 
 <p>
-  In this experiment, instead of inlining the page's style, I added a link to it, so that the browser had to download it. Although such download happens really quickly, the page nevertheless is slowed down by much more than just the download time. Unlike in the previous case, now when the `@lemuria/font` function is executed, the body is NOT yet available because the parsing has not started. This shows that it's not just the download speed that increases the start up time for external stylesheets, but their loading time also: _total: 84.12 ms (15.12 ms network transfer + 69.01 ms resource loading)_ which would have been _0ms_ had the stylesheet been embedded and present for parsing immediately.</p>
+  In this experiment, instead of inlining the page's style, I added a link to it, so that the browser had to download it. Although such download happens really quickly, the page nevertheless is slowed down by much more than just the download time. Unlike in the previous case, now when the `@lemuria/font` function has fetched the stylesheet and calls the XHR callback, the body is NOT yet available because the parsing has not started. This shows that it's not just the download job that increases the start up time for external stylesheets, but their loading time also: _total: 84.12 ms (15.12 ms network transfer + 69.01 ms resource loading)_ which would have been _0ms_ had the stylesheet been embedded and present for parsing immediately.</p>
 
 <p>
   Again, this is my 2008 slow CPU MacBook but the idea is that when executing a script in the head, the body is not yet available since no parsing has begun. But the experiment above clearly shows that even though the body is not ready, we still could have had downloaded an external resource, for example a style, as browsers are really serious about such *critical* path assets due to the fact that they are REQUIRED to paint ANY content on a page. In the case of advanced google font technique, even though the preload is defined as *"fetch"*, it's still considered to be a CSS and has the highest download priority. In fact, it downloads so fast, the browser hasn't even begun properly parsing the page! In spite that it's an old laptop I was testing it on, _Lighthouse_ does apply CPU throttling when producing reports, and so probably does _Google_ for its page speed ranking measurements, so such experiments are worthwhile investments of time into improving the web development skill and understanding page speed optimisation principles. If your *performance* tab in the dev console is covered with cobweb, I'd suggest it's time to acknowledge its importance in today's competitive world of front-end development requiring high competence.

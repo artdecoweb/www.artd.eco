@@ -131,7 +131,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 </p>
 
 <ul>
-  <li>Preload the stylesheet as <span class="tm">fetch</span> resource.</li>
+  <li>Preload the stylesheet as a <span class="tm">fetch</span> resource.</li>
   <li>Instead of adding the link with the stylesheet to DOM, download it using XHR.</li>
   <li>Parse the stylesheet with JS to extract <span class="tm">url()</span> links to fonts, add them do DOM as <span class="tm">link</span> with <em>rel</em>=<strong>preload</strong> <em>as</em>=<strong>font</strong>. This will kick in downloading the fonts.</li>
   <li>Wait for all fonts to load, then embed the stylesheet as inline style. This will result in a single reflow.</li>
@@ -144,8 +144,25 @@ h;a.style.webkitTransform=h})};}).call(this);
 </p>
 
 <div class="row">
+  <div
+    class="col-md-4 order-1 order-md-2 d-flex align-items-center justify-content-between flex-column">
+    <div>
+      <p>
+        The main idea behind the <em>Advanced Google Font</em> strategy is to handle loading of fonts programmatically. By taking control over assets loading process, we'll be able to inject all fonts at once in a so-called <em>fonts flush</em>, thus reducing the number of reflows to just one.
+      </p>
+      <p>
+        To find out the URLs of fonts, we fetch the stylesheet with a simple XHR request.
+      </p>
+    </div>
+    <img alt="css fetch by lasso animation"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='270' height='240'/%3E" data-io class="img-fluid" data-src="best-google-font-2/animate/css.gif">
+    <noscript>
+      <img alt="css fetch by lasso animation" class="img-fluid"
+        src="best-google-font-2/animate/css.gif">
+    </noscript>
+  </div>
   <div class="col order-2 order-md-1 d-flex justify-content-center align-items-center">
-    <pre id="ccdbf2"><code class="javascript hljs">/**
+    <pre id="ccdbf1"><code class="javascript hljs">/**
  * Download a resource with XHR.
  * @param {string} address The address to load.
  * @param {function(string)} cb The callback to call on complete.
@@ -176,11 +193,12 @@ function fetchStylesheet(address, cb, marker = '') {
   </div>
 </div>
 <div class="row">
-  <div
-    class="col-md-4 order-2 order-md-1 d-flex align-items-center justify-content-between flex-column">
-    <p>
-      The standard google fonts stylesheet contains a number of <span class="tm">@font-face</span> records with CSS properties. The <span class="tm">unicode-range</span> property allows to download fonts only if the page contains characters from that range, and it's annotated just above the record.
-    </p>
+  <div class="col-md-4 d-flex align-items-center justify-content-between flex-column">
+    <div>
+      <p>
+        The standard google fonts stylesheet contains a number of <span class="tm">@font-face</span> records with CSS properties. The <span class="tm">unicode-range</span> property allows to download fonts only if the page contains characters from that range, and it's annotated just above the record.
+      </p>
+    </div>
     <img alt="latin font face animation"
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='170'/%3E" data-io class="img-fluid" data-src="best-google-font-2/animate/fontface.gif">
     <noscript>
@@ -188,7 +206,7 @@ function fetchStylesheet(address, cb, marker = '') {
         src="best-google-font-2/animate/fontface.gif">
     </noscript>
   </div>
-  <div class="col order-1 order-md-2 d-flex justify-content-center align-items-center">
+  <div class="col d-flex justify-content-center align-items-center">
     <pre id="c1d47"><code class="css hljs">/* latin-ext */
 @font-face {
   font-family: 'Gentium Basic';
@@ -211,8 +229,19 @@ function fetchStylesheet(address, cb, marker = '') {
 </div>
 
 <div class="row">
+  <div
+    class="col-md-4 order-1 order-md-2 d-flex align-items-center justify-content-between flex-column">
+    <div>
+      <p>
+        Our stylesheet parsing function uses a regex to extract URLs with unicode ranges of fonts, and creates an array like <span class="tm">[{ font: 'https://woff2', range: /[regex]/ }]</span> for each font it found in the stylesheet.
+      </p>
+      <p>
+        The <span class="tm">U+0000-00FF,U+0131,...</span> range will become <span class="tm">[\u0000-\u00FF\\u0131...]</span> JS regex.
+      </p>
+    </div>
+  </div>
   <div class="col order-2 order-md-1 d-flex justify-content-center align-items-center">
-    <pre id="ccdbf3"><code class="javascript hljs">function parseBody(result) {
+    <pre id="ccdbf2"><code class="javascript hljs">function parseBody(result) {
   const re = /url\((.+?)\).*?;\s+unicode-range: (.+?);/g
   let ranges = {}
   const fonts = []
@@ -233,20 +262,31 @@ function fetchStylesheet(address, cb, marker = '') {
   }, {})
   // ...</code></pre>
   </div>
-  <div
-    class="col-md-4 order-1 order-md-2 d-flex align-items-center justify-content-between flex-column">
-    <p>
-      Our stylesheet parsing function uses a regex to extract URLs with unicode ranges of fonts, and creates an array like <span class="tm">[{ font: 'https://woff2', range: /[regex]/ }]</span> for each font it found in the stylesheet.
-      <br>
-      <br>
-      The <span class="tm">U+0000-00FF,U+0131,...</span> range will become <span class="tm">[\u0000-\u00FF\\u0131...]</span> JS regex.
-    </p>
-  </div>
 </div>
 
 <div class="row" id="two-scenarios">
+  <div
+    class="col-md-4 order-1 order-md-2 d-flex align-items-center justify-content-between flex-column">
+    <div>
+      <p>
+        There are 2 scenarios when we'll get the stylesheet ready:
+      </p>
+      <p>
+        A) <em>after</em> HTML parsing, when <span class="tm">body</span> is available. By running the regex against body's text content, we can figure out if we don't use <strong>latin-ext</strong> on the page, and just pass the unicode range for <strong>latin</strong> characters. This way, we don't have to download each single font in the stylesheet, wasting data; <em>and</em>
+      </p>
+      <p>
+        B) <em>prior</em> to HTML parsing, which can happen because there's another stylesheet blocking the render, and/or because the connection is very fast. Here, we wouldn't know the unicode ranges that are present on the page, therefore they have to be supplied as additional information. 
+      </p>
+    </div>
+    <img alt="body not ready animation"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='296'/%3E" data-io class="img-fluid" data-src="best-google-font-2/animate/head2.gif">
+    <noscript>
+      <img alt="body not ready animation" class="img-fluid"
+        src="best-google-font-2/animate/head2.gif">
+    </noscript>
+  </div>
   <div class="col order-2 order-md-1 d-flex justify-content-center align-items-center">
-    <pre id="ccdbf4"><code class="javascript hljs">  // ..
+    <pre id="ccdbf3"><code class="javascript hljs">  // ..
   const body = document.body ? document.body.textContent : ''
   const validRanges = body ? Object.keys(ranges).reduce((acc, range) =&gt; {
 
@@ -290,35 +330,18 @@ function fetchStylesheet(address, cb, marker = '') {
   document.head.appendChild(fragment)
 }</code></pre>
   </div>
-  <div
-    class="col-md-4 order-1 order-md-2 d-flex align-items-center justify-content-between flex-column">
-    <p>
-      There are 2 scenarios when we'll get the stylesheet ready:
-      <br>
-      <br>
-       A) <em>after</em> HTML parsing, when <span class="tm">body</span> is available. By running the regex against body's text content, we can figure out if we don't use <strong>latin-ext</strong> on the page, and just pass the unicode range for <strong>latin</strong> characters. This way, we don't have to download each single font in the stylesheet, wasting data; <em>and</em>
-      <br>
-      <br>
-       B) <em>prior</em> to HTML parsing, which can happen because there's another stylesheet blocking the render, and/or because the connection is very fast. Here, we wouldn't know the unicode ranges that are present on the page, therefore they have to be supplied as additional information. 
-    </p>
-    <img alt="body not ready animation"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='296'/%3E" data-io class="img-fluid" data-src="best-google-font-2/animate/head2.gif">
-    <noscript>
-      <img alt="body not ready animation" class="img-fluid"
-        src="best-google-font-2/animate/head2.gif">
-    </noscript>
-  </div>
 </div>
 
 <div class="row">
-  <div
-    class="col-md-4 order-2 order-md-1 d-flex align-items-center justify-content-between flex-column">
-    <p>
-      Finally I add some logic to keep track of parallel preloads and to embed the stylesheet when they all arrive, and write the <span class="tm">startPreload</span> function to wire all functions up together.
-      <br>
-      <br>
-      The argument <span class="tm">i</span> would not be set if there were no valid URLs to load, e.g., in case B when no unicode ranges were passed, therefore I skip performance measurement there. The measure function will throw runtime error instead of warning, so one should be careful with it.
-    </p>
+  <div class="col-md-4 d-flex align-items-center justify-content-between flex-column">
+    <div>
+      <p>
+        Finally I add some logic to keep track of parallel preloads and to embed the stylesheet when they all arrive, and write the <span class="tm">startPreload</span> function to wire all functions up together.
+      </p>
+      <p>
+        The argument <span class="tm">i</span> would not be set if there were no valid URLs to load, e.g., in case B when no unicode ranges were passed, therefore I skip performance measurement there. The measure function will throw runtime error instead of warning, so one should be careful with it.
+      </p>
+    </div>
     <img alt="3 Fonts shishi-odoshi animation."
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='292'/%3E" data-io class="img-fluid" data-src="best-google-font-2/animate/lever.gif">
     <noscript>
@@ -326,8 +349,8 @@ function fetchStylesheet(address, cb, marker = '') {
         src="best-google-font-2/animate/lever.gif">
     </noscript>
   </div>
-  <div class="col order-1 order-md-2 d-flex justify-content-center align-items-center">
-    <pre id="ccdbf5"><code class="javascript hljs">let FONT_CSS
+  <div class="col d-flex justify-content-center align-items-center">
+    <pre id="ccdbf4"><code class="javascript hljs">let FONT_CSS
 let urls = []
 let loaded = 0
 
@@ -387,7 +410,7 @@ startPreload({ href: FONT }, 'js')</code></pre>
 &lt;/head&gt;</code></pre>
 
 <p>
-  I've left plenty of performance markers, but there's a version that doesn't have them. What does the resulting timeline look like? Have we solved the problem of throttling fonts' reflows?
+  I've left plenty of performance markers, but there's a version that doesn't have them for smaller size. What does the resulting timeline look like? Have we solved the problem of throttling fonts' reflows?
 </p>
 
 </div></div></div>
@@ -434,7 +457,7 @@ startPreload({ href: FONT }, 'js')</code></pre>
 </div>
 
 <p>
-  Bingo bongo (<abbr title="These words don't mean anything, they indicate that the author is using weird language to express satisfaction with his code working as expected."><em>sic</em>, <em>lame</em></abbr>), we've achieved the maximum optimisation of a Google Font consisting of gathering all fonts to flush them at once together with the stylesheet to have only a single reflow. Let's just see what if there's a render blocking resource, such as an external CSS that would give us some additional time to fetch the web font stylesheet:
+  Bingo bongo (<abbr title="These words don't mean anything, they indicate that the author is using weird language to express satisfaction with his code working as expected."><em>sic, lame, wat</em></abbr>), we've achieved the maximum optimisation of a Google Font consisting of gathering all fonts to flush them at once together with the stylesheet to have only a single reflow. Let's just see what if there's a render blocking resource, such as an external CSS that would give us some additional time to fetch the web font stylesheet:
 </p>
 
 </div></div></div>
@@ -481,7 +504,7 @@ startPreload({ href: FONT }, 'js')</code></pre>
 </div>
 
 <p>
-  In this experiment, instead of inlining the page's style, I added a link to it, so that the browser had to download it. Although such download happens really quickly, the page nevertheless is slowed down by much more than just the download time. Unlike in the previous case, now when the <span class="tm">@lemuria/font</span> function is executed, the body is NOT yet available because the parsing has not started. This shows that it's not just the download speed that increases the start up time for external stylesheets, but their loading time also: <em>total: 84.12 ms (15.12 ms network transfer + 69.01 ms resource loading)</em> which would have been <em>0ms</em> had the stylesheet been embedded and present for parsing immediately.
+  In this experiment, instead of inlining the page's style, I added a link to it, so that the browser had to download it. Although such download happens really quickly, the page nevertheless is slowed down by much more than just the download time. Unlike in the previous case, now when the <span class="tm">@lemuria/font</span> function has fetched the stylesheet and calls the XHR callback, the body is NOT yet available because the parsing has not started. This shows that it's not just the download job that increases the start up time for external stylesheets, but their loading time also: <em>total: 84.12 ms (15.12 ms network transfer + 69.01 ms resource loading)</em> which would have been <em>0ms</em> had the stylesheet been embedded and present for parsing immediately.
 </p>
 
 <p>
@@ -508,6 +531,15 @@ startPreload({ href: FONT }, 'js')</code></pre>
 </div></div></div>
 <div class="container position-relative">
   <div class="row">
+    <div class="col-lg-6 d-flex align-items-center justify-content-center flex-column">
+      <h3 id="non-blocking-proof" class="d-none d-md-block">Non-Blocking Proof</h3>
+        <p>
+          From looking at the previous graph, for a scary moment I thought that I might be giving wrong advice when saying to append a <span class="tm">link</span> tag dynamically into the head, and it will actually block the page from rendering. This is because on the previous <a data-smooth href="#fig-before-body">Fig 2</a> (don't be afraid to click, we have a user-friendly scroll with a back button), there are some gaps in the timeline after the web font stylesheet is inserted, but before the external CSS is parsed, that could indicate that the page was render-blocked.
+        </p>
+        <p>
+          However, it's not the case as shown <span id="Above">below</span><span id="OnLeft">on the left</span>: the parse HTML goes in parallel with stylesheet loading. My interpretation of those gaps in past is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., on <a data-smooth href="#fig-before-body">Fig 2</a>, XHR is completed quicker compared to the <a data-smooth href="#fig-advanced-loading">Fig 1</a>, where it had to wait for the main thread to unblock since there were no gaps).
+        </p>
+    </div>
     <div id="fig-9848" style="overflow: hidden;"
       class="lg-6 col d-flex align-items-center justify-content-center flex-column mb-3 p-3 rounded position-relative">
       <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
@@ -528,15 +560,6 @@ startPreload({ href: FONT }, 'js')</code></pre>
         class="m-0 d-inline-block" style="background: white;">
         Figure 3: Dynamic insertion of a link with JS does not block page render.
       </h5>
-    </div>
-    <div class="col-lg-6 d-flex align-items-center justify-content-center flex-column">
-      <h3 id="non-blocking-proof" class="d-none d-md-block">Non-Blocking Proof</h3>
-        <p>
-          From looking at the previous graph, for a scary moment I thought that I might be giving wrong advice when saying to append a <span class="tm">link</span> tag dynamically into the head, and it will actually block the page from rendering. This is because on the previous <a data-smooth href="#fig-before-body">Fig 2</a> (don't be afraid to click, we have a user-friendly scroll with a back button), there are some gaps in the timeline after the web font stylesheet is inserted, but before the external CSS is parsed, that could indicate that the page was render-blocked.
-        </p>
-        <p>
-          However, it's not the case as shown <span id="Above">above</span><span id="OnLeft">on the left</span>: the parse HTML goes in parallel with stylesheet loading. My interpretation of those gaps in past is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., on <a data-smooth href="#fig-before-body">Fig 2</a>, XHR is completed quicker compared to the <a data-smooth href="#fig-advanced-loading">Fig 1</a>, where it had to wait for the main thread to unblock since there were no gaps).
-        </p>
     </div>
   </div>
   <div class="position-absolute" style="opacity: 0; top: 1rem; right: 1rem;" id="ce513">
@@ -757,14 +780,14 @@ async throttle(ctx, next) {
     </p>
   </div>
   <div class="col-md-6 order-2 order-md-1">
-    <pre id="ccdbf1"><code class="javascript hljs">function DOMTokenListSupports(tokenList, token) {
-  if (!tokenList || !tokenList.supports) {
-    return false
-  } try { return tokenList.supports(token) } catch (e) {
-    return false }
-}
-const link = document.createElement('link')
-const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code></pre>
+    <pre id="ccdbf5"><code class="javascript hljs">function DOMTokenListSupports(tokenList, token) {
+      if (!tokenList || !tokenList.supports) {
+        return false
+      } try { return tokenList.supports(token) } catch (e) {
+        return false }
+    }
+    const link = document.createElement('link')
+    const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code></pre>
   </div>
 </div>
 
