@@ -8,10 +8,13 @@ export default function Feature({ children, title, direction = 'right', src, spl
   const p = `m${direction == 'right' ? 'l' : 'r'}-3`
   const cn = ['img-fluid img-fluid rounded', f, p].join(' ')
   return (<row className="Feature" id={id}>
-    <div className="col">
-      <h2 ignore-section className="text-center" style={{ background, color, 'text-shadow': shadow }}><img alt="art deco fan" style={st} className={sf} src="img/sun.png" /> {title}</h2>
-      <splendid-img alt={title} className={cn} src={src} />
-      <p dangerouslySetInnerHTML={{ __html: children }}/>
-    </div>
+    <column>
+      <h2 ignore-section text-center background={background} color={color} text-shadow= {shadow}>
+        <splendid-img placeholder-auto alt="art deco fan" style={st} className={sf} src="pages/index/img/sun.png" />
+        {title}
+      </h2>
+      <splendid-img placeholder-auto alt={title} className={cn} src={src} />
+      <div dangerouslySetInnerHTML={{ __html: children }}/>
+    </column>
   </row>)
 }

@@ -1,13 +1,13 @@
 ## Standard Sync Loading
 
-<p>Let's start with the basics. We want a Google Font on our website. This means going to [fonts.google.com](https://fonts.google.com) and picking up specimens that we want our pages to display with, for example, the fonts that I use here are an Art Deco font *Limelight* for headings and *Gentium Basic* (with variations) for paragraphs:</p>
+Let's start with the basics. We want a Google Font on our website. This means going to [fonts.google.com](https://fonts.google.com) and picking up specimens that we want our pages to display with, for example, the fonts that I use here are an Art Deco font *Limelight* for headings and *Gentium Basic* (with variations) for paragraphs:
 
 ```html
 <link rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Limelight|Gentium+Basic:400,400i,700&display=swap">
 ```
 
-<p>The advantage of this cloud service is that _Google Fonts_ will load a dynamic stylesheet depending on a user's browser, and provide optimised fonts, which are constantly improved in newer versions. We also don't have to host the fonts ourselves, and work on creating such stylesheets manually. E.g., below is the stylesheet that was returned for my Chrome on MacOS. It also has 2 `unicode-ranges`, `latin` and `latin-ext` so that the browser will check if there are any characters from the extended set, to decide whether this extra font is needed. Tables with such ranges could be looked up [here](https://jrgraphix.net/r/Unicode/0100-017F).</p>
+The advantage of this cloud service is that _Google Fonts_ will load a dynamic stylesheet depending on a user's browser, and provide optimised fonts, which are constantly improved in newer versions. We also don't have to host the fonts ourselves, and work on creating such stylesheets manually. E.g., below is the stylesheet that was returned for my Chrome on MacOS. It also has 2 `unicode-ranges`, `latin` and `latin-ext` so that the browser will check if there are any characters from the extended set, to decide whether this extra font is needed. Tables with such ranges could be looked up [here](https://jrgraphix.net/r/Unicode/0100-017F).
 
 <style>
   details[open] summary pre {
@@ -120,13 +120,9 @@ _Google Fonts Stylesheet_
 ```
 </details>
 
-<p>
-  The `font-display: swap` property is quite important as it allows to show the initial text without having to wait for fonts to load. It's a [new feature](https://caniuse.com/#search=font-display) and is not supported on Edge. In spite the fact that people assume that Google's infrastructure is resilient and can serve requests immediately, it's not always the case, and especially on 3G connections, at peak times, when moving in a car, people will open a website, and will be presented with a blank screen without text, until fonts are loaded. The `font-display: swap` solves this problem. My method of loading _Google Fonts_ asynchronously, also implicitly provides a solution to the swap problem, and can be considered as a polyfill for this CSS property for _IE_ and _Edge_.
-</p>
+The `font-display: swap` property is quite important as it allows to show the initial text without having to wait for fonts to load. It's a [new feature](https://caniuse.com/#search=font-display) and is not supported on Edge. In spite the fact that people assume that Google's infrastructure is resilient and can serve requests immediately, it's not always the case, and especially on 3G connections, at peak times, when moving in a car, people will open a website, and will be presented with a blank screen without text, until fonts are loaded. The `font-display: swap` solves this problem. My method of loading _Google Fonts_ asynchronously, also implicitly provides a solution to the swap problem, and can be considered as a polyfill for this CSS property for _IE_ and _Edge_.
 
-<p>
-  I'm going to experiment on the front page of my website, [artd.eco](https://www.artd.eco). The traditional sync inclusion of the _Google Fonts_ results in the following loading process that for the user appears to be consisting of 3 steps:
-</p>
+I'm going to experiment on the front page of my website, [artd.eco](index). The traditional sync inclusion of the _Google Fonts_ results in the following loading process that for the user appears to be consisting of 3 steps:
 
 <fig src="./graphics/font1.gif" alt="Loading Google Font synchronously." />
 
@@ -138,9 +134,7 @@ _Google Fonts Stylesheet_
   - The *GentiumBasic* font is loaded for the paragraph, and the page is redrawn again.
 </revision>
 
-<p>
-  The 3rd step, with GentiumBasic loading, actually consists of 2 steps, the italic version being loaded, and the normal one, but that happens _almost_ at the same time, so I couldn't capture that on GIF. However, what is important is that each arrival of a new font results in page re-rendering and a change of text's styles as well. Rendering happens on the main thread, therefore the browser is blocked and slowed down by each font. The method that I will show, will wait for all fonts to arrive, before applying the stylesheet to the document, which will help to circumvent this aspect of imperfect standard _Google Font_ loading. So what happens under the hood? The performance snapshot below will help to understand how the page is loaded in more details.
-</p>
+The 3rd step, with GentiumBasic loading, actually consists of 2 steps, the italic version being loaded, and the normal one, but that happens _almost_ at the same time, so I couldn't capture that on GIF. However, what is important is that each arrival of a new font results in page re-rendering and a change of text's styles as well. Rendering happens on the main thread, therefore the browser is blocked and slowed down by each font. The method that I will show, will wait for all fonts to arrive, before applying the stylesheet to the document, which will help to circumvent this aspect of imperfect standard _Google Font_ loading. So what happens under the hood? The performance snapshot below will help to understand how the page is loaded in more details.
 
 <fig src="./graphics/dev1.png" alt="Performance measurement of sync Google Font loading." />
 
@@ -153,15 +147,11 @@ _Google Fonts Stylesheet_
   - The second font and its variations *GentiumBasic*, are loaded and applied to text on the page, triggering another 46ms layout, and another thread block. Because fonts arrived at almost the same time, there's only one layout job, but if italic version arrived later, there would have been another block.
 </revision>
 
-<p>
-  The conclusion is that we want to avoid synchronous loading of _Google Fonts_ altogether. We cannot rely on Google to serve web font stylesheets immediately, and on slow network the UI will be completely blocked until the CSS is received. This is true not only for fonts, but for any CSS, therefore _Lighthouse_ will always give this suggestions:
-</p>
+The conclusion is that we want to avoid synchronous loading of _Google Fonts_ altogether. We cannot rely on Google to serve web font stylesheets immediately, and on slow network the UI will be completely blocked until the CSS is received. This is true not only for fonts, but for any CSS, therefore _Lighthouse_ will always give this suggestions:
 
 <fig src="./graphics/lighthouse1.png" border="danger" alt="Lighthouse 'Eliminate render-blocking resources' suggestion" />
 
-<p>
-  Because Google audits pages it craws for performance, and uses the page speed as a ranking factor, we want to follow the suggestion to eliminate render-blocking resources and implement asynchronous _Google Fonts_ loading.
-</p>
+Because Google audits pages it craws for performance, and uses the page speed as a ranking factor, we want to follow the suggestion to eliminate render-blocking resources and implement asynchronous _Google Fonts_ loading.
 
 <section-break />
 

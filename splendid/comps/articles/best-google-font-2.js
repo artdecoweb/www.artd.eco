@@ -92,13 +92,6 @@ const meta = [{
   },
 },
 {
-  key: 'parallax',
-  id: 'c0c34',
-  props: {
-    'background-image': './img/tile.jpg',
-  },
-},
-{
   key: 'highlightjs',
   id: 'c1d47',
   props: {
@@ -128,6 +121,13 @@ const meta = [{
     url: 'https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html',
     size: '36',
     meta: 'true',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c8757',
+  props: {
+    'background-image': '../articles/img/tile.jpg',
   },
 },
 {

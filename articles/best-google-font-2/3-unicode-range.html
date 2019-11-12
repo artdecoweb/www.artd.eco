@@ -1,9 +1,6 @@
-
 ### Unicode Range Application
 
-<p>
-  So finally, let me show a case with an external stylesheet, and with a unicode-range. The unicode-range can be looked up in the Google's servers response, but I'm quite sure they are pretty static so you wouldn't have to do it often (but keep an eye out for them). The range must be set as a string key without the last `;`. Multiple ranges can be specified for fonts targeting different language sets, but I'm just using the `latin` one here, because there are no special characters on the page that would require the extended version.
-</p>
+So finally, let me show a case with an external stylesheet, and with a unicode-range. The unicode-range can be looked up in the Google's servers response, but I'm quite sure they are pretty static so you wouldn't have to do it often (but keep an eye out for them). The range must be set as a string key without the last `;`. Multiple ranges can be specified for fonts targeting different language sets, but I'm just using the `latin` one here, because there are no special characters on the page that would require the extended version.
 
 ```html
 <head>
@@ -31,10 +28,8 @@
   * Once the thread is freed (the <span style="background:blue; color:white" class="px-2"><abbr title="Dom Content Loaded">DCL</abbr></span> event), there's a bit of work to do for other JS scripts on the page, after which the web font stylesheet is applied. Notice there's only _150ms_ delay between the <span style="background:green; color:white" class="px-2"><abbr title="First Paint">FP</abbr></span> and fonts being applied (but not painted) which gives us the fastest FOUT so far, compared to all previous situations when we were only started to download fonts at this point because it was when the thread became free.
 </revision>
 
-<p>
-  Cool, I think we've optimised as much as possible out of _Google Fonts_. The final version enables to insert the stylesheet before the initial layout, and also downloads fonts in parallel to the main thread which is busy rendering. Practically, this is only possible if the device is pretty slow and/or there are render blocking resources that will postpone the parsing for some time long enough for the web font stylesheet preload to complete, but nonetheless this technique is still applicable, in particular to heavier pages that require more time for parsing and initial / following layouts (whereas before, there could be 4 reflows - 1 for stylesheet injection and 3 for each of the fonts arriving independently, now it's only one).
+Cool, I think we've optimised as much as possible out of _Google Fonts_. The final version enables to insert the stylesheet before the initial layout, and also downloads fonts in parallel to the main thread which is busy rendering. Practically, this is only possible if the device is pretty slow and/or there are render blocking resources that will postpone the parsing for some time long enough for the web font stylesheet preload to complete, but nonetheless this technique is still applicable, in particular to heavier pages that require more time for parsing and initial / following layouts (whereas before, there could be 4 reflows - 1 for stylesheet injection and 3 for each of the fonts arriving independently, now it's only one).
   <!-- In case there are none, I've tried the following trick: -->
-</p>
 
 <!-- ```html -->
 <!-- <head> -->

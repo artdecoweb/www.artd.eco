@@ -1,6 +1,6 @@
 ## Async Google Font Loading
 
-<p>The browser will always give CSS the highest priority when opening the page, and begin downloading stylesheets immediately. This is nice, however how do we step up from sync loading to the async one, which does not prevent rendering from happening until the stylesheet is loaded? Let's try to do it with JavaScript. Instead of adding a `link` tag, we'll add a script which will create such tag dynamically. This script will be the first thing in our document:</p>
+The browser will always give CSS the highest priority when opening the page, and begin downloading stylesheets immediately. This is nice, however how do we step up from sync loading to the async one, which does not prevent rendering from happening until the stylesheet is loaded? Let's try to do it with JavaScript. Instead of adding a `link` tag, we'll add a script which will create such tag dynamically. This script will be the first thing in our document:
 
 ```html
 <head>
@@ -15,7 +15,7 @@
 </head>
 ```
 
-<p>Now because the browser does not know that the stylesheet will be embedded, it will not start downloading it straight away like in the previous case. Instead, it will wait until the  script is evaluated to begin the download. What is more, it will continue parsing HTML, and block the main thread so that if the stylesheet is not downloaded quickly, it will have to wait to be inserted until the end of the initial page render.</p>
+Now because the browser does not know that the stylesheet will be embedded, it will not start downloading it straight away like in the previous case. Instead, it will wait until the  script is evaluated to begin the download. What is more, it will continue parsing HTML, and block the main thread so that if the stylesheet is not downloaded quickly, it will have to wait to be inserted until the end of the initial page render.
 
 <fig src="./graphics/dev2.png" alt="Loading Google Font asynchronously with JavaScript script tag." />
 
@@ -26,9 +26,7 @@
   * Finally, like in the previous experiment, fonts arrive one by one, and cause 2 new layout reflows.
 </revision>
 
-<p>
-  This strategy allows to actually load _Google Fonts_ asynchronously and solves the _Lighthouse_ warning. However, it introduced an extra reflow due to the stylesheet insertion that happens after the initial render. There are additional improvements that we could make to the page. We can use the preload hint to make the browser download the stylesheet immediately, in hope that dynamically inserted element will be able to pick up that style:
-</p>
+This strategy allows to actually load _Google Fonts_ asynchronously and solves the _Lighthouse_ warning. However, it introduced an extra reflow due to the stylesheet insertion that happens after the initial render. There are additional improvements that we could make to the page. We can use the preload hint to make the browser download the stylesheet immediately, in hope that dynamically inserted element will be able to pick up that style:
 
 ```html
 <head>
@@ -48,9 +46,7 @@
 </head>
 ```
 
-<p>
-  OK now we've got it! We had to add a `crossOrigin` attribute to both links (in markup and in JS) since the style comes from another domain and preload links have to respect that, and the style link has to match preload link's _crossorigin_.
-</p>
+OK we've got it! We had to add a `crossOrigin` attribute to both links (in markup and in JS) since the style comes from another domain and preload links have to respect that, and the style link has to match preload link's _crossorigin_.
 
 <fig src="./graphics/dev3.png" alt="Loading Google Font asynchronously with a script and preload tag." />
 
@@ -67,13 +63,9 @@
   * The fonts arrive at the same time, and cause a single reflow only.
 </revision>
 
-<p>
-  That's good, and we've achieved the result we wanted, that is to load _Google Fonts_ asynchronously. However, from the graph above we can see a gap between fonts starting to download, and the stylesheet arriving, i.e., fonts will begin do download only just prior to the layout task despite the stylesheet referencing them being available for quite some time already, and we'll look into this issue below, but that's how the browser works, and nothing to do with our setup.
-</p>
+That's good, and we've achieved the result we wanted, that is to load _Google Fonts_ asynchronously. However, from the graph above we can see a gap between fonts starting to download, and the stylesheet arriving, i.e., fonts will begin do download only just prior to the layout task despite the stylesheet referencing them being available for quite some time already, and we'll look into this issue below, but that's how the browser works, and nothing to do with our setup.
 
-<p>
-  Another thing we need to do is to add a polyfill for users who disabled _JavaScript_ execution.
-</p>
+Another thing we need to do is to add a polyfill for users who disabled _JavaScript_ execution.
 
 ```html
 <head>
@@ -90,9 +82,7 @@
   </head>
 ```
 
-<p>
-  Despite the working version of async web font stylesheet loading (thus achieving the goal), we assume that the connection is good, and that the stylesheet will be able to download prior to initial page render. Moreover, I've been testing the webpage with another external stylesheet, which loads very fast on localhost, but in reality it would actually take some time and block the browser. If the styles were embedded onto the page, so that there are no render-blocking resources, the browser would not have enough time to download the _Google Font_ stylesheet prior to first render. Therefore, I've simulated a situation when:
-</p>
+Despite the working version of async web font stylesheet loading (thus achieving the goal), we assume that the connection is good, and that the stylesheet will be able to download prior to initial page render. Moreover, I've been testing the webpage with another external stylesheet, which loads very fast on localhost, but in reality it would actually take some time and block the browser. If the styles were embedded onto the page, so that there are no render-blocking resources, the browser would not have enough time to download the _Google Font_ stylesheet prior to first render. Therefore, I've simulated a situation when:
 
 <ul>
   * The connection is slower than standard DSL/cable internet (fast 3G preset).
@@ -110,9 +100,7 @@
   * The all other font arrive and trigger reflow and repaint.
 </revision>
 
-<p>
-  So the next step is to make sure that there's only one reflow for the style and fonts. As a side note, there's a technique outlined on the <a href="alligator/preload-prefetch" target="_blank" color="#7b913c !important;" text-decoration="underline"><animation width="74" height="36" style="display:inline-block" span path="./animate/aligator.json" src="./graphics/croc.png" alt="alligator"/>Alligator blog: Preload and Prefetch</a> that contracts the JS into a one-liner:
-</p>
+So the next step is to make sure that there's only one reflow for the style and fonts. As a side note, there's a technique outlined on the <a href="alligator/preload-prefetch" target="_blank" color="#7b913c !important;" text-decoration="underline"><animation width="74" height="36" style="display:inline-block" span path="./animate/aligator.json" src="./graphics/croc.png" alt="alligator"/>Alligator blog: Preload and Prefetch</a> that contracts the JS into a one-liner:
 
 ```html
 <link
@@ -122,15 +110,11 @@
   href='https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight'>
 ```
 
-<p>
-  I think the `onload` attribute must be `onload="this.rel = 'stylesheet'; this.onload = null"`, otherwise once the preload link is changed into a stylesheet link, the onload will be triggered again. Although theoretically, setting the rel attribute to `stylesheet` when it's already a `stylesheet` shouldn't cause problems, I used to get the stylesheet downloaded twice. However now I struggle to reproduce this and I think it's rather to do with internal browser logic, or maybe the browser got updated.
-</p>
+I think the `onload` attribute must be `onload="this.rel = 'stylesheet'; this.onload = null"`, otherwise once the preload link is changed into a stylesheet link, the onload will be triggered again. Although theoretically, setting the rel attribute to `stylesheet` when it's already a `stylesheet` shouldn't cause problems, I used to get the stylesheet downloaded twice. However now I struggle to reproduce this and I think it's rather to do with internal browser logic, or maybe the browser got updated.
 
 <!-- <fig src="./graphics/dev5.png" alt="Stylesheet downloaded twice." /> -->
 
-<p>
-   Never mind still, it doesn't hurt to remove the `onload` attribute by setting it to `null`. Additionally, this `onload` attribute solution requires a polyfill for browsers that don't support preload which I'll show in the second part, but what I'm really concerned here is *WHEN* the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the `onload` method.
-</p>
+Never mind still, it doesn't hurt to remove the `onload` attribute by setting it to `null`. Additionally, this `onload` attribute solution requires a polyfill for browsers that don't support preload which I'll show in the second part, but what I'm really concerned here is *WHEN* the onload is fired. Let's add some performance markers so that we can see a detailed breakdown on the process with the `onload` method.
 
 ```html
 <head>
@@ -170,13 +154,9 @@
 </body>
 ```
 
-<p>
-  The `performance.measure` function is a very handy util to add markers to the timeline to visualise the break-down. We're going to measure WHEN the `onload` event fired, and compare it to when the preload actually finished. One might assume that these points should follow one another (onload after download), however don't forget to account for the lock on the main thread during the initial render (I've said this phrase so many times now, it just shows that it's an important takeaway point).
-</p>
+The `performance.measure` function is a very handy util to add markers to the timeline to visualise the break-down. We're going to measure WHEN the `onload` event fired, and compare it to when the preload actually finished. One might assume that these points should follow one another (onload after download), however don't forget to account for the lock on the main thread during the initial render (I've said this phrase so many times now, it just shows that it's an important takeaway point).
 
-<p>
-  Just at the start of the body, I added an interval to fire every 10ms to draw a bar (`layout block proof`) on the performance graph. If the thread is locked, this time will not be 10ms, as the interval will have to wait until it can fire. The second bar `layout block` will stretch from when parsing of HTML began until it finished. Finally, as the very first thing I'm going to measure when the preload began and finished as `link-onload` bar, after which the preload will be converted into a stylesheet. <a btn btn-sm btn-warning href="/exp/google-font/exp.html" target="_blank">Experiment Link</a>
-</p>
+Just at the start of the body, I added an interval to fire every 10ms to draw a bar (`layout block proof`) on the performance graph. If the thread is locked, this time will not be 10ms, as the interval will have to wait until it can fire. The second bar `layout block` will stretch from when parsing of HTML began until it finished. Finally, as the very first thing I'm going to measure when the preload began and finished as `link-onload` bar, after which the preload will be converted into a stylesheet. <a btn btn-sm btn-warning href="/exp/google-font/exp.html" target="_blank">Experiment Link</a>
 
 <fig src="./graphics/dev20.png" alt="Performance measurements with onload attribute." />
 
@@ -190,9 +170,7 @@
   * Fonts arrive and trigger 2 reflows.
 </revision>
 
-<p>
-  Let's compare that to the implementation using a standalone script tag rather than the `onload` attribute. I'm going to add 100ms timeout so that the preload event is visible on the timeline. Remember, we added the stylesheet only after the `onload` event fired previously. Now, using the script tag, we're adding the stylesheet right away. <a btn btn-sm btn-warning href="/exp/google-font/exp2.html" target="_blank">Experiment Link</a> (might need x6 CPU throttling to reproduce).
-</p>
+Let's compare that to the implementation using a standalone script tag rather than the `onload` attribute. I'm going to add 100ms timeout so that the preload event is visible on the timeline. Remember, we added the stylesheet only after the `onload` event fired previously. Now, using the script tag, we're adding the stylesheet right away. <a btn btn-sm btn-warning href="/exp/google-font/exp2.html" target="_blank">Experiment Link</a> (might need x6 CPU throttling to reproduce).
 
 ```html
 <head>
@@ -240,9 +218,7 @@
   * The initial paint is done, main thread is freed and the preload event fires on our `link rel="preload"` element (_preload-onload_ yellow bar). Compared to the previous case, where we'd inserted the stylesheet only at this point, causing a reflow, here we avoided the reflow and are already halfway through font-downloading.
 </revision>
 
-<p>
-  <strike>Hare</strike> Here, we've managed to insert the link tag with the stylesheet into DOM without the cost of reflow and without having to wait for `onload` event which most certainly happens only after the layout: on the graph above it can be seen that even though the preload finished before the lock, the `onload` event didn't fire. The Run Microtasks and first Layout time increased so that the lock now takes 100ms longer, but I'm not sure if that's to do with styles, or just a fluke. Also if the stylesheet arrived when the lock was already set, it would not have been applied, so this use case is for when the web font styles are downloaded quickly, in say 100ms, but initial parsing takes longer, e.g., 150ms. On modern machines rendering should be really fast, but for older ones and devices this is still applicable, therefore think it's worth targeting this scenario and writing the proper script instead of `onload` _rel_ substitution.
-</p>
+~Hare~ Here, we've managed to insert the link tag with the stylesheet into DOM without the cost of reflow and without having to wait for `onload` event which most certainly happens only after the layout: on the graph above it can be seen that even though the preload finished before the lock, the `onload` event didn't fire. The Run Microtasks and first Layout time increased so that the lock now takes 100ms longer, but I'm not sure if that's to do with styles, or just a fluke. Also if the stylesheet arrived when the lock was already set, it would not have been applied, so this use case is for when the web font styles are downloaded quickly, in say 100ms, but initial parsing takes longer, e.g., 150ms. On modern machines rendering should be really fast, but for older ones and devices this is still applicable, therefore think it's worth targeting this scenario and writing the proper script instead of `onload` _rel_ substitution.
 
 <tip>
   Don't use the `onload` attribute on a link element with a web font stylesheet to swap its _rel_ from *preload* to *stylesheet*. Even if the stylesheet was ready before the initial layout started, the `onload` event will only fire after it, causing a reflow due to new styles. It's better to add a stylesheet dynamically with _JavaScript_ in a script tag just underneath the preload element, so that it's immediately injected into DOM during the initial parsing of HTML and will not impose a cost of a reflow that has no effect due to fonts not being available yet.

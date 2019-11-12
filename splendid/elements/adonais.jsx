@@ -10,7 +10,7 @@ class Adonais extends Component {
     return 'Adonais: Art Deco, Documentation, Optimisation, NPM Packages, Automated Testing And Implementation'
   }
   serverRender({ splendid, class: className }) {
-    splendid.export()
+    splendid.export({})
     splendid.css('styles/Adonais.css', '.Adonais', {
       dynamic: true,
     })
@@ -87,8 +87,6 @@ const Letter = ({ file, letter, cl, top, left, children, class: className, href 
     <img alt={`letter ${letter}`} className={className} src={file} style={style} />
   </a>)
 }
-
-export const allowedProps = []
 
 // onMouseOver={() => {
 //   setHint(children)

@@ -23,17 +23,16 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
     <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
     <style>
       .no-js [data-io], .no-js [data-loading], .no-js .ImageHolder { display: none!important }
+      h1 {
+          margin-bottom: 0;
+        }
       h1 { font-family: 'Limelight',cursive; }
-      
       @font-face {
         font-family: 'Limelight';
         font-style: normal;
         font-weight: 400;
         src: local('Limelight'), url('data:application/font-woff2;base64,d09GMgABAAAAAASQAAwAAAAACAgAAARBAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYGYABUEQgKhFiECQsQAAE2AiQDHAQgBYZGByAb1gbIxAfYZv9AUQfrYJVtXNSiWreW6yj1fnRydan+hUJyJFHc1Jv9Qqn/3X6OvlB6IQoGQ61Ro1AIowHFaHSIE+guqtQy0TAIAPoYFkkQPSYaXBcI3yOWgwKojVQoQDgdfIIXmEVOf5Va2krAU+Sc2yOl0lQWSWBdTMVZ/01SmTiL7GKBVa9toR81JciGg/+JQDWH4JabQ4gkjGckICGEFBWoQys6eB6YRlo28Ef4bfxGfg2/StO0DBIgeB5GguIdMWR6LFzJEga/SMIDZBLJ1c8kLN0MhSZGJkz4gJKm+wwHaLXbaVpNqBgTLvIcw7Wc4XSRusJLDKfMe00vlmsJlULHcDINlPtpdYxWflYd9o+WUBXqOI33CyilrxcZSPQXqnQKHcPJNFBKX9NqubZpDcNwCh2hkmtpWm3ep5aT+gMG0C3RyDRQSl/3q6UiDcNwVuKzCtUhzkLlrWG41HWqjVdj5Fq5llB5jGpe3EKrD2q16svKDd43NJpkjfJ13mvX/2huelNA2ZegEgEqcW3+XYVJqFdgxWA61W0egrjELxfOMhySOsQXmnikvb9s4UPxji1bN/317f4N+9b9v2Iitso30LzS0EKUFD9i/aa5Bybj73TMzU38NzVwfYnDveXJycl+yX5RR4/6HUWRXa/8dm7Wrk1//rd1x7r1X3+zacv2nf/8tn3j7m2OP7RKDB9OD66YfEc7PT45pjUSL0J4kRmnSmjcBKpxU+RolumL4pzMjeu++2H9li27jW9LVncVO07mb7PV33FWhgUTRlkuBzBZM+fScOgWh4MRtCLjrQNFddmLqkY6Zb2zr09tiv/ZwtfFeG9hxJhT+yeu77udurFkoqs4bfb51NHvxyvfP9mdmucDAACx2Ti2zGndi4VGcb956UmeOY/2lp85rHysWDebH/9vXPKjOIslSYMWiC+Js/7jAHouP87PkvxYx14FxMQmQKgDIaxFMfkbdlNWKKa+xBEBj4U/6mKsr39tdCjgkgTVNT4g1AOIz1/ApUjAdJBgSsKQ+JMKkEWKqBAuZAGlYEu2UhFcSPX7DBFGHkYqWtCKPrSjDjWoRSdYeKEC3mARgiAEI6h/uhx9YFGKFrSjAXVonnml6EMrqhj0RRY9fdK5mkUJqtCBKrSjWyorwSIDLWh2ywtQhiaFmoc6URqDfh4AAxhAilrUoUOAWbXhPShDuzLxEaa8AlVoDgVBWFcfK8MiCwLGLUU28gQLUUebnY7mqYkfypWsQ+AzZxGMgE0LVJuQKRCsKEapDgLLs6W2oMchliGlfuJlaERHgbll6EaZcRtRhvLBaFUhYhmmmoziC+9EDAwKqdiJVg4GIhAdqKg21tpXOxCArDYioJKWq0EgCpGBvGKG6lFr0BVSbUdBVrAlNGaAzW9EH2IqaByrU2IayazBP3Ys2HlBCEKIieXf90wnOtFC4FcjF0sAAA==') format('woff2');
       }
-      h1 {
-          margin-bottom: 0;
-        }
       @media (max-width: 430px) {
             a.lead {
               background: aliceblue;
@@ -143,8 +142,7 @@ h;a.style.webkitTransform=h})};}).call(this);
     <strong><a href="embedding-critical-path-fonts.html">Embedding Critical Path Fonts</a></strong>
     : Including google fonts on a page and referencing them in CSS could still result in a FOUT. By preloading fonts, we can show branded text immediately.
   </li>
-</ul>
-</div>
+</ul></div>
         </div>
       </div>
       
@@ -187,9 +185,9 @@ h;a.style.webkitTransform=h})};}).call(this);
     <div style="position:relative;">
       <div class="container-fluid p-0 position-absolute"
         style="height: 50px; top: 0px; left: 0px; overflow: hidden;">
-        <div class=" Parallax" data-loading id="c0c34"></div>
+        <div class=" Parallax" data-loading id="c8757"></div>
         <div class="Parallax"></div>
-        <noscript><div class=" Parallax" style="background-image: url(./img/tile.jpg);"></div></noscript>
+        <noscript><div class=" Parallax" style="background-image: url(/../articles/img/tile.jpg);"></div></noscript>
       </div>
       <div class="position-absolute" style="top: calc(50px - 1px); left: 0px;" id="bottom"></div>
     </div>

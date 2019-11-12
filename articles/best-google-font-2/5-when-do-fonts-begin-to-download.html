@@ -1,10 +1,8 @@
 ## When Do Fonts Begin To Download?
 
-<p>
-  I should mention that the best possible course of action would of course be to preload fonts using a preload link without any scripting. However, that's a different context entirely since this article focuses specifically on _Google Fonts_ optimisation. Their servers will return different urls for different browsers, therefore we can't just copy and paste them in the preload link, additionally their fonts evolve and change versions. The advanced google font loading solution is the simplest scripting solution to kicking off font preload as soon as possible, and eliminating multiple render blocks.
-</p>
-<p>Moreover, in the previous article as well as here I've seen results like in <a href="#fig-before-body" smooth-scroll>Fig 2</a> which showed that fonts didn't begin to download before the first <span style="background:#A66EEF">Recalculate Styles</span> even if the stylesheet was downloaded alright. The last experiment was to embed the stylesheet manually with a `<style>/* contents of google font stylesheet */</style>` tag onto the page and see its performance. There are no external resources and the page load should proceed seamlessly from parsing to layout.
-</p>
+I should mention that the best possible course of action would of course be to preload fonts using a preload link without any scripting. However, that's a different context entirely since this article focuses specifically on _Google Fonts_ optimisation. Their servers will return different urls for different browsers, therefore we can't just copy and paste them in the preload link, additionally their fonts evolve and change versions. The advanced google font loading solution is the simplest scripting solution to kicking off font preload as soon as possible, and eliminating multiple render blocks.
+
+Moreover, in the previous article as well as here I've seen results like in <a href="#fig-before-body" smooth-scroll>Fig 2</a> which showed that fonts didn't begin to download before the first <span style="background:#A66EEF">Recalculate Styles</span> even if the stylesheet was downloaded alright. The last experiment was to embed the stylesheet manually with a `<style>/* contents of google font stylesheet */</style>` tag onto the page and see its performance. There are no external resources and the page load should proceed seamlessly from parsing to layout.
 
 ```html
 <head>
@@ -29,9 +27,7 @@
   Embedding web fonts stylesheet manually shows when fonts begin to download.
 </fig>
 
-<p>
-  The performance graph clearly shows that although urls to fonts are there on the page, they don't begin to download prior to the first style calculation. If people were coming for a job interview at {{ company }}, I would potentially ask them this question to find out if they read my article ;) Apart from this interesting observation, the conclusion is that the Advanced Google Font method I've introduced here is even better than what the browser can offer natively, because it's able to begin to download fonts even before parsing starts. It does it by extracting urls from the stylesheet, if it arrives quickly enough (see <a href="#two-scenarios" smooth-scroll>case B</a>), as proven on <a href="#fig-lemuria-font" smooth-scroll>Fig 4</a>.
-</p>
+The performance graph clearly shows that although urls to fonts are there on the page, they don't begin to download prior to the first style calculation. If people were coming for a job interview at {{ company }}, I would potentially ask them this question to find out if they read my article ;) Apart from this interesting observation, the conclusion is that the Advanced Google Font method I've introduced here is even better than what the browser can offer natively, because it's able to begin to download fonts even before parsing starts. It does it by extracting urls from the stylesheet, if it arrives quickly enough (see <a href="#two-scenarios" smooth-scroll>case B</a>), as proven on <a href="#fig-lemuria-font" smooth-scroll>Fig 4</a>.
 
 <section-break />
 

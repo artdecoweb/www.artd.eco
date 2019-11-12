@@ -1,13 +1,17 @@
 /**
  * @type {import('splendid').Page}
  */
-export const main = {
+export const index = {
   title: 'Art Deco: Node.JS Development Company',
-  index: true,
-  file: 'index',
   seo: 'Art Deco is specialised Node.JS company: back-end servers, cloud & serverless apps and front-end websites and optimised PWAs of outstanding quality.',
   // menuUrl: '/',
   // focus: 1,
+  links: {
+    closure: 'https://github.com/google/closure-compiler',
+    npm: 'https://www.npmjs.com/',
+    zoroaster: 'https://github.com/contexttesting/zoroaster',
+    alamode: 'https://github.com/a-la/alamode',
+  },
 }
 
 export const articles = '~/articles'

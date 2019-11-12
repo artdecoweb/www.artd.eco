@@ -22,6 +22,7 @@ const config = {
   components: ['components', '../articles/components'],
   url: 'https://www.artd.eco',
   blocks: ['blocks', '../articles/blocks'],
+  ajax: false,
 }
 
 export default config
