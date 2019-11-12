@@ -22,29 +22,21 @@ const __components = {
 const io = makeIo()
 
 const meta = [{
-  key: 'parallax',
-  id: 'c712f',
-  props: {
-    'background-image': 'pages/index/img/code2.gif',
-    speedy: '0.5',
-  },
-},
-{
   key: 'logo',
   id: 'Logo',
 },
 {
+  key: 'menu',
+  id: 'ce4db',
+},
+{
   key: 'parallax',
-  id: 'cf249',
+  id: 'c7c22',
   props: {
-    'background-image': 'pages/index/img/seamless.jpg',
+    'background-image': '/pages/index/img/seamless.jpg',
     speedy: '0',
     speedx: '-0.5',
   },
-},
-{
-  key: 'menu',
-  id: 'ce4db',
 },
 {
   key: 'parallax',
@@ -56,6 +48,14 @@ const meta = [{
 {
   key: 'adonais',
   id: 'c57d0',
+},
+{
+  key: 'parallax',
+  id: 'c8cec',
+  props: {
+    'background-image': '/pages/index/img/code2.gif',
+    speedy: '0.5',
+  },
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const Comp = __components[key]
