@@ -140,7 +140,7 @@ The 3rd step, with GentiumBasic loading, actually consists of 2 steps, the itali
 
 <revision>
   <li>
-    <img float-right pl-2 src="./gif/thread.gif" alt="css unblocking thread animation"/>
+    <img placeholder-auto float-right pl-2 src="./gif/thread.gif" alt="css unblocking thread animation"/>
     The font's stylesheet is the first thing to be loaded by the browser, however parsing of HTML does not start before all styles completed their download (you can check that by enabling very slow network throttling &mdash; the parsing does not begin until all external CSS files are loaded). This is definitely an issue since we want to start rending the page immediately if we want it to be _performant_. This is why _google.com_ does not have any external stylesheets, and their styles are embedded onto the page. There's also a delay before the fonts start to download indicated by the semi-opaque purple rectangle. This is because even the stylesheet is received, the browser doesn't load the fonts until the layout (purple bar).<br><br>
   </li>
   - The first font, *LimeLight* arrives and triggers recalculate styles, layout, update layer tree, paint and composite layers jobs. The longest is layout and it takes 46ms for 450 nodes, but that would take longer for larger pages. Altogether, the page's is blocked during that time (for about 80ms), preventing the spinning loading indicator from going away.<br><br>

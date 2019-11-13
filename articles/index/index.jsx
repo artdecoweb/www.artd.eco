@@ -9,7 +9,7 @@ export default function Index({ splendid }) {
     {splendid.pages.filter(({ article }) => article).map((page) => {
       return (<div key={page.key}>
         <h2><a href={page.key}>{page.title}</a></h2>
-        {page.og.image && <splendid-img placeholder-auto d-block src={join('~/articles',page.og.image)} alt={page.title}/> }
+        {page.og.image && <splendid-img img-fluid placeholder-auto d-block src={join('~/articles',page.og.image)} alt={page.title}/> }
         {page.seo}
       </div>)
     })}

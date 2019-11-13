@@ -11,7 +11,7 @@ import BackTo from '../../../articles/components/back-to.js'
 import Highlightjs from 'splendid/build/components/highlightjs'
 import Parallax from 'splendid/build/components/parallax'
 import SocialButtons from 'splendid/build/components/social-buttons'
-import Tip from '../../components/tip.js'
+import Tip from '../../../articles/components/tip.js'
 
 const __components = {
   'animation': Animation,

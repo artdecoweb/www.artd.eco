@@ -5,9 +5,9 @@ In the beginning I only knew how to load up Lighthouse, and it showed me the "el
 I then tried to find out how to load _Google Font_ asynchronously, but there was literally just one method, as outlined on the _Alligator_ website I gave a link to above. I went on to explore, what adding the font really adds in terms of performance, and how to optimise it. All the experimenting that I've done helped me to build up the knowledge base of essentials of how a standard web pages load, and here are the main consideration points.
 
 <summary-details
-  style="background:linear-gradient(0, #f0f0ff, transparent);"
+  style="background:linear-gradient(0, #f0f0ff, white);"
   summary="External Stylesheets VS In-Page Styles">
-  <img float-left px-2 src="./gif/thread.gif" alt="css unblocking thread animation"/>
+  <img placeholder-auto float-left px-2 src="./gif/thread.gif" alt="css unblocking thread animation"/>
   Adding a stylesheet with a link will block the page from rendering, and parsing of HTML will only begin when all CSS are loaded. Same applies for JS, unless the `defer/async` attributes are set on them, but we've not looked into that here.
 
   Therefore, for landing pages on a website it would make sense to embed the CSS onto the page to achieve maximum performance, whereas for informational webpages it's still OK to share external CSS files.
@@ -16,10 +16,10 @@ I then tried to find out how to load _Google Font_ asynchronously, but there was
     <!-- * It's not only the actual downloading of CSS files that slows down the page, but also gaps that are introduced to the "parse html" step. -->
 
 <summary-details
-  style="background: linear-gradient(0, #fff0db, transparent);"
+  style="background: linear-gradient(0, #fff0db, white);"
   summary="Pre-Render Action"
 >
-  <img float-right pl-2 src="./gif/render.gif" alt="stylesheet before render animation" />
+  <img placeholder-auto float-right pl-2 src="./gif/render.gif" alt="stylesheet before render animation" />
   After the page is loaded, scripts defined in the head have some time to evaluate and download resources, before initial parsing and layout begin. For pages without external resources, this time is short, for pages with resources, it's longer.
 
   If we inject a stylesheet using JavaScript, it might have time to download prior to initial render, and will be injected into the page organically the first time. If it didn't have time to download, it will cause a reflow. To speed up loading resources from JS, we can add a preload hint to kick off the download immediately with high priority. However, I would recommend writing a separate script to inject the stylesheet, instead of hacking the `onload` attribute on the preload link
@@ -27,19 +27,19 @@ I then tried to find out how to load _Google Font_ asynchronously, but there was
 </summary-details>
 
 <summary-details
-  style="background: linear-gradient(0, #ffdcdc, transparent);"
+  style="background: linear-gradient(0, #ffdcdc, white);"
   summary="Initial Layout Block"
 >
-  <img pr-2 float-left src="./gif/stylesheet.gif" alt="stylesheet is blocked by render" />
+  <img placeholder-auto pr-2 float-left src="./gif/stylesheet.gif" alt="stylesheet is blocked by render" />
   Once the initial calculate styles/layout process begins, the main thread is blocked, and scripts that for example started to download resources with XHR, will have to wait until it's done. This can be verified by adding a script with a performance marker that should terminate in a short time, like 100ms, but in reality the measurement will be longer because the script's callback won't be fired until the thread is freed.
 </summary-details>
 
 
 <summary-details
-  style="background: linear-gradient(0, #eafff5, transparent);"
+  style="background: linear-gradient(0, #eafff5, white);"
   summary="Cost Of Reflows"
 >
-  <img pl-2 src="./gif/reflow.gif" alt="reflow animation" float-right />
+  <img placeholder-auto  pl-2 src="./gif/reflow.gif" alt="reflow animation" float-right />
   Embedding styles after the initial layout will impose a cost of recalculating layout and reflow. In case of web fonts, even if the fonts are not loaded, the reflow will still happen, and block the page, so that the load event is unnecessary delayed. If the style is injected before the initial render, there's no reflow.</p>
 
   To step up from sync loading to async loading of CSS, it's best to create a preload link, and define a script right under it that adds the style, instead of updating the _rel_ of the preload link to <strong>stylesheet</strong> to avoid a reflow (see pre-render action).

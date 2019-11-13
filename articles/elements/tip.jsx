@@ -1,6 +1,6 @@
 export default function Tip({ splendid, children }) {
   splendid.export({})
-  return (<bootstrap-div position-relative><p p-2 rounded border="1px dashed #decdb9" margin-left="2rem" margin-right="2rem" background="linear-gradient(45deg, transparent, #e3d6ce)">
+  return (<bootstrap-div position-relative><p p-2 rounded border="1px dashed #decdb9" margin-left="2rem" margin-right="2rem" background="linear-gradient(45deg, white, #e3d6ce)">
     <splendid-img placeholder-width="120" placeholder-height="42" alt="finger pointer" src="~/articles/avatar/pointer.svg"
       float="left" style="width:120px" mt-3 mr-3 />
     {children}

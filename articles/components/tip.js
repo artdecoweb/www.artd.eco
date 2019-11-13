@@ -18,7 +18,7 @@ export default class Tip {
       const tanθ = y / x
       const θ = Math.atan(tanθ)
       const deg = θ * 180 / Math.PI
-      p.style.background = `linear-gradient(${deg}deg, transparent, #e3d6ce)`
+      p.style.background = `linear-gradient(${deg}deg, white, #e3d6ce)`
       // console.log(ev.pageX, ev.pageY, x, y, deg)
     })
   }
