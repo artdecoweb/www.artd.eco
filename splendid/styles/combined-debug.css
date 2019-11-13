@@ -356,6 +356,9 @@ hr {
     float: left !important;
   }
 }
+.overflow-hidden {
+  overflow: hidden !important;
+}
 .position-relative {
   position: relative !important;
 }

@@ -131,11 +131,6 @@ alamode@^3.0.0, alamode@^3.2.0:
   resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.2.0.tgz#ee79dcf2483b5e28e9aac8cd0dfdc692aa333ca5"
   integrity sha512-jDV6kYpIf9jHJUre1OOotW8EM2Qy58S/eOks2MWhjNz2xJQdEfyzFKbcdaZowC8sk5DKxsnapf/mZNE53B3haQ==
 
-bootstrap@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
-  integrity sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag==
-
 catchment@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/catchment/-/catchment-3.3.0.tgz#e57eb70183d6a75ee71da0cb8ec2e76ac01317d2"
@@ -172,10 +167,9 @@ documentary@^1.34.1:
     preact "8.5.2"
     typal "^1.22.6"
 
-dropcss@^1.0.16:
+dropcss@zavr-1/dropcss#743bdc8:
   version "1.0.16"
-  resolved "https://registry.yarnpkg.com/dropcss/-/dropcss-1.0.16.tgz#d538dbc278832f17cc1e8a8dcb0090cac8509525"
-  integrity sha512-QgA6BUh2SoBYE/dSuMmeGhNdoGtGewt3Rn66xKyXoGNyjrKRXf163wuM+xeQ83p87l/3ALoB6Il1dgKyGS5pEw==
+  resolved "https://codeload.github.com/zavr-1/dropcss/tar.gz/743bdc8ea155682a8519a242735cc66ebd760f77"
 
 erotic@^2.1.0:
   version "2.1.1"
@@ -268,10 +262,10 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.12.14:
-  version "1.12.14"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.12.14.tgz#3fef0a4246cf2069c66abb02b51d1e94e4f5f43e"
-  integrity sha512-oNev9B2FA+bXJafvGjwubY5l0DE5+d0+TZr7hfn0FXOgSj8gE2xIg6OCIwifzjPhmQ5ovnIW7RKne2EK3mjeTg==
+splendid@^1.13.1:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.13.1.tgz#b18beddbaeb40c0a1f7271529e3946b4a9ea57c8"
+  integrity sha512-gg9yQNP7NAj7GzTyw5b4MIoYP7khqyCeyW/zOfqhexFa2Hsz9xgvjs45DjEgmof6LYVnIhCJgChXxTGxEjwp6g==
   dependencies:
     "@depack/depack" "^2.1.1"
     "@externs/preact" "^1.2.7"
@@ -283,8 +277,7 @@ splendid@^1.12.14:
     "@lemuria/load-scripts" "^1.2.0"
     "@lemuria/popup" "^1.1.1"
     alamode "^3.2.0"
-    bootstrap "^4.3.1"
-    dropcss "^1.0.16"
+    dropcss zavr-1/dropcss#743bdc8
     highlight.js "9.16.2"
     preact "8.5.2"
     prismjs "1.17.1"

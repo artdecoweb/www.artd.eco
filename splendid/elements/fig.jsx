@@ -19,7 +19,7 @@ export default function Fig({ id, reverse, src, alt, splendid, border, children,
 
   const colCl = reverse ? { 'order-2': true, 'order-lg-1': true } : { }
 
-  const col = (<column {...colCl} d-flex align-items-center justify-content-center flex-column id={id} mb-3 p-3 rounded className={c ? 'lg-6': undefined} position-relative overflow="hidden">
+  const col = (<column {...colCl} d-flex align-items-center justify-content-center flex-column id={id} mb-3 p-3 rounded className={c ? 'lg-6': undefined} position-relative overflow-hidden>
     <parallax speedy="-0.5" z-index="-1" background-image="/img/letters/background.png" />
     <p text-center>
       <splendid-img border {...b} rounded img-fluid src={src} alt={alt} placeholder-auto />

@@ -561,6 +561,9 @@ pre code {
     float: right !important;
   }
 }
+.overflow-hidden {
+  overflow: hidden !important;
+}
 .position-relative {
   position: relative !important;
 }
@@ -608,6 +611,12 @@ pre code {
 }
 .text-center {
   text-align: center !important;
+}
+.text-info {
+  color: #17a2b8 !important;
+}
+a.text-info:hover, a.text-info:focus {
+  color: #0f6674 !important;
 }
 @media print {
   * {
