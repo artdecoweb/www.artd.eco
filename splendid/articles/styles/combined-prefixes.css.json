@@ -1,0 +1,44 @@
+{
+  "display": [
+    "flex"
+  ],
+  "flex-basis": [
+    "0"
+  ],
+  "box-sizing": [
+    "border-box"
+  ],
+  "flex-wrap": [
+    "wrap"
+  ],
+  "transition": [
+    "none"
+  ],
+  "flex-grow": [
+    "1"
+  ],
+  "border-radius": [
+    "1rem"
+  ],
+  "box-shadow": [
+    "none"
+  ],
+  "flex-direction": [
+    "column"
+  ],
+  "flex": [
+    "0 0 25%"
+  ],
+  "animation-fill-mode": [
+    "forwards"
+  ],
+  "justify-content": [
+    "center"
+  ],
+  "align-items": [
+    "center"
+  ],
+  "order": [
+    "1"
+  ]
+}

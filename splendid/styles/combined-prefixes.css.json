@@ -1,0 +1,56 @@
+{
+  "align-self": [
+    "center"
+  ],
+  "background-size": [
+    "30px"
+  ],
+  "display": [
+    "flex"
+  ],
+  "flex-basis": [
+    "0"
+  ],
+  "box-sizing": [
+    "border-box"
+  ],
+  "flex-wrap": [
+    "wrap"
+  ],
+  "flex-grow": [
+    "1"
+  ],
+  "animation": [
+    "fadeIn .5s"
+  ],
+  "border-radius": [
+    "2rem"
+  ],
+  "box-shadow": [
+    "none"
+  ],
+  "transform": [
+    "scaleX(-1)"
+  ],
+  "flex-direction": [
+    "column"
+  ],
+  "flex": [
+    "0 0 25%"
+  ],
+  "animation-fill-mode": [
+    "forwards"
+  ],
+  "justify-content": [
+    "center"
+  ],
+  "align-items": [
+    "center"
+  ],
+  "hyphens": [
+    "auto"
+  ],
+  "order": [
+    "1"
+  ]
+}

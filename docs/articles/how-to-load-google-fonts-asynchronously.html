@@ -10,6 +10,8 @@
     <meta
       content="Using performance measurements, we examine page loading process in detail to find out how to embed web font stylesheet asynchronously to avoid blocks." name="description">
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
+    <script>(function(d,g){var b=Object.keys(d),a=!0;"CSS"in window&&"supports"in CSS?(b=b.reduce(function(e,c){d[c].forEach(function(f){CSS.supports(c,f)||e.push(c+": "+f)});return e},[]),b.length?(a=!1,console.log("\ud83d\udcbe Browser does not support CSS properties: %s",b.join("\n "))):console.log("\ud83d\udcbd Browser supports all modern CSS properties.")):(a=!1,console.log("\ud83d\udce0 Browser does not support CSS checks."));a||(a=document.createElement("link"),a.rel="stylesheet",a.href=
+g,document.head.appendChild(a))})({"display":["flex"],"flex-basis":["0"],"box-sizing":["border-box"],"flex-wrap":["wrap"],"transition":["none"],"flex-grow":["1"],"border-radius":["1rem"],"box-shadow":["none"],"flex-direction":["column"],"flex":["0 0 25%"],"animation-fill-mode":["forwards"],"justify-content":["center"],"align-items":["center"],"order":["1"]}, 'styles/combined-prefixes.css')</script>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
     <link
@@ -59,7 +61,7 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
       details[open] summary pre {
           display: none;
         }
-      .Revision.Blue{background:#e1f7ff}.Revision.Reverse{-webkit-transform:rotate3d(0,0,1,1deg);-ms-transform:rotate3d(0,0,1,1deg);-o-transform:rotate3d(0,0,1,1deg);transform:rotate3d(0,0,1,1deg)}.Revision{background:#faf5ce;padding-top:1rem;padding-bottom:.5rem;position:relative;-webkit-transform:rotate3d(0,0,1,-1deg);-ms-transform:rotate3d(0,0,1,-1deg);-o-transform:rotate3d(0,0,1,-1deg);transform:rotate3d(0,0,1,-1deg);-webkit-transition:all 100ms;-o-transition:all 100ms;transition:all 100ms}.Revision:hover{-webkit-transform:none!important;-ms-transform:none!important;-o-transform:none!important;transform:none!important}.Revision ol{list-style:none;counter-reset:my-awesome-counter;padding-right:2.3rem;padding-left:1.5rem;-webkit-background-size:100% 1.5rem;-o-background-size:100% 1.5rem;background-size:100% 1.5rem;margin-bottom:0;padding-bottom:1px}.Revision ol li{counter-increment:my-awesome-counter}.Revision ol li::before{content:"0" counter(my-awesome-counter);font-weight:bold;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;padding:.2rem;margin-right:.2rem;color:#dc3545;font-family:cursive}
+      .Revision.Blue{background:#e1f7ff}.Revision.Reverse{transform:rotate3d(0,0,1,1deg);-webkit-transform:rotate3d(0,0,1,1deg);-ms-transform:rotate3d(0,0,1,1deg);-o-transform:rotate3d(0,0,1,1deg)}.Revision{background:#faf5ce;padding-top:1rem;padding-bottom:.5rem;position:relative;transform:rotate3d(0,0,1,-1deg);-webkit-transform:rotate3d(0,0,1,-1deg);-ms-transform:rotate3d(0,0,1,-1deg);-o-transform:rotate3d(0,0,1,-1deg);transition:all 100ms;-webkit-transition:all 100ms;-o-transition:all 100ms}.Revision:hover{transform:none!important;-webkit-transform:none!important;-ms-transform:none!important;-o-transform:none!important}ol{list-style:none;counter-reset:my-awesome-counter;padding-right:2.3rem;padding-left:1.5rem;background-size:100% 1.5rem;-webkit-background-size:100% 1.5rem;-o-background-size:100% 1.5rem;margin-bottom:0;padding-bottom:1px}ol li{counter-increment:my-awesome-counter}ol li::before{content:"0" counter(my-awesome-counter);font-weight:bold;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;padding:.2rem;margin-right:.2rem;color:#dc3545;font-family:cursive}
       @media (min-width: 1200px) {
         #Ball { margin-top: -2rem }
       }
@@ -71,6 +73,7 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
           }
     </style>
     <noscript>
+      <link rel="stylesheet" href="styles/combined-prefixes.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight">
     </noscript>
     <script defer src="/js/polyfill/intersection-observer.js"></script>
@@ -1108,7 +1111,7 @@ h;a.style.webkitTransform=h})};}).call(this);
             <span class="a"><em>ÀLaMode</em></span><span class="b">3.2.0</span></a>
           <a
             title="Static Web Site Compiler That Uses Closure Compiler For JS Bundling And Closure Stylesheets For CSS optimisations. Supports JSX Syntax To Write Static Elements And Dynamic Preact Components." class="NPMBadge" href="https://npmjs.com/package/splendid">
-            <span class="a"><em>Splendid</em></span><span class="b">1.13.1</span></a>
+            <span class="a"><em>Splendid</em></span><span class="b">1.14.3</span></a>
         </div>
         <div class="b-S">
           <a href="https://twitter.com/artdecocode">twitter</a><br>
