@@ -498,6 +498,8 @@ h2, h3, h4 {
 .Feature h2 {
   border-radius: 2rem;
   hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 .Sky div {
   left: 0;

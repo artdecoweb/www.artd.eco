@@ -2,23 +2,26 @@
   "align-self": [
     "center"
   ],
+  "flex-grow|-ms-flex-positive": [
+    "1"
+  ],
+  "flex|-ms-flex": [
+    "0 0 25%"
+  ],
   "background-size": [
     "30px"
   ],
   "display": [
-    "flex"
-  ],
-  "flex-basis": [
-    "0"
+    "flex|-ms-flexbox"
   ],
   "box-sizing": [
     "border-box"
   ],
-  "flex-wrap": [
-    "wrap"
-  ],
-  "flex-grow": [
+  "order|-ms-flex-order": [
     "1"
+  ],
+  "flex-direction|-ms-flex-direction": [
+    "column"
   ],
   "animation": [
     "fadeIn .5s"
@@ -32,25 +35,22 @@
   "transform": [
     "scaleX(-1)"
   ],
-  "flex-direction": [
-    "column"
-  ],
-  "flex": [
-    "0 0 25%"
+  "flex-basis|-ms-flex-preferred-size": [
+    "0"
   ],
   "animation-fill-mode": [
     "forwards"
   ],
+  "hyphens|-webkit-hyphens|-ms-hyphens": [
+    "auto"
+  ],
   "justify-content": [
     "center"
   ],
+  "flex-wrap|-ms-flex-wrap": [
+    "wrap"
+  ],
   "align-items": [
     "center"
-  ],
-  "hyphens": [
-    "auto"
-  ],
-  "order": [
-    "1"
   ]
 }

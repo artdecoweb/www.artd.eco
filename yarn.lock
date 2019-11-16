@@ -25,24 +25,6 @@
   resolved "https://registry.yarnpkg.com/@artdeco/snapsvg-animator/-/snapsvg-animator-0.3.0.tgz#4217f0546ace3d60000c8f8f6cc5313af1cef95a"
   integrity sha512-n9+4jrr0pUAmlPz6Vb3a9px9AtiIOV1YzjFYmJOEJfKXHa2IZ4efHz5vIgiIUwUHn/22sAD42oVL1NupySoDTg==
 
-"@depack/depack@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@depack/depack/-/depack-2.1.1.tgz#a32854b3b7680ec60ab7c1b0e4ff40457f77fb04"
-  integrity sha512-ZP2NSqxxcISLHHt3DusNfQrAkDb04WTzxDbkB3n1ozHrzgo+NCPvWELU8yIpQZ6OiVYoqlVD9z56qUFx0lpXYQ==
-  dependencies:
-    "@depack/externs" "^1.4.4"
-    "@depack/nodejs" "^1.1.4"
-
-"@depack/externs@^1.4.4":
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/@depack/externs/-/externs-1.4.4.tgz#d75493858dd590421931b67395800d57cf0ae063"
-  integrity sha512-+xYILsIcH+k8QiBMKUVPpa6wwwsXMgL8nQaqpeQoBu9yXG0o4nVszDU07PMxw0N/q/3lb2NeJo/Uesj/eWkPvA==
-
-"@depack/nodejs@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@depack/nodejs/-/nodejs-1.1.4.tgz#36195f33fef7a6b9b1f93a043a52a87fac087729"
-  integrity sha512-vtmNtylOPNjFkQHOgC1M8Ru9c211FgtD3sG3KGS9dvlcHDUAiNoJ52gVwOep5Tkp0I4qmwPx3oyTV6OwKchmlg==
-
 "@depack/split@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@depack/split/-/split-1.0.0.tgz#37fea28d9bc6f01e5a2da87d393f402781bb7e99"
@@ -81,11 +63,6 @@
   integrity sha512-zziQTJW5UMgXS3RELr5D6VKLRMDWJ2z4wmoXhBmA7g8XJC1C2+yjv3/XjbFMaQVD4djPvuTk7/EiMfFLaTH7tA==
   dependencies:
     erte "1.1.6"
-
-"@lemuria/control-style@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@lemuria/control-style/-/control-style-1.0.0.tgz#33adb273df0b0151bef4603943ad53cd1b77194c"
-  integrity sha512-S0TOt0gdHKy1OXMtOShp4C3ElZupvEiySpPRBES40JjHMGCl/tORBLqh5Fli81u6elfulhUxjPwuPl35ax2tEg==
 
 "@lemuria/font@^1.0.4":
   version "1.0.4"
@@ -228,6 +205,11 @@ preact@8.5.2:
   resolved "https://registry.yarnpkg.com/preact/-/preact-8.5.2.tgz#2f532da485287c07369e08150cf4d23921a09789"
   integrity sha512-37tlDJGq5IQKqGUbqPZ7qPtsTOWFyxe+ojAOFfzKo0dEPreenqrqgJuS83zGpeGAqD9h9L9Yr7QuxH2W4ZrKxg==
 
+preact@8.5.3:
+  version "8.5.3"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-8.5.3.tgz#78c2a5562fcecb1fed1d0055fa4ac1e27bde17c1"
+  integrity sha512-O3kKP+1YdgqHOFsZF2a9JVdtqD+RPzCQc3rP+Ualf7V6rmRDchZ9MJbiGTT7LuyqFKZqlHSOyO/oMFmI2lVTsw==
+
 prismjs@1.17.1:
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.17.1.tgz#e669fcbd4cdd873c35102881c33b14d0d68519be"
@@ -262,24 +244,22 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.14.3:
-  version "1.14.3"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.14.3.tgz#8275db12c5ad3dc2bf41e02628431f61da88b63b"
-  integrity sha512-RK5YdtO+374bEdyePdystVk14Nt1DYAcRfGIsBwK+PZyvUZyA7L2KXP2HLgkbvgHYDsYogKKcoo2TDfVY2Y/8A==
+splendid@^1.14.7:
+  version "1.14.7"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.14.7.tgz#8bcf1d2898eea830942e526dfc5e08fc16d8ad9b"
+  integrity sha512-kw8MFNVANaisRdU/zB0TAY0gXpI6HulCtLBUP1bYN0hYwlnK6F+Mq9XrdSBbSO7RHuMJVCuu3whDMPXuYcatbw==
   dependencies:
-    "@depack/depack" "^2.1.1"
     "@externs/preact" "^1.2.7"
     "@idio/frontend" "^1.6.0"
     "@idio/idio" "^0.1.0"
     "@idio/websocket" "^1.0.0"
-    "@lemuria/control-style" "^1.0.0"
     "@lemuria/font" "^1.0.4"
     "@lemuria/load-scripts" "^1.2.0"
     "@lemuria/popup" "^1.1.1"
     alamode "^3.2.0"
     dropcss zavr-1/dropcss#743bdc8
     highlight.js "9.16.2"
-    preact "8.5.2"
+    preact "8.5.3"
     prismjs "1.17.1"
 
 tiny-emitter@^2.0.0:
