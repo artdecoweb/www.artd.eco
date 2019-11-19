@@ -10,7 +10,7 @@
       content="Including google fonts on a page and referencing them in CSS could still result in a FOUT. By preloading fonts, we can show branded text immediately." name="description">
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
     <script>(function(h,r){var a=Object.keys(h),c=!0;"CSS"in window&&"supports"in CSS?(a=a.reduce(function(k,b){var l=h[b];b=b.split("|");for(var m=!1,d={},f=0;f<b.length;d={a:d.a},f++)if(d.a=b[f],l.map(function(n){return function(e){e=e.split("|");for(var p=!1,g=0;g<e.length;g++){var q=e[g];if(CSS.supports(n.a,q)){p=!0;break}else k.push(n.a+": "+q)}return p}}(d)).filter(Boolean).length==l.length){m=!0;break}m||(c=!1);return k},[]),a.length?c&&console.log("\ud83d\udcbf Browser does not support CSS properties: %s",
-a.join("\n "),"but supports alternatives."):console.log("\ud83d\udcbd Browser supports all modern CSS properties.")):(c=!1,console.log("\ud83d\udce0 Browser does not support CSS checks."));c||(a=document.createElement("link"),a.rel="stylesheet",a.href=r,document.head.appendChild(a))})({"flex-grow|-ms-flex-positive":["1"],"flex|-ms-flex":["0 0 25%"],"display":["flex|-ms-flexbox"],"box-sizing":["border-box"],"order|-ms-flex-order":["1"],"transition":["none"],"flex-direction|-ms-flex-direction":["column"],"border-radius":["1rem"],"box-shadow":["none"],"flex-basis|-ms-flex-preferred-size":["0"],"animation-fill-mode":["forwards"],"justify-content":["center"],"flex-wrap|-ms-flex-wrap":["wrap"],"align-items":["center"]}, 'styles/combined-prefixes.css')</script>
+a.join("\n "),"but supports alternatives."):console.log("\ud83d\udcbd Browser supports all modern CSS properties.")):(c=!1,console.log("\ud83d\udce0 Browser does not support CSS checks."));c||(a=document.createElement("link"),a.rel="stylesheet",a.href=r,document.head.appendChild(a))})({"flex-grow|-ms-flex-positive":["1"],"flex|-ms-flex":["none"],"background-size":["contain"],"display":["flex|-ms-flexbox"],"box-sizing":["border-box"],"order|-ms-flex-order":["1"],"transition":["none"],"flex-direction|-ms-flex-direction":["column"],"border-radius":["5px"],"box-shadow":["none"],"flex-shrink":["1"],"flex-basis|-ms-flex-preferred-size":["0"],"animation-fill-mode":["forwards"],"justify-content":["center"],"flex-wrap|-ms-flex-wrap":["wrap"],"align-items":["center"]}, 'styles/combined-prefixes.css')</script>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
     <link
@@ -180,7 +180,7 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
   <div class="b-B">
     <div id="fig-data-url"
       class="b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f3"></div>
+      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
       <div style="z-index: -1;" class="Parallax"></div>
       <noscript>
         <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -246,123 +246,111 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
   if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&amp;&amp;Symbol.iterator&amp;&amp;c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);
 &lt;/script&gt;</code></pre>
 
-</div></div></div>
-<div class="b-z b-tp">
-  <div class="b-B">
-    <div
-      class="b-yb b-Yb b-Bd b-Mk b-gm b-bm b-Ol">
-      <p>
-        And that's how I got my page opening with the font already present. Unlike in the usual <span class="tm">＜style＞</span> approach with a base64-encoded font in it, here the text is drawn immediately using the font face that I specified, as it was loaded before the initial render. Compare how <a href="#fig-data-url">previously</a>, the font started do download (grey bar) only during the recalculate styles stage, whereas now, it loads as soon as HTML starts parsing. However, it's still not as great as a style preload, which begins even before parsing. There's no way to set a different attribute on the link, like <span class="tm">fetch</span>, load it with XHR and then embed onto the page, because that would lead to another download. But to be honest, I cheated a little bit in this last case, did you notice how? I included an external stylesheet, my <span class="tm">combined.css</span> which slowed down the first render, giving the <span class="tm">data:</span> url a chance to load.
-      </p>
-    </div>
-    <div id="fig-9848"
-      class="lg-6 b-D b-Zb b-Ad b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
-      <div style="z-index: -1;" class="Parallax"></div>
+<div class="b-tp b-B">
+  <div
+    class="b-yb b-Yb b-Bd b-Mk b-gm b-bm b-Ol">
+    <p>
+      And that's how I got my page opening with the font already present. Unlike in the usual <span class="tm">＜style＞</span> approach with a base64-encoded font in it, here the text is drawn immediately using the font face that I specified, as it was loaded before the initial render. Compare how <a href="#fig-data-url">previously</a>, the font started do download (grey bar) only during the recalculate styles stage, whereas now, it loads as soon as HTML starts parsing. However, it's still not as great as a style preload, which begins even before parsing. There's no way to set a different attribute on the link, like <span class="tm">fetch</span>, load it with XHR and then embed onto the page, because that would lead to another download. But to be honest, I cheated a little bit in this last case, did you notice how? I included an external stylesheet, my <span class="tm">combined.css</span> which slowed down the first render, giving the <span class="tm">data:</span> url a chance to load.
+    </p>
+  </div>
+  <div id="fig-9848"
+    class="b-yb b-Zb b-Ad b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
+    <div class=" Parallax" data-loading style="z-index: -1;" id="c709f3"></div>
+    <div style="z-index: -1;" class="Parallax"></div>
+    <noscript>
+      <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
+    </noscript>
+    <p class="b-kC">
+      <img alt="Achieving critical path font without FOUT/FOIT."
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="b-bk b-vk b-t"
+        data-src="embed-web-fonts/graphics/dev14.gif">
       <noscript>
-        <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
+        <img alt="Achieving critical path font without FOUT/FOIT." class="b-bk b-vk b-t"
+          src="embed-web-fonts/graphics/dev14.gif">
       </noscript>
-      <p class="b-kC">
-        <img alt="Achieving critical path font without FOUT/FOIT."
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="b-bk b-vk b-t"
-          data-src="embed-web-fonts/graphics/dev14.gif">
-        <noscript>
-          <img alt="Achieving critical path font without FOUT/FOIT." class="b-bk b-vk b-t"
-            src="embed-web-fonts/graphics/dev14.gif">
-        </noscript>
-      </p>
-      <h5 id="figure-2-achieving-critical-path-font-without-foutfoit" class="b-Xp b-Hk"
-        style="background: white;">
-        Figure 2: Achieving critical path font without FOUT/FOIT.
-      </h5>
-    </div>
+    </p>
+    <h5 id="figure-2-achieving-critical-path-font-without-foutfoit" class="b-Xp b-Hk"
+      style="background: white;">
+      Figure 2: Achieving critical path font without FOUT/FOIT.
+    </h5>
   </div>
   <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="ce513">
     <a class="b-Af b-Lf" href="#">Go Back</a>
   </div>
 </div>
-<div class="b-z"><div class="b-B"><div class="b-D">
 
 <p>
   [i] <em>The performance timing shows that the preload event fired before the layout, but although it's duration is set to 100ms in code, it took 276ms to complete, which proves that the thread was blocked.</em>
 </p>
 
 
-</div></div></div>
-<div class="b-z b-tp">
-  <div class="b-B">
-    <div class="b-yb b-Mk b-gm b-bm b-Ol">
-      <p>
-        If I embed the <span class="tm">combined.css</span> stylesheet and eliminate this render-blocking resource, I'll loose the gained advantage. On a fast page, the font in the preload link completes its loading process only when the layout began, and the main thread is blocked. We have to wait for the thread to clear after which the <span class="tm">onload</span> event will fire.
-      </p>
-    </div>
-    <div id="fig-74268"
-      class="lg-6 b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
-      <div style="z-index: -1;" class="Parallax"></div>
+<div class="b-tp b-B">
+  <div class="b-yb b-Mk b-gm b-bm b-Ol">
+    <p>
+      If I embed the <span class="tm">combined.css</span> stylesheet and eliminate this render-blocking resource, I'll loose the gained advantage. On a fast page, the font in the preload link completes its loading process only when the layout began, and the main thread is blocked. We have to wait for the thread to clear after which the <span class="tm">onload</span> event will fire.
+    </p>
+  </div>
+  <div id="fig-74268"
+    class="b-yb b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
+    <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
+    <div style="z-index: -1;" class="Parallax"></div>
+    <noscript>
+      <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
+    </noscript>
+    <p class="b-kC">
+      <img alt="Waiting for onload event to fire on preload link."
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="b-bk b-vk b-t"
+        data-src="embed-web-fonts/graphics/dev15.gif">
       <noscript>
-        <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
+        <img alt="Waiting for onload event to fire on preload link." class="b-bk b-vk b-t"
+          src="embed-web-fonts/graphics/dev15.gif">
       </noscript>
-      <p class="b-kC">
-        <img alt="Waiting for onload event to fire on preload link."
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="b-bk b-vk b-t"
-          data-src="embed-web-fonts/graphics/dev15.gif">
-        <noscript>
-          <img alt="Waiting for onload event to fire on preload link." class="b-bk b-vk b-t"
-            src="embed-web-fonts/graphics/dev15.gif">
-        </noscript>
-      </p>
-      <h5 id="figure-3-waiting-for-onload-event-to-fire-on-preload-link" class="b-Xp b-Hk"
-        style="background: white;">
-        Figure 3: Waiting for onload event to fire on preload link.
-      </h5>
-    </div>
+    </p>
+    <h5 id="figure-3-waiting-for-onload-event-to-fire-on-preload-link" class="b-Xp b-Hk"
+      style="background: white;">
+      Figure 3: Waiting for onload event to fire on preload link.
+    </h5>
   </div>
   <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="c6965">
     <a class="b-Af b-Lf" href="#">Go Back</a>
   </div>
 </div>
-<div class="b-z"><div class="b-B"><div class="b-D">
 
 <p>
   Waiting for <span class="tm">onload</span> cancels out the benefit of preloading the font. So what do we do? I thought of splitting the font into 3 preload links, and loading them in parallel, however that seems too complicated, and also too relies on the the JS event which is inefficient since there's always a risk of running into the main thread block. What worked was not using the <span class="tm">onload</span> at all, and repeating font's data-url string both in the stylesheet and in the preload link. If the font is only 2kb, I don't mind making it 4kb for superb user experience that could land me a client.
 </p>
 
-</div></div></div>
-<div class="b-z b-tp">
-  <div class="b-B">
-    <div class="b-yb b-Mk b-gm b-bm b-Ol">
-      <p>
-        Chrome will actually complain in the console that the preloaded font was not used, but don't trust him, because it's clearly seen from this graph that the data:application download kicked in much faster than when there was no preload link.
-      </p>
-    </div>
-    <div id="fig-80"
-      class="lg-6 b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
-      <div style="z-index: -1;" class="Parallax"></div>
+<div class="b-tp b-B">
+  <div class="b-yb b-Mk b-gm b-bm b-Ol">
+    <p>
+      Chrome will actually complain in the console that the preloaded font was not used, but don't trust him, because it's clearly seen from this graph that the data:application download kicked in much faster than when there was no preload link.
+    </p>
+  </div>
+  <div id="fig-80"
+    class="b-yb b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
+    <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
+    <div style="z-index: -1;" class="Parallax"></div>
+    <noscript>
+      <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
+    </noscript>
+    <p class="b-kC">
+      <img alt="Preloading data-url font used in stylesheet leads to the most robust optimisation."
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="b-bk b-vk b-t"
+        data-src="embed-web-fonts/graphics/dev16.gif">
       <noscript>
-        <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-      </noscript>
-      <p class="b-kC">
         <img alt="Preloading data-url font used in stylesheet leads to the most robust optimisation."
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="b-bk b-vk b-t"
-          data-src="embed-web-fonts/graphics/dev16.gif">
-        <noscript>
-          <img alt="Preloading data-url font used in stylesheet leads to the most robust optimisation."
-            class="b-bk b-vk b-t" src="embed-web-fonts/graphics/dev16.gif">
-        </noscript>
-      </p>
-      <h5 id="figure-4-preloading-data-url-font-used-in-stylesheet-leads-to-the-most-robust-optimisation"
-        class="b-Xp b-Hk" style="background: white;">
-        Figure 4: Preloading data-url font used in stylesheet leads to the most robust optimisation.
-      </h5>
-    </div>
+          class="b-bk b-vk b-t" src="embed-web-fonts/graphics/dev16.gif">
+      </noscript>
+    </p>
+    <h5 id="figure-4-preloading-data-url-font-used-in-stylesheet-leads-to-the-most-robust-optimisation"
+      class="b-Xp b-Hk" style="background: white;">
+      Figure 4: Preloading data-url font used in stylesheet leads to the most robust optimisation.
+    </h5>
   </div>
   <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="c8e80">
     <a class="b-Af b-Lf" href="#">Go Back</a>
   </div>
 </div>
-<div class="b-z"><div class="b-B"><div class="b-D">
 
 
 
@@ -405,7 +393,7 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
             <span class="a"><em>ÀLaMode</em></span><span class="b">3.2.0</span></a>
           <a
             title="Static Web Site Compiler That Uses Closure Compiler For JS Bundling And Closure Stylesheets For CSS optimisations. Supports JSX Syntax To Write Static Elements And Dynamic Preact Components." class="NPMBadge" href="https://npmjs.com/package/splendid">
-            <span class="a"><em>Splendid</em></span><span class="b">1.14.7</span></a>
+            <span class="a"><em>Splendid</em></span><span class="b">1.14.8</span></a>
         </div>
         <div class="b-S">
           <a href="https://twitter.com/artdecocode">twitter</a><br>

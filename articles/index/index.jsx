@@ -7,10 +7,12 @@ import { join } from 'path'
 export default function Index({ splendid }) {
   return (<div>
     {splendid.pages.filter(({ article }) => article).map((page) => {
-      return (<div key={page.key}>
-        <h2><a href={page.key}>{page.title}</a></h2>
-        {page.og.image && <splendid-img img-fluid placeholder-auto d-block src={join('~/articles',page.og.image)} alt={page.title}/> }
-        {page.seo}
+      const { og = {}, key, title, seo } = page
+      return (<div key={key}>
+        <h2><a href={key}>{title}</a></h2>
+        {og.image && (<splendid-img img-fluid placeholder-auto d-block
+          src={join('~/articles',og.image)} alt={title}/>) }
+        {seo}
       </div>)
     })}
   </div>)

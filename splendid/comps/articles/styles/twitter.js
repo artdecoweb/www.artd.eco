@@ -1,0 +1,1 @@
+export default {"tweet":"a","Tweet":"b","header":"c","body":"d","avatar":"e","TweetAuthor":"f","screenName":"g","decoratedName":"h","name":"i","nameScreenNameContainer":"j","verifiedBadge":"k","IconVerified":"l","IconHeart":"m","IconTwitter":"n","Icon":"o","brand":"p","TweetInfo":"q","TweetInfoHeart":"r","TweetInfoHeartStat":"s","TweetInfoTimeGeo":"t"}

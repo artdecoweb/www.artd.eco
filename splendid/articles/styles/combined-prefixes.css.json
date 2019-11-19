@@ -3,7 +3,10 @@
     "1"
   ],
   "flex|-ms-flex": [
-    "0 0 25%"
+    "none"
+  ],
+  "background-size": [
+    "contain"
   ],
   "display": [
     "flex|-ms-flexbox"
@@ -21,10 +24,13 @@
     "column"
   ],
   "border-radius": [
-    "1rem"
+    "5px"
   ],
   "box-shadow": [
     "none"
+  ],
+  "flex-shrink": [
+    "1"
   ],
   "flex-basis|-ms-flex-preferred-size": [
     "0"

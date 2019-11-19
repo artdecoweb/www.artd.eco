@@ -22,7 +22,7 @@ const config = {
   components: ['components', '../articles/components'],
   url: 'https://www.artd.eco',
   blocks: ['blocks', '../articles/blocks'],
-  ajax: false,
+  // ajax: false,
   prefixes: ['-webkit-hyphens', '-ms-hyphens'],
 }
 

@@ -11,7 +11,7 @@
       content="An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows." name="description">
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
     <script>(function(h,r){var a=Object.keys(h),c=!0;"CSS"in window&&"supports"in CSS?(a=a.reduce(function(k,b){var l=h[b];b=b.split("|");for(var m=!1,d={},f=0;f<b.length;d={a:d.a},f++)if(d.a=b[f],l.map(function(n){return function(e){e=e.split("|");for(var p=!1,g=0;g<e.length;g++){var q=e[g];if(CSS.supports(n.a,q)){p=!0;break}else k.push(n.a+": "+q)}return p}}(d)).filter(Boolean).length==l.length){m=!0;break}m||(c=!1);return k},[]),a.length?c&&console.log("\ud83d\udcbf Browser does not support CSS properties: %s",
-a.join("\n "),"but supports alternatives."):console.log("\ud83d\udcbd Browser supports all modern CSS properties.")):(c=!1,console.log("\ud83d\udce0 Browser does not support CSS checks."));c||(a=document.createElement("link"),a.rel="stylesheet",a.href=r,document.head.appendChild(a))})({"flex-grow|-ms-flex-positive":["1"],"flex|-ms-flex":["0 0 25%"],"display":["flex|-ms-flexbox"],"box-sizing":["border-box"],"order|-ms-flex-order":["1"],"transition":["none"],"flex-direction|-ms-flex-direction":["column"],"border-radius":["1rem"],"box-shadow":["none"],"flex-basis|-ms-flex-preferred-size":["0"],"animation-fill-mode":["forwards"],"justify-content":["center"],"flex-wrap|-ms-flex-wrap":["wrap"],"align-items":["center"]}, 'styles/combined-prefixes.css')</script>
+a.join("\n "),"but supports alternatives."):console.log("\ud83d\udcbd Browser supports all modern CSS properties.")):(c=!1,console.log("\ud83d\udce0 Browser does not support CSS checks."));c||(a=document.createElement("link"),a.rel="stylesheet",a.href=r,document.head.appendChild(a))})({"flex-grow|-ms-flex-positive":["1"],"flex|-ms-flex":["none"],"background-size":["contain"],"display":["flex|-ms-flexbox"],"box-sizing":["border-box"],"order|-ms-flex-order":["1"],"transition":["none"],"flex-direction|-ms-flex-direction":["column"],"border-radius":["5px"],"box-shadow":["none"],"flex-shrink":["1"],"flex-basis|-ms-flex-preferred-size":["0"],"animation-fill-mode":["forwards"],"justify-content":["center"],"flex-wrap|-ms-flex-wrap":["wrap"],"align-items":["center"]}, 'styles/combined-prefixes.css')</script>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
     <link
@@ -148,7 +148,7 @@ h;a.style.webkitTransform=h})};}).call(this);
 
 <div class="b-B">
   <div
-    class="b-ib b-Yb b-ad b-Mk b-gm b-cm b-Ol">
+    class="b-ib b-Yb B-ad b-Mk b-gm b-cm b-Ol">
     <div>
       <p>
         The main idea behind the <em>Advanced Google Font</em> strategy is to handle loading of fonts programmatically. By taking control over assets loading process, we'll be able to inject all fonts at once in a so-called <em>fonts flush</em>, thus reducing the number of reflows to just one.
@@ -233,7 +233,7 @@ function fetchStylesheet(address, cb, marker = '') {
 
 <div class="b-B">
   <div
-    class="b-ib b-Yb b-ad b-Mk b-gm b-cm b-Ol">
+    class="b-ib b-Yb B-ad b-Mk b-gm b-cm b-Ol">
     <div>
       <p>
         Our stylesheet parsing function uses a regex to extract URLs with unicode ranges of fonts, and creates an array like <span class="tm">[{ font: 'https://woff2', range: /[regex]/ }]</span> for each font it found in the stylesheet.
@@ -269,7 +269,7 @@ function fetchStylesheet(address, cb, marker = '') {
 
 <div class="b-B" id="two-scenarios">
   <div
-    class="b-ib b-Yb b-ad b-Mk b-gm b-cm b-Ol">
+    class="b-ib b-Yb B-ad b-Mk b-gm b-cm b-Ol">
     <div>
       <p>
         There are 2 scenarios when we'll get the stylesheet ready:
@@ -420,8 +420,8 @@ startPreload({ href: FONT }, 'js')</code></pre>
 <div class="b-A b-tp">
   <div class="b-B">
     <div id="fig-advanced-loading"
-      class="lg-6 b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
+      class="b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
+      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
       <div style="z-index: -1;" class="Parallax"></div>
       <noscript>
         <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -467,8 +467,8 @@ startPreload({ href: FONT }, 'js')</code></pre>
 <div class="b-A b-tp">
   <div class="b-B">
     <div id="fig-before-body"
-      class="lg-6 b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
+      class="b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
+      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
       <div style="z-index: -1;" class="Parallax"></div>
       <noscript>
         <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
@@ -530,45 +530,41 @@ startPreload({ href: FONT }, 'js')</code></pre>
 
 <h3 id="non-blocking" class="b-Xk">Non-Blocking Proof</h3>
 
-</div></div></div>
-<div class="b-z b-tp">
-  <div class="b-B">
-    <div class="b-yb b-Mk b-gm b-bm b-Ol">
-      <h3 id="non-blocking-proof" class="b-Fk b-al">Non-Blocking Proof</h3>
-        <p>
-          From looking at the previous graph, for a scary moment I thought that I might be giving wrong advice when saying to append a <span class="tm">link</span> tag dynamically into the head, and it will actually block the page from rendering. This is because on the previous <a data-smooth href="#fig-before-body">Fig 2</a> (don't be afraid to click, we have a user-friendly scroll with a back button), there are some gaps in the timeline after the web font stylesheet is inserted, but before the external CSS is parsed, that could indicate that the page was render-blocked.
-        </p>
-        <p>
-          However, it's not the case as shown <span id="Above">below</span><span id="OnLeft">on the left</span>: the parse HTML goes in parallel with stylesheet loading. My interpretation of those gaps in past is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., on <a data-smooth href="#fig-before-body">Fig 2</a>, XHR is completed quicker compared to the <a data-smooth href="#fig-advanced-loading">Fig 1</a>, where it had to wait for the main thread to unblock since there were no gaps).
-        </p>
-    </div>
-    <div id="fig-9848"
-      class="lg-6 b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
-      <div style="z-index: -1;" class="Parallax"></div>
-      <noscript>
-        <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-      </noscript>
-      <p class="b-kC">
-        <img alt="Dynamic insertion of a link with JS does not block page render."
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='639' height='486'/%3E" data-io class="b-bk b-vk b-t"
-          data-src="best-google-font-2/graphics/dev-check.gif">
-        <noscript>
-          <img alt="Dynamic insertion of a link with JS does not block page render."
-            class="b-bk b-vk b-t" src="best-google-font-2/graphics/dev-check.gif">
-        </noscript>
+<div class="b-tp b-B">
+  <div class="b-yb b-Mk b-gm b-bm b-Ol">
+    <h3 id="non-blocking-proof" class="b-Fk b-al">Non-Blocking Proof</h3>
+      <p>
+        From looking at the previous graph, for a scary moment I thought that I might be giving wrong advice when saying to append a <span class="tm">link</span> tag dynamically into the head, and it will actually block the page from rendering. This is because on the previous <a data-smooth href="#fig-before-body">Fig 2</a> (don't be afraid to click, we have a user-friendly scroll with a back button), there are some gaps in the timeline after the web font stylesheet is inserted, but before the external CSS is parsed, that could indicate that the page was render-blocked.
       </p>
-      <h5 id="figure-3-dynamic-insertion-of-a-link-with-js-does-not-block-page-render"
-        class="b-Xp b-Hk" style="background: white;">
-        Figure 3: Dynamic insertion of a link with JS does not block page render.
-      </h5>
-    </div>
+      <p>
+        However, it's not the case as shown <span id="Above">below</span><span id="OnLeft">on the left</span>: the parse HTML goes in parallel with stylesheet loading. My interpretation of those gaps in past is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., on <a data-smooth href="#fig-before-body">Fig 2</a>, XHR is completed quicker compared to the <a data-smooth href="#fig-advanced-loading">Fig 1</a>, where it had to wait for the main thread to unblock since there were no gaps).
+      </p>
+  </div>
+  <div id="fig-9848"
+    class="b-yb b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
+    <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
+    <div style="z-index: -1;" class="Parallax"></div>
+    <noscript>
+      <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
+    </noscript>
+    <p class="b-kC">
+      <img alt="Dynamic insertion of a link with JS does not block page render."
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='639' height='486'/%3E" data-io class="b-bk b-vk b-t"
+        data-src="best-google-font-2/graphics/dev-check.gif">
+      <noscript>
+        <img alt="Dynamic insertion of a link with JS does not block page render."
+          class="b-bk b-vk b-t" src="best-google-font-2/graphics/dev-check.gif">
+      </noscript>
+    </p>
+    <h5 id="figure-3-dynamic-insertion-of-a-link-with-js-does-not-block-page-render"
+      class="b-Xp b-Hk" style="background: white;">
+      Figure 3: Dynamic insertion of a link with JS does not block page render.
+    </h5>
   </div>
   <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="ce513">
     <a class="b-Af b-Lf" href="#">Go Back</a>
   </div>
 </div>
-<div class="b-z"><div class="b-B"><div class="b-D">
 
 <p>
   I mean, my explanation around "pauses" is probably not 100% accurate to what's going internally, but I think it gives a picture that WITHOUT external resources the parsing proceeds to rendering in one continuous "stroke", whereas WITH external styles, there will be gaps. Codewise, essentially all I've done is added an external stylesheet dynamically, but throttled it server-side with a middleware function. Because the page continued to render, it's safe to say that adding a link with JS in the head will not block the main thread.
@@ -639,7 +635,7 @@ async function throttle(ctx, next){
 <div class="b-A b-tp">
   <div class="b-B">
     <div id="fig-lemuria-font"
-      class="lg-6 b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
+      class="b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
       <div class=" Parallax" data-loading style="z-index: -1;" id="c709f3"></div>
       <div style="z-index: -1;" class="Parallax"></div>
       <noscript>
@@ -766,7 +762,7 @@ async function throttle(ctx, next){
 </p>
 
 <div class="b-B">
-  <div class="b-kb b-Yb b-ad">
+  <div class="b-kb b-Yb B-ad">
     <p>
       <a
         title="Loads A Web Font Stylesheet (e.g., Google Fonts) Without Render Blocking And Multiple Layout Updates." class="NPMBadge" href="https://npmjs.com/package/@lemuria/font">
@@ -832,7 +828,7 @@ const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code>
 <div class="b-A b-tp">
   <div class="b-B">
     <div id="fig-74268"
-      class="lg-6 b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
+      class="b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
       <div class=" Parallax" data-loading style="z-index: -1;" id="c709f4"></div>
       <div style="z-index: -1;" class="Parallax"></div>
       <noscript>
@@ -938,7 +934,7 @@ const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code>
             <span class="a"><em>ÀLaMode</em></span><span class="b">3.2.0</span></a>
           <a
             title="Static Web Site Compiler That Uses Closure Compiler For JS Bundling And Closure Stylesheets For CSS optimisations. Supports JSX Syntax To Write Static Elements And Dynamic Preact Components." class="NPMBadge" href="https://npmjs.com/package/splendid">
-            <span class="a"><em>Splendid</em></span><span class="b">1.14.7</span></a>
+            <span class="a"><em>Splendid</em></span><span class="b">1.14.8</span></a>
         </div>
         <div class="b-S">
           <a href="https://twitter.com/artdecocode">twitter</a><br>

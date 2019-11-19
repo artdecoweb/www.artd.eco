@@ -7,11 +7,15 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Splendid",
+      "name": "Launch Splendid Dev",
       "program": "${workspaceFolder}/node_modules/splendid/build/bin/splendid.js",
       "args": [
-        "-s"
+        "-s",
+        "-e", "dev"
       ],
+      "env": {
+        "NODE_DEBUG": "aqt"
+      },
       "sourceMaps": false,
       "skipFiles": [
         "<node_internals>/**/*.js"

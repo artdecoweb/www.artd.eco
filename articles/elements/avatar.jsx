@@ -1,4 +1,9 @@
 export default function Avatar({ date, splendid }) {
+  let topics = splendid.page.topics
+  if (!topics) {
+    splendid.log('Topics are missing. Please specify some topics.')
+    topics = []
+  }
   return (<row mb-3>
     <column col-2 sm-2 lg-1>
       <splendid-img placeholder-auto
@@ -12,7 +17,7 @@ export default function Avatar({ date, splendid }) {
     </column>
     <column sm-3 lg-4>
       Topics:
-      {splendid.page.topics.map((topic) => {
+      {topics.map((topic) => {
         // eslint-disable-next-line react/jsx-key
         return (<a d-block href={`articles/topics#${topic.toLowerCase().replace(/ /g, '-')}`}>{topic}</a>)
       })}

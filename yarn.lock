@@ -232,6 +232,11 @@ restream@^3.7.1, restream@^3.7.4:
     "@artdeco/clean-stack" "^1.1.1"
     catchment "^3.3.0"
 
+rqt@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/rqt/-/rqt-4.0.0.tgz#b57f64bf1b3b8b8109617f9dc67b9dd9ea5cb4d6"
+  integrity sha512-DUm6ZAt6ESeY46aFWhQwBvsOpXABRL5TTkpN/3KJjog7uk2ncYuU4UZ8FQV6qfWybihkMFCdoESNSxYQ5rSZiQ==
+
 select@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
@@ -244,10 +249,10 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.14.7:
-  version "1.14.7"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.14.7.tgz#8bcf1d2898eea830942e526dfc5e08fc16d8ad9b"
-  integrity sha512-kw8MFNVANaisRdU/zB0TAY0gXpI6HulCtLBUP1bYN0hYwlnK6F+Mq9XrdSBbSO7RHuMJVCuu3whDMPXuYcatbw==
+splendid@^1.14.8:
+  version "1.14.8"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.14.8.tgz#b2ec11121042ab98b39be42b0af316cca53d21d7"
+  integrity sha512-0fEGgVEFrJIJylLljr8UlF3iH1ZdYjY0jlDFJ+jv1/JDDzo8H5fbyxGSPLj4IX9DBjYmNIZcqyAD5SB4yHVmbA==
   dependencies:
     "@externs/preact" "^1.2.7"
     "@idio/frontend" "^1.6.0"

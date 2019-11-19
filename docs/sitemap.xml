@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.artd.eco</loc>
+    <loc>https://www.artd.eco/index.html</loc>
     <lastmod>2019-11-13</lastmod>
   </url>
   <url>
-    <loc>https://www.artd.eco/articles/</loc>
-    <lastmod>2019-11-13</lastmod>
+    <loc>https://www.artd.eco/articles/index.html</loc>
+    <lastmod>2019-11-20</lastmod>
   </url>
   <url>
     <loc>https://www.artd.eco/articles/topics.html</loc>
     <lastmod>2019-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.artd.eco/articles/when-life-sucks-get-a-dot-sucks.html</loc>
+    <lastmod>2019-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.artd.eco/articles/how-i-rebelcomed-against-cheap-namecheap-service.html</loc>
+    <lastmod>2019-11-19</lastmod>
   </url>
   <url>
     <loc>https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html</loc>
