@@ -249,10 +249,10 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.14.8:
-  version "1.14.8"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.14.8.tgz#b2ec11121042ab98b39be42b0af316cca53d21d7"
-  integrity sha512-0fEGgVEFrJIJylLljr8UlF3iH1ZdYjY0jlDFJ+jv1/JDDzo8H5fbyxGSPLj4IX9DBjYmNIZcqyAD5SB4yHVmbA==
+splendid@^1.14.9:
+  version "1.14.9"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.14.9.tgz#c7adabdb5ae206c6c7ba08b5c87ff854b6413a84"
+  integrity sha512-qCInNdZIMEt0h0Fx+TlKcIR0d9+B+QDZb/TZ/tMCDl+dTGSKdU46krdJufgjfI3aEs3Vsk13WXba22ZD6j/NiA==
   dependencies:
     "@externs/preact" "^1.2.7"
     "@idio/frontend" "^1.6.0"

@@ -7,6 +7,7 @@
     "s": "splendid -s",
     "test": "yarn t test/spec test/mask",
     "dev": "splendid-dev -s -e dev",
+    "d": "splendid -s -e dev",
     "prod": "splendid-dev -s",
     "docs": "https-server docs -p 3000 -s",
     "splendid": "splendid -s",
@@ -31,7 +32,7 @@
   "devDependencies": {
     "alamode": "^3.2.0",
     "documentary": "^1.34.1",
-    "splendid": "^1.14.8",
+    "splendid": "^1.14.9",
     "zoroaster": "^4.1.2"
   },
   "dependencies": {
