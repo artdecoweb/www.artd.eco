@@ -17,10 +17,10 @@ export default function Revision({ children, class: className, splendid, style, 
   if (blue) cl.push('Blue')
   return (<div style={style} className={cl.join(' ')}>
     <ol background-image={img} dangerouslySetInnerHTML={{ __html: children[0] }}/>
-    <bootstrap-div position-absolute width="1rem" bottom="0" top="0" right="1rem"
+    <div position-absolute width="1rem" bottom="0" top="0" right="1rem"
       border-left="1px solid #ec6a9d">
       <img src="img/arrows.svg" />
-    </bootstrap-div>
+    </div>
   </div>)
 }
 

@@ -1,5 +1,6 @@
 import { aqt } from 'rqt'
 import { format } from 'url'
+import { writeFileSync } from 'fs'
 
 const fetchTweet = async (link) => {
   const { statusCode, statusMessage, body } = await aqt(link, {
@@ -27,8 +28,13 @@ const fetchTweet = async (link) => {
   return { date, data: r, datetimems, username, name, img, likes }
 }
 
-const fetchCard = async (id) => {
-  let card, cardImg
+/**
+ * @param {string} id
+ * @param {Splendid} splendid
+ */
+const fetchCard = async (id, splendid) => {
+  let card
+  // cardImg
   const url = format({ host: 'twitter.com', protocol: 'https', pathname: `i/cards/tfw/v1/${id}` })
   let cards = await aqt(url, {
     headers: {
@@ -52,6 +58,19 @@ const fetchCard = async (id) => {
     .replace(/alt=""/, 'alt="Twitter Card"')
     .replace(/<a /g, '<a target="_blank" ')
     .replace(/h2/g, 'h4')
+  let cardImg = /src="(.+?)"/.exec(card)
+  if (cardImg) {
+    cardImg = cardImg[1]
+    const data = await aqt(cardImg, {
+      binary: true,
+    })
+    if (data.statusCode !== 200) {
+      splendid.logError2('tweet', 'Status Code %s: %s', data.statusCode, data.statusMessage)
+    }
+    const path = `img/${id}.jpg`
+    writeFileSync(splendid.getPath(path), data.body)
+    card = card.replace(/src=".+?"/, `placeholder-auto src="${path}"`)
+  }
   return { card, cardImg }
 }
 
@@ -75,7 +94,7 @@ export default async function Tweet({ href, splendid }) {
   if (!data) {
     ({ data, date, datetimems, username, name, img, likes } = await fetchTweet(href))
 
-    ;({ card, cardImg } = await fetchCard(id))
+    ;({ card, cardImg } = await fetchCard(id, splendid))
 
     await splendid.appendCache('tweet', { [id]: { data, card, cardImg, date, datetimems, username, name, img, likes } })
   }

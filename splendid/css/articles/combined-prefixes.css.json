@@ -1,0 +1,50 @@
+{
+  "flex-grow|-ms-flex-positive": [
+    "1"
+  ],
+  "flex|-ms-flex": [
+    "none"
+  ],
+  "background-size": [
+    "contain"
+  ],
+  "display": [
+    "flex|-ms-flexbox"
+  ],
+  "box-sizing": [
+    "border-box"
+  ],
+  "order|-ms-flex-order": [
+    "1"
+  ],
+  "transition": [
+    "none"
+  ],
+  "flex-direction|-ms-flex-direction": [
+    "column"
+  ],
+  "border-radius": [
+    "5px"
+  ],
+  "box-shadow": [
+    "none"
+  ],
+  "flex-shrink": [
+    "1"
+  ],
+  "flex-basis|-ms-flex-preferred-size": [
+    "0"
+  ],
+  "animation-fill-mode": [
+    "forwards"
+  ],
+  "justify-content": [
+    "center"
+  ],
+  "flex-wrap|-ms-flex-wrap": [
+    "wrap"
+  ],
+  "align-items": [
+    "center"
+  ]
+}

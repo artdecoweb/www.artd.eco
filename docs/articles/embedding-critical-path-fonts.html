@@ -9,35 +9,40 @@
     <meta
       content="Including google fonts on a page and referencing them in CSS could still result in a FOUT. By preloading fonts, we can show branded text immediately." name="description">
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
-    <script>(function(h,r){var a=Object.keys(h),c=!0;"CSS"in window&&"supports"in CSS?(a=a.reduce(function(k,b){var l=h[b];b=b.split("|");for(var m=!1,d={},f=0;f<b.length;d={a:d.a},f++)if(d.a=b[f],l.map(function(n){return function(e){e=e.split("|");for(var p=!1,g=0;g<e.length;g++){var q=e[g];if(CSS.supports(n.a,q)){p=!0;break}else k.push(n.a+": "+q)}return p}}(d)).filter(Boolean).length==l.length){m=!0;break}m||(c=!1);return k},[]),a.length?c&&console.log("\ud83d\udcbf Browser does not support CSS properties: %s",
-a.join("\n "),"but supports alternatives."):console.log("\ud83d\udcbd Browser supports all modern CSS properties.")):(c=!1,console.log("\ud83d\udce0 Browser does not support CSS checks."));c||(a=document.createElement("link"),a.rel="stylesheet",a.href=r,document.head.appendChild(a))})({"flex-grow|-ms-flex-positive":["1"],"flex|-ms-flex":["none"],"background-size":["contain"],"display":["flex|-ms-flexbox"],"box-sizing":["border-box"],"order|-ms-flex-order":["1"],"transition":["none"],"flex-direction|-ms-flex-direction":["column"],"border-radius":["5px"],"box-shadow":["none"],"flex-shrink":["1"],"flex-basis|-ms-flex-preferred-size":["0"],"animation-fill-mode":["forwards"],"justify-content":["center"],"flex-wrap|-ms-flex-wrap":["wrap"],"align-items":["center"]}, 'styles/combined-prefixes.css')</script>
+    <link
+      href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium%20Basic%3A400%2C400i%2C700%7CLimelight" rel="preload" as="fetch" crossOrigin>
+    
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
-    <link
-      href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight" rel="preload" as="fetch" crossOrigin>
-    <script>(function(q,k){function x(a){for(var f=/url\((.+?)\).*?;\s+unicode-range: (.+?);/g,b={},d=[],h;h=f.exec(a);){var r=h[2];d.push({url:h[1],a:r});b[r]=1}b=Object.keys(b).reduce(function(c,e){var g=e.split(/,\s/).map(function(l){return l.replace("U+","\\u").replace("-","-\\u")}).join("").toLowerCase();c[e]=new RegExp("["+g+"]");return c},{});var t=document.body?document.body.textContent:"",y=t?Object.keys(b).reduce(function(c,e){b[e].test(t)&&(c[e]=!0);return c},{}):Object.keys(b).reduce(function(c,
-e){e in k&&(c[e]=!0);return c},{});m=d.filter(function(c){return c.a in y}).map(function(c){return c.url});if(!m.length)return u();var v=document.createDocumentFragment();m.forEach(function(c,e){var g=document.createElement("link");g.href=c;g.rel="preload";g.as="font";var l=e+1;performance.mark("link-preload-start"+l);g.onload=function(){return u(l)};g.setAttribute("crossorigin",!0);v.appendChild(g)});document.head.appendChild(v)}k=void 0===k?{}:k;var n=document.createElement("link");if(function(a,
-f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.relList,"preload")){var z=function(a,f,b){b=void 0===b?"":b;performance.mark("xhr-start"+b);var d=new XMLHttpRequest;d.onreadystatechange=function(){4==d.readyState&&(200==d.status?(f(d.responseText),performance.mark("xhr-end"+b),performance.measure("xhr"+b,"xhr-start"+b,"xhr-end"+b)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};
-performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&&(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight', {"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD":true})</script>
-    
-    <script>document.documentElement.classList.remove("no-js")</script>
-    <link rel="stylesheet" href="/styles/articles/combined.css">
-    <link rel="preload" href="data:application/font-woff2;base64,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" as="font">
-    <link rel="preload" href="/highlight.js/styles/default.css" as="style">
-    <link rel="preload" href="/preact/dist/preact.min.js" crossorigin as="script">
-    <link rel="preload" href="/comps/articles/embed-web-fonts.js" crossorigin as="script">
-    <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
-    <style>
-      .no-js [data-loading], .no-js [data-io], .no-js .ImageHolder { display: none!important }
-      h1{margin-bottom:0}
-      h1 { font-family: 'Limelight',cursive; }
+    <style id="cpt">
+      
+          h1 { font-family: 'Limelight',cursive; }
         
       @font-face {
         font-family: 'Limelight';
         font-style: normal;
         font-weight: 400;
+        font-display: swap;
         src: local('Limelight'), url('data:application/font-woff2;base64,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') format('woff2');
       }
+      
+    </style>
+    <script>
+      (function(){var b=/url\('([\s\S]+?)'\)/.exec(document.head.querySelector("#cpt").textContent);if(b){var a=document.createElement("link");a.rel="preload";a.as="font";a.href=b[1];document.head.appendChild(a)}})()
+    </script>
+    <script>(function(h,r){var a=Object.keys(h),c=!0;"CSS"in window&&"supports"in CSS?(a=a.reduce(function(k,b){var l=h[b];b=b.split("|");for(var m=!1,d={},f=0;f<b.length;d={a:d.a},f++)if(d.a=b[f],l.map(function(n){return function(e){e=e.split("|");for(var p=!1,g=0;g<e.length;g++){var q=e[g];if(CSS.supports(n.a,q)){p=!0;break}else k.push(n.a+": "+q)}return p}}(d)).filter(Boolean).length==l.length){m=!0;break}m||(c=!1);return k},[]),a.length?c&&console.log("\ud83d\udcbf Browser does not support CSS properties: %s",
+a.join("\n "),"but supports alternatives."):console.log("\ud83d\udcbd Browser supports all modern CSS properties.")):(c=!1,console.log("\ud83d\udce0 Browser does not support CSS checks."));c||(a=document.createElement("link"),a.rel="stylesheet",a.href=r,document.head.appendChild(a))})({"flex-grow|-ms-flex-positive":["1"],"flex|-ms-flex":["none"],"background-size":["contain"],"display":["flex|-ms-flexbox"],"box-sizing":["border-box"],"order|-ms-flex-order":["1"],"transition":["none"],"flex-direction|-ms-flex-direction":["column"],"border-radius":["5px"],"box-shadow":["none"],"flex-shrink":["1"],"flex-basis|-ms-flex-preferred-size":["0"],"animation-fill-mode":["forwards"],"justify-content":["center"],"flex-wrap|-ms-flex-wrap":["wrap"],"align-items":["center"]}, '/css/articles/combined-prefixes.css')</script>
+    <script>
+      (function(q,k){function x(a){for(var f=/url\((.+?)\).*?;\s+unicode-range: (.+?);/g,b={},d=[],h;h=f.exec(a);){var r=h[2];d.push({url:h[1],a:r});b[r]=1}b=Object.keys(b).reduce(function(c,e){var g=e.split(/,\s/).map(function(l){return l.replace("U+","\\u").replace("-","-\\u")}).join("").toLowerCase();c[e]=new RegExp("["+g+"]");return c},{});var t=document.body?document.body.textContent:"",y=t?Object.keys(b).reduce(function(c,e){b[e].test(t)&&(c[e]=!0);return c},{}):Object.keys(b).reduce(function(c,
+      e){e in k&&(c[e]=!0);return c},{});m=d.filter(function(c){return c.a in y}).map(function(c){return c.url});if(!m.length)return u();var v=document.createDocumentFragment();m.forEach(function(c,e){var g=document.createElement("link");g.href=c;g.rel="preload";g.as="font";var l=e+1;performance.mark("link-preload-start"+l);g.onload=function(){return u(l)};g.setAttribute("crossorigin",!0);v.appendChild(g)});document.head.appendChild(v)}k=void 0===k?{}:k;var n=document.createElement("link");if(function(a,
+      f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.relList,"preload")){var z=function(a,f,b){b=void 0===b?"":b;performance.mark("xhr-start"+b);var d=new XMLHttpRequest;d.onreadystatechange=function(){4==d.readyState&&(200==d.status?(f(d.responseText),performance.mark("xhr-end"+b),performance.measure("xhr"+b,"xhr-start"+b,"xhr-end"+b)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};
+      performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&&(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium%20Basic%3A400%2C400i%2C700%7CLimelight', {"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD":true})
+    </script>
+    <link rel="stylesheet" href="/css/articles/combined.css">
+    <link rel="preload" as="style" href="/highlight.js/styles/default.css">
+    <style>
+      .no-js [data-loading], .no-js [data-io], .no-js .ImageHolder { display: none!important }
+      h1{margin-bottom:0}
       .TM1{font-family:'Limelight',cursive;background:-webkit-linear-gradient(#e4bd4d,#c78259);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
       @media (max-width: 430px) {
             a.lead {
@@ -46,27 +51,29 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
           }
     </style>
     <noscript>
-      <link rel="stylesheet" href="styles/combined-prefixes.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight">
+      <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?display=swap&amp;family=Limelight&amp;text=Embedding%20Critical%20Path%20Fonts">
+      <link rel="stylesheet" href="/css/articles/combined-prefixes.css">
+      <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium%20Basic%3A400%2C400i%2C700%7CLimelight">
     </noscript>
     <script defer src="/js/polyfill/intersection-observer.js"></script>
     <script defer src="/js/images.js"></script>
     <script crossorigin data-src="/preact/dist/preact.min.js"></script>
     <script crossorigin data-src="/comps/articles/common.js"></script>
     <script crossorigin data-src="/comps/articles/embed-web-fonts.js"></script>
-
+    <script>
+      document.documentElement.classList.remove("no-js")
+    </script>
   </head>
   <body style="overscroll-behavior: none;">
     <div class="b-A b-tp b-Nq b-rp b-xq" style="height: 20rem;">
-      <img alt="Art Deco Store Building" id="sPhoto"
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2816' height='1880'/%3E" class="b-t b-up ImageHolder">
+      <img class="ImageHolder b-t b-up" sizes="100vw" alt="Art Deco Store Building" onload="initPhoto(this)" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2816' height='1880'/%3E">
       <noscript>
-        <picture id="Photo" class="b-up">
+        <picture id="Photo">
           <source
-            srcset="img/blog-1920.webp 1920w,img/blog-1600.webp 1600w,img/blog-1366.webp 1366w,img/blog-1024.webp 1024w,img/blog-768.webp 768w,img/blog-641.webp 641w,img/blog-319.webp 319w,img/blog-2816.webp 2816w" type="image/webp">
-          <img onLoad="webploaded(this);initPhoto(this)" alt="Art Deco Store Building"
-            src="img/blog.jpg"
-            srcset="img/blog-1920.jpg 1920w,img/blog-1600.jpg 1600w,img/blog-1366.jpg 1366w,img/blog-1024.jpg 1024w,img/blog-768.jpg 768w,img/blog-641.jpg 641w,img/blog-319.jpg 319w" class="b-t">
+            srcset="img/blog-1920.webp 1920w,img/blog-1600.webp 1600w,img/blog-1366.webp 1366w,img/blog-1140.webp 1140w,img/blog-768.webp 768w,img/blog-576.webp 576w,img/blog-319.webp 319w" sizes="100vw" type="image/webp">
+          <img class="b-t b-up" onLoad="webploaded(this);initPhoto(this)" alt="Art Deco Store Building" src="img/blog-1920.jpg" srcset="img/blog-1920.jpg 1920w,img/blog-1600.jpg 1600w,img/blog-1366.jpg 1366w,img/blog-1140.jpg 1140w,img/blog-768.jpg 768w,img/blog-576.jpg 576w,img/blog-319.jpg 319w" sizes="100vw">
         </picture>
       </noscript>
       <div id="Holder">
@@ -88,47 +95,41 @@ h;a.style.webkitTransform=h})};}).call(this);
       <div class="b-z">
         <div class="b-B">
           <div class="b-D">
-
-<h1 id="embedding-critical-path-fonts">Embedding Critical Path Fonts</h1>
-
-<p class="H1Lead b-g">
-  &gt; Part III of <em>Advanced Google Font</em>. Go to Part I: <a href="how-to-load-google-fonts-asynchronously.html">How To Load Google Fonts Asynchronously</a> and Part II: <a href="the-best-way-to-load-google-fonts-asynchronously.html">
-   The Best Way To Load Google Fonts Asynchronously</a>.
-</p>
-
-<div class="b-B b-xq">
-  <div class="b-S b-tb b-F">
-    <img alt="anton photo"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'/%3E" data-io class="b-vk b-t" data-src="avatar/anton3.jpg">
-    <noscript><img alt="anton photo" class="b-vk b-t" src="avatar/anton3.jpg"></noscript>
-  </div>
-  <div style="border-bottom: 1px solid grey;" class="b-X b-N">
-    <p class="b-jC" style="color: grey;">
-      <span>Anton Dmukhovskiy, Senior Software Developer</span><br><span>9 November 2019</span> <span id="c9f74"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
-    </p>
-  </div>
-  <div class="b-T b-wb">
-    Topics:
-    <a class="b-Ik" href="topics.html#page-speed-optimisation">page speed optimisation</a>
-    <a class="b-Ik" href="topics.html#web-fonts">web fonts</a>
-  </div>
-</div>
-
-<p>
-  When marking up a page with strong branded fonts, we don't want users to perceive any font swap, at least not for the first thing they see on a page. The resources required for this first thing are said to lay within the critical path. To achieve instant display of a font, it needs to be added to the page in form of a <span class="tm">data:application/font</span>-encoded base64 string. <em>Google Fonts</em> are not capable of that, therefore it's a completely separate solution, but Google will help us a bit. For example, I want to display the heading "<span class="TM1">Art </span>
-<span class="TM1">Deco™: </span>
-<span class="TM1">The </span>
-<span class="TM1"><em>Node.JS</em> </span>
-<span class="TM1">Development </span>
-<span class="TM1">Company </span>
-<span class="TM1">In </span>
-<span class="TM1">London</span>" with the <strong>Limelight</strong> font, therefore I only need these letters to be present. So I call Google to get the font:
-</p>
-
-<pre id="c724c"><code class="shell hljs">chrome:~$ https://fonts.googleapis.com/css?family=Limelight&amp;text= \
+            
+            
+            <h1 id="embedding-critical-path-fonts">Embedding Critical Path Fonts</h1>
+            
+            <p class="H1Lead b-g"> &gt; Part III of <em>Advanced Google Font</em>. Go to Part I: <a href="how-to-load-google-fonts-asynchronously.html">How To Load Google Fonts Asynchronously</a> and Part II: <a href="the-best-way-to-load-google-fonts-asynchronously.html">
+               The Best Way To Load Google Fonts Asynchronously</a>.</p>
+            
+            <div class="b-B b-xq">
+              <div class="b-F b-S b-tb">
+                <img class="b-vk b-t" alt="anton photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'/%3E" data-io>
+                <noscript><img class="b-vk b-t" alt="anton photo" src="avatar/anton3.jpg"></noscript>
+              </div>
+              <div class="b-N b-X" style="border-bottom: 1px solid grey;">
+                <p class="b-jC" style="color: grey;"><span>Anton Dmukhovskiy, Senior Software Developer</span><br><span>9 November 2019</span> <span id="c9f74"><span class="b-Hk" style="height:24px" data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span></p>
+              </div>
+              <div class="b-T b-wb">
+                Topics:
+                <a class="b-Ik" href="topics.html#page-speed-optimisation">page speed optimisation</a>
+                <a class="b-Ik" href="topics.html#web-fonts">web fonts</a>
+              </div>
+            </div>
+            
+            <p>When marking up a page with strong branded fonts, we don't want users to perceive any font swap, at least not for the first thing they see on a page. The resources required for this first thing are said to lay within the critical path. To achieve instant display of a font, it needs to be added to the page in form of a <span class="tm">data:application/font</span>-encoded base64 string. <em>Google Fonts</em> are not capable of that, therefore it's a completely separate solution, but Google will help us a bit. For example, I want to display the heading "<span class="TM1">Art </span>
+            <span class="TM1">Deco™: </span>
+            <span class="TM1">The </span>
+            <span class="TM1"><em>Node.JS</em> </span>
+            <span class="TM1">Development </span>
+            <span class="TM1">Company </span>
+            <span class="TM1">In </span>
+            <span class="TM1">London</span>" with the <strong>Limelight</strong> font, therefore I only need these letters to be present. So I call Google to get the font:</p>
+            
+            <pre id="c724c"><code class="shell hljs">chrome:~$ https://fonts.googleapis.com/css?family=Limelight&amp;text= \
 &gt;  Art Deco™: The Node.JS Development Company In London</code></pre>
-
-<pre id="c1d47"><code class="css hljs">/* the response */
+            
+            <pre id="c1d47"><code class="css hljs">/* the response */
 @font-face {
   font-family: 'Limelight';
   font-style: normal;
@@ -137,24 +138,22 @@ h;a.style.webkitTransform=h})};}).call(this);
        url(https://fonts.gstatic.com/l/font?kit=XLYkIZL7aopJVbZJHDuYOONArnccUFlCcINMXTbYP4QQRwNnyh7l5gk0xNGO3Z9C2lt3&amp;skey=5080ff57360a6ef&amp;v=v10)
        format('woff2');
 }</code></pre>
-
-<div class="b-B">
-  <div class="b-kb">
-    <p>
-      I grab the link and download it with Node.JS. It will target only <span class="tm">woff2</span> version because of my user-agent, however I'm not bothered to increase the page size by embedding a <span class="tm">woff</span> font also (for IE).
-    </p>
-      <pre id="ccdbf"><code class="javascript hljs">const format = 'woff2'
+            
+            <div class="b-B">
+              <div class="b-kb">
+                <p>
+                    I grab the link and download it with Node.JS. It will target only <span class="tm">woff2</span> version because of my user-agent, however I'm not bothered to increase the page size by embedding a <span class="tm">woff</span> font also (for IE).
+                  </p>
+                  <pre id="ccdbf"><code class="javascript hljs">const format = 'woff2'
 const body = await aqt(link, {
   binary: true,
 })
 const base = body.toString('base64')
 const data = `data:application/font-${format};base64,${base}`</code></pre>
-  </div>
-  <div class="b-kb">
-    <p>
-      After the data string is constructed, I can upgrade the stylesheet to include this string instead of the url.
-    </p>
-      <pre id="c1602"><code class="xml hljs">&lt;head&gt;
+              </div>
+              <div class="b-kb">
+                <p>After the data string is constructed, I can upgrade the stylesheet to include this string instead of the url.</p>
+                  <pre id="c1602"><code class="xml hljs">&lt;head&gt;
   &lt;style&gt;
     @font-face {
       font-family: 'Limelight';
@@ -170,49 +169,41 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
     }
   &lt;/style&gt;
 &lt;/head&gt;</code></pre>
-  </div>
-</div>
-
-</div></div></div>
-<div class="b-A b-tp">
-  <div class="b-B">
-    <div id="fig-data-url"
-      class="b-D b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-      <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
-      <div style="z-index: -1;" class="Parallax"></div>
-      <noscript>
-        <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-      </noscript>
-      <p class="b-kC">
-        <img alt="Data-url embedded font also takes time to download."
-          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="b-bk b-vk b-t"
-          data-src="embed-web-fonts/graphics/dev13.gif">
-        <noscript>
-          <img alt="Data-url embedded font also takes time to download." class="b-bk b-vk b-t"
-            src="embed-web-fonts/graphics/dev13.gif">
-        </noscript>
-      </p>
-      <h5 id="figure-1-data-url-embedded-font-also-takes-time-to-download" class="b-Xp b-Hk"
-        style="background: white;">
-        Figure 1: Data-url embedded font also takes time to download.
-      </h5>
-    </div>
-  </div>
-  <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="c9412">
-    <a class="b-Af b-Lf" href="#">Go Back</a>
-  </div>
-</div>
-<div class="b-z"><div class="b-B"><div class="b-D">
-
-<p>
-  If I refresh the page, depending on the <span class="tm">font-display</span>, I will either witness a FOUT, or a <abbr title="Flash of Invisible Text">FOIT</abbr>. But if I've injected the font into the .html document, shouldn't this not be the case? The problem is that even though the font was embedded with a <span class="tm">data</span> url, it too has to load via the network, as seen in the performance graph below.
-</p>
-
-<p>
-  This result is consistent with the previous experiment, where I've shown that fonts, even declared in a <span class="tm">style</span> tag and not in an external stylesheet, begin to download only when it comes to first <span style="background:#a66eeb;">Recalculate styles</span> job (misleading called <em>RE</em>calculate, it's actually calculate). Here, after the font's download is finished, it forces a reflow and blocks the page for 100ms. It's really not good enough for an advanced optimisation. I'll apply the preload link on the font encoded with into <span class="tm">data:</span> string to solve this problem. I'll use the <span class="tm">onload</span> attribute to get reference to the base64-encoded data so that I don't have to declare it twice (first in the preload link, and second time in the style).
-</p>
-
-<pre id="cbdf7"><code class="xml hljs">&lt;head&gt;
+              </div>
+            </div>
+            
+            </div></div></div>
+            <div class="b-A b-tp">
+              <div class="b-B">
+                <div class="b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-D" id="fig-data-url">
+                  <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
+                  <div style="z-index: -1;" class="Parallax"></div>
+                  <noscript>
+                    <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
+                  </noscript>
+                  <p class="b-kC">
+                    <img class="b-bk b-vk b-t" alt="Figure 1: Data-url embedded font also takes time to download." src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io>
+                    <noscript>
+                      <img class="b-bk b-vk b-t" alt="Figure 1: Data-url embedded font also takes time to download." src="embed-web-fonts/graphics/dev13.gif">
+                    </noscript>
+                  </p>
+                  <h5 id="figure-1-data-url-embedded-font-also-takes-time-to-download" class="b-Xp b-Hk"
+                    style="background: white;">
+                    Figure 1: Data-url embedded font also takes time to download.
+                  </h5>
+                </div>
+              </div>
+              <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="c9412">
+                <a class="b-Af b-Lf" href="#">Go Back</a>
+              </div>
+            </div>
+            <div class="b-z"><div class="b-B"><div class="b-D">
+            
+            <p>If I refresh the page, depending on the <span class="tm">font-display</span>, I will either witness a FOUT, or a <abbr title="Flash of Invisible Text">FOIT</abbr>. But if I've injected the font into the .html document, shouldn't this not be the case? The problem is that even though the font was embedded with a <span class="tm">data</span> url, it too has to load via the network, as seen in the performance graph below.</p>
+            
+            <p>This result is consistent with the previous experiment, where I've shown that fonts, even declared in a <span class="tm">style</span> tag and not in an external stylesheet, begin to download only when it comes to first <span style="background:#a66eeb;">Recalculate styles</span> job (misleading called <em>RE</em>calculate, it's actually calculate). Here, after the font's download is finished, it forces a reflow and blocks the page for 100ms. It's really not good enough for an advanced optimisation. I'll apply the preload link on the font encoded with into <span class="tm">data:</span> string to solve this problem. I'll use the <span class="tm">onload</span> attribute to get reference to the base64-encoded data so that I don't have to declare it twice (first in the preload link, and second time in the style).</p>
+            
+            <pre id="cbdf7"><code class="xml hljs">&lt;head&gt;
   &lt;link
     href="data:application/font-woff2;base64,d09GMgABAAAAAAmYAAwAAAAAEAAAAAlKAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA..."
     rel="preload" as="font"
@@ -234,132 +225,112 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
     &lt;style&gt;h1 { font-family: 'Limelight' }&lt;/style&gt;
   &lt;/noscript&gt;
 &lt;/head&gt;</code></pre>
-
-<p>
-  We <strong>must not</strong> set the <span class="tm">crossorigin</span> attribute on the link, as <em>Safari</em> will error on it, saying the host didn't provide a CORS header (Safari is actually a pretty annoying browser &mdash; it will not clear network cache if there's a preload link for the resource duh 🤦🏼‍♀️). In case the <strong>preload</strong> <em>rel</em> is not supported, the polyfill can be used, which just calls the <span class="tm">onload</span> method. The <span class="tm">Symbol.iterator</span> polyfill inserted by Closure Compiler (because I did <span class="tm">[...document.head.querySelectorAll('[rel=&quot;preload&quot;][onload]')]</span>) is a bit long but I can't be bothered to do something like <span class="tm">[].forEach.call</span> or whatever other way there is.
-</p>
-
-<pre id="c6ce5"><code class="xml hljs">&lt;script&gt;
+            
+            <p>We <strong>must not</strong> set the <span class="tm">crossorigin</span> attribute on the link, as <em>Safari</em> will error on it, saying the host didn't provide a CORS header (Safari is actually a pretty annoying browser &mdash; it will not clear network cache if there's a preload link for the resource duh 🤦🏼‍♀️). In case the <strong>preload</strong> <em>rel</em> is not supported, the polyfill can be used, which just calls the <span class="tm">onload</span> method. The <span class="tm">Symbol.iterator</span> polyfill inserted by Closure Compiler (because I did <span class="tm">[...document.head.querySelectorAll('[rel=&quot;preload&quot;][onload]')]</span>) is a bit long but I can't be bothered to do something like <span class="tm">[].forEach.call</span> or whatever other way there is.</p>
+            
+            <pre id="c6ce5"><code class="xml hljs">&lt;script&gt;
   (function(){function b(){var a=c,g=0;return function(){return g&lt;a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&amp;&amp;e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;
   if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&amp;&amp;Symbol.iterator&amp;&amp;c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);
 &lt;/script&gt;</code></pre>
-
-<div class="b-tp b-B">
-  <div
-    class="b-yb b-Yb b-Bd b-Mk b-gm b-bm b-Ol">
-    <p>
-      And that's how I got my page opening with the font already present. Unlike in the usual <span class="tm">＜style＞</span> approach with a base64-encoded font in it, here the text is drawn immediately using the font face that I specified, as it was loaded before the initial render. Compare how <a href="#fig-data-url">previously</a>, the font started do download (grey bar) only during the recalculate styles stage, whereas now, it loads as soon as HTML starts parsing. However, it's still not as great as a style preload, which begins even before parsing. There's no way to set a different attribute on the link, like <span class="tm">fetch</span>, load it with XHR and then embed onto the page, because that would lead to another download. But to be honest, I cheated a little bit in this last case, did you notice how? I included an external stylesheet, my <span class="tm">combined.css</span> which slowed down the first render, giving the <span class="tm">data:</span> url a chance to load.
-    </p>
-  </div>
-  <div id="fig-9848"
-    class="b-yb b-Zb b-Ad b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-    <div class=" Parallax" data-loading style="z-index: -1;" id="c709f3"></div>
-    <div style="z-index: -1;" class="Parallax"></div>
-    <noscript>
-      <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-    </noscript>
-    <p class="b-kC">
-      <img alt="Achieving critical path font without FOUT/FOIT."
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="b-bk b-vk b-t"
-        data-src="embed-web-fonts/graphics/dev14.gif">
-      <noscript>
-        <img alt="Achieving critical path font without FOUT/FOIT." class="b-bk b-vk b-t"
-          src="embed-web-fonts/graphics/dev14.gif">
-      </noscript>
-    </p>
-    <h5 id="figure-2-achieving-critical-path-font-without-foutfoit" class="b-Xp b-Hk"
-      style="background: white;">
-      Figure 2: Achieving critical path font without FOUT/FOIT.
-    </h5>
-  </div>
-  <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="ce513">
-    <a class="b-Af b-Lf" href="#">Go Back</a>
-  </div>
-</div>
-
-<p>
-  [i] <em>The performance timing shows that the preload event fired before the layout, but although it's duration is set to 100ms in code, it took 276ms to complete, which proves that the thread was blocked.</em>
-</p>
-
-
-<div class="b-tp b-B">
-  <div class="b-yb b-Mk b-gm b-bm b-Ol">
-    <p>
-      If I embed the <span class="tm">combined.css</span> stylesheet and eliminate this render-blocking resource, I'll loose the gained advantage. On a fast page, the font in the preload link completes its loading process only when the layout began, and the main thread is blocked. We have to wait for the thread to clear after which the <span class="tm">onload</span> event will fire.
-    </p>
-  </div>
-  <div id="fig-74268"
-    class="b-yb b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-    <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
-    <div style="z-index: -1;" class="Parallax"></div>
-    <noscript>
-      <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-    </noscript>
-    <p class="b-kC">
-      <img alt="Waiting for onload event to fire on preload link."
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="b-bk b-vk b-t"
-        data-src="embed-web-fonts/graphics/dev15.gif">
-      <noscript>
-        <img alt="Waiting for onload event to fire on preload link." class="b-bk b-vk b-t"
-          src="embed-web-fonts/graphics/dev15.gif">
-      </noscript>
-    </p>
-    <h5 id="figure-3-waiting-for-onload-event-to-fire-on-preload-link" class="b-Xp b-Hk"
-      style="background: white;">
-      Figure 3: Waiting for onload event to fire on preload link.
-    </h5>
-  </div>
-  <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="c6965">
-    <a class="b-Af b-Lf" href="#">Go Back</a>
-  </div>
-</div>
-
-<p>
-  Waiting for <span class="tm">onload</span> cancels out the benefit of preloading the font. So what do we do? I thought of splitting the font into 3 preload links, and loading them in parallel, however that seems too complicated, and also too relies on the the JS event which is inefficient since there's always a risk of running into the main thread block. What worked was not using the <span class="tm">onload</span> at all, and repeating font's data-url string both in the stylesheet and in the preload link. If the font is only 2kb, I don't mind making it 4kb for superb user experience that could land me a client.
-</p>
-
-<div class="b-tp b-B">
-  <div class="b-yb b-Mk b-gm b-bm b-Ol">
-    <p>
-      Chrome will actually complain in the console that the preloaded font was not used, but don't trust him, because it's clearly seen from this graph that the data:application download kicked in much faster than when there was no preload link.
-    </p>
-  </div>
-  <div id="fig-80"
-    class="b-yb b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp">
-    <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
-    <div style="z-index: -1;" class="Parallax"></div>
-    <noscript>
-      <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
-    </noscript>
-    <p class="b-kC">
-      <img alt="Preloading data-url font used in stylesheet leads to the most robust optimisation."
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io class="b-bk b-vk b-t"
-        data-src="embed-web-fonts/graphics/dev16.gif">
-      <noscript>
-        <img alt="Preloading data-url font used in stylesheet leads to the most robust optimisation."
-          class="b-bk b-vk b-t" src="embed-web-fonts/graphics/dev16.gif">
-      </noscript>
-    </p>
-    <h5 id="figure-4-preloading-data-url-font-used-in-stylesheet-leads-to-the-most-robust-optimisation"
-      class="b-Xp b-Hk" style="background: white;">
-      Figure 4: Preloading data-url font used in stylesheet leads to the most robust optimisation.
-    </h5>
-  </div>
-  <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="c8e80">
-    <a class="b-Af b-Lf" href="#">Go Back</a>
-  </div>
-</div>
-
-
-
-
-<p>
-  Say, someone is looking for a web development company, they click a link to my website, and instantly they see a page that is branded with a font and opens in a split second. Would they be impressed? I think so. In other industries the value of extremely fast loading is probably more subtle and rests on the subconscious appreciation of an aesthetically pleasing fast website. But then again, optimisations like this are only the final polishing steps in producing an amazing website, that above all has impressive design and meaningful and engaging content. Still, here I'm describing it in such details because it helps to understand how browsers work so that we can apply this knowledge (rather than a specific method) in all of our work.
-</p>
-
-<p>
-  <span id="c6a73"><span data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
-</p></div>
+            
+            <div class="b-tp b-B">
+              <div class="b-Yb b-Bd b-Mk b-gm b-bm b-Ol b-yb">
+                <p>
+                    And that's how I got my page opening with the font already present. Unlike in the usual <span class="tm">＜style＞</span> approach with a base64-encoded font in it, here the text is drawn immediately using the font face that I specified, as it was loaded before the initial render. Compare how <a href="#fig-data-url">previously</a>, the font started do download (grey bar) only during the recalculate styles stage, whereas now, it loads as soon as HTML starts parsing. However, it's still not as great as a style preload, which begins even before parsing. There's no way to set a different attribute on the link, like <span class="tm">fetch</span>, load it with XHR and then embed onto the page, because that would lead to another download. But to be honest, I cheated a little bit in this last case, did you notice how? I included an external stylesheet, my <span class="tm">combined.css</span> which slowed down the first render, giving the <span class="tm">data:</span> url a chance to load.
+                    </p>
+              </div>
+              <div class="b-Zb b-Ad b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-yb" id="fig-9848">
+                <div class=" Parallax" data-loading style="z-index: -1;" id="c709f3"></div>
+                <div style="z-index: -1;" class="Parallax"></div>
+                <noscript>
+                  <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
+                </noscript>
+                <p class="b-kC">
+                  <img class="b-bk b-vk b-t" alt="Figure 2: Achieving critical path font without FOUT/FOIT." src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io>
+                  <noscript>
+                    <img class="b-bk b-vk b-t" alt="Figure 2: Achieving critical path font without FOUT/FOIT." src="embed-web-fonts/graphics/dev14.gif">
+                  </noscript>
+                </p>
+                <h5 id="figure-2-achieving-critical-path-font-without-foutfoit" class="b-Xp b-Hk"
+                  style="background: white;">
+                  Figure 2: Achieving critical path font without FOUT/FOIT.
+                </h5>
+              </div>
+              <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="ce513">
+                <a class="b-Af b-Lf" href="#">Go Back</a>
+              </div>
+            </div>
+            
+            <p>[i] <em>The performance timing shows that the preload event fired before the layout, but although it's duration is set to 100ms in code, it took 276ms to complete, which proves that the thread was blocked.</em></p>
+            
+            
+            <div class="b-tp b-B">
+              <div class="b-Mk b-gm b-bm b-Ol b-yb">
+                <p>
+                    If I embed the <span class="tm">combined.css</span> stylesheet and eliminate this render-blocking resource, I'll loose the gained advantage. On a fast page, the font in the preload link completes its loading process only when the layout began, and the main thread is blocked. We have to wait for the thread to clear after which the <span class="tm">onload</span> event will fire.
+                  </p>
+              </div>
+              <div class="b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-yb" id="fig-74268">
+                <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
+                <div style="z-index: -1;" class="Parallax"></div>
+                <noscript>
+                  <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
+                </noscript>
+                <p class="b-kC">
+                  <img class="b-bk b-vk b-t" alt="Figure 3: Waiting for onload event to fire on preload link." src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io>
+                  <noscript>
+                    <img class="b-bk b-vk b-t" alt="Figure 3: Waiting for onload event to fire on preload link." src="embed-web-fonts/graphics/dev15.gif">
+                  </noscript>
+                </p>
+                <h5 id="figure-3-waiting-for-onload-event-to-fire-on-preload-link" class="b-Xp b-Hk"
+                  style="background: white;">
+                  Figure 3: Waiting for onload event to fire on preload link.
+                </h5>
+              </div>
+              <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="c6965">
+                <a class="b-Af b-Lf" href="#">Go Back</a>
+              </div>
+            </div>
+            
+            <p>Waiting for <span class="tm">onload</span> cancels out the benefit of preloading the font. So what do we do? I thought of splitting the font into 3 preload links, and loading them in parallel, however that seems too complicated, and also too relies on the the JS event which is inefficient since there's always a risk of running into the main thread block. What worked was not using the <span class="tm">onload</span> at all, and repeating font's data-url string both in the stylesheet and in the preload link. If the font is only 2kb, I don't mind making it 4kb for superb user experience that could land me a client.</p>
+            
+            <div class="b-tp b-B">
+              <div class="b-Mk b-gm b-bm b-Ol b-yb">
+                <p>
+                    Chrome will actually complain in the console that the preloaded font was not used, but don't trust him, because it's clearly seen from this graph that the data:application download kicked in much faster than when there was no preload link.
+                  </p>
+              </div>
+              <div class="b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-yb" id="fig-80">
+                <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
+                <div style="z-index: -1;" class="Parallax"></div>
+                <noscript>
+                  <div class=" Parallax" style="background-image: url(/img/letters/background.png); z-index: -1;"></div>
+                </noscript>
+                <p class="b-kC">
+                  <img class="b-bk b-vk b-t" alt="Figure 4: Preloading data-url font used in stylesheet leads to the most robust optimisation." src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='671' height='522'/%3E" data-io>
+                  <noscript>
+                    <img class="b-bk b-vk b-t" alt="Figure 4: Preloading data-url font used in stylesheet leads to the most robust optimisation." src="embed-web-fonts/graphics/dev16.gif">
+                  </noscript>
+                </p>
+                <h5 id="figure-4-preloading-data-url-font-used-in-stylesheet-leads-to-the-most-robust-optimisation"
+                  class="b-Xp b-Hk" style="background: white;">
+                  Figure 4: Preloading data-url font used in stylesheet leads to the most robust optimisation.
+                </h5>
+              </div>
+              <div class="b-up" style="opacity: 0; top: 1rem; right: 1rem;" id="c8e80">
+                <a class="b-Af b-Lf" href="#">Go Back</a>
+              </div>
+            </div>
+            
+            
+            
+            
+            <p>Say, someone is looking for a web development company, they click a link to my website, and instantly they see a page that is branded with a font and opens in a split second. Would they be impressed? I think so. In other industries the value of extremely fast loading is probably more subtle and rests on the subconscious appreciation of an aesthetically pleasing fast website. But then again, optimisations like this are only the final polishing steps in producing an amazing website, that above all has impressive design and meaningful and engaging content. Still, here I'm describing it in such details because it helps to understand how browsers work so that we can apply this knowledge (rather than a specific method) in all of our work.</p>
+            
+            <p>
+              <span id="c6a73"><span class="b-Hk" style="height:32px" data-loading>Loading sharing buttons...</span><noscript>Please enable JavaScript to Share</noscript></span>
+            </p>
+          </div>
         </div>
       </div>
       
@@ -378,20 +349,20 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
           <a style="font-size: initial;" href=".">Articles</a><br><br>
           <strong>Open Source</strong>:<br>
           <a
-            title="Documentation Compiler To Generate The Table Of Contents, Embed Examples With Their Output, Make Markdown Tables, Maintain Typedefs For JavaScript And README, Watch Changes To Push, Use Macros And Prettify API Titles." class="NPMBadge" href="https://npmjs.com/package/documentary">
+            title="Documentation Compiler To Generate The Table Of Contents, Embed Examples With Their Output, Make Markdown Tables, Maintain Typedefs For JavaScript And README, Watch Changes To Push, Use Macros And Prettify API Titles." class="NPMBadge" href="https://www.npmjs.com/package/documentary">
             <span class="a"><em>Documentary</em></span><span class="b">1.34.1</span></a>
           <a
-            title="The 2019 Most Modern Testing Framework For Node.JS With Test Contexts (Reusable BeforeEach / AfterEach Via Separate Files); Masks (Inputs/Outputs In Non-Js Files) And Fork Testing; Interactive Snapshots." class="NPMBadge" href="https://npmjs.com/package/zoroaster">
+            title="The 2019 Most Modern Testing Framework For Node.JS With Test Contexts (Reusable BeforeEach / AfterEach Via Separate Files); Masks (Inputs/Outputs In Non-Js Files) And Fork Testing; Interactive Snapshots." class="NPMBadge" href="https://www.npmjs.com/package/zoroaster">
             <span class="a"><em>Zoroaster</em></span><span class="b">4.1.2</span></a>
           <a
-            title="Front-End Code Bundler and Proper Node.js Package Compiler With Closure Compiler. Can create a single executable JS file and merge and optimise all dependencies." class="NPMBadge" href="https://npmjs.com/package/depack">
-            <span class="a"><em>Depack</em></span><span class="b">1.0.0</span></a>
+            title="Proper Node.JS Package Compiler (And Front-End Code Bundler) With Closure Compiler. Can create a single executable JS file and merge and optimise all dependencies." class="NPMBadge" href="https://www.npmjs.com/package/depack">
+            <span class="a"><em>Depack</em></span><span class="b">1.0.1</span></a>
           <a
-            title="A Regex-Based Transpiler Of Source Code To Allow Writing Import And Export Statements And JSX With 0 Dependencies." class="NPMBadge" href="https://npmjs.com/package/alamode">
+            title="A Regex-Based Transpiler Of Source Code To Allow Writing Import And Export Statements And JSX With 0 Dependencies." class="NPMBadge" href="https://www.npmjs.com/package/alamode">
             <span class="a"><em>ÀLaMode</em></span><span class="b">3.2.0</span></a>
           <a
-            title="Static Web Site Compiler That Uses Closure Compiler For JS Bundling And Closure Stylesheets For CSS optimisations. Supports JSX Syntax To Write Static Elements And Dynamic Preact Components." class="NPMBadge" href="https://npmjs.com/package/splendid">
-            <span class="a"><em>Splendid</em></span><span class="b">1.14.9</span></a>
+            title="Static Web Site Compiler That Uses Closure Compiler For JS Bundling And Closure Stylesheets For CSS optimisations. Supports JSX Syntax To Write Static Elements And Dynamic Preact Components." class="NPMBadge" href="https://www.npmjs.com/package/splendid">
+            <span class="a"><em>Splendid</em></span><span class="b">1.16.5</span></a>
         </div>
         <div class="b-S">
           <a href="https://twitter.com/artdecocode">twitter</a><br>
@@ -399,18 +370,14 @@ const data = `data:application/font-${format};base64,${base}`</code></pre>
         </div>
       </div>
     </div>
-    <div style="position:relative;">
-      <div class="b-A b-Nq b-up b-rp"
-        style="height: 50px; top: 0px; left: 0px;">
+    <div class="b-tp">
+      <div class="b-A b-Nq b-up b-rp" style="height: 50px; top: 0px; left: 0px;">
         <div class=" Parallax" data-loading id="c647b"></div>
         <div class="Parallax"></div>
         <noscript><div class=" Parallax" style="background-image: url(img/tile.jpg);"></div></noscript>
       </div>
       <div class="b-up" style="top: calc(50px - 1px); left: 0px;" id="bottom"></div>
     </div>
-    <script>
-  (function(){function d(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function e(){var a=document.querySelectorAll("script[data-src]");if(!(a instanceof Array)){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];a=b?b.call(a):{next:d(a)};for(var c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}
-  window.addEventListener("DOMContentLoaded",function(){function a(){if(0<b.length){var c=b.shift();c.src=c.getAttribute("data-src");c.removeAttribute("data-src");c.onload=a;c.onerror=function(){console.warn("Could not load script %s",c.src)}}}var b=e().concat();a()});}).call(this);
-    </script>
+    <script>(function(){function b(){if(0<c.length){var a=c.shift();a.src=a.getAttribute("data-src");a.removeAttribute("data-src");a.onload=b;a.onerror=function(){console.warn("Could not load script %s",a.src)}}}var c=Array.prototype.slice.call(document.querySelectorAll("script[data-src]"));b()})()</script>
   </body>
 </html>

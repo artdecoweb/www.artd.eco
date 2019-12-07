@@ -67,7 +67,7 @@ const meta = [{
   id: 'c6a73',
   props: {
     url: 'https://www.artd.eco/articles/embedding-critical-path-fonts.html',
-    meta: 'true',
+    meta: true,
   },
 },
 {
@@ -89,8 +89,8 @@ const meta = [{
   id: 'c9f74',
   props: {
     url: 'https://www.artd.eco/articles/embedding-critical-path-fonts.html',
-    size: '24',
-    meta: 'true',
+    size: 24,
+    meta: true,
   },
 },
 {
@@ -125,13 +125,14 @@ const meta = [{
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const Comp = __components[key]
   const plain = Comp.plain || (/^\s*class\s+/.test(Comp.toString()) && !Component.isPrototypeOf(Comp))
-  props.splendid = { addCSS(stylesheet) {
+  props.splendid = { mount: '/', addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
   } }
 
   const ids = id.split(',')
   ids.forEach((Id) => {
     const { parent, el } = init(Id, key)
+    if (!el) return
     const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })
     let comp
     el.render = () => {

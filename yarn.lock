@@ -30,10 +30,10 @@
   resolved "https://registry.yarnpkg.com/@depack/split/-/split-1.0.0.tgz#37fea28d9bc6f01e5a2da87d393f402781bb7e99"
   integrity sha512-PNJPl01VFMKtyN7qBZ2cds4N/lO2KvzLrR7JamODFiuuL2X8mGoTKp1SI8fxlT2MwLV8mScCUKn55QPwsUX7iA==
 
-"@externs/preact@^1.2.7":
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/@externs/preact/-/preact-1.2.7.tgz#1003b6ce246dc9dba6681d37ddc0d32793311feb"
-  integrity sha512-0TPZOBoEdLoS0QBu9NOYB41huYxV6YEMRZbKBtCy05nEXCJiAHDw/jam+biUNuGM2+/eGMn/4VH6BeeXxFnf4Q==
+"@externs/preact@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/@externs/preact/-/preact-1.2.9.tgz#4c7be52ca978a98f8e2a4546cafcfef33416bf9a"
+  integrity sha512-txXV8G4pFzZgQXQHqhlpT2c+WHFK3cRZ4eZGI38R9+h57zu/oJXQ8CGlvDlIpWhbh8DU+S4Kf66hX0rxs5+pZA==
 
 "@idio/frontend@^1.6.0":
   version "1.6.0"
@@ -63,6 +63,11 @@
   integrity sha512-zziQTJW5UMgXS3RELr5D6VKLRMDWJ2z4wmoXhBmA7g8XJC1C2+yjv3/XjbFMaQVD4djPvuTk7/EiMfFLaTH7tA==
   dependencies:
     erte "1.1.6"
+
+"@lemuria/absolute-proxy@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@lemuria/absolute-proxy/-/absolute-proxy-1.0.2.tgz#e75d499398d883d96683320ed638955deb45635f"
+  integrity sha512-fBG7iYvUau85Fe4aaWosnpo4re9hNMGZVCoXIox2OBfSjR4akzJk9OyNR97X+cd1w2S94as+aHr+l70kM/vaqg==
 
 "@lemuria/font@^1.0.4":
   version "1.0.4"
@@ -249,15 +254,16 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.14.9:
-  version "1.14.9"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.14.9.tgz#c7adabdb5ae206c6c7ba08b5c87ff854b6413a84"
-  integrity sha512-qCInNdZIMEt0h0Fx+TlKcIR0d9+B+QDZb/TZ/tMCDl+dTGSKdU46krdJufgjfI3aEs3Vsk13WXba22ZD6j/NiA==
+splendid@^1.16.5:
+  version "1.16.5"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.16.5.tgz#b78dae3efffa0aa382b04ca7f3d7a0eb1894e640"
+  integrity sha512-vvHHiqoRNPF/V7vm3aM8/iWYbR3mXBv4i5IOHyAMfkSSUQwjMKSMaUuXXPm6EKlv3KKN2JN7m5qNR12G/FL3og==
   dependencies:
-    "@externs/preact" "^1.2.7"
+    "@externs/preact" "^1.2.9"
     "@idio/frontend" "^1.6.0"
     "@idio/idio" "^0.1.0"
     "@idio/websocket" "^1.0.0"
+    "@lemuria/absolute-proxy" "^1.0.2"
     "@lemuria/font" "^1.0.4"
     "@lemuria/load-scripts" "^1.2.0"
     "@lemuria/popup" "^1.1.1"
@@ -273,9 +279,9 @@ tiny-emitter@^2.0.0:
   integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
 
 typal@^1.22.6:
-  version "1.22.6"
-  resolved "https://registry.yarnpkg.com/typal/-/typal-1.22.6.tgz#c3162f5f19e91ad6d830375220e6552fcb4a0936"
-  integrity sha512-N6tkgC/r7OXwH0/hEFNRH6S/7zPfMXJU45w78KGgy8JLbt3lAbWPd4NWUZjQt6o2id23P34KeHSmNR4ddI/zZQ==
+  version "1.22.7"
+  resolved "https://registry.yarnpkg.com/typal/-/typal-1.22.7.tgz#fd0c13d670f662094f8f46c04aefd3f8be1e9fc0"
+  integrity sha512-U/YO1h9KA44bjwHqwBtZUQVHkWMZoB72X0wqShdQ+giQGd9n0f6efOesT71R8kGcewpAINNC8pSKim1P/z/Ogw==
 
 zoroaster@^4.1.2:
   version "4.1.2"

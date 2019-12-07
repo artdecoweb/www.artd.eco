@@ -5,7 +5,7 @@
  width="641.000000pt" height="854.000000pt" viewBox="0 0 641.000000 854.000000"
  preserveAspectRatio="xMidYMid meet">
 <defs>
-  <g id="gp84852" transform="translate(0.000000,854.000000) scale(0.100000,-0.100000)"
+  <g id="gp84504" transform="translate(0.000000,854.000000) scale(0.100000,-0.100000)"
 >
 <path d="M1622 8520 c-9 -15 -23 -20 -52 -20 -32 0 -43 -5 -62 -30 -18 -25
 -29 -30 -62 -30 -36 0 -43 4 -55 31 -11 26 -11 33 0 40 21 13 -11 21 -67 16
@@ -1352,8 +1352,8 @@ l-23 -9 22 0 c12 -1 28 7 35 18 7 10 28 26 46 35 18 10 32 24 32 35 0 26 26
 <path d="M1276 79 c-8 -42 0 -50 9 -9 4 17 5 34 2 36 -2 3 -7 -10 -11 -27z"/>
 </g>
 </defs>
-<mask id="mp84852">
-  <use xlink:href="#gp84852" fill="white" />
+<mask id="mp84504">
+  <use xlink:href="#gp84504" fill="white" />
 </mask>
-<use xlink:href="#gp84852" data-mask="url(#mp84852)" data-stroke="black" stroke-width="20px" fill="black"/>
+<use xlink:href="#gp84504" data-mask="url(#mp84504)" data-stroke="black" stroke-width="20px" fill="black"/>
 </svg>

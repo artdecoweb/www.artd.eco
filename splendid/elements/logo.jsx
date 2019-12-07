@@ -8,7 +8,7 @@ export default function Logo({ splendid, sizes = '300px' }) {
     dynamic: true,
     preload: true,
   })
-  return (<splendid-img id="Logo" above-fold responsive sizes={sizes} webp="text" no-potrace src="img/logo.png" alt="Art Deco Logo" className="img-fluid" />)
+  return (<splendid-img id="Logo" above-fold responsive sizes={sizes} webp="text" src="img/logo.png" alt="Art Deco Logo" img-fluid />)
 }
 
 /**

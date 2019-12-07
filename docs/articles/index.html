@@ -9,32 +9,38 @@
     <meta
       content="Node.JS backend and JavaScript frontend development articles and knowledge sharing. Web software development tips and research on performance and productivity." name="description">
     <link href="/img/favicon.png" sizes="32x32" rel="shortcut icon">
-    <script>(function(h,r){var a=Object.keys(h),c=!0;"CSS"in window&&"supports"in CSS?(a=a.reduce(function(k,b){var l=h[b];b=b.split("|");for(var m=!1,d={},f=0;f<b.length;d={a:d.a},f++)if(d.a=b[f],l.map(function(n){return function(e){e=e.split("|");for(var p=!1,g=0;g<e.length;g++){var q=e[g];if(CSS.supports(n.a,q)){p=!0;break}else k.push(n.a+": "+q)}return p}}(d)).filter(Boolean).length==l.length){m=!0;break}m||(c=!1);return k},[]),a.length?c&&console.log("\ud83d\udcbf Browser does not support CSS properties: %s",
-a.join("\n "),"but supports alternatives."):console.log("\ud83d\udcbd Browser supports all modern CSS properties.")):(c=!1,console.log("\ud83d\udce0 Browser does not support CSS checks."));c||(a=document.createElement("link"),a.rel="stylesheet",a.href=r,document.head.appendChild(a))})({"flex-grow|-ms-flex-positive":["1"],"flex|-ms-flex":["none"],"background-size":["contain"],"display":["flex|-ms-flexbox"],"box-sizing":["border-box"],"order|-ms-flex-order":["1"],"transition":["none"],"flex-direction|-ms-flex-direction":["column"],"border-radius":["5px"],"box-shadow":["none"],"flex-shrink":["1"],"flex-basis|-ms-flex-preferred-size":["0"],"animation-fill-mode":["forwards"],"justify-content":["center"],"flex-wrap|-ms-flex-wrap":["wrap"],"align-items":["center"]}, 'styles/combined-prefixes.css')</script>
+    <link
+      href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium%20Basic%3A400%2C400i%2C700%7CLimelight" rel="preload" as="fetch" crossOrigin>
+    
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin>
-    <link
-      href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium+Basic:400,400i,700|Limelight" rel="preload" as="fetch" crossOrigin>
-    <script>(function(q,k){function x(a){for(var f=/url\((.+?)\).*?;\s+unicode-range: (.+?);/g,b={},d=[],h;h=f.exec(a);){var r=h[2];d.push({url:h[1],a:r});b[r]=1}b=Object.keys(b).reduce(function(c,e){var g=e.split(/,\s/).map(function(l){return l.replace("U+","\\u").replace("-","-\\u")}).join("").toLowerCase();c[e]=new RegExp("["+g+"]");return c},{});var t=document.body?document.body.textContent:"",y=t?Object.keys(b).reduce(function(c,e){b[e].test(t)&&(c[e]=!0);return c},{}):Object.keys(b).reduce(function(c,
-e){e in k&&(c[e]=!0);return c},{});m=d.filter(function(c){return c.a in y}).map(function(c){return c.url});if(!m.length)return u();var v=document.createDocumentFragment();m.forEach(function(c,e){var g=document.createElement("link");g.href=c;g.rel="preload";g.as="font";var l=e+1;performance.mark("link-preload-start"+l);g.onload=function(){return u(l)};g.setAttribute("crossorigin",!0);v.appendChild(g)});document.head.appendChild(v)}k=void 0===k?{}:k;var n=document.createElement("link");if(function(a,
-f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.relList,"preload")){var z=function(a,f,b){b=void 0===b?"":b;performance.mark("xhr-start"+b);var d=new XMLHttpRequest;d.onreadystatechange=function(){4==d.readyState&&(200==d.status?(f(d.responseText),performance.mark("xhr-end"+b),performance.measure("xhr"+b,"xhr-start"+b,"xhr-end"+b)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};
-performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&&(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight', {"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD":true})</script>
-    
-    <script>document.documentElement.classList.remove("no-js")</script>
-    <link rel="stylesheet" href="/styles/articles/combined.css">
-    <link rel="preload" href="data:application/font-woff2;base64,d09GMgABAAAAAAW4AAwAAAAACcQAAAVrAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYGYAB0EQgKh1SGJQsaAAE2AiQDMAQgBYZGByAbJgjIxAfwtH9B1y4pRmQ8ejh1587FQV0Hod2cnNyRvfugiw87P38/Xxcl3sJTPMu7s6q7KKuiLqIHOKqyDSR+NPjXD45/kV2wn5ZYCgKAHBwlQdCEZc9T9HvEOUgAyQ3JOoAIdwuo13CQ7K2k1aJmYBFh3h/fk6lVc9gOLtJLuve/bqxMupes4YCL+VF6uaSHQG44aM6m/D6g4mIf0DhJPNjLaHDYgSSYkIMCFKMM1aKI1iaHVXmB+JH4mPiIOCIOiwOiVbwuXu2qg1ZMgBBFqAj1bEkATlR8eilAzNcV0kiuhdY2EPqbBUg8lNFhbkqa9lT5b4gx8XrttYBbDD9LWJbdNDgtrLChqUGpz3KwiuNNitM6h0PnQLvWjn0pIzddZtnTBhdl0TuznPqyuwTXJlfqA6xg1tiZU3onYTG4WEHngHma4eOc+rv59U0CzAl2OV/AVRwOUZIOVjDM+c8dd/LrScU/lEKqS3AseW271n5SIZM3KRrkJyyujn5Ya2d4vbPkMssKBhdh0TsZhvdpUpAuFyu8ZO73mWb42EnerrWDlBssc4KvZYmDFdRXLTcejtM7IYkcr13B8LNOJ/+g+fqSxxyOHQ6zXdPuf+Qp6riWt7A6ljCRrEGA+V5Gz7i5DA+45lhhxjy/+FGNffa2e3aSIUkv3ixZ4l2n8Fv6VohaJ9WuCWsIX//g0qeecc+47ae0E1JNzF9BYH17hqN6Ft9YNX15Vapx9JXdXz03ce7DiGavjzL+y/hR4a96ZPr52xbdf/CS+U2/FYeVFgIJ2748cVDZog1NTPWMTXr/7InnpSMDg9a/vp2+PnX1//Nd8TnLVvlkK33dtie2BbxZWoekV39ZFB0cPTDi/cf0JduN734esE5O+L5/pXv03LeRvpcW1Ardna21121FP3+/3Wv875u+8Ox8p+rIgW3/qlddywh95tyOHTuW71i+2WZbbgPj6LFB0mNDWnC9/skDe8esf/43OHL12tffWAeGR//5bfjG+FDYD+Uy5fO9zee733H2dnZ3OFXSk2Dsy21xSbODw2krUuJ+emE6INb/u9X7NBHqjInH52w43qXaGzmD7rzDD7SuGwid3cgYdr81k1aw72ROW7Wu/tCjPdbEn32XRXpMpm7sCK/8JOr96DseO91Vk5506F51+/ed2e/fXqvWLMUer95cnK2kN2bEnaBU1vlHjnQfp+KXetO+TXTpfDWRvP1AmKHX07MxJmHzM8OFcQBwUcBc2XGgtanmhCrht8XusrzYC5NZd7kLXzRcPSR2/tcp+1G6FzfJXgMW8cfSvf8JAHNE7BQPyn68hlROWKnnfBaQHIC721LcRucjXeKDdPI3jJO/YUHij3TqKSxQIk5QT8DvcQpdg7TzZg2pgMqQS3kJ2h13EJ/ngEgJeLFqXEpCSfwppbCXdJPSiCRTpBIEkeVSN0SS/O2UWE/OQ40ylKMBlShAHvJRDQ6LYcIScFiL1ViD1UxhFhrAIfNRykMRClBK5mvRgHLkEIBOOdQx7OrFHDKQgyrkoBK1RGU2OOxGGUq7TabAiBIEvwYFhKV40N+vhAIKaJGPAlQRgJNcMlkHIyoR1aUgwYOJpUPBIKSGwexhkQMCZDwT+6AhMBXqaGmnoxpk9nLUI5IqAsqTHNZgpdkCqs2QWiBoWkdTAQjMmpe/DHUdohGStlbSiGJUrVjciFoYyXgxjMhiR3NWEY0w/TuQHiarEQfFKtFqlOPFq7AKVTDtGyln/FVYCdlfjJW7NF8eViEVu6FZZ9gffx5qhvRXImUuWDY07gbGXIwGxO3QOA7NEndKZl1Ts+PKMq3Gaqwlla3o+6zVt4gR4iUc+DcB" as="font">
-    <link rel="preload" href="/comps/articles/index.js" crossorigin as="script">
-    <script>(function(){function b(){var a=c,g=0;return function(){return g<a.length?{done:!1,value:a[g++]}:{done:!0}}}var d;var e=document.createElement("link").relList;if(e&&e.supports)try{d=e.supports("preload")}catch(a){d=!1}else d=!1;if(!d){var f=document.head.querySelectorAll('[rel="preload"][onload]'),h;if(f instanceof Array)h=f;else{var k,c=f,l="undefined"!=typeof Symbol&&Symbol.iterator&&c[Symbol.iterator];k=l?l.call(c):{next:b()};for(var m,n=[];!(m=k.next()).done;)n.push(m.value);h=n}h.concat().forEach(function(a){if(a.onload)a.onload(a)})};}).call(this);</script>
-    <style>
-      .no-js [data-io], .no-js [data-loading], .no-js .ImageHolder { display: none!important }
-      h1 { font-family: 'Limelight',cursive; }
+    <style id="cpt">
       
+        h1 { font-family: 'Limelight',cursive; }
+    
       @font-face {
         font-family: 'Limelight';
         font-style: normal;
         font-weight: 400;
+        font-display: swap;
         src: local('Limelight'), url('data:application/font-woff2;base64,d09GMgABAAAAAAW4AAwAAAAACcQAAAVrAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYGYAB0EQgKh1SGJQsaAAE2AiQDMAQgBYZGByAbJgjIxAfwtH9B1y4pRmQ8ejh1587FQV0Hod2cnNyRvfugiw87P38/Xxcl3sJTPMu7s6q7KKuiLqIHOKqyDSR+NPjXD45/kV2wn5ZYCgKAHBwlQdCEZc9T9HvEOUgAyQ3JOoAIdwuo13CQ7K2k1aJmYBFh3h/fk6lVc9gOLtJLuve/bqxMupes4YCL+VF6uaSHQG44aM6m/D6g4mIf0DhJPNjLaHDYgSSYkIMCFKMM1aKI1iaHVXmB+JH4mPiIOCIOiwOiVbwuXu2qg1ZMgBBFqAj1bEkATlR8eilAzNcV0kiuhdY2EPqbBUg8lNFhbkqa9lT5b4gx8XrttYBbDD9LWJbdNDgtrLChqUGpz3KwiuNNitM6h0PnQLvWjn0pIzddZtnTBhdl0TuznPqyuwTXJlfqA6xg1tiZU3onYTG4WEHngHma4eOc+rv59U0CzAl2OV/AVRwOUZIOVjDM+c8dd/LrScU/lEKqS3AseW271n5SIZM3KRrkJyyujn5Ya2d4vbPkMssKBhdh0TsZhvdpUpAuFyu8ZO73mWb42EnerrWDlBssc4KvZYmDFdRXLTcejtM7IYkcr13B8LNOJ/+g+fqSxxyOHQ6zXdPuf+Qp6riWt7A6ljCRrEGA+V5Gz7i5DA+45lhhxjy/+FGNffa2e3aSIUkv3ixZ4l2n8Fv6VohaJ9WuCWsIX//g0qeecc+47ae0E1JNzF9BYH17hqN6Ft9YNX15Vapx9JXdXz03ce7DiGavjzL+y/hR4a96ZPr52xbdf/CS+U2/FYeVFgIJ2748cVDZog1NTPWMTXr/7InnpSMDg9a/vp2+PnX1//Nd8TnLVvlkK33dtie2BbxZWoekV39ZFB0cPTDi/cf0JduN734esE5O+L5/pXv03LeRvpcW1Ardna21121FP3+/3Wv875u+8Ox8p+rIgW3/qlddywh95tyOHTuW71i+2WZbbgPj6LFB0mNDWnC9/skDe8esf/43OHL12tffWAeGR//5bfjG+FDYD+Uy5fO9zee733H2dnZ3OFXSk2Dsy21xSbODw2krUuJ+emE6INb/u9X7NBHqjInH52w43qXaGzmD7rzDD7SuGwid3cgYdr81k1aw72ROW7Wu/tCjPdbEn32XRXpMpm7sCK/8JOr96DseO91Vk5506F51+/ed2e/fXqvWLMUer95cnK2kN2bEnaBU1vlHjnQfp+KXetO+TXTpfDWRvP1AmKHX07MxJmHzM8OFcQBwUcBc2XGgtanmhCrht8XusrzYC5NZd7kLXzRcPSR2/tcp+1G6FzfJXgMW8cfSvf8JAHNE7BQPyn68hlROWKnnfBaQHIC721LcRucjXeKDdPI3jJO/YUHij3TqKSxQIk5QT8DvcQpdg7TzZg2pgMqQS3kJ2h13EJ/ngEgJeLFqXEpCSfwppbCXdJPSiCRTpBIEkeVSN0SS/O2UWE/OQ40ylKMBlShAHvJRDQ6LYcIScFiL1ViD1UxhFhrAIfNRykMRClBK5mvRgHLkEIBOOdQx7OrFHDKQgyrkoBK1RGU2OOxGGUq7TabAiBIEvwYFhKV40N+vhAIKaJGPAlQRgJNcMlkHIyoR1aUgwYOJpUPBIKSGwexhkQMCZDwT+6AhMBXqaGmnoxpk9nLUI5IqAsqTHNZgpdkCqs2QWiBoWkdTAQjMmpe/DHUdohGStlbSiGJUrVjciFoYyXgxjMhiR3NWEY0w/TuQHiarEQfFKtFqlOPFq7AKVTDtGyln/FVYCdlfjJW7NF8eViEVu6FZZ9gffx5qhvRXImUuWDY07gbGXIwGxO3QOA7NEndKZl1Ts+PKMq3Gaqwlla3o+6zVt4gR4iUc+DcB') format('woff2');
       }
+      
+    </style>
+    <script>
+      (function(){var b=/url\('([\s\S]+?)'\)/.exec(document.head.querySelector("#cpt").textContent);if(b){var a=document.createElement("link");a.rel="preload";a.as="font";a.href=b[1];document.head.appendChild(a)}})()
+    </script>
+    <script>(function(h,r){var a=Object.keys(h),c=!0;"CSS"in window&&"supports"in CSS?(a=a.reduce(function(k,b){var l=h[b];b=b.split("|");for(var m=!1,d={},f=0;f<b.length;d={a:d.a},f++)if(d.a=b[f],l.map(function(n){return function(e){e=e.split("|");for(var p=!1,g=0;g<e.length;g++){var q=e[g];if(CSS.supports(n.a,q)){p=!0;break}else k.push(n.a+": "+q)}return p}}(d)).filter(Boolean).length==l.length){m=!0;break}m||(c=!1);return k},[]),a.length?c&&console.log("\ud83d\udcbf Browser does not support CSS properties: %s",
+a.join("\n "),"but supports alternatives."):console.log("\ud83d\udcbd Browser supports all modern CSS properties.")):(c=!1,console.log("\ud83d\udce0 Browser does not support CSS checks."));c||(a=document.createElement("link"),a.rel="stylesheet",a.href=r,document.head.appendChild(a))})({"flex-grow|-ms-flex-positive":["1"],"flex|-ms-flex":["none"],"background-size":["contain"],"display":["flex|-ms-flexbox"],"box-sizing":["border-box"],"order|-ms-flex-order":["1"],"transition":["none"],"flex-direction|-ms-flex-direction":["column"],"border-radius":["5px"],"box-shadow":["none"],"flex-shrink":["1"],"flex-basis|-ms-flex-preferred-size":["0"],"animation-fill-mode":["forwards"],"justify-content":["center"],"flex-wrap|-ms-flex-wrap":["wrap"],"align-items":["center"]}, '/css/articles/combined-prefixes.css')</script>
+    <script>
+      (function(q,k){function x(a){for(var f=/url\((.+?)\).*?;\s+unicode-range: (.+?);/g,b={},d=[],h;h=f.exec(a);){var r=h[2];d.push({url:h[1],a:r});b[r]=1}b=Object.keys(b).reduce(function(c,e){var g=e.split(/,\s/).map(function(l){return l.replace("U+","\\u").replace("-","-\\u")}).join("").toLowerCase();c[e]=new RegExp("["+g+"]");return c},{});var t=document.body?document.body.textContent:"",y=t?Object.keys(b).reduce(function(c,e){b[e].test(t)&&(c[e]=!0);return c},{}):Object.keys(b).reduce(function(c,
+      e){e in k&&(c[e]=!0);return c},{});m=d.filter(function(c){return c.a in y}).map(function(c){return c.url});if(!m.length)return u();var v=document.createDocumentFragment();m.forEach(function(c,e){var g=document.createElement("link");g.href=c;g.rel="preload";g.as="font";var l=e+1;performance.mark("link-preload-start"+l);g.onload=function(){return u(l)};g.setAttribute("crossorigin",!0);v.appendChild(g)});document.head.appendChild(v)}k=void 0===k?{}:k;var n=document.createElement("link");if(function(a,
+      f){if(!a||!a.supports)return!1;try{return a.supports(f)}catch(b){return!1}}(n.relList,"preload")){var z=function(a,f,b){b=void 0===b?"":b;performance.mark("xhr-start"+b);var d=new XMLHttpRequest;d.onreadystatechange=function(){4==d.readyState&&(200==d.status?(f(d.responseText),performance.mark("xhr-end"+b),performance.measure("xhr"+b,"xhr-start"+b,"xhr-end"+b)):console.error("Error loading webfont: server responded with code %s at %s",d.status,a))};d.open("GET",a);try{d.send(null)}catch(h){console.error(h)}};
+      performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)},"-"+(void 0===f?"link":f))})({href:q},"js");var m=[],w=0,u=function(a){a&&(performance.mark("link-preload-end"+a),performance.measure("link-preload","link-preload-start"+a,"link-preload-end"+a));w++;w>=m.length&&(a=document.createElement("style"),a.innerHTML=p,document.head.appendChild(a),performance.mark("agf-end"),performance.measure("@lemuria/font","agf-start","agf-end"))}}else n.rel="stylesheet",n.href=q,document.head.appendChild(n)})('https://fonts.googleapis.com/css?display=swap&family=Gentium%20Basic%3A400%2C400i%2C700%7CLimelight', {"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD":true})
+    </script>
+    <link rel="stylesheet" href="/css/articles/combined.css">
+    <style>
+      .no-js [data-io], .no-js [data-loading], .no-js .ImageHolder { display: none!important }
       @media (max-width: 430px) {
             a.lead {
               background: aliceblue;
@@ -42,26 +48,28 @@ performance.mark("agf-start");var p;(function(a,f){z(a.href,function(b){p=b;x(p)
           }
     </style>
     <noscript>
-      <link rel="stylesheet" href="styles/combined-prefixes.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?display=swap&family=Gentium+Basic:400,400i,700|Limelight">
+      <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?display=swap&amp;family=Limelight&amp;text=Art%20Deco%20Articles">
+      <link rel="stylesheet" href="/css/articles/combined-prefixes.css">
+      <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?display=swap&amp;family=Gentium%20Basic%3A400%2C400i%2C700%7CLimelight">
     </noscript>
     <script defer src="/js/polyfill/intersection-observer.js"></script>
     <script defer src="/js/images.js"></script>
     <script crossorigin data-src="/comps/articles/common.js"></script>
     <script crossorigin data-src="/comps/articles/index.js"></script>
-
+    <script>
+      document.documentElement.classList.remove("no-js")
+    </script>
   </head>
   <body style="overscroll-behavior: none;">
     <div class="b-A b-tp b-Nq b-rp b-xq" style="height: 20rem;">
-      <img alt="Art Deco Store Building" id="sPhoto"
-        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2816' height='1880'/%3E" class="b-t b-up ImageHolder">
+      <img class="ImageHolder b-t b-up" sizes="100vw" alt="Art Deco Store Building" onload="initPhoto(this)" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2816' height='1880'/%3E">
       <noscript>
-        <picture id="Photo" class="b-up">
+        <picture id="Photo">
           <source
-            srcset="img/blog-1920.webp 1920w,img/blog-1600.webp 1600w,img/blog-1366.webp 1366w,img/blog-1024.webp 1024w,img/blog-768.webp 768w,img/blog-641.webp 641w,img/blog-319.webp 319w,img/blog-2816.webp 2816w" type="image/webp">
-          <img onLoad="webploaded(this);initPhoto(this)" alt="Art Deco Store Building"
-            src="img/blog.jpg"
-            srcset="img/blog-1920.jpg 1920w,img/blog-1600.jpg 1600w,img/blog-1366.jpg 1366w,img/blog-1024.jpg 1024w,img/blog-768.jpg 768w,img/blog-641.jpg 641w,img/blog-319.jpg 319w" class="b-t">
+            srcset="img/blog-1920.webp 1920w,img/blog-1600.webp 1600w,img/blog-1366.webp 1366w,img/blog-1140.webp 1140w,img/blog-768.webp 768w,img/blog-576.webp 576w,img/blog-319.webp 319w" sizes="100vw" type="image/webp">
+          <img class="b-t b-up" onLoad="webploaded(this);initPhoto(this)" alt="Art Deco Store Building" src="img/blog-1920.jpg" srcset="img/blog-1920.jpg 1920w,img/blog-1600.jpg 1600w,img/blog-1366.jpg 1366w,img/blog-1140.jpg 1140w,img/blog-768.jpg 768w,img/blog-576.jpg 576w,img/blog-319.jpg 319w" sizes="100vw">
         </picture>
       </noscript>
       <div id="Holder">
@@ -83,65 +91,60 @@ h;a.style.webkitTransform=h})};}).call(this);
       <div class="b-z">
         <div class="b-B">
           <div class="b-D">
-
-<h1 id="art-deco-articles">Art Deco Articles</h1>
-
-<p>
-  As a <a href="/">Node.JS development company</a>, we constantly learn, improve our approaches and share our experience with other developers. Our articles explore development processes and practices, and cover both technical, theoretical and abstract areas of Software Engineering. We hope to present our discoveries and analytical experiments to a broad audience who will be interested in learning more about JavaScript, Node.JS and web computing.
-</p>
-
-<a class="b-Af b-Kf b-Xf" href="topics.html">BROWSE ALL TOPICS</a>
-
-<hr>
-
-<div>
-  <div>
-    <h2 id="a-hrefarticleslife-sucks-when-life-sucks-get-a-dot-sucksa">
-      <a href="when-life-sucks-get-a-dot-sucks.html">When Life Sucks Get A Dot SUCKS</a>
-    </h2>
-    For some people today, internet is the only way to defend our rights. Read about my year-long journey to fight corruption in the UK with .sucks domain.
-  </div>
-  <div>
-    <h2 id="a-hrefarticlesditch-cheap-how-i-rebelcomed-against-cheap-namecheap-servicea">
-      <a href="how-i-rebelcomed-against-cheap-namecheap-service.html">
-        How I Rebel.com'ed Against Cheap NameCheap Service</a>
-    </h2>
-    Companies like NameCheap are proud of their customer service without knowing what service is. Why choose premium registrars like Rebel.com instead.
-  </div>
-  <div>
-    <h2 id="a-hrefarticlesbest-google-font-how-to-load-google-fonts-asynchronouslya">
-      <a href="how-to-load-google-fonts-asynchronously.html">How To Load Google Fonts Asynchronously</a>
-    </h2>
-    <img alt="How To Load Google Fonts Asynchronously"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io class="b-t b-Ik"
-      data-src="best-google-font-2/graphics/async-google-font.png">
-    <noscript>
-      <img alt="How To Load Google Fonts Asynchronously" class="b-t b-Ik"
-        src="best-google-font-2/graphics/async-google-font.png">
-    </noscript>
-    Using performance measurements, we examine page loading process in detail to find out how to embed web font stylesheet asynchronously to avoid blocks.
-  </div>
-  <div>
-    <h2 id="a-hrefarticlesbest-google-font-2-the-best-way-to-load-google-fonts-asynchronouslya">
-      <a href="the-best-way-to-load-google-fonts-asynchronously.html">
-        The Best Way To Load Google Fonts Asynchronously</a>
-    </h2>
-    <img alt="The Best Way To Load Google Fonts Asynchronously"
-      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io class="b-t b-Ik"
-      data-src="best-google-font-2/graphics/advanced-google-font.png">
-    <noscript>
-      <img alt="The Best Way To Load Google Fonts Asynchronously" class="b-t b-Ik"
-        src="best-google-font-2/graphics/advanced-google-font.png">
-    </noscript>
-    An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows.
-  </div>
-  <div>
-    <h2 id="a-hrefarticlesembed-web-fonts-embedding-critical-path-fontsa">
-      <a href="embedding-critical-path-fonts.html">Embedding Critical Path Fonts</a>
-    </h2>
-    Including google fonts on a page and referencing them in CSS could still result in a FOUT. By preloading fonts, we can show branded text immediately.
-  </div>
-</div></div>
+            
+            
+            <h1 id="art-deco-articles">Art Deco Articles</h1>
+            
+            <p>As a <a href="/">Node.JS development company</a>, we constantly learn, improve our approaches and share our experience with other developers. Our articles explore development processes and practices, and cover both technical, theoretical and abstract areas of Software Engineering. We hope to present our discoveries and analytical experiments to a broad audience who will be interested in learning more about JavaScript, Node.JS and web computing.</p>
+            
+            <a class="b-Af b-Kf b-Xf" href="topics.html">BROWSE ALL TOPICS</a>
+            
+            <hr>
+            
+            <div>
+              <div>
+                <h2 id="a-hrefarticleslife-sucks-inside-uks-technocracy-and-mafia-behind-ita">
+                  <a href="inside-uks-technocracy-and-mafia-behind-it.html">
+                    Inside UK's Technocracy And Mafia Behind It</a>
+                </h2>
+                Democracy and capitalism are incompatible: money always talks. Learn who is UK's plutocracy and how they are robbing population with Industrial Strategy.
+              </div>
+              <div>
+                <h2 id="a-hrefarticlesditch-cheap-how-i-rebelcomed-against-cheap-namecheap-servicea">
+                  <a href="how-i-rebelcomed-against-cheap-namecheap-service.html">
+                    How I Rebel.com'ed Against Cheap NameCheap Service</a>
+                </h2>
+                Companies like NameCheap are proud of their customer service without knowing what service is. Why choose premium registrars like Rebel.com instead.
+              </div>
+              <div>
+                <h2 id="a-hrefarticlesbest-google-font-how-to-load-google-fonts-asynchronouslya">
+                  <a href="how-to-load-google-fonts-asynchronously.html">How To Load Google Fonts Asynchronously</a>
+                </h2>
+                <img class="b-t b-Ik" alt="How To Load Google Fonts Asynchronously" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io>
+                <noscript>
+                  <img class="b-t b-Ik" alt="How To Load Google Fonts Asynchronously" src="best-google-font-2/graphics/async-google-font.png">
+                </noscript>
+                Using performance measurements, we examine page loading process in detail to find out how to embed web font stylesheet asynchronously to avoid blocks.
+              </div>
+              <div>
+                <h2 id="a-hrefarticlesbest-google-font-2-the-best-way-to-load-google-fonts-asynchronouslya">
+                  <a href="the-best-way-to-load-google-fonts-asynchronously.html">
+                    The Best Way To Load Google Fonts Asynchronously</a>
+                </h2>
+                <img class="b-t b-Ik" alt="The Best Way To Load Google Fonts Asynchronously" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='505' height='299'/%3E" data-io>
+                <noscript>
+                  <img class="b-t b-Ik" alt="The Best Way To Load Google Fonts Asynchronously" src="best-google-font-2/graphics/advanced-google-font.png">
+                </noscript>
+                An advanced method of loading Google Fonts in the most efficient manner asynchronously to avoid render blocking and minimise the number of reflows.
+              </div>
+              <div>
+                <h2 id="a-hrefarticlesembed-web-fonts-embedding-critical-path-fontsa">
+                  <a href="embedding-critical-path-fonts.html">Embedding Critical Path Fonts</a>
+                </h2>
+                Including google fonts on a page and referencing them in CSS could still result in a FOUT. By preloading fonts, we can show branded text immediately.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -160,20 +163,20 @@ h;a.style.webkitTransform=h})};}).call(this);
           <a style="font-size: initial;" href=".">Articles</a><br><br>
           <strong>Open Source</strong>:<br>
           <a
-            title="Documentation Compiler To Generate The Table Of Contents, Embed Examples With Their Output, Make Markdown Tables, Maintain Typedefs For JavaScript And README, Watch Changes To Push, Use Macros And Prettify API Titles." class="NPMBadge" href="https://npmjs.com/package/documentary">
+            title="Documentation Compiler To Generate The Table Of Contents, Embed Examples With Their Output, Make Markdown Tables, Maintain Typedefs For JavaScript And README, Watch Changes To Push, Use Macros And Prettify API Titles." class="NPMBadge" href="https://www.npmjs.com/package/documentary">
             <span class="a"><em>Documentary</em></span><span class="b">1.34.1</span></a>
           <a
-            title="The 2019 Most Modern Testing Framework For Node.JS With Test Contexts (Reusable BeforeEach / AfterEach Via Separate Files); Masks (Inputs/Outputs In Non-Js Files) And Fork Testing; Interactive Snapshots." class="NPMBadge" href="https://npmjs.com/package/zoroaster">
+            title="The 2019 Most Modern Testing Framework For Node.JS With Test Contexts (Reusable BeforeEach / AfterEach Via Separate Files); Masks (Inputs/Outputs In Non-Js Files) And Fork Testing; Interactive Snapshots." class="NPMBadge" href="https://www.npmjs.com/package/zoroaster">
             <span class="a"><em>Zoroaster</em></span><span class="b">4.1.2</span></a>
           <a
-            title="Front-End Code Bundler and Proper Node.js Package Compiler With Closure Compiler. Can create a single executable JS file and merge and optimise all dependencies." class="NPMBadge" href="https://npmjs.com/package/depack">
-            <span class="a"><em>Depack</em></span><span class="b">1.0.0</span></a>
+            title="Proper Node.JS Package Compiler (And Front-End Code Bundler) With Closure Compiler. Can create a single executable JS file and merge and optimise all dependencies." class="NPMBadge" href="https://www.npmjs.com/package/depack">
+            <span class="a"><em>Depack</em></span><span class="b">1.0.1</span></a>
           <a
-            title="A Regex-Based Transpiler Of Source Code To Allow Writing Import And Export Statements And JSX With 0 Dependencies." class="NPMBadge" href="https://npmjs.com/package/alamode">
+            title="A Regex-Based Transpiler Of Source Code To Allow Writing Import And Export Statements And JSX With 0 Dependencies." class="NPMBadge" href="https://www.npmjs.com/package/alamode">
             <span class="a"><em>ÀLaMode</em></span><span class="b">3.2.0</span></a>
           <a
-            title="Static Web Site Compiler That Uses Closure Compiler For JS Bundling And Closure Stylesheets For CSS optimisations. Supports JSX Syntax To Write Static Elements And Dynamic Preact Components." class="NPMBadge" href="https://npmjs.com/package/splendid">
-            <span class="a"><em>Splendid</em></span><span class="b">1.14.9</span></a>
+            title="Static Web Site Compiler That Uses Closure Compiler For JS Bundling And Closure Stylesheets For CSS optimisations. Supports JSX Syntax To Write Static Elements And Dynamic Preact Components." class="NPMBadge" href="https://www.npmjs.com/package/splendid">
+            <span class="a"><em>Splendid</em></span><span class="b">1.16.5</span></a>
         </div>
         <div class="b-S">
           <a href="https://twitter.com/artdecocode">twitter</a><br>
@@ -181,18 +184,14 @@ h;a.style.webkitTransform=h})};}).call(this);
         </div>
       </div>
     </div>
-    <div style="position:relative;">
-      <div class="b-A b-Nq b-up b-rp"
-        style="height: 50px; top: 0px; left: 0px;">
+    <div class="b-tp">
+      <div class="b-A b-Nq b-up b-rp" style="height: 50px; top: 0px; left: 0px;">
         <div class=" Parallax" data-loading id="c647b"></div>
         <div class="Parallax"></div>
         <noscript><div class=" Parallax" style="background-image: url(img/tile.jpg);"></div></noscript>
       </div>
       <div class="b-up" style="top: calc(50px - 1px); left: 0px;" id="bottom"></div>
     </div>
-    <script>
-  (function(){function d(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}}function e(){var a=document.querySelectorAll("script[data-src]");if(!(a instanceof Array)){var b="undefined"!=typeof Symbol&&Symbol.iterator&&a[Symbol.iterator];a=b?b.call(a):{next:d(a)};for(var c=[];!(b=a.next()).done;)c.push(b.value);a=c}return a}
-  window.addEventListener("DOMContentLoaded",function(){function a(){if(0<b.length){var c=b.shift();c.src=c.getAttribute("data-src");c.removeAttribute("data-src");c.onload=a;c.onerror=function(){console.warn("Could not load script %s",c.src)}}}var b=e().concat();a()});}).call(this);
-    </script>
+    <script>(function(){function b(){if(0<c.length){var a=c.shift();a.src=a.getAttribute("data-src");a.removeAttribute("data-src");a.onload=b;a.onerror=function(){console.warn("Could not load script %s",a.src)}}}var c=Array.prototype.slice.call(document.querySelectorAll("script[data-src]"));b()})()</script>
   </body>
 </html>

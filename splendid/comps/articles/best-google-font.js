@@ -83,8 +83,8 @@ const meta = [{
   id: 'cd871',
   props: {
     url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
-    size: '24',
-    meta: 'true',
+    size: 24,
+    meta: true,
   },
 },
 {
@@ -92,8 +92,8 @@ const meta = [{
   id: 'c65b9',
   props: {
     path: 'best-google-font/animate/agf.json',
-    width: '550',
-    height: '400',
+    width: 550,
+    height: 400,
     align: 'center',
   },
 },
@@ -109,8 +109,8 @@ const meta = [{
   id: 'cde7b',
   props: {
     path: 'best-google-font/animate/aligator.json',
-    width: '74',
-    height: '36',
+    width: 74,
+    height: 36,
   },
 },
 {
@@ -132,8 +132,8 @@ const meta = [{
   id: 'cfc84',
   props: {
     url: 'https://www.artd.eco/articles/how-to-load-google-fonts-asynchronously.html',
-    size: '36',
-    meta: 'true',
+    size: 36,
+    meta: true,
   },
 },
 {
@@ -161,13 +161,14 @@ const meta = [{
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const Comp = __components[key]
   const plain = Comp.plain || (/^\s*class\s+/.test(Comp.toString()) && !Component.isPrototypeOf(Comp))
-  props.splendid = { addCSS(stylesheet) {
+  props.splendid = { mount: '/', addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
   } }
 
   const ids = id.split(',')
   ids.forEach((Id) => {
     const { parent, el } = init(Id, key)
+    if (!el) return
     const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })
     let comp
     el.render = () => {

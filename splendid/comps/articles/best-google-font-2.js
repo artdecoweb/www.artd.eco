@@ -63,8 +63,8 @@ const meta = [{
   id: 'ce5ba',
   props: {
     url: 'https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html',
-    size: '24',
-    meta: 'true',
+    size: 24,
+    meta: true,
   },
 },
 {
@@ -93,8 +93,8 @@ const meta = [{
   id: 'c5f46',
   props: {
     path: 'best-google-font-2/animate/async-google-font.json',
-    width: '505',
-    height: '299',
+    width: 505,
+    height: 299,
     align: 'right',
   },
 },
@@ -117,8 +117,8 @@ const meta = [{
   id: 'c228f',
   props: {
     path: 'best-google-font-2/animate/advanced-google-font.json',
-    width: '505',
-    height: '299',
+    width: 505,
+    height: 299,
   },
 },
 {
@@ -126,8 +126,8 @@ const meta = [{
   id: 'cc4dd',
   props: {
     url: 'https://www.artd.eco/articles/the-best-way-to-load-google-fonts-asynchronously.html',
-    size: '36',
-    meta: 'true',
+    size: 36,
+    meta: true,
   },
 },
 {
@@ -141,13 +141,14 @@ const meta = [{
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const Comp = __components[key]
   const plain = Comp.plain || (/^\s*class\s+/.test(Comp.toString()) && !Component.isPrototypeOf(Comp))
-  props.splendid = { addCSS(stylesheet) {
+  props.splendid = { mount: '/', addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
   } }
 
   const ids = id.split(',')
   ids.forEach((Id) => {
     const { parent, el } = init(Id, key)
+    if (!el) return
     const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })
     let comp
     el.render = () => {

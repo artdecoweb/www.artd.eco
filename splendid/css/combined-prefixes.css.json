@@ -1,0 +1,56 @@
+{
+  "align-self": [
+    "center"
+  ],
+  "flex-grow|-ms-flex-positive": [
+    "1"
+  ],
+  "flex|-ms-flex": [
+    "0 0 25%"
+  ],
+  "background-size": [
+    "30px"
+  ],
+  "display": [
+    "flex|-ms-flexbox"
+  ],
+  "box-sizing": [
+    "border-box"
+  ],
+  "order|-ms-flex-order": [
+    "1"
+  ],
+  "flex-direction|-ms-flex-direction": [
+    "column"
+  ],
+  "animation": [
+    "fadeIn .5s"
+  ],
+  "border-radius": [
+    "2rem"
+  ],
+  "box-shadow": [
+    "none"
+  ],
+  "transform": [
+    "scaleX(-1)"
+  ],
+  "flex-basis|-ms-flex-preferred-size": [
+    "0"
+  ],
+  "animation-fill-mode": [
+    "forwards"
+  ],
+  "hyphens|-webkit-hyphens|-ms-hyphens": [
+    "auto"
+  ],
+  "justify-content": [
+    "center"
+  ],
+  "flex-wrap|-ms-flex-wrap": [
+    "wrap"
+  ],
+  "align-items": [
+    "center"
+  ]
+}

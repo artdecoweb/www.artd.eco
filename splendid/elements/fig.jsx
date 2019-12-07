@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-key */
-export default function Fig({ id, reverse, src, alt, splendid, webp, border, children, 'no-fluid': noFluid, size = '6' }) {
+export default function Fig({ id, reverse, src, alt, 'img-alt': imgAlt, splendid, webp, border, children, 'no-fluid': noFluid, size = 6 }) {
   const b = border ? { [`border-${border}`]: true } : {}
-  if (webp) b['responsive'] = true
   let annotation
   const c = children[0].trim()
   if (!alt) {
@@ -23,12 +22,15 @@ export default function Fig({ id, reverse, src, alt, splendid, webp, border, chi
   const colCl = reverse ? { 'order-2': true, 'order-lg-1': true } : { }
   if (annotation) colCl[`lg-${size}`] = true
 
+  const f = `Figure ${i}: ${alt}`
+  imgAlt = imgAlt || f
+
   const col = (<column {...colCl} d-flex align-items-center justify-content-center flex-column id={id} mb-3 p-3 rounded position-relative overflow-hidden>
     <parallax speedy="-0.5" z-index="-1" background-image="/img/letters/background.png" />
     <p text-center>
-      <splendid-img webp={webp} border {...b} rounded img-fluid src={src} alt={alt} placeholder-auto />
+      <splendid-img webp={webp} border {...b} rounded img-fluid src={src} alt={imgAlt} placeholder-auto />
     </p>
-    <h5 m-0 background="white" d-inline-block>Figure {i}: {alt}</h5>
+    <h5 m-0 background="white" d-inline-block dangerouslySetInnerHTML={{ __html: f }}/>
   </column>)
 
   const ch = [annotation, col]

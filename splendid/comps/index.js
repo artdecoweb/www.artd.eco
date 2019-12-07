@@ -34,7 +34,7 @@ const meta = [{
   id: 'c7c22',
   props: {
     'background-image': '/pages/index/img/seamless.jpg',
-    speedy: '0',
+    speedy: 0,
     speedx: '-0.5',
   },
 },
@@ -60,13 +60,14 @@ const meta = [{
 meta.forEach(({ key, id, props = {}, children = [] }) => {
   const Comp = __components[key]
   const plain = true
-  props.splendid = { addCSS(stylesheet) {
+  props.splendid = { mount: '/', addCSS(stylesheet) {
     return makeClassGetter(renameMaps[stylesheet])
   } }
 
   const ids = id.split(',')
   ids.forEach((Id) => {
     const { parent, el } = init(Id, key)
+    if (!el) return
     const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })
     let comp
     el.render = () => {

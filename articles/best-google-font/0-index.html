@@ -38,9 +38,9 @@ Because fast pages please users, the conversion rates are increased and SEO rank
 }
 </style>
 
-<Div>
+<div>
   <img class="PB" alt="papyrus background" src="./svg/parchment-top.svg" style="width:100%; height:auto" d-block/>
-  <bootstrap-div id="Advantages" position-relative>
+  <div id="Advantages" position-relative>
     <img class="PA PC" alt="papyrus background" src="./graphics/parchment-svg.svg" />
 
     <!-- the vertical -->
@@ -50,9 +50,9 @@ Because fast pages please users, the conversion rates are increased and SEO rank
       * Eliminates extraneous reflows of the page that happen a) after the stylesheet is applied, and b) after each font and its variations are downloaded (think 3+ reflows for 2 fonts you're loading), thus <strong>unblocking</strong> the main thread and improving the overall page load time.
       - Shows all variations of a font *at the same time*, without parts of text jumping on the page, which might be annoying to the user. The Flash of Unstyled Text (_FOUT_) is one thing, which is somewhat bearable by the user, but when many parts of the text (italic, bold) jump and flash it kind of looks unprofessional because it interferes with users' attention span.
     </ul>
-  </bootstrap-div>
+  </div>
   <img class="PB" alt="papyrus background" src="./svg/parchment-bottom.svg" style="width:100%; height:auto" d-block/>
-</Div>
+</div>
 
 As a bonus at the end, I will show you a hack how to embed a font on a webpage for the critical path view, that is more advanced than just embedding a CSS with `data:application/font`-encoded base64 string with it, which might still result in a _FOUT_, but my bonus workaround removes the _FOUT_ completely.
 
