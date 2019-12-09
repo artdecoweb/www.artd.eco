@@ -1,4 +1,10 @@
+/**
+ *
+ * @param {Object} param0
+ * @param {Splendid} param0.splendid
+ */
 export default function Avatar({ date, splendid }) {
+  /** @type {string[]} */
   let topics = splendid.page.topics
   if (!topics) {
     splendid.log('Topics are missing. Please specify some topics.')
@@ -16,11 +22,19 @@ export default function Avatar({ date, splendid }) {
       </p>
     </column>
     <column sm-3 lg-4>
+      <img alt="views counter" d-block src="https://api.artd.eco/counter.svg" />
       Topics:
-      {topics.map((topic) => {
+      {topics.reduce((acc, topic, i, ar) => {
         // eslint-disable-next-line react/jsx-key
-        return (<a d-block href={`articles/topics#${topic.toLowerCase().replace(/ /g, '-')}`}>{topic}</a>)
-      })}
+        const a = (<a href={`articles/topics#${topic.toLowerCase().replace(/ /g, '-')}`}>{topic}</a>)
+        acc.push(a)
+        if (i < ar.length - 1) acc.push(', ')
+        return acc
+      }, [' '])}
     </column>
   </row>)
 }
+
+/**
+ * @typedef {import('splendid')} Splendid
+ */
