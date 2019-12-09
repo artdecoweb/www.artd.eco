@@ -79,6 +79,15 @@ const meta = [{
   },
 },
 {
+  key: 'animation',
+  id: 'c4a0d',
+  props: {
+    path: 'life-sucks/animate/rat.json',
+    width: 511,
+    height: 282,
+  },
+},
+{
   key: 'back-to',
   id: 'c5040',
   props: {
