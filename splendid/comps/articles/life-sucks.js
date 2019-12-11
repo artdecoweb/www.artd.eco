@@ -152,6 +152,16 @@ const meta = [{
   },
 },
 {
+  key: 'social-buttons',
+  id: 'cffa1',
+  props: {
+    url: 'https://www.artd.eco/articles/inside-uks-technocracy-and-mafia-behind-it.html',
+    subject: 'Inside UK\'s Technocracy And Mafia Behind It',
+    size: 40,
+    title: 'Democracy and capitalism are incompatible: money always talks. learn how the Conservative neo-elite are robbing population with Industrial Strategy.',
+  },
+},
+{
   key: 'comments',
   id: 'preact-div',
 },

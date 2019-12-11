@@ -18,7 +18,7 @@ export default function Avatar({ date, splendid }) {
     <column col-10 sm-7 border-bottom="1px solid grey">
       <p text-right color="grey">
         <span>Anton Dmukhovskiy, Senior Software Developer</span><br/>
-        <span>{date}</span> <social-buttons meta size="24" />
+        <span>{date}</span> <span className="SplendidSharingButtons"><social-buttons meta size="24" /></span>
       </p>
     </column>
     <column sm-3 lg-4>
