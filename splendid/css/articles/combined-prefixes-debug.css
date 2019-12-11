@@ -123,6 +123,11 @@ hr {
     -moz-box-flex: 0 0 50%;
     -webkit-flex: 0 0 50%;
   }
+  .col-lg-7 {
+    -webkit-box-flex: 0 0 58.333333%;
+    -moz-box-flex: 0 0 58.333333%;
+    -webkit-flex: 0 0 58.333333%;
+  }
   .col-lg-9 {
     -webkit-box-flex: 0 0 75%;
     -moz-box-flex: 0 0 75%;

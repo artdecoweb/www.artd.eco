@@ -1,12 +1,16 @@
 /* eslint-disable react/jsx-key */
 export default function Fig({ id, reverse, src, alt, 'img-alt': imgAlt, splendid, webp, border, children, 'no-fluid': noFluid, size = 6 }) {
+  const { page: { figSm = false } } = splendid
+
   const b = border ? { [`border-${border}`]: true } : {}
   let annotation
   const c = children[0].trim()
   if (!alt) {
     alt = children[0].trim()
   } else if (c) {
-    const aCl = reverse ? { 'order-1': true, 'order-lg-2': true } : { }
+    const aCl = reverse ? { 'order-lg-2': true } : { }
+    if (!figSm) aCl['order-1'] = true
+    else aCl['order-2'] = true
     const sz = { [`lg-${12-size}`]: true }
     annotation = <column {...aCl} d-flex align-items-center justify-content-center flex-column {...sz}
       dangerouslySetInnerHTML={{ __html: c }}/>
@@ -15,11 +19,14 @@ export default function Fig({ id, reverse, src, alt, 'img-alt': imgAlt, splendid
   if (id) id = `fig-${id}`
   else id = `fig-${splendid.random()}`
 
+
   splendid.figures = splendid.figures || []
   splendid.figures.push({ alt, id })
   const i = splendid.figures.length
 
-  const colCl = reverse ? { 'order-2': true, 'order-lg-1': true } : { }
+  const colCl = reverse ? { 'order-lg-1': true } : { }
+  if (!figSm) colCl['order-2'] = true
+  else colCl['order-1'] = true
   if (annotation) colCl[`lg-${size}`] = true
 
   const f = `Figure ${i}: ${alt}`

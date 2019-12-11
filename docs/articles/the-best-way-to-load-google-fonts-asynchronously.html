@@ -391,7 +391,7 @@ startPreload({ href: FONT }, 'js')</code></pre>
             </div></div></div>
             <div class="b-A b-tp">
               <div class="b-B">
-                <div class="b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-D" id="fig-advanced-loading">
+                <div class="b-Zb b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-D" id="fig-advanced-loading">
                   <div class=" Parallax" data-loading style="z-index: -1;" id="c709f1"></div>
                   <div style="z-index: -1;" class="Parallax"></div>
                   <noscript>
@@ -433,7 +433,7 @@ startPreload({ href: FONT }, 'js')</code></pre>
             </div></div></div>
             <div class="b-A b-tp">
               <div class="b-B">
-                <div class="b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-D" id="fig-before-body">
+                <div class="b-Zb b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-D" id="fig-before-body">
                   <div class=" Parallax" data-loading style="z-index: -1;" id="c709f2"></div>
                   <div style="z-index: -1;" class="Parallax"></div>
                   <noscript>
@@ -489,12 +489,12 @@ startPreload({ href: FONT }, 'js')</code></pre>
             <h3 id="non-blocking" class="b-Xk">Non-Blocking Proof</h3>
             
             <div class="b-tp b-B">
-              <div class="b-Mk b-gm b-bm b-Ol b-yb">
+              <div class="b-Yb b-Mk b-gm b-bm b-Ol b-yb">
                 <h3 id="non-blocking-proof" class="b-Fk b-al">Non-Blocking Proof</h3>
                   <p>From looking at the previous graph, for a scary moment I thought that I might be giving wrong advice when saying to append a <span class="tm">link</span> tag dynamically into the head, and it will actually block the page from rendering. This is because on the previous <a data-smooth href="#fig-before-body">Fig 2</a> (don't be afraid to click, we have a user-friendly scroll with a back button), there are some gaps in the timeline after the web font stylesheet is inserted, but before the external CSS is parsed, that could indicate that the page was render-blocked.</p>
                   <p>However, it's not the case as shown <span id="Above">below</span><span id="OnLeft">on the left</span>: the parse HTML goes in parallel with stylesheet loading. My interpretation of those gaps in past is that the browser has to pause to parse the external style, allowing some async JS to report to the main thread via callbacks (e.g., on <a data-smooth href="#fig-before-body">Fig 2</a>, XHR is completed quicker compared to the <a data-smooth href="#fig-advanced-loading">Fig 1</a>, where it had to wait for the main thread to unblock since there were no gaps).</p>
               </div>
-              <div class="b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-yb" id="fig-9848">
+              <div class="b-Zb b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-yb" id="fig-9848">
                 <div class=" Parallax" data-loading style="z-index: -1;" id="c709f"></div>
                 <div style="z-index: -1;" class="Parallax"></div>
                 <noscript>
@@ -578,7 +578,7 @@ async function throttle(ctx, next){
             </div></div></div>
             <div class="b-A b-tp">
               <div class="b-B">
-                <div class="b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-D" id="fig-lemuria-font">
+                <div class="b-Zb b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-D" id="fig-lemuria-font">
                   <div class=" Parallax" data-loading style="z-index: -1;" id="c709f3"></div>
                   <div style="z-index: -1;" class="Parallax"></div>
                   <noscript>
@@ -740,7 +740,7 @@ const linkSupportsPreload = DOMTokenListSupports(link.relList, 'preload')</code>
             </div></div></div>
             <div class="b-A b-tp">
               <div class="b-B">
-                <div class="b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-D" id="fig-74268">
+                <div class="b-Zb b-Mk b-gm b-bm b-Ol b-xq b-ir b-vk b-tp b-rp b-D" id="fig-74268">
                   <div class=" Parallax" data-loading style="z-index: -1;" id="c709f4"></div>
                   <div style="z-index: -1;" class="Parallax"></div>
                   <noscript>

@@ -6,6 +6,7 @@ export default {
     image: './life-sucks/img/technocracy.png',
     type: 'article',
   },
+  figSm: true,
   // focus: true,
 }
 
