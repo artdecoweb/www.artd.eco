@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "file": "docs/comps/articles/comments.js",
+  "lineCount": 2,
+  "mappings": "AAGA,IAAMA,GAAa,EACnBC,EAAA,EAMA,KAAMC,GAAe,CACnB,SAAYC,CADO,CAEnB,SAAYC,CAFO,CAArB,CAKMC,GAAKC,CAAA,EAGEC;CAAC,CACZC,IAAK,UADO,CAEZC,GAAI,YAFQ,CAADF,CAIb,CACEC,IAAK,UADP,CAEEC,GAAI,OAFN,CAGEC,MAAO,CACL,mBAAoB,0BADf,CAHT,CAJaH,CAWbI,QAAA,CAAa,QAAA,CAAC,CAAD,CAA4C,CAAzC,IAAAH,EAAF,CAAE,IAAA,CAAKC,EAAP,CAAO,GAAL,CAASC,EAAA,IAAA,EAAA,GAAX,CAAW,MAAA,CAAQ,EAAR,CAAX,CAAW,MAAT,CAAqBE,EAAA,IAAA,EAAA,GAAvB,CAAuB,SAAA,CAAW,EAAX,CAAvB,CAAuB,SAArB,CACRC,EAAOX,EAAA,CAAaM,CAAb,CADC,CAERM,EAAQD,CAAAC,MAARA,EAAuB,cAAAC,KAAA,CAAoBF,CAAAG,SAAA,EAApB,CAAvBF,EAA+D,CAACG,CAAAC,cAAA,CAAwBL,CAAxB,CACtEH,EAAAS,EAAA,CAAiB,CAAEC,EAAO,GAAT,CAAc,EAAAC,QAAM,CAACC,CAAD,CAAa,CAChD,MAAOC,EAAA,CAAgBvB,EAAA,CAAWsB,CAAX,CAAhB,CADyC,CAAjC,CAILb,EAAAe,MAAAC,CAAS,GAATA,CACZd,QAAA,CAAY,QAAA,CAACe,CAAD,CAAQ,CACZ,IAAA,EAAiBC,CAAA,CAAKD,CAAL,CAASlB,CAAT,CAAjB,CAAEoB,EAAA,CAAA,OAAF,CAAUC,EAAA,CAAA,EAChB,IAAKA,CAAL,CAAA,CACA,IAAMC,EAAmD,CAAEtB,IAAAA,CAAF,CAAOC,GAAIiB,CAAX,CAAeZ,MAAAA,CAAf,CAAzD,CACIiB,CACJF,EAAAG,OAAA,CAAYC,QAAA,EAAM,CAEhB,MADAF,EACA,CADOG,CAAA,CAAMJ,CAAN,CAAkBjB,CAAlB,CAAwBkB,CAAxB,CAA8BF,CAA9B,CAAkCD,CAAlC,CAA0ClB,CAA1C,CAAiDE,CAAjD,CADS,CAIlBiB,EAAAG,OAAAzB,EAAA,CAAiBuB,CACjBzB,GAAA8B,QAAA,CAAWN,CAAX,CARA,CAFkB,CAApB,CARuD,CAAzD;",
+  "sources": [
+    "/splendid/comps/articles/comments.js"
+  ],
+  "sourcesContent": [
+    "import __initBottom from '../__init/bottom'\nimport '../../js/load-background-img'\nimport makeClassGetter from '../__mcg'\nconst renameMaps = {  }\n__initBottom()\nimport { Component, render, h } from '@externs/preact'\nimport { makeIo, init, start } from '../__competent-lib'\nimport Comments from '../../../articles/components/comments.jsx'\nimport Parallax from 'splendid/build/components/parallax'\n\nconst __components = {\n  'comments': Comments,\n  'parallax': Parallax,\n}\n\nconst io = makeIo()\n\n/** @type {!Array<!preact.PreactProps>} */\nconst meta = [{\n  key: 'comments',\n  id: 'preact-div',\n},\n{\n  key: 'parallax',\n  id: 'c8757',\n  props: {\n    'background-image': '../articles/img/tile.jpg',\n  },\n}]\nmeta.forEach(({ key, id, props = {}, children = [] }) => {\n  const Comp = __components[key]\n  const plain = Comp.plain || (/^\\s*class\\s+/.test(Comp.toString()) && !Component.isPrototypeOf(Comp))\n  props.splendid = { mount: '/', addCSS(stylesheet) {\n    return makeClassGetter(renameMaps[stylesheet])\n  } }\n\n  const ids = id.split(',')\n  ids.forEach((Id) => {\n    const { parent, el } = init(Id, key)\n    if (!el) return\n    const renderMeta = /** @type {_competent.RenderMeta} */ ({ key, id: Id, plain })\n    let comp\n    el.render = () => {\n      comp = start(renderMeta, Comp, comp, el, parent, props, children, { render, Component, h })\n      return comp\n    }\n    el.render.meta = renderMeta\n    io.observe(el)\n  })\n})\n"
+  ],
+  "names": [
+    "renameMaps",
+    "__initBottom",
+    "__components",
+    "Comments",
+    "Parallax",
+    "io",
+    "makeIo",
+    "meta",
+    "key",
+    "id",
+    "props",
+    "forEach",
+    "children",
+    "Comp",
+    "plain",
+    "test",
+    "toString",
+    "Component",
+    "isPrototypeOf",
+    "splendid",
+    "mount",
+    "addCSS",
+    "stylesheet",
+    "makeClassGetter",
+    "split",
+    "ids",
+    "Id",
+    "init",
+    "parent",
+    "el",
+    "renderMeta",
+    "comp",
+    "render",
+    "el.render",
+    "start",
+    "observe"
+  ]
+}

@@ -7,12 +7,14 @@ import { Component, render, h } from '@externs/preact'
 import { makeIo, init, start } from '../__competent-lib'
 import Animation from '../../components/animation.js'
 import BackTo from '../../../articles/components/back-to.js'
+import Comments from '../../../articles/components/comments.jsx'
 import Parallax from 'splendid/build/components/parallax'
 import SocialButtons from 'splendid/build/components/social-buttons'
 
 const __components = {
   'animation': Animation,
   'back-to': BackTo,
+  'comments': Comments,
   'parallax': Parallax,
   'social-buttons': SocialButtons,
 }
@@ -35,6 +37,14 @@ const meta = [{
   },
 },
 {
+  key: 'parallax',
+  id: 'c3f3d',
+  props: {
+    'background-image': '../articles/life-sucks/pyramid/politicians.png',
+    speedx: '-0.5',
+  },
+},
+{
   key: 'back-to',
   id: 'c6965',
   props: {
@@ -42,17 +52,18 @@ const meta = [{
   },
 },
 {
-  key: 'parallax',
-  id: 'c647b',
-  props: {
-    'background-image': 'img/tile.jpg',
-  },
-},
-{
   key: 'back-to',
   id: 'ce513',
   props: {
     name: 'fig-9848',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c3150',
+  props: {
+    'background-image': '../articles/life-sucks/pyramid/capitalists2.png',
+    speedx: '0.5',
   },
 },
 {
@@ -65,6 +76,15 @@ const meta = [{
   },
 },
 {
+  key: 'parallax',
+  id: 'cc379',
+  props: {
+    'background-image': '../articles/life-sucks/pyramid/£.png',
+    speedy: '-1.5',
+    speedx: '-0.75',
+  },
+},
+{
   key: 'back-to',
   id: 'c632c',
   props: {
@@ -72,10 +92,33 @@ const meta = [{
   },
 },
 {
+  key: 'parallax',
+  id: 'c2999',
+  props: {
+    'background-image': '../articles/life-sucks/pyramid/propaganda2.png',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c4e1a',
+  props: {
+    'background-image': '../articles/life-sucks/pyramid/eye3.png',
+  },
+},
+{
   key: 'back-to',
   id: 'c804a',
   props: {
     name: 'fig-84852',
+  },
+},
+{
+  key: 'parallax',
+  id: 'c5436',
+  props: {
+    'background-image': '../articles/life-sucks/pyramid/$.png',
+    speedy: '1.5',
+    speedx: '-0.75',
   },
 },
 {
@@ -106,6 +149,17 @@ const meta = [{
   id: 'c7de0',
   props: {
     name: 'fig-65987',
+  },
+},
+{
+  key: 'comments',
+  id: 'preact-div',
+},
+{
+  key: 'parallax',
+  id: 'c8757',
+  props: {
+    'background-image': '../articles/img/tile.jpg',
   },
 },
 {

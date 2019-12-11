@@ -1,0 +1,77 @@
+<add-file>splendid://js/polyfill/css-shapes.min.js</add-file>
+<stylesheet href="styles/pyramid.css" inline/>
+
+<row class="PyramidWrapper">
+  <col>
+    <div class="Crown" text-center
+    style="-webkit-transform:translateY(28px)" transform="translateY(28px)" margin-top="-28px">
+      <img src="pyramid/crown.png" alt="British Crown" height="50px" />
+    </div>
+
+    <div shape-outside="polygon(52% 0%, 0% 100%, 100% 100%)" class="Pyramid" float-none float-md-left position-relative z-index="-1">
+      <div class="Currency" right="0" d-none>
+        <parallax background-image="pyramid/£.png" speedx="-0.75" speedy="-1.5" />
+      </div>
+      <div class="Currency" left="0" d-none>
+        <parallax background-image="pyramid/$.png" speedx="-0.75" speedy="1.5" />
+      </div>
+      <div style="background-color: #4fbb96;" class="Zone">
+        <parallax background-image="pyramid/eye3.png"/>
+      </div>
+      <div style="background-color: greenyellow;" class="Zone">
+        <parallax background-image="pyramid/politicians.png" speedx="-0.5" />
+      </div>
+      <div style="background-color: yellowgreen;" class="Zone">
+        <parallax background-image="pyramid/capitalists2.png" speedx="0.5" />
+      </div>
+      <div style="background-color: green;" class="Zone">
+        <parallax background-image="pyramid/propaganda2.png" />
+      </div>
+
+      <!-- Edge Polyfill -->
+      <svg class="PyramidCorner" transform="none" data-no-clip-path viewBox="0 0 100 100" preserveAspectRatio="none" fill="white">
+        <defs>
+          <pattern id="img1" patternUnits="userSpaceOnUse" width="4.8" height="5.4">
+            <image xlink:href="pyramid/£.png" x="0" y="0" width="4.8" height="5.4"/>
+          </pattern>
+        </defs>
+        <polygon points="50,0 100,100 100,0"/>
+        <polygon points="50,0 100,100 100,0" fill="url(#img1)"/>
+      </svg>
+      <svg class="PyramidCorner" style="transform:none;" data-no-clip-path viewBox="0 0 100 100" preserveAspectRatio="none" fill="white">
+        <defs>
+          <pattern id="img2" patternUnits="userSpaceOnUse" width="3.4" height="5.4">
+            <image xlink:href="pyramid/$.png" x="0" y="0" width="3.4" height="5.4"/>
+          </pattern>
+        </defs>
+        <polygon points="0,0 0,100 50,0"/>
+        <polygon points="0,0 0,100 50,0" fill="url(#img2)"/>
+      </svg>
+
+      <svg class="PyramidCorner" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon points="55,0 105,100 100,0"/>
+      </svg>
+      <svg class="PyramidCorner" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon points="0,0 0,90 45,0"/>
+      </svg>
+    </div><!-- Closes .pyramid -->
+
+    <p><strong font-size="large" color="#4fbb96">The Elite</strong>: i.e., the _New World Order_, who came up with the international monetary system to inflict debt on all countries, make them wage wars against other countries so that the never-ending interest can be claimed, and every person transformed into a wage slave. These are the *oligarchs* who are interested in invading other countries, to keep the oil coming in to be converted into cash.</p>
+    <p><strong font-size="large" color="#a9f33d">The Politicians</strong>: back in the day, people believed they live in democracy and elected their leaders. Today, money elects everyone, and makes sure it brings in more money. Any honour and will to represent citizens is long gone &mdash; left is *plutocracy* characterised by shameless pushing of capital interests on the national level.</p>
+    <p><strong font-size="large" color="yellowgreen">The Capitalists</strong>: when a person has no moral grounds and strives for power game, she will do anything to grab as much as possible, and then use the grabbed to establish agencies to protect her *riches*. People who become trapped in this vicious cycle tend to be self-righteous individuals who measure all things in terms of financial gain, simply because they lost soul.</p>
+    <p><strong font-size="large" color="green">The Propaganda</strong>: after a man is cut off from his natural groups and becomes an atomised individual, he falls victim to carefully designed world views that create an artificial life for him with fake values, goals and principles by those who exploit him. To fill in the gap left after *God* was killed, the new God in form of venture tech is surgeoned into man's chest by industrial propagandists.</p>
+  </col>
+</row>
+
+<script combine="false">
+  var hasNativeSupport = document.documentElement.classList.contains('shape-outside')
+  if (!hasNativeSupport) {
+    document.addEventListener('load', function () {
+      var s = document.createElement('script')
+      s.src = '/js/polyfill/css-shapes.min.js'
+      document.head.appendChild(s)
+    })
+  }
+</script>
+
+<css-supports shape-outside="polygon(50% 0%, 0% 100%, 100% 100%)" clip-path="polygon(50% 0%, 100% 100%, 0% 100%)" />

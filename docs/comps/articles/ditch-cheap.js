@@ -1,3 +1,3 @@
-var sa={};y();var ta={parallax:I},ua=B();[{key:"parallax",id:"c647b",props:{"background-image":"img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.props?{}:a.props,f=void 0===a.children?[]:a.children,e=ta[b];d.m={i:"/",v:function(k){return z(sa[k])}};c.split(",").forEach(function(k){var g=A(k,b),m=g.parent,l=g.a;if(l){var h={key:b,id:k,plain:!0},n;l.render=function(){return n=C(h,e,n,l,m,d,f)};l.render.c=h;ua.observe(l)}})});
+var sa={};y();var ta={parallax:I},ua=B();[{key:"parallax",id:"c8757",props:{"background-image":"../articles/img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.props?{}:a.props,e=void 0===a.children?[]:a.children,f=ta[b];d.j={i:"/",v:function(k){return z(sa[k])}};c.split(",").forEach(function(k){var g=A(k,b),m=g.parent,l=g.a;if(l){var h={key:b,id:k,plain:!0},n;l.render=function(){return n=C(h,f,n,l,m,d,e)};l.render.c=h;ua.observe(l)}})});
 
 //# sourceMappingURL=ditch-cheap.js.map

@@ -1,0 +1,71 @@
+.Zone:nth-child(3) {
+  /* background-image: url("/pyramid/eye2.png"); */
+  clip-path: polygon(50% 0, 100% 100%, 0% 100%);
+  /* background-color: #4fb b96; */
+  width: 25%;
+}
+.Zone:nth-child(4) {
+  /* background-image: url("/pyramid/politicians.png"); */
+  clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
+  width: 50%;
+}
+.Zone:nth-child(5) {
+  /* background-image: url("/pyramid/capitalists2.png"); */
+  clip-path: polygon(16.5% 0, 83% 0, 100% 100%, 0 100%);
+  width: 75%;
+}
+.Zone:nth-child(6) {
+  /* background-image: url("/pyramid/propaganda2.png"); */
+  clip-path: polygon(12.5% 0, 87.5% 0, 100% 100%, 0 100%);
+  width: 100%;
+}
+.Zone {
+  text-align: center;
+  padding: 40px 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+}
+.Pyramid {
+  margin-right: -15px;
+  margin-left: -15px;
+  shape-outside: polygon(52% 0%, 0% 100%, 100% 100%)
+}
+@media (min-width: 768px) {
+  .Pyramid, .Crown {
+    width: 50%;
+  }
+  .Pyramid {
+    margin-right: 5%;
+    margin-left: 0;
+  }
+}
+.PyramidWrapper p {
+  font-size: small;
+  margin-bottom: 0;
+}
+.PyramidCorner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-1px);
+}
+.Currency {
+  width:50%;
+  height:100%;
+  overflow:hidden;
+  position:absolute;
+  top:0;
+}
+.clip-path .Pyramid .Currency {
+  display: block !important;
+}
+.clip-path [data-no-clip-path] {
+  display: none;
+}
+.Pyramid polygon:not([fill]) {
+  fill: white;
+}

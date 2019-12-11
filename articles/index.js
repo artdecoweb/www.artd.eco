@@ -12,17 +12,20 @@ const T = {
     title: 'Articles By Topics',
     url: 'articles/topics.html',
   },
-  'life-sucks': Technocracy,
-  'ditch-cheap': {
-    title: 'How I Rebel.com\'ed Against Cheap NameCheap Service',
-    seo: 'Companies like NameCheap are proud of their customer service without knowing what service is. Why choose premium registrars like Rebel.com instead.',
-    links: {
-      // 'ref-forbes': 'https://www.forbes.com/profile/eileen-burbidge/',
-      // 'ch-tn': 'https://beta.companieshouse.gov.uk/company/08843778/officers',
-    },
-    topics: ['customer service', 'domains', 'PR'],
-    // focus: true,
+  comments: {
+    title: 'Comments',
   },
+  'life-sucks': Technocracy,
+  // 'ditch-cheap': {
+  //   title: 'How I Rebel.com\'ed Against Cheap NameCheap Service',
+  //   seo: 'Companies like NameCheap are proud of their customer service without knowing what service is. Why choose premium registrars like Rebel.com instead.',
+  //   links: {
+  //     // 'ref-forbes': 'https://www.forbes.com/profile/eileen-burbidge/',
+  //     // 'ch-tn': 'https://beta.companieshouse.gov.uk/company/08843778/officers',
+  //   },
+  //   topics: ['customer service', 'domains', 'PR'],
+  //   // focus: true,
+  // },
   'best-google-font': {
     title: 'How To Load Google Fonts Asynchronously',
     seo: 'Using performance measurements, we examine page loading process in detail to find out how to embed web font stylesheet asynchronously to avoid blocks.',

@@ -14,6 +14,16 @@ export const index = {
   },
 }
 
+/**
+ * @type {import('splendid').Page}
+ */
+export const privacy = {
+  title: 'Privacy Policy',
+  seo: 'The data processing policy for the www.artd.eco website.',
+  layout: '~/articles/layout/index.html',
+  url: '/privacy-policy.html',
+}
+
 export const articles = '~/articles'
 
 // Art Deco is a specialised Node.JS development company that creates back-end servers, cloud and serverless applications and front-end websites and PWAs of outstanding quality, optimised with JavaScript compiler and with complete testing and documentation coverage.

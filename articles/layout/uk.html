@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <block-articles-head />
+  <body style="overscroll-behavior: none;">
+    <style>
+    @media (max-width: 430px) {
+      a.lead {
+        background: aliceblue;
+      }
+    }
+    </style>
+    <container-fluid position-relative p-0 height="20rem" overflow-hidden mb-3>
+      <img id="Photo" alt="Art Deco Store Building"
+        src="../img/blog.jpg" img-fluid position-absolute webp="photo" responsive onload="initPhoto(this)" sizes="100vw" />
+      <div id="Holder">
+        <a href="index" title="Art Deco Home Page">
+          <picture id="Logo">
+            <source srcset="/img/logo-300.webp 300w" sizes="100px" type="image/webp">
+            <img alt="Art Deco Logo" src="/img/logo.png" sizes="100px" style="width:100px;">
+          </picture>
+          <!-- <logo skip-css sizes="100px" /> -->
+        </a>
+        <a d-block text-info lead color="#1067de!important" href="articles/index">All Articles</a>
+      </div>
+      <script inline src="../js/article-scroll-top.js"></script>
+    </container-fluid>
+
+    <ajax-content>
+      <container><row><col>
+        {{ content }}
+      </col></row></container>
+    </ajax-content>
+
+    <hr>
+    <container-fluid>
+      <row mb-3 d-flex align-items-stretch font-size="small">
+        <col sm-4>
+          *{{ company }}*<br>[Node.JS Development Company](index)<br>
+          Art Deco Code Limited<br>
+          24 Holborn Viaduct,<br>
+          London, UK
+        </col>
+        <col sm-6>
+          <a href="articles/index" font-size="initial">Articles</a><br><br>
+          *Open Source*:<br>
+          <npm-badge package="documentary"><em>Documentary</em></npm-badge>
+          <npm-badge package="zoroaster"><em>Zoroaster</em></npm-badge>
+          <npm-badge package="depack"><em>Depack</em></npm-badge>
+          <npm-badge package="alamode"><em>ÀLaMode</em></npm-badge>
+          <npm-badge package="splendid"><em>Splendid</em></npm-badge>
+        </col>
+        <col sm-2>
+          [twitter](https://twitter.com/artdecocode)<br>
+          [linkedin](https://linkedin.com/company/artdecocode)
+        </col>
+      </row>
+    </container-fluid>
+    <bottom img="../img/tile.jpg" />
+  </body>
+</html>

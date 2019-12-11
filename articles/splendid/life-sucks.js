@@ -1,7 +1,11 @@
 export default {
   title: 'Inside UK\'s Technocracy And Mafia Behind It',
-  seo: 'Democracy and capitalism are incompatible: money always talks. Learn who is UK\'s plutocracy and how they are robbing population with Industrial Strategy.',
+  seo: 'Democracy and capitalism are incompatible: money always talks. learn how the Conservative neo-elite are robbing population with Industrial Strategy.',
   topics: ['UK', 'politics'],
+  og: {
+    image: './life-sucks/img/technocracy.png',
+    type: 'article',
+  },
   // focus: true,
 }
 

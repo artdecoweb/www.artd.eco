@@ -191,11 +191,17 @@ hr {
 .flex-column {
   -webkit-flex-direction: column !important;
 }
+.justify-content-end {
+  -webkit-justify-content: flex-end !important;
+}
 .justify-content-center {
   -webkit-justify-content: center !important;
 }
 .justify-content-between {
   -webkit-justify-content: space-between !important;
+}
+.align-items-end {
+  -webkit-align-items: flex-end !important;
 }
 .align-items-center {
   -webkit-align-items: center !important;
