@@ -1,3 +1,3 @@
-var Z={};x();var aa={parallax:C},ba=A();[{key:"parallax",id:"c8757",l:{"background-image":"../articles/img/tile.jpg"}}].forEach(function(a){var c=a.key,b=a.id,d=void 0===a.l?{}:a.l,e=void 0===a.children?[]:a.children,k=aa[c];d.B={v:"/",C:function(f){return y(Z[f])}};b.split(",").forEach(function(f){var g=z(f,c),l=g.parent,h=g.b;if(h){var m={key:c,id:f,plain:!0},n;h.c=function(){return n=B(m,k,n,h,l,d,e)};h.c.u=m;ba.observe(h)}})});
+var Z={};x();var aa={parallax:C},ba=A();[{key:"parallax",id:"c7611",l:{"background-image":"img/bakst2.jpg"}}].forEach(function(a){var c=a.key,b=a.id,d=void 0===a.l?{}:a.l,e=void 0===a.children?[]:a.children,k=aa[c];d.B={v:"/",C:function(f){return y(Z[f])}};b.split(",").forEach(function(f){var g=z(f,c),l=g.parent,h=g.b;if(h){var m={key:c,id:f,plain:!0},n;h.c=function(){return n=B(m,k,n,h,l,d,e)};h.c.u=m;ba.observe(h)}})});
 
 //# sourceMappingURL=privacy.js.map

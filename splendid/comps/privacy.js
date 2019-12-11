@@ -14,9 +14,9 @@ const io = makeIo()
 
 const meta = [{
   key: 'parallax',
-  id: 'c8757',
+  id: 'c7611',
   props: {
-    'background-image': '../articles/img/tile.jpg',
+    'background-image': 'img/bakst2.jpg',
   },
 }]
 meta.forEach(({ key, id, props = {}, children = [] }) => {

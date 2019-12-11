@@ -79,10 +79,12 @@ strong {
   font-weight: bolder;
 }
 a {
+  color: #007bff;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
+  color: #0056b3;
   text-decoration: underline;
 }
 pre, code {
@@ -117,10 +119,6 @@ h3 {
 }
 h4 {
   font-size: 1.5rem;
-}
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
 }
 hr {
   margin-top: 1rem;
@@ -184,7 +182,7 @@ pre {
   margin-right: -15px;
   margin-left: -15px;
 }
-.col, .col-sm-2, .col-sm-4, .col-sm-6, .col-sm-8, .col-md-4, .col-md-5, .col-md-7, .col-lg-3, .col-lg-4, .col-lg-5 {
+.col, .col-sm-4, .col-sm-8, .col-md-4, .col-md-5, .col-md-7, .col-lg-3, .col-lg-4, .col-lg-5 {
   position: relative;
   width: 100%;
   padding-right: 15px;
@@ -206,20 +204,10 @@ pre {
   order: 2;
 }
 @media (min-width:576px) {
-  .col-sm-2 {
-    -ms-flex: 0 0 16.666667%;
-    flex: 0 0 16.666667%;
-    max-width: 16.666667%;
-  }
   .col-sm-4 {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
-  }
-  .col-sm-6 {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
   }
   .col-sm-8 {
     -ms-flex: 0 0 66.666667%;
@@ -274,9 +262,6 @@ pre {
 .d-inline-block {
   display: inline-block !important;
 }
-.d-block {
-  display: block !important;
-}
 .d-flex {
   display: -ms-flexbox !important;
   display: flex !important;
@@ -301,10 +286,6 @@ pre {
 .align-items-center {
   -ms-flex-align: center !important;
   align-items: center !important;
-}
-.align-items-stretch {
-  -ms-flex-align: stretch !important;
-  align-items: stretch !important;
 }
 .align-self-end {
   -ms-flex-item-align: end !important;
@@ -390,12 +371,6 @@ pre {
     text-align: center !important;
   }
 }
-.text-info {
-  color: #17a2b8 !important;
-}
-a.text-info:hover, a.text-info:focus {
-  color: #0f6674 !important;
-}
 @media print {
   * {
     text-shadow: none !important;
@@ -440,6 +415,9 @@ body {
 #info {
   margin: 1rem;
 }
+.SectionBreak {
+  text-align: center;
+}
 .tm2 {
   background-color: #ffc7ff;
   font-family: 'Courier New' , Courier , monospace;
@@ -471,6 +449,10 @@ body {
 .JavaScript {
   background-color: #eedf00;
   color: black;
+}
+p {
+  font-family: 'Gentium Basic' , serif;
+  font-size: larger;
 }
 #cup {
   width: 300px;
@@ -533,6 +515,9 @@ body {
 .Table h3 {
   text-decoration: underline;
 }
+h2, h3, h4 {
+  font-family: 'Limelight' , cursive;
+}
 .Feature h2 {
   border-radius: 2rem;
   hyphens: auto;
@@ -588,79 +573,4 @@ body {
 .NPMBadge .b {
   background-color: #c12127;
   border-radius: 0 2px 2px 0;
-}
-h1, h2, h3, h4 {
-  font-family: 'Limelight' , cursive;
-  word-break: break-word;
-}
-p {
-  font-family: 'Gentium Basic' , serif;
-  font-size: larger;
-}
-.SectionBreak {
-  text-align: center;
-}
-.tm {
-  background-color: #e1d6c4;
-  font-family: 'Courier New' , Courier , monospace;
-  word-break: break-word;
-  line-height: 1.4rem;
-}
-#Holder {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  background: #f2faff;
-}
-h1 {
-  background: #7d2424;
-  border-bottom: .1rem dashed;
-  color: wheat;
-}
-.H1Lead {
-  background: #f9f0e0;
-  padding: 0 1rem;
-}
-a {
-  color: #843637;
-}
-a:hover {
-  color: #7d2424;
-}
-.SplendidSharingButtons a:nth-child(1) img {
-  background: #863637 !important;
-}
-.SplendidSharingButtons a:nth-child(2) img {
-  background: #803f40 !important;
-}
-.SplendidSharingButtons a:nth-child(3) img {
-  background: #444 !important;
-}
-.SplendidSharingButtons a:nth-child(4) img {
-  background: #397300 !important;
-}
-.SplendidSharingButtons a:nth-child(5) img {
-  background: #1f7199 !important;
-}
-.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
-  color: #191b62 !important;
-}
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: .5em;
-  background: #f0f0f08a !important;
-  color: #444;
-}
-.hljs:hover {
-  background: #f0f0f0e3 !important;
-}
-pre {
-  background: url('/articles/img/code-bg.png');
-  display: inline-block;
-  border-radius: 1rem;
-  white-space: pre-wrap;
-}
-pre code {
-  word-break: break-word;
 }

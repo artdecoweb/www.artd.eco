@@ -50,12 +50,12 @@
     resolve-dependency "^1.0.3"
     restream "^3.7.4"
 
-"@idio/idio@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@idio/idio/-/idio-0.1.0.tgz#06a77eca43a1c044d31148af7dd922047311da4f"
-  integrity sha512-XdBwu9POX4441MlxxrmgtqthItOCzcOCq2sk8KxFxVOvf3qLZmYMWhyQ2mlbTXsFPZyz7L5d8Wa/LWQKBNVKsg==
+"@idio/idio@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@idio/idio/-/idio-0.2.1.tgz#918f2b7bdd9b1fb9e69538addeda6ac983d9d88d"
+  integrity sha512-Ppw0CtETxOgte6YeisZgWeRYX/TF7d0Bomtimtyv42GpC0jJG6Wt/LIByWfyigRX6+Mdym73xk0dWJ+Q/Npj3g==
   dependencies:
-    mime-db "^1.40.0"
+    mime-db "^1.42.0"
 
 "@idio/websocket@^1.0.0":
   version "1.0.0"
@@ -130,6 +130,11 @@ clipboard@^2.0.0:
     select "^1.1.2"
     tiny-emitter "^2.0.0"
 
+commander@~2.20.3:
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
+  integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
+
 delegate@^3.1.2:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
@@ -188,10 +193,23 @@ good-listener@^1.2.2:
   dependencies:
     delegate "^3.1.2"
 
-highlight.js@9.16.2:
-  version "9.16.2"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.16.2.tgz#68368d039ffe1c6211bcc07e483daf95de3e403e"
-  integrity sha512-feMUrVLZvjy0oC7FVJQcSQRqbBq9kwqnYE4+Kj9ZjbHh3g+BisiPgF49NyQbVLNdrL/qqZr3Ca9yOKwgn2i/tw==
+handlebars@^4.5.3:
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.5.3.tgz#5cf75bd8714f7605713511a56be7c349becb0482"
+  integrity sha512-3yPecJoJHK/4c6aZhSvxOyG4vJKDshV36VHp0iVCDVh7o9w2vwi3NSnL2MMPj3YdduqaBcu7cGbggJQM0br9xA==
+  dependencies:
+    neo-async "^2.6.0"
+    optimist "^0.6.1"
+    source-map "^0.6.1"
+  optionalDependencies:
+    uglify-js "^3.1.4"
+
+highlight.js@9.17.0:
+  version "9.17.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.17.0.tgz#d2f3f746611a4d33b1920b9b067d39423bee7a9d"
+  integrity sha512-PyO7FK7z8ZC7FqBlmAxm4d+1DYaoS6+uaxt9KGkyP1AnmGRLnWmNod1yp9BFjUyHoDF00k+V57gF6X9ifY7f/A==
+  dependencies:
+    handlebars "^4.5.3"
 
 makepromise@^3.1.0:
   version "3.1.0"
@@ -200,10 +218,28 @@ makepromise@^3.1.0:
   dependencies:
     erotic "^2.1.0"
 
-mime-db@^1.40.0:
+mime-db@^1.42.0:
   version "1.42.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.42.0.tgz#3e252907b4c7adb906597b4b65636272cf9e7bac"
   integrity sha512-UbfJCR4UAVRNgMpfImz05smAXK7+c+ZntjaA26ANtkXLlOe947Aag5zdIcKQULAiF9Cq4WxBi9jUs5zkA84bYQ==
+
+minimist@~0.0.1:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
+  integrity sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
+
+neo-async@^2.6.0:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
+  integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
+
+optimist@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
+  integrity sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
+  dependencies:
+    minimist "~0.0.1"
+    wordwrap "~0.0.2"
 
 preact@8.5.3:
   version "8.5.3"
@@ -249,14 +285,19 @@ snapsvg@^0.5.1:
   dependencies:
     eve "~0.5.1"
 
-splendid@^1.16.6:
-  version "1.16.6"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.16.6.tgz#ee319da0565381c1a09dac255cb3ea438c504acf"
-  integrity sha512-tCfYIB9NZEghnFnT3aK23LdXyZVlnEUcDGbVKLfVlFwie3quiAyo6AK+syQ6hFHVcED2PN79Rqrq/RpVWhG8OQ==
+source-map@^0.6.1, source-map@~0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
+  integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+
+splendid@^1.16.7:
+  version "1.16.7"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.16.7.tgz#fcdf2200464c427bd84064cb9cc6a2cf32556b9b"
+  integrity sha512-zrDVtClA6hh2H95EwbAzCNAUUs0nn6nigR3fgN82sfRX9nNCp2MkSKf1s+icI9ReM2rfvrDiQhOQigVo42SBig==
   dependencies:
     "@externs/preact" "^1.2.9"
     "@idio/frontend" "^1.6.0"
-    "@idio/idio" "^0.1.0"
+    "@idio/idio" "^0.2.1"
     "@idio/websocket" "^1.0.0"
     "@lemuria/absolute-proxy" "^1.0.2"
     "@lemuria/font" "^1.0.4"
@@ -264,7 +305,7 @@ splendid@^1.16.6:
     "@lemuria/popup" "^1.1.1"
     alamode "^3.2.0"
     dropcss zavr-1/dropcss#743bdc8
-    highlight.js "9.16.2"
+    highlight.js "9.17.0"
     preact "8.5.3"
     prismjs "1.17.1"
 
@@ -277,6 +318,19 @@ typal@^1.22.9:
   version "1.22.9"
   resolved "https://registry.yarnpkg.com/typal/-/typal-1.22.9.tgz#3c251d6843eee28d036be616f37960387a3bf156"
   integrity sha512-wR4RwD7kh03rFpJrQ0pefUQBikBtAtAfwfWMXs0cdnxr3uKEADmhbfaJPfc0HpzkPloqMMXhImdePtJXxY0MVw==
+
+uglify-js@^3.1.4:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.7.2.tgz#cb1a601e67536e9ed094a92dd1e333459643d3f9"
+  integrity sha512-uhRwZcANNWVLrxLfNFEdltoPNhECUR3lc+UdJoG9CBpMcSnKyWA94tc3eAujB1GcMY5Uwq8ZMp4qWpxWYDQmaA==
+  dependencies:
+    commander "~2.20.3"
+    source-map "~0.6.1"
+
+wordwrap@~0.0.2:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
+  integrity sha1-o9XabNXAvAAI03I0u68b7WMFkQc=
 
 zoroaster@^4.1.2:
   version "4.1.2"

@@ -20,7 +20,7 @@ export const index = {
 export const privacy = {
   title: 'Privacy Policy',
   seo: 'The data processing policy for the www.artd.eco website.',
-  layout: '~/articles/layout/index.html',
+  layout: 'layout/privacy.html',
   url: '/privacy-policy.html',
 }
 

@@ -1,4 +1,4 @@
-var Aa={};w();var Ba={comments:O,parallax:F},Ca=z();
-[{key:"comments",id:"preact-div"},{key:"parallax",id:"c8757",props:{"background-image":"../articles/img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.props?{}:a.props,f=void 0===a.children?[]:a.children,e=Ba[b],l=e.plain||/^\s*class\s+/.test(e.toString())&&!D.isPrototypeOf(e);d.m={j:"/",A:function(g){return x(Aa[g])}};c.split(",").forEach(function(g){var m=y(g,b),k=m.parent,h=m.b;if(h){var n={key:b,id:g,plain:l},p;h.render=function(){return p=C(n,e,p,h,k,d,f)};h.render.c=n;Ca.observe(h)}})});
+var qa={};y();var ra={comments:S,parallax:H},sa=B();
+[{key:"comments",id:"preact-div"},{key:"parallax",id:"c8757",props:{"background-image":"../articles/img/tile.jpg"}}].forEach(function(a){var b=a.key,c=a.id,d=void 0===a.props?{}:a.props,f=void 0===a.children?[]:a.children,e=ra[b],k=e.plain||/^\s*class\s+/.test(e.toString())&&!F.isPrototypeOf(e);d.l={i:"/",A:function(g){return z(qa[g])}};c.split(",").forEach(function(g){var m=A(g,b),l=m.parent,h=m.a;if(h){var n={key:b,id:g,plain:k},p;h.render=function(){return p=E(n,e,p,h,l,d,f)};h.render.c=n;sa.observe(h)}})});
 
 //# sourceMappingURL=comments.js.map

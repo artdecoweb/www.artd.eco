@@ -48,9 +48,9 @@ const meta = [{
 },
 {
   key: 'parallax',
-  id: 'c6b51',
+  id: 'c7611',
   props: {
-    'background-image': '/img/bakst2.jpg',
+    'background-image': 'img/bakst2.jpg',
   },
 },
 {
