@@ -116,9 +116,9 @@ const meta = [{
 },
 {
   key: 'parallax',
-  id: 'c709f,c709f1,c709f2,c709f3',
+  id: 'c69e3,c69e31,c69e32,c69e33',
   props: {
-    'background-image': '/img/letters/background.png',
+    'background-image': 'img/letters/background.png',
     speedy: '-0.5',
   },
 }]

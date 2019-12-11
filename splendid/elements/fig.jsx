@@ -33,7 +33,7 @@ export default function Fig({ id, reverse, src, alt, 'img-alt': imgAlt, splendid
   imgAlt = imgAlt || f
 
   const col = (<column {...colCl} d-flex align-items-center justify-content-center flex-column id={id} mb-3 p-3 rounded position-relative overflow-hidden>
-    <parallax speedy="-0.5" z-index="-1" background-image="/img/letters/background.png" />
+    <parallax speedy="-0.5" z-index="-1" background-image="img/letters/background.png" />
     <p text-center>
       <splendid-img webp={webp} border {...b} rounded img-fluid src={src} alt={imgAlt} placeholder-auto />
     </p>
