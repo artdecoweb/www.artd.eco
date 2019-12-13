@@ -1,5 +1,5 @@
 export default {
-  title: 'Inside UK\'s Technocracy And Mafia Behind It',
+  title: 'Inside UK\'s Technocracy And Mafia Behind It1',
   seo: 'Democracy and capitalism are incompatible: money always talks. learn how the Conservative neo-elite are robbing population with Industrial Strategy.',
   topics: ['UK', 'politics'],
   og: {
@@ -7,6 +7,7 @@ export default {
     type: 'article',
   },
   figSm: true,
+  sitemap: false,
   // focus: true,
 }
 

@@ -76,7 +76,7 @@ const T = {
 }
 
 Object.entries(T).forEach(([key, page]) => {
-  if (!['index', 'topics'].includes(key)) page.article = true
+  if (!['index', 'topics', 'life-sucks'].includes(key)) page.article = true
   if (!page.layout) page.layout = './layout/index.html'
 })
 
