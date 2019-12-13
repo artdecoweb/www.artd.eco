@@ -113,6 +113,11 @@ alamode@^3.0.0, alamode@^3.2.0:
   resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.2.0.tgz#ee79dcf2483b5e28e9aac8cd0dfdc692aa333ca5"
   integrity sha512-jDV6kYpIf9jHJUre1OOotW8EM2Qy58S/eOks2MWhjNz2xJQdEfyzFKbcdaZowC8sk5DKxsnapf/mZNE53B3haQ==
 
+alamode@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/alamode/-/alamode-3.3.0.tgz#5a73ebb8eae847934f747d67c2680698061b7bbe"
+  integrity sha512-/Xi0rZ0HAyobAIi8DJQMeFF3kRrr15PGuYRwvxmQaOqSO3WJgXOsmhL6sZQuvD/okZztzujMxMA+21WOD2rYyQ==
+
 catchment@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/catchment/-/catchment-3.3.0.tgz#e57eb70183d6a75ee71da0cb8ec2e76ac01317d2"
@@ -290,10 +295,10 @@ source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-splendid@^1.16.7:
-  version "1.16.7"
-  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.16.7.tgz#fcdf2200464c427bd84064cb9cc6a2cf32556b9b"
-  integrity sha512-zrDVtClA6hh2H95EwbAzCNAUUs0nn6nigR3fgN82sfRX9nNCp2MkSKf1s+icI9ReM2rfvrDiQhOQigVo42SBig==
+splendid@^1.16.8:
+  version "1.16.8"
+  resolved "https://registry.yarnpkg.com/splendid/-/splendid-1.16.8.tgz#7a48959d8663b80e6c266ad687711bb77b0a93bd"
+  integrity sha512-2XIU0GqCNeMLr5P02eg+vwn5LGdaHTTBJmvRKqFNOuVWkEaphM1FiEzxNQkpFqvLGYYM3l18D7Nlr09U8HQuKw==
   dependencies:
     "@externs/preact" "^1.2.9"
     "@idio/frontend" "^1.6.0"
